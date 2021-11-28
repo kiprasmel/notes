@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>October 22nd, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			October 22nd, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-21T21:00:05.250Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.977Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1634850005250);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213977);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) MPLx6eg6S
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) oVjyGQbEe #[[(hidden) S-ygYfi0j]] [[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) -xjkYojiu #[[(hidden) gTlUPiPiE]] [[(hidden) MQWAZyaHX]] #[[(hidden) cVs0Gqvj9]] #[[(hidden) AZcRGBo7m]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 3pIGs_fmZ
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Riuz0nz6C
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) gf9ZhZCuB [[(hidden) pHco5hQZn]] #[[(hidden) 8IFwlgHPa]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) IeupLWVUC
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) rkHXN0hju #[[(hidden) INePcBFz-]] #[[(hidden) aQw_Q_pev]] #[[(hidden) YEetDXq2a]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) hhMEWTSML #[[(hidden) 1zvQUPuRu]] #[[(hidden) -GwvjIuUk]] #[[(hidden) wJ2Zc-SMe]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 7GBOiVPiE
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) lHAhDAviu
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 5fLR4Cq1c
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) ac-mdzome
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] not challenging now, and not challenging when it's already in the development process (even backlog) -- so when is it appropriate? "it depends" doesn't really help here, I need more concrete examples & reasoning behind it
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) cqbUUBnWH
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 1N8V_x0ap
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) OBGMBu39H
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} (hidden) KOq567Emk #[[(hidden) _c2YyR8Yd]] [[(hidden) Tj-sLGvAy]] #[[(hidden) k27EB-_6T]] #[[(hidden) H_Bmnrn2D]] #[[(hidden) utFt0c-ed]] #[[(hidden) bT83VAMyr]] #[[(hidden) 2b6Krhy2c]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) cRL9Jch6Z
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) WHSUcDWMm
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) CeApkw5TH #[[(hidden) 1zvQUPuRu]] #[[codemods]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Z0bb_R7SW
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) -BGjUpQHB
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) GemX5itxJ
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]] #[[(hidden) -r0GufHj8]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									#[[(hidden) yKrt2xLFy]] having Page & Block separate makes sense:
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											different by design -- a Page cannot have a hashtag / linked reference inside it's title, meanwhile a Block inside it's string can.
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													need separate logic that I currently handled with the `isRoot` - for Pages need to allow making the whole thing public if any top-level block has the `publicTag`, meanwhile does not apply for Blocks.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											becomes clear that I need 2 separate functions - `findPublicPages` and `findPublicBlocks`.
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} parse all Pages 1st (w/ attributes)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} extract code into functions
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} move functions down
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} then parse all Blocks
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													have access to all pages.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													go through each block
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} extract all linked references
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															if page is public - keep the reference(s) public as-is
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} if page is private - update the reference(s)
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															in both cases, not the actual `refs` property needs to be updated (only kept (since it's the same), but that's the default), but rather the text (`title`)
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} later think about Block-references with double parenthesis, but not atm.
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] again thinking about abstracting this thing into [[roam-traverse-graph]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											could use for:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													the [[roam-traverse-graph]] I'm currently working on which was the original idea
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													counting how much I write everyday (both number of words and bulletpoints (Blocks))
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													other kind of automations sheesh
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													would become like webpack for code bundling and adding various plugins
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} show `remaining` for `poolPromises`
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} take a look at `Restore Graph` @ Settings - perhaps will cure our pains? :o
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} implement fixes for queries -- `refs` are added (or already there?); the values aren't.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} note that since some of the same linked references will be both private and public, by adding them into a query with an OR, we will make it work, BUT we will leak the actual uid of the reference (it will now have a name)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													oh wait this already happens w/ any linked references that are under public. oh fuck
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															we probably need to encode all of them then? huh, kinda sucks!
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} okay, so to make it obvious, we should collect a list of linked references that get exposed as public ones, and then never hide them in any pages, because they're exposed anyway. yes.
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} parse whole graph and track which Pages will be __possible__ to access from the public stuff, and export only them (unless chosen to export the whole grahp).
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											hiding will still be useful because if only a part of page is exposed (not using the publicTag in the 1st depth of children (Blocks) in the Page) as public, other parts aren't
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) Q66eYULxS #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) qh1c5Lo6Y
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) vhBGDQnVa
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) GpkKNy4e8
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) NsJtc5mXQ
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wbnMQnj-P
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) w6JCeqJI_
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) fdQDmOW3W
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) MJ_6aDbwE
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) vIYGd7WN-
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) g7qOSiv5P
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) UGUzgiNEq
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Ar2z-9XSu
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 2_hPzGVzH
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

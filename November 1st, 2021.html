@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>November 1st, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			November 1st, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-31T22:46:44.045Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.966Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1635720404045);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213966);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) eGnMcWdAI #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 8t80LCWP2 [[(hidden) wJ2Zc-SMe]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 3WTB8xRBz
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) cqqgNLPVu
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) E8zTAxdfw
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) OC2m6l5Ce
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) NrH3UIB8- 
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) QFgj-T-Nw #[[(hidden) aQw_Q_pev]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) pV0BHFaYD
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) JZEKiIM1g
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} (hidden) BrvnxF_GT #[[(hidden) Nyyl2XbvQ]] [[(hidden) 0jVEaA0fk]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} (hidden) mQzwsxjLT 
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 6yhrE_usz
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} `findStyledWrapsOfJSXComponent`
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} first find all usages of the jsx component (e.g. the button itself, then instances of where it's wrapped with styled)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} and then use them to filter out if something's a cui button or not.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} for everything else that is out of scope - just detect it and add inline comments to make the maintainer resolve it themselves.
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 8vhNenOrp
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) sZ6aQ23wg
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) jOMmlCP4S]] - [[(hidden) N-9snEBPh]] or something - to automatically keep branches up-to-date if they depend on one-another, just like what i'm currently dealing with with the [[codemods]] stuff.
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 7vrAmwEp9
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} #[[(hidden) S-ygYfi0j]] [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] just an observation - i've been busy w/ other stuff, couldn't focus on the mission, but already from today (Nov 1st, Monday) it's way better.
+				Needed the mindset, apparently there used to be training for missions but not anymore; [[(hidden) jRjwHl5m6]] is working on it
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) wY3RhS6Fq [[(hidden) 2UTf9X3my]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) kQzsP-tCI
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) R1HPTWtX2 #[[(hidden) okke3m7KB]] #[[(hidden) IuQo2LIQD]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) nTdVehP9n
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ddiKIbc6r
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) PI2ywjCis
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Brb3ySMJ8
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) hrANrn6o7
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

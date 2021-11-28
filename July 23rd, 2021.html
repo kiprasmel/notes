@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>July 23rd, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			July 23rd, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-07-23T00:43:23.770Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:14.131Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1627001003770);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127214131);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) ha4jWk6z6]] first stop ever - got'em good. #[[(hidden) Mj7bQlQ0B]] friday worked good lmao
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) qw5Dn1ZQv
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vsaB9_XWn [[(hidden) 3jb3JG1RY]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) ASsPRxrTg
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) fM2cTTRh-
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 1HWJMLX7f #[[(hidden) 3WrqIQZef]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 1cLRRsxpl #[[(hidden) GUgc5wMPB]]
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) JgUw3HGm2
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) D73ZZk1Rp
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (1 in 1 page)
+			</h2>
+
+			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			July 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) MrflV2Xgt #[[(hidden) _c2YyR8Yd]] [[(hidden) 07-23-2021]] [[(hidden) 07-24-2021]] #[[(hidden) 2b6Krhy2c]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) ee4BOWudF
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

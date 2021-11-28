@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>October 20th, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			October 20th, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-19T21:30:03.557Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.979Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1634679003557);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213979);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) -r0GufHj8]] [[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} waitForResponse of the socket that finished the deletion of the page.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											https://devdocs.io/puppeteer/index#pagewaitforresponseurlorpredicate-options
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} hidden pages, hastags/bi-dir references, but still completely viable graph (so properly parse them in each page/block and hide them but still link them properly lol)
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} toast (failed import)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											span.bp3-toast-message
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											Import failed: blocks already exist
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									even if some pages do not exist, __blocks__ can
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} delete blocks too
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													lol having ((c15fTT40U)) blocks would take
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[(hidden) z7rdNO-cy]]: ((((c15fTT40U)) / ((BclS0C_Dj))))}} minutes
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	7000
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			blocks
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	300
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			#[[(hidden) KZtXmbjhp]]'s limit on req/min
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													-> dont
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) QDoJTxmuC #[[(hidden) -r0GufHj8]] #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} why are hidden's' children not available?
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} #[[(hidden) ITxZ5Uw5G]] action / workflow additional step for now (tho dont do it __too__ often lol)
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} refresh page when making public - if gets stuck, console error "couldn't load graph"
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} empty blocks should be just empty:D
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} #[[(hidden) -r0GufHj8]]-strict to only mark the same block as public, but don't consider subsequent ones as public unless otherwise indicated
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} refactor the doubling logic in `findPublicPages` and make it do it once, not twice, if possible (most probably)
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} add the "expored-by-roam-public-export" (w/ date, maybe some other properties like version, link to the project itself etc)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}}  handle safety checks w/ it
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} pageWithMeta`.hasAtLeastOneLinkedReference` - and dont filter these out
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									already existing blocks:
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} find when importing
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} go through until they're gone
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} try importing again
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} repeat N times until done or give up
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									interesting: even tho showed some errors in the import that blocks would already exist (before pressing import), it still went thru
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ImLkUSroj
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) exqoAMbj5 #[[(hidden) S-ygYfi0j]] [[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) CwjZkXCZp #[[(hidden) TGsTNMfUR]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) kAvlBPkHy #[[(hidden) _sW66DmMa]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) m-B8Sy5hm #[[(hidden) _sW66DmMa]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 6OD6kVBFy #[[(hidden) QIpFrgazj]] #[[(hidden) zzALF-MCa]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) qQyKGhI6P #[[(hidden) gTlUPiPiE]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) FDe7X5GB_ #[[(hidden) gTlUPiPiE]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 6Q5SKlHkg
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) VPQBy1LbS
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) KWU3gyG8E #[[(hidden) _sW66DmMa]] #[[(hidden) 1lIFKZUFG]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) sNyvyAHMS
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Bz0Be6-Ly
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) edtJ8L_fA #[[codemods]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) d_4cc7fkK
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) mZd_3bhCu
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) mQ7e__FRu
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) eKMli7Xpq #[[codemods]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) u1oJJdKyc #[[(hidden) _sW66DmMa]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) WgYuLNGms #[[(hidden) _sW66DmMa]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) EYwB2HtOv
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 8o4gbNpGC
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ebPPf0T-w
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

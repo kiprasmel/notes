@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>November 14th, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			November 14th, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-11-13T22:00:01.644Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.958Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1636840801644);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213958);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) xQZGWI61f #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]] take-aways when running the codemods on `detail-view-components` repo
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} add info that before running codemods, it'd be good to install cui5 to get typescript warnings/errors when reviewing the modded code
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} handle `import * as X from "./Y"`
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} same w/ exports (when handling wrapped and/or re-exported)
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} handle the `X.Button` fuck
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} `WARNING unexpected property for X. got: Y. expected: Z` - add mappings of what we were going to migrate to as well (expected a -> to change to b, expected c -> to change to d, etc)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} also add a link to the migration guide
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} fix spacing - ppl often use tabs, but jscodeshift replaces w/ spaces at least when ran in detail-view-components
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													tho maybe it's nice since you see which component was modified, and can just run the linter. idk.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} if not taken care of, then tell to run the linter after running.
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} the `unhandled import` error are a little extra - so many of them, nobody would care (i didn't either lol)
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} rename-jsx-component -- rename the import as well :D
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} [[roam-traverse-graph]] make `codemods` tag ~~public-only~~ `public` to share this easily
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} read config from [[roam-traverse-graph-settings]]
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} separate out `public` & `public-global` tags
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} handle existing git changes - exit early in `run.js` if any exist, unless an env variable is provided
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} document available env variables for the codemods
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															tho, some are cui specific, and some are within the reusable-transforms so idk how & where specifically yet i should explain.
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) T_iKu1giP
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 7u1XiHrOu
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) TnckX6E9g
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) fXaLj6geU
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) yaCx6jW3P
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) oII8FrmHS
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) JZPTOjEYJ
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) zKKGTmWFC
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) WkCnX_pYb
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) _93Q7XFpM
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) YnDVbb1g2
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) pk3So-CGc #[[(hidden) d_O3pQoL_]] #[[(hidden) CRkSyfYP0]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) cVA8VPoNM
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) I0xgLlSGN
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) JjQdWRFKE
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) NwnLtd0O6
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) OFGJAws0o
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Fa-6_KEYF
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

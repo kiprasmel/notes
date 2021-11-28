@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>(hidden) 9bDzYGgi2 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			(hidden) 9bDzYGgi2
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-09-05T01:10:49.555Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:14.319Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1630804249555);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127214319);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) x41Ny4G7C
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (10 in 9 pages)
+			</h2>
+
+			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 17th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} definitely need to move to #[[(hidden) 9bDzYGgi2]] . it's getting worse w/o it
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 9th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} document #[[(hidden) 9bDzYGgi2]] typescript error:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				> An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				> A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.ts(1169)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				in both cases, you need to:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1. convert from `interface` to `type`
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2. convert from `[key: foo]: bar` to `[key in foo]: bar`
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} as Marti mentioned, #[[(hidden) 9bDzYGgi2]] errors will show up when people migrate to cui5, thus we should not spend too much time on this stuff, and instead focus on the things that are both used commonly and are easy to modify.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 25th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				currently just wasted a lot of time on #[[(hidden) 9bDzYGgi2]] w/ this (as always), so will continue on w/o it atm, because more important features (need to) exist
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) 9bDzYGgi2]] HKT - higher kinded types - wanted!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```typescript
+	function A<T>(xs: T[]) {}
+	// would make this possible:
+	type Alias = A<string>;
+	// or even this:
+	type Alias<T> = A<T>
+	```
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				currently just wasted a lot of time on #[[(hidden) 9bDzYGgi2]] w/ this (as always), so will continue on w/o it atm, because more important features (need to) exist
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[(hidden) fbJkjZ7H5]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						#[[(hidden) DY6wPnICE]] conditional optional parameter
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								```javascript
+					const f = (
+						...props: ({} extends Props ? [] : [Props])
+					) => {};```
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										omg the classic array spread, just like in objects to remove a value!!! genius!! did NOT think about it myself lol
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										https://stackoverflow.com/a/52318137/9285308
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[(hidden) 9iZgEcSJM]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						yarn - love v1, hate that they went into v2 when v2 should've been a completely different project
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								also yarn v1 --ignore-scripts you cannot provide an opposite boolean flag to _not_ ignore scripts, when your config's default is the opposite. fucking hell
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) fbJkjZ7H5 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) HAVlnyhr- #[[(hidden) 9bDzYGgi2]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 6th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) EFEByRKoS [[(hidden) YBB858w4z]] #[[(hidden) 9bDzYGgi2]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) 6V3zEI02y #[[(hidden) 9bDzYGgi2]] #[[(hidden) tZLzu9sBI]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 5I4W141Hx
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) FXhwZs5vy
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) u8Ysr1dan #[[(hidden) tZLzu9sBI]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) GB_Jec9z1
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) W0m8k8xXd
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) zq_5ZtCRe
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) R94Ot-a_P #[[(hidden) 4BNn_KL7E]] #[[(hidden) jOMmlCP4S]] #[[(hidden) Z6Wd9qbMT]] #[[(hidden) d_KJUbXie]] #[[(hidden) hzfBb4ct_]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) k9-Pa-xfc
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) XCtNR51__
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) _pYZ4nCF5
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) E8-lbH7mO #[[(hidden) bWZPrHq8o]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) LAz2sxVv4
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) Y2eLNqVT8
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 8th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) aWQJk8iPh #[[(hidden) 9bDzYGgi2]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) VlUkIqxqg
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) AmRUgLMfK
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2L2DDdOkh
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) qlOZQYs02
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2YjdDFjKm
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) sux_5rQ46
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) r3elLTfHE
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 5th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) ILZeBuZIH #[[(hidden) 9bDzYGgi2]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) F28wb5_W1
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) Ewhyfop3s
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) jcE0d6Zx7
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) zIB8IZhW9
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) N0xeAqjxv
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) NXJRVQUsn
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) Hh8CCtP7e
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) aUDKmv_Bm
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) 8epKTj8FX #[[(hidden) D1lY0CG5e]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) Ew3nnR3s9
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) WrIlW6p1q
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tVcJm9oE1
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) VUgqBeaZv
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) mWWXX4s_I
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

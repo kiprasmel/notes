@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>codemods | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			codemods
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-09T13:52:23.926Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.852Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1633787543926);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213852);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) -r0GufHj8]]
+					</div>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (35 in 27 pages)
+			</h2>
+
+			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 26th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 7UhvragTZ [[codemods]] #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) WMixbCxJy
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) -aHGSADvT
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) ykqNbHcCU
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) zap26KqaP
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} add the info on how to run them, in the migration guide / somewhere in storybook
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) IbLkgPXPH (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				saved time w/ [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 18th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				here, could re-use the same utils for parsing imports, analyzing whole graph etc. thus, we could create a lib [[codemods]]-utils or smthn. re: lots of code in the PR? problem solved. 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} after finishing the jsx attribute codemod, try the styling/css stuff, and the graph stuff later
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} when jsx attribute codemod feels ready, extract into separate PRs to make easier to review (duh)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						guys, i know this, no need to be ([redacted](((gr2ab9LLR)))) about it. we don't have [[(hidden) mgTvVDjW-]], a la [[(hidden) Qb76iqf_n]], and for iteration speed i am forced into this workflow. would love to split it up as i go if we had the tooling, but we don't.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								i did indeed do the stacked diffs manually w/ the first few PRs initially - it was a nightmare to get everything updated, rebased on each other -- you end up wasting a lot of time.
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) GhXhMq59I #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						also, if you're seeing a problem, please tell immediately instead of waiting out till some #[[(hidden) nUptwn4Jc]] or whatever. humans need a very fast feedback loop to improve efficiently (at least me). if you don't tell me fast, it becomes your problem, and if you later blame me because you didn't bring it up - you're kinda being ([redacted](((gr2ab9LLR)))):D
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						bottom line - i cannot read your mind. [[(hidden) LldgRLaH-]] ftw.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} maybe would be useful to have a #[[(hidden) 2b6Krhy2c]]ogress or something that i could create a query for, for the outsiders to see what's the status right now. idk though, likely to get outdated fast; maybe worth a shot..
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						hmm, maybe we're just miss-understanding of how we like to do work.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								for me, what i'm doing is actively iterating. like a startup instead of big corp. ofc it's all over the place, but it's fast & efficient - that's the whole point. later, i'll do the cleanup, and you should expect it eventually, but not until i actually do it and tell you so.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										furthermore, it is indeed good to have check-ins, especially if someone in a position like mine got stuck & would be over-engineering etc., that bad feeling when you're kinda overwhelmed but somehow don't want to ask for help. yes, this sucks and we should have counter measures to help against this, but it doesn't feel like what we're doing right now has intentions to help with this - it just doesn't.
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										thus, let me do my shit bros! it ain't the first time, ain't the first project i'm pulling this sorta thing on. and if criticising, try to think deeper and have intentions to help. also do that in the right time - don't wait, do it asap.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 17th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} fix `add-missing-jsx-attribute`
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} wrap non-strings w/ `jsxExpressionContainer`
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} refactor, fix commits w/ rebase
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 14th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]] take-aways when running the codemods on `detail-view-components` repo
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} add info that before running codemods, it'd be good to install cui5 to get typescript warnings/errors when reviewing the modded code
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} handle `import * as X from "./Y"`
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} same w/ exports (when handling wrapped and/or re-exported)
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} handle the `X.Button` fuck
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} `WARNING unexpected property for X. got: Y. expected: Z` - add mappings of what we were going to migrate to as well (expected a -> to change to b, expected c -> to change to d, etc)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} also add a link to the migration guide
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} fix spacing - ppl often use tabs, but jscodeshift replaces w/ spaces at least when ran in detail-view-components
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						tho maybe it's nice since you see which component was modified, and can just run the linter. idk.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} if not taken care of, then tell to run the linter after running.
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} the `unhandled import` error are a little extra - so many of them, nobody would care (i didn't either lol)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} rename-jsx-component -- rename the import as well :D
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} [[roam-traverse-graph]] make `codemods` tag ~~public-only~~ `public` to share this easily
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} read config from [[roam-traverse-graph-settings]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} separate out `public` & `public-global` tags
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} handle existing git changes - exit early in `run.js` if any exist, unless an env variable is provided
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} document available env variables for the codemods
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								tho, some are cui specific, and some are within the reusable-transforms so idk how & where specifically yet i should explain.
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 12th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) gTlUPiPiE]] to [[(hidden) tv1zOVzED]] re: docs
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636711860161100?thread_ts=1636656582.154100&cid=C02HVJZDBT2
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} think about handling `boolean` values, & other stuff that needs a `jsxExpressionContainer`
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				info - #[[(hidden) 1zvQUPuRu]] migrations #[[(hidden) CNx5JIWTi]] stuff:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636729516167000?thread_ts=1636656582.154100&cid=C02HVJZDBT2
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/pipedrive/convention-ui-react/tree/release-v5.0.0/src/documentation
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/pipedrive/convention-ui-react/blob/release-v5.0.0/src/documentation/migration/Migration.stories.mdx
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 11th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) JcqOWMyQe]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} add info to the `migration-cui4-to-cui5`
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://pipedrive.slack.com/archives/C02LK8Y583D/p1636643647015400
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} send msg to mission-teams thread to [[(hidden) 51Dj3zGo-]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} ping [[(hidden) v8hKA88Fi]] when done to help inform them on what they can focus on vs what not to
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										prolly dont need / can edit the ((RFGxb3RUw))
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} confluence page
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://pipedrive.atlassian.net/wiki/spaces/FUN/pages/2572028160/migration+info+for+CUI+consumers+migrating+from+cui4+to+cui5
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} add info that if you're migrating already, some info is still missing e.g. cui5map which i helped w/ & [[(hidden) v8hKA88Fi]]'s currently working on
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} inform team @ standup / slack
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} share the cyclic imports bs and how i lucked out when finding the cause of it, lmao
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636581217143500
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 10th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) gTlUPiPiE]] to [[(hidden) 51Dj3zGo-]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/CAPRBEFH9/p1636529675196100?thread_ts=1636377251.180500&cid=CAPRBEFH9
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} #[[(hidden) 2b6Krhy2c]]ereq: https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636559402141400
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 9th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} document #[[(hidden) 9bDzYGgi2]] typescript error:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						> An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						> A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.ts(1169)
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						in both cases, you need to:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								1. convert from `interface` to `type`
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								2. convert from `[key: foo]: bar` to `[key in foo]: bar`
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) jOMmlCP4S]] once [[codemods]] are done, and if they turn out well - could write my own blog post & post it @ pipedrive as well. damn
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) yq0g7qElG (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				re: [[(hidden) v8hKA88Fi]] old -> new mappings of #[[(hidden) 1zvQUPuRu]] (4 -> 5) & [[codemods]]:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636328227098000
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				> a lot of manual work
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} who's gonna do it?
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} where do you find the mappings yourself?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								comparing dist/ folders of v4 vs v5?
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} I'd like the data between `tokenMapping.js` & `index.jsx` connected:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						similar to how I'm doing it w/ the jsx attributes/props codemod (which started from the button):
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/pipedrive/CodeshiftCommunity/pull/4/files
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										`community/@pipedrive__convention-ui-react/src/5.0.0/transforms/replace-jsx-prop-and-its-value.config.ts`
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						I'd use this data to better understand of how I should write the codemods
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								what's important to understand is that I've seen very little usage of CUI myself, thus I don't have an accurate real-world representation/mental-model of it. if I don't get it before I decide the architecture & start coding, it's almost inevitable I'll make wrong assumptions & everything that comes with that.
+						</div>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								and, if we decide to make the style codemods __find-then-prove-only-then-replace__ instead of __find-then-replace__ (like w/ jsx props/attributes) - to filter that the stuff we're modifying is actually from CUI instead of spraying & praying.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										tho this would likely be overkill. but again -- ((fxZHX-yDI))
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} i.e., currently, from the index.tsx file, it's not clear what cases apply when:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								> // direct usage of tokens in js/ts/jsx/tsx files
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[DONE]]}} did the import path change?
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[DONE]]}} is the imported `colors` thing only available as a default export, or a named/destructured export, or both?
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} is the provided usage in the comments - the existing one?
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												{{[[DONE]]}} is it the only way that the tokens are used? i.e. can there be more ways of doing it?
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														e.g.
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																```javascript
+													<Foo
+														color={colors.white}
+													/>```
+														</div>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																vs
+														</div>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																```javascript
+													const { white } = colors
+													<Foo
+														color={white}
+													/>```
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														{{[[DONE]]}} & do we want to support migrating them? nope
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[DONE]]}} what is the `createGlobalStyle` utility?
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												{{[[TODO]]}} -> dont care where util imported from, just look for tokens from cui and replace them if css
+										</div>
+									</li>
+									<li></li>
+									<li>
+										<div style="max-width: 65ch;">
+												{{[[TODO]]}} how is it imported?
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														{{[[TODO]]}} is it from styled-components?
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												{{[[TODO]]}} are the more utils like this that wrap the css stuff inside js? e.g. `styled` (default export from styled-components)?
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								> // changing token usages in pcss/sass files 
+						</div>
+						<ul>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				follow-up q's
+		</div>
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) JcqOWMyQe]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} border radius - add comment to do manual
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} parse colors from csv
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								convo:
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636376552116700
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} push repo to
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										https://github.com/martinrajdl/cui5map/tree/master/generate-mappings-from-csv
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										csv:
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												latest (one big spreadsheet, gotta download each .csv separately):
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														https://docs.google.com/spreadsheets/d/1OXfLPYhNQ-oRu-D4vFxe-GhQoFpJnHBsPLFwHf94ev4/edit#gid=1865925161
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												whenever we updated - inside the repo (separate .csv files!):
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														((HU5ks5Hh5))
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} for spacing/size - get example from Martin when repo done
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} don't worry about color edge cases for now
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} per-file, not per-whole-program
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						((C9-NbYAPt))
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} for (post)css files, don't handle complex stuff like mixins, just do simple stuff
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 8th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				[[(hidden) yq0g7qElG]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} clarify `fromToValueMap` (maybe `valueFromToMap` or `fromToMapOfValues` or `mapOfOldValuesToNewValues`)
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 5th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				asked for infosec approval
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/C0NK9RJNR/p1636123293070500
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						respectable convo w/ [[(hidden) MpkKzu--V]]
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				since the pre-processing transform would go thru all files and collect intelligence, but it'd be general, then when using it's output in another transform to get the specific intelligence we need, we'd need to have a lock to force other workers whom are running the same transform at the same time to wait before that specific intelligence is parsed - to avoid doing it everytime for each file the transform runs on separately.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						same as in the [[roam-traverse-graph]] - inside the fork of [[(hidden) r5euC6e-9]] I implemented this for the `logIn` method. should be similar, thought don't know if we'd need something like [[(hidden) qgM4x1dcL]] operations because of the multiple workers stuff.
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				more #[[(hidden) jgFKNqSde]]ples , also highly related to what we want:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/codemodsquad/jscodeshift-build-import-list
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								#[[(hidden) DY6wPnICE]] okay there's a lot of stuff i still don't know. dunno if i'll be able to create the graph-aware imports & wrappers thing.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										or maybe could simplify and be not 100% accurate
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				https://pipedrive.atlassian.net/wiki/spaces/FUN/pages/2264204098/CUI+v4+Audit+-+usage+in+FUN+repositories
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) jOMmlCP4S]] for [[roam-traverse-graph]] - parse graph with [[(hidden) DTTuZxhoc]]? :D
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						definitely would be possible since jscodeshift supports json. we could even extend & add our own parser lol.
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						the only question is - __should__ we, lol
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} prioritize codemods
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} as Marti mentioned, #[[(hidden) 9bDzYGgi2]] errors will show up when people migrate to cui5, thus we should not spend too much time on this stuff, and instead focus on the things that are both used commonly and are easy to modify.
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} simplify
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} another idea!! [[(hidden) BhZRMHB7Y]]:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1. parse all imports (already doing, just refactored rn)
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2. parse all exports
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						3. check if one wraps the other, or the other wraps the one, aka check if any imports wrap any export, and if any exports wrap any import
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								boom, now we have the connection 🤯
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} verify this would work lol
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										upd: probably only need check if exports contain the imports xd
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										detecting exports, walking thru Identifiers & checking if their names include those who are imported -- would work ?? !!
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												https://astexplorer.net/#/gist/6261fcd52fe14382a18e8cee656ecdd9/e6b8bc14e203a7202d268942f28be0b39df4623d
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						could use `path.scope` for this ?? 
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} learn what it does lol
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 3rd, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				this weekend so dunno if will make it haha, see [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} migrate postcss variable names
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						most likely should just use regex
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						since jscodeshift no go for css?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								"jscodeshift css"
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/facebook/jscodeshift/issues/124
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				some good examples:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-codemods
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				@babel/parser (prev Babylon) also legit
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] re: [[(hidden) wJyVZW0Tm]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://danburzo.ro/javascript-codemods/
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						we could have a pre-processing transform that would collect all imports, exports and wraps around our components, and then use that output inside the transforms that rely on that information!
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} need to specify transform dependencies inside transform
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								```javascript
+					export const dependencies = [transformA, transformB]```
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} need [[(hidden) vkt9VljJ3]] for transforms, and to run each sub-level sequentually in the codeshift-cli.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								would _not_ be needed if ... will be needed.
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						each transform would get an additional arg - `outputsFromDependencies`, and would use `outputsFromDependencies[transformFnThatGeneratedThatOutput]` to access the specific outputs
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} and each transform would return not only the modified source, but also the outputs.
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								idea taken exactly from [[roam-traverse-graph]] :D
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} update template to `export const myTransform: Transform = () => ...`
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} add `export const dependencies: TransformDependencies`
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} validate w/ validator
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/f79407a95d823d01e0b9b3928397f47c7f81c556/packages/validator/src/index.ts
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/506fa08c8cda2782d3153cada23530eec965b727/packages/cli/src/validate.ts
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) jZqNG3dcZ
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						likely will need to use recast or whatever lower level lib & read file contents w/ fs to be able to traverse full graph.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								i. e. find all files that import e. g. a button from cui
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								then, for each file, find what wraps it - other elements, styled, etc
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								check if the wrapper are exported
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										no: add but only applicable inside that file
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										yes:
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												will need to create a normalized (like yarn lockfile instead of npm's) map of what absolute path imports what absolute paths
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												from that map, find where the wrap is imported from
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														note - maybe better to have a transform that just for each file it goes thrue, it adds to the normalized array that file, all imports and all exports.
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																this way walking and filtering would be simpler
+														</div>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				before all that, prolly best to:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1. styled wrap
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						postcss codemod to unblock others like Marti to do css stuff
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 2nd, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} got allowed to have public fork of [[codemods]] inside pipedrive org!!! 🚀
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				cc: ((6rp7d97Jg))
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} still, gotta make sure it's easier for everyone and that we move forward w/ the policy
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} give update tmr [[November 3rd, 2021]]
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} upstream update to the template - `applyTransforms` and motions should be used by default
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} `--sequential` for the main cli
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						transforms woud have to export the array of motions they use inside the `applyTransforms` util
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						this would allow applying motions one-by-one, and doing anything we want in between, e.g. creating commits, so that it's very clear to review each motion individually.
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						would be needed eventually: ((O07PqaHad))
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} inform that they are single-file based, and NOT aware of the whole program
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(unless we force it, but likely veeeery out of scope)
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						thus wraps w/ `styled(Button)''` will only work if that wrap is inside the same file...
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								ofc, we could go thru the whole input, and collect what elements are wrapped and what are they exported as
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										but then there's different syntax for exporting, importing and even re-exporting, especially when ts gets involved, etc. - there's __a lot__ of bs to deal with. again feels out of scope.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								thus, here, best i can do is probably:
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										1. from the `@pipedrive/convention-ui-react` imports, detect what elements wrap them (e.g. styled, dunno about using it as an element inside other jsx elements since many ways possible),
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										2. make sure they are exported, and
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										3. add inline comments near their definitions so that the user verifies themselves.
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												3.1 and ofc the user is expected to verify this recursively - everywhere they use their own wrapper.
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 1st, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} `findStyledWrapsOfJSXComponent`
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} first find all usages of the jsx component (e.g. the button itself, then instances of where it's wrapped with styled)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} and then use them to filter out if something's a cui button or not.
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} for everything else that is out of scope - just detect it and add inline comments to make the maintainer resolve it themselves.
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) jOMmlCP4S]] - [[(hidden) N-9snEBPh]] or something - to automatically keep branches up-to-date if they depend on one-another, just like what i'm currently dealing with with the [[codemods]] stuff.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 30th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} submit #[[(hidden) G3yfnjaMb]] msg re: [[codemods]], #[[(hidden) YHnxAcxI4]] public fork
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) -Hp5oBVR1 #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 5GDdfKUjT
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) 4PVrTrgHb #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) AffqcVcbm [[(hidden) HlDzRgTt9]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 5JzPCWZdr
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) onNJtuZsT [[(hidden) pEmar0tqN]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} (hidden) T0Qc_CO_V 
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) xWTKIJGvL [[(hidden) WKqN0V-wK]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) pC-riogAm
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) TzvTfPW0f
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) LG0608E91
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) dVyOZNK0i
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) PMIH5tVU8
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) SpXOGiowU
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) gnAi--7QZ
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) BEEaZ5VWh
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) KxaQoCb48
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) cJIvXJPPE
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) nkT3GMnMa
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) Og9jy0Tze 
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} (hidden) vZ1hIZ619 [[(hidden) pHco5hQZn]] #[[(hidden) 1zvQUPuRu]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} (hidden) ljbg0JCIS 
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) he-sJmuhy
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 22SA_QSY6
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) 0vbncYT1L 
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) YIWsmSGjY
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) S3g9UnD80
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) KP-zE42cU
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) HelUFNnld
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 9fGoYDleB
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) RT0tG3bvv
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) S1nbPhNrp
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) MJtB-p6FT
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) PdH0Aw9op
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) vFAPsjhlt
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 6uKZ6p9C6 #[[(hidden) yKrt2xLFy]] #[[(hidden) 1zvQUPuRu]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 0knloH1SA
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 22nd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) CeApkw5TH #[[(hidden) 1zvQUPuRu]] #[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 20th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) edtJ8L_fA #[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) d_4cc7fkK
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) mZd_3bhCu
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) eKMli7Xpq #[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) u1oJJdKyc #[[(hidden) _sW66DmMa]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) WgYuLNGms #[[(hidden) _sW66DmMa]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) EYwB2HtOv
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 8o4gbNpGC
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 19th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} take a look at issue, can run examples for the detail view repo
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				1 structured way to create codemods for react components
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				2nd for tokens
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						name change from e. g. black to semantic
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						the value doesnt point to the hex value, but to a css variable that expands to the value in runtime
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				todo comments for parts that need manual verification by repo maintainers & designers (e. g. the colors that expanded into multiple ones)
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} what do we want from the eslint rules? currently im going all in in [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				most probably out of scope.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				same w autocompletions in postcss
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 18th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} get info on what different projects the [[codemods]] will apply to (e.g. js, ts, react, backbone, etc.)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) iiHZfHVJx #[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} (hidden) MIVUj2zyb [[(hidden) v8hKA88Fi]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) RcOtybGJW
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 9th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) pFZDYv9B4 #[[(hidden) GR0b6CYM8]] #[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) wtCAnaVkE
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 05F0lLeBa #[[(hidden) 4BNn_KL7E]] #[[(hidden) DTTuZxhoc]] #[[(hidden) unlH_9R0B]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) XdrNakWJg [[(hidden) eBB7dPivO]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) qNG-gZ1DP
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) -gCja5ibc
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) TWKKK97s4
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) iWptDeRw7
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) mZ978VlVf
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) EpHYcVZsT
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 23rd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} [[codemods]]?
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				https://duckduckgo.com/?t=ffab&q=codemods+for+migrating+internal+component+libraries&ia=web
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				https://medium.com/@bjrnt/migrating-code-using-codemods-808e2e29e5f2
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 3rd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} #[[(hidden) Y4mLW46Gx]] [[codemods]] - look hella interesting (jscodeshift from fb etc)!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			August 27th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} research [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

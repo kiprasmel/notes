@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>October 24th, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			October 24th, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-23T22:29:28.566Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.977Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1635028168566);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213977);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) AGQnFp9Av #[[(hidden) 4BNn_KL7E]] [[(hidden) DNhqQDSLh]] #[[(hidden) URRQcDCig]] #[[(hidden) aQw_Q_pev]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) hb-up7w40
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) DlzIph3it
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) xJpYEDCp9
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) QkGUniOQP
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) EfaflBp_d
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 9TsW9SYBu
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) XsCCW3tzJ
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) zegv7H0M0
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Xrv8GULtZ
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) f8maWLaJf
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) QXy7vhHIS #[[(hidden) BihBadAIv]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) pY8iI3ptx
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) nbGzaSWqZ
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) cNZFs7xwK
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) apgllClLm
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) N5kDz_kqp
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]] #[[(hidden) -r0GufHj8]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} maybe need more explicitness about the `publicTag` being a __linked__ reference, not an __unlinked__ one
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											or maybe not dunno
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									re: ((ZDesP00Ml))
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} consider `.edn` format for:
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									re: ((UMG8F9Lx8))
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} probably can add something like `hasAtLeastOnePublicLinkedReferenceAnywhereInTheHierarchy` to the Page meta
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} "plugin" architecture (already prevalent) - plugin is what `traverseBlockRecursively` takes in (or perhaps will be what `traversePageRecursively` (TBD) would take in)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											would contain the traverser
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											would contain dependent plugins - if not already ran (since function is an object, compared by reference probably) would run it
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} but gotta be careful about multiple plugins interfering, so gotta think about how we add metadata to the Page
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} perhaps consider like separate steps' output (like #[[(hidden) ITxZ5Uw5G]] actions), indexed again by a function (object) reference as key(s)
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) arkiK3Ycs
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) Ffqy5601p 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) t1-SiaJmx
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

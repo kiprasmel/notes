@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>i just re-discovered conway's law (public) | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			i just re-discovered conway's law (public)
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-10-09T17:22:42.966Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.862Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1633800162966);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213862);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) -r0GufHj8]]
+					</div>
+				</li>
+				<li></li>
+				<li>
+					<div style="max-width: 65ch;">
+							still very draft - sorry u might not understand my shenanigans here!
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							u can discuss on [https://twitter.com/kiprasmel/status/1446870128721813505](https://twitter.com/kiprasmel/status/1446870128721813505)
+					</div>
+				</li>
+				<li></li>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) ThXonBLoY]] the react vs angular principle, the debate of 
+				 having a forkable template vs creating a whole library to wrap around the tools you'd have in the same template -- I just realized the same story applies with linux distros!!! [[arch (public)]] + [[larbs (public)]] - minimal, larbs is just minimal utilities/scripts + some default configs of programs e.g. i3, meanwhile e.g. manjaro & others have a lot of stuff abstracted away, some even create wrapper programs that operate on top of existing ones 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									the implications of this are big. one motivates the user to become smarter, to understand how the system works underneath, __and__ allows them to do it, all while not creating wrappers on top of existing programs, meaning that the knowledge you again is just as valuable outside the current setup
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											re: #[[(hidden) URRQcDCig]] - completely opposite - internal tools are very much internal, and if you learn them well, but then leave google - a lot of your knowledge becomes __useless__ ((gu9uGUwpV)). the ultimate golden handcuffs. hell no.
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													#[[(hidden) KJzGBbibA]]'s principles very much reflect this !!
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															#[[(hidden) ThXonBLoY]] this makes me further realize that the tools organizations create are very much a reflection of how they operate themselves. I think there was a law described about this ?? upd: I just re-discovered [[(hidden) N0lPju3C2]] lol
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													[1]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															re: "useless" - nothing is inherently useless, because in the process of learning X, you learn & experience things more or less related, but still outside of X as well, and if X becomes useless, the other stuff prevails
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									realized this when I thought that maybe it'd be nice that [[larbs (public)]] could publish the utilities as minimal packages instead of just giving a forkable template ([[voidrice (public)]])
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											but then it'd be harder for the end user of it to modify it (e.g. the util currently lives in `~/.local/bin/`, and if it was a package / program that you'd install, it'd live in e.g. `/usr/local/bin/`, meaning that if u were to modify it, your changes would get overriden - you'd have to contribute directly to the original package by e.g. opening PRs on github, but you don't control if they get merged or not, so now you'd have to fork the repository which contains this program, and then modify it and potentially maintain the fork, plus you'd have the burdain of publishing the package yourself w/ a different name)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													unless, ofc, the program would be completely extensible, meaning it would provide APIs to extend the behavior without modifying the program itself (O in [[(hidden) Nq8r6-ap2]] - open-closed)
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															but then, the program becomes much more complex, with all the stuff that comes from that! and remember, what we tried turning into packages were actually small utilities/scripts - they didn't have any of the problems - the problems come from wanting to abstract those small utilities into packages
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	the convenience of consumption, at the loss of  simplicity of modification
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			what can be learnt from this is that maybe one should never create an #[[(hidden) vzIV5rsdR]] (both 1) a utility function on some "reusable logic" and 2) a library/framework instead of a template) on top of some logic __without__ first using it enough to realize the common use cases to identify the things that can and __should__ be abstracted, and only then start abstracting. 
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					because in some cases nothing should be abstracted - then the choice is having a template instead of a library, or copy-pasted / #[[(hidden) imNiDHw0b]] (as opposed to #[[(hidden) AYIfX5dlb]]) code
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					and sometimes very little things need to be abstracted - then we can create & extract more sophisticated & extendable programs but keep everything else as a template.
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							((G5zfo90eS))
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									yet again [[(hidden) dIAalVB6p]]'s philosophy checks out - abstract the most important bits, and let the community grow & develop everything else. eventually, if things mature enough, we come back to:
+																							</div>
+																							<ul>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											((qCxgd284G))
+																									</div>
+																								</li>
+																							</ul>
+																						</li>
+																					</ul>
+																				</li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											so in essence, what it comes down to is:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													1. __at first__ - don't abstract anything - use the existing primitive tools (e.g. the programming language itself)
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													2. then, find: what you end up repeating a lot, or what mistakes you failing at, or similar
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													3. then, think about the absolute minimal solution that would solve your problem (singular)
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															3.1 don't try solving multiple problems at once -- [[(hidden) FO-XsQXEy]] - one small independent thing at once
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															3.2 if you __do__ feel like solving multiple problems -- you might be operating at the wrong level of [[(hidden) yP4N11Xx9]]:
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	the hierarchy of your abstractions also matters, and it's hard to balance (this might be the essence of what this is all about, but I'm not sure yet):
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			on one end, you can create hacks on top of your existing solutions (i.e. close(r) to your leaf nodes of the abstraction hierarchy), but that usually doesn't go a long way, and/or cripples everything else.
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			on the complete opposite end, you maybe could create APIs in the very beginning of your abstraction hierarchy (e.g. on the OS level), but that might be extremely hard to 1) do, and 2) do __right__.
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					see also [[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			maybe see also: tree balancing (computer science), tho dunno if any useful (yet).
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															3.3 make sure 5. still applies to other existing abstractions.
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													4. if everything makes sense, you are confident your solution sits at the right level of abstraction hierarchy - implement it
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													5. as time goes on - re-evaluate if the solution still makes sense and still sits at the right level of [[(hidden) SU8hr25lN]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															5.1 especially when creating new abstractions
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													6. repeat from 1.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											[[(hidden) lnRqvu9Wj]] yet again [[(hidden) XnbxpC_RY]] (especially for the specific use case / need that #[[voidrice (public)]]] provides)
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									#[[(hidden) 8CmlZ4Xci]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											[[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													oh shit i just realized I've been using this naming without knowing that an actual "singularity OS" has existed, but it's not the same thing I was thinking about 
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															https://en.wikipedia.org/wiki/Singularity_%28operating_system%29
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} change the naming in my references
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} mention my version of the singularity os (or whatever I rename it to) as another example in the 1st paragraph of this page
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} the "wrapper programs" stuff & how it relates to 1) templates vs libraries, and 2) libraries that abstract stuff away (frameworks ??) vs small utility libraries
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															((Hu_tuWO5d))
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									damn, I love roam not only because it makes writing fun/the norm for me, but that the act of writing itself lets my mind discover connections between things
+							</div>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									#[[(hidden) EkNKI3n1D]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											http://go.kipras.org/conways-law
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											https://twitter.com/kiprasmel/status/1446870128721813505
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (1 in 1 page)
+			</h2>
+
+			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 9th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) ecJNsHKiy #[[(hidden) 0EJ4yRKtM]] [[i just re-discovered conway's law (public)]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

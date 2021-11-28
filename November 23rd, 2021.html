@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>November 23rd, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			November 23rd, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-11-22T22:34:12.408Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.945Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1637620452408);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213945);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) i2q0rC2hi 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) pfSs6TD3p 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) lJf290hYn 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) 9CYtVnfq_ 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) pZ5JajHgc 
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) KEPjZxK8i 
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) icCc-CNgj 
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) T-mWdSaJw
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) vbxgoDS3G 
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) kftZHAE11
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) zF_Q2vi7b
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) aArTCzSWv 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) XoadB5Gom 
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) QwrjKMWH8 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 2bE0pJlqW
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) fwzuSRs9u 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) We5fTnTMl [[(hidden) tv1zOVzED]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) -82l0I0Bi 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) SoASsK1Vc 
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) opxDN04IN
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) -wPSYFmcl 
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) li9Iwg95D 
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) OIrFkptFq
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) _IDDec4Jw
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) g_zq1bNil
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) pZqda-zVe 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) prvdP3vza 
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) HZWii-QrC
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) GsxWh2Osg
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ZIMmj3Pzn
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) 7b_9GwZ58 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) Xje-vi5_f #[[(hidden) QIpFrgazj]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} (hidden) w4WIU9UkI [[(hidden) B7IotCdtD]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} (hidden) mWAzgvxlg 
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) QSCmJTx_m
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} (hidden) vr63cN-KY 
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) vqGS9FleZ
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) kkXFaqKnN
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) mvPwdZXmk 
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) jZXw_QkmU 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) zqIAVXi8x
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) GCENowTbn
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) tuzlu6V5i
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) yoiR1w5Lr 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) F9-zdZ7JK
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) mFyK2qL7T
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) d7kGPdIAM #[[(hidden) Py4a4fa73]]
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Cs1HCjkQv
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) kr3GJK0Xs 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) -hEoIWAIc
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 79UPvg2lO
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) VgMHM0jCa
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) eq5akMh1B
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) sXFrklAku
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) KdCbwRVBX [[(hidden) QhbFuq7v0]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) zDxQZQ43E
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 3_BRde6ut
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 0yuJ_2Uao
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) vh46BerIJ
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) m3R99o4wj
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) nW5GM8zHc
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) o9Wvs2dps
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) xQGmUJ3am
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) ZoQMjHt6V [[(hidden) QhbFuq7v0]]
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) 0c74bU84T
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) OyTOGy3UW [[(hidden) zQCB4v1xc]]
+															</div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 51C9XAAjQ
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) EDd4n2A-L
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) hTGofw960
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) u3llNpgzd
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) UnFgGbHnf
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) IbFXVHYlK
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>November 17th, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			November 17th, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-11-16T22:00:00.016Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.957Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1637100000016);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213957);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) -yRESKud6 #[[(hidden) z55g-0pMj]] #[[(hidden) 2b6Krhy2c]] #[[(hidden) H0MgpQjRY]]
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) AM0dDrH8j
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} prolly shouldn't hide the titles of daily notes' pages, since their uid's give it all away regardless:D & the `(hidden)` prefix isn't nice there
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} definitely need to move to #[[(hidden) 9bDzYGgi2]] . it's getting worse w/o it
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} for the publicTags & similar, I think we need to default to them being linked references (`#`, `[[]]`, `#[[]]` etc), instead of allowing any text-matching since it could be dangerous if accidentally messed up.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} can still allow text-based w/ some work-around
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													e.g. exposing a wrapper fn `allowAnyTextMatch` from the `ctx` param in the settings creator fn in [[roam-traverse-graph-settings]] that could wrap a string & thus have a work-around.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											the defaults matter, and here the linked-reference default makes a lot of sense. esp. for privacy sake, like w/ the public tags.
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} need to `rm -rf` the `_work/notes`(+ `/notes` ?) folder because after `upsync`, `backup` fails when committing - apparently some changes happen in the workflow file and ofc github rejects it
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} let's make a public page export, including linked references / linked mentions
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											good. the intention here, at least initially, is to have public notes available in our control, AND for them to be fast
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													i.e. they're created on compile-time (traverse-time) and load immediately instead of waiting for roam to load.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													and to update, we re-run the roam-traverse-graph, & re-generate the html
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											#[[(hidden) KZtXmbjhp]] thus becomes a hosting platform for notes, with sync built in. still worth, still love it & want to support the people building it. let's go.
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									re: [public page export](((ZVJFveGY0))): would be nice to, instead of necessarily generating html, to split the block string just like in #[[(hidden) 4BNn_KL7E]] template literals -- it'd thus be useful for other use cases as well, and creating html would become trivial.
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) fPYgVEDom
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) bnRNKYCX9 #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] focusing on mission work - distractions at office vs focus at home, productivity observations in general
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Rqe5t7B7-
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) uIatNx-Su [[(hidden) a1_YmqrZr]] [[(hidden) sLxKPsn8H]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) tyxckulpT #[[(hidden) 0KFUUVf2H]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) YXj3UTW2c
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													[[roam-traverse-graph]] #[[(hidden) jOMmlCP4S]] - parse links that lead to private pages (need auth), have a local web server running that has a list of them, have a browser extension that listens on the server, and if a new link gets pasted in roam, in the extension ask if I authorise to create a pdf out of that page for historical reasons, and if I allow - navigate to that page, perhaps in the background, and create a pdf & add it to #[[(hidden) KZtXmbjhp]]. 💥
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) t6he3J8p0
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) jUGcRiiCl
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) h91nUWfdL #[[(hidden) ICxVMhvB4]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) oBCOQXIzq
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 4in-MowIx
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) sC2tE89Fs #[[(hidden) jOMmlCP4S]] [[(hidden) gneWzf7F3]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) PNsxGrk6P
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 4rAlqgjdj
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) CFnJlIoyB
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) _nzjSVKm9
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) nUvnb296q #[[(hidden) jOMmlCP4S]] [[(hidden) gneWzf7F3]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 8juA_RhD_
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 8yF8uU0P0
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} fix `add-missing-jsx-attribute`
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} wrap non-strings w/ `jsxExpressionContainer`
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} refactor, fix commits w/ rebase
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) DKn6CtbXy
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) fPZDoNVE6
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) 1gXG_tFoH 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 7CrNcPQYb
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) FjVnsPq92
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) gHcYaHI12
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) mDuSkcTKg
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) OKXu7NEVl
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) UK-wm9fOv #[[(hidden) KZtXmbjhp]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) iFaofOcru
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) OXwzfBEQX
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 7VR2hqfM5
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) _d1HXrG1l
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) ERqcK5VBh
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 3mFXbITLm
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) Yl5Wxejf7
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) zI2Szdj2_
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) tQV9n0bzg
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) oTm6IZynA
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) KgUOMbN7s
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 78pPYoh3e
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 7UJOCJ3lI #[[(hidden) Ci6Y_pcDl]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vA1C7jOtd
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) nj2nzROys
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) iVZEVXJni #[[(hidden) Py4a4fa73]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) N8OUF9CnF
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) qyybOMKqF
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) WxesBYDxP
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) ZjUU-mT00
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) _er_GGyD_
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) EjIjiFWKj
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) y5jIpjpj9
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) LWOgd2hoX
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) zNVKGnFWu
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (0 in 0 pages)
+			</h2>
+
+			<ol>
+
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

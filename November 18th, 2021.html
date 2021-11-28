@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>November 18th, 2021 | notes</title>
+
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		<script>
+			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+
+				function update() {
+					var msAgo  = new Date().getTime() - initialTimeMs;
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					var el = document.getElementById(id);
+
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+				};
+
+				update();
+				window.setInterval(update, 1000 * 60);
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<button onclick="goBackToAllNotes()">all notes</button>
+			<script>
+				function goBackToAllNotes() {
+					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
+				}
+			</script>
+		</nav>
+
+		<h1>
+			November 18th, 2021
+		</h1>
+
+		<small>
+			<div>
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				2021-11-18T00:16:03.184Z
+
+				<span id="ago-1" />
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				checked, re-generated & exported on:
+				<br/>
+				2021-11-28T19:20:13.956Z
+
+				<span id="ago-2" />
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1637194563184);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638127213956);
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 9l2U2lU58
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) IB2VXU20s #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) WRuDvUlgx #[[(hidden) okke3m7KB]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 8r9BmP0yA [[(hidden) pHco5hQZn]] [[(hidden) 2KsPGcAVg]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) aQzO3rZjL 
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) 2tbPOOK2N 
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) J2J59hyCO
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 1UPfSUdql
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} after finishing the jsx attribute codemod, try the styling/css stuff, and the graph stuff later
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} when jsx attribute codemod feels ready, extract into separate PRs to make easier to review (duh)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													guys, i know this, no need to be ([redacted](((gr2ab9LLR)))) about it. we don't have [[(hidden) mgTvVDjW-]], a la [[(hidden) Qb76iqf_n]], and for iteration speed i am forced into this workflow. would love to split it up as i go if we had the tooling, but we don't.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															i did indeed do the stacked diffs manually w/ the first few PRs initially - it was a nightmare to get everything updated, rebased on each other -- you end up wasting a lot of time.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) GhXhMq59I #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													also, if you're seeing a problem, please tell immediately instead of waiting out till some #[[(hidden) nUptwn4Jc]] or whatever. humans need a very fast feedback loop to improve efficiently (at least me). if you don't tell me fast, it becomes your problem, and if you later blame me because you didn't bring it up - you're kinda being ([redacted](((gr2ab9LLR)))):D
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													bottom line - i cannot read your mind. [[(hidden) LldgRLaH-]] ftw.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} maybe would be useful to have a #[[(hidden) 2b6Krhy2c]]ogress or something that i could create a query for, for the outsiders to see what's the status right now. idk though, likely to get outdated fast; maybe worth a shot..
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													hmm, maybe we're just miss-understanding of how we like to do work.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															for me, what i'm doing is actively iterating. like a startup instead of big corp. ofc it's all over the place, but it's fast & efficient - that's the whole point. later, i'll do the cleanup, and you should expect it eventually, but not until i actually do it and tell you so.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	furthermore, it is indeed good to have check-ins, especially if someone in a position like mine got stuck & would be over-engineering etc., that bad feeling when you're kinda overwhelmed but somehow don't want to ask for help. yes, this sucks and we should have counter measures to help against this, but it doesn't feel like what we're doing right now has intentions to help with this - it just doesn't.
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	thus, let me do my shit bros! it ain't the first time, ain't the first project i'm pulling this sorta thing on. and if criticising, try to think deeper and have intentions to help. also do that in the right time - don't wait, do it asap.
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Dmzxs88Tf #[[(hidden) jOMmlCP4S]] #[[(hidden) Wk9BwS_1L]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									here, could re-use the same utils for parsing imports, analyzing whole graph etc. thus, we could create a lib [[codemods]]-utils or smthn. re: lots of code in the PR? problem solved. 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Ymeg9BEcT
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] for codemods - would like to launch a mini-mission to focus on them. seems appropriate
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} (hidden) -HbxOY5Rf 
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) eNv0gZ03l
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) DW8bBfKI5
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Dwh_TqJ0T
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 8AFRH9Q4T #[[(hidden) KkaOnBs0U]] #[[(hidden) bX1DHEwK7]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) sSa9LTsvm
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) bRSBZ7DKu
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) dqvij8o-f
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 9kbZZWr-1
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) n-eibc4B8
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<h2>
+				Linked Mentions (1 in 1 page)
+			</h2>
+
+			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			July 8th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) m11jGf4uA [[(hidden) 11-18-2021]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) MTKG7rvkN
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
