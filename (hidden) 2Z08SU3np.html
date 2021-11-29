@@ -106,7 +106,7 @@
 			<div style="margin-top: 0.5rem; ">
 				checked, re-generated & exported on:
 				<br/>
-				2021-11-29T10:40:44.087Z
+				2021-11-29T23:16:40.045Z
 
 				<span id="ago-2" />
 
@@ -114,7 +114,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1632928176920);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638182444087);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638227800045);
 			</script>
 		</small>
 
@@ -126,10 +126,115 @@
 
 		<aside>
 			<h2>
-				Linked Mentions (3 in 3 pages)
+				Linked Mentions (4 in 4 pages)
 			</h2>
 
 			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```typescript
+	export type Checker<T> = {
+		(item: T): boolean;
+		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
+	};
+	```
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				the regular function overloads:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						```typescript
+			export declare function CheckerAutomatic<T = unknown>(
+				item: T //
+			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
+			boolean;
+			export declare function CheckerManual<T = unknown>(
+				A: T, //
+				B: T
+			): Order | number;
+			export type Check = typeof CheckerManual | typeof CheckerAutomatic;```
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								```typescript
+					export type FromToValueMap = {
+					    [key in ValidJsxPropertyValueAsKey]?:
+					        | ValidJsxPropertyValueAsValue
+					        | FromToValueMapModifierFn
+					        /**
+					         * otherwise, provide an array of new values.
+					         *
+					         * if array contains exactly 1 element:
+					         *   will replace the value automatically;
+					         *
+					         * else, if array contains >1 element:
+					         *   will replace the value with the 1st one from the array, and
+					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
+					         */
+					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
+					};```
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
 <li>
 	<h3>
 		<!--
