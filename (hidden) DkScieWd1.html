@@ -35,10 +35,21 @@
 		</style>
 
 		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
 			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
 
 				function update() {
-					var msAgo  = new Date().getTime() - initialTimeMs;
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
 
 					var secAgo =  msAgo / 1000;
 					var minAgo = secAgo /   60;
@@ -59,13 +70,13 @@
 
 					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
 
-					var el = document.getElementById(id);
-
-					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins" + " ago)";
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
 				};
 
 				update();
-				window.setInterval(update, 1000 * 60);
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
 			}
 		</script>
 		<!--
@@ -104,24 +115,25 @@
 			<div style="margin-top: 0.5rem; ">
 				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
 				<br/>
-				2021-10-30T13:30:42.145Z
-
-				<span id="ago-1" />
+				<span>2021-10-30T13:30:42.145Z</span>
+				--
+				<span id="ago-1"></span>
 
 			</div>
 
 			<div style="margin-top: 0.5rem; ">
 				checked, re-generated & exported on:
 				<br/>
-				2021-11-30T02:38:47.093Z
-
-				<span id="ago-2" />
+				<span>2021-11-30T03:10:56.279Z</span>
+				--
+				<span id="ago-2"></span>
 
 			</div>
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635600642145);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638239927093);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638241856279);
+
 			</script>
 		</small>
 
