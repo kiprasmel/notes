@@ -106,7 +106,7 @@
 			<div style="margin-top: 0.5rem; ">
 				checked, re-generated & exported on:
 				<br/>
-				2021-11-29T23:34:49.044Z
+				2021-11-30T00:10:41.933Z
 
 				<span id="ago-2" />
 
@@ -114,7 +114,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1634935816898);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638228889044);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638231041933);
 			</script>
 		</small>
 
@@ -377,6 +377,7 @@
 							<li></li>
 						</ul>
 					</li>
+					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
 								2. this shouldn't be necessary, but just in case, let's pull the latest changes of your own branch:
@@ -397,6 +398,7 @@
 							</li>
 						</ul>
 					</li>
+					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
 								3. since we want to rebase on top of the latest changes of master, we need to update our local git repo first:
@@ -411,6 +413,7 @@
 							</li>
 						</ul>
 					</li>
+					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
 								4. if all goes well, we can start the procedure
@@ -435,8 +438,10 @@
 									</li>
 								</ul>
 							</li>
+							<li></li>
 						</ul>
 					</li>
+					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
 								5. ideally, there are no conflicts, the rebase completes successfully and you can move on to the [next step](((q8jggl2cV))).
@@ -534,11 +539,7 @@
 											</li>
 										</ul>
 									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												you'll now need to push the new history of commits to the repo (currently it's only local).
-										</div>
-									</li>
+									<li></li>
 								</ul>
 							</li>
 							<li></li>
@@ -547,7 +548,72 @@
 					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
-								good to remember:
+								7. you'll now need to push the new history of commits to the repo (currently it's only local).
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										since we overwrote history, a regular `git push` won't do (you can try). you'll need to force it with `-f` or `--force`:
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										```shell
+							git push -f
+							```
+								</div>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								8. done. check the repo & verify everything looks good.
+						</div>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								9. something went wrong? yay, learning time!
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										`git reflog` is your friend:
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												https://git-scm.com/docs/git-reflog
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										glhf. if you're a newbie w/ this stuff, consider copying the `.git/` folder outside the repo `../` in case you need to start from scratch.
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												```shell
+									cp .git/ ../```
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										talking w/ an experienced colleague / friend also helps.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								10. good to remember:
 						</div>
 						<ul>
 							<li>
