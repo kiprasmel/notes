@@ -3,10 +3,25 @@
 	<head>
 		<title>(hidden) 4BNn_KL7E | notes</title>
 
-		
 		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
 		<script>
-			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
 		</script>
 
 
@@ -92,12 +107,29 @@
 			<!--
 				TODO "in graphName"
 			-->
-			<button onclick="goBackToAllNotes()">all notes</button>
-			<script>
-				function goBackToAllNotes() {
-					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
-				}
-			</script>
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
 		</nav>
 
 		<h1>
@@ -152,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T01:26:35.352Z</span>
+				<span>2021-12-01T11:49:04.114Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -160,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1630929422284);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638321995352);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638359344114);
 
 			</script>
 		</small>

@@ -3,10 +3,25 @@
 	<head>
 		<title>DONE | notes</title>
 
-		
 		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
 		<script>
-			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
 		</script>
 
 
@@ -92,12 +107,29 @@
 			<!--
 				TODO "in graphName"
 			-->
-			<button onclick="goBackToAllNotes()">all notes</button>
-			<script>
-				function goBackToAllNotes() {
-					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
-				}
-			</script>
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
 		</nav>
 
 		<h1>
@@ -120,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							18547
+							18563
 							</td>
 							<td>
 							(linked mentions)
@@ -129,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							18547
+							18563
 							</td>
 							<td>
 							(both)
@@ -152,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T01:26:34.891Z</span>
+				<span>2021-12-01T11:49:03.798Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -160,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1622148738533);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638321994891);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638359343798);
 
 			</script>
 		</small>
@@ -173,10 +205,57 @@
 
 		<aside>
 			<h2>
-				Linked Mentions (359 in 79 pages)
+				Linked Mentions (360 in 80 pages)
 			</h2>
 
 			<ol>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 1st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) uS5a6uVWu 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) 81mCGosIO 
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) AMhOwJfpr [[(hidden) B7IotCdtD]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) b04ht6w-v
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
 <li>
 	<h3>
 		<!--

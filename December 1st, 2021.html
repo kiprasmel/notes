@@ -3,10 +3,25 @@
 	<head>
 		<title>December 1st, 2021 | notes</title>
 
-		
 		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
 		<script>
-			document.querySelector('link[type="image/x-icon"]').setAttribute("href", window.location.href.replace(/(\/[^\/]*$){1}/, "") + "/favicon.ico");
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
 		</script>
 
 
@@ -92,12 +107,29 @@
 			<!--
 				TODO "in graphName"
 			-->
-			<button onclick="goBackToAllNotes()">all notes</button>
-			<script>
-				function goBackToAllNotes() {
-					window.location.href = window.location.href.replace(/\/[^\/]*$/, "");
-				}
-			</script>
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
 		</nav>
 
 		<h1>
@@ -114,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">0</td>
+							<td style="text-align: right; ">229</td>
 							<td>(self)</td>
 						</tr>
 
@@ -129,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							0
+							229
 							</td>
 							<td>
 							(both)
@@ -152,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T01:26:34.910Z</span>
+				<span>2021-12-01T11:49:03.820Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -160,14 +192,186 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638309601523);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638321994910);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638359343820);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) uS5a6uVWu 
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 81mCGosIO 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) AMhOwJfpr [[(hidden) B7IotCdtD]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) b04ht6w-v
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) xAUTmyVJp
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) OQuRgdLgy #[[(hidden) AiCMrJffs]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 2u4S7IedW 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) xUEJaXZiK #[[(hidden) S-ygYfi0j]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) AF0ht5S5R 
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vRkQU3uC6
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HFWumi90z
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) sbs3V6Qt_
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 7DcxOl4tN
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									re: ((5mIASyG3B))
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} more on the different tagging using different references:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													i now think the main difference is whether:
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															a) you want your page to be a "blog", i.e. linked mentions are in the historical order (oldest first, newest last), thus reading top-to-bottom, thus encouraging you to write not inside the page, but inside the daily notes, under that pages' tag.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	good examples of this are: [[git-rebase]]; [[i just re-discovered conway's law (public)]] (if refactored into daily notes); etc
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															b) you want to use the page for tagging, i.e. to get latest updates, thus linked mentions should be as they are in #[[roam]] - bottom-to-top (newest first, oldest last)
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	a good example of this is e.g. [[codemods]], [[roam-traverse-graph]] itself
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															i think B is the preferred default, because that's how it is in #[[roam]], and then e.g. adding a tag `#make-blogpost-out-of-linked-mentions` (or whatever) would be a good way to swap the ordering of the linked mentions.
+												though, if the default stays the same as in roam, it kinda sucks because a person would be less likely to discover it.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															also gotta think about [[(hidden) bnIYiidX0]] e.g. confusion of the reader if they think the format is always the same when it's not
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									favicon:
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2F1zRfhaIvuU.psd?alt=media&token=d3b8f04a-a831-4e28-b248-8724a754c00e)
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FrRNra960Mr.png?alt=media&token=b5b90f10-09df-4538-8074-c0681a74ff0e)
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ETPWzfcyb
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) SaDjHS89M
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) SZmU7kKye
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HR5M1GoFU
+					</div>
+				</li>
 			</ul>
 		</main>
 
