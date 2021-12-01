@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.234Z</span>
+				<span>2021-12-01T19:16:11.141Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633554221966);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197234);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171141);
 
 			</script>
 		</small>
@@ -204,388 +204,64 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.DY6wPnICE";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (11 in 8 pages)
+				Linked Mentions 
+				(11
+				in
+				8
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 29th, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
 				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				```typescript
-	export type Checker<T> = {
-		(item: T): boolean;
-		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
-	};
-	```
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				the regular function overloads:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						```typescript
-			export declare function CheckerAutomatic<T = unknown>(
-				item: T //
-			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
-			boolean;
-			export declare function CheckerManual<T = unknown>(
-				A: T, //
-				B: T
-			): Order | number;
-			export type Check = typeof CheckerManual | typeof CheckerAutomatic;```
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								```typescript
-					export type FromToValueMap = {
-					    [key in ValidJsxPropertyValueAsKey]?:
-					        | ValidJsxPropertyValueAsValue
-					        | FromToValueMapModifierFn
-					        /**
-					         * otherwise, provide an array of new values.
-					         *
-					         * if array contains exactly 1 element:
-					         *   will replace the value automatically;
-					         *
-					         * else, if array contains >1 element:
-					         *   will replace the value with the 1st one from the array, and
-					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
-					         */
-					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
-					};```
-						</div>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				WAIT, #[[(hidden) DY6wPnICE]], this is like normal mode (vim) in roam. we could use this same stuff in middle as well to go thru blocks, (j / k to jump down/up), e/w & b to go forward/backward a word, some variant of them to jump till the next linked reference. 🤯
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} get response
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 16th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) 9oAwTaUa5 #[[(hidden) DY6wPnICE]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 4th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) DY6wPnICE]] okay there's a lot of stuff i still don't know. dunno if i'll be able to create the graph-aware imports & wrappers thing.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				or maybe could simplify and be not 100% accurate
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 3rd, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) jZqNG3dcZ
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 26th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) wwIm_ZI6b #[[(hidden) DY6wPnICE]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 25th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) DY6wPnICE]] conditional optional parameter
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				```javascript
-	const f = (
-		...props: ({} extends Props ? [] : [Props])
-	) => {};```
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						omg the classic array spread, just like in objects to remove a value!!! genius!! did NOT think about it myself lol
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						https://stackoverflow.com/a/52318137/9285308
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			i just re-discovered conway's law (public) (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
@@ -1739,6 +1415,382 @@
 				(hidden) fJyk6FgRO
 		</div>
 	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			i just re-discovered conway's law (public) (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) DY6wPnICE]] conditional optional parameter
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```javascript
+	const f = (
+		...props: ({} extends Props ? [] : [Props])
+	) => {};```
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						omg the classic array spread, just like in objects to remove a value!!! genius!! did NOT think about it myself lol
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://stackoverflow.com/a/52318137/9285308
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 26th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} (hidden) wwIm_ZI6b #[[(hidden) DY6wPnICE]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 3rd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) jZqNG3dcZ
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) DY6wPnICE]] okay there's a lot of stuff i still don't know. dunno if i'll be able to create the graph-aware imports & wrappers thing.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				or maybe could simplify and be not 100% accurate
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 16th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 9oAwTaUa5 #[[(hidden) DY6wPnICE]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```typescript
+	export type Checker<T> = {
+		(item: T): boolean;
+		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
+	};
+	```
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				the regular function overloads:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						```typescript
+			export declare function CheckerAutomatic<T = unknown>(
+				item: T //
+			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
+			boolean;
+			export declare function CheckerManual<T = unknown>(
+				A: T, //
+				B: T
+			): Order | number;
+			export type Check = typeof CheckerManual | typeof CheckerAutomatic;```
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								```typescript
+					export type FromToValueMap = {
+					    [key in ValidJsxPropertyValueAsKey]?:
+					        | ValidJsxPropertyValueAsValue
+					        | FromToValueMapModifierFn
+					        /**
+					         * otherwise, provide an array of new values.
+					         *
+					         * if array contains exactly 1 element:
+					         *   will replace the value automatically;
+					         *
+					         * else, if array contains >1 element:
+					         *   will replace the value with the 1st one from the array, and
+					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
+					         */
+					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
+					};```
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				WAIT, #[[(hidden) DY6wPnICE]], this is like normal mode (vim) in roam. we could use this same stuff in middle as well to go thru blocks, (j / k to jump down/up), e/w & b to go forward/backward a word, some variant of them to jump till the next linked reference. 🤯
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} get response
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>

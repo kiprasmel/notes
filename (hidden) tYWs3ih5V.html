@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.248Z</span>
+				<span>2021-12-01T19:16:11.151Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1625350787649);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197248);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171151);
 
 			</script>
 		</small>
@@ -204,17 +204,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.tYWs3ih5V";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (9 in 8 pages)
+				Linked Mentions 
+				(9
+				in
+				8
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			November 7th, 2021 (1)
+			July 3rd, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -231,7 +283,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) 0Vt71RvqE [[(hidden) tYWs3ih5V]] #[[(hidden) TZ1zy1H0A]]
+				(hidden) glw0g06WX #[[(hidden) tYWs3ih5V]]
 			</div>
 			<!--
 			</span>
@@ -239,425 +291,50 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) gIt7W-4As
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 31st, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) A_4uF2Qfl #[[(hidden) tYWs3ih5V]] #[[(hidden) WzAlsVyHJ]] #[[(hidden) Z8_JVpemm]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) t_DosA4XC
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) E_o18PGlY #[[(hidden) _sW66DmMa]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) qGSdQsi7M
+				(hidden) LJOD0dYLc
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) yYwqQjnUp
+						(hidden) 6g_-SijkR
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) NMXrccZp1 [[(hidden) NbrSsXsyZ]] [[(hidden) h8_DkBmJj]] [[(hidden) QCBjDODc8]] [[(hidden) uPYKVYu7L]]
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) 7c-LfSxUU
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) 2lRbRzZx5 #[[(hidden) S-ygYfi0j]] #[[(hidden) bqn786OaX]]
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) xbijeAVXp [[(hidden) W8eEZ5ZDT]]
-										</div>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) sjatk8IIC
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) GRIjuy05q
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) YMffjHOh3 #[[(hidden) S-ygYfi0j]] [[(hidden) GNJ7dOHoc]] [[(hidden) 9PtTK77zT]]
-										</div>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} (hidden) Nzvj0Yiqm #[[(hidden) _sW66DmMa]]
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) Cdl2UKvRt
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} (hidden) gvX6xx2zr #[[(hidden) _sW66DmMa]]
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) nv6n5HjrS
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) fYDE1ecXs
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) FsULIwlGl [[(hidden) 8IFwlgHPa]] [[(hidden) h1ICmcHD-]] #[[(hidden) aQw_Q_pev]] #[[(hidden) bqn786OaX]]
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) td34iW4-v
+								(hidden) WjX55xI4B
 						</div>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) suI8dJGw5
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) L89BfWVXS
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 7th, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) 5f1MvufPd [[(hidden) tYWs3ih5V]] [[(hidden) lnRqvu9Wj]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) kbmGVDV4o
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 78k-nmNSg
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) TiRTLm6zo #[[(hidden) aQw_Q_pev]] #[[(hidden) Qkcfw_WIe]] #[[(hidden) IOHBOKDP0]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) dOdvXBtN4
+						(hidden) i2T7-G3qv
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) aS6k90Uvm #[[(hidden) aQw_Q_pev]] #[[(hidden) YEetDXq2a]] #[[(hidden) rmxV-oJpT]] #[[(hidden) 3VUNijQvX]] #[[(hidden) gxgIwkKxF]]
+								(hidden) 26roMZq4S
 						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) z4SchDyjH #[[(hidden) D1lY0CG5e]] #[[(hidden) NWcsO1fe0]] #[[(hidden) 2QCvXXmNP]] [[(hidden) YFmP5YR38]]
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) nHmPmxQ-T #[[(hidden) d_O3pQoL_]] #[[(hidden) WrABPm8Gj]] #[[(hidden) l13hpD1JO]] #[[(hidden) iCbE7UjOk]] #[[(hidden) Kx8m10YOl]] #[[(hidden) s-bG18LX9]]
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										complete side-node - [[(hidden) eralTA4O2]] - weren't humans like writing things down & shit and if they die, others can mostly recover it, right? but what happens in this digital age? e.g. very much applies to even this stuff in #[[roam]]. if I go out, and let's say there's at least some value in these notes that someone would want to recover them -- how could they do so? My passwords are in a password manager #[[(hidden) d6TFXqn6a]] - it's not even stored anywhere on the internet. my laptop is boot-#[[(hidden) Lzh0EQ6b0]], the password isn't even stored anywhere; the setup is so custom it's almost impossible for a #[[(hidden) 2pjy0WDB3]] to figure out, and if they don't know exactly what I'm using & how to search for it (e.g. #[[roam]]) - they'll _never_ find it.
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												that's one point. another is that everything is extremely fragile and could disappear at any moment.
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														if e.g. #[[roam]]'s db disappears - at least I got backups on #[[github]], but then what if both disappear (whatever issue or even #[[(hidden) Iip5F5jUA]]) or even the whole #[[(hidden) 0-T-JFzbm]] goes out? it's gunzo dunzo.
-												</div>
-												<ul>
-													<li>
-														<div style="max-width: 65ch;">
-																{{[[TODO]]}} create local cronjob to pull synced backups to local pc
-														</div>
-													</li>
-													<li>
-														<div style="max-width: 65ch;">
-																{{[[TODO]]}} store missing passwords that only I remember, and only hide the master one
-														</div>
-													</li>
-													<li>
-														<div style="max-width: 65ch;">
-																{{[[TODO]]}} create a way to auto-release / make it possible to find everything in case I'm out out.
-														</div>
-														<ul>
-															<li>
-																<div style="max-width: 65ch;">
-																		[[(hidden) uLKQ9xI2v]] & his #[[(hidden) uZbvl95xS]] token (not for speculation - for releasing info unless he's alive, meaning if dies / get's #[[(hidden) n26Vss_Pq]] - the info is automatically out - that's the default, and it does not go out only if explicitly told to, which is what becomes impossible when you're dead).
-																</div>
-																<ul>
-																	<li>
-																		<div style="max-width: 65ch;">
-																				[[(hidden) nZCofn2Uo]]
-																		</div>
-																	</li>
-																</ul>
-															</li>
-														</ul>
-													</li>
-													<li>
-														<div style="max-width: 65ch;">
-																{{[[DONE]]}} implement security measures to avoid getting your notes stolen
-														</div>
-														<ul>
-															<li>
-																<div style="max-width: 65ch;">
-																		contributed (the idea) to upstream as well:
-																</div>
-																<ul>
-																	<li>
-																		<div style="max-width: 65ch;">
-																				https://github.com/MatthieuBizien/roam-to-git/issues/102
-																		</div>
-																	</li>
-																</ul>
-															</li>
-															<li></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) LMX2QBmHG
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 1jNWPyamA
+						</div>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) o3tvySra5 #[[(hidden) tYWs3ih5V]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) 3kBcwI5iF (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) zmtUSrOxV #[[(hidden) tYWs3ih5V]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) h8_DkBmJj (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) aQVy_W-mU #[[(hidden) tYWs3ih5V]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			August 1st, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) UO3MVhDlB #[[(hidden) tYWs3ih5V]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) TxJgOas-n
+				(hidden) rHS9jbOa0
 		</div>
 	</li>
 </ul>
@@ -924,7 +601,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			July 3rd, 2021 (1)
+			August 1st, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -941,7 +618,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) glw0g06WX #[[(hidden) tYWs3ih5V]]
+				(hidden) UO3MVhDlB #[[(hidden) tYWs3ih5V]]
 			</div>
 			<!--
 			</span>
@@ -949,50 +626,425 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) LJOD0dYLc
+				(hidden) TxJgOas-n
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) h8_DkBmJj (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) aQVy_W-mU #[[(hidden) tYWs3ih5V]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) 3kBcwI5iF (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) zmtUSrOxV #[[(hidden) tYWs3ih5V]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 7th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 5f1MvufPd [[(hidden) tYWs3ih5V]] [[(hidden) lnRqvu9Wj]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) kbmGVDV4o
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 6g_-SijkR
+						(hidden) 78k-nmNSg
 				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) WjX55xI4B
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) i2T7-G3qv
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) 26roMZq4S
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) LMX2QBmHG
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) 1jNWPyamA
-						</div>
-					</li>
-				</ul>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) rHS9jbOa0
+				(hidden) TiRTLm6zo #[[(hidden) aQw_Q_pev]] #[[(hidden) Qkcfw_WIe]] #[[(hidden) IOHBOKDP0]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) dOdvXBtN4
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) aS6k90Uvm #[[(hidden) aQw_Q_pev]] #[[(hidden) YEetDXq2a]] #[[(hidden) rmxV-oJpT]] #[[(hidden) 3VUNijQvX]] #[[(hidden) gxgIwkKxF]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) z4SchDyjH #[[(hidden) D1lY0CG5e]] #[[(hidden) NWcsO1fe0]] #[[(hidden) 2QCvXXmNP]] [[(hidden) YFmP5YR38]]
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) nHmPmxQ-T #[[(hidden) d_O3pQoL_]] #[[(hidden) WrABPm8Gj]] #[[(hidden) l13hpD1JO]] #[[(hidden) iCbE7UjOk]] #[[(hidden) Kx8m10YOl]] #[[(hidden) s-bG18LX9]]
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										complete side-node - [[(hidden) eralTA4O2]] - weren't humans like writing things down & shit and if they die, others can mostly recover it, right? but what happens in this digital age? e.g. very much applies to even this stuff in #[[roam]]. if I go out, and let's say there's at least some value in these notes that someone would want to recover them -- how could they do so? My passwords are in a password manager #[[(hidden) d6TFXqn6a]] - it's not even stored anywhere on the internet. my laptop is boot-#[[(hidden) Lzh0EQ6b0]], the password isn't even stored anywhere; the setup is so custom it's almost impossible for a #[[(hidden) 2pjy0WDB3]] to figure out, and if they don't know exactly what I'm using & how to search for it (e.g. #[[roam]]) - they'll _never_ find it.
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												that's one point. another is that everything is extremely fragile and could disappear at any moment.
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														if e.g. #[[roam]]'s db disappears - at least I got backups on #[[github]], but then what if both disappear (whatever issue or even #[[(hidden) Iip5F5jUA]]) or even the whole #[[(hidden) 0-T-JFzbm]] goes out? it's gunzo dunzo.
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																{{[[TODO]]}} create local cronjob to pull synced backups to local pc
+														</div>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																{{[[TODO]]}} store missing passwords that only I remember, and only hide the master one
+														</div>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																{{[[TODO]]}} create a way to auto-release / make it possible to find everything in case I'm out out.
+														</div>
+														<ul>
+															<li>
+																<div style="max-width: 65ch;">
+																		[[(hidden) uLKQ9xI2v]] & his #[[(hidden) uZbvl95xS]] token (not for speculation - for releasing info unless he's alive, meaning if dies / get's #[[(hidden) n26Vss_Pq]] - the info is automatically out - that's the default, and it does not go out only if explicitly told to, which is what becomes impossible when you're dead).
+																</div>
+																<ul>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				[[(hidden) nZCofn2Uo]]
+																		</div>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																{{[[DONE]]}} implement security measures to avoid getting your notes stolen
+														</div>
+														<ul>
+															<li>
+																<div style="max-width: 65ch;">
+																		contributed (the idea) to upstream as well:
+																</div>
+																<ul>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				https://github.com/MatthieuBizien/roam-to-git/issues/102
+																		</div>
+																	</li>
+																</ul>
+															</li>
+															<li></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) o3tvySra5 #[[(hidden) tYWs3ih5V]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 31st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) A_4uF2Qfl #[[(hidden) tYWs3ih5V]] #[[(hidden) WzAlsVyHJ]] #[[(hidden) Z8_JVpemm]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) t_DosA4XC
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) E_o18PGlY #[[(hidden) _sW66DmMa]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) qGSdQsi7M
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) yYwqQjnUp
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) NMXrccZp1 [[(hidden) NbrSsXsyZ]] [[(hidden) h8_DkBmJj]] [[(hidden) QCBjDODc8]] [[(hidden) uPYKVYu7L]]
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 7c-LfSxUU
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) 2lRbRzZx5 #[[(hidden) S-ygYfi0j]] #[[(hidden) bqn786OaX]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) xbijeAVXp [[(hidden) W8eEZ5ZDT]]
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) sjatk8IIC
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) GRIjuy05q
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) YMffjHOh3 #[[(hidden) S-ygYfi0j]] [[(hidden) GNJ7dOHoc]] [[(hidden) 9PtTK77zT]]
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} (hidden) Nzvj0Yiqm #[[(hidden) _sW66DmMa]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) Cdl2UKvRt
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} (hidden) gvX6xx2zr #[[(hidden) _sW66DmMa]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) nv6n5HjrS
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) fYDE1ecXs
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) FsULIwlGl [[(hidden) 8IFwlgHPa]] [[(hidden) h1ICmcHD-]] #[[(hidden) aQw_Q_pev]] #[[(hidden) bqn786OaX]]
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) td34iW4-v
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) suI8dJGw5
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) L89BfWVXS
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 7th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 0Vt71RvqE [[(hidden) tYWs3ih5V]] #[[(hidden) TZ1zy1H0A]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) gIt7W-4As
 		</div>
 	</li>
 </ul>

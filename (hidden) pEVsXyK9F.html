@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.259Z</span>
+				<span>2021-12-01T19:16:11.156Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633268110860);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197259);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171156);
 
 			</script>
 		</small>
@@ -208,332 +208,64 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.pEVsXyK9F";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (7 in 3 pages)
+				Linked Mentions 
+				(7
+				in
+				3
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			i just re-discovered conway's law (public) (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
 				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				see also [[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				[[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				oh shit i just realized I've been using this naming without knowing that an actual "singularity OS" has existed, but it's not the same thing I was thinking about 
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						https://en.wikipedia.org/wiki/Singularity_%28operating_system%29
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} change the naming in my references
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} mention my version of the singularity os (or whatever I rename it to) as another example in the 1st paragraph of this page
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} the "wrapper programs" stuff & how it relates to 1) templates vs libraries, and 2) libraries that abstract stuff away (frameworks ??) vs small utility libraries
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						((Hu_tuWO5d))
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 7th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) gvkFKkbbC [[(hidden) pEVsXyK9F]] [[(hidden) e-ZEmn_qq]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) xDkpoGvg3 [[(hidden) JOedMdR6B]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) s503O3l7j
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) G8e4BuQgc
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) rhss8tfbj
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) hkWWow4nn
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) g2KqV0wvt
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) GRZbpmdGZ [[(hidden) lf_Nd8Mic]] [[(hidden) i9tU5xFDv]]
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) DsElTOJbF #[[(hidden) r6JusjQXJ]]
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) BXwY98ONV #[[(hidden) S-ygYfi0j]] #[[(hidden) iYVYjUzOg]]
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) LfIpspmlN [[(hidden) PgXF4PRau]]
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) eKkHqncWC [[(hidden) zrxhMqgMA]]
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) 3LuPqWdUL
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) Ko_QjEGrw #[[(hidden) nuQ3yVmCK]]
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) V7xCYCdD8
-										</div>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												{{[[TODO]]}} (hidden) _a9Zbu5Nl 
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										#[[roam]]
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												writing culture by definition I'm pretty sure:
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														((G1ojF97ht))
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												also:
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														((NrYGwUdvX))
-												</div>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) m6Tcmz5nX #[[(hidden) i9tU5xFDv]] #[[(hidden) ueXlwbXTQ]]
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) usxP2gqgD #[[(hidden) HeAgnbdkh]] #[[(hidden) NBM8xhRMc]] #[[(hidden) lZWuMbGgB]] #[[(hidden) CiTdoaOnT]] #[[(hidden) Qb76iqf_n]] #[[(hidden) unlH_9R0B]] #[[(hidden) 2b6Krhy2c]]
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) byJUmPjka [[(hidden) vspBtBZiw]]
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) QmQ3xpnKu
-										</div>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) hDl_M_TIj
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) 6klvKJDV2
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) PW_nHssUq [[(hidden) DNhqQDSLh]]
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) RxzH5iXpy
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) rBUh3JkhU
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) nsvnEj2L9
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) x0CiyksiI
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) 6ZPGJ00oF
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) Pz2c4zpiR
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) -jOou3yvc
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
@@ -974,6 +706,326 @@
 				(hidden) XycsL0w1m
 		</div>
 	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 7th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) gvkFKkbbC [[(hidden) pEVsXyK9F]] [[(hidden) e-ZEmn_qq]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) xDkpoGvg3 [[(hidden) JOedMdR6B]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) s503O3l7j
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) G8e4BuQgc
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) rhss8tfbj
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) hkWWow4nn
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) g2KqV0wvt
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) GRZbpmdGZ [[(hidden) lf_Nd8Mic]] [[(hidden) i9tU5xFDv]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) DsElTOJbF #[[(hidden) r6JusjQXJ]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) BXwY98ONV #[[(hidden) S-ygYfi0j]] #[[(hidden) iYVYjUzOg]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) LfIpspmlN [[(hidden) PgXF4PRau]]
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) eKkHqncWC [[(hidden) zrxhMqgMA]]
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) 3LuPqWdUL
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) Ko_QjEGrw #[[(hidden) nuQ3yVmCK]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) V7xCYCdD8
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												{{[[TODO]]}} (hidden) _a9Zbu5Nl 
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										#[[roam]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												writing culture by definition I'm pretty sure:
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														((G1ojF97ht))
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												also:
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														((NrYGwUdvX))
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) m6Tcmz5nX #[[(hidden) i9tU5xFDv]] #[[(hidden) ueXlwbXTQ]]
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) usxP2gqgD #[[(hidden) HeAgnbdkh]] #[[(hidden) NBM8xhRMc]] #[[(hidden) lZWuMbGgB]] #[[(hidden) CiTdoaOnT]] #[[(hidden) Qb76iqf_n]] #[[(hidden) unlH_9R0B]] #[[(hidden) 2b6Krhy2c]]
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) byJUmPjka [[(hidden) vspBtBZiw]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) QmQ3xpnKu
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) hDl_M_TIj
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) 6klvKJDV2
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) PW_nHssUq [[(hidden) DNhqQDSLh]]
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) RxzH5iXpy
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) rBUh3JkhU
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) nsvnEj2L9
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) x0CiyksiI
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 6ZPGJ00oF
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) Pz2c4zpiR
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) -jOou3yvc
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			i just re-discovered conway's law (public) (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				see also [[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				oh shit i just realized I've been using this naming without knowing that an actual "singularity OS" has existed, but it's not the same thing I was thinking about 
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://en.wikipedia.org/wiki/Singularity_%28operating_system%29
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} change the naming in my references
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} mention my version of the singularity os (or whatever I rename it to) as another example in the 1st paragraph of this page
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} the "wrapper programs" stuff & how it relates to 1) templates vs libraries, and 2) libraries that abstract stuff away (frameworks ??) vs small utility libraries
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						((Hu_tuWO5d))
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>

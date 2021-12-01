@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.284Z</span>
+				<span>2021-12-01T19:16:11.175Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633265487253);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197284);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171175);
 
 			</script>
 		</small>
@@ -204,17 +204,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.8CmlZ4Xci";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (4 in 4 pages)
+				Linked Mentions 
+				(4
+				in
+				4
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 26th, 2021 (1)
+			October 3rd, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -231,40 +283,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) 4bNkMN8OB #[[(hidden) S-ygYfi0j]] #[[(hidden) 8CmlZ4Xci]] #[[(hidden) rBJFANGQO]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			i just re-discovered conway's law (public) (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) 8CmlZ4Xci]]
+				(hidden) 8bb2u4lj0 #[[(hidden) 8CmlZ4Xci]]
 			</div>
 			<!--
 			</span>
@@ -272,52 +291,108 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				[[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
+				(hidden) OEKifvPdn #[[(hidden) R92Piq7TQ]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 9BuehfADS
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 2AoDt3yA1 #[[(hidden) 50e7-uto_]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						oh shit i just realized I've been using this naming without knowing that an actual "singularity OS" has existed, but it's not the same thing I was thinking about 
+						(hidden) GM1GeDOnV #[[(hidden) opndETXFr]] #[[(hidden) 3XVIQovjW]]
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								https://en.wikipedia.org/wiki/Singularity_%28operating_system%29
+								(hidden) c1iFl7QYA #[[(hidden) 50e7-uto_]] #[[(hidden) VgKGPjQIk]] #[[(hidden) JuVIIlNVu]] #[[(hidden) fcLOlXhTG]]
 						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[(hidden) 50e7-uto_]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] #[[(hidden) jNm112irj]]
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) qqDJOBxau
+								</div>
+							</li>
+						</ul>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								{{[[TODO]]}} change the naming in my references
+								(hidden) DGMT-Aiys
 						</div>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} mention my version of the singularity os (or whatever I rename it to) as another example in the 1st paragraph of this page
+						(hidden) kdqcXnOHu
 				</div>
 			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} the "wrapper programs" stuff & how it relates to 1) templates vs libraries, and 2) libraries that abstract stuff away (frameworks ??) vs small utility libraries
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								((Hu_tuWO5d))
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
 		</ul>
 	</li>
-	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) -05Se8rgv #[[(hidden) D1lY0CG5e]] #[[(hidden) LAzTGMm3l]] #[[(hidden) iBGEQyoAr]] #[[(hidden) kFhD7vk_5]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 81EU2yd0B
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								thus, having it in a #[[(hidden) 4BNn_KL7E]]on (maybe yaml but meh!) format in a #[[(hidden) QNhvoR74k]] system like #[[(hidden) Wk9BwS_1L]] + having tools that can make it easy even for #[[(hidden) 2pjy0WDB3]] to use such data sources + using those data sources with note/documentation-type apps like #[[roam]] inside [[(hidden) M9nNeZMbz]], would be the best bet 🤯
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) p14059ID-
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) q8PFOzRF4 #[[(hidden) zh6ptDVmV]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) xcyLQP56F
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) I5y2XTZw9 #[[(hidden) RrmeFaG8h]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 4gtHkykGP
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) KVhfufiKC
+		</div>
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -585,7 +660,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 3rd, 2021 (1)
+			i just re-discovered conway's law (public) (1)
 		<!--
 		</span>
 		-->
@@ -602,7 +677,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) 8bb2u4lj0 #[[(hidden) 8CmlZ4Xci]]
+				#[[(hidden) 8CmlZ4Xci]]
 			</div>
 			<!--
 			</span>
@@ -610,108 +685,85 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) OEKifvPdn #[[(hidden) R92Piq7TQ]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) 9BuehfADS
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) 2AoDt3yA1 #[[(hidden) 50e7-uto_]]
+				[[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) GM1GeDOnV #[[(hidden) opndETXFr]] #[[(hidden) 3XVIQovjW]]
+						oh shit i just realized I've been using this naming without knowing that an actual "singularity OS" has existed, but it's not the same thing I was thinking about 
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) c1iFl7QYA #[[(hidden) 50e7-uto_]] #[[(hidden) VgKGPjQIk]] #[[(hidden) JuVIIlNVu]] #[[(hidden) fcLOlXhTG]]
+								https://en.wikipedia.org/wiki/Singularity_%28operating_system%29
 						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[(hidden) 50e7-uto_]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] #[[(hidden) jNm112irj]]
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) qqDJOBxau
-								</div>
-							</li>
-						</ul>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) DGMT-Aiys
+								{{[[TODO]]}} change the naming in my references
 						</div>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) kdqcXnOHu
+						{{[[TODO]]}} mention my version of the singularity os (or whatever I rename it to) as another example in the 1st paragraph of this page
 				</div>
 			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) -05Se8rgv #[[(hidden) D1lY0CG5e]] #[[(hidden) LAzTGMm3l]] #[[(hidden) iBGEQyoAr]] #[[(hidden) kFhD7vk_5]]
-		</div>
-		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 81EU2yd0B
+						{{[[TODO]]}} the "wrapper programs" stuff & how it relates to 1) templates vs libraries, and 2) libraries that abstract stuff away (frameworks ??) vs small utility libraries
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								thus, having it in a #[[(hidden) 4BNn_KL7E]]on (maybe yaml but meh!) format in a #[[(hidden) QNhvoR74k]] system like #[[(hidden) Wk9BwS_1L]] + having tools that can make it easy even for #[[(hidden) 2pjy0WDB3]] to use such data sources + using those data sources with note/documentation-type apps like #[[roam]] inside [[(hidden) M9nNeZMbz]], would be the best bet 🤯
+								{{[[TODO]]}} #[[(hidden) DY6wPnICE]] is this the actual main difference between a library and a framework? 🤯 
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								((Hu_tuWO5d))
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) p14059ID-
-				</div>
-			</li>
+			<li></li>
 		</ul>
 	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) q8PFOzRF4 #[[(hidden) zh6ptDVmV]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) xcyLQP56F
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) I5y2XTZw9 #[[(hidden) RrmeFaG8h]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 4gtHkykGP
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) KVhfufiKC
-		</div>
-	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 26th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 4bNkMN8OB #[[(hidden) S-ygYfi0j]] #[[(hidden) 8CmlZ4Xci]] #[[(hidden) rBJFANGQO]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
 </ul>
 		</li>
 	</ul>

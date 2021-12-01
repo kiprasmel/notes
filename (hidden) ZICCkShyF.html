@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.314Z</span>
+				<span>2021-12-01T19:16:11.200Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1632234681196);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197314);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171200);
 
 			</script>
 		</small>
@@ -204,17 +204,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.ZICCkShyF";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (3 in 3 pages)
+				Linked Mentions 
+				(3
+				in
+				3
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 19th, 2021 (1)
+			September 21st, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -231,13 +283,22 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) LPyMnvsqw #[[(hidden) ZICCkShyF]]
+				{{[[DONE]]}} (hidden) YhWqHBBoI #[[(hidden) am3yXiEPh]] #[[(hidden) ZICCkShyF]] #[[(hidden) bWZPrHq8o]]
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) bfA4kga2v
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) FbYWc0oqe 
+		</div>
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -308,7 +369,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			September 21st, 2021 (1)
+			October 19th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -325,22 +386,13 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) YhWqHBBoI #[[(hidden) am3yXiEPh]] #[[(hidden) ZICCkShyF]] #[[(hidden) bWZPrHq8o]]
+				(hidden) LPyMnvsqw #[[(hidden) ZICCkShyF]]
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) bfA4kga2v
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) FbYWc0oqe 
-		</div>
-	</li>
+
 </ul>
 		</li>
 	</ul>

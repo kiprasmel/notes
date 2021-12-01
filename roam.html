@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							2182
+							2217
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							2185
+							2220
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:16.876Z</span>
+				<span>2021-12-01T19:16:10.811Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633262125210);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363196876);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386170811);
 
 			</script>
 		</small>
@@ -221,17 +221,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.KZtXmbjhp";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (29 in 14 pages)
+				Linked Mentions 
+				(31
+				in
+				14
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			December 1st, 2021 (2)
+			October 3rd, 2021 (2)
 		<!--
 		</span>
 		-->
@@ -248,9 +300,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				i think B is the preferred default, because that's how it is in #[[roam]], and then e.g. adding a tag `#make-blogpost-out-of-linked-mentions` (or whatever) would be a good way to swap the ordering of the linked mentions.
-
-though, if the default stays the same as in roam, it kinda sucks because a person would be less likely to discover it.
+				thus, having it in a #[[(hidden) 4BNn_KL7E]]on (maybe yaml but meh!) format in a #[[(hidden) QNhvoR74k]] system like #[[(hidden) Wk9BwS_1L]] + having tools that can make it easy even for #[[(hidden) 2pjy0WDB3]] to use such data sources + using those data sources with note/documentation-type apps like #[[roam]] inside [[(hidden) M9nNeZMbz]], would be the best bet 🤯
 			</div>
 			<!--
 			</span>
@@ -270,7 +320,7 @@ though, if the default stays the same as in roam, it kinda sucks because a perso
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				b) you want to use the page for tagging, i.e. to get latest updates, thus linked mentions should be as they are in #[[roam]] - bottom-to-top (newest first, oldest last)
+				tho, do we even need web3 for this? seems like a git monorepo + [[(hidden) M9nNeZMbz]] (just like in #[[roam]]) would be just fine?
 			</div>
 			<!--
 			</span>
@@ -278,7 +328,7 @@ though, if the default stays the same as in roam, it kinda sucks because a perso
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				a good example of this is e.g. [[codemods]], [[roam-traverse-graph]] itself
+				even non-devs could take a look at things if they were interested, and even contribute e.g. w/ github's `.dev` domain / pressing `.` to open the editor in their browser
 		</div>
 	</li>
 </ul>
@@ -290,7 +340,7 @@ though, if the default stays the same as in roam, it kinda sucks because a perso
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			November 29th, 2021 (5)
+			(hidden) M9nNeZMbz (1)
 		<!--
 		</span>
 		-->
@@ -307,788 +357,13 @@ though, if the default stays the same as in roam, it kinda sucks because a perso
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] in #[[roam]], i have 3 pages w/o a "create-time" - all from 2020 (~~they're the only pages i had from 2020 so perhaps they didn't it back then but not sure~~ wait nvm they are not the only ones lol)
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 2nd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 22nd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 23rd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				also missing the `:create/user` property
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} get response
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				& yet another #[[(hidden) jOMmlCP4S]] - since pages are read-only (i.e. no editing), we can have cool shortcuts that normally you'd have to use w/ modifiers in #[[roam]] - e.g. that first came to mind was opening the sidebars (right or left) - using `h` or `l` to go left & right (could use multiple times, just like in i3 / vim splits or tmux panes or smthn similar - it wraps), then ofc `j` & `k` when in left sidebar to select some page, maybe same in right sidebar, idk what in the middle
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				WAIT, #[[(hidden) DY6wPnICE]], this is like normal mode (vim) in roam. we could use this same stuff in middle as well to go thru blocks, (j / k to jump down/up), e/w & b to go forward/backward a word, some variant of them to jump till the next linked reference. 🤯
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										{{[[TODO]]}} get response
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				so maybe the choice for which marking means which behavior can be changed, or we can have exceptions, or maybe #[[roam]] can make it configurable what alias you insert, but anyhow, that's less relevant / can think of it in the future.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				or maybe you could have a config of linked references that would make the page's linked mentions auto-expanded, e.g. `#auto-expand-mentions`, and the opposite if an opposite default is chosen
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				also showed the power of #[[roam]] . He first asked if I've used #[[(hidden) 7pX0uAw-4]], and ofc i have, so i told that, but quickly mentioned of why it's annoying (grouping, labeling manually etc), and highlighted how easy it is to do things in roam hehe. i think he'll easily join:D
+				#[[roam]] et al
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
 
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 21st, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} oh shoes, pretty bad [[(hidden) I08LwGTFJ]]: the `make graph publicly readable by anyone` - we're clicking the very 1st element. turns out, [[roam]] kinda meh on this one, and it does __not__ show the currently selected item, and thus on each run of the upsync, we toggle between "this graph can be __viewed__ by anyone", and "this graph can be __edited__ by anyone"
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				of course, ideally we wouldn't rely on the order, and have some proper ID, but that didn't exist for the element, and checking for specific text -- i tried that initially, but it turned out to be a nightmare w/ puppeteer & thus i went back to the current one, w/o realising this.
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]]
-
->thinking about hextech, i think about playing league again / buying victor.
-
-i'm on linux. league of legends is not officially supported, but there are programs that make it run. i've played league on linux before.
-
-i forgot what the program was. concentrated thinking about it for a few seconds.
-
-cannot recall.
-
-might as well look up "league of legends linux" because a thought popped up and that's how i find the program in the first place
-
-start typing it in in the firefox's search field. i type fast, so i type out "league of legends" and notice auto-completions. one of them was 'mobafire', some jax guide, but i didn't notice that at the time - all i noticed was the favicon of the site. i think something connected at that point in my neuron network, and i immediatelly recalled the program i was looking for -- lutris. writing this now, i think i knew but forgot how lutris icon looks like but i think it's similar. oh yes it is.
-
-this is so interesting. it's not about this example, it's in general. can't help but think that both [[roam]], and writing itself [that roam encourages you into doing](), are strong facilitators/cultivators of this power.
-
-cc [[(hidden) IZyOytHRW]], [[(hidden) 1h9jVJvM-]]
-
----
-
-we have talked briefly the power of learning thru association w/ my great maths teacher [[(hidden) JJEYAPdym]] as well. i think that time, i brought something up, and then she mentioned about her kindergarden/pre-school days and learning some language (maybe Russian, not sure), and how the power of [[(hidden) J1KDXyojX]] helped her. thought, you cannot rely on it 100%, and i think there was a funny story about that as well. regardless, if used [[(hidden) anPyjW6ma]]ly ([[(hidden) Z3i0OsreD]]), it can be a great tool.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FMRcjRBdBtz.png?alt=media&token=62fedfe8-0ce1-4130-9175-90b6538b2d06)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FPK29RI-e9k.png?alt=media&token=9f23d002-d4a0-4bc0-83b7-303e080ef88d)
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 17th, 2021 (3)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[roam]] thus becomes a hosting platform for notes, with sync built in. still worth, still love it & want to support the people building it. let's go.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[roam]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				yo hella cool the version shit
-		</div>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				MOVING UP OR DOWN FUCK YES
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						1
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						2
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						3
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						4
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						5
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						6
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				omg sick
-		</div>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				#[[(hidden) Ci6Y_pcDl]] mode next and we're literally unstoppable
-		</div>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				[[roam-traverse-graph]] #[[(hidden) jOMmlCP4S]] - parse links that lead to private pages (need auth), have a local web server running that has a list of them, have a browser extension that listens on the server, and if a new link gets pasted in roam, in the extension ask if I authorise to create a pdf out of that page for historical reasons, and if I allow - navigate to that page, perhaps in the background, and create a pdf & add it to #[[roam]]. 💥
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 4th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} lmao report bug to #[[roam]] (no parentheses turns out bad lmao)
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 30th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				p.s. uses #[[roam]] as well - that's wassup.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 26th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				inter-connected graph of related tasks that run daily. damn, remind me of #[[roam]] hehe
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FSEUAHedPO0.png?alt=media&token=7e70cee1-d5bf-4ca1-b9fa-5548e5639669)
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 20th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[roam]]'s limit on req/min
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 17th, 2021 (3)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				full docs for #[[roam]] devs: https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} #[[roam]] #[[(hidden) I08LwGTFJ]] report:
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				hello. previously, when creating hastags, I always used a singular form (e.g. "#[[(hidden) axpRnuPvr]]") and then when I wanted to refer to multiples of that object described by the hashtag, I used "#[[(hidden) axpRnuPvr]]'s" (added 's) - to __not__ create a new hashtag.
-	but just today I realized that when I do that, now the single quote symbol and the letter s also get picked up, and a __new__ hashtag gets created -- exactly what I do __not__ want and what I tried to avoid. same with other symbols e.g. #[[(hidden) axpRnuPvr]]:
-	I am not sure if this is a new behavior that is intended, or a bug, but regardless - I do not like how it works and it messes up part of my workflow.
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} get response
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} get it fixed
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				#[[(hidden) 8Ry7rLjxM]] also:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						#[[(hidden) YHnxAcxI4]] https://twitter.com/photomatt/status/1383845988524191753
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[roam]] #[[(hidden) 2Z08SU3np]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				embedding
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				shift-click to open block outline (right sidebar)
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						from roam docs: https://roamresearch.com/#/app/help/page/80uPAx8m-
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				`roamAlphaAPI` 🤯🤯🤯 
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						full docs for #[[roam]] devs: https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
-				</div>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						going thru https://github.com/mbrock/telegroam/blob/88b28a43835565c6206f76f3427bca15b393f3d0/telegroam.js
-				</div>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						https://www.putyourleftfoot.in/introduction-to-the-roam-alpha-api
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						https://www.putyourleftfoot.in/roampagesearch
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} Pog! use #[[(hidden) UcYyhhtKw]] to search roam
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 14th, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				uh oh i just want to share a damn page bro wtf #[[roam]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[roam]] https://roam.garden/
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				uh oh i just want to share a damn page bro wtf #[[roam]]
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 9th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]] re: #[[roam]] and all the amazing discoveries w/ writing shenanigans
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				#[[(hidden) D1lY0CG5e]]om ((MO3Xhl7M3))
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				i think it was inspired & ignited by 2 things:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						1. the amount of #[[(hidden) aQw_Q_pev]] I am currently dealing with in a lot of important aspects:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								the main programming language I use (#[[(hidden) 8Ry7rLjxM]] [[(hidden) DNhqQDSLh]])
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								the company policies at my new job (#[[(hidden) 8Ry7rLjxM]] [[(hidden) PgXF4PRau]])
-						</div>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						2. the fact that I have less distractions 
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
 </ul>
 		</li>
 	</ul>
@@ -1408,7 +683,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			(hidden) M9nNeZMbz (1)
+			October 9th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -1425,13 +700,48 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				#[[roam]] et al
+				#[[(hidden) yKrt2xLFy]] re: #[[roam]] and all the amazing discoveries w/ writing shenanigans
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) D1lY0CG5e]]om ((MO3Xhl7M3))
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				i think it was inspired & ignited by 2 things:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1. the amount of #[[(hidden) aQw_Q_pev]] I am currently dealing with in a lot of important aspects:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								the main programming language I use (#[[(hidden) 8Ry7rLjxM]] [[(hidden) DNhqQDSLh]])
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								the company policies at my new job (#[[(hidden) 8Ry7rLjxM]] [[(hidden) PgXF4PRau]])
+						</div>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2. the fact that I have less distractions 
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>
@@ -1441,7 +751,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 3rd, 2021 (2)
+			October 14th, 2021 (2)
 		<!--
 		</span>
 		-->
@@ -1458,7 +768,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				thus, having it in a #[[(hidden) 4BNn_KL7E]]on (maybe yaml but meh!) format in a #[[(hidden) QNhvoR74k]] system like #[[(hidden) Wk9BwS_1L]] + having tools that can make it easy even for #[[(hidden) 2pjy0WDB3]] to use such data sources + using those data sources with note/documentation-type apps like #[[roam]] inside [[(hidden) M9nNeZMbz]], would be the best bet 🤯
+				uh oh i just want to share a damn page bro wtf #[[roam]]
 			</div>
 			<!--
 			</span>
@@ -1478,7 +788,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				tho, do we even need web3 for this? seems like a git monorepo + [[(hidden) M9nNeZMbz]] (just like in #[[roam]]) would be just fine?
+				{{[[TODO]]}} #[[roam]] https://roam.garden/
 			</div>
 			<!--
 			</span>
@@ -1486,7 +796,789 @@ we have talked briefly the power of learning thru association w/ my great maths 
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				even non-devs could take a look at things if they were interested, and even contribute e.g. w/ github's `.dev` domain / pressing `.` to open the editor in their browser
+				uh oh i just want to share a damn page bro wtf #[[roam]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 17th, 2021 (3)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				full docs for #[[roam]] devs: https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} #[[roam]] #[[(hidden) I08LwGTFJ]] report:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				hello. previously, when creating hastags, I always used a singular form (e.g. "#[[(hidden) axpRnuPvr]]") and then when I wanted to refer to multiples of that object described by the hashtag, I used "#[[(hidden) axpRnuPvr]]'s" (added 's) - to __not__ create a new hashtag.
+	but just today I realized that when I do that, now the single quote symbol and the letter s also get picked up, and a __new__ hashtag gets created -- exactly what I do __not__ want and what I tried to avoid. same with other symbols e.g. #[[(hidden) axpRnuPvr]]:
+	I am not sure if this is a new behavior that is intended, or a bug, but regardless - I do not like how it works and it messes up part of my workflow.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} get response
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} get it fixed
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) 8Ry7rLjxM]] also:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						#[[(hidden) YHnxAcxI4]] https://twitter.com/photomatt/status/1383845988524191753
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[roam]] #[[(hidden) 2Z08SU3np]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				embedding
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				shift-click to open block outline (right sidebar)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						from roam docs: https://roamresearch.com/#/app/help/page/80uPAx8m-
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				`roamAlphaAPI` 🤯🤯🤯 
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						full docs for #[[roam]] devs: https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
+				</div>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						going thru https://github.com/mbrock/telegroam/blob/88b28a43835565c6206f76f3427bca15b393f3d0/telegroam.js
+				</div>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://www.putyourleftfoot.in/introduction-to-the-roam-alpha-api
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://www.putyourleftfoot.in/roampagesearch
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} Pog! use #[[(hidden) UcYyhhtKw]] to search roam
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 20th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[roam]]'s limit on req/min
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 26th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				inter-connected graph of related tasks that run daily. damn, remind me of #[[roam]] hehe
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FSEUAHedPO0.png?alt=media&token=7e70cee1-d5bf-4ca1-b9fa-5548e5639669)
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 30th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				p.s. uses #[[roam]] as well - that's wassup.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} lmao report bug to #[[roam]] (no parentheses turns out bad lmao)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 17th, 2021 (3)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[roam]] thus becomes a hosting platform for notes, with sync built in. still worth, still love it & want to support the people building it. let's go.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[roam]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				yo hella cool the version shit
+		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				MOVING UP OR DOWN FUCK YES
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						3
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						4
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						5
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						6
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				omg sick
+		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) Ci6Y_pcDl]] mode next and we're literally unstoppable
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[roam-traverse-graph]] #[[(hidden) jOMmlCP4S]] - parse links that lead to private pages (need auth), have a local web server running that has a list of them, have a browser extension that listens on the server, and if a new link gets pasted in roam, in the extension ask if I authorise to create a pdf out of that page for historical reasons, and if I allow - navigate to that page, perhaps in the background, and create a pdf & add it to #[[roam]]. 💥
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 21st, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} oh shoes, pretty bad [[(hidden) I08LwGTFJ]]: the `make graph publicly readable by anyone` - we're clicking the very 1st element. turns out, [[roam]] kinda meh on this one, and it does __not__ show the currently selected item, and thus on each run of the upsync, we toggle between "this graph can be __viewed__ by anyone", and "this graph can be __edited__ by anyone"
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				of course, ideally we wouldn't rely on the order, and have some proper ID, but that didn't exist for the element, and checking for specific text -- i tried that initially, but it turned out to be a nightmare w/ puppeteer & thus i went back to the current one, w/o realising this.
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) yKrt2xLFy]]
+
+>thinking about hextech, i think about playing league again / buying victor.
+
+i'm on linux. league of legends is not officially supported, but there are programs that make it run. i've played league on linux before.
+
+i forgot what the program was. concentrated thinking about it for a few seconds.
+
+cannot recall.
+
+might as well look up "league of legends linux" because a thought popped up and that's how i find the program in the first place
+
+start typing it in in the firefox's search field. i type fast, so i type out "league of legends" and notice auto-completions. one of them was 'mobafire', some jax guide, but i didn't notice that at the time - all i noticed was the favicon of the site. i think something connected at that point in my neuron network, and i immediatelly recalled the program i was looking for -- lutris. writing this now, i think i knew but forgot how lutris icon looks like but i think it's similar. oh yes it is.
+
+this is so interesting. it's not about this example, it's in general. can't help but think that both [[roam]], and writing itself [that roam encourages you into doing](), are strong facilitators/cultivators of this power.
+
+cc [[(hidden) IZyOytHRW]], [[(hidden) 1h9jVJvM-]]
+
+---
+
+we have talked briefly the power of learning thru association w/ my great maths teacher [[(hidden) JJEYAPdym]] as well. i think that time, i brought something up, and then she mentioned about her kindergarden/pre-school days and learning some language (maybe Russian, not sure), and how the power of [[(hidden) J1KDXyojX]] helped her. thought, you cannot rely on it 100%, and i think there was a funny story about that as well. regardless, if used [[(hidden) anPyjW6ma]]ly ([[(hidden) Z3i0OsreD]]), it can be a great tool.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FMRcjRBdBtz.png?alt=media&token=62fedfe8-0ce1-4130-9175-90b6538b2d06)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FPK29RI-e9k.png?alt=media&token=9f23d002-d4a0-4bc0-83b7-303e080ef88d)
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (5)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] in #[[roam]], i have 3 pages w/o a "create-time" - all from 2020 (~~they're the only pages i had from 2020 so perhaps they didn't it back then but not sure~~ wait nvm they are not the only ones lol)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 2nd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 22nd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 23rd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				also missing the `:create/user` property
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} get response
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				& yet another #[[(hidden) jOMmlCP4S]] - since pages are read-only (i.e. no editing), we can have cool shortcuts that normally you'd have to use w/ modifiers in #[[roam]] - e.g. that first came to mind was opening the sidebars (right or left) - using `h` or `l` to go left & right (could use multiple times, just like in i3 / vim splits or tmux panes or smthn similar - it wraps), then ofc `j` & `k` when in left sidebar to select some page, maybe same in right sidebar, idk what in the middle
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				WAIT, #[[(hidden) DY6wPnICE]], this is like normal mode (vim) in roam. we could use this same stuff in middle as well to go thru blocks, (j / k to jump down/up), e/w & b to go forward/backward a word, some variant of them to jump till the next linked reference. 🤯
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} get response
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				so maybe the choice for which marking means which behavior can be changed, or we can have exceptions, or maybe #[[roam]] can make it configurable what alias you insert, but anyhow, that's less relevant / can think of it in the future.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				or maybe you could have a config of linked references that would make the page's linked mentions auto-expanded, e.g. `#auto-expand-mentions`, and the opposite if an opposite default is chosen
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				also showed the power of #[[roam]] . He first asked if I've used #[[(hidden) 7pX0uAw-4]], and ofc i have, so i told that, but quickly mentioned of why it's annoying (grouping, labeling manually etc), and highlighted how easy it is to do things in roam hehe. i think he'll easily join:D
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 1st, 2021 (4)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} defaults to oldest-first now (opposite to #[[roam]] ), because i believe it's the way.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				lmao, same as notion vs #[[roam]] - roam already solves this; there isn't any grouping. but not all can understand
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				i think B is the preferred default, because that's how it is in #[[roam]], and then e.g. adding a tag `#make-blogpost-out-of-linked-mentions` (or whatever) would be a good way to swap the ordering of the linked mentions.
+
+though, if the default stays the same as in roam, it kinda sucks because a person would be less likely to discover it.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				b) you want to use the page for tagging, i.e. to get latest updates, thus linked mentions should be as they are in #[[roam]] - bottom-to-top (newest first, oldest last)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				a good example of this is e.g. [[codemods]], [[roam-traverse-graph]] itself
 		</div>
 	</li>
 </ul>

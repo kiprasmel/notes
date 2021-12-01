@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.268Z</span>
+				<span>2021-12-01T19:16:11.163Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1629667333650);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197268);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171163);
 
 			</script>
 		</small>
@@ -204,148 +204,64 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.I08LwGTFJ";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (6 in 4 pages)
+				Linked Mentions 
+				(6
+				in
+				4
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 27th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
 				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} fix #[[(hidden) I08LwGTFJ]] - when using the `#[[]]` tag, only parses it as `#` and not fully, and only eats the first letter, and keeps everything else uh oh 
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				e.g. in https://kiprasmel.github.io/notes/codemods.html
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 21st, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} oh shoes, pretty bad [[(hidden) I08LwGTFJ]]: the `make graph publicly readable by anyone` - we're clicking the very 1st element. turns out, [[roam]] kinda meh on this one, and it does __not__ show the currently selected item, and thus on each run of the upsync, we toggle between "this graph can be __viewed__ by anyone", and "this graph can be __edited__ by anyone"
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				of course, ideally we wouldn't rely on the order, and have some proper ID, but that didn't exist for the element, and checking for specific text -- i tried that initially, but it turned out to be a nightmare w/ puppeteer & thus i went back to the current one, w/o realising this.
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 17th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} #[[roam]] #[[(hidden) I08LwGTFJ]] report:
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				hello. previously, when creating hastags, I always used a singular form (e.g. "#[[(hidden) axpRnuPvr]]") and then when I wanted to refer to multiples of that object described by the hashtag, I used "#[[(hidden) axpRnuPvr]]'s" (added 's) - to __not__ create a new hashtag.
-	but just today I realized that when I do that, now the single quote symbol and the letter s also get picked up, and a __new__ hashtag gets created -- exactly what I do __not__ want and what I tried to avoid. same with other symbols e.g. #[[(hidden) axpRnuPvr]]:
-	I am not sure if this is a new behavior that is intended, or a bug, but regardless - I do not like how it works and it messes up part of my workflow.
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} get response
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} get it fixed
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				#[[(hidden) 8Ry7rLjxM]] also:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						#[[(hidden) YHnxAcxI4]] https://twitter.com/photomatt/status/1383845988524191753
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
@@ -436,6 +352,142 @@
 				</ul>
 			</li>
 		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 17th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} #[[roam]] #[[(hidden) I08LwGTFJ]] report:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				hello. previously, when creating hastags, I always used a singular form (e.g. "#[[(hidden) axpRnuPvr]]") and then when I wanted to refer to multiples of that object described by the hashtag, I used "#[[(hidden) axpRnuPvr]]'s" (added 's) - to __not__ create a new hashtag.
+	but just today I realized that when I do that, now the single quote symbol and the letter s also get picked up, and a __new__ hashtag gets created -- exactly what I do __not__ want and what I tried to avoid. same with other symbols e.g. #[[(hidden) axpRnuPvr]]:
+	I am not sure if this is a new behavior that is intended, or a bug, but regardless - I do not like how it works and it messes up part of my workflow.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} get response
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} get it fixed
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) 8Ry7rLjxM]] also:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						#[[(hidden) YHnxAcxI4]] https://twitter.com/photomatt/status/1383845988524191753
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 21st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} oh shoes, pretty bad [[(hidden) I08LwGTFJ]]: the `make graph publicly readable by anyone` - we're clicking the very 1st element. turns out, [[roam]] kinda meh on this one, and it does __not__ show the currently selected item, and thus on each run of the upsync, we toggle between "this graph can be __viewed__ by anyone", and "this graph can be __edited__ by anyone"
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				of course, ideally we wouldn't rely on the order, and have some proper ID, but that didn't exist for the element, and checking for specific text -- i tried that initially, but it turned out to be a nightmare w/ puppeteer & thus i went back to the current one, w/o realising this.
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 27th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} fix #[[(hidden) I08LwGTFJ]] - when using the `#[[]]` tag, only parses it as `#` and not fully, and only eats the first letter, and keeps everything else uh oh 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				e.g. in https://kiprasmel.github.io/notes/codemods.html
+		</div>
 	</li>
 </ul>
 		</li>

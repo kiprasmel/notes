@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:16.878Z</span>
+				<span>2021-12-01T19:16:10.818Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638215125103);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363196878);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386170818);
 
 			</script>
 		</small>
@@ -215,17 +215,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.9bDzYGgi2";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (12 in 10 pages)
+				Linked Mentions 
+				(12
+				in
+				10
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			November 29th, 2021 (2)
+			September 5th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -242,27 +294,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				ideally #[[typescript]] fixes this & we can use the original solution w/o having to have runtime assertions.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
+				(hidden) ILZeBuZIH #[[typescript]]
 			</div>
 			<!--
 			</span>
@@ -270,170 +302,80 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				```typescript
-	export type Checker<T> = {
-		(item: T): boolean;
-		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
-	};
-	```
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				the regular function overloads:
+				(hidden) F28wb5_W1
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						```typescript
-			export declare function CheckerAutomatic<T = unknown>(
-				item: T //
-			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
-			boolean;
-			export declare function CheckerManual<T = unknown>(
-				A: T, //
-				B: T
-			): Order | number;
-			export type Check = typeof CheckerManual | typeof CheckerAutomatic;```
+						(hidden) Ewhyfop3s
 				</div>
 			</li>
-		</ul>
-	</li>
-	<li></li>
-	<li>
-		<div style="max-width: 65ch;">
-				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
-		</div>
-		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
+						(hidden) jcE0d6Zx7
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								```typescript
-					export type FromToValueMap = {
-					    [key in ValidJsxPropertyValueAsKey]?:
-					        | ValidJsxPropertyValueAsValue
-					        | FromToValueMapModifierFn
-					        /**
-					         * otherwise, provide an array of new values.
-					         *
-					         * if array contains exactly 1 element:
-					         *   will replace the value automatically;
-					         *
-					         * else, if array contains >1 element:
-					         *   will replace the value with the 1st one from the array, and
-					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
-					         */
-					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
-					};```
+								(hidden) zIB8IZhW9
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) N0xeAqjxv
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) NXJRVQUsn
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) Hh8CCtP7e
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) aUDKmv_Bm
 						</div>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 17th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} definitely need to move to #[[typescript]] . it's getting worse w/o it
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 9th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} document #[[typescript]] typescript error:
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
 	<li>
 		<div style="max-width: 65ch;">
-				> An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				> A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.ts(1169)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				in both cases, you need to:
+				{{[[TODO]]}} (hidden) 8epKTj8FX #[[(hidden) D1lY0CG5e]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						1. convert from `interface` to `type`
+						(hidden) Ew3nnR3s9
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						2. convert from `[key: foo]: bar` to `[key in foo]: bar`
+						(hidden) WrIlW6p1q
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tVcJm9oE1
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) VUgqBeaZv
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) mWWXX4s_I
+		</div>
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -443,7 +385,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			November 4th, 2021 (1)
+			September 8th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -460,7 +402,214 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} as Marti mentioned, #[[typescript]] errors will show up when people migrate to cui5, thus we should not spend too much time on this stuff, and instead focus on the things that are both used commonly and are easy to modify.
+				(hidden) aWQJk8iPh #[[typescript]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) VlUkIqxqg
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) AmRUgLMfK
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2L2DDdOkh
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) qlOZQYs02
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2YjdDFjKm
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) sux_5rQ46
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) r3elLTfHE
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) 6V3zEI02y #[[typescript]] #[[(hidden) tZLzu9sBI]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 5I4W141Hx
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) FXhwZs5vy
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) u8Ysr1dan #[[(hidden) tZLzu9sBI]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) GB_Jec9z1
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) W0m8k8xXd
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) zq_5ZtCRe
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) R94Ot-a_P #[[(hidden) 4BNn_KL7E]] #[[(hidden) jOMmlCP4S]] #[[(hidden) Z6Wd9qbMT]] #[[(hidden) d_KJUbXie]] #[[(hidden) hzfBb4ct_]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) k9-Pa-xfc
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) XCtNR51__
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) _pYZ4nCF5
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) E8-lbH7mO #[[(hidden) bWZPrHq8o]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) LAz2sxVv4
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) Y2eLNqVT8
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 6th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} (hidden) EFEByRKoS [[(hidden) YBB858w4z]] #[[typescript]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) fbJkjZ7H5 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) HAVlnyhr- #[[typescript]]
 			</div>
 			<!--
 			</span>
@@ -598,7 +747,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			(hidden) fbJkjZ7H5 (1)
+			November 4th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -615,7 +764,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) HAVlnyhr- #[[typescript]]
+				{{[[TODO]]}} as Marti mentioned, #[[typescript]] errors will show up when people migrate to cui5, thus we should not spend too much time on this stuff, and instead focus on the things that are both used commonly and are easy to modify.
 			</div>
 			<!--
 			</span>
@@ -631,7 +780,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 6th, 2021 (1)
+			November 9th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -648,40 +797,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) EFEByRKoS [[(hidden) YBB858w4z]] #[[typescript]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 4th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) 6V3zEI02y #[[typescript]] #[[(hidden) tZLzu9sBI]]
+				{{[[TODO]]}} document #[[typescript]] typescript error:
 			</div>
 			<!--
 			</span>
@@ -689,254 +805,190 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 5I4W141Hx
+				> An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) FXhwZs5vy
+				> A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.ts(1169)
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) u8Ysr1dan #[[(hidden) tZLzu9sBI]]
+				in both cases, you need to:
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) GB_Jec9z1
+						1. convert from `interface` to `type`
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2. convert from `[key: foo]: bar` to `[key in foo]: bar`
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 17th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} definitely need to move to #[[typescript]] . it's getting worse w/o it
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				ideally #[[typescript]] fixes this & we can use the original solution w/o having to have runtime assertions.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```typescript
+	export type Checker<T> = {
+		(item: T): boolean;
+		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
+	};
+	```
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				the regular function overloads:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						```typescript
+			export declare function CheckerAutomatic<T = unknown>(
+				item: T //
+			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
+			boolean;
+			export declare function CheckerManual<T = unknown>(
+				A: T, //
+				B: T
+			): Order | number;
+			export type Check = typeof CheckerManual | typeof CheckerAutomatic;```
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) W0m8k8xXd
+								```typescript
+					export type FromToValueMap = {
+					    [key in ValidJsxPropertyValueAsKey]?:
+					        | ValidJsxPropertyValueAsValue
+					        | FromToValueMapModifierFn
+					        /**
+					         * otherwise, provide an array of new values.
+					         *
+					         * if array contains exactly 1 element:
+					         *   will replace the value automatically;
+					         *
+					         * else, if array contains >1 element:
+					         *   will replace the value with the 1st one from the array, and
+					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
+					         */
+					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
+					};```
 						</div>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) zq_5ZtCRe
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) R94Ot-a_P #[[(hidden) 4BNn_KL7E]] #[[(hidden) jOMmlCP4S]] #[[(hidden) Z6Wd9qbMT]] #[[(hidden) d_KJUbXie]] #[[(hidden) hzfBb4ct_]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) k9-Pa-xfc
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) XCtNR51__
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) _pYZ4nCF5
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) E8-lbH7mO #[[(hidden) bWZPrHq8o]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) LAz2sxVv4
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) Y2eLNqVT8
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			September 8th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) aWQJk8iPh #[[typescript]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) VlUkIqxqg
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) AmRUgLMfK
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 2L2DDdOkh
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) qlOZQYs02
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 2YjdDFjKm
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) sux_5rQ46
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) r3elLTfHE
-				</div>
-			</li>
-		</ul>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			September 5th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) ILZeBuZIH #[[typescript]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) F28wb5_W1
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) Ewhyfop3s
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) jcE0d6Zx7
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) zIB8IZhW9
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) N0xeAqjxv
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) NXJRVQUsn
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) Hh8CCtP7e
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) aUDKmv_Bm
-						</div>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) 8epKTj8FX #[[(hidden) D1lY0CG5e]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) Ew3nnR3s9
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) WrIlW6p1q
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) tVcJm9oE1
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) VUgqBeaZv
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) mWWXX4s_I
-		</div>
-	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>

@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.340Z</span>
+				<span>2021-12-01T19:16:11.220Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1624606243515);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197340);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171220);
 
 			</script>
 		</small>
@@ -204,11 +204,139 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.4IfCvFepL";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (2 in 2 pages)
+				Linked Mentions 
+				(2
+				in
+				2
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			June 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) TpVHg1uVy #[[(hidden) 4IfCvFepL]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) oCymZaFZA
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) KYFIUDtDy
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 1qDnqj1sq
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) OD01W6Zd1
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) XW_EAW8K5
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tnUM7pM5z
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) R9f-H0JpR
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) w69a1CNxe
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
 <li>
 	<h3>
 		<!--
@@ -378,82 +506,6 @@
 								</div>
 							</li>
 						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			June 25th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) TpVHg1uVy #[[(hidden) 4IfCvFepL]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) oCymZaFZA
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) KYFIUDtDy
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 1qDnqj1sq
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) OD01W6Zd1
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) XW_EAW8K5
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) tnUM7pM5z
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) R9f-H0JpR
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) w69a1CNxe
-						</div>
 					</li>
 				</ul>
 			</li>

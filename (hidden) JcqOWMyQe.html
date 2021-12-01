@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.228Z</span>
+				<span>2021-12-01T19:16:11.138Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1636639949842);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197228);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171138);
 
 			</script>
 		</small>
@@ -213,461 +213,64 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.JcqOWMyQe";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (12 in 9 pages)
+				Linked Mentions 
+				(12
+				in
+				9
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 11th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
 				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} add info to the `migration-cui4-to-cui5`
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						https://pipedrive.slack.com/archives/C02LK8Y583D/p1636643647015400
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} send msg to mission-teams thread to [[(hidden) 51Dj3zGo-]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[DONE]]}} ping [[(hidden) v8hKA88Fi]] when done to help inform them on what they can focus on vs what not to
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								prolly dont need / can edit the ((RFGxb3RUw))
-						</div>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} confluence page
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						https://pipedrive.atlassian.net/wiki/spaces/FUN/pages/2572028160/migration+info+for+CUI+consumers+migrating+from+cui4+to+cui5
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} add info that if you're migrating already, some info is still missing e.g. cui5map which i helped w/ & [[(hidden) v8hKA88Fi]]'s currently working on
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} inform team @ standup / slack
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) yq0g7qElG (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} border radius - add comment to do manual
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} parse colors from csv
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						convo:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636376552116700
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[DONE]]}} push repo to
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								https://github.com/martinrajdl/cui5map/tree/master/generate-mappings-from-csv
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								csv:
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										latest (one big spreadsheet, gotta download each .csv separately):
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												https://docs.google.com/spreadsheets/d/1OXfLPYhNQ-oRu-D4vFxe-GhQoFpJnHBsPLFwHf94ev4/edit#gid=1865925161
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										whenever we updated - inside the repo (separate .csv files!):
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												((HU5ks5Hh5))
-										</div>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} for spacing/size - get example from Martin when repo done
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} don't worry about color edge cases for now
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} per-file, not per-whole-program
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				((C9-NbYAPt))
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} for (post)css files, don't handle complex stuff like mixins, just do simple stuff
-		</div>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) L__qcvznE (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) 55Yly2mEW #[[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) IbLkgPXPH (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) oLrsN02sk [[(hidden) j-eCgnBmv]] [[(hidden) JcqOWMyQe]] [[(hidden) wxkwogKAB]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 8th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) Q39qWEUFB #[[(hidden) SZp9S9TdD]] [[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 19th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) 8QSE9naow [[(hidden) pHco5hQZn]] [[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) MhNLIImmN (3)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) betrOmabD #[[(hidden) JcqOWMyQe]] [[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) betrOmabD #[[(hidden) JcqOWMyQe]] [[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) YF4RVbk2c [[(hidden) j-eCgnBmv]] [[(hidden) JcqOWMyQe]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			(hidden) JcqOWMyQe (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) iGL8TKdUL #[[(hidden) JcqOWMyQe]] #[[(hidden) MhNLIImmN]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
@@ -1151,6 +754,455 @@
 				</ul>
 			</li>
 		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) JcqOWMyQe (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) iGL8TKdUL #[[(hidden) JcqOWMyQe]] #[[(hidden) MhNLIImmN]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) MhNLIImmN (3)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) betrOmabD #[[(hidden) JcqOWMyQe]] [[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) betrOmabD #[[(hidden) JcqOWMyQe]] [[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) YF4RVbk2c [[(hidden) j-eCgnBmv]] [[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 19th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} (hidden) 8QSE9naow [[(hidden) pHco5hQZn]] [[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 8th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} (hidden) Q39qWEUFB #[[(hidden) SZp9S9TdD]] [[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) IbLkgPXPH (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) oLrsN02sk [[(hidden) j-eCgnBmv]] [[(hidden) JcqOWMyQe]] [[(hidden) wxkwogKAB]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) L__qcvznE (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} (hidden) 55Yly2mEW #[[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			(hidden) yq0g7qElG (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} border radius - add comment to do manual
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} parse colors from csv
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						convo:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636376552116700
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} push repo to
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/martinrajdl/cui5map/tree/master/generate-mappings-from-csv
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								csv:
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										latest (one big spreadsheet, gotta download each .csv separately):
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												https://docs.google.com/spreadsheets/d/1OXfLPYhNQ-oRu-D4vFxe-GhQoFpJnHBsPLFwHf94ev4/edit#gid=1865925161
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										whenever we updated - inside the repo (separate .csv files!):
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												((HU5ks5Hh5))
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} for spacing/size - get example from Martin when repo done
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} don't worry about color edge cases for now
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} per-file, not per-whole-program
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				((C9-NbYAPt))
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} for (post)css files, don't handle complex stuff like mixins, just do simple stuff
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 11th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) JcqOWMyQe]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} add info to the `migration-cui4-to-cui5`
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.slack.com/archives/C02LK8Y583D/p1636643647015400
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} send msg to mission-teams thread to [[(hidden) 51Dj3zGo-]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} ping [[(hidden) v8hKA88Fi]] when done to help inform them on what they can focus on vs what not to
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								prolly dont need / can edit the ((RFGxb3RUw))
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} confluence page
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.atlassian.net/wiki/spaces/FUN/pages/2572028160/migration+info+for+CUI+consumers+migrating+from+cui4+to+cui5
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} add info that if you're migrating already, some info is still missing e.g. cui5map which i helped w/ & [[(hidden) v8hKA88Fi]]'s currently working on
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} inform team @ standup / slack
+		</div>
 	</li>
 </ul>
 		</li>

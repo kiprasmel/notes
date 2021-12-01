@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.299Z</span>
+				<span>2021-12-01T19:16:11.189Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1631278597619);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197299);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171189);
 
 			</script>
 		</small>
@@ -223,17 +223,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.VdFEfMFvU";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (3 in 3 pages)
+				Linked Mentions 
+				(3
+				in
+				3
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 17th, 2021 (1)
+			September 10th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -250,7 +302,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) gJB6zSs5h #[[(hidden) VdFEfMFvU]] [[(hidden) wxkwogKAB]]
+				(hidden) 06owGEINK #[[(hidden) VdFEfMFvU]]
 			</div>
 			<!--
 			</span>
@@ -258,157 +310,119 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} #[[(hidden) hMBgHmSNk]] [[(hidden) aV_gk19lU]]
+				(hidden) 7AcHT1OB7
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) EZ6TbTyqQ [[(hidden) WCJoz9AhZ]] [[(hidden) aV_gk19lU]]
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[DONE]]}} (hidden) qBQ_p3xBr 
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) aGFKboX4M
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) kJ_vko2vl
-										</div>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[DONE]]}} (hidden) EZwQ8OjK8 
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										{{[[TODO]]}} (hidden) YmpVEr2Sp 
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) WYUhXbmTy #[[(hidden) 8Ry7rLjxM]]
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										(hidden) m1VlPilQz
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) OcqnxMJx2
-										</div>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) qIuTCz9eN
-										</div>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) EftFqNdGU
-										</div>
-										<ul>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) ssl-eM6Sl
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) RYAZ-rD9p
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) o48z2hAKa
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) 5X5RbPB5S
-												</div>
-											</li>
-											<li>
-												<div style="max-width: 65ch;">
-														(hidden) -CZDLVz4N
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												(hidden) r9NsCQzEy
-										</div>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) -P9nq7a1M [[(hidden) aV_gk19lU]]
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) 5DkgxG35v
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) RB1ctbCmO #[[(hidden) EwlSYwkBW]] #[[(hidden) LhGHAYn1A]]
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) tutILGKV5
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) xivhiMh2F [[(hidden) aV_gk19lU]]
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) K99wHAiqO
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								{{[[TODO]]}} (hidden) sgRkK9jcJ 
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) VlEIdofIg
+						(hidden) Cg35-qZnz
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) z-KHyAsIl
+				(hidden) tQw3_WnXG
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) _xsfgYYAI [[(hidden) BC3_6P1lo]]
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) rpmxeWYqG
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) 8QsCUsB7s 
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) 0Ta_6RbID 
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) pX5ZVoS_P
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) pfai8x_Np 
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) NVD8xWSIN
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) vX6-UfYx0
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) BOGN5qg6E
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) s4I_Yfgr4
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) D_PFGRkbF
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 6AsjzsRF_
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} (hidden) L11wk1KAu 
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) V93RwuM9f
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) RiP-81m0z
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) nMX-PHBWS
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) wd2mGWSvJ
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) gFGAMXghb
 		</div>
 	</li>
 </ul>
@@ -922,7 +936,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			September 10th, 2021 (1)
+			October 17th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -939,7 +953,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) 06owGEINK #[[(hidden) VdFEfMFvU]]
+				(hidden) gJB6zSs5h #[[(hidden) VdFEfMFvU]] [[(hidden) wxkwogKAB]]
 			</div>
 			<!--
 			</span>
@@ -947,119 +961,157 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 7AcHT1OB7
+				{{[[TODO]]}} #[[(hidden) hMBgHmSNk]] [[(hidden) aV_gk19lU]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) Cg35-qZnz
+						{{[[TODO]]}} (hidden) EZ6TbTyqQ [[(hidden) WCJoz9AhZ]] [[(hidden) aV_gk19lU]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} (hidden) qBQ_p3xBr 
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) aGFKboX4M
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) kJ_vko2vl
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} (hidden) EZwQ8OjK8 
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} (hidden) YmpVEr2Sp 
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) WYUhXbmTy #[[(hidden) 8Ry7rLjxM]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) m1VlPilQz
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) OcqnxMJx2
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) qIuTCz9eN
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) EftFqNdGU
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) ssl-eM6Sl
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) RYAZ-rD9p
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) o48z2hAKa
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) 5X5RbPB5S
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														(hidden) -CZDLVz4N
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) r9NsCQzEy
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) -P9nq7a1M [[(hidden) aV_gk19lU]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 5DkgxG35v
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) RB1ctbCmO #[[(hidden) EwlSYwkBW]] #[[(hidden) LhGHAYn1A]]
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) tutILGKV5
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) xivhiMh2F [[(hidden) aV_gk19lU]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) K99wHAiqO
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} (hidden) sgRkK9jcJ 
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) VlEIdofIg
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) tQw3_WnXG
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) _xsfgYYAI [[(hidden) BC3_6P1lo]]
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) rpmxeWYqG
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) 8QsCUsB7s 
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) 0Ta_6RbID 
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) pX5ZVoS_P
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) pfai8x_Np 
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) NVD8xWSIN
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) vX6-UfYx0
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) BOGN5qg6E
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) s4I_Yfgr4
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) D_PFGRkbF
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) 6AsjzsRF_
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[DONE]]}} (hidden) L11wk1KAu 
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) V93RwuM9f
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) RiP-81m0z
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) nMX-PHBWS
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) wd2mGWSvJ
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) gFGAMXghb
+				(hidden) z-KHyAsIl
 		</div>
 	</li>
 </ul>

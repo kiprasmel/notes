@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.263Z</span>
+				<span>2021-12-01T19:16:11.159Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1627325781084);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197263);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171159);
 
 			</script>
 		</small>
@@ -204,17 +204,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.43srP2xlN";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (7 in 5 pages)
+				Linked Mentions 
+				(7
+				in
+				5
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			October 30th, 2021 (2)
+			May 26th, 2021 (1)
 		<!--
 		</span>
 		-->
@@ -231,7 +283,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) WHjtl2ifI #[[(hidden) 43srP2xlN]] #[[(hidden) GNVEw5Eh-]]
+				(hidden) wbmVjU5fs #[[(hidden) egocKzntT]] #[[(hidden) 43srP2xlN]]
 			</div>
 			<!--
 			</span>
@@ -239,187 +291,26 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) bxJDmIvlP
+				(hidden) NLcguKCO3
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) CnP3mbEKN
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) LBMjJ0lCu #[[(hidden) 43srP2xlN]] #[[(hidden) DkScieWd1]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) _5-UIX6bJ [[(hidden) TjQ3lIRFj]]
+				(hidden) bskl13d1z
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) UfBpr_InZ
+						(hidden) iV9mnKA0D
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						p.s. uses #[[roam]] as well - that's wassup.
+						(hidden) 3z5JlnF5x
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) 7GN2d6jJ5
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) AcTikSg5O
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) wJdKNAISI
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) JBsgAkeBe
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) YWNSkv7hc
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) WHjtl2ifI #[[(hidden) 43srP2xlN]] #[[(hidden) GNVEw5Eh-]]
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) bxJDmIvlP
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) CnP3mbEKN
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) Vc7IeftlH
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 7th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				e.g. "#[[(hidden) 35GGYpX3U]]" (esp. the first ever year - #[[(hidden) 9Twqbrvpx]] & #[[(hidden) myqZOzgq8]]), but for other projects as well (#[[(hidden) RWyP0mLVh]], #[[(hidden) eNZZAT5O_]] in the night - "extreme" productivity, or or willingness to do whatever it takes until we're done), also #[[(hidden) 43srP2xlN]] -- I lose touch here and there, but if there's some interesting topic, I dive in deep, at least try my best to.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 3rd, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) u7qiqJ_Tl #[[(hidden) 43srP2xlN]] #[[(hidden) BS9OlWGyD]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) l91esyuHc
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[(hidden) 50e7-uto_]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] #[[(hidden) jNm112irj]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
 </ul>
 		</li>
 	</ul>
@@ -583,7 +474,7 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			May 26th, 2021 (1)
+			October 3rd, 2021 (2)
 		<!--
 		</span>
 		-->
@@ -600,7 +491,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) wbmVjU5fs #[[(hidden) egocKzntT]] #[[(hidden) 43srP2xlN]]
+				(hidden) u7qiqJ_Tl #[[(hidden) 43srP2xlN]] #[[(hidden) BS9OlWGyD]]
 			</div>
 			<!--
 			</span>
@@ -608,25 +499,186 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) NLcguKCO3
+				(hidden) l91esyuHc
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[(hidden) 50e7-uto_]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] #[[(hidden) jNm112irj]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 7th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				e.g. "#[[(hidden) 35GGYpX3U]]" (esp. the first ever year - #[[(hidden) 9Twqbrvpx]] & #[[(hidden) myqZOzgq8]]), but for other projects as well (#[[(hidden) RWyP0mLVh]], #[[(hidden) eNZZAT5O_]] in the night - "extreme" productivity, or or willingness to do whatever it takes until we're done), also #[[(hidden) 43srP2xlN]] -- I lose touch here and there, but if there's some interesting topic, I dive in deep, at least try my best to.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 30th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) WHjtl2ifI #[[(hidden) 43srP2xlN]] #[[(hidden) GNVEw5Eh-]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) bxJDmIvlP
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) bskl13d1z
+				(hidden) CnP3mbEKN
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) LBMjJ0lCu #[[(hidden) 43srP2xlN]] #[[(hidden) DkScieWd1]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) _5-UIX6bJ [[(hidden) TjQ3lIRFj]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) iV9mnKA0D
+						(hidden) UfBpr_InZ
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 3z5JlnF5x
+						p.s. uses #[[roam]] as well - that's wassup.
 				</div>
 			</li>
 		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 7GN2d6jJ5
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) AcTikSg5O
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) wJdKNAISI
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) JBsgAkeBe
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) YWNSkv7hc
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) WHjtl2ifI #[[(hidden) 43srP2xlN]] #[[(hidden) GNVEw5Eh-]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) bxJDmIvlP
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) CnP3mbEKN
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) Vc7IeftlH
+		</div>
 	</li>
 </ul>
 		</li>

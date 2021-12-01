@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-01T12:53:17.183Z</span>
+				<span>2021-12-01T19:16:11.106Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1629192213433);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638363197183);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638386171106);
 
 			</script>
 		</small>
@@ -204,17 +204,69 @@
 		</main>
 
 		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.yKrt2xLFy";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
 			<h2>
-				Linked Mentions (28 in 15 pages)
+				Linked Mentions 
+				(28
+				in
+				15
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
 			</h2>
 
-			<ol>
-<li>
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				<li>
 	<h3>
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			November 29th, 2021 (2)
+			August 17th, 2021 (4)
 		<!--
 		</span>
 		-->
@@ -231,715 +283,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] in #[[roam]], i have 3 pages w/o a "create-time" - all from 2020 (~~they're the only pages i had from 2020 so perhaps they didn't it back then but not sure~~ wait nvm they are not the only ones lol)
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 2nd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 22nd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				[[October 23rd, 2020]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				also missing the `:create/user` property
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]] oh snap, just realised that even tho `Block`s & `Page`s are separated, they kinda should be one. a block has a __root__ parent, i.e. the page, but maybe the page shouldn't be separated as a different structure, and should be the same as Block, but with the `isRoot` flag set to true instead of false?
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} link
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				because when you think about it, all `Block`s can be pages as well. if you have a nested path, i.e. 3rd level block, and you click on a 2nd level block, it opens it up just like a page.
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				and the difference is that there's only 1 top-level bulletpoint, and all others are inside it. a page should implicitly have that one as well - currently it's there, but implicitly, and is not visible.
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				all those explicit 1st/top-level bulletpoints are inside yet another bulletpoint - the whole graph.
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				and, well, makes me realise that you could display the graph of not only the pages, but also all the bulletpoints inside the pages, i.e. a graph in a graph, and since blocks can reference pages & other blocks as well, it'd become very clear on which parts are referencing which
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						now that you think of it,
-				</div>
-			</li>
-		</ul>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 27th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]] why block & page separate - searching w/ `[[]]` vs `(())` & everything follows from there (linkedReferences vs linkedBlockReferences, etc etc etc)
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 21st, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]]
-
->thinking about hextech, i think about playing league again / buying victor.
-
-i'm on linux. league of legends is not officially supported, but there are programs that make it run. i've played league on linux before.
-
-i forgot what the program was. concentrated thinking about it for a few seconds.
-
-cannot recall.
-
-might as well look up "league of legends linux" because a thought popped up and that's how i find the program in the first place
-
-start typing it in in the firefox's search field. i type fast, so i type out "league of legends" and notice auto-completions. one of them was 'mobafire', some jax guide, but i didn't notice that at the time - all i noticed was the favicon of the site. i think something connected at that point in my neuron network, and i immediatelly recalled the program i was looking for -- lutris. writing this now, i think i knew but forgot how lutris icon looks like but i think it's similar. oh yes it is.
-
-this is so interesting. it's not about this example, it's in general. can't help but think that both [[roam]], and writing itself [that roam encourages you into doing](), are strong facilitators/cultivators of this power.
-
-cc [[(hidden) IZyOytHRW]], [[(hidden) 1h9jVJvM-]]
-
----
-
-we have talked briefly the power of learning thru association w/ my great maths teacher [[(hidden) JJEYAPdym]] as well. i think that time, i brought something up, and then she mentioned about her kindergarden/pre-school days and learning some language (maybe Russian, not sure), and how the power of [[(hidden) J1KDXyojX]] helped her. thought, you cannot rely on it 100%, and i think there was a funny story about that as well. regardless, if used [[(hidden) anPyjW6ma]]ly ([[(hidden) Z3i0OsreD]]), it can be a great tool.
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FMRcjRBdBtz.png?alt=media&token=62fedfe8-0ce1-4130-9175-90b6538b2d06)
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FPK29RI-e9k.png?alt=media&token=9f23d002-d4a0-4bc0-83b7-303e080ef88d)
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			November 3rd, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) jZqNG3dcZ
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 26th, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) VPTcKNuXe #[[(hidden) yKrt2xLFy]] #[[(hidden) jMSQuFyqq]] #[[(hidden) GO7OJrDDt]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) UT_2vM5ku #[[(hidden) v0H4bT6Yu]] [[(hidden) CWrKbHvGd]]
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) Ts-6sQ_JP
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) 3MARTn72b
-		</div>
-	</li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) qtdOMM0B7 #[[(hidden) yKrt2xLFy]] #[[(hidden) CVku9ynET]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 25th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) 6uKZ6p9C6 #[[(hidden) yKrt2xLFy]] #[[(hidden) 1zvQUPuRu]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 22nd, 2021 (2)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] again thinking about abstracting this thing into [[roam-traverse-graph]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				could use for:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						the [[roam-traverse-graph]] I'm currently working on which was the original idea
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						counting how much I write everyday (both number of words and bulletpoints (Blocks))
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						other kind of automations sheesh
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						would become like webpack for code bundling and adding various plugins
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-		<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]] having Page & Block separate makes sense:
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				different by design -- a Page cannot have a hashtag / linked reference inside it's title, meanwhile a Block inside it's string can.
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						need separate logic that I currently handled with the `isRoot` - for Pages need to allow making the whole thing public if any top-level block has the `publicTag`, meanwhile does not apply for Blocks.
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				becomes clear that I need 2 separate functions - `findPublicPages` and `findPublicBlocks`.
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 21st, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) YqY7uKOGp [[(hidden) S-ygYfi0j]] #[[(hidden) yKrt2xLFy]] [[(hidden) Eodgxk4z7]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) IGiYMclZH
-		</div>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 9th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				#[[(hidden) yKrt2xLFy]] re: #[[roam]] and all the amazing discoveries w/ writing shenanigans
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				#[[(hidden) D1lY0CG5e]]om ((MO3Xhl7M3))
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				i think it was inspired & ignited by 2 things:
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						1. the amount of #[[(hidden) aQw_Q_pev]] I am currently dealing with in a lot of important aspects:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								the main programming language I use (#[[(hidden) 8Ry7rLjxM]] [[(hidden) DNhqQDSLh]])
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								the company policies at my new job (#[[(hidden) 8Ry7rLjxM]] [[(hidden) PgXF4PRau]])
-						</div>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						2. the fact that I have less distractions 
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li></li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 7th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) JTQlXekJx #[[(hidden) yKrt2xLFy]] #[[(hidden) 2-9Np5D_P]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			October 5th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) 4lXqM8BZ8 #[[(hidden) yKrt2xLFy]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			September 5th, 2021 (1)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) V2X1zDu7O #[[(hidden) yKrt2xLFy]]
-			</div>
-			<!--
-			</span>
-			-->
-<ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) IvuP20HZZ
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) CH4s0N0iK
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) EDZ0vWj6t
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) q0UF1n6_j
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) ueT7HNYgF #[[(hidden) NOzSC9A5r]]
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) IZYKt1QMv
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) jVO2Z7HOV
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) LT92YhCTI
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) drg97NcpB
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) ghOjhtnv1
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) PS32_Muc_
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) kq-5lmoJb #[[(hidden) NOzSC9A5r]] #[[(hidden) HReGlGrI_]]
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								(hidden) efxEYeAPp
-						</div>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-		</li>
-	</ul>
-</li>
-<li>
-	<h3>
-		<!--
-		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
-		-->
-			August 19th, 2021 (3)
-		<!--
-		</span>
-		-->
-	</h3>
-	<ul>
-				<li>
-			<!--
-				TODO <h4> for semantics
-			-->
-
-			<!--
-			TODO add this back, once clickable.
-
-			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
-			-->
-			<div style="max-width: 65ch; ">
-				(hidden) vHRjOuMoF #[[(hidden) qy_jMc7-L]] #[[(hidden) yKrt2xLFy]]
+				(hidden) ezRAHQK-N #[[(hidden) yKrt2xLFy]]
 			</div>
 			<!--
 			</span>
@@ -959,7 +303,38 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) jULMu1Hfz #[[(hidden) yKrt2xLFy]]
+				(hidden) TLw2x38kQ #[[(hidden) yKrt2xLFy]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) W3dkmjxjd
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) f-AoB7fEs
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 8YIEdqAvr #[[(hidden) yKrt2xLFy]]
 			</div>
 			<!--
 			</span>
@@ -979,24 +354,13 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) S_Lv9yOW2 #[[(hidden) qy_jMc7-L]] #[[(hidden) yKrt2xLFy]]
+				(hidden) TgZENn_is #[[(hidden) yKrt2xLFy]]
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) lJu0lSATl
-		</div>
-		<ul>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) XrGwsegFe
-				</div>
-			</li>
-		</ul>
-	</li>
+
 </ul>
 		</li>
 	</ul>
@@ -1172,7 +536,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			August 17th, 2021 (4)
+			August 19th, 2021 (3)
 		<!--
 		</span>
 		-->
@@ -1189,7 +553,7 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) ezRAHQK-N #[[(hidden) yKrt2xLFy]]
+				(hidden) vHRjOuMoF #[[(hidden) qy_jMc7-L]] #[[(hidden) yKrt2xLFy]]
 			</div>
 			<!--
 			</span>
@@ -1209,7 +573,27 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) TLw2x38kQ #[[(hidden) yKrt2xLFy]]
+				(hidden) jULMu1Hfz #[[(hidden) yKrt2xLFy]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) S_Lv9yOW2 #[[(hidden) qy_jMc7-L]] #[[(hidden) yKrt2xLFy]]
 			</div>
 			<!--
 			</span>
@@ -1217,15 +601,463 @@ we have talked briefly the power of learning thru association w/ my great maths 
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) W3dkmjxjd
+				(hidden) lJu0lSATl
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) f-AoB7fEs
+						(hidden) XrGwsegFe
 				</div>
 			</li>
 		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 5th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) V2X1zDu7O #[[(hidden) yKrt2xLFy]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) IvuP20HZZ
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) CH4s0N0iK
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) EDZ0vWj6t
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) q0UF1n6_j
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) ueT7HNYgF #[[(hidden) NOzSC9A5r]]
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) IZYKt1QMv
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) jVO2Z7HOV
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) LT92YhCTI
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) drg97NcpB
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) ghOjhtnv1
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) PS32_Muc_
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) kq-5lmoJb #[[(hidden) NOzSC9A5r]] #[[(hidden) HReGlGrI_]]
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) efxEYeAPp
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 5th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 4lXqM8BZ8 #[[(hidden) yKrt2xLFy]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 7th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) JTQlXekJx #[[(hidden) yKrt2xLFy]] #[[(hidden) 2-9Np5D_P]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 9th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) yKrt2xLFy]] re: #[[roam]] and all the amazing discoveries w/ writing shenanigans
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				#[[(hidden) D1lY0CG5e]]om ((MO3Xhl7M3))
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				i think it was inspired & ignited by 2 things:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						1. the amount of #[[(hidden) aQw_Q_pev]] I am currently dealing with in a lot of important aspects:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								the main programming language I use (#[[(hidden) 8Ry7rLjxM]] [[(hidden) DNhqQDSLh]])
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								the company policies at my new job (#[[(hidden) 8Ry7rLjxM]] [[(hidden) PgXF4PRau]])
+						</div>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						2. the fact that I have less distractions 
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 21st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) YqY7uKOGp [[(hidden) S-ygYfi0j]] #[[(hidden) yKrt2xLFy]] [[(hidden) Eodgxk4z7]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) IGiYMclZH
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 22nd, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] again thinking about abstracting this thing into [[roam-traverse-graph]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				could use for:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						the [[roam-traverse-graph]] I'm currently working on which was the original idea
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						counting how much I write everyday (both number of words and bulletpoints (Blocks))
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						other kind of automations sheesh
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						would become like webpack for code bundling and adding various plugins
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) yKrt2xLFy]] having Page & Block separate makes sense:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				different by design -- a Page cannot have a hashtag / linked reference inside it's title, meanwhile a Block inside it's string can.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						need separate logic that I currently handled with the `isRoot` - for Pages need to allow making the whole thing public if any top-level block has the `publicTag`, meanwhile does not apply for Blocks.
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				becomes clear that I need 2 separate functions - `findPublicPages` and `findPublicBlocks`.
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 25th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 6uKZ6p9C6 #[[(hidden) yKrt2xLFy]] #[[(hidden) 1zvQUPuRu]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			October 26th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) VPTcKNuXe #[[(hidden) yKrt2xLFy]] #[[(hidden) jMSQuFyqq]] #[[(hidden) GO7OJrDDt]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) UT_2vM5ku #[[(hidden) v0H4bT6Yu]] [[(hidden) CWrKbHvGd]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) Ts-6sQ_JP
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 3MARTn72b
+		</div>
 	</li>
 </ul>
 		</li>
@@ -1240,13 +1072,202 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) 8YIEdqAvr #[[(hidden) yKrt2xLFy]]
+				(hidden) qtdOMM0B7 #[[(hidden) yKrt2xLFy]] #[[(hidden) CVku9ynET]]
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
 
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 3rd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) jZqNG3dcZ
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 21st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) yKrt2xLFy]]
+
+>thinking about hextech, i think about playing league again / buying victor.
+
+i'm on linux. league of legends is not officially supported, but there are programs that make it run. i've played league on linux before.
+
+i forgot what the program was. concentrated thinking about it for a few seconds.
+
+cannot recall.
+
+might as well look up "league of legends linux" because a thought popped up and that's how i find the program in the first place
+
+start typing it in in the firefox's search field. i type fast, so i type out "league of legends" and notice auto-completions. one of them was 'mobafire', some jax guide, but i didn't notice that at the time - all i noticed was the favicon of the site. i think something connected at that point in my neuron network, and i immediatelly recalled the program i was looking for -- lutris. writing this now, i think i knew but forgot how lutris icon looks like but i think it's similar. oh yes it is.
+
+this is so interesting. it's not about this example, it's in general. can't help but think that both [[roam]], and writing itself [that roam encourages you into doing](), are strong facilitators/cultivators of this power.
+
+cc [[(hidden) IZyOytHRW]], [[(hidden) 1h9jVJvM-]]
+
+---
+
+we have talked briefly the power of learning thru association w/ my great maths teacher [[(hidden) JJEYAPdym]] as well. i think that time, i brought something up, and then she mentioned about her kindergarden/pre-school days and learning some language (maybe Russian, not sure), and how the power of [[(hidden) J1KDXyojX]] helped her. thought, you cannot rely on it 100%, and i think there was a funny story about that as well. regardless, if used [[(hidden) anPyjW6ma]]ly ([[(hidden) Z3i0OsreD]]), it can be a great tool.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FMRcjRBdBtz.png?alt=media&token=62fedfe8-0ce1-4130-9175-90b6538b2d06)
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FPK29RI-e9k.png?alt=media&token=9f23d002-d4a0-4bc0-83b7-303e080ef88d)
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 27th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) yKrt2xLFy]] why block & page separate - searching w/ `[[]]` vs `(())` & everything follows from there (linkedReferences vs linkedBlockReferences, etc etc etc)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #[[(hidden) yKrt2xLFy]] in #[[roam]], i have 3 pages w/o a "create-time" - all from 2020 (~~they're the only pages i had from 2020 so perhaps they didn't it back then but not sure~~ wait nvm they are not the only ones lol)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 2nd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 22nd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[October 23rd, 2020]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				also missing the `:create/user` property
+		</div>
+	</li>
 </ul>
 		</li>
 		<li>
@@ -1260,13 +1281,44 @@ we have talked briefly the power of learning thru association w/ my great maths 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) TgZENn_is #[[(hidden) yKrt2xLFy]]
+				#[[(hidden) yKrt2xLFy]] oh snap, just realised that even tho `Block`s & `Page`s are separated, they kinda should be one. a block has a __root__ parent, i.e. the page, but maybe the page shouldn't be separated as a different structure, and should be the same as Block, but with the `isRoot` flag set to true instead of false?
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} link
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				because when you think about it, all `Block`s can be pages as well. if you have a nested path, i.e. 3rd level block, and you click on a 2nd level block, it opens it up just like a page.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				and the difference is that there's only 1 top-level bulletpoint, and all others are inside it. a page should implicitly have that one as well - currently it's there, but implicitly, and is not visible.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				all those explicit 1st/top-level bulletpoints are inside yet another bulletpoint - the whole graph.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				and, well, makes me realise that you could display the graph of not only the pages, but also all the bulletpoints inside the pages, i.e. a graph in a graph, and since blocks can reference pages & other blocks as well, it'd become very clear on which parts are referencing which
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						now that you think of it,
+				</div>
+			</li>
+		</ul>
+	</li>
 </ul>
 		</li>
 	</ul>
