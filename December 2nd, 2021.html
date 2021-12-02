@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 2nd, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 2nd, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">749</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							0
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							749
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-01T22:15:58.517Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-02T16:49:03.416Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1638396958517);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638463743416);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 3zQqsZXx- #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) _iOIh6dI3 #[[(hidden) vuiz_eLip]] [[(hidden) cAnl1zJ0t]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) GUWO_zgcf
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) mS4si2irU
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) I2zYZ-BIR [[(hidden) tv1zOVzED]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) sogWjF-FL
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 14SEdvpU_ [[(hidden) m4l_B-7qQ]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) wpmrQIAXi
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) Fp7Pzorro #[[(hidden) 1zvQUPuRu]]
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) oEQ1QrYzn #[[(hidden) S-ygYfi0j]]
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} (hidden) t2nw3wx_C [[(hidden) m4l_B-7qQ]]
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) jc4ib-PvA #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) mMoYSekT8 [[(hidden) r543q3lU1]]
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) tqJKAywJk
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) TaKZpf97X
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 8BFiFWuP- [[(hidden) hUdSJt3Uf]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) _mEesBZNl #[[(hidden) gpwvvVB_X]]
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) RoL9mFhhk
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) X-weTj8e9
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) ADtZMQ_Lf
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) _ERCS8-x9
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) YBTbIa5zO [[(hidden) tv1zOVzED]] #[[(hidden) gpwvvVB_X]]
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} (hidden) 20eSAUoSw 
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} (hidden) c4wiVe8S- 
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) EF9dY-bYE
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) Awq-_FHH4
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) rLjTXfTeU
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) zr0GMtNcM
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) -h8MFRQSb
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) bO3bRN_P-
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) gTm4Updha [[(hidden) QIpFrgazj]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) T7hG2ExYs [[(hidden) 01-01-2022]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} (hidden) Z6kbgHgx6 [[(hidden) B7IotCdtD]]
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) D3rCBPUlr
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) rqQ2bu__c
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) ZrxMxAZXf [[(hidden) G0cVuBbNX]] [[(hidden) YGoZH5L3r]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 8tWgG8vda
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) KXc69Mi8o [[(hidden) rdbAom0bH]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) V-pmx4276
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											re-rebasing each branch on top of each other, after every fix, is extremely annoying (instead of having a single branch)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													again, this is why i prefer having 1 branch & tracking progress in commits, and not elevating this to PRs & branches.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} but, this will be needed regardless, so a script to automate this would be ideal.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															name something like "git multi-rebase" because it should feel similar to "git rebase -i", but would integrate multiple branches.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	not sure where the correct abstraction layer is, i.e. is it branches, is it commits. need to think about it.
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			see ((-NIymXI4I))
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+												<li>
+													<div style="max-width: 65ch;">
+															have a list of branches
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	rather, a list of commits, just like in git rebase, but also w/ info about which branch they're on, and ability to resolve them
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			tho, if the direction is clear (what is based on what), then the resolving could be automatic, see next steps
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															have a command to auto rebase branches on top of each other
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	drop the duplicate commits
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	verify the + commit count and - commit count is correct (though if previous steps done correctly - shouldn't be necessary)
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															have a command to force push all branches
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															overall it should feel like you're doing a git rebase in the very last branch which has all commits.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	is it like that, and manipulating the branches (i.e. where they point to), or is it manipulating commits in each of the branches, and then rebasing each branch on top of each other
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			i think like that (A) - having my own branch where i do everything, and then just picking the points of up until when a branch starts and ends -- my workflow is uninterrupted, and [[corporate overlords]] can be happy as well.
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			or maybe i should do (B) because what if somebody modifies one of the branches (me included, lets say on a different pc)
+																	</div>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 30ZHd-9dd
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HUN7eeOm-
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) C5sQx-r_I
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 0UEhCHces
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) LAU2jZEdf [[(hidden) 2BkdIxMq-]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) UIdtkWWPK [[(hidden) iwluHr09Z]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) qCAX7kKXO
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) y6zHcbKoY
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) EP3ikAMXR
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 7GVK4QD3Z
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) j-Kh-DgvN
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) DXHO4nF3p 
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) p89Wz56iL
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 3W5S5MLMN
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) r7LQ5Xvc-
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) l-mGCtZvK
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) CMWYDgnm2
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) PxLqyoGts
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) AAIhGPwcD
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) X0NBx8Azk
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) INxuyj7f3
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-02-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages
+				)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					oldest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="oldest-first"
+				style="display: flex; flex-direction: column;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
