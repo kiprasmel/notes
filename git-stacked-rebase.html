@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							796
+							1256
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							801
+							1261
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-04T04:25:58.800Z</span>
+				<span>2021-12-04T19:09:38.863Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638574241825);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638591958800);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638644978863);
 
 			</script>
 		</small>
@@ -271,7 +271,7 @@
 
 			<h2>
 				Linked Mentions 
-				(2
+				(4
 				in
 				1
 				page)
@@ -296,13 +296,97 @@
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			December 4th, 2021 (2)
+			December 4th, 2021 (4)
 		<!--
 		</span>
 		-->
 	</h3>
 	<ul>
 				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} to handle multiple branchEnds on the same commit, we could ask the user interactively (similar to `git add --patch`)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} i think we'll need to save this info, similarly to how you have to do it manually w/ [[(hidden) zmiEcf1EP]] - to make sure that if someone else wants to edit (which almost never should be the case, unless ofc it's you yourself, just on a different device), then they'd have this protection already
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								what is a non-goal is protecting against editing one of the partial branches (one of the stacked diffs) - you should not do that, period, and, well, if someone does - too bad!
+					ofc you can get it figured out, but you should not be editing it manually.
+					perhaps then the branch name should clearly reflect it. i originally though prefixing it w/ `stack/` & then adding some more info, will see.
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				.
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} even tho it's not always necessary, it'd provide great protection to have the `.git-stacked-rebase` tracked inside the latest branch
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						e.g. if someone were to add a new branch (even you yourself, in a different device), and forgot about it - we're kinda messed up, as opposed to being able to fully recover.
+				</div>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} maybe instead of re-creating branches, we could, starting from the first one (excluding the initial one), `git reset --hard` it to the previous branch (before taking safety measures ofc ofc), and then run cherry-picks from the latest branch?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								seems like something closer to actual git rebase haha (i don't actually know but i assume and i think i've heard something similar)
+						</div>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								wait, lol, why am i misunderstanding it again myself? we're not doing anything in partial branches, we're doing everything in the latest branch, including the normal git rebase, after which we'll have an option to apply the changes into partial branches
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				the naming "boundaries" is good. i think i'll still keep the `branch-end` to make it clear, but when explaining how it works, it becomes very easy to understand when you say that the now gray lines with the branch names are boundaries, and what you can do is move commits between boundaries, in addition to doing regular git-rebase operations like squashing/fixing / re-ordering etc.
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -323,6 +407,88 @@
 		<div style="max-width: 65ch;">
 				(hidden) XGKibrhmr #[[(hidden) S-ygYfi0j]]
 		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) Wk9BwS_1L]] [[git-stacked-rebase]] #[[(hidden) DY6wPnICE]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				WHAT git has `libgit2` (in C (ofc)) & SUPPORTS BINDINGS IN OTHER LANGS & THERE'S A TON, JS INCLUDED 🤯🤯🤯
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://libgit2.org/
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/nodegit/nodegit
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										https://www.nodegit.org/
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										https://www.nodegit.org/api/
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												🤯🤯🤯 
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												it's so well done wtf
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												combined w/ the original one, it's amazing
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														https://libgit2.org/libgit2/#HEAD
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						dude why is this not common knowledge? i've never seen anyone use this. this should be made very clear somewhere like git-scm or git's own source (in their Documentation/contrib or similar guide)
+				</div>
+			</li>
+		</ul>
 	</li>
 </ul>
 		</li>
@@ -479,8 +645,14 @@
 							</li>
 						</ul>
 					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								probably would've inserted `break` in the very beginning, so that we can read the file ourselves once the user finishes editing
+						</div>
+					</li>
 				</ul>
 			</li>
+			<li></li>
 		</ul>
 	</li>
 	<li></li>
