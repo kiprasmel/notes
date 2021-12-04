@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>git-stacked-rebase | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			git-stacked-rebase
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">5</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							708
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							713
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-03T23:30:41.825Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-04T00:46:13.730Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1638574241825);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638578773730);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[public]]
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph-settings]]
+					</div>
+				</li>
+				<li></li>
+				<li>
+					<div style="max-width: 65ch;">
+							https://github.com/kiprasmel/git-stacked-rebase
+					</div>
+				</li>
+				<li></li>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[(hidden) 2b6Krhy2c]]eviously
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									git-multi-rebase
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.0yXNLSGPR";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#[[(hidden) Wk9BwS_1L]] #[[(hidden) jOMmlCP4S]] [[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				wrap git-rebase
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						```shell
+			git config --global alias.rebaseraw = rebase
+			git config --global alias.rebase = git-multi-rebase
+			# idk if it'd work, todo verify```
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				when invoked (through multi-rebase or even regular rebase):
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						idk if we should have a config like in [[(hidden) zmiEcf1EP]]. 
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								perhaps, to specify which branches depend on which.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										though, seems unnecessary, we'd only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										but, this would still be useful for safety, to make sure we don't accidentally include what we don't want
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												fact is, the whole point if wrapping git rebase is that it's likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` & `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we're doing a multi-rebase, or if we should default back to the normal git-rebase.
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} would take some safety measures?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} e.g. checking if any of the branches are not pushed to remote
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} e. g. chceking if previously a git-multi-rebase ran and wasn't applied/finished and temp branches are still there
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} etc. figure out what needs to be done
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								((EaypictfH))
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						would launch `git-rebase -i`
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								would edit the REBASE_EDIT_TODO or whatever file
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										for all sub-branches, would add `branch-end <branch-name>` command after commit that the branch is pointing at
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								would then allow the user to edit the REBASE_EDIT_TODO, just like it'd be normally done with git rebase -i
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										the user can now:
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												do the regular git rebase stuff,
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												plus they can move the `branch-end`s around
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														{{[[TODO]]}} safety measure - if user moves around 2 `branch-end`s (i.e. swaps their order), ask for explicit confirmation
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												they can create new branches w/ `new-branch-end`
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				interesting, but not quite
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/Shopify/git-chain
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				nah, but interesting they have `git_python` pkg - when i was thinking about my own version of multi-rebase, i too though this would be useful, for javascript.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} check if js has such lib
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/wsteelman/git-utilities
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				oh shit
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						reading the title of this:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://0xc0d1.com/blog/git-stack/
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						dude! what i want is stacked diffs!!
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						maybe i should rename multi-rebase to stacked-rebase?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								for initial searchability if you're in a situation similar to mine, it might be harder to find,
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								but, if you've heard about stacked diffs, maybe you'll find it even easier.
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								and, the name makes it clear very fast of what's actually going on
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						the tool itself, gh-stack, seems pretty cool, but it's github-specific, and has many things that suck about it. i want mine to be git-specific (lol), with potentially adaptors for creating new PRs, editing PR titles etc., but that's less relevant if we figure out the core functionality.
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} i also realized that `new-branch-end` (or `branch-end-new`, if `ben` is good for shortname) is a little subtle -- if you're inserting a new branch (or branches) __between 2 existing ones__ (always the case here) in the same rebase, if you e.g. have normal ordering of 1., 2., 3., etc., now you'd have to add another level, e.g. if inserting between 2. and 3., it now becomes: 1., 2.1, 2.2, 3. perhaps we don't need to modify the existing 2. into 2.1, or actually, perhaps it should be 1., 2., 3.1, 3.2, because we're taking & splitting commits from 3., not from 2. (since a number marks the __end__, __not__ the beginning.). again, how do we retain e.g. github comments here? not worth to focus on right now, but good to keep in mind.
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								obv you cannot rotate the branches on github either, because then the comments get lost / become completely irrelevant, because it's the wrong branch!
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										oh but this might still apply if you're creating new branches...
+							hmm, perhaps we should __not__ focus on the branch-end-new, and only on branch-end now.
+								</div>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				"git stacked rebase"
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://news.ycombinator.com/item?id=27305521
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								doesn't look like it
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/epage/git-stack
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								hmmm, maybe, but still not what i want (u still need to jump around branches, & i just want to chill /comfy/ in my latest branch)
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						https://github.com/ezyang/ghstack
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								lel, submits each commit as a PR. nope.
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
