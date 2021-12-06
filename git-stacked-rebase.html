@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							1256
+							1878
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							1261
+							1883
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-04T19:09:38.863Z</span>
+				<span>2021-12-06T01:51:53.950Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638574241825);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638644978863);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638755513950);
 
 			</script>
 		</small>
@@ -271,10 +271,10 @@
 
 			<h2>
 				Linked Mentions 
-				(4
+				(5
 				in
-				1
-				page)
+				2
+				pages)
 
 				<button
 					id="order-toggle"
@@ -380,7 +380,23 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				the naming "boundaries" is good. i think i'll still keep the `branch-end` to make it clear, but when explaining how it works, it becomes very easy to understand when you say that the now gray lines with the branch names are boundaries, and what you can do is move commits between boundaries, in addition to doing regular git-rebase operations like squashing/fixing / re-ordering etc.
+				the naming "boundaries" & "what's in-between them" is very good. i think i'll still keep the `branch-end` to make it clear, but when explaining how it works, it becomes very easy to understand when you say that the now gray lines with the branch names are boundaries, and what you can do is move commits between boundaries, in addition to doing regular git-rebase operations like squashing/fixing / re-ordering etc.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						aha! this is why i myself was confused and even added the `options.addNewlineAfterBranchEnd` option - it's a completely wrong way to think about it! & when you internalize the "boundaries", you're all set.
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} re: multiple branches on 1 commit - since choosing 1 would impact what later ones are available, it'd be best to have a tree (top-down or bottom-up) w the choices available & somehow navigate-able & choose-able.
 		</div>
 	</li>
 	<li></li>
@@ -799,6 +815,356 @@
 								lel, submits each commit as a PR. nope.
 						</div>
 					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 5th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} create issue @ #[[typescript]] - allow type guards, without generalizing a readonly value, thus turning it from a specific one into a union (current behavior, want to both guard __and__ have the exact type).
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						`allowedCommandAliasesFromGitRebase`
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				reading the #[[(hidden) U5k5oJ6YK]] implementation of [[git-rebase]] atm.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						...because trying to create git-rebase-todo from git-stacked-rebase's git-rebase-todo, but there's more than that file to make it work -- there's also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that's why i'm here) (needed when `git rebase --abort`).
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								abort?
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										sequencer_rollback?
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										sequencer_pick_revisions?
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								"HEAD?
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										do_recursive_merge?
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								"could not read"?
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										run_command.c | exec-cmd.c | cache.c # sane_execvp?
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										update_squash_messages?
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L94) of `sequencer.c`    💥 
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														there we have explanations for the various messages!
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L53-L170
+												</div>
+											</li>
+											<li></li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} we might as well write our variables in snake_case, will be clearer thb
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						#[[(hidden) yKrt2xLFy]] sequencer.c is huge, used in 12 commands (rather, can be used to __sequence__ any command of the available 12).
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								well actually, a few less - some builtin, some not, some tests.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										vscode's LSP working good
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										regular (live @ repo root): branch.c, log-tree.c, rebase-interactive.c, sequencer.c itself, wt-status.c (?)
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										builtin: am.c (?), commit.c, merge.c, pull.c, rebase.c, revert.c
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										t/helper: test-fast-rebase.c
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						re: ((5SYschHTB))
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} gotta handle comments
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								okay, looks like the filename is incorrect - it prints `"warning: could not read '.git/rebase-merge/head': No such file or directory"`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it's set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										did that. now we checkout into the first commit, and all files are added, what the heck?:D
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										maybe let's write into that `.git/rebase-merge/head` file even tho we can't see it?
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch's commit :D
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												i previously set `head-name` to the latest branch's commit sha, instead of the initial branch's one
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												`interactive` file missing from me
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														also `no-reschedule-failed-exec`
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														also `orig-head` (`head-name` should be the ref (`refs/heads/branch-name`), and `orig-head` - the commit of the latest branch (before rebase))
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														SHEEESH! `rebase --edit-todo` shows up & works!!!
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																 `commit --amend` also shows up, but editing it edits something wrong & my statusbar shows both rebase & ahead/behind commit counts, so something definitely wrong lmao
+														</div>
+													</li>
+													<li>
+														<div style="max-width: 65ch;">
+																do i need the `index` file as well? git-rebase-todo.backup? 
+														</div>
+														<ul>
+															<li>
+																<div style="max-width: 65ch;">
+																		git-rebase-todo.backup doesn't seem to help
+																</div>
+															</li>
+															<li>
+																<div style="max-width: 65ch;">
+																		index nope, identical gets generated
+																</div>
+															</li>
+															<li>
+																<div style="max-width: 65ch;">
+																		.todo -> .backup
+																</div>
+															</li>
+															<li>
+																<div style="max-width: 65ch;">
+																		head-name: head commit sha -> latest branch name
+																</div>
+																<ul>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				snap, i set it to initial branch's name lol
+																		</div>
+																		<ul>
+																			<li>
+																				<div style="max-width: 65ch;">
+																						ok now we at least get put into the right branch if i abort. status bar still shows -20 commits and i gotta git pull
+																				</div>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li>
+																<div style="max-width: 65ch;">
+																		ok so in regular case, status bar shows 1/21 commits, ours doesn't. `index`?
+																</div>
+																<ul>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				HEAD, ORIG_HEAD?
+																		</div>
+																		<ul>
+																			<li>
+																				<div style="max-width: 65ch;">
+																						`head` & `orig-head`
+																				</div>
+																				<ul>
+																					<li>
+																						<div style="max-width: 65ch;">
+																								SUCCESSFULLY REBASED !!!
+																						</div>
+																					</li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li>
+																<div style="max-width: 65ch;">
+																		`done`, `msgnum`, `end`
+																</div>
+																<ul>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				PROMPT WORKS!!!
+																		</div>
+																	</li>
+																	<li>
+																		<div style="max-width: 65ch;">
+																				OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), & THE REBASE WORKED !!!!!!
+																		</div>
+																		<ul>
+																			<li>
+																				<div style="max-width: 65ch;">
+																						![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
+																				</div>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li></li>
+														</ul>
+													</li>
+													<li></li>
+												</ul>
+											</li>
+											<li></li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								okay, it's gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} before rebasing, validate all commits in the partial branches are the same as in the latest branch.
+								</div>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
 				</ul>
 			</li>
 			<li></li>

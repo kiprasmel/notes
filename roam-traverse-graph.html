@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							5675
+							6977
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							5693
+							6995
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-04T19:09:38.855Z</span>
+				<span>2021-12-06T01:51:53.940Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1634942539389);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638644978855);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638755513940);
 
 			</script>
 		</small>
@@ -270,9 +270,9 @@
 
 			<h2>
 				Linked Mentions 
-				(33
+				(35
 				in
-				22
+				23
 				pages)
 
 				<button
@@ -3205,6 +3205,346 @@
 	<li>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} [[(hidden) K_zc5Rl9e]] fix urls (thus html filenames) - replace spaces with dashes `-`, keep only asciinumeric (latin letters & numbers) chars + `-_` (ez regex)
+		</div>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 5th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				Me:
+
+not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
+
+what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
+
+i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
+
+but even if you could do that now, there're 2 problems:
+
+1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
+
+2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
+and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
+
+---
+
+is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
+
+let IDs = ["b4e5a6", "d52ca6", "445a63f"]
+
+IDs.forEach((id) => {
+  // i don't remember the exact structure,
+  // i think it's something like
+  // deleteBlock({ id }) but not sure
+  window.roamAlphaAPI.deleteBlock(id)
+}
+
+see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
+
+but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
+
+the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
+
+---
+
+but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
+e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
+
+[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
+[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[roam-traverse-graph]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the "TypeScript" implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						[1] https://github.com/shaunxcode/jsedn
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						[2] https://github.com/edn-format/edn/wiki/Implementations
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						[3] https://github.com/jorinvo/edn-data
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						you can even use it to convert from/to JSON, & it's first-class as well!
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it'd be so much better because:
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								we'd get to keep the metadata e.g. public vs private page
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								we could manipulate this metadata ourselves!
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								we could "reset graph" directly from the new #[[(hidden) HIYk9LKno]] - it'd be way faster, instead of having to "reset graph" from an empty graph & then uploading the json
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								yes pls!
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} if the TS version works, update the wiki of edn
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://github.com/edn-format/edn/wiki/Implementations
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						i realized this when replying to [[(hidden) LYMrimQBb]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								https://roamresearch.slack.com/archives/CN5MK4D2M/p1638706072006400?thread_ts=1638704263.005600&cid=CN5MK4D2M
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										Ivo:
+							Is there a way to delete all blocks having a specific tag? As my graph is getting slower, I'm tempted to delete all that is [[DONE]].
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										Me:
+							not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
+							what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
+							i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
+							but even if you could do that now, there're 2 problems:
+							1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
+							2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
+							and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
+							---
+							is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
+							let IDs = ["b4e5a6", "d52ca6", "445a63f"]
+							IDs.forEach((id) => {
+							  // i don't remember the exact structure,
+							  // i think it's something like
+							  // deleteBlock({ id }) but not sure
+							  window.roamAlphaAPI.deleteBlock(id)
+							}
+							see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
+							but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
+							the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
+							---
+							but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
+							e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
+							[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
+							[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[(hidden) gneWzf7F3]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						oh idea - just use `joinWith("\n")([ "line1", "line2", ])` to make it way clearer!
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						also, now it looks like a taggedTemplateLiteral call, i.e. we could do
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								```javascript
+					joinWith("\n")`
+					  line 1.
+					  line 2.
+					  left spacing does not matter
+					  because we could just trim it?
+					```
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								oh but wait, we again have to use the `${}` calls. nope
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										```javascript
+							joinWith("\n")([
+							  "line 1",
+							  "line 2",
+							  "line 3"
+							])
+							// same would be (notice - no array):
+							joinWith("\n")(
+							  "line 1",
+							  "line 2",
+							  "line 3"
+							)
+							```
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} yep. let's do it.
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} refactor [[codemods]]
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} also `joinAllWith` or `joinWith("\n", true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} `includeFirst`, `includeLast`, `includeFirstLast` imports as 2nd arg to `joinWith`?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} or as second arg to the returned fn by `joinWith` since situational?
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										meh. f's up the overview (adds 1 more line w/ linter)
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[DONE]]}} add to 1st call (joinWith)
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} maybe allow overriding in the 2nd call?
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} allow passing in not only `string`s, but anything that has a `.toString()`
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} for starters: `number`, `symbol`
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} in general, keeping track of how much left padding we have?
 		</div>
 	</li>
 	<li></li>

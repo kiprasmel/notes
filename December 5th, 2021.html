@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 5th, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 5th, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">1395</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							0
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							1395
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-05T08:18:04.948Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-06T01:51:54.059Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1638692284948);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638755514059);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the "TypeScript" implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											[1] https://github.com/shaunxcode/jsedn
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											[2] https://github.com/edn-format/edn/wiki/Implementations
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											[3] https://github.com/jorinvo/edn-data
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											you can even use it to convert from/to JSON, & it's first-class as well!
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it'd be so much better because:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													we'd get to keep the metadata e.g. public vs private page
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													we could manipulate this metadata ourselves!
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													we could "reset graph" directly from the new #[[(hidden) HIYk9LKno]] - it'd be way faster, instead of having to "reset graph" from an empty graph & then uploading the json
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													yes pls!
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} if the TS version works, update the wiki of edn
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													https://github.com/edn-format/edn/wiki/Implementations
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											i realized this when replying to [[(hidden) LYMrimQBb]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													https://roamresearch.slack.com/archives/CN5MK4D2M/p1638706072006400?thread_ts=1638704263.005600&cid=CN5MK4D2M
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															Ivo:
+												Is there a way to delete all blocks having a specific tag? As my graph is getting slower, I'm tempted to delete all that is [[DONE]].
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															Me:
+												not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
+												what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
+												i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
+												but even if you could do that now, there're 2 problems:
+												1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
+												2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
+												and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
+												---
+												is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
+												let IDs = ["b4e5a6", "d52ca6", "445a63f"]
+												IDs.forEach((id) => {
+												  // i don't remember the exact structure,
+												  // i think it's something like
+												  // deleteBlock({ id }) but not sure
+												  window.roamAlphaAPI.deleteBlock(id)
+												}
+												see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
+												but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
+												the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
+												---
+												but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
+												e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
+												[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
+												[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[(hidden) gneWzf7F3]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											oh idea - just use `joinWith("\n")([ "line1", "line2", ])` to make it way clearer!
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											also, now it looks like a taggedTemplateLiteral call, i.e. we could do
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													```javascript
+										joinWith("\n")`
+										  line 1.
+										  line 2.
+										  left spacing does not matter
+										  because we could just trim it?
+										```
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													oh but wait, we again have to use the `${}` calls. nope
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															```javascript
+												joinWith("\n")([
+												  "line 1",
+												  "line 2",
+												  "line 3"
+												])
+												// same would be (notice - no array):
+												joinWith("\n")(
+												  "line 1",
+												  "line 2",
+												  "line 3"
+												)
+												```
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} yep. let's do it.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} refactor [[codemods]]
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} also `joinAllWith` or `joinWith("\n", true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} `includeFirst`, `includeLast`, `includeFirstLast` imports as 2nd arg to `joinWith`?
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} or as second arg to the returned fn by `joinWith` since situational?
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															meh. f's up the overview (adds 1 more line w/ linter)
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} add to 1st call (joinWith)
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} maybe allow overriding in the 2nd call?
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} allow passing in not only `string`s, but anything that has a `.toString()`
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} for starters: `number`, `symbol`
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} in general, keeping track of how much left padding we have?
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 6XEYry6oh
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} create issue @ #[[typescript]] - allow type guards, without generalizing a readonly value, thus turning it from a specific one into a union (current behavior, want to both guard __and__ have the exact type).
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											`allowedCommandAliasesFromGitRebase`
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									reading the #[[(hidden) U5k5oJ6YK]] implementation of [[git-rebase]] atm.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											...because trying to create git-rebase-todo from git-stacked-rebase's git-rebase-todo, but there's more than that file to make it work -- there's also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that's why i'm here) (needed when `git rebase --abort`).
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													abort?
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															sequencer_rollback?
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															sequencer_pick_revisions?
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													"HEAD?
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															do_recursive_merge?
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													"could not read"?
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															run_command.c | exec-cmd.c | cache.c # sane_execvp?
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															update_squash_messages?
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L94) of `sequencer.c`    💥 
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			there we have explanations for the various messages!
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L53-L170
+																	</div>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} we might as well write our variables in snake_case, will be clearer thb
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											#[[(hidden) yKrt2xLFy]] sequencer.c is huge, used in 12 commands (rather, can be used to __sequence__ any command of the available 12).
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													well actually, a few less - some builtin, some not, some tests.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															vscode's LSP working good
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															regular (live @ repo root): branch.c, log-tree.c, rebase-interactive.c, sequencer.c itself, wt-status.c (?)
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															builtin: am.c (?), commit.c, merge.c, pull.c, rebase.c, revert.c
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															t/helper: test-fast-rebase.c
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											re: ((5SYschHTB))
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} gotta handle comments
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													okay, looks like the filename is incorrect - it prints `"warning: could not read '.git/rebase-merge/head': No such file or directory"`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it's set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															did that. now we checkout into the first commit, and all files are added, what the heck?:D
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															maybe let's write into that `.git/rebase-merge/head` file even tho we can't see it?
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch's commit :D
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	i previously set `head-name` to the latest branch's commit sha, instead of the initial branch's one
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	`interactive` file missing from me
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			also `no-reschedule-failed-exec`
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			also `orig-head` (`head-name` should be the ref (`refs/heads/branch-name`), and `orig-head` - the commit of the latest branch (before rebase))
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			SHEEESH! `rebase --edit-todo` shows up & works!!!
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					 `commit --amend` also shows up, but editing it edits something wrong & my statusbar shows both rebase & ahead/behind commit counts, so something definitely wrong lmao
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					do i need the `index` file as well? git-rebase-todo.backup? 
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							git-rebase-todo.backup doesn't seem to help
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							index nope, identical gets generated
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							.todo -> .backup
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							head-name: head commit sha -> latest branch name
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									snap, i set it to initial branch's name lol
+																							</div>
+																							<ul>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											ok now we at least get put into the right branch if i abort. status bar still shows -20 commits and i gotta git pull
+																									</div>
+																								</li>
+																							</ul>
+																						</li>
+																					</ul>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							ok so in regular case, status bar shows 1/21 commits, ours doesn't. `index`?
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									HEAD, ORIG_HEAD?
+																							</div>
+																							<ul>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											`head` & `orig-head`
+																									</div>
+																									<ul>
+																										<li>
+																											<div style="max-width: 65ch;">
+																													SUCCESSFULLY REBASED !!!
+																											</div>
+																										</li>
+																									</ul>
+																								</li>
+																							</ul>
+																						</li>
+																					</ul>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							`done`, `msgnum`, `end`
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									PROMPT WORKS!!!
+																							</div>
+																						</li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), & THE REBASE WORKED !!!!!!
+																							</div>
+																							<ul>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
+																									</div>
+																								</li>
+																							</ul>
+																						</li>
+																					</ul>
+																				</li>
+																				<li></li>
+																			</ul>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													okay, it's gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} before rebasing, validate all commits in the partial branches are the same as in the latest branch.
+													</div>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) rYKCFT1Eg
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) d2uneIEPS
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) JxnfOkjVn
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 09xXLednk
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 9w9kQ-Vgu
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 46mFyd3Vy
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-05-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
