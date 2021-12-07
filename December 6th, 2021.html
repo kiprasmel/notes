@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">130</td>
+							<td style="text-align: right; ">398</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							130
+							398
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-06T13:50:32.340Z</span>
+				<span>2021-12-07T01:55:39.952Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638741601824);
-				updateAndSetIntervalToUpdateFor("ago-2", 1638798632340);
+				updateAndSetIntervalToUpdateFor("ago-2", 1638842139952);
 
 			</script>
 		</small>
@@ -266,19 +266,148 @@
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
+													{{[[TODO]]}} modify `branch-end`s after every regular run (if any of their earlier commits got changed) (currently only happens when doing `--apply`, otherwise progress lost)
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															yeah and now branches tend to get lost. ideally we have a list of them saved.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															re: progress - it's either being up-to-date w/ the latest commits, or getting it reset but receiving the new commits (one or the other restriction applies until you `--apply`)
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} solve this & have both
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} or just don't have `--apply` & make it truly native, kek
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
 													{{[[TODO]]}} checkout remote branches locally if initial run
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}}
+													{{[[TODO]]}} `-p|--push` next
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} diff viewing before
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} `branch-end-new` (should be doable - get previous commit, checkout, rebase parents on top of new branch, done)
 											</div>
 										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													our goal, fundamentally, is to what commit what partial branch points to.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} have a list of branch->commit_sha (much likst rewritten-list of commits) (similarly to how we already have a backup dir), keep it updated.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} allow comitting to share w/ other devices / even other ppl (tho 2nd not recommended)
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	if some branch name goes missing, add them to the very end and show to user that they are lost (should be pretty simple - since visibility, user can see themselves that something's wrong (tho might be less apparent if bigger change / more commits))
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} do not reset, not even rebase the latest branch. it should be the untouched one, except explicitly by the user
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	currently how im editing branches - i'm doing reset --hard, checkout, & rebase on the previous one.
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} meh! could i instead edit refs directly?
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://www.nodegit.org/api/reference/
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							updateTerminal
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							peel
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									https://www.nodegit.org/api/object/
+																							</div>
+																						</li>
+																					</ul>
+																				</li>
+																			</ul>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} do both edit & apply on the same run
+															</div>
+															<ul>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
 									</ul>
 								</li>
 								<li></li>
 							</ul>
 						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
