@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							4992
+							5861
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							4994
+							5863
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-09T20:11:29.838Z</span>
+				<span>2021-12-13T04:31:51.072Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633787543926);
-				updateAndSetIntervalToUpdateFor("ago-2", 1639080689838);
+				updateAndSetIntervalToUpdateFor("ago-2", 1639369911072);
 
 			</script>
 		</small>
@@ -252,9 +252,9 @@
 
 			<h2>
 				Linked Mentions 
-				(46
+				(47
 				in
-				35
+				36
 				pages)
 
 				<button
@@ -3854,6 +3854,304 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 		</ul>
 	</li>
 	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 10th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} finish refactoring so that i can finally start doing new stuff + to get the reviews moving
+		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} prepare for [[(hidden) 0hZvdpkVn]]
+		</div>
+		<ul>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						maybe "how codemods work - from first principles", or "how codemods & jscodeshift work - from the very basics"
+				</div>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} idk who's @ production team so just reach out to [[(hidden) 37qikbc7P]]
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} get response
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} also borrow/buy an additional adapter for the macbook (tho i could use my linux setup just as well for this)
+						</div>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} explain how a compiler (or interpreter) sees your program
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								show an example of writing some basic code in [[(hidden) eBB7dPivO]] and how the AST starts looking like
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								there are a few things at play - the parser, and then the "writer" which takes the parsed input, and produces the new output
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								...now we want to somehow modify this code. so between the parsing and the writing (when we have the parsed code in the AST form, but we haven't written it to a file yet), we want to somehow modify the AST so that when we write in to the file, it will contain our modifications
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								so you need to modify the AST.
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								you _could_ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								it's a tool that allows you to easily find ~~tokens~~ nodes, to find nodes somehow related to them (searching in general), and then to check the node's properties, and then to modify either the node's properties, or the node itself (i.e. remove it, replace it w/ a different node, move it up or down or somewhere else around), and even create new nodes.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} do a better explanation of what a token is, both conceptually and w/ an example
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} same w/ a node
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								show an example of the transformer (write something simple yourself first)
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										```javascript
+							export const parser = 'flow'
+							export default function transformer(file, api) {
+							  const j = api.jscodeshift;
+							  // would it make sense to call `src` as `ast` instead?
+							  const src = j(file.source)
+							  return src.toSource();
+							}
+							```
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												be careful to __not__ over-simplify.
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														maybe if we're fast, we can cover even the basics, but not be too boring for more experienced folks.
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														also, gotta practice so that i don't ever get confused or dont know the solution immediately so that others dont have to waste time w/ me debugging
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														{{[[TODO]]}} heh, maybe we can use actually component names? though meh, would involve more context, having simple js function w/o anything more to think about seems better
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												```javascript
+									export const parser = 'flow'
+									export default function transformer(file, api) {
+									  const j = api.jscodeshift;
+									  const ast = j(file.source)
+									  ast
+									    .find(j.FunctionDeclaration, {
+									    	id: {
+									         	name: "greeting" 
+									        }
+									  	})
+									  	.forEach(path => {
+									    	const { node } = path;
+									        console.log("node", node);
+									    	node.id.name = "sayHi";
+									  	})
+									  return ast.toSource();
+									}
+									```
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														explain why we use .find instead of filtering in the forEach - because you can chain multiple .find's and it's just easier + more efficient + becomes clearer for what you're looking for from the very beginning
+												</div>
+											</li>
+											<li></li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								after that, explain that a "codemod" is just a collection of transforms that we combine and run one after another.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										everything else is just more complexity, more advanced scenarios. but fundamentally, this is what a codemod is.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								consider - should we write a jsx transformer as well?
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										probably yes, and just mention that one can skip to the next part of the video if they aren't interested
+								</div>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								[[hindsight bias (in retrospect, it looks simpler than it actually was)]]
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										also mention that there are nuances, and to not expect everything to necessarily go smooth the first time - leave time for uncertainty:D
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												e.g. wrapping in JSXExpressionContainer
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												other challenges outside of the actual writing of the codemod - getting the "from/to" mappings if you're not familiar w/ the library, or e.g. if a designer decided them and has e.g. a spreadsheet that you'll need to parse, etc -- it's not all just writing of code, it involves other problems as well:D
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												then ofc the infra needed to run the codemods.
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														could mention [[(hidden) C5ze2tqB8]] ofc, and that's where we started, but atm we've diverged so much from them, that we have somewhat different namings & structure & style as well
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) WrCq5CZwG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) RjxKGQQrP
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) sxwZl0gqY
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								also mention that a transform should do 1 thing and do it well, and for separate things you should have separate transforms, and combine them in the codemod.
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										but also mention that if the specific thing you're doing is the same, and the only thing that differs is the data (e.g. the component's name, or the attribute's name, or the attributes value / from-to mapping), then you can abstract it and just take in a "config" that has these - thus now you 
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
 </ul>
 		</li>
 	</ul>

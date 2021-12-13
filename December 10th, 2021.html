@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 10th, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 10th, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">1616</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							48
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							1664
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-09T22:00:02.142Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-13T04:31:51.139Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1639087202142);
+				updateAndSetIntervalToUpdateFor("ago-2", 1639369911139);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) k0b-3Uk_N #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) MfgmtqtJX [[(hidden) 8CNrCRDNZ]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) QZA7AdpRi #[[(hidden) vuiz_eLip]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) GzTV4MMOm
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 3QGdI8brt
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) WouVxm0oP
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 3OIVF9MZX
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) J6lHUcwH- [[(hidden) X7oZG5qJs]] [[(hidden) 4fWGWPmjq]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) ZtYkxog1F
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 1vCCNEPFw [[(hidden) pHco5hQZn]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 74rpVxiTE
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} finish refactoring so that i can finally start doing new stuff + to get the reviews moving
+									</div>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} prepare for [[(hidden) 0hZvdpkVn]]
+									</div>
+									<ul>
+										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													maybe "how codemods work - from first principles", or "how codemods & jscodeshift work - from the very basics"
+											</div>
+										</li>
+										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} idk who's @ production team so just reach out to [[(hidden) 37qikbc7P]]
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} get response
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} also borrow/buy an additional adapter for the macbook (tho i could use my linux setup just as well for this)
+													</div>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} explain how a compiler (or interpreter) sees your program
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															show an example of writing some basic code in [[(hidden) eBB7dPivO]] and how the AST starts looking like
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															there are a few things at play - the parser, and then the "writer" which takes the parsed input, and produces the new output
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															...now we want to somehow modify this code. so between the parsing and the writing (when we have the parsed code in the AST form, but we haven't written it to a file yet), we want to somehow modify the AST so that when we write in to the file, it will contain our modifications
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															so you need to modify the AST.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															you _could_ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															it's a tool that allows you to easily find ~~tokens~~ nodes, to find nodes somehow related to them (searching in general), and then to check the node's properties, and then to modify either the node's properties, or the node itself (i.e. remove it, replace it w/ a different node, move it up or down or somewhere else around), and even create new nodes.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} do a better explanation of what a token is, both conceptually and w/ an example
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} same w/ a node
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+												<li>
+													<div style="max-width: 65ch;">
+															show an example of the transformer (write something simple yourself first)
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	```javascript
+														export const parser = 'flow'
+														export default function transformer(file, api) {
+														  const j = api.jscodeshift;
+														  // would it make sense to call `src` as `ast` instead?
+														  const src = j(file.source)
+														  return src.toSource();
+														}
+														```
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			be careful to __not__ over-simplify.
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					maybe if we're fast, we can cover even the basics, but not be too boring for more experienced folks.
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					also, gotta practice so that i don't ever get confused or dont know the solution immediately so that others dont have to waste time w/ me debugging
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					{{[[TODO]]}} heh, maybe we can use actually component names? though meh, would involve more context, having simple js function w/o anything more to think about seems better
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			```javascript
+																export const parser = 'flow'
+																export default function transformer(file, api) {
+																  const j = api.jscodeshift;
+																  const ast = j(file.source)
+																  ast
+																    .find(j.FunctionDeclaration, {
+																    	id: {
+																         	name: "greeting" 
+																        }
+																  	})
+																  	.forEach(path => {
+																    	const { node } = path;
+																        console.log("node", node);
+																    	node.id.name = "sayHi";
+																  	})
+																  return ast.toSource();
+																}
+																```
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					explain why we use .find instead of filtering in the forEach - because you can chain multiple .find's and it's just easier + more efficient + becomes clearer for what you're looking for from the very beginning
+																			</div>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															after that, explain that a "codemod" is just a collection of transforms that we combine and run one after another.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	everything else is just more complexity, more advanced scenarios. but fundamentally, this is what a codemod is.
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+												<li>
+													<div style="max-width: 65ch;">
+															consider - should we write a jsx transformer as well?
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	probably yes, and just mention that one can skip to the next part of the video if they aren't interested
+															</div>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+												<li>
+													<div style="max-width: 65ch;">
+															[[hindsight bias (in retrospect, it looks simpler than it actually was)]]
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	also mention that there are nuances, and to not expect everything to necessarily go smooth the first time - leave time for uncertainty:D
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			e.g. wrapping in JSXExpressionContainer
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			other challenges outside of the actual writing of the codemod - getting the "from/to" mappings if you're not familiar w/ the library, or e.g. if a designer decided them and has e.g. a spreadsheet that you'll need to parse, etc -- it's not all just writing of code, it involves other problems as well:D
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			then ofc the infra needed to run the codemods.
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					could mention [[(hidden) C5ze2tqB8]] ofc, and that's where we started, but atm we've diverged so much from them, that we have somewhat different namings & structure & style as well
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) WrCq5CZwG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) RjxKGQQrP
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) sxwZl0gqY
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															also mention that a transform should do 1 thing and do it well, and for separate things you should have separate transforms, and combine them in the codemod.
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	but also mention that if the specific thing you're doing is the same, and the only thing that differs is the data (e.g. the component's name, or the attribute's name, or the attributes value / from-to mapping), then you can abstract it and just take in a "config" that has these - thus now you 
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) VyMFgBQSz
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) AtPY3OhjQ
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) nZtElhmt0
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]] [[(hidden) K_zc5Rl9e]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} "public-recursive" tag - public on itself, and all of it's children. if a page is marked as "public-recursive" on first-level child block w/o any children & only it (exactly how public global tags work now), it should also make itself and it's children public __when it is mentioned__.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											hmm. but now think about block mentions. if a block contains a mention to another block that has this recursive tag, then does that mention make the block who mentioned it also recursively public? kinda unwanted!
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											maybe we need separate ones for:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													"public when mentioned as a linked reference" (which would normally be the default, or so i though, until i realised that e.g. ppl names are not very good to be public by default, and well that the default wasn't very good, so we changed it)
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													"public, as in make the page & it's children public, but nothing else",
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													"public recursive" - make
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															wait. maybe:
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	"public recursive _marker_" - do not make itself's children public, but make itself's title, and all _direct_ mentions of it public + their children.
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			same as [1], but recursive
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					[1] ((bzzfvHav8))
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			"public 
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											hmm, now that i think of it, seems like this "public or not, when mentioned" will always be a problem w/o a good default.
+								instead, it seems like it should be something you do directly.
+								e.g., have a triple `[]` mean a public linked reference (since more effort, less likely to accidentally make something public), and double `[]` - same as is now.
+								could do this myself unofficially, the only problem is that the roam search breaks - roam starts looking for a `[]` in pages' titles, but ofc they don't have this, and so the completion list ends up empty, which sucks big time!
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} create an issue in #[[roam]] to change the behavior (ofc explain why i need this)
+											</div>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} as for security, i keep thinking about: should i include the security info in the default setup when explaining how to use the plugin in e.g. [[github actions]], or should i put it afterwards
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											i think the defaults matter. and so i should definitely put it in the default setup, because that's what everyone's gonna do.
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											the easiest thing to do, for starters, is to fork the repository and use the fork, instead of the main repo, as the source of the plugin(s)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													updating is very easy. `fetch upstream` button available in [[github]] right next to the latest commit's info
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} the repo could have security tests that should pass before each plugin run, so that in case we push to master and accidently get something messed up and a person also fetches the update at that time - they would immediately see the problem, instead of getting pwn'd.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] `git-rebase -i` right inside [[github]]'s PR UI lmao
+											</div>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} simple docs for the plugin (just some notes + link to public notes on it)
+							</div>
+						</li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) L8K_eX01k
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) C8fTkbGQM #[[(hidden) Wk9BwS_1L]] #[[(hidden) yVcpnL4Db]] #[[(hidden) 7-F05odqi]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) i43eZWKPK 
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) JyrQ4MCgi 
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) wDgTZv0Vt 
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} (hidden) xU83AFJix 
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) UJLh7w6Bd
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											related: [[git-stacked-rebase]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} automatic "refactor" command - `git blame HEAD` for each line to find what commit needs to be fixed up into, commit, prepare git-rebase-todo w/ the `fixup` commands ready
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															maybe not everything is `fixup` tho so might want to be able to review the changes comfortably b4 creating the fixups
+													</div>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} we could very well, after `apply`, have `check`, which would go from 1st branch to last, and could have a sub-command of `check` that would show the diff in the branch - same as we have the alias `sod`
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} on the alias - would be good to have it, but also a separate alias that would show only that branch's diff, __without__ the changes included from previous branches
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} `next` and `prev` to switch between branches / diffs
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	yep seems to make sense.
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} could even have the `current` stacked rebase ref, so that you don't even need to specify the branch you're on & the branch you're rebasing on top of, and could do just `git stacked-rebase prev` & `git stacked-rebase next` w/o any shenaningans
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			re: ((3l52fL6rH))
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					at this point, it indeed does look like `stacked-diffs` is becoming an actual concept
+																			</div>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) KQB9XVZnD
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) EJDcO_8d_
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) qepI5ZeuE
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) nSGpZkB2e
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Iy-0YIPql
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) XyjC-qXbH
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 3Acxp13F3
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 7mNonNGBb
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) SXxlm30xa
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-10-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 11th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) lQsNOivIe [[(hidden) sBYAxQu94]] [[(hidden) 12-10-2021]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) ObAS3qdP0
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) l5B-44bim
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) rFUgAk-y_ [[(hidden) 1UuCpFnJV]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2gH9LapQZ
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) ZRgtnbthB [[(hidden) klx6JvW5J]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) j9XfqJAGN
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) dQDOP_ZZb [[(hidden) LmYDA4A8X]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) -3KkQAjKD
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 2L4hHT8HT [[(hidden) IX1JV8fxQ]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 9BQmSuOrv
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) uGmqmQ5xX [[(hidden) Zdgs21iH7]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 4ek5zrJYv
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) 43YyKRR7K
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
