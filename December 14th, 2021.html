@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 14th, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 14th, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">412</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							17
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							429
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-13T13:19:17.305Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-17T18:14:04.378Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1639401557305);
+				updateAndSetIntervalToUpdateFor("ago-2", 1639764844378);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) J7fueVcNt #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) LZ2JXIzVa [[(hidden) AEThLPcJI]] [[(hidden) lR0TlK5tu]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) v1I1ECMIc
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) f1EtJgGW-
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											re: ((V_sTbcBOu))
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} the filter was `"Epic Link" = FUN-1963 OR parentEpic = FUN-1963 AND issuetype != Sub-Task` (see `issuetype`) (could also be just equal to Task).
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													that's literally all that needed to be done.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} ((C5SR76bKS))
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													[[December 23rd, 2021]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} bring the mic back
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											regroup-imports:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} detect if the new import statement already exists
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} if yes, use it
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[DONE]]}} get rid of duplicate specifiers
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} if no, place import statement in place of the very first existing statement that we remove
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													[[December 15th, 2021]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} use local names of imports
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	will need to get rid of the `shorthand: true` if they were modified (for requires, & identical for imports)
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} figure out if non-quoted key accessors need to get quoted (would introduce extra complexity so hopefully no)
+													</div>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											review w/ [[(hidden) tv1zOVzED]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													[[(hidden) tv1zOVzED]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} add availability info, regroup
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} call tmr
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													into [[(hidden) tv1zOVzED]] PR
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} add lines of code of how to run the codemod
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} provide 2 more examples for the codemods
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} running transforms separately
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} task: https://pipedrive.atlassian.net/browse/FUN-2022
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[DONE]]}} and then add info on how to run each: ((rNa7Q5gK3))
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} for inlineTest's of 5th PR, figure out if we can do file-by-file tests.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															looks meh, at least for now.
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															https://pipedrive.atlassian.net/browse/FUN-2023
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[DONE]]}} msg [[(hidden) tv1zOVzED]]
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} get approval
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} play w/ the swimlanes / tracks to not show sub-tasks for my track, but also exclude them from the standard track
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} get admin
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} backup
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															```javascript
+												CUI5 Codemods	"Epic Link" = FUN-1963 OR parentEpic = FUN-1963	CUI5 Codemods		
+												Maintenance	"Epic Link" = FUN-1883 OR "Epic Link" = FUN-1899 OR "Epic Link" = FUN-1920		
+												FE Docs	"Epic Link" = FUN-1405 OR "Parent Link" = FUN-1701 OR "Parent Link" = FUN-1740 OR "Parent Link" = FUN-1775	FE Docs mini mission	```
+													</div>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} into
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															from `"Epic Link" = FUN-1963 OR parentEpic = FUN-1963`
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															removed `OR parentEpic = FUN-1963`
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															to `"Epic Link" = FUN-1963`
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															and then created a new swimlane/track to catch the sub-tasks :ez:
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	`xXx do not look 🙈🙈 xXx ` `parentEpic = FUN-1963 AND issuetype = Sub-Task`
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															final
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	```javascript
+														xXx do not look 🙈🙈 xXx
+														parentEpic = FUN-1963 AND issuetype = Sub-Task
+														CUI5 Codemods
+														"Epic Link" = FUN-1963
+														CUI5 Codemods
+														Maintenance
+														"Epic Link" = FUN-1883 OR "Epic Link" = FUN-1899 OR "Epic Link" = FUN-1920
+														FE Docs
+														"Epic Link" = FUN-1405 OR "Parent Link" = FUN-1701 OR "Parent Link" = FUN-1740 OR "Parent Link" = FUN-1775
+														FE Docs mini mission
+														Standard```
+															</div>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) -3EW9fJLG
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) _g2qydMAv
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) Hv15j_jsw #[[(hidden) _sW66DmMa]]
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 6KelVydSW
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HPJwWqGnl
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 5SreBU7Ms
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Rb_P75bxT
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) cF-cDhgWy
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 0FMYEb4iE
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 3K-Zse6yh
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Xi9P2F8L7
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-14-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 13th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) XfeqiElqv [[(hidden) 12-14-2021]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} (hidden) C5SR76bKS [[(hidden) 37qikbc7P]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

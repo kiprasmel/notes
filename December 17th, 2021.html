@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 17th, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 17th, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">264</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							0
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							264
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-16T22:00:10.271Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-17T18:14:04.376Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1639692010271);
+				updateAndSetIntervalToUpdateFor("ago-2", 1639764844376);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ecwBkX2_S [[(hidden) iCbE7UjOk]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vjsD7w2of #[[(hidden) S-ygYfi0j]] #[[(hidden) aQw_Q_pev]]
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ROUfwHntI
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) mrumXxG23
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HsMrKZnC2
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 536wX09ce #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) menhG7vp0 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 4ncVbp6r1 [[(hidden) tv1zOVzED]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) dKxioSwPB
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 6hve8yJv2
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) VPre4O2VF
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 6gGuZKnFD [[(hidden) tv1zOVzED]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 65S-1MzPh 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) g21mElZzD
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Lo-0Nn2kM #[[(hidden) okke3m7KB]] [[(hidden) SZp9S9TdD]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) YFcpi0pyU [[(hidden) jHk2xs5Yn]] [[(hidden) a1_YmqrZr]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) nnwhonipx
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} (hidden) SOM__46Ue [[(hidden) pHco5hQZn]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) EFWjx7an7
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) rMUWxAj-3
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) jIY8rYgpn
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) sQOO09ODy #[[(hidden) 2Z08SU3np]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) C2TsbTwUv
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]] now
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} ((kQlpZosXx))
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													nope
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} ((j-RN6ORqM))
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 7yC5Qa8V3
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]] soon
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} merge PRs (up until & including 5th)
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} tho care, might have fixups @ 6th. cc ((VjnnbrdvH))
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} merge cui5map
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} complete documentation
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} mention that "the expected results depend on the current cui5map (mapping generated from figma, that will likely get updates)", & to follow the tests for the current implementation (tho again, mind that the cui5map might not be updated in the repo lol)
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															https://github.com/pipedrive/CodeshiftCommunity/blob/e8cc027e4b0b02d7b650f3fe0d3e8329a8321331/community/%40pipedrive__convention-ui-react/src/5.0.0/wip-transforms/rename-style-tokens/rename-style-tokens.spec.ts#L17
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} update to proper branch once merged
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} finish up 6th
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} extract fn `addOrExtendDestructuredImportOrRequire`
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} do a test run w/ someone to try out the codemods
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} afterwards, announce an ad-hoc meeting @ fe-devs & do a demo
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} handle styled() wraps at least, if not graph-aware yet
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) rtK-3zrfO
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) suUyUFUUJ
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) m4NIdIVzx
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) bmlkXgiqN
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) m65hytoiV
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ri6mMZQFk
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Lg5mEI7Tl
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Sb-I8P73K
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 5u7sypuX9
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 8oWORenT8
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) ruRCHUGtn
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) EBgMV65K9
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) b8kysIfeC
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) iCMUmFK3b
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) Dpo1kLOb2 #[[(hidden) vuiz_eLip]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 7JR5uy8M3
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 1wbWoxerf
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) _rPrne-j-
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) -QBxyszDF
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) tDjurtIgy
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) dKK5eckQD
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-17-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
