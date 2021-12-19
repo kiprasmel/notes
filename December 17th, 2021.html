@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">264</td>
+							<td style="text-align: right; ">785</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							264
+							785
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-17T18:14:04.376Z</span>
+				<span>2021-12-19T00:38:42.122Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639692010271);
-				updateAndSetIntervalToUpdateFor("ago-2", 1639764844376);
+				updateAndSetIntervalToUpdateFor("ago-2", 1639874322122);
 
 			</script>
 		</small>
@@ -233,12 +233,19 @@
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) menhG7vp0 
+									{{[[DONE]]}} (hidden) menhG7vp0 
 							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) xnvOnn2a8
+									</div>
+								</li>
+							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 4ncVbp6r1 [[(hidden) tv1zOVzED]]
+									{{[[DONE]]}} (hidden) 4ncVbp6r1 [[(hidden) tv1zOVzED]]
 							</div>
 							<ul>
 								<li>
@@ -251,27 +258,19 @@
 											(hidden) 6hve8yJv2
 									</div>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) VPre4O2VF
-									</div>
-								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 6gGuZKnFD [[(hidden) tv1zOVzED]]
+									{{[[DONE]]}} (hidden) 6gGuZKnFD [[(hidden) tv1zOVzED]]
 							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 65S-1MzPh 
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) g21mElZzD
-							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) n3-mLC3Dt
+									</div>
+								</li>
+							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
@@ -281,11 +280,6 @@
 								<li>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) YFcpi0pyU [[(hidden) jHk2xs5Yn]] [[(hidden) a1_YmqrZr]]
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) nnwhonipx
 									</div>
 								</li>
 							</ul>
@@ -358,6 +352,205 @@
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
+											{{[[DONE]]}} can we get rid of the bs @ `run.js`? ~~at least when end user is using it?~~ ugh but that's bad if they change stuff up themselves & it doesn't get updated. need a better solution.
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													oh yes
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} move the tsconfig's `.tmp` ignore earlier (to 1st PR)
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} mv the speed fix earlier
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															[[git-stacked-rebase]]
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} `--push -f` would help, lots of rebasing atm
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} extract `--apply` into separate fn
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					{{[[TODO]]}} (sometime later) integration/e2e tests because atm idk if anything broke or not lol
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} `return <code>` instead of `process.exit(<code>)`
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					#[[(hidden) yKrt2xLFy]] i now fully understand the #[[(hidden) U5k5oJ6YK]] pattern of returning an exit code, and if success, writing into the function argument's reference. the #[[(hidden) U5k5oJ6YK]] fellas are even more [[(hidden) 50e7-uto_]] ahead than the #[[(hidden) -tqsGNIyl]] crew? 5Head
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							okay now we have created our own monad or similar, that works like a Promise. sadly, now i'd need to have a `.map` or similar like `.then`, so that in case it does fail, we don't run the "expect to succeed" part.
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							we now have a situation like this:
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									```typescript
+																							const goodCommands: Exitable<GoodCommand[]> = parseTodoOfStackedRebase({
+																								pathToStackedRebaseTodoFile,
+																							});
+																							if (goodCommands.code === ExitCode.FAIL) {
+																								return goodCommands;
+																							}
+																							logGoodCmds(goodCommands);
+																						```
+																							</div>
+																						</li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									but, "goodCommands" is wrapped inside a monad `Exitable`. it's not easy to re-cast the type, it kinda sucks checking for it; it's not even clear what we're returning.
+																							</div>
+																						</li>
+																					</ul>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							instead, imagine this:
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									```typescript
+																						```
+																							</div>
+																						</li>
+																						<li></li>
+																					</ul>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							fuck, this doesn't play well w/ [[typescript]].
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							{{[[TODO]]}} is this also what [[(hidden) pokav_dad]] is about? 👀
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							oh okay more [[(hidden) yKrt2xLFy]]s:
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									1. sad that ts cannot infer that if type is `[A | null] | [null | B]`, if you verify one side is null, then other should not be, but doesn't infer automatically yet...
+																							</div>
+																						</li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									2. could use a type assertion fn that could verify this. sadly more syntax.
+																							</div>
+																						</li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									2.1 but, i also now see where the `Some(x)` comes from in [[(hidden) KMBIAt8MO]]. damn, these people have  went thru many [[(hidden) 50e7-uto_]] haven't they?:D
+																							</div>
+																						</li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									.
+																							</div>
+																						</li>
+																					</ul>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							i guess this is the best we can do for now?
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									```typescript
+																						const [exit, goodCommands] = parseTodoOfStackedRebase(pathToStackedRebaseTodoFile);
+																						if (!goodCommands) return exit!;
+																						```
+																							</div>
+																						</li>
+																					</ul>
+																				</li>
+																				<li></li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							...more discoveries... and they all suck...
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							oooh, maybe?
+																					</div>
+																				</li>
+																				<li></li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							[[roam-traverse-graph]] [[(hidden) K_zc5Rl9e]]
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] have a folder w/ literally all blocks as filenames, and inside them have js/html to redirect to the actual page that contains the block lmao
+																							</div>
+																						</li>
+																					</ul>
+																				</li>
+																				<li></li>
+																			</ul>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} cleanup `--help` - instead of so far to the right, have newline & some spacing (like 4 spaces or smthn)
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} hmm. think if we still want to change the args (e.g. `--apply`) into commands (e.g. `apply`) -- instead we could make them compatible w/ each other, e.g. `--apply --push --force` / `-apf`
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
 											{{[[TODO]]}} merge PRs (up until & including 5th)
 									</div>
 									<ul>
@@ -366,11 +559,27 @@
 													{{[[TODO]]}} tho care, might have fixups @ 6th. cc ((VjnnbrdvH))
 											</div>
 										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} maybe shorten Symbol names since now they appear in e.g. "whom map to:"
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} rename into `composeTransforms`
+											</div>
+										</li>
+										<li></li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} merge cui5map
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} integrate [[(hidden) tv1zOVzED]]'s (post/s)css transform
 									</div>
 								</li>
 								<li>
@@ -406,6 +615,11 @@
 											{{[[TODO]]}} finish up 6th
 									</div>
 									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} tests
+											</div>
+										</li>
 										<li>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} extract fn `addOrExtendDestructuredImportOrRequire`
@@ -446,6 +660,21 @@
 				<li>
 					<div style="max-width: 65ch;">
 							(hidden) m4NIdIVzx
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 6_iG3RFjO
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) IeoUeX9Wm
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) frCfoF65k
 					</div>
 				</li>
 				<li>
@@ -524,17 +753,90 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) _rPrne-j-
+							[[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} fuck. currently marking as #[[public]] makes it a public-recursive one. yep, should proceed w/ the public & publicRecursive idea, & ditch publicGlobalTags
+							</div>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) sip9QxflS
 					</div>
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) -QBxyszDF
+							[[git-stacked-rebase]]
 					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} handle case where origin/<branch> (initial branch) gets updated
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											currently get `AssertionError [ERR_ASSERTION]: very first commit has a branch.`:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													```javascript
+										AssertionError [ERR_ASSERTION]: very first commit has a branch.
+										    at /Users/kiprasmelnikovas/projects/git-stacked-rebase/dist/git-stacked-rebase.js:355:34
+										    at Array.map (<anonymous>)
+										    at createInitialEditTodoOfGitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/dist/git-stacked-rebase.js:353:10)
+										    at async gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/dist/git-stacked-rebase.js:219:13) {
+										  generatedMessage: false,
+										  code: 'ERR_ASSERTION',
+										  actual: false,
+										  expected: true,
+										  operator: '=='
+										}```
+											</div>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											providing a commit also doesn't help ofc, since we need a branch
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											it seems here that we don't even detect the new initial branch and we pick up a lot of commits if not all.
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
 							(hidden) tDjurtIgy
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) J4gdCm58d
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) vvNqd_U4c
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) prB5uvbXf
 					</div>
 				</li>
 				<li>
