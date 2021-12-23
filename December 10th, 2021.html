@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">1625</td>
+							<td style="text-align: right; ">1819</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							1673
+							1867
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-19T00:38:42.126Z</span>
+				<span>2021-12-23T11:31:21.705Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639087202142);
-				updateAndSetIntervalToUpdateFor("ago-2", 1639874322126);
+				updateAndSetIntervalToUpdateFor("ago-2", 1640259081705);
 
 			</script>
 		</small>
@@ -290,7 +290,7 @@
 										<li></li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
+													{{[[DONE]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
 											</div>
 											<ul>
 												<li>
@@ -300,7 +300,7 @@
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} get response
+															{{[[DONE]]}} get response
 													</div>
 												</li>
 												<li>
@@ -317,6 +317,225 @@
 													{{[[TODO]]}} explain how a compiler (or interpreter) sees your program
 											</div>
 											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															high level summary of the below:
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	begin @ ast explorer
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	explain what we'll do today
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			we'll try to understand how codemods work
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			we'll write our own codemod
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			we'll learn how to use jscodeshift a bit
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			we'll see some real-world examples of codemods
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			we'll explore extra resources
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://notes.kipras.org/codemods.html
+																			</div>
+																		</li>
+																		<li></li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://github.com/facebook/jscodeshift
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://github.com/reactjs/react-codemod
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://github.com/mui-org/material-ui/tree/master/packages/mui-codemod
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://github.com/CodeshiftCommunity/CodeshiftCommunity
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							https://www.codeshiftcommunity.com/
+																					</div>
+																				</li>
+																			</ul>
+																		</li>
+																		<li></li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://github.com/dsherret/ts-morph
+																			</div>
+																		</li>
+																		<li></li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					.
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+														<li>
+															<div style="max-width: 65ch;">
+																	a codemod is just code that modifies other code
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	"but what __is__ code?"
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			it's just text!
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			explore ast explorer
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					select parser to flow
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					write some code
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			why should i care? because we'll want to modify it!
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	doing it hardcore raw (eg regex), vs using existing libraries (eg jscodeshift from ex-fb guy)
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	ast explorer
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			come back to the same fn we wrote
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			modify the greeting
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	explain that this is what codemods are fundamentally about
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	ast explorer
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			another, similar fn
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			showcase filtering (basic)
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			showcase filtering (built-in)
+																	</div>
+																</li>
+																<li></li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			showcase parent finding `.closest()`
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			showcase `.check()`ing
+																	</div>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	again, double down that this is how starting to add tiny bits of extra complexity might look like, but the fundamentals stay the same.
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	show external resources
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	explore some of our own codemods, show patterns
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	do overview that it's often not only code, but people, organizational problems as well
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	fin
+															</div>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
 												<li>
 													<div style="max-width: 65ch;">
 															show an example of writing some basic code in [[(hidden) eBB7dPivO]] and how the AST starts looking like
@@ -339,7 +558,7 @@
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															you _could_ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
+															you __could__ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
 													</div>
 												</li>
 												<li>

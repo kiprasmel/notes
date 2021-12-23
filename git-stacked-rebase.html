@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							4718
+							5677
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							4723
+							5682
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-19T00:38:42.068Z</span>
+				<span>2021-12-23T11:31:21.632Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638574241825);
-				updateAndSetIntervalToUpdateFor("ago-2", 1639874322068);
+				updateAndSetIntervalToUpdateFor("ago-2", 1640259081632);
 
 			</script>
 		</small>
@@ -271,9 +271,9 @@
 
 			<h2>
 				Linked Mentions 
-				(13
+				(17
 				in
-				7
+				10
 				pages)
 
 				<button
@@ -2370,6 +2370,12 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 				{{[[TODO]]}} hmm. think if we still want to change the args (e.g. `--apply`) into commands (e.g. `apply`) -- instead we could make them compatible w/ each other, e.g. `--apply --push --force` / `-apf`
 		</div>
 	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} fix whatever's missing from `forcePush` that gets fixed when `rebase` gets ran (w/o making any changes)
+		</div>
+	</li>
+	<li></li>
 </ul>
 		</li>
 		<li>
@@ -2430,6 +2436,405 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 			</li>
 			<li></li>
 		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 19th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] maybe have ability to back up progress remotely, e.g. similar  to [[(hidden) zOEOtYKZi]] - in a remote branch (i.e. have a branch per stacked-rebase, commit & push to it automatically when changes happen (tho allow to disable if needed))
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} 
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} [Y/n/always] for "--apply if needed"
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} tho, maybe instead of delaying, just allow to apply whenever needed? ideally yes.
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} fix gpg-sign - likely will need to see how they do it internally, or use `git rebase -i` + the "break as first command" hack to create it behind the scenes (would be sadge prolly! or not since native... idk)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						loool it's so easy & nice you literally only need to create a file `gpg_sign_opts`
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 21st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} ffs, the `Exitable` stuff is bad tbh, `exit` was a `TypeError` instead of an exit code / proper error - was hard to find, no good, gotta fix.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						and i had fixed the code that was causing this error 2 days ago already, but that's irrelevant - it's easy to make such mistakes w/ this infra, which is a no no.
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} we __really__ need e2e tests
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						also where the initial issue came from (re: [Exitable](((el1TOG8X8)))) - i just found out (by using the tool myself ofc) that i introduced a regression sometime between [that fix](((4R3-dZkR-))) (0.4.1) and now (0.5.0).
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								`git bisect` suspect - `0657970dd2303f264036606e0cdc06b6854a0104`
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										figured it out - it's because in the very ending of the `gitStackedRebase`, we `markThatNeedsToApply()`, and __then__ we call `applyIfNeedsToApply()`, which, of course, will now always think that we need to apply.
+							other notes:
+							it makes it impossible to e.g. `edit` in the rebase-todo -  it continues (apply'ing?) w/o stopping
+							and might explode if we start a new git-stacked-rebase for the first time (i.e. there's no `.git/stacked-rebase/` folder, specifically `.git/stacked-rebase/rewritten-list` file in this case)
+							also, it'd be even harder to find because we'd only call the `applyIfNeedsToApply()` in the very end if `configValues.autoApplyIfNeeded` was true (design choice which made & still makes sense; it just makes the current bug harder to find)
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												```typescript
+											if (configValues.autoApplyIfNeeded) {
+												const { userAllowedToApply } = await applyIfNeedsToApply({...})
+									        }```
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												initial fix:
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/kiprasmel/git-stacked-rebase/commit/6eadc9e601523fd39263de13007de56b4f7a991c
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																> currently `canAndShouldBeApplying` is only in that part of the logic.
+													to be fair, the problem arises only when we try to apply
+													before the rebase was finished.
+													but, it very well could be that the user (even tho unlikely) that user
+													runs `git-stacked-rebase` while a regular `git-rebase` is in progress,
+													thus causing the same issue.
+													TODO so we need to handle this everywhere, and the approach might be
+													different as well.
+														</div>
+													</li>
+													<li></li>
+												</ul>
+											</li>
+											<li></li>
+										</ul>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						[[codemods]]
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} remember to extract `inlineTest` (test utils) from extraction-6 lol
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} start using the `debug` lib
+		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} add `--continue`, `--abort` as aliases to regular git rebase commands, for convenience
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} should we?
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} file mappings fn that takes in the repo's workdir and returns the wanted file
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						or maybe just filename constants, since we'll need to pass in either the repo, or the fn that has the repo from a closure
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								unless we do dependency injection, but we don't do that here™️
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								```typescript
+					// const filesNames = {
+					const filenames = {
+					  rewrittenList: "rewritten-list",
+					} as const;```
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				o fuck, just realised when updating the CLI --help message - the `prompt` for `question` is a no no, at least in the library code (in cli code would be just fine).
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} okay i think it should be fine if we take in a callback function that will get this output for the library
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						applies to general interactions (__interactive__ kek) (except ofc the git-rebase-todo file since we provide an editor already)
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} handle failures if --apply was (attempted to be) used more than once - currently errors because file missing; should print (return) info message instead
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} same w/ --force -p, etc.
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li></li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 22nd, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} shortening some namings would make sense because they're too verbose now i think & since we've went thru quite a few different scenarios on where they're used, i think 
+		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} i think it makes sense to get rid of the "--arg won't work if --sub-arg is not specified" notion (--push without --force, --branch-sequencer without --exec)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						i initially thought that it's always good to remember that you're e.g. force pushing. but i now think that it's different, because of the context. you use this tool, git-stacked-rebase, to specifically work with stacked diffs (branches), and you (should) automatically expect & be aware that 1. it overwrites history, 2. you can screw yourself up a bit if you don't know what you're doing (though, since commits already exist, it'd be more of a time-consuming activity to recover them via reflog or to recover the branches to correct state or similar, if you messed up, but it's not like a permanent lost of progress).
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						in short, a knife is a useful tool. if you screw up you can hurt yourself.
+			you cannot have good tools if you're afraid that someone not yet ready to use the tool will screw up that you oversimplify / "fool-proof" the tool so much it become useless.
+			maybe better example would be nuclear power idk
+			anyhow we're getting rid of the bs and making it good
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[git-stacked-rebase]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} need a "what to be aware of" / "patterns to avoid with this workflow" info @ the readme.
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} especially about wanting your branches/PRs to look perfect & thus not merging them for a long time even though they could be merged (like it happened to me w/ [[codemods]] lol)
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								oh i think this also highly relates to [[the innovator's dilemma (TBD)]]
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} also likely we could come up w/ an alternative pa
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} boolean table for options compatibility?
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						yes
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} `diff`ing commands built-in? because i use my own git aliases but these specific ones are often useful when using this pattern of stacked diffs
+		</div>
 	</li>
 	<li></li>
 </ul>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>December 21st, 2021 | notes</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			December 21st, 2021
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">1045</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							0
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							1045
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2021-12-20T22:00:09.608Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2021-12-23T11:31:21.697Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1640037609608);
+				updateAndSetIntervalToUpdateFor("ago-2", 1640259081697);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} (hidden) qyQpiD5t_ 
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) GJSHDNTOr
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) f_PWNuoPS [[(hidden) F3IIXCSCa]] [[(hidden) s-Ow4R2Dp]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) KBZ_8LL4x
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 3Gmw3HiY1
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) pcug2XOKw
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) uXw-tOp4J
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) T8wq3XlGo
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) OEHP6rk7Q
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) fwryzLFr7
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) GAu9hf39f
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) bMFXnNkE0
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) alm9MviV9 [[(hidden) BC3_6P1lo]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 87zapAdN2
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) fSIykfew-
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 4Zh_cPVDO
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) D3LUWR3nG
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) m4F9wBSgA
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) DJj8msH7c
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) zVQkWf-kY [[(hidden) _hKhPUEak]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) oQo7cjjHk
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 1HjqvWVoN
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) h1vFDLeEx
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ep1WBLjxv
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} ffs, the `Exitable` stuff is bad tbh, `exit` was a `TypeError` instead of an exit code / proper error - was hard to find, no good, gotta fix.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											and i had fixed the code that was causing this error 2 days ago already, but that's irrelevant - it's easy to make such mistakes w/ this infra, which is a no no.
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} we __really__ need e2e tests
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											also where the initial issue came from (re: [Exitable](((el1TOG8X8)))) - i just found out (by using the tool myself ofc) that i introduced a regression sometime between [that fix](((4R3-dZkR-))) (0.4.1) and now (0.5.0).
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													`git bisect` suspect - `0657970dd2303f264036606e0cdc06b6854a0104`
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															figured it out - it's because in the very ending of the `gitStackedRebase`, we `markThatNeedsToApply()`, and __then__ we call `applyIfNeedsToApply()`, which, of course, will now always think that we need to apply.
+												other notes:
+												it makes it impossible to e.g. `edit` in the rebase-todo -  it continues (apply'ing?) w/o stopping
+												and might explode if we start a new git-stacked-rebase for the first time (i.e. there's no `.git/stacked-rebase/` folder, specifically `.git/stacked-rebase/rewritten-list` file in this case)
+												also, it'd be even harder to find because we'd only call the `applyIfNeedsToApply()` in the very end if `configValues.autoApplyIfNeeded` was true (design choice which made & still makes sense; it just makes the current bug harder to find)
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	```typescript
+																if (configValues.autoApplyIfNeeded) {
+																	const { userAllowedToApply } = await applyIfNeedsToApply({...})
+														        }```
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	initial fix:
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			https://github.com/kiprasmel/git-stacked-rebase/commit/6eadc9e601523fd39263de13007de56b4f7a991c
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					> currently `canAndShouldBeApplying` is only in that part of the logic.
+																		to be fair, the problem arises only when we try to apply
+																		before the rebase was finished.
+																		but, it very well could be that the user (even tho unlikely) that user
+																		runs `git-stacked-rebase` while a regular `git-rebase` is in progress,
+																		thus causing the same issue.
+																		TODO so we need to handle this everywhere, and the approach might be
+																		different as well.
+																			</div>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											[[codemods]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} remember to extract `inlineTest` (test utils) from extraction-6 lol
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} start using the `debug` lib
+							</div>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} add `--continue`, `--abort` as aliases to regular git rebase commands, for convenience
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} should we?
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} file mappings fn that takes in the repo's workdir and returns the wanted file
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											or maybe just filename constants, since we'll need to pass in either the repo, or the fn that has the repo from a closure
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													unless we do dependency injection, but we don't do that here™️
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													```typescript
+										// const filesNames = {
+										const filenames = {
+										  rewrittenList: "rewritten-list",
+										} as const;```
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									o fuck, just realised when updating the CLI --help message - the `prompt` for `question` is a no no, at least in the library code (in cli code would be just fine).
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} okay i think it should be fine if we take in a callback function that will get this output for the library
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											applies to general interactions (__interactive__ kek) (except ofc the git-rebase-todo file since we provide an editor already)
+									</div>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} handle failures if --apply was (attempted to be) used more than once - currently errors because file missing; should print (return) info message instead
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} same w/ --force -p, etc.
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) SbB85_Qsi
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) dwCGEsMqa
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 1_Vvzylkm
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) jIPHiFqXP
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) FWfm4c3eU
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.12-21-2021";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

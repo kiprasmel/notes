@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							7064
+							7691
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							7066
+							7693
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2021-12-19T00:38:42.044Z</span>
+				<span>2021-12-23T11:31:21.611Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633787543926);
-				updateAndSetIntervalToUpdateFor("ago-2", 1639874322044);
+				updateAndSetIntervalToUpdateFor("ago-2", 1640259081611);
 
 			</script>
 		</small>
@@ -252,9 +252,9 @@
 
 			<h2>
 				Linked Mentions 
-				(54
+				(58
 				in
-				42
+				45
 				pages)
 
 				<button
@@ -3911,7 +3911,7 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 			<li></li>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
+						{{[[DONE]]}} maybe reach out to our production team / [[(hidden) 37qikbc7P]] & ask for a good mic? not necessary, but would be good
 				</div>
 				<ul>
 					<li>
@@ -3921,7 +3921,7 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								{{[[TODO]]}} get response
+								{{[[DONE]]}} get response
 						</div>
 					</li>
 					<li>
@@ -3938,6 +3938,225 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 						{{[[TODO]]}} explain how a compiler (or interpreter) sees your program
 				</div>
 				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								high level summary of the below:
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										begin @ ast explorer
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										explain what we'll do today
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												we'll try to understand how codemods work
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												we'll write our own codemod
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												we'll learn how to use jscodeshift a bit
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												we'll see some real-world examples of codemods
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												we'll explore extra resources
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														https://notes.kipras.org/codemods.html
+												</div>
+											</li>
+											<li></li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/facebook/jscodeshift
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/reactjs/react-codemod
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/mui-org/material-ui/tree/master/packages/mui-codemod
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/CodeshiftCommunity/CodeshiftCommunity
+												</div>
+												<ul>
+													<li>
+														<div style="max-width: 65ch;">
+																https://www.codeshiftcommunity.com/
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li></li>
+											<li>
+												<div style="max-width: 65ch;">
+														https://github.com/dsherret/ts-morph
+												</div>
+											</li>
+											<li></li>
+											<li>
+												<div style="max-width: 65ch;">
+														.
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li></li>
+							<li>
+								<div style="max-width: 65ch;">
+										a codemod is just code that modifies other code
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										"but what __is__ code?"
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												it's just text!
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												explore ast explorer
+										</div>
+										<ul>
+											<li>
+												<div style="max-width: 65ch;">
+														select parser to flow
+												</div>
+											</li>
+											<li>
+												<div style="max-width: 65ch;">
+														write some code
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												why should i care? because we'll want to modify it!
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										doing it hardcore raw (eg regex), vs using existing libraries (eg jscodeshift from ex-fb guy)
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										ast explorer
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												come back to the same fn we wrote
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												modify the greeting
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										explain that this is what codemods are fundamentally about
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										ast explorer
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												another, similar fn
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												showcase filtering (basic)
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												showcase filtering (built-in)
+										</div>
+									</li>
+									<li></li>
+									<li>
+										<div style="max-width: 65ch;">
+												showcase parent finding `.closest()`
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												showcase `.check()`ing
+										</div>
+									</li>
+									<li></li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										again, double down that this is how starting to add tiny bits of extra complexity might look like, but the fundamentals stay the same.
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										show external resources
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										explore some of our own codemods, show patterns
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										do overview that it's often not only code, but people, organizational problems as well
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										fin
+								</div>
+							</li>
+							<li></li>
+						</ul>
+					</li>
+					<li></li>
 					<li>
 						<div style="max-width: 65ch;">
 								show an example of writing some basic code in [[(hidden) eBB7dPivO]] and how the AST starts looking like
@@ -3960,7 +4179,7 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								you _could_ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
+								you __could__ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
 						</div>
 					</li>
 					<li>
@@ -4940,6 +5159,12 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 										{{[[TODO]]}} hmm. think if we still want to change the args (e.g. `--apply`) into commands (e.g. `apply`) -- instead we could make them compatible w/ each other, e.g. `--apply --push --force` / `-apf`
 								</div>
 							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} fix whatever's missing from `forcePush` that gets fixed when `rebase` gets ran (w/o making any changes)
+								</div>
+							</li>
+							<li></li>
 						</ul>
 					</li>
 					<li></li>
@@ -4950,22 +5175,12 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} merge PRs (up until & including 5th)
+				educational vid for team (& beyond?)
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} tho care, might have fixups @ 6th. cc ((VjnnbrdvH))
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} maybe shorten Symbol names since now they appear in e.g. "whom map to:"
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						{{[[TODO]]}} rename into `composeTransforms`
+						{{[[TODO]]}} ((X6SUo3kI8))
 				</div>
 			</li>
 			<li></li>
@@ -4973,19 +5188,22 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} merge cui5map
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				{{[[TODO]]}} integrate [[(hidden) tv1zOVzED]]'s (post/s)css transform
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
 				{{[[TODO]]}} complete documentation
 		</div>
 		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} ask [[(hidden) pHco5hQZn]] to enable issues in the [[github]] repo
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} get response
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
 			<li>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} mention that "the expected results depend on the current cui5map (mapping generated from figma, that will likely get updates)", & to follow the tests for the current implementation (tho again, mind that the cui5map might not be updated in the repo lol)
@@ -5006,8 +5224,51 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 					<li></li>
 				</ul>
 			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} merge
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} merge PRs (up until & including 5th)
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} tho care, might have fixups @ 6th. cc ((VjnnbrdvH))
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} maybe shorten Symbol names since now they appear in e.g. "whom map to:"
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} rename into `composeTransforms`
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} ((eUJOaMbG_)) ?
+				</div>
+			</li>
 			<li></li>
 		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} merge cui5map
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} integrate [[(hidden) tv1zOVzED]]'s (post/s)css transform
+		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
@@ -5036,10 +5297,58 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 				{{[[TODO]]}} afterwards, announce an ad-hoc meeting @ fe-devs & do a demo
 		</div>
 	</li>
+	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} handle styled() wraps at least, if not graph-aware yet
 		</div>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				oh my god the `renameJsxComponent` is killing me the garbage collector is a literal time terrorist wtf
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} fixed it. how the f? do i need to learn this stuff in depth now?
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				from chat w/ [[(hidden) pHco5hQZn]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} merge approved PRs
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} try out if codemods-cli works on separate published repo
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} move code into separate repo
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} create documentation on where to find resources, links, how to develop the codemods etc. - exactly what i planned w/ the vid
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} upstream improvements w/o the actual codemods
+				</div>
+			</li>
+		</ul>
 	</li>
 	<li></li>
 </ul>
@@ -5079,6 +5388,187 @@ it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 				just working from yesterday's list
 		</div>
 	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 19th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} cont [[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				((vaAdUXmMD))
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] generate before, after, & diff from tests
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li>
+		<div style="max-width: 65ch;">
+				[[(hidden) CNx5JIWTi]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						why would you try (& fail, ofc!) to re-implement & javascript-ify the most fundamental of all - the path?
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								eg relative redirects when developing? smh
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						is it really that hard to make regular links work, instead of using buttons? the navbar is a joke
+				</div>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 21st, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[codemods]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} remember to extract `inlineTest` (test utils) from extraction-6 lol
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 22nd, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} especially about wanting your branches/PRs to look perfect & thus not merging them for a long time even though they could be merged (like it happened to me w/ [[codemods]] lol)
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				oh i think this also highly relates to [[the innovator's dilemma (TBD)]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} also likely we could come up w/ an alternative pa
+		</div>
+	</li>
+</ul>
+		</li>
+		<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				was thinking re: [[(hidden) 1uqumtobW]] - using similar utilities like [[codemods]] (or, rather, working with the #[[(hidden) -g8qO2BEP]]), to have a "magic wand" in your editor, which allows you to extract some local variables of a function (however deep in the call stack) into that function's arguments, or into a function that's higher (before) in the call stack (abstraction). what's hard is the [[(hidden) Vtxi7b35b]] - 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				from the [[(hidden) qF79KNVBl]].each (?) @ [[(hidden) S-ygYfi0j]], you can start extracting however many variables you want. it's not even "statements vs data" (you're "supposed" to extract only the data, & of course not all of it) - even statements can be extracted.
+	here comes the #[[(hidden) yKrt2xLFy]] -- technically, you can extract literally everything. and, well, say we have a function to describe the whole world (at some point of time, probably?) - if we figure out the function itself, than by abstracting 
+	[[(hidden) kc2jYpsn6]] aren't we? :kek:
+	re: extracting statements - is the abstraction still any useful then?
+	i think yes. 
+		</div>
+	</li>
+	<li></li>
 	<li></li>
 </ul>
 		</li>
