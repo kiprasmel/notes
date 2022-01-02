@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T09:26:18.878Z</span>
+				<span>2022-01-02T10:28:18.972Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1630886265991);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641115578878);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641119298972);
 
 			</script>
 		</small>
@@ -662,7 +662,7 @@
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								{{[[DONE]]}} #[[(hidden) Y4mLW46Gx]] [[codemods]] - look hella interesting (jscodeshift from fb etc)!
+								{{[[DONE]]}} (hidden) NZeMVKJhU #[[(hidden) Y4mLW46Gx]] [[codemods]]
 						</div>
 					</li>
 					<li>
@@ -979,338 +979,398 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				[[git-rebase]]
+				(hidden) thEnChHqt [[git-rebase]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						1. check which branch you're on:
+						(hidden) 051-BUlcV
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								```shell
-					git branch
-					```
+								(hidden) 6QaRGBA9C
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								1.1 make sure this is actually the one you want to rebase.
+								(hidden) 0P-wQQPQO
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								1.2 am i the only one working on this branch?
+								(hidden) PBP6PdUmS
 						</div>
 						<ul>
 							<li>
 								<div style="max-width: 65ch;">
-										no = abort (unless you __and__ the other person(s) working the branch are advanced git users and you've explicitly agreed that rebasing in shared branches is ok).
+										(hidden) U2jhTCV3j
 								</div>
 								<ul>
 									<li>
 										<div style="max-width: 65ch;">
-												https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li></li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						2. this shouldn't be necessary, but just in case, let's pull the latest changes of your own branch:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								```shell
-					# while inside the same (your own) branch:
-					git pull 
-					```
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								if you see something unexpected, there's probably changes from someone else, thus you answer "no" to [1.2](((PBP6PdUmS))), thus abort (unless ofc you know what you're doing).
-						</div>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						3. since we want to rebase on top of the latest changes of master, we need to update our local git repo first:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								```shell
-					git fetch --all
-					```
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						4. if all goes well, we can start the procedure
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								```shell
-					git rebase origin/master -i
-					```
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								`-i`, or `--interactive`, will bring up the list of commits of your branch. you can view it to confirm everything's alright, and if not, you can squash/fixup/drop, even re-order the commits. basically, become a surgeon for a bit.
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										if you didn't specify the interactive option, or if you did and everything's alright and you saved the file & closed it, proceed further.
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						5. ideally, there are no conflicts, the rebase completes successfully and you can move on to the [next step](((q8jggl2cV))).
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								but if often does not.
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								you can always use `git status` to see what's going on
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								in case you encounter conflicts:
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										you need to manually resolve them, and then mark them as fixed with `git add <filename>`
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										if you forgot which changes are yours, you can always find the commit by doing `git log <branch-name-you-are-rebasing>`, finding the commit, and then doing `git show <commit>`.
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										when all conflicts are fixed and added, you can continue the rebase with `git rebase --continue`
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								there are some edge cases as well
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										e.g. if you resolved conflicts and your commit ends up being empty, you'll need to manually commit it with `git commit --allow-empty` and then `git rebase --continue` again
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										in general, git will tell you about it - you just gotta be careful and read thoroughly. ofc, also search for info / ask for help when needed.
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						6. git should print "successfully finished rebase" or something similar.
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								if you check `git status`, it'll show that you have more commits ahead and less commits behind. makes sense, since you previously had only your commits that you started from an older commit of the master branch, but you now have all of that, plus the new commits from the master branch that you were missing.
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										see more:
-								</div>
-								<ul>
-									<li>
-										<div style="max-width: 65ch;">
-												https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+												(hidden) wpQlLhJr8
 										</div>
 									</li>
 								</ul>
 							</li>
 							<li>
 								<div style="max-width: 65ch;">
-										this means you overwrote history.
+										(hidden) ovZy5xykC
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) ss_g43j0o
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) iHb8NN8iI
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tX45tw769
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) mxRMZIcsM
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) _BT7uH2ly
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) LM5b5S5Ag
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) snFnJvoLm
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tWJM_uJM0
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 69DKxyOY7
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) TgmlVv_MW
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) nXiqa090z
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) -JL0YZU-m
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) ajFuKj01F
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) R_LAmEK8a
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) XNGi2AeFm
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 2TZjxhpkZ
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 3gu4MaZQ2
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 8AW_F6UbZ
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) _p1Q29gbG
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) aYs5OUQbu
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) NeCtFZfeo
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) 5VtR4aoZP
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) yViSp_VQQ
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 9p0D-5adW
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) SLObWnz89
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) _iQBo0l0Y
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) WsokRessQ
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) 8bqhSpcaq
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) q8jggl2cV
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 7xi6wQcZk
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) CfRpJ3Ge1
 								</div>
 								<ul>
 									<li>
 										<div style="max-width: 65ch;">
-												i.e., when you change a commit (`git commit --amend` or `git rebase` or similar), you modify the commit, and it gets assigned a new SHA.
-										</div>
-									</li>
-									<li>
-										<div style="max-width: 65ch;">
-												this is why the [1.2 check](((PBP6PdUmS))) is important -- since you're overriding history, if other people are also using the same branch, it can get messy.
+												(hidden) q1KFesjQl
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
-						</ul>
-					</li>
-					<li></li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						7. you'll now need to push the new history of commits to the repo (currently it's only local).
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								since we overwrote history, a regular `git push` won't do (you can try). you'll need to force it with `-f` or `--force`:
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								```shell
-					git push -f
-					```
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						8. done. check the repo & verify everything looks good.
-				</div>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						9. something went wrong? yay, learning time!
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								`git reflog` is your friend:
-						</div>
-						<ul>
 							<li>
 								<div style="max-width: 65ch;">
-										https://git-scm.com/docs/git-reflog
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								glhf. if you're a newbie w/ this stuff, consider copying the `.git/` folder outside the repo `../` in case you need to start from scratch.
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										```shell
-							cp .git/ ../```
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								talking w/ an experienced colleague / friend also helps.
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li></li>
-			<li>
-				<div style="max-width: 65ch;">
-						10. good to remember:
-				</div>
-				<ul>
-					<li>
-						<div style="max-width: 65ch;">
-								rebase goes commit-by-commit (1 by 1)
-						</div>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								it's easy to mess things up.
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										if anything goes wrong, you can always do `git rebase --abort` and start over
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div style="max-width: 65ch;">
-								it's always better to do simple changes in multiple rebases, than multiple complex changes in a single rebase.
-						</div>
-						<ul>
-							<li>
-								<div style="max-width: 65ch;">
-										e.g., first you can get your changes up to date to the latest origin's master branch, and then in the 2nd rebase you can squash some commits into one parent commit, then squash some more commits into a different parent commit in a 3rd rebase, etc etc.
-								</div>
-							</li>
-							<li>
-								<div style="max-width: 65ch;">
-										this often times helps avoid complex situations, and also helps avoid loss of partial progress - e.g. if you're rebasing and you've completed say 15 commits out of 20, but then you're on the 16th one and you f something up pretty bad, you'd have to abort. but with the abort you'll lose all of the progress and you'll have to re-do the same stuff for the 15 commits again.
+										(hidden) pfZuBdL_4
 								</div>
 								<ul>
 									<li>
 										<div style="max-width: 65ch;">
-												instead, if you were to separate things out, you'd lose less progress
+												(hidden) 9KfLndn9i
+										</div>
+									</li>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) LMefwFS4e
 										</div>
 									</li>
 								</ul>
 							</li>
 							<li>
 								<div style="max-width: 65ch;">
-										so yeah, multiple simple rebases are better than a fewer more complicated ones.
+										(hidden) rMvfNC93F
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) PqMXXnuMf
+						</div>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) VHODkbHAD
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) tr5kzZHj9
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) PJ9dgSbAd
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) Gffsql0UG
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) b-mkiwAWe
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) SWZKVxPcg
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) TFrsVA04c
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) Qluj-1OFm
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) mI8WrxjXs
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) dMfKoE3CI
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 33qt8isNW
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) 1b1bwyKcE
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) csRyvtLSm
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) QFu0TEbzM
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) vk3b7y1Yz
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) uYAkYLUW7
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) wcheLRHfF
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) H7u_p5o1y
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) NkzgZDyZw
+						</div>
+						<ul>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) ND1JPyH13
+								</div>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) Pjt28iW8E
+								</div>
+								<ul>
+									<li>
+										<div style="max-width: 65ch;">
+												(hidden) _jeJJylNJ
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div style="max-width: 65ch;">
+										(hidden) KSEqOv5aD
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								(hidden) 2jJUpcMso
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						(hidden) WkODm4U5C
+				</div>
+			</li>
 		</ul>
 	</li>
 	<li>

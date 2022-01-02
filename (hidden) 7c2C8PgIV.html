@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T09:26:18.748Z</span>
+				<span>2022-01-02T10:28:18.924Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1634702383343);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641115578748);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641119298924);
 
 			</script>
 		</small>
@@ -527,7 +527,7 @@
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								saved time w/ [[codemods]]
+								(hidden) 45t5x5ftp [[codemods]]
 						</div>
 					</li>
 				</ul>
@@ -876,7 +876,7 @@
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								lmao, same as notion vs #[[roam]] - roam already solves this; there isn't any grouping. but not all can understand
+								(hidden) _5Otds1Jf #[[roam]]
 						</div>
 					</li>
 				</ul>
@@ -1088,31 +1088,7 @@
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						Me:
-			not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
-			what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
-			i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
-			but even if you could do that now, there're 2 problems:
-			1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
-			2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
-			and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
-			---
-			is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
-			let IDs = ["b4e5a6", "d52ca6", "445a63f"]
-			IDs.forEach((id) => {
-			  // i don't remember the exact structure,
-			  // i think it's something like
-			  // deleteBlock({ id }) but not sure
-			  window.roamAlphaAPI.deleteBlock(id)
-			}
-			see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
-			but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
-			the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
-			---
-			but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
-			e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
-			[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
-			[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
+						(hidden) 2kuXo2gRg #[[roam]] #[[roam-traverse-graph]] #[[(hidden) 0eq2i9Com]]
 				</div>
 			</li>
 		</ul>

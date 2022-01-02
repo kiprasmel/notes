@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T09:26:17.974Z</span>
+				<span>2022-01-02T10:28:18.440Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638692284948);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641115577974);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641119298440);
 
 			</script>
 		</small>
@@ -201,77 +201,81 @@
 			<ul>
 				<li>
 					<div style="max-width: 65ch;">
-							[[roam-traverse-graph]]
+							(hidden) G9HHCZsY4 [[roam-traverse-graph]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the "TypeScript" implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
+									(hidden) Y2dRemfcT #[[(hidden) HIYk9LKno]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											[1] https://github.com/shaunxcode/jsedn
+											(hidden) -l4gnDHD0
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											[2] https://github.com/edn-format/edn/wiki/Implementations
+											(hidden) WxqyVByvA
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											[3] https://github.com/jorinvo/edn-data
+											(hidden) nqnI3FMWw
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											you can even use it to convert from/to JSON, & it's first-class as well!
+											(hidden) a1phz08lP
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it'd be so much better because:
+											{{[[TODO]]}} (hidden) vFoJZbLPe #[[(hidden) HIYk9LKno]]
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													we'd get to keep the metadata e.g. public vs private page
+													(hidden) Ue7SvRHL8
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													we could manipulate this metadata ourselves!
+													(hidden) Ym-e3Oa91
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													we could "reset graph" directly from the new #[[(hidden) HIYk9LKno]] - it'd be way faster, instead of having to "reset graph" from an empty graph & then uploading the json
+													(hidden) qwvTRF_EP #[[(hidden) HIYk9LKno]]
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													yes pls!
+													(hidden) wmDMsX8Vt
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} if the TS version works, update the wiki of edn
+											{{[[TODO]]}} (hidden) g1Ly0pJW1 
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													https://github.com/edn-format/edn/wiki/Implementations
+													(hidden) 3Y-keKT3c
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
 								<li>
 									<div style="max-width: 65ch;">
-											i realized this when replying to [[(hidden) LYMrimQBb]]
+											(hidden) cWujT10aW
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) VXRhRR3fa [[(hidden) LYMrimQBb]]
 									</div>
 									<ul>
 										<li>
@@ -291,173 +295,171 @@
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	Me:
-														not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
-														what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
-														i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
-														but even if you could do that now, there're 2 problems:
-														1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
-														2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
-														and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
-														---
-														is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
-														let IDs = ["b4e5a6", "d52ca6", "445a63f"]
-														IDs.forEach((id) => {
-														  // i don't remember the exact structure,
-														  // i think it's something like
-														  // deleteBlock({ id }) but not sure
-														  window.roamAlphaAPI.deleteBlock(id)
-														}
-														see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
-														but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
-														the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
-														---
-														but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
-														e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
-														[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
-														[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
+																	(hidden) 2kuXo2gRg #[[roam]] #[[roam-traverse-graph]] #[[(hidden) 0eq2i9Com]]
 															</div>
 														</li>
 													</ul>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) WDTZqp9IR
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) A3GIXT2P6
+									</div>
+								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									[[(hidden) gneWzf7F3]]
+									(hidden) PxSq8k_aK [[(hidden) gneWzf7F3]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											oh idea - just use `joinWith("\n")([ "line1", "line2", ])` to make it way clearer!
+											(hidden) 9cqPmANab
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											also, now it looks like a taggedTemplateLiteral call, i.e. we could do
+											(hidden) A-qoCO7wC
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													```javascript
-										joinWith("\n")`
-										  line 1.
-										  line 2.
-										  left spacing does not matter
-										  because we could just trim it?
-										```
+													(hidden) bRtyjGdjs
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													oh but wait, we again have to use the `${}` calls. nope
+													(hidden) 3nAZfu_zx
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
+													(hidden) WNsvqY5tq
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															```javascript
-												joinWith("\n")([
-												  "line 1",
-												  "line 2",
-												  "line 3"
-												])
-												// same would be (notice - no array):
-												joinWith("\n")(
-												  "line 1",
-												  "line 2",
-												  "line 3"
-												)
-												```
+															(hidden) Ys_kn360b
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} yep. let's do it.
+															{{[[TODO]]}} (hidden) ntOneYZ-K 
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} refactor [[codemods]]
+															{{[[TODO]]}} (hidden) q94Mmlee9 [[codemods]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) LmADx7qC1
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) zmjW9Jn6v
+									</div>
+								</li>
 							</ul>
 						</li>
-						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} also `joinAllWith` or `joinWith("\n", true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
+									(hidden) J7o5zZR7H
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) Uj6S53-7r 
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} `includeFirst`, `includeLast`, `includeFirstLast` imports as 2nd arg to `joinWith`?
+											{{[[TODO]]}} (hidden) mPIM85CxV 
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} or as second arg to the returned fn by `joinWith` since situational?
+													{{[[TODO]]}} (hidden) NlyphOj5R 
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															meh. f's up the overview (adds 1 more line w/ linter)
+															(hidden) TI5QOnDRf
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[DONE]]}} add to 1st call (joinWith)
+															{{[[DONE]]}} (hidden) cXpqjv1in 
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} maybe allow overriding in the 2nd call?
+															{{[[TODO]]}} (hidden) qqRCE9i-6 
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) ms-_Ej0o8
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-							</ul>
-						</li>
-						<li></li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} allow passing in not only `string`s, but anything that has a `.toString()`
-							</div>
-							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} for starters: `number`, `symbol`
+											(hidden) jFOZ96PaR
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} in general, keeping track of how much left padding we have?
+									(hidden) kb67u02oK
 							</div>
 						</li>
-						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) QGQnEyFaO 
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) rYpLWFy_j 
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 6IHgvUgXj
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) O1lMUxSZh 
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 6P-b93r4j
+							</div>
+						</li>
 					</ul>
 				</li>
 				<li>
@@ -467,236 +469,260 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							[[git-stacked-rebase]]
+							(hidden) 2ASQVtr3W [[git-stacked-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} create issue @ #[[typescript]] - allow type guards, without generalizing a readonly value, thus turning it from a specific one into a union (current behavior, want to both guard __and__ have the exact type).
+									{{[[TODO]]}} (hidden) HCROm5-WP #[[typescript]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											`allowedCommandAliasesFromGitRebase`
+											(hidden) _FAl5L1YQ
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									reading the #[[(hidden) U5k5oJ6YK]] implementation of [[git-rebase]] atm.
+									(hidden) GpT9-n253 [[git-rebase]] #[[(hidden) U5k5oJ6YK]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											...because trying to create git-rebase-todo from git-stacked-rebase's git-rebase-todo, but there's more than that file to make it work -- there's also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that's why i'm here) (needed when `git rebase --abort`).
+											(hidden) y1vnICg63
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													abort?
+													(hidden) u6sZjwP1M
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															sequencer_rollback?
+															(hidden) Ib9dKn5XB
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															sequencer_pick_revisions?
+															(hidden) 2NOvD-fiy
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													"HEAD?
+													(hidden) w9s4x3jVC
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															do_recursive_merge?
+															(hidden) TwPWUpvlY
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													"could not read"?
+													(hidden) hOqTnNKx3
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															run_command.c | exec-cmd.c | cache.c # sane_execvp?
+															(hidden) _Zehn01k3
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															update_squash_messages?
+															(hidden) Aneaj-DXF
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L94) of `sequencer.c`    💥 
+																	(hidden) 5SYschHTB
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			there we have explanations for the various messages!
+																			(hidden) AGOmbMD-X
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L53-L170
+																			(hidden) Q8XcuFMhT
 																	</div>
 																</li>
-																<li></li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) aOdaKkJWL
+																	</div>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) n4UkxvU4T
+															</div>
+														</li>
 													</ul>
 												</li>
-												<li></li>
-											</ul>
-										</li>
-										<li></li>
-									</ul>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											{{[[TODO]]}} we might as well write our variables in snake_case, will be clearer thb
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											#[[(hidden) yKrt2xLFy]] sequencer.c is huge, used in 12 commands (rather, can be used to __sequence__ any command of the available 12).
-									</div>
-									<ul>
-										<li>
-											<div style="max-width: 65ch;">
-													well actually, a few less - some builtin, some not, some tests.
-											</div>
-											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															vscode's LSP working good
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															regular (live @ repo root): branch.c, log-tree.c, rebase-interactive.c, sequencer.c itself, wt-status.c (?)
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															builtin: am.c (?), commit.c, merge.c, pull.c, rebase.c, revert.c
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															t/helper: test-fast-rebase.c
+															(hidden) E3ZKS3ZGx
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) OYy1ZDWXH
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li></li>
 								<li>
 									<div style="max-width: 65ch;">
-											re: ((5SYschHTB))
+											{{[[TODO]]}} (hidden) dmQwARu5Z 
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) VALuFLgcH #[[(hidden) yKrt2xLFy]]
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} gotta handle comments
-											</div>
-										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													okay, looks like the filename is incorrect - it prints `"warning: could not read '.git/rebase-merge/head': No such file or directory"`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it's set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
+													(hidden) FrPKhJqK8
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															did that. now we checkout into the first commit, and all files are added, what the heck?:D
+															(hidden) Mu0OBXQQr
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															maybe let's write into that `.git/rebase-merge/head` file even tho we can't see it?
+															(hidden) cYihCnCN0
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) 309gqBX09
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) d9haJVuFa
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) z3Ptmkkmp
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) KGfTxZpGL
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) i_XWJ_-4B
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) AKSpPbuX7 
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 3p9bBZoyg
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) 5jzuoHnjm
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) TOtyALgqS
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch's commit :D
+																	(hidden) 9FuUVRm4G
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	i previously set `head-name` to the latest branch's commit sha, instead of the initial branch's one
+																	(hidden) tNqjEF-f6
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	`interactive` file missing from me
+																	(hidden) Lk_3KlG5k
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			also `no-reschedule-failed-exec`
+																			(hidden) 7ZsaUXEpT
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			also `orig-head` (`head-name` should be the ref (`refs/heads/branch-name`), and `orig-head` - the commit of the latest branch (before rebase))
+																			(hidden) lRvHZ4ofC
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			SHEEESH! `rebase --edit-todo` shows up & works!!!
+																			(hidden) noBs1sXXy
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					 `commit --amend` also shows up, but editing it edits something wrong & my statusbar shows both rebase & ahead/behind commit counts, so something definitely wrong lmao
+																					(hidden) LMdTV3iZl
 																			</div>
 																		</li>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					do i need the `index` file as well? git-rebase-todo.backup? 
+																					(hidden) ENWBC8eGT
 																			</div>
 																			<ul>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							git-rebase-todo.backup doesn't seem to help
+																							(hidden) lfKxhxBlt
 																					</div>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							index nope, identical gets generated
+																							(hidden) VJLAmadCq
 																					</div>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							.todo -> .backup
+																							(hidden) fE9dKo4c5
 																					</div>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							head-name: head commit sha -> latest branch name
+																							(hidden) OQRlmjhwI
 																					</div>
 																					<ul>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									snap, i set it to initial branch's name lol
+																									(hidden) j9O9F2F73
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											ok now we at least get put into the right branch if i abort. status bar still shows -20 commits and i gotta git pull
+																											(hidden) 4-dnNQoyy
 																									</div>
 																								</li>
 																							</ul>
@@ -705,22 +731,22 @@
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							ok so in regular case, status bar shows 1/21 commits, ours doesn't. `index`?
+																							(hidden) xIo2EZhFJ
 																					</div>
 																					<ul>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									HEAD, ORIG_HEAD?
+																									(hidden) sLI1Ih84B
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											`head` & `orig-head`
+																											(hidden) 3qB3bYFnl
 																									</div>
 																									<ul>
 																										<li>
 																											<div style="max-width: 65ch;">
-																													SUCCESSFULLY REBASED !!!
+																													(hidden) 7yOru8fJY
 																											</div>
 																										</li>
 																									</ul>
@@ -731,117 +757,137 @@
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							`done`, `msgnum`, `end`
+																							(hidden) FDY_ZbNKk
 																					</div>
 																					<ul>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									PROMPT WORKS!!!
+																									(hidden) g5qMTP7Dt
 																							</div>
 																						</li>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), & THE REBASE WORKED !!!!!!
+																									(hidden) YjfRapq6A
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
+																											(hidden) xfszGLUkf
 																									</div>
 																								</li>
 																							</ul>
 																						</li>
 																					</ul>
 																				</li>
-																				<li></li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							(hidden) 21NdBDt1B
+																					</div>
+																				</li>
 																			</ul>
 																		</li>
-																		<li></li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) p7tyUno90
+																			</div>
+																		</li>
 																	</ul>
 																</li>
-																<li></li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) fSZHTfqxV
+																	</div>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) P9kKTKzPb
+															</div>
+														</li>
 													</ul>
 												</li>
-												<li></li>
-											</ul>
-										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													okay, it's gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
-											</div>
-											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} before rebasing, validate all commits in the partial branches are the same as in the latest branch.
+															(hidden) Kvy8s9QLx
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} as i though, we might need to use the `git rebase -i` initially to get all the stuff in the right places
+													(hidden) _Cr2Za68h
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															e.g. atm, if i want to continue the rebase, i need to pass in some signature and it's not there,
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															also the `gpg_sign_opt` needs handling
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															etc
+															{{[[TODO]]}} (hidden) lphK1YiIb 
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} fuck, why is the rebase stuff so meh? will i have to handle every single operation myself?... why is there no `rebase.continue()`?...
+													{{[[TODO]]}} (hidden) wCejqKkMw 
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															thinking about using the #[[(hidden) U5k5oJ6YK]] api. but, the error i was getting - it's not even mentioned anywhere in the nodegit repo, not a single word, which means that it's only in libgit2 (the C source) itself, so ain't gonna help
+															(hidden) dtw1D_Sj8
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) S2S5m3WIu
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) y0KWmH_Tp
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													rebase.c
+													{{[[TODO]]}} (hidden) khPvMSZYW 
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															git_commit_free
+															(hidden) joSpDvYBf #[[(hidden) U5k5oJ6YK]]
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) QmgHJ2IbD
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) ircNEZGf0
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	common.h
+																	(hidden) z2i_H5YJ5
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			"wrapper around git_object_free"
+																			(hidden) rEbKd14zJ
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			"see git_object_lookup_prefix"
+																			(hidden) xBKwdrILs
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					object.h
+																					(hidden) jZhkxlEEm
 																			</div>
 																		</li>
 																	</ul>
@@ -852,103 +898,139 @@
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															yeah the libgit2 stuff is outdated sadly, at least for rebase... the `cmt.%` stuff - git itself does not have it...
+															(hidden) 4UO2NGPd-
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	git hooks?
+																	(hidden) UqFRufnQJ
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+																			(hidden) _KjV0Ke19
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			i remember when i was ((GpT9-n253)) recently -- there were some mentions of hooks. will see
+																			(hidden) kpOeKzvh3
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					ah yes, in the sequencer: ((5SYschHTB))
+																					(hidden) 9rPkSvEG-
 																			</div>
 																			<ul>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							`post-rewrite`
+																							(hidden) ggeCNgEgE
 																					</div>
 																					<ul>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									yep. works.
+																									(hidden) zTkitmECe
 																							</div>
 																						</li>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									eh, it gets called multiple times. i might as well stick to my "insert additional `break` at the very end` & handle it myself there
+																									(hidden) IbBW5lqNq
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											tho, it'd still have to spawn some sort of process to be able to do that...
+																											(hidden) QZeb89_e1
 																									</div>
 																								</li>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											{{[[TODO]]}} what if instead i just wrote the `rewriten-list` into our own `stacked-rebase` dir & after it's done, the user'd have to manually call `apply`, just like we intended in the first place?
+																											{{[[TODO]]}} (hidden) d65I9ng4U 
 																									</div>
 																									<ul>
 																										<li>
 																											<div style="max-width: 65ch;">
-																													{{[[DONE]]}} yes
+																													{{[[DONE]]}} (hidden) b3HyBgDLJ 
 																											</div>
 																										</li>
 																										<li>
 																											<div style="max-width: 65ch;">
-																													oh, i don't even need last `break` re: ((IbBW5lqNq))
+																													(hidden) _TbI1cUaI
 																											</div>
 																										</li>
 																									</ul>
 																								</li>
-																								<li></li>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											(hidden) egM3hyUcq
+																									</div>
+																								</li>
 																							</ul>
 																						</li>
-																						<li></li>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									(hidden) e7lpinaPH
+																							</div>
+																						</li>
 																					</ul>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							`prepare-commit-msg`
+																							(hidden) FUimnl1K7
 																					</div>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							`post-commit`
+																							(hidden) u-qHkxQYG
 																					</div>
 																				</li>
 																			</ul>
 																		</li>
-																		<li></li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) FIc0g2tP-
+																			</div>
+																		</li>
 																	</ul>
 																</li>
-																<li></li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) HXTAeF6Jn
+																	</div>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) rUUUdLLNY
+															</div>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) gyYP7m9Cg
+													</div>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) _L2zwe4OY
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) GbHFpL1-e
+									</div>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Kj5fnEv5n
+							</div>
+						</li>
 					</ul>
 				</li>
 				<li>
