@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:18.444Z</span>
+				<span>2022-01-03T15:18:28.129Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638570772806);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119298444);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108129);
 
 			</script>
 		</small>
@@ -201,54 +201,57 @@
 			<ul>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) JeF32kACp #[[(hidden) jOMmlCP4S]] #[[(hidden) Wk9BwS_1L]] [[git-stacked-rebase]]
+							#[[(hidden) Wk9BwS_1L]] #[[(hidden) jOMmlCP4S]] [[git-stacked-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) uNkZuvsm3
+									wrap git-rebase
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) iVqvppLxY
+											```shell
+								git config --global alias.rebaseraw = rebase
+								git config --global alias.rebase = git-multi-rebase
+								# idk if it'd work, todo verify```
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) 97QzVM0f2
+									when invoked (through multi-rebase or even regular rebase):
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) croiF4Kb9 [[(hidden) zmiEcf1EP]]
+											idk if we should have a config like in [[(hidden) zmiEcf1EP]]. 
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) eDr--IgLQ
+													perhaps, to specify which branches depend on which.
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) bl43FUX2Q
+															though, seems unnecessary, we'd only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) MC-Ts228n
+															but, this would still be useful for safety, to make sure we don't accidentally include what we don't want
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) piUldvvBe
+																	tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) RWjbCb1Sg
+																	fact is, the whole point if wrapping git rebase is that it's likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` & `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we're doing a multi-rebase, or if we should default back to the normal git-rebase.
 															</div>
 														</li>
 													</ul>
@@ -259,78 +262,78 @@
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) MQ9ZYYgkN 
+											{{[[TODO]]}} would take some safety measures?
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) lazcn_aww 
+													{{[[TODO]]}} e.g. checking if any of the branches are not pushed to remote
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) BvV5EtQmz 
+													{{[[TODO]]}} e. g. chceking if previously a git-multi-rebase ran and wasn't applied/finished and temp branches are still there
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) WZ3eqHLXX 
+													{{[[TODO]]}} etc. figure out what needs to be done
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) QqsWaH1XE
+													((EaypictfH))
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) OST-d_vH8
+											would launch `git-rebase -i`
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) QvE2oTJ3B
+													would edit the REBASE_EDIT_TODO or whatever file
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) vcr1iziBh
+															for all sub-branches, would add `branch-end <branch-name>` command after commit that the branch is pointing at
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) GZ4jdTWec
+													would then allow the user to edit the REBASE_EDIT_TODO, just like it'd be normally done with git rebase -i
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) HOOhjHCyF
+															the user can now:
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) v8512eNAt
+																	do the regular git rebase stuff,
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) cPqNnUMNv
+																	plus they can move the `branch-end`s around
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			{{[[TODO]]}} (hidden) EaypictfH 
+																			{{[[TODO]]}} safety measure - if user moves around 2 `branch-end`s (i.e. swaps their order), ask for explicit confirmation
 																	</div>
 																</li>
 															</ul>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) MnGkWpt9r
+																	they can create new branches w/ `new-branch-end`
 															</div>
 														</li>
 													</ul>
@@ -339,195 +342,164 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) UmAolGmVc
+													probably would've inserted `break` in the very beginning, so that we can read the file ourselves once the user finishes editing
 											</div>
 										</li>
 									</ul>
 								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									interesting, but not quite
+							</div>
+							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) U2Rr8Q9xX
+											https://github.com/Shopify/git-chain
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) 3fyskNDMO
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) Wr2YB_-9p
+									nah, but interesting they have `git_python` pkg - when i was thinking about my own version of multi-rebase, i too though this would be useful, for javascript.
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) dvvsPus8N
+											{{[[TODO]]}} check if js has such lib
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											https://github.com/wsteelman/git-utilities
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) XyHdBS_dj
+									oh shit
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) pEVylgnZd 
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) ulGTylWo4
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) bQHpPPDoZ
-							</div>
-							<ul>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) fkkKNXWIf
+											reading the title of this:
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 6NKynJwKe
+													https://0xc0d1.com/blog/git-stack/
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) rSUSUrgow
+											dude! what i want is stacked diffs!!
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) LbWZXoT8k
+											maybe i should rename multi-rebase to stacked-rebase?
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) u4-7ktfNd
+													for initial searchability if you're in a situation similar to mine, it might be harder to find,
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) V5Ntey46h
+													but, if you've heard about stacked diffs, maybe you'll find it even easier.
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) kqonK3Vwf
+													and, the name makes it clear very fast of what's actually going on
 											</div>
 										</li>
 									</ul>
 								</li>
+								<li></li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) UnlUxkqgW
+											the tool itself, gh-stack, seems pretty cool, but it's github-specific, and has many things that suck about it. i want mine to be git-specific (lol), with potentially adaptors for creating new PRs, editing PR titles etc., but that's less relevant if we figure out the core functionality.
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) dAGA1DW1R
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) FGDlHuO_4 
+											{{[[TODO]]}} i also realized that `new-branch-end` (or `branch-end-new`, if `ben` is good for shortname) is a little subtle -- if you're inserting a new branch (or branches) __between 2 existing ones__ (always the case here) in the same rebase, if you e.g. have normal ordering of 1., 2., 3., etc., now you'd have to add another level, e.g. if inserting between 2. and 3., it now becomes: 1., 2.1, 2.2, 3. perhaps we don't need to modify the existing 2. into 2.1, or actually, perhaps it should be 1., 2., 3.1, 3.2, because we're taking & splitting commits from 3., not from 2. (since a number marks the __end__, __not__ the beginning.). again, how do we retain e.g. github comments here? not worth to focus on right now, but good to keep in mind.
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) yjsKQzv4P
+													obv you cannot rotate the branches on github either, because then the comments get lost / become completely irrelevant, because it's the wrong branch!
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) AYxlbpR0Q
+															oh but this might still apply if you're creating new branches...
+												hmm, perhaps we should __not__ focus on the branch-end-new, and only on branch-end now.
 													</div>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) is47NH-a9
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) ATd5SkHjq
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) kOU9uyFr1
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) kVh4RBONV
+									"git stacked rebase"
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) gjGfX3x-c
+											https://news.ycombinator.com/item?id=27305521
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) Jo9KHLQr2
+													doesn't look like it
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) ULpfTyD7R
+											https://github.com/epage/git-stack
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) KcDuITfy2
+													hmmm, maybe, but still not what i want (u still need to jump around branches, & i just want to chill /comfy/ in my latest branch)
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) BmXJmqNHK
+											https://github.com/ezyang/ghstack
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) gR8-4mYe3
+													lel, submits each commit as a PR. nope.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) KY3vh7Rb9
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) JfobgDip5
-							</div>
-						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
@@ -537,106 +509,86 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) e3dn6yVvA [[roam-traverse-graph]]
+							[[roam-traverse-graph]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) BYLg3MUi8 
+									{{[[TODO]]}} the `run.sh` script in notes-private:
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) BCF4fR_kK
+											we could have a template repo that included the `run.sh` script, which would have the current logic, but the `get_secrets` would be extracted into a separate script, `get_secrets.sh`, and it'd take $1 as which secret getter to use, and people could contribute different secret getters.
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) 95WIVwLvt
+											this would make it reusable; people could contribute different getters (e.g. i use keepass-xc-cli, someone might use gpg, etc etc)
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) i3zYttuLx [[(hidden) K_zc5Rl9e]]
+									[[(hidden) K_zc5Rl9e]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) O4Jtzekha 
+											{{[[TODO]]}} get rid of custom domain.
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) _ZgjbrcTs [[bus factor (public, tbd)]]
+													{{[[TODO]]}} add docs on: 1. how to add the custom domain, 2. why you shouldn't. [[bus factor (public, tbd)]]
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) JEMM6ZZGN 
+													{{[[TODO]]}} add redirects from `notes.kipras.org/*` -> `kiprasmel.github.io/notes/*`
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) AelvMdDO5 [[roam-traverse-graph]]
+															[[roam-traverse-graph]]
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	{{[[TODO]]}} (hidden) U74ix2YI8 
+																	{{[[TODO]]}} oh just realised we need to handle math (wanted to convert from `->` to `$$\implies$$`). there was a lib that roam was using - we could use it to inline at compile time (if possible?)
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) WtkBiess9
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) to9VG3Ujh
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) OoHj5nDsB
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) V28Q30TEU 
+									{{[[TODO]]}} `runfull.sh` - `git pull` inside `PUBLIC_NOTES_REPO` - if i'm doing a few runs one after another, & they're close in time, i might want to not get my commits spammed (whom will show up on the contribution graph as well, which i don't want), thus `git rebase -i` & `drop` helps, but since `git pull`, it gets undone. otherwise, if i force push, git pull won't do anything ofc, but then temporarily the deployment & thus the whole graph is in an outdated state.
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) Q7wd0ZlIA 
+											{{[[TODO]]}} i think the manual intervals are clearly identifiable - 1. i prefix the commit with `deploy (manual): ` instead of `deploy: `, 2. they differ more in time (e.g. commits of 1 session's multiple runs are close to each other, and to find the last one, you gotta go 1 by 1 from the latest one, and keep averaging the time deltas, and compare the current commit with the one before it).
 									</div>
 								</li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) F6yxZhJxB
+									{{[[TODO]]}} [[(hidden) K_zc5Rl9e]] fix urls (thus html filenames) - replace spaces with dashes `-`, keep only asciinumeric (latin letters & numbers) chars + `-_` (ez regex)
 							</div>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) -j2uWGEaW [[(hidden) K_zc5Rl9e]]
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) lJ--OHgCj
-							</div>
-						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
@@ -752,80 +704,68 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) 6eGAjbXoP #[[(hidden) Wk9BwS_1L]] #[[(hidden) DY6wPnICE]] [[git-stacked-rebase]]
+							#[[(hidden) Wk9BwS_1L]] [[git-stacked-rebase]] #[[(hidden) DY6wPnICE]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) Mdw740_ZI
+									WHAT git has `libgit2` (in C (ofc)) & SUPPORTS BINDINGS IN OTHER LANGS & THERE'S A TON, JS INCLUDED 🤯🤯🤯
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) RvZgCn5cM
+											https://libgit2.org/
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 4LPNu3ZfL
+													https://github.com/nodegit/nodegit
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) O6BBPQ8go
+															https://www.nodegit.org/
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) Yj8Oa1QDL
+															https://www.nodegit.org/api/
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) QjscErwPA
+																	🤯🤯🤯 
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) UC13cWT9f
+																	it's so well done wtf
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) vUbneU_rR
+																	combined w/ the original one, it's amazing
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			(hidden) I4glekwFb
+																			https://libgit2.org/libgit2/#HEAD
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) f_83btXsa
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) RNOjhtFt5
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) aZT2RsP8w
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) SGamAgDQM
+											dude why is this not common knowledge? i've never seen anyone use this. this should be made very clear somewhere like git-scm or git's own source (in their Documentation/contrib or similar guide)
 									</div>
 								</li>
 							</ul>
@@ -839,109 +779,90 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) M6-6Q3oe0 [[git-stacked-rebase]]
+							[[git-stacked-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) Dy1a8ge_O 
+									{{[[TODO]]}} to handle multiple branchEnds on the same commit, we could ask the user interactively (similar to `git add --patch`)
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) 7RESi5O79 [[(hidden) zmiEcf1EP]]
+											{{[[TODO]]}} i think we'll need to save this info, similarly to how you have to do it manually w/ [[(hidden) zmiEcf1EP]] - to make sure that if someone else wants to edit (which almost never should be the case, unless ofc it's you yourself, just on a different device), then they'd have this protection already
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 5qy3PSwQN
+													what is a non-goal is protecting against editing one of the partial branches (one of the stacked diffs) - you should not do that, period, and, well, if someone does - too bad!
+										ofc you can get it figured out, but you should not be editing it manually.
+										perhaps then the branch name should clearly reflect it. i originally though prefixing it w/ `stack/` & then adding some more info, will see.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) Q7akYEM3D
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) NdEAvs59g
+									.
 							</div>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) oWjzkW9_L 
+									{{[[TODO]]}} even tho it's not always necessary, it'd provide great protection to have the `.git-stacked-rebase` tracked inside the latest branch
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) WUiVhfkKy
+											e.g. if someone were to add a new branch (even you yourself, in a different device), and forgot about it - we're kinda messed up, as opposed to being able to fully recover.
 									</div>
 								</li>
+								<li></li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) _zKmkniuz
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) OxSAcN_sT 
+											{{[[TODO]]}} maybe instead of re-creating branches, we could, starting from the first one (excluding the initial one), `git reset --hard` it to the previous branch (before taking safety measures ofc ofc), and then run cherry-picks from the latest branch?
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) xANCqPN-v
+													seems like something closer to actual git rebase haha (i don't actually know but i assume and i think i've heard something similar)
 											</div>
 										</li>
+										<li></li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) ug0Elp3Pn
-											</div>
-										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) _g5HF_ZIZ
+													wait, lol, why am i misunderstanding it again myself? we're not doing anything in partial branches, we're doing everything in the latest branch, including the normal git rebase, after which we'll have an option to apply the changes into partial branches
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) S8pmodjH7
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) pKWhJIV9m
+									the naming "boundaries" & "what's in-between them" is very good. i think i'll still keep the `branch-end` to make it clear, but when explaining how it works, it becomes very easy to understand when you say that the now gray lines with the branch names are boundaries, and what you can do is move commits between boundaries, in addition to doing regular git-rebase operations like squashing/fixing / re-ordering etc.
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) fhPzoSpyz
+											aha! this is why i myself was confused and even added the `options.addNewlineAfterBranchEnd` option - it's a completely wrong way to think about it! & when you internalize the "boundaries", you're all set.
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) 2OXEoGh5T
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) pRAWdp-Ws 
+									{{[[TODO]]}} re: multiple branches on 1 commit - since choosing 1 would impact what later ones are available, it'd be best to have a tree (top-down or bottom-up) w the choices available & somehow navigate-able & choose-able.
 							</div>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) qfftxlI8M
-							</div>
-						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
@@ -961,12 +882,12 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) jijJVSSI2 [[git-rebase]]
+							[[git-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) tKdCjGTa_
+									see also `man git-rebase`, esp. "INTERACTIVE MODE"
 							</div>
 						</li>
 					</ul>

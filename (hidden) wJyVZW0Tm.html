@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:19.409Z</span>
+				<span>2022-01-03T15:18:28.477Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635953326103);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119299409);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108477);
 
 			</script>
 		</small>
@@ -282,7 +282,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) qrZi9REYV #[[(hidden) jOMmlCP4S]] [[(hidden) wJyVZW0Tm]]
+				{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] re: [[(hidden) wJyVZW0Tm]]
 			</div>
 			<!--
 			</span>
@@ -290,78 +290,79 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) qoXClQLyJ
+				https://danburzo.ro/javascript-codemods/
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 1XnGE3EK-
+				we could have a pre-processing transform that would collect all imports, exports and wraps around our components, and then use that output inside the transforms that rely on that information!
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) mleEiUx0x 
+				{{[[TODO]]}} need to specify transform dependencies inside transform
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 5gXJSZ74g
+						```javascript
+			export const dependencies = [transformA, transformB]```
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) BxYsK5_Ll [[(hidden) vkt9VljJ3]]
+				{{[[TODO]]}} need [[(hidden) vkt9VljJ3]] for transforms, and to run each sub-level sequentually in the codeshift-cli.
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) XFa9SijXf
+						would _not_ be needed if ... will be needed.
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) yI0BFlIg2
+				each transform would get an additional arg - `outputsFromDependencies`, and would use `outputsFromDependencies[transformFnThatGeneratedThatOutput]` to access the specific outputs
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) k8rlW0h49 
+						{{[[TODO]]}} and each transform would return not only the modified source, but also the outputs.
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) h7qukkdab [[roam-traverse-graph]]
+						idea taken exactly from [[roam-traverse-graph]] :D
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) cYT0EUKF- 
+				{{[[TODO]]}} update template to `export const myTransform: Transform = () => ...`
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) Y9CnKNdRk 
+						{{[[TODO]]}} add `export const dependencies: TransformDependencies`
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} (hidden) 4yFG7KZeI 
+						{{[[TODO]]}} validate w/ validator
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) BhxyLrgKD
+								https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/f79407a95d823d01e0b9b3928397f47c7f81c556/packages/validator/src/index.ts
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) Q-EJyNKJi
+								https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/506fa08c8cda2782d3153cada23530eec965b727/packages/cli/src/validate.ts
 						</div>
 					</li>
 				</ul>
@@ -370,7 +371,7 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) Qe91AoS2y #[[(hidden) yKrt2xLFy]] #[[(hidden) DY6wPnICE]] #[[(hidden) l6bezRkPb]] #[[(hidden) K0RqswvNf]]
+				sidenote / #[[(hidden) yKrt2xLFy]] - #[[(hidden) DY6wPnICE]] there's so much #[[(hidden) l6bezRkPb]]tential!
 		</div>
 		<ul>
 			<li>
@@ -387,52 +388,52 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) lNVysHsmr
+				likely will need to use recast or whatever lower level lib & read file contents w/ fs to be able to traverse full graph.
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) ElE-nexl6
+						i. e. find all files that import e. g. a button from cui
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) MqvrY8g43
+						then, for each file, find what wraps it - other elements, styled, etc
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) X2HoNPS7T
+						check if the wrapper are exported
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) KfSCW6w29
+								no: add but only applicable inside that file
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) 5gKprNRX4
+								yes:
 						</div>
 						<ul>
 							<li>
 								<div style="max-width: 65ch;">
-										(hidden) vMI4FM2cW
+										will need to create a normalized (like yarn lockfile instead of npm's) map of what absolute path imports what absolute paths
 								</div>
 							</li>
 							<li>
 								<div style="max-width: 65ch;">
-										(hidden) 1SlH8PUFt
+										from that map, find where the wrap is imported from
 								</div>
 								<ul>
 									<li>
 										<div style="max-width: 65ch;">
-												(hidden) shPYVHYoP
+												note - maybe better to have a transform that just for each file it goes thrue, it adds to the normalized array that file, all imports and all exports.
 										</div>
 										<ul>
 											<li>
 												<div style="max-width: 65ch;">
-														(hidden) zB4rRE1ke
+														this way walking and filtering would be simpler
 												</div>
 											</li>
 										</ul>

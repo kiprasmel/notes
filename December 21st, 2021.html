@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:18.398Z</span>
+				<span>2022-01-03T15:18:28.111Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640037609608);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119298398);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108111);
 
 			</script>
 		</small>
@@ -329,230 +329,188 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) 4l1gqB4cF [[git-stacked-rebase]]
+							[[git-stacked-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) el1TOG8X8 
+									{{[[TODO]]}} ffs, the `Exitable` stuff is bad tbh, `exit` was a `TypeError` instead of an exit code / proper error - was hard to find, no good, gotta fix.
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) 4R3-dZkR-
+											and i had fixed the code that was causing this error 2 days ago already, but that's irrelevant - it's easy to make such mistakes w/ this infra, which is a no no.
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) beLdGUUuT 
+									{{[[TODO]]}} we __really__ need e2e tests
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) pfp7bixos
+											also where the initial issue came from (re: [Exitable](((el1TOG8X8)))) - i just found out (by using the tool myself ofc) that i introduced a regression sometime between [that fix](((4R3-dZkR-))) (0.4.1) and now (0.5.0).
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) MjekFDZx8
+													`git bisect` suspect - `0657970dd2303f264036606e0cdc06b6854a0104`
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) R3i5nNKwX
+															figured it out - it's because in the very ending of the `gitStackedRebase`, we `markThatNeedsToApply()`, and __then__ we call `applyIfNeedsToApply()`, which, of course, will now always think that we need to apply.
+												other notes:
+												it makes it impossible to e.g. `edit` in the rebase-todo -  it continues (apply'ing?) w/o stopping
+												and might explode if we start a new git-stacked-rebase for the first time (i.e. there's no `.git/stacked-rebase/` folder, specifically `.git/stacked-rebase/rewritten-list` file in this case)
+												also, it'd be even harder to find because we'd only call the `applyIfNeedsToApply()` in the very end if `configValues.autoApplyIfNeeded` was true (design choice which made & still makes sense; it just makes the current bug harder to find)
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) Ht6sYbjh0
+																	```typescript
+																if (configValues.autoApplyIfNeeded) {
+																	const { userAllowedToApply } = await applyIfNeedsToApply({...})
+														        }```
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) tyt2aAf4B
+																	initial fix:
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			(hidden) Hb17OGPDo
+																			https://github.com/kiprasmel/git-stacked-rebase/commit/6eadc9e601523fd39263de13007de56b4f7a991c
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					(hidden) H1GRvOHRH
+																					> currently `canAndShouldBeApplying` is only in that part of the logic.
+																		to be fair, the problem arises only when we try to apply
+																		before the rebase was finished.
+																		but, it very well could be that the user (even tho unlikely) that user
+																		runs `git-stacked-rebase` while a regular `git-rebase` is in progress,
+																		thus causing the same issue.
+																		TODO so we need to handle this everywhere, and the approach might be
+																		different as well.
 																			</div>
 																		</li>
-																		<li>
-																			<div style="max-width: 65ch;">
-																					(hidden) vBEuOOJiP
-																			</div>
-																		</li>
+																		<li></li>
 																	</ul>
 																</li>
-																<li>
-																	<div style="max-width: 65ch;">
-																			(hidden) 0OHtpRYYW
-																	</div>
-																</li>
+																<li></li>
 															</ul>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) 3H2ooZKvz
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) F_p1CfNPO
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) fXe6LMS6_
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) DKa-jRDNh [[codemods]]
+											[[codemods]]
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) hA63HgZHP 
+													{{[[TODO]]}} remember to extract `inlineTest` (test utils) from extraction-6 lol
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) TPMSyaEWn
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) XEgIaD33b
+									{{[[TODO]]}} start using the `debug` lib
 							</div>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) E3SlHCIZM 
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) 5ZgJSHNoa
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) pn2oFTuU6 
+									{{[[TODO]]}} add `--continue`, `--abort` as aliases to regular git rebase commands, for convenience
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) WbIQSWUAm 
+											{{[[TODO]]}} should we?
 									</div>
 								</li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) 9uTJA-506
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) ymC2fOxY8 
+									{{[[TODO]]}} file mappings fn that takes in the repo's workdir and returns the wanted file
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) oO_--g6AC
+											or maybe just filename constants, since we'll need to pass in either the repo, or the fn that has the repo from a closure
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 8LRX_rcDZ
+													unless we do dependency injection, but we don't do that here™️
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) CKdnXATbi
+													```typescript
+										// const filesNames = {
+										const filenames = {
+										  rewrittenList: "rewritten-list",
+										} as const;```
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) dQ7N_gSpx
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) znc3jZoOd
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) zLRAA8RD1
+									o fuck, just realised when updating the CLI --help message - the `prompt` for `question` is a no no, at least in the library code (in cli code would be just fine).
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) _xR2rXJRW 
+											{{[[TODO]]}} okay i think it should be fine if we take in a callback function that will get this output for the library
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) Fx8qMOzkb
+											applies to general interactions (__interactive__ kek) (except ofc the git-rebase-todo file since we provide an editor already)
 									</div>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) 5XOgUiV33
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) yq_3rcb8r
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) K7-RsrMl5 
+									{{[[TODO]]}} handle failures if --apply was (attempted to be) used more than once - currently errors because file missing; should print (return) info message instead
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) CBOLcCrHA 
+											{{[[TODO]]}} same w/ --force -p, etc.
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) DYzIQRNEE
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) vPYtPt6K8
-							</div>
-						</li>
+						<li></li>
+						<li></li>
 					</ul>
 				</li>
 				<li>

@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:18.434Z</span>
+				<span>2022-01-03T15:18:28.124Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638828210763);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119298434);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108124);
 
 			</script>
 		</small>
@@ -500,185 +500,173 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) gbe4yjHbn [[git-stacked-rebase]]
+							[[git-stacked-rebase]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) GZrpzb01s 
+									{{[[TODO]]}} if partial branch is behind it's remote, handle it 
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) UrcMvM6NA 
+											{{[[TODO]]}} probably print ~~warning~~ error & exit
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) 8PlQnRjjy 
+													{{[[TODO]]}} ~~until we have a command to ~~ wait but that should never happen i.e. nobody should update the partial branch except for git-stacked-rebase. so idk, for now yeah just error & exit.
 											</div>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) NfGPmE9NA 
+											{{[[TODO]]}} only then work on the `push` stuff
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) IJMeyxv9k 
+									{{[[TODO]]}} handle errors & exiting (e.g. `wasRebaseStillInProgress` is affected if we exit w/ exit code - git's rebase does not write to file unless it's success, but we do, and so the next run will take the edited todo, instead of generating a new one)
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) mc8W8boS1 
+											{{[[TODO]]}} have a `stacked-rebase.unconfirmed` dir & write there while user's editing, and only after successful edit, move into the actual `stacked-rebase` dir
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) xSY9fk3mY
+													oh nvm, apparently it's working "correctly" atm. but because of the wrong reasons:D still need the above.
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} (hidden) 3OQ5gmTBN 
+															{{[[TODO]]}} find out the wrong reasons:D
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) 8Yj_jFX7X
+																	oh it's probably because i don't `--apply` lol
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			(hidden) r1fzM7SSc
+																			cc ((PXIO0vUQD))
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					{{[[TODO]]}} (hidden) V_6MNep7r 
+																					{{[[TODO]]}} maybe add something like `-x` to both edit & apply?
 																			</div>
 																		</li>
 																	</ul>
 																</li>
-																<li>
-																	<div style="max-width: 65ch;">
-																			(hidden) -pBCCWRtj
-																	</div>
-																</li>
+																<li></li>
 															</ul>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) 1MdX91XI9
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) Gynwj6uQ4
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) DNElbeui4
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) Tn8d_qU6z
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) mrZI0BkQ0 
+									{{[[TODO]]}} instead of `process.exit(code)`, return the code instead `return code` to make the module usable by itself, and then use the returned code in the CLI itself.
 							</div>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) w4mzSS2Rc 
+									{{[[TODO]]}} handle incompatible args/options
 							</div>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) jbIWSAR6u
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) NJmS6tHB5
+									re: ((mrZI0BkQ0))
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) da5lTj0rL 
+											{{[[TODO]]}} let's also __not__ write to stdout, and instead return the message if it needs to be written, and to where
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) QkClvjB_A
+													realized when noticed that calls to `process.stderr.write` are always the same - always need `"\n" + stuff + "\n\n"` - thus wanted to abstract, and then realized.
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) E59dbd2Lb
+													part of what the talk was about: ((ECPmuH08j))
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 7uJ1LLc_P
+													this is especially good & well-fitting because the program is library-first / module-first, as in, it's a module, and the CLI is only something on top of it. it's good because then anyone can write tools on top of it.
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 3O2dtt8Gq
+													see also this commit:
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) xYjkkdrLU
+															https://github.com/kiprasmel/git-stacked-rebase/commit/443674ea4e6f5f75996219486a241d1a0aaee2a4
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) g7HjH7g_6 
+													{{[[TODO]]}} ideally `gitStackedRebase` could be made pure, and it'd return ~~either an array of actions to take, or an array of errors~~ upd: errors can happen when taking actions, so it'd be best to return actions, since they can produce errors (we wouldn't have any errors regardless since we don't call the actions). and the the consumer can iterate on the actions.
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) sSQLn4Ecn
+															again, cc ((ECPmuH08j))
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) Uheph4R8Q
+																	damn, is this the default in clojure? from the talk it'd seem that it's a good, reasonable best-practice. would be kinda amazing to try & do this more.
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) YnU8r224A [[(hidden) K_zc5Rl9e]] [[git-stacked-rebase]]
+																	[[git-stacked-rebase]] [[(hidden) K_zc5Rl9e]]
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			(hidden) 6zbAAf3IG
+																			re: ((ECPmuH08j))
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					(hidden) XfwnEpcev [[(hidden) DY6wPnICE]] [[(hidden) Qb76iqf_n]] [[codemods]] [[(hidden) DTTuZxhoc]] [[(hidden) unlH_9R0B]] [[(hidden) mgTvVDjW-]] [[(hidden) d_BU9kVtB]] [[(hidden) XW4WLkPLe]] [[(hidden) lVDvvGLLj]] [[(hidden) iKtPaNgmv]]
+																					lol, i wanted to both use the linked reference for "clojure" ([[(hidden) d_BU9kVtB]]), and for the whole thing to be **in bold**. but that doesn't work in roam!
+																		and then i realized that when i'll be creating the Block's string parser, it'll need to be aware of the existing context / scope, i.e. what things wrap it already.
+																		i thought that you might want to walk upwards to check such things.
+																		and then i realized that [[(hidden) DTTuZxhoc]] (that i use for creating [[codemods]]) is exactly that. and that i could write a custom parser for roam's Block string (or, in general, any [[(hidden) XW4WLkPLe]] string i guess), and have it usable w/ jscodeshift. 🤯🤯🤯
+																		[[(hidden) DY6wPnICE]] / [[(hidden) lVDvvGLLj]]
+																		i indeed thought/knew that the 2 projects are related, but this much? wow, no.
+																		i guess now all 3 are:D
+																		also:
+																		- [[(hidden) DTTuZxhoc]] is created by an engineer who works/worked at [[(hidden) unlH_9R0B]].
+																		- [[(hidden) unlH_9R0B]] devs use [[(hidden) Qb76iqf_n]] + [[(hidden) iKtPaNgmv]] for version management (just like git)
+																		+ [[(hidden) Qb76iqf_n]] has [[(hidden) mgTvVDjW-]]
+																		HOLY SHIT x2
+																		it's all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 																			</div>
 																			<ul>
 																				<li>
@@ -720,196 +708,121 @@
 																						</li>
 																					</ul>
 																				</li>
-																				<li>
-																					<div style="max-width: 65ch;">
-																							(hidden) WesaLET2-
-																					</div>
-																				</li>
+																				<li></li>
 																			</ul>
 																		</li>
-																		<li>
-																			<div style="max-width: 65ch;">
-																					(hidden) Mlg74Yk3y
-																			</div>
-																		</li>
+																		<li></li>
 																	</ul>
 																</li>
-																<li>
-																	<div style="max-width: 65ch;">
-																			(hidden) EmR-YBKr3
-																	</div>
-																</li>
+																<li></li>
 															</ul>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) tuRTyAI4T
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
+												<li></li>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) LiqWbBupl
-													</div>
-												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) MBhtX5lah #[[(hidden) U5k5oJ6YK]]
+															also, am very much liking the #[[(hidden) U5k5oJ6YK]] way of returning a status / a boolean if success instead of an array, and taking the array as an argument (by reference, because array is object and in js, objects are taken by reference always), and appending into the array.
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	{{[[TODO]]}} (hidden) KHEY902zu 
+																	{{[[TODO]]}} don't know if related to the previous points re: ((ECPmuH08j)). gotta study & think about it!
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) slj7okW6S
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) m0eByLNbJ
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) sUlHAmD1g
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) 3Pgz-ro9k
+									{{[[TODO]]}} remember which branch was used so that the argument becomes optional (as long as there's only 1 stacked rebase in progress (are >1 even possible / should they?))
 							</div>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) YaOtEEesz 
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) CBOI1nR89
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) zkLDe3h-Y 
+									{{[[TODO]]}} (!) check how `git log` works, and resolve the commits & branches in a similar way
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) OUv5_8027
+											e.g. situation - i edited a todo, i applied, but then i reset the latest branch. git-stacked-rebase still picks up the commits from the partial branches. same even if i remove stacked-rebase/ dir. git log shows them correctly. we need to be like git log.
+								edit: ooh nvm, the sub-branches are still f'ed up, `git log` only shows the origin/` (remote) variants of the branches.
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) ku_I6SeSk 
+													{{[[TODO]]}} okay, so it's not a "finding commits" problem. it's a "forgetting which branches we're using in this rebase (before applying, and/or even after applying)"
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) uG7zf0ujf
+															cc ((joTBPOTgc))
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) X3LDwrphP
+																	thus, here we'd also have the "unconfirmed" branches (i.e. before --apply).
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	{{[[TODO]]}} (hidden) WFakDj-kN 
+																	{{[[TODO]]}} or, we could always have the branches, and if we see the something changed (e.g. some branch got lost), then we could offer the user to fix it
 															</div>
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			(hidden) qBFJ3GSzr
+																			cc ((qsgFcVGyC))
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) aRQGXh3Dz
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) uBvnV1JMp
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) wlQp8uEcw
+													oh okay now it makes sense -- the problem arose.. wait, because i applied to partial branches w/o "applying" to the latest branch?
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															(hidden) u_xWdpSxh
+															oh yes, makes sense! i applied to partial branches, but then reset the latest branch, so the branches are no longer pointing to the correct places. yep, then the above solutions would solve this.
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	(hidden) mu38xyTrN
+																	yep. resetting the latest branch back where it was before the reset, brings the branches back in (ofc)
 															</div>
 														</li>
-														<li>
-															<div style="max-width: 65ch;">
-																	(hidden) wLiyqjAKI
-															</div>
-														</li>
+														<li></li>
 													</ul>
 												</li>
-												<li>
-													<div style="max-width: 65ch;">
-															(hidden) owrVHaeH3
-													</div>
-												</li>
+												<li></li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) -GTBJxMNy
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) gGLCVn_gs
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) 4KO2b1v0f
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) ndkSnO2sa
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) SuLKlT4OE
-							</div>
-						</li>
+						<li></li>
+						<li></li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
@@ -934,26 +847,24 @@
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) g29JTH9jH [[git-stacked-rebase]]
+									thought about placing [[git-stacked-rebase]]'s core files in a folder, and e.g. keeping the CLI in the root folder of the repo.
+						i'd like to keep the structure as flat as possible, so thought to maybe add prefixes and then separate w/ a dot, while still keeping it as a filename & not inside folder (e.g. `/core.gitStackedRebase.ts` instead of `/core/gitStackedRebase.ts`), but looks a little sus maybe? but it's reachable more easily
+						upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really long & strange, but now that i wrote `core.`, it seems kinda not too bad!?
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) hDwW_N5z1 [[roam-traverse-graph]] [[(hidden) K_zc5Rl9e]]
+											thinking about the [[(hidden) K_zc5Rl9e]] plugin in [[roam-traverse-graph]] - would apply as well. maybe even plugins in general. will see.
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) NPEen3kzP 
+													{{[[TODO]]}} another thought from this - instead of naming the utilities usable by other plugins `meta`, name them `core`.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) LorUVP7Mw
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>

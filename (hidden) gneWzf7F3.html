@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:19.202Z</span>
+				<span>2022-01-03T15:18:28.411Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637161492350);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119299202);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108411);
 
 			</script>
 		</small>
@@ -358,7 +358,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) PxSq8k_aK [[(hidden) gneWzf7F3]]
+				[[(hidden) gneWzf7F3]]
 			</div>
 			<!--
 			</span>
@@ -366,58 +366,68 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 9cqPmANab
+				oh idea - just use `joinWith("\n")([ "line1", "line2", ])` to make it way clearer!
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) A-qoCO7wC
+				also, now it looks like a taggedTemplateLiteral call, i.e. we could do
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) bRtyjGdjs
+						```javascript
+			joinWith("\n")`
+			  line 1.
+			  line 2.
+			  left spacing does not matter
+			  because we could just trim it?
+			```
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 3nAZfu_zx
+						oh but wait, we again have to use the `${}` calls. nope
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) WNsvqY5tq
+						aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) Ys_kn360b
+								```javascript
+					joinWith("\n")([
+					  "line 1",
+					  "line 2",
+					  "line 3"
+					])
+					// same would be (notice - no array):
+					joinWith("\n")(
+					  "line 1",
+					  "line 2",
+					  "line 3"
+					)
+					```
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								{{[[TODO]]}} (hidden) ntOneYZ-K 
+								{{[[TODO]]}} yep. let's do it.
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								{{[[TODO]]}} (hidden) q94Mmlee9 [[codemods]]
+								{{[[TODO]]}} refactor [[codemods]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) LmADx7qC1
-				</div>
-			</li>
+			<li></li>
 		</ul>
 	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) zmjW9Jn6v
-		</div>
-	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>

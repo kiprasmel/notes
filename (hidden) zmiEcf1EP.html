@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:19.189Z</span>
+				<span>2022-01-03T15:18:28.411Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638519150596);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119299189);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108411);
 
 			</script>
 		</small>
@@ -324,7 +324,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) 7RESi5O79 [[(hidden) zmiEcf1EP]]
+				{{[[TODO]]}} i think we'll need to save this info, similarly to how you have to do it manually w/ [[(hidden) zmiEcf1EP]] - to make sure that if someone else wants to edit (which almost never should be the case, unless ofc it's you yourself, just on a different device), then they'd have this protection already
 			</div>
 			<!--
 			</span>
@@ -332,7 +332,9 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 5qy3PSwQN
+				what is a non-goal is protecting against editing one of the partial branches (one of the stacked diffs) - you should not do that, period, and, well, if someone does - too bad!
+	ofc you can get it figured out, but you should not be editing it manually.
+	perhaps then the branch name should clearly reflect it. i originally though prefixing it w/ `stack/` & then adding some more info, will see.
 		</div>
 	</li>
 </ul>
@@ -348,7 +350,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) croiF4Kb9 [[(hidden) zmiEcf1EP]]
+				idk if we should have a config like in [[(hidden) zmiEcf1EP]]. 
 			</div>
 			<!--
 			</span>
@@ -356,27 +358,27 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) eDr--IgLQ
+				perhaps, to specify which branches depend on which.
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) bl43FUX2Q
+						though, seems unnecessary, we'd only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) MC-Ts228n
+						but, this would still be useful for safety, to make sure we don't accidentally include what we don't want
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) piUldvvBe
+								tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) RWjbCb1Sg
+								fact is, the whole point if wrapping git rebase is that it's likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` & `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we're doing a multi-rebase, or if we should default back to the normal git-rebase.
 						</div>
 					</li>
 				</ul>

@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-02T10:28:18.464Z</span>
+				<span>2022-01-03T15:18:28.138Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637999107020);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641119298464);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641223108138);
 
 			</script>
 		</small>
@@ -201,223 +201,191 @@
 			<ul>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) fiZw5tVld [[roam-traverse-graph]]
+							[[roam-traverse-graph]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) DGlhJHMTT [[roam-traverse-graph-settings]]
+									{{[[TODO]]}} split [[roam-traverse-graph-settings]] into per-plugin basis
 							</div>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[DONE]]}} (hidden) kjFviiJHr 
+									{{[[DONE]]}} add `parentBlock` to `Block`'s `metadata`
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) cqoCESG76 
+											{{[[TODO]]}} verify good
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) 0o77b_rcR 
+											{{[[TODO]]}} commit
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 6MdhaF1hr 
+									{{[[TODO]]}} create tag(s) for "auto-expand linked mentions"
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) r3Vncmmkw [[roam-traverse-graph]]
+											some tags are like [[roam-traverse-graph]] itself - almost nothing inside the page itself, and everything underneath it in linked mentions.
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) mzxqIwwi7 
+									{{[[TODO]]}} lol, nasty bug, w/ security problems (good that now we have never used it so we're fine but we need to avoid this)
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) _vgUCJrU0 
+											{{[[TODO]]}} move `Page`.title & `Block`.string into metadata as `originalTitle` & `originalString`
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) ReXaG305D 
+											{{[[TODO]]}} never use the unprocessed ones in sub-plugins
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) xI0yYDMCT 
+													{{[[TODO]]}} consider removing in general
 											</div>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[TODO]]}} (hidden) 3EMp704ct 
+													{{[[TODO]]}} force explicit so that ts catches it
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} (hidden) 0kZvKxKqF 
+															{{[[TODO]]}} or force to have the hiding plugin as very first or second one, after adding the metadata one.
 													</div>
 												</li>
 											</ul>
 										</li>
 									</ul>
 								</li>
+								<li></li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) PuyaQPZVM
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											{{[[DONE]]}} (hidden) 5qPcgP-9m 
+											{{[[DONE]]}} wait but how does it happen? because we should be updating & accessing the same reference?
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) ijpqsxhBq
+													aha, found it -- inside `findIfPagesHavePublicLinkedReferencesAndLinkThemAsMentions`, the `block.string` is NOT hidden yet, but we take it. not good, use the `blockRef` instead.
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} (hidden) FwD98nX3V 
+															{{[[TODO]]}} previous suggested solutions still need to be implemented.
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} (hidden) MI8ltrGsR 
+															{{[[TODO]]}} also remove the page's title, just like we did w/ the block's string
 													</div>
 												</li>
 											</ul>
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													{{[[DONE]]}} (hidden) 8nxQ0biG4 
+													{{[[DONE]]}} oh, also, `withMetadata` spreads & changes the references of the block... not good! fix it.
 											</div>
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} (hidden) zaRYFQFOi 
+															{{[[TODO]]}} fixed. need tests though, to verify we don't screw it up because it's very easy to do lol
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
-											<div style="max-width: 65ch;">
-													(hidden) IYMc2isTX
-											</div>
-										</li>
+										<li></li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) rzmf0Wmps
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) 5A5FBU5fd
+									#[[(hidden) yKrt2xLFy]] why block & page separate - searching w/ `[[]]` vs `(())` & everything follows from there (linkedReferences vs linkedBlockReferences, etc etc etc)
 							</div>
 						</li>
+						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) s3-CpK5Qm #[[(hidden) yKrt2xLFy]]
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) vvcUd9iZr
-							</div>
-						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									{{[[DONE]]}} (hidden) -8iKLD0HY [[(hidden) K_zc5Rl9e]]
+									{{[[DONE]]}} created [[(hidden) K_zc5Rl9e]] workflow! works!!!
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) 3bCPco2CZ [[(hidden) CRbzoMPud]]
+											lol, i now understand the basis on how [[(hidden) CRbzoMPud]] works.
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													(hidden) 40HsvC3rO
+													`#if`s or whatever & other logic in templates - u can make it whatever u want if you were creating a similar framework xd
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) DmQxOH9rn
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) drwZxfAV8 [[(hidden) K_zc5Rl9e]]
+									[[(hidden) K_zc5Rl9e]]
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) hAl7ZR59h 
+											{{[[TODO]]}} exit on error
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) ZwmDx9A0p 
+											{{[[TODO]]}} remove the live updates since they're misleading - we'd need to refresh to verify the page hasn't been re-uploaded
 									</div>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) mcEDwgvUX
-									</div>
-								</li>
+								<li></li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) PGOtVqbGF 
+									{{[[TODO]]}} clean up the writing of json files (graphraw.json, .to-be-updated.json etc) - atm confusing, multiple different dirs, html generator doesn't even write, etc
 							</div>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 7gUVi6yfd 
+									{{[[TODO]]}} cronjob to remove repo in gh runner? ideally no, and remove inside workflow itself.
 							</div>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) hudkucfsj #[[(hidden) I08LwGTFJ]]
+									{{[[TODO]]}} fix #[[(hidden) I08LwGTFJ]] - when using the `#[[]]` tag, only parses it as `#` and not fully, and only eats the first letter, and keeps everything else uh oh 
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) WmGckROaH
+											e.g. in https://kiprasmel.github.io/notes/codemods.html
 									</div>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} (hidden) 8VDGYKcY7 
+									{{[[TODO]]}} check if multiple workflows can be combined into 1 (gh actions)
 							</div>
 						</li>
-						<li>
-							<div style="max-width: 65ch;">
-									(hidden) kSCAs8AKL
-							</div>
-						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
