@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-05T23:27:10.660Z</span>
+				<span>2022-01-06T00:50:56.032Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1632928176920);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641425230660);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641430256032);
 
 			</script>
 		</small>
@@ -515,7 +515,7 @@
 	<li>
 		<div style="max-width: 65ch;">
 				```typescript
-	export type Checker<T> = {
+	export type Checker&lt;T&gt; = {
 		(item: T): boolean;
 		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
 	};
@@ -524,7 +524,7 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
+				this is big -- if you created regular function overloads, you couldn&#39;t even specify the type `T`, because you&#39;d have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
 		</div>
 	</li>
 	<li>
@@ -535,11 +535,11 @@
 			<li>
 				<div style="max-width: 65ch;">
 						```typescript
-			export declare function CheckerAutomatic<T = unknown>(
+			export declare function CheckerAutomatic&lt;T = unknown&gt;(
 				item: T //
 			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
 			boolean;
-			export declare function CheckerManual<T = unknown>(
+			export declare function CheckerManual&lt;T = unknown&gt;(
 				A: T, //
 				B: T
 			): Order | number;
@@ -551,7 +551,7 @@
 	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
-				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
+				i remembered this might be a thing because i did function overloads for the [[codemods]] transform&#39;s (replace-jsx-attribute) configs&#39; `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn&#39;t realize it up until now 🤯
 		</div>
 		<ul>
 			<li>
@@ -572,11 +572,11 @@
 					         * if array contains exactly 1 element:
 					         *   will replace the value automatically;
 					         *
-					         * else, if array contains >1 element:
+					         * else, if array contains &gt;1 element:
 					         *   will replace the value with the 1st one from the array, and
-					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
+					         *   will add a comment, prefixed with &quot;TODO CODEMOD MANUAL INTERVENTION&quot;, to make the user verify themselves.
 					         */
-					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
+					        | ArrayWithAtLeastOneElement&lt;ValidJsxPropertyValueAsValue&gt;;
 					};```
 						</div>
 					</li>

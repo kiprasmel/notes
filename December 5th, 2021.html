@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-05T23:27:09.932Z</span>
+				<span>2022-01-06T00:50:55.286Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638692284948);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641425229932);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641430255286);
 
 			</script>
 		</small>
@@ -206,7 +206,7 @@
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the "TypeScript" implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
+									oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the &quot;TypeScript&quot; implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
 							</div>
 							<ul>
 								<li>
@@ -226,17 +226,17 @@
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											you can even use it to convert from/to JSON, & it's first-class as well!
+											you can even use it to convert from/to JSON, &amp; it&#39;s first-class as well!
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it'd be so much better because:
+											{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it&#39;d be so much better because:
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													we'd get to keep the metadata e.g. public vs private page
+													we&#39;d get to keep the metadata e.g. public vs private page
 											</div>
 										</li>
 										<li>
@@ -246,7 +246,7 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													we could "reset graph" directly from the new #[[(hidden) HIYk9LKno]] - it'd be way faster, instead of having to "reset graph" from an empty graph & then uploading the json
+													we could &quot;reset graph&quot; directly from the new #[[(hidden) HIYk9LKno]] - it&#39;d be way faster, instead of having to &quot;reset graph&quot; from an empty graph &amp; then uploading the json
 											</div>
 										</li>
 										<li>
@@ -292,27 +292,27 @@
 														<li>
 															<div style="max-width: 65ch;">
 																	Me:
-														not sure if that'd help much, and wouldn't want this to be the right solution regardless tbh.
+														not sure if that&#39;d help much, and wouldn&#39;t want this to be the right solution regardless tbh.
 														what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
-														i can do this w/ #[[roam]]-traverse-graph - i'm working on it atm, and i'll open source in the coming months.
-														but even if you could do that now, there're 2 problems:
-														1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn't get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
-														2. i've been doing a lot of automated reset of the graph & re-uploading of the json. turns out, even if the graph was initially fast (because it wasn't that big), after some resetting & importing, it gets extremely slow (currently kiprasmel [1] takes >1h to load, if ever). so this is another issue that i'd depend on the roam team to fix.
-														and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i'd really not recommend doing it, ever:D
+														i can do this w/ #[[roam]]-traverse-graph - i&#39;m working on it atm, and i&#39;ll open source in the coming months.
+														but even if you could do that now, there&#39;re 2 problems:
+														1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn&#39;t get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
+														2. i&#39;ve been doing a lot of automated reset of the graph &amp; re-uploading of the json. turns out, even if the graph was initially fast (because it wasn&#39;t that big), after some resetting &amp; importing, it gets extremely slow (currently kiprasmel [1] takes &gt;1h to load, if ever). so this is another issue that i&#39;d depend on the roam team to fix.
+														and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i&#39;d really not recommend doing it, ever:D
 														---
 														is there a native way in roam? i mean, you could export the graph as json, collect the blocks that have that tag similarly, get their IDs, and then from the browser console, using window.roamAlphaAPI.deleteBlock function, you could pass in the IDs, probably like so:
-														let IDs = ["b4e5a6", "d52ca6", "445a63f"]
-														IDs.forEach((id) => {
-														  // i don't remember the exact structure,
-														  // i think it's something like
+														let IDs = [&quot;b4e5a6&quot;, &quot;d52ca6&quot;, &quot;445a63f&quot;]
+														IDs.forEach((id) =&gt; {
+														  // i don&#39;t remember the exact structure,
+														  // i think it&#39;s something like
 														  // deleteBlock({ id }) but not sure
 														  window.roamAlphaAPI.deleteBlock(id)
 														}
 														see https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
-														but i myself would be quite afraid to do this on my main graph. i'd first export my graph as json, then create a new graph & import the same json there, and then experiment on it.
-														the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven't used it so not sure, but letting you know.
+														but i myself would be quite afraid to do this on my main graph. i&#39;d first export my graph as json, then create a new graph &amp; import the same json there, and then experiment on it.
+														the roamAlphaAPI also has querying, so that might be useful for finding the blocks - i haven&#39;t used it so not sure, but letting you know.
 														---
-														but again, even if you can, does not mean you should:D it'd instead be more useful for everyone if you consulted w/ the roam team, because it's likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it'll be best for everyone.
+														but again, even if you can, does not mean you should:D it&#39;d instead be more useful for everyone if you consulted w/ the roam team, because it&#39;s likely that a lot of people will start reaching such boundaries, and if the roam team is aware and can start working on them earlier, it&#39;ll be best for everyone.
 														e.g. maybe you could get access to Experimental Roam Graphs, as mentioned in the Datomic Alpha API [2], and seeing if that helps?
 														[1] roamresearch.com/#[[(hidden) 0eq2i9Com]]
 														[2] https://roamresearch.com/#/app/developer-documentation/page/RPQgIfLzH
@@ -335,7 +335,7 @@
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											oh idea - just use `joinWith("\n")([ "line1", "line2", ])` to make it way clearer!
+											oh idea - just use `joinWith(&quot;\n&quot;)([ &quot;line1&quot;, &quot;line2&quot;, ])` to make it way clearer!
 									</div>
 								</li>
 								<li>
@@ -346,7 +346,7 @@
 										<li>
 											<div style="max-width: 65ch;">
 													```javascript
-										joinWith("\n")`
+										joinWith(&quot;\n&quot;)`
 										  line 1.
 										  line 2.
 										  left spacing does not matter
@@ -367,23 +367,23 @@
 												<li>
 													<div style="max-width: 65ch;">
 															```javascript
-												joinWith("\n")([
-												  "line 1",
-												  "line 2",
-												  "line 3"
+												joinWith(&quot;\n&quot;)([
+												  &quot;line 1&quot;,
+												  &quot;line 2&quot;,
+												  &quot;line 3&quot;
 												])
 												// same would be (notice - no array):
-												joinWith("\n")(
-												  "line 1",
-												  "line 2",
-												  "line 3"
+												joinWith(&quot;\n&quot;)(
+												  &quot;line 1&quot;,
+												  &quot;line 2&quot;,
+												  &quot;line 3&quot;
 												)
 												```
 													</div>
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															{{[[TODO]]}} yep. let's do it.
+															{{[[TODO]]}} yep. let&#39;s do it.
 													</div>
 												</li>
 												<li>
@@ -402,7 +402,7 @@
 						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} also `joinAllWith` or `joinWith("\n", true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
+									{{[[TODO]]}} also `joinAllWith` or `joinWith(&quot;\n&quot;, true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
 							</div>
 							<ul>
 								<li>
@@ -417,7 +417,7 @@
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															meh. f's up the overview (adds 1 more line w/ linter)
+															meh. f&#39;s up the overview (adds 1 more line w/ linter)
 													</div>
 												</li>
 												<li>
@@ -489,7 +489,7 @@
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											...because trying to create git-rebase-todo from git-stacked-rebase's git-rebase-todo, but there's more than that file to make it work -- there's also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that's why i'm here) (needed when `git rebase --abort`).
+											...because trying to create git-rebase-todo from git-stacked-rebase&#39;s git-rebase-todo, but there&#39;s more than that file to make it work -- there&#39;s also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that&#39;s why i&#39;m here) (needed when `git rebase --abort`).
 									</div>
 									<ul>
 										<li>
@@ -511,7 +511,7 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													"HEAD?
+													&quot;HEAD?
 											</div>
 											<ul>
 												<li>
@@ -523,7 +523,7 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													"could not read"?
+													&quot;could not read&quot;?
 											</div>
 											<ul>
 												<li>
@@ -580,7 +580,7 @@
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															vscode's LSP working good
+															vscode&#39;s LSP working good
 													</div>
 												</li>
 												<li>
@@ -616,7 +616,7 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													okay, looks like the filename is incorrect - it prints `"warning: could not read '.git/rebase-merge/head': No such file or directory"`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it's set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
+													okay, looks like the filename is incorrect - it prints `&quot;warning: could not read &#39;.git/rebase-merge/head&#39;: No such file or directory&quot;`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it&#39;s set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
 											</div>
 											<ul>
 												<li>
@@ -626,17 +626,17 @@
 												</li>
 												<li>
 													<div style="max-width: 65ch;">
-															maybe let's write into that `.git/rebase-merge/head` file even tho we can't see it?
+															maybe let&#39;s write into that `.git/rebase-merge/head` file even tho we can&#39;t see it?
 													</div>
 													<ul>
 														<li>
 															<div style="max-width: 65ch;">
-																	OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch's commit :D
+																	OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch&#39;s commit :D
 															</div>
 														</li>
 														<li>
 															<div style="max-width: 65ch;">
-																	i previously set `head-name` to the latest branch's commit sha, instead of the initial branch's one
+																	i previously set `head-name` to the latest branch&#39;s commit sha, instead of the initial branch&#39;s one
 															</div>
 														</li>
 														<li>
@@ -656,12 +656,12 @@
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			SHEEESH! `rebase --edit-todo` shows up & works!!!
+																			SHEEESH! `rebase --edit-todo` shows up &amp; works!!!
 																	</div>
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					 `commit --amend` also shows up, but editing it edits something wrong & my statusbar shows both rebase & ahead/behind commit counts, so something definitely wrong lmao
+																					 `commit --amend` also shows up, but editing it edits something wrong &amp; my statusbar shows both rebase &amp; ahead/behind commit counts, so something definitely wrong lmao
 																			</div>
 																		</li>
 																		<li>
@@ -671,7 +671,7 @@
 																			<ul>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							git-rebase-todo.backup doesn't seem to help
+																							git-rebase-todo.backup doesn&#39;t seem to help
 																					</div>
 																				</li>
 																				<li>
@@ -681,17 +681,17 @@
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							.todo -> .backup
+																							.todo -&gt; .backup
 																					</div>
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							head-name: head commit sha -> latest branch name
+																							head-name: head commit sha -&gt; latest branch name
 																					</div>
 																					<ul>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									snap, i set it to initial branch's name lol
+																									snap, i set it to initial branch&#39;s name lol
 																							</div>
 																							<ul>
 																								<li>
@@ -705,7 +705,7 @@
 																				</li>
 																				<li>
 																					<div style="max-width: 65ch;">
-																							ok so in regular case, status bar shows 1/21 commits, ours doesn't. `index`?
+																							ok so in regular case, status bar shows 1/21 commits, ours doesn&#39;t. `index`?
 																					</div>
 																					<ul>
 																						<li>
@@ -715,7 +715,7 @@
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											`head` & `orig-head`
+																											`head` &amp; `orig-head`
 																									</div>
 																									<ul>
 																										<li>
@@ -741,12 +741,12 @@
 																						</li>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), & THE REBASE WORKED !!!!!!
+																									OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), &amp; THE REBASE WORKED !!!!!!
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
+																											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&amp;token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
 																									</div>
 																								</li>
 																							</ul>
@@ -770,7 +770,7 @@
 										</li>
 										<li>
 											<div style="max-width: 65ch;">
-													okay, it's gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
+													okay, it&#39;s gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
 											</div>
 											<ul>
 												<li>
@@ -787,7 +787,7 @@
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															e.g. atm, if i want to continue the rebase, i need to pass in some signature and it's not there,
+															e.g. atm, if i want to continue the rebase, i need to pass in some signature and it&#39;s not there,
 													</div>
 												</li>
 												<li>
@@ -809,7 +809,7 @@
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															thinking about using the [[(hidden) U5k5oJ6YK]] api. but, the error i was getting - it's not even mentioned anywhere in the nodegit repo, not a single word, which means that it's only in libgit2 (the C source) itself, so ain't gonna help
+															thinking about using the [[(hidden) U5k5oJ6YK]] api. but, the error i was getting - it&#39;s not even mentioned anywhere in the nodegit repo, not a single word, which means that it&#39;s only in libgit2 (the C source) itself, so ain&#39;t gonna help
 													</div>
 												</li>
 											</ul>
@@ -831,12 +831,12 @@
 															<ul>
 																<li>
 																	<div style="max-width: 65ch;">
-																			"wrapper around git_object_free"
+																			&quot;wrapper around git_object_free&quot;
 																	</div>
 																</li>
 																<li>
 																	<div style="max-width: 65ch;">
-																			"see git_object_lookup_prefix"
+																			&quot;see git_object_lookup_prefix&quot;
 																	</div>
 																	<ul>
 																		<li>
@@ -887,17 +887,17 @@
 																						</li>
 																						<li>
 																							<div style="max-width: 65ch;">
-																									eh, it gets called multiple times. i might as well stick to my "insert additional `break` at the very end` & handle it myself there
+																									eh, it gets called multiple times. i might as well stick to my &quot;insert additional `break` at the very end` &amp; handle it myself there
 																							</div>
 																							<ul>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											tho, it'd still have to spawn some sort of process to be able to do that...
+																											tho, it&#39;d still have to spawn some sort of process to be able to do that...
 																									</div>
 																								</li>
 																								<li>
 																									<div style="max-width: 65ch;">
-																											{{[[TODO]]}} what if instead i just wrote the `rewriten-list` into our own `stacked-rebase` dir & after it's done, the user'd have to manually call `apply`, just like we intended in the first place?
+																											{{[[TODO]]}} what if instead i just wrote the `rewriten-list` into our own `stacked-rebase` dir &amp; after it&#39;s done, the user&#39;d have to manually call `apply`, just like we intended in the first place?
 																									</div>
 																									<ul>
 																										<li>
@@ -907,7 +907,7 @@
 																										</li>
 																										<li>
 																											<div style="max-width: 65ch;">
-																													oh, i don't even need last `break` re: ((IbBW5lqNq))
+																													oh, i don&#39;t even need last `break` re: ((IbBW5lqNq))
 																											</div>
 																										</li>
 																									</ul>

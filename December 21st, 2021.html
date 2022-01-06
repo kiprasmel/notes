@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-05T23:27:09.882Z</span>
+				<span>2022-01-06T00:50:55.247Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640037609608);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641425229882);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641430255247);
 
 			</script>
 		</small>
@@ -339,7 +339,7 @@
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											and i had fixed the code that was causing this error 2 days ago already, but that's irrelevant - it's easy to make such mistakes w/ this infra, which is a no no.
+											and i had fixed the code that was causing this error 2 days ago already, but that&#39;s irrelevant - it&#39;s easy to make such mistakes w/ this infra, which is a no no.
 									</div>
 								</li>
 							</ul>
@@ -361,11 +361,11 @@
 											<ul>
 												<li>
 													<div style="max-width: 65ch;">
-															figured it out - it's because in the very ending of the `gitStackedRebase`, we `markThatNeedsToApply()`, and __then__ we call `applyIfNeedsToApply()`, which, of course, will now always think that we need to apply.
+															figured it out - it&#39;s because in the very ending of the `gitStackedRebase`, we `markThatNeedsToApply()`, and __then__ we call `applyIfNeedsToApply()`, which, of course, will now always think that we need to apply.
 												other notes:
-												it makes it impossible to e.g. `edit` in the rebase-todo -  it continues (apply'ing?) w/o stopping
-												and might explode if we start a new git-stacked-rebase for the first time (i.e. there's no `.git/stacked-rebase/` folder, specifically `.git/stacked-rebase/rewritten-list` file in this case)
-												also, it'd be even harder to find because we'd only call the `applyIfNeedsToApply()` in the very end if `configValues.autoApplyIfNeeded` was true (design choice which made & still makes sense; it just makes the current bug harder to find)
+												it makes it impossible to e.g. `edit` in the rebase-todo -  it continues (apply&#39;ing?) w/o stopping
+												and might explode if we start a new git-stacked-rebase for the first time (i.e. there&#39;s no `.git/stacked-rebase/` folder, specifically `.git/stacked-rebase/rewritten-list` file in this case)
+												also, it&#39;d be even harder to find because we&#39;d only call the `applyIfNeedsToApply()` in the very end if `configValues.autoApplyIfNeeded` was true (design choice which made &amp; still makes sense; it just makes the current bug harder to find)
 													</div>
 													<ul>
 														<li>
@@ -388,7 +388,7 @@
 																	<ul>
 																		<li>
 																			<div style="max-width: 65ch;">
-																					> currently `canAndShouldBeApplying` is only in that part of the logic.
+																					&gt; currently `canAndShouldBeApplying` is only in that part of the logic.
 																		to be fair, the problem arises only when we try to apply
 																		before the rebase was finished.
 																		but, it very well could be that the user (even tho unlikely) that user
@@ -450,17 +450,17 @@
 						<li></li>
 						<li>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} file mappings fn that takes in the repo's workdir and returns the wanted file
+									{{[[TODO]]}} file mappings fn that takes in the repo&#39;s workdir and returns the wanted file
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											or maybe just filename constants, since we'll need to pass in either the repo, or the fn that has the repo from a closure
+											or maybe just filename constants, since we&#39;ll need to pass in either the repo, or the fn that has the repo from a closure
 									</div>
 									<ul>
 										<li>
 											<div style="max-width: 65ch;">
-													unless we do dependency injection, but we don't do that here™️
+													unless we do dependency injection, but we don&#39;t do that here™️
 											</div>
 										</li>
 										<li>
@@ -468,7 +468,7 @@
 													```typescript
 										// const filesNames = {
 										const filenames = {
-										  rewrittenList: "rewritten-list",
+										  rewrittenList: &quot;rewritten-list&quot;,
 										} as const;```
 											</div>
 										</li>

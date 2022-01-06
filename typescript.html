@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-05T23:27:09.663Z</span>
+				<span>2022-01-06T00:50:55.051Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638215125103);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641425229663);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641430255051);
 
 			</script>
 		</small>
@@ -670,11 +670,11 @@
 	<li>
 		<div style="max-width: 65ch;">
 				```typescript
-	function A<T>(xs: T[]) {}
+	function A&lt;T&gt;(xs: T[]) {}
 	// would make this possible:
-	type Alias = A<string>;
+	type Alias = A&lt;string&gt;;
 	// or even this:
-	type Alias<T> = A<T>
+	type Alias&lt;T&gt; = A&lt;T&gt;
 	```
 		</div>
 	</li>
@@ -698,7 +698,7 @@
 								```javascript
 					const f = (
 						...props: ({} extends Props ? [] : [Props])
-					) => {};```
+					) =&gt; {};```
 						</div>
 						<ul>
 							<li>
@@ -725,12 +725,12 @@
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						yarn - love v1, hate that they went into v2 when v2 should've been a completely different project
+						yarn - love v1, hate that they went into v2 when v2 should&#39;ve been a completely different project
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								also yarn v1 --ignore-scripts you cannot provide an opposite boolean flag to _not_ ignore scripts, when your config's default is the opposite. ffs
+								also yarn v1 --ignore-scripts you cannot provide an opposite boolean flag to _not_ ignore scripts, when your config&#39;s default is the opposite. ffs
 						</div>
 					</li>
 					<li></li>
@@ -805,12 +805,12 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				> An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
+				&gt; An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				> A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.ts(1169)
+				&gt; A computed property name in an interface must refer to an expression whose type is a literal type or a &#39;unique symbol&#39; type.ts(1169)
 		</div>
 	</li>
 	<li>
@@ -857,7 +857,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} definitely need to move to #[[typescript]] . it's getting worse w/o it
+				{{[[TODO]]}} definitely need to move to #[[typescript]] . it&#39;s getting worse w/o it
 			</div>
 			<!--
 			</span>
@@ -890,7 +890,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				ideally #[[typescript]] fixes this & we can use the original solution w/o having to have runtime assertions.
+				ideally #[[typescript]] fixes this &amp; we can use the original solution w/o having to have runtime assertions.
 			</div>
 			<!--
 			</span>
@@ -919,7 +919,7 @@
 	<li>
 		<div style="max-width: 65ch;">
 				```typescript
-	export type Checker<T> = {
+	export type Checker&lt;T&gt; = {
 		(item: T): boolean;
 		(item: T, otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T): number;
 	};
@@ -928,7 +928,7 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				this is big -- if you created regular function overloads, you couldn't even specify the type `T`, because you'd have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
+				this is big -- if you created regular function overloads, you couldn&#39;t even specify the type `T`, because you&#39;d have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
 		</div>
 	</li>
 	<li>
@@ -939,11 +939,11 @@
 			<li>
 				<div style="max-width: 65ch;">
 						```typescript
-			export declare function CheckerAutomatic<T = unknown>(
+			export declare function CheckerAutomatic&lt;T = unknown&gt;(
 				item: T //
 			): // otherItemWhichShouldOnlyBeUsedIfYouNeedToDirectlyCompareThem: T
 			boolean;
-			export declare function CheckerManual<T = unknown>(
+			export declare function CheckerManual&lt;T = unknown&gt;(
 				A: T, //
 				B: T
 			): Order | number;
@@ -955,7 +955,7 @@
 	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
-				i remembered this might be a thing because i did function overloads for the [[codemods]] transform's (replace-jsx-attribute) configs' `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn't realize it up until now 🤯
+				i remembered this might be a thing because i did function overloads for the [[codemods]] transform&#39;s (replace-jsx-attribute) configs&#39; `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn&#39;t realize it up until now 🤯
 		</div>
 		<ul>
 			<li>
@@ -976,11 +976,11 @@
 					         * if array contains exactly 1 element:
 					         *   will replace the value automatically;
 					         *
-					         * else, if array contains >1 element:
+					         * else, if array contains &gt;1 element:
 					         *   will replace the value with the 1st one from the array, and
-					         *   will add a comment, prefixed with "TODO CODEMOD MANUAL INTERVENTION", to make the user verify themselves.
+					         *   will add a comment, prefixed with &quot;TODO CODEMOD MANUAL INTERVENTION&quot;, to make the user verify themselves.
 					         */
-					        | ArrayWithAtLeastOneElement<ValidJsxPropertyValueAsValue>;
+					        | ArrayWithAtLeastOneElement&lt;ValidJsxPropertyValueAsValue&gt;;
 					};```
 						</div>
 					</li>
@@ -1109,7 +1109,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				fuck, this doesn't play well w/ [[typescript]].
+				fuck, this doesn&#39;t play well w/ [[typescript]].
 			</div>
 			<!--
 			</span>
