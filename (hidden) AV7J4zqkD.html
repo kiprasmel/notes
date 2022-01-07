@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							125
+							266
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							125
+							266
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-07T15:28:32.092Z</span>
+				<span>2022-01-07T16:40:11.326Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641319315544);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641569312092);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641573611326);
 
 			</script>
 		</small>
@@ -240,9 +240,9 @@
 
 			<h2>
 				Linked Mentions 
-				(6
+				(7
 				in
-				4
+				5
 				pages)
 
 				<button
@@ -488,6 +488,92 @@
 			-->
 <ul>
 
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 7th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) AV7J4zqkD:: when pushing
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				```javascript
+	Error: TODO: goodCommandOld not found
+	    at parseNewGoodCommands (/Users/kiprasmelnikovas/projects/git-stacked-rebase/parse-todo-of-stacked-rebase/parseNewGoodCommands.ts:91:10)
+	    at branchSequencer (/Users/kiprasmelnikovas/projects/git-stacked-rebase/branchSequencer.ts:79:63)
+	    at forcePush (/Users/kiprasmelnikovas/projects/git-stacked-rebase/forcePush.ts:34:17)
+	    at gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/git-stacked-rebase.ts:200:26)```
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				and then, after `rm -rf .git/stacked-rebase`:
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						```javascript
+			Error: ENOENT: no such file or directory, open &#39;/Users/kiprasmelnikovas/forkprojects/CodeshiftCommunity/.git/stacked-rebase/rewritten-list.applied&#39;
+			    at Object.openSync (fs.js:462:3)
+			    at Object.readFileSync (fs.js:364:35)
+			    at parseNewGoodCommands (/Users/kiprasmelnikovas/projects/git-stacked-rebase/parse-todo-of-stacked-rebase/parseNewGoodCommands.ts:27:35)
+			    at branchSequencer (/Users/kiprasmelnikovas/projects/git-stacked-rebase/branchSequencer.ts:79:63)
+			    at forcePush (/Users/kiprasmelnikovas/projects/git-stacked-rebase/forcePush.ts:34:17)
+			    at gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/git-stacked-rebase.ts:200:26) {
+			  errno: -2,
+			  syscall: &#39;open&#39;,
+			  code: &#39;ENOENT&#39;,
+			  path: &#39;/Users/kiprasmelnikovas/forkprojects/CodeshiftCommunity/.git/stacked-rebase/rewritten-list.applied&#39;
+			}```
+				</div>
+			</li>
+			<li>
+				<div style="max-width: 65ch;">
+						no auto apply i think, even if local history was not modified __in this run__ (after re-running to re-generate the git-rebase-todo), it __was__ modified in a previous run, and  __was not__ successfully updated
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} we should be checking if the `git-rebase-todo` is out of sync with the actual commits, and if so -- `needsToApply` should act
+						</div>
+					</li>
+					<li>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} also need to re-think the renaming of them (none, none with needs-to-apply, .applied, removed), because comes up in other places as well
+						</div>
+					</li>
+					<li></li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>

@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">114</td>
+							<td style="text-align: right; ">487</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							114
+							487
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-07T15:28:31.103Z</span>
+				<span>2022-01-07T16:40:10.483Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641525386682);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641569311103);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641573610483);
 
 			</script>
 		</small>
@@ -342,6 +342,19 @@
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
+									{{[[DONE]]}} `wantedCommitsWithBranchEnds` refactoring
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											[[(hidden) GSgm9FsKi]] you can use [[(hidden) qbhpV9DHv]] for this too! `Git.Reference`
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
 									{{[[TODO]]}} if `initialBranch` === `currentBranch`, and 0 commits - user probably forgot to checkout back
 							</div>
 							<ul>
@@ -358,11 +371,263 @@
 							</ul>
 						</li>
 						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} warn if initial branch is __not__ a remote one?
+							</div>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} still have bugs w/ an outdated / not applied git-rebase-todo
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) AV7J4zqkD:: when pushing
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													```javascript
+										Error: TODO: goodCommandOld not found
+										    at parseNewGoodCommands (/Users/kiprasmelnikovas/projects/git-stacked-rebase/parse-todo-of-stacked-rebase/parseNewGoodCommands.ts:91:10)
+										    at branchSequencer (/Users/kiprasmelnikovas/projects/git-stacked-rebase/branchSequencer.ts:79:63)
+										    at forcePush (/Users/kiprasmelnikovas/projects/git-stacked-rebase/forcePush.ts:34:17)
+										    at gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/git-stacked-rebase.ts:200:26)```
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													and then, after `rm -rf .git/stacked-rebase`:
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															```javascript
+												Error: ENOENT: no such file or directory, open &#39;/Users/kiprasmelnikovas/forkprojects/CodeshiftCommunity/.git/stacked-rebase/rewritten-list.applied&#39;
+												    at Object.openSync (fs.js:462:3)
+												    at Object.readFileSync (fs.js:364:35)
+												    at parseNewGoodCommands (/Users/kiprasmelnikovas/projects/git-stacked-rebase/parse-todo-of-stacked-rebase/parseNewGoodCommands.ts:27:35)
+												    at branchSequencer (/Users/kiprasmelnikovas/projects/git-stacked-rebase/branchSequencer.ts:79:63)
+												    at forcePush (/Users/kiprasmelnikovas/projects/git-stacked-rebase/forcePush.ts:34:17)
+												    at gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/git-stacked-rebase.ts:200:26) {
+												  errno: -2,
+												  syscall: &#39;open&#39;,
+												  code: &#39;ENOENT&#39;,
+												  path: &#39;/Users/kiprasmelnikovas/forkprojects/CodeshiftCommunity/.git/stacked-rebase/rewritten-list.applied&#39;
+												}```
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															no auto apply i think, even if local history was not modified __in this run__ (after re-running to re-generate the git-rebase-todo), it __was__ modified in a previous run, and  __was not__ successfully updated
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} we should be checking if the `git-rebase-todo` is out of sync with the actual commits, and if so -- `needsToApply` should act
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} also need to re-think the renaming of them (none, none with needs-to-apply, .applied, removed), because comes up in other places as well
+															</div>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} gotta clean up the logging in places, damn
+							</div>
+						</li>
+						<li></li>
 					</ul>
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) m8dQ-ZqP-
+							(hidden) xMkCv-rRY
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) m8dQ-ZqP- [[js]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) QNIfekVfN observation::
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) rclNnaDnr
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) MXzZCt4ZL
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 2gSJuxM9M
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 8rMoQXcVX
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 5cFJN7hEK
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) UGfK-16vd
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) fNa2jHDzm
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) sQQAn-Zsm
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) twBVaTqfy
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 5NIp6ccQP
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) c7rE03Ayp
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) chg_gaLh_
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 5g-YsjUod
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) ns7xkPK8X
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) gQO-uLClC
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) GgIgz8fVj
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) BBkORi3nV
+															</div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) Wptg9pkVK
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) Gqv-T6fjX
+													</div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) FBgaG4M8D
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) -0rBuE61X:: doing the ((IJ35AClvU)) @ [[git-stacked-rebase]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 8mmVBtJVW
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) jbv6RV6Jq #[[(hidden) D1lY0CG5e]] #[[roam]]
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) V-ttM7JWj
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) isgascGQw
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ygg3pX27Q
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ROCmqx5Wz
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) gJ0JFo-0t
 					</div>
 				</li>
 				<li>
