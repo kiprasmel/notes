@@ -152,7 +152,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							24851
+							24970
 							</td>
 							<td>
 							(linked mentions)
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							24851
+							24970
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-11T21:24:41.865Z</span>
+				<span>2022-01-11T22:27:04.154Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1622148738533);
-				updateAndSetIntervalToUpdateFor("ago-2", 1641936281865);
+				updateAndSetIntervalToUpdateFor("ago-2", 1641940024154);
 
 			</script>
 		</small>
@@ -21417,7 +21417,7 @@ how to review:
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} investigate reported issue
+				{{[[DONE]]}} investigate reported issue by [[(hidden) 04oQOtp3e]]
 			</div>
 			<!--
 			</span>
@@ -21438,6 +21438,45 @@ how to review:
 						`client/`
 				</div>
 			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				mitigated for the time being - can run codemods again, but now with the `tsx` parser
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						documented: https://github.com/pipedrive/CodeshiftCommunity/blob/d88722f1377745310ead0fb48e03f958110903eb/community/@pipedrive__convention-ui-react/README.md#L137
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} will later need to investigate parsers #[[(hidden) XEbAy1sYy]]
+		</div>
+		<ul>
+			<li>
+				<div style="max-width: 65ch;">
+						https://pipedrive.atlassian.net/browse/FUN-2074
+				</div>
+				<ul>
+					<li>
+						<div style="max-width: 65ch;">
+								had a report of an error [1], which came down to the flow parser [2].
+					looks like ideally we’d use the tsx parser, which jscodeshift just abstracts over the babylon (@babel/parser) with some predefined options. [3]
+					the problem was that jscodeshift with the tsx parser &amp; it’s options does not consider require as an import statement, and then most codemods become useless if you’re using requires. [4]
+					(there might be other draw-backs as well, just haven’t investigated deep enough).
+					[1] https://pipedrive.slack.com/archives/C02LK8Y583D/p1641893745002800
+					[2] https://pipedrive.slack.com/archives/C02LK8Y583D/p1641923713004400?thread_ts=1641893745.002800&amp;cid=C02LK8Y583D
+					[3] https://github.com/facebook/jscodeshift/blob/main/parser/tsx.js
+					[4] https://pipedrive.slack.com/archives/C02LK8Y583D/p1641925900005500?thread_ts=1641893745.002800&amp;cid=C02LK8Y583D
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li></li>
 		</ul>
 	</li>
 	<li></li>
