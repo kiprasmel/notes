@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>January 21st, 2022 | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			January 21st, 2022
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">293</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							8
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							301
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2022-01-20T22:00:08.893Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2022-01-25T03:41:01.378Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1642716008893);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643082061378);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 5e9t1yQWy #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) YzWajGAe6 [[(hidden) noa_l1Ug3]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 3fbXhKrxz [[(hidden) uBgjUD_I1]] [[(hidden) vk71VYl12]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) GU1926Eyv
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 8ruDAg338
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) WdSLekNeT
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) Oigvroqx_
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) FZtHeZePP
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) PPpFltzU0
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) YwSfyQ1G9
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) NF5cUWFow
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) XoxuHZyOT [[(hidden) hW2CX-2dh]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) NQMkMFtyO [[(hidden) Wk9BwS_1L]]
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) kIe9HnrNj
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) bdFjGVCog [[(hidden) rOUDY-eRZ]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) M_AU0HoEx
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) e70CcvrTT
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) X_JB0ZQe_
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) HycW73Quo
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) nuSk6ZFXn
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) cHh8Eq-8p
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) k-EGLs5r2 [[(hidden) DQjdQcHOY]]
+															</div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) SUBi1v1JQ
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) GVFUiJb-s
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vUJHBGq0L
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) OI3qu7Bx0 [[(hidden) TRXzTHe5J]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) WjSYOh_--
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) Hb8QVEJM_
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) auOXuRwcl [[(hidden) zS03tGkOW]] [[(hidden) AuwsacyhR]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) 7ffR9IE5v
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) 09jSq9JOU
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) n-dcjuSZv
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) s7hhApP9x cc::
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) ahzErILHH
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) -_HF8ywAq
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) nvZZYELM6
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) _3amJjIM4
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) yB1mupltU
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) BajCO7DjD [[(hidden) 2LHuOXvui]]
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) lcC3T3yeO
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) N-JiXMeEm [[roam]] [[export-html-pages]]
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) LKJBckGez
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) Il6z3IwcF
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 4tsfL-fsh
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) _bQUduQAs
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) HG-2-k6Vj
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) wwCw0znRj 
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) O2RO26ygQ
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) lP80S6BRP
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) VtHcdnWG1
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) NaDsLloXb
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) URzvld2RW
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wkc_s_-5R
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) laRoaUjN8
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) S1ZlMSZEu
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.01-21-2022";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 20th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} (hidden) xQWS3QR9p [[(hidden) 01-21-2022]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

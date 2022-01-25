@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">49</td>
+							<td style="text-align: right; ">398</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							63
+							412
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-01-15T04:34:16.018Z</span>
+				<span>2022-01-25T03:41:01.395Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1642089038088);
-				updateAndSetIntervalToUpdateFor("ago-2", 1642221256018);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643082061395);
 
 			</script>
 		</small>
@@ -299,7 +299,219 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
+							(hidden) Qb_235VH5
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[roam-traverse-graph]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[DONE]]}} sort out bugs in `feat/parse-text-to-ast` &amp; make it work
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											oh shit, a lot of stuff got solved by using this
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											still more bugs to resolve / things to fix
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} publicGlobalTags still have to be put into a linkedReference instead of just text
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} will need stronger refactor:
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} first with `pageMeta` -&gt; `page` &amp; `page.metadata`,
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} then using `stackTree` when making `toFullyPublicPage` vs non-fully-public
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	((_n0TOK7SO))
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} tags (`#`) are still a bitch - cut out sometimes, hard to figure out if ended or not, etc - gotta work it out
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} etc
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} will also need to make `stackTree` handle public vs private stuff, i.e. it should be usable easily / out of the box, w/o having to pay attention to the public/private stuff.
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											need this esp. for generating good html (as currently only doing a normal string)
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} `stackTreeSafe`?
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													but i don&#39;t think it&#39;s enough actually
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													though not sure. perhaps best would be to handle both private &amp; public cases in a single scenario
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													or maybe better - have more context available to you, like the block &amp; it&#39;s metadata? i suppose it&#39;s already available in our current setup, i.e. inside the `hideBlockStringIfNotPublic`
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} stuff shouldn&#39;t be there btw
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} gotta remember though that even though it&#39;s not linear &amp; it can be recursive, the stuff we&#39;re handling here is a string of a single block.
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} [[(hidden) ThXonBLoY]] the `linkedRef` no longer has useful stuff like the block&#39;s ref &amp; block&#39;s uid. need this stuff
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															it&#39;s true `linkedRef` doesn&#39;t have it anymore. but do i actually need it?
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	lol no. i again forgot: ((cBI11ZtML))
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			in this case it was the `hiddenLinkedRefPrefix`
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					~~renamed to hiddenBlockPrefix~~
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					{{[[TODO]]}} wait. we need the uid of the page of a linked reference
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							oh but wait we already extract it from the linked ref by going thru all pages, and those pages even have their prefix already done. so the [last initial thought](((ZCL-FX-xU))) is correct, but we still don&#39;t need the stuff (unless gonna refactor?).
+																					</div>
+																				</li>
+																				<li></li>
+																			</ul>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (!) un-pause the [[github actions]] workflow - after stuff like ((LGHGl9_23)) gets done
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											[1]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													((5oHA_bb-0))
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) VBWSnbUN3
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wn3au93Fq
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
 							(hidden) UX-YrNh5w
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) jj63oHX-N
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) YkcOIQcmZ
 					</div>
 				</li>
 				<li>

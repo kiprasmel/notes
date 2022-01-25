@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>January 24th, 2022 | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			January 24th, 2022
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">2579</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							28
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							2607
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2022-01-23T22:00:05.156Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2022-01-25T03:41:01.362Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1642975205156);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643082061362);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) bWONL1x3f #[[(hidden) S-ygYfi0j]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 16uuK2Dt7 [[(hidden) SZp9S9TdD]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} (hidden) 3x91kXb6i 
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 9Szy_Bi0r [[the problem with git flow]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 2cAaqGSAO re::
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) BPtacaSdj 
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) nt7jJTh_s 
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) wfHcj9VM8
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) aqFSDld7h
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) MkbWnyR3n
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) lU4xTYmbe
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) RmjToCatA
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) -jla8xVWM
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) oAW8YDl3a
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) hr0RZ79we
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) OgplVPEZ5
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) UyNt3TF-W
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) d7nN-O17a
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) Dm2GOs2GX
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) lxf46V_Vi
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) Q9V76dOdn
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) oA2tMQviB
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) O578QlW54
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) zkkeAu2Ae
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) vATITQSGR
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) 0CempBmxj
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) iY_xpuMM9
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) AuzHmyLU0
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) IhpcsyrAt [[(hidden) CSxnqFHTM]]
+															</div>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) jgexLnHwJ
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) k21nPJNpA
+													</div>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) qQAlnEqnz
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} (hidden) q39lkc0Rx 
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) 8-GiPpOBn
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) E8B1thIP3
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) OMlgir5qF
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) XAAbVZszp
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) K0-aP8X0m
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) 8t0oqd1j2
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) 7rvPDnvnU
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) ehEUAFuWm
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) AdICf9KOk
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) AX1cF77rf
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					(hidden) fuyxLrmVB
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) ijgoUHElL
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) K_DQdKkFk
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) L_TdfYsts
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) 87TVnOtpb
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) hTX1BaCsU
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) RbX3ibqWW
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) -Mfuyp0i4 #[[(hidden) _sW66DmMa]] #[[re]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) 5tMdQKp6e
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) IRaCAhrT5
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[codemods]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} upstream PR to allow custom runner
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													https://github.com/CodeshiftCommunity/CodeshiftCommunity/pull/97
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} get merged
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) jvjxB_CNW
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) NPBT9U7Me
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wSbFkfavN [[export-html-pages]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) nzj1oetkj [[github]] [[vscode]] [[syntax highlighting]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 4RvqfbYPc
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) amKjjjowt
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) fohuqO0V_ #[[(hidden) _sW66DmMa]] #[[re]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) tacEhMQtW
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) GRHMk9j4L
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) O2jmu2HaJ #[[(hidden) _sW66DmMa]] [[(hidden) WCJoz9AhZ]] #[[re]] [[(hidden) 6ZFjU8adC]] [[(hidden) QNAsExxF-]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) GWp6KJQwN
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Xw61VF6__
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) veThsXZun
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) rEjDCLxWv
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) lSSvQ9jTM
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) XEarDIceI
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) P02ZVsS24 #[[(hidden) ThXonBLoY]] [[(hidden) zS03tGkOW]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} (hidden) pjJKavj-0 [[js]]
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) sMD2mgiwO
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Ql9vm8Ogw [[(hidden) S-ygYfi0j]] observation:: #[[(hidden) aQw_Q_pev]] [[(hidden) K33crXUkB]] [[(hidden) uPOBlo7Jd]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) V3MFd0hxR
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) bsXk7wsrU
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) KmrTsyK9T
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) vidL9Rodf
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 2nszJAZO0 #[[(hidden) _sW66DmMa]] #[[(hidden) i_cnRYnI4]] #[[re]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) Wl6LPy4Qr
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) n7lWyfR7W
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) vAPhrzJVA
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) 2umXK-8yL
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) 78oQQ9zC0 [[(hidden) SZp9S9TdD]] #[[re]] [[(hidden) QNAsExxF-]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) A6pdfDzBc
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) UWU8z3VWz [[(hidden) QH98kVBfm]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) bHp8uaYaj #[[(hidden) _sW66DmMa]] #[[re]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) T_5YRmQDU
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) TvfH2_71C
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) i9zLzJZ9v [[(hidden) hC4jWR2AF]] [[roam]] re:: [[sibling]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} (hidden) i1lqXEm3P 
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) PKeY7DhPB
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 5d50uyOyk
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) iJTYk5kLU
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} a thought that&#39;s been circulating the past few days -- eventually, if/when we make the tool (both CLI &amp; the underlying library) good, it might make sense to explore the possibilities of creating a [[browser extension]] for e.g. [[github]], that would allow it&#39;s users to view stacked diffs in the same PR (design of the tool checks out as well w/ this specific case)
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											though, i haven&#39;t used [[(hidden) Qb76iqf_n]] myself and don&#39;t know how good it could look like -- would be really interesting to see beforehand.
+									</div>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											because we might not even need this at all, and perhaps the [[host-specific adapters for git-stacked-rebase]] would be completely enough to automate the manual parts so that it wouldn&#39;t matter as much of having multiple PRs vs one
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													though, i intentionally don&#39;t put the [[host-specific adapters for git-stacked-rebase]] as the first priority here, because it feels like being able to integrate into the existing ecosystem, while creating some additional extras ([[browser extension]]) to make it easier to use [1], is the right approach
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													[1] i think specifically the issue of having comments in separate PRs is important -- if you decide to split out a PR into multiple ones, then some comments will get lost, because we do not control in which PR they appear - we only control the PRs &amp; the commits.
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															but, if we had the single PR + extension, we could now play w/ the comments, or perhaps wouldn&#39;t need to do much if anything at all, since you&#39;d only have an extra partial branch / diff to cycle through the UI when reviewing - the comments/changes would remain in the same place.
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											[[(hidden) Qb76iqf_n]] is out of maintenance, i can&#39;t even try out stacked diffs lol
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													searching &quot;mercurial stacked diffs&quot;
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															https://news.ycombinator.com/item?id=18137995
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	{{[[DONE]]}} #[[(hidden) _sW66DmMa]] [[(hidden) URRQcDCig]]&#39;s [[(hidden) QNhvoR74k]]
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext
+																	</div>
+																	<ul>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					very interesting stuff!
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							so the whole thing is hosted and you pretty much don&#39;t use it locally. cool, but kinda meh!
+																					</div>
+																				</li>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							they have e.g. custom extensions for editors to be able to access &amp; edit -- at least they didn&#39;t start creating their own editors &amp; stuff - very surprising, but in a good way
+																					</div>
+																				</li>
+																			</ul>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					i prefer monorepos myself. ofc, haven&#39;t worked anywhere near close to such scale, but would be amazing if [[(hidden) Wk9BwS_1L]] had more of a first-hand support, incl. an eco-system around it... [[(hidden) 42siTzw1w]]
+																			</div>
+																		</li>
+																		<li>
+																			<div style="max-width: 65ch;">
+																					https://pipedrive.slack.com/archives/C7R3EPWER/p1568022631016000
+																			</div>
+																			<ul>
+																				<li>
+																					<div style="max-width: 65ch;">
+																							https://github.com/microsoft/TypeScript/issues/33272
+																					</div>
+																					<ul>
+																						<li>
+																							<div style="max-width: 65ch;">
+																									(hidden) D8S_bYZuo #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+																							</div>
+																							<ul>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											(hidden) ugC7qgmVO [[typescript]] [[(hidden) URRQcDCig]] [[(hidden) stBI9LNFL]]
+																									</div>
+																									<ul>
+																										<li>
+																											<div style="max-width: 65ch;">
+																													(hidden) _cjtgP10D #[[(hidden) aQw_Q_pev]] [[(hidden) IiSuMRl4c]]
+																											</div>
+																										</li>
+																									</ul>
+																								</li>
+																								<li>
+																									<div style="max-width: 65ch;">
+																											(hidden) _XaekBjng
+																									</div>
+																								</li>
+																							</ul>
+																						</li>
+																						<li></li>
+																					</ul>
+																				</li>
+																				<li></li>
+																			</ul>
+																		</li>
+																		<li></li>
+																	</ul>
+																</li>
+																<li></li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) ZdlAR5JxT
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									## how it works, the tricky parts, &amp; things to be aware of
+						instead of rebasing one partial branch on top of another,
+						we always use the latest branch and rebase it onto the initial branch,
+						and then reset the partial branches to point to new commits.
+						the last part is the hardest, and likely still has many bugs yet unsolved.
+						the tricky part comes from the power of git-rebase.
+						as long as a rebase finishes without exiting, we are golden.
+						but, as soon as a user indicates that they want to do some further
+						operations, by e.g. changing a command from `pick` to `edit` or `break`,
+						then git-rebase, when it reaches that point, has to exit (!) to let the user
+						do whatever actions they want to do, and of course allows the user to continue
+						the rebase via `git rebase --continue`.
+						&lt;!-- 
+						this ability to pause the execution of the rebase,
+						and then continue later on, is very powerful &amp; useful,
+						and the fact that it makes our job harder is not a bad thing;
+						rather, it&#39;s a natural occurence &lt;++&gt;
+						--&gt;
+						why this matters is because we need to recover the branches
+						to point to the new commits.
+						git, upon finishing (?) the rebase, writes out a file
+						inside `.git/rebase-{merge|apply}/` -- `rewritten-list`.
+						this file contains the rewritten list of commits - 
+						either `1 -&gt; 1` mapping, or, if multiple commits got merged into 1
+						(e.g. `squash` / `fixup` / manually with `edit`, or similar),
+						`N -&gt; 1` mapping (?).
+						it&#39;s very simple - old commit SHA, space, new commit SHA, newline.
+						again, this is how we understand the new positions that the branches
+						need to be poiting to.
+						and no, we cannot simply use the `git-rebase-todo` file (the one you edit
+						when launching `git rebase -i` / `git-stacked-rebase`),
+						because of commands like `break`, `edit`, etc., whom, again, allow you
+						to modify the history, and we cannot infer of what will happen
+						by simply using the `git-rebase-todo` file.
+						&lt;!-- now, issue(s) come up when  --&gt;
+						let&#39;s first do a scenario without the issue(s) that we&#39;ll describe soon -
+						you ran `git-stacked-rebase`, you did some `fixup`s, `squash`es, `reword`s,
+						etc. - stuff that _does not_ make git-rebase exit.
+						all went well, git-rebase wrote out the `rewritten-list` file,
+						we snagged it up with a `post-rewrite` script that we placed
+						inside `.git/hooks/`, we combined it with the now outdated
+						`git-rebase-todo` file (old SHAs etc.) to figure out where the
+						branch boundaries (partial branches) should end up at in the
+						new history, and we reset them successfully. all good and well.
+						now, the scenario w/ a potential issue (?) -- you did
+						all the same as above, but you also had an `edit` command,
+						and when git-rebase progressed to it, you `git reset HEAD~`
+						your commit and instead create 3 new commits, and then continued
+						&amp; the rebase via `git rebase --continue`.
+						since `git-rebase` exited before it was done,
+						we, `git-stacked-rebase`, were __not__ able to reset the branches
+						to the new history, because of course, if git-rebase exits,
+						but the rebase is still in progress, we know you are _not_ done,
+						thus we exit as well.
+						so when you finish, your changes are applied to your latest branch,
+						__but__ the partial branches are now out of date.
+						what you need to do in this case is run `git-stacked-rebase &lt;branch&gt; --apply`,
+						which, in the 1st scenario, happened automatically.
+						__the real issue arises when you forget to do the `--apply` part in time__,
+						i.e. if you do any other history rewritting, including `git commit --amend`,
+						before you `--apply`ied, `git-stacked-rebase` can no longer (?) properly figure out
+						where the partial branches should point to, and you&#39;re stuck in having to do it
+						manually.
+						in the future, we might consider storing the list of partial branches
+						and if they end up gone, we could e.g. place them at the end of the
+						`git-rebase-todo` file the next time you invoke `git-stacked-rebase`,
+						thus you&#39;d be able to drag them into their proper places yourself.
+						but until then, beware this issue exists (?).
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} [[(hidden) DY6wPnICE]] unless we implement our own `--continue`, which will forward that continue into the regular `git-rebase`, and, if after the `git-rebase` exits, the rebase is no longer in progress - we can do our `--apply` logic too!!!!
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													if after `--continue`, the rebase is still in progress - we&#39;re again at the same state, so further `--continue`s can be used -- just like in the regular rebase -- up until the finish!!!
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wLd33Re5n
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} we should get rid of the `branch-end-last` -- we still need to validate that some `branch-end` is the very last command, but not having an explicit `-last` will (should?) make it easier to create new branches that supersede the current latest branch
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											e.g. implementing [--continue](((fSZIj6gkh))) on top already existing `feat/a-lot-of-stuff-not-only-e2e-tests`
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											realized when:: [writing out the problem](((VXifeHC7T))) in thorough (even too thorough?) detail, __and__ then playing with the tool a bit, to experiment w/ the written-out case - up until had to do `grc`, aka `git rebase --continue`
+									</div>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} though, might be [[trickier than seems at first sight]], especially because of the design of the tool &amp; how we use the latest branch &amp; only reset the partial branches -- here, the latest branch changes -- will need extra handling
+									</div>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											observation:: `git commit --amend` also triggers the `post-rewrite` script -- perhaps could do some handling there, since it&#39;s a common use case?
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													because otherwise you&#39;ll likely use some variant of git rebase, at which point you cannot use it unless you finished it fully, and ofc if you mix `rebase` with `stacked-rebase` - your problem!
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} ideally wouldn&#39;t be a problem tbh
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) DfJPwFpAW
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} `--nuke`, and probably `--new` commands, to `rm -rf .git/stacked-rebase/`, and start from a new state
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											(hidden) AV7J4zqkD:: happend when i wanted to [create a new latest branch](((MGcMUoEUS))) and had to `ben temp1`, `git checkout temp1` (auto), `git reset --hard origin/old-latest`, `git checkout old-latest`, `git push -f`, `git checkout -`, `git branch -m feat/new-latest`, `git push -u` -- the `temp1` branch no longer existed, but the old todo was still there
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											could happen in more cases. ideally wouldn&#39;t happen at all ofc, but cannot be sure.
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} though, should we create this as an option even?
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													because, unless you __really__ know that you need to `rm -rf .git/stacked-rebase`, you shouldn&#39;t do it, just because e.g. something broke, but not because the state is old, but because you did something wrong yourself &amp; `rm -rf` wouldn&#39;t help in that case; rather, would make it even worse
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} what&#39;s clear is that i should document that this can happen, and how to know that it&#39;s right to `rm -rf`. we can think about adding an option later.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} respect local overrides of [[(hidden) Wk9BwS_1L]]&#39;s config, i.e. `git -c stackedrebase.autoApplyIfNeeded=false stacked-rebase origin/master`
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											currently if default set to `true` in global git config, this doesn&#39;t disable it, but should
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) EFzdV7_0d
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} if any, except the first, `branch-end`s are remotes and not local refs, validation should fail
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											happened when f&#39;d history, reset to origin/&lt;head&gt;, but partial branches didn&#39;t recover to their origin/ counterparts
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) QN7jcWxIP
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} really need a `state-of-apply` instead of the different files, and now further hacks lol
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) wlDLZmTBh
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) eMn7ZGB9N
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 2aCkiV-4J
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) xQSzRy1nV
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) -BrojbERr
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) gQDW1SDNs
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) czYCsf3xF
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) tuWCszRDj
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.01-24-2022";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 23rd, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li>
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) NofgOC_VG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]] [[(hidden) 01-24-2022]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li>
+		<div style="max-width: 65ch;">
+				(hidden) raFY4coVt [[(hidden) VZrbM9KJQ]] [[(hidden) KrWTreAdT]]
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) vkkA0zo9F 
+		</div>
+	</li>
+	<li>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) V9LdoyQWH [[(hidden) qVXECWWQg]] [[(hidden) nhSATn9kQ]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>

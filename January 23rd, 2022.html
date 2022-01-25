@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>January 23rd, 2022 | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			January 23rd, 2022
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">279</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							0
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							279
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2022-01-22T22:00:04.285Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2022-01-25T03:41:01.371Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1642888804285);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643082061371);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li>
+					<div style="max-width: 65ch;">
+							{{[[DONE]]}} #[[public]] #[[(hidden) vuiz_eLip]] &quot;Advanced Git: Graphs, Hashes, and Compression, Oh My!&quot; from [[(hidden) QNN093oAW]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									https://www.youtube.com/watch?v=ig5E8CcdM9g
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											[[(hidden) ThXonBLoY]] it&#39;s super easy to view a file at a specific point in history:
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													```shell
+										git show &lt;commit-ish&gt;:&lt;filepath&gt;```
+											</div>
+										</li>
+										<li>
+											<div style="max-width: 65ch;">
+													created [[(hidden) KrWTreAdT]] for ease of use when viewing with an editor
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															https://github.com/kiprasmel/git-at
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	(hidden) NofgOC_VG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]] [[(hidden) 01-24-2022]]
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			(hidden) raFY4coVt [[(hidden) VZrbM9KJQ]] [[(hidden) KrWTreAdT]]
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} (hidden) vkkA0zo9F 
+																	</div>
+																</li>
+																<li>
+																	<div style="max-width: 65ch;">
+																			{{[[TODO]]}} (hidden) V9LdoyQWH [[(hidden) qVXECWWQg]] [[(hidden) nhSATn9kQ]]
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} [[(hidden) Wk9BwS_1L]] explore the ways of viewing a file at a specific perspective when doing a [[(hidden) HZPtBpAtc]] -- seems related to [[(hidden) qgPiaGLCO]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													https://youtu.be/ig5E8CcdM9g?t=50m2s
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									[[(hidden) EPYV31rY-]]
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											https://twitter.com/matthewmccull
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											https://matthewjmccullough.com/talks/
+									</div>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											https://speakerdeck.com/matthewmccullough/agile-ish-life-at-github?slide=119
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFqRQ-0oiol.png?alt=media&amp;token=d1147a63-56eb-4007-bcd5-df495bd54584)
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} #[[(hidden) _sW66DmMa]] [[&quot;thinking in systems -- a primer&quot;]] from [[(hidden) LsTCTbI3m]] [[(hidden) 6ZFjU8adC]]
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													https://wtf.tw/ref/meadows.pdf
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															{{[[(hidden) DQjdQcHOY]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FoCiYU7oo-f.pdf?alt=media&amp;token=3be029bd-abb7-45a2-a633-9b4cf03df868}}
+													</div>
+													<ul>
+														<li>
+															<div style="max-width: 65ch;">
+																	&gt; If a factory is torn down but the rationality which produced it is
+														left standing, then that rationality will simply produce another
+														factory. If a revolution destroys a government, but the systematic
+														patterns of thought that produced that government are left intact,
+														then those patterns will repeat themselves. . . . There’s so much talk
+														about the system. And so little understanding.
+														—Robert Pirsig, Zen and the Art of Motorcycle Maintenance
+															</div>
+															<ul>
+																<li>
+																	<div style="max-width: 65ch;">
+																			oh yes. this should be good.
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li></li>
+													</ul>
+												</li>
+												<li></li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[DONE]]}} #[[(hidden) _sW66DmMa]] https://apenwarr.ca/log/20201227
+									</div>
+									<ul>
+										<li>
+											<div style="max-width: 65ch;">
+													(hidden) G576QGXUa #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
+											</div>
+											<ul>
+												<li>
+													<div style="max-width: 65ch;">
+															(hidden) R_6mhE9-l
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li></li>
+									</ul>
+								</li>
+								<li></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) 2wX0OBlxp
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) IJDCRqFUt [[(hidden) 0Yz1DDtf5]]
+					</div>
+					<ul>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) zNVSgSvNq [[(hidden) 3JjE9d-pB]]
+							</div>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) D6wkPCCjm
+							</div>
+							<ul>
+								<li>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} (hidden) W-drIOZlu [[(hidden) 43srP2xlN]] #[[(hidden) GR0b6CYM8]] [[(hidden) hOz01qFbq]]
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div style="max-width: 65ch;">
+									(hidden) _SRsns0OC
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) VCLphbN6j
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) eJGM-3AnH
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Ry04BpDBn
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) HmiKaxN2O
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) qSXZKdRle
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) L4Gm6Zse-
+					</div>
+				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							(hidden) Gspb65i4w
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.01-23-2022";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>.
+			</center>
+
+		</footer>
+	</body>
+</html>
