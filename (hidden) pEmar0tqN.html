@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T11:21:51.365Z</span>
+				<span>2022-02-02T11:52:23.906Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635148868090);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643800911365);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643802743906);
 
 			</script>
 		</small>
@@ -319,7 +319,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) qohyTLRTZ [[typescript]] [[(hidden) pEmar0tqN]]
+				{{[[DONE]]}} help [[(hidden) pEmar0tqN]] w/ [[typescript]]
 			</div>
 			<!--
 			</span>
@@ -327,27 +327,47 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) j3HyhqcKh
+				&gt; 
+	The basic idea is, i have an object like:
+	```javascript
+	const reg = {
+	  a: (p: string) =&gt; false,
+	  b: (p: number) =&gt; &#39;hello&#39;
+	};```
+	and im looking to make a function that can do like
+	```javascript
+	function run(
+	  k: keyof reg,
+	  p: Parameters&lt;reg[k]&gt;
+	): ReturnType&lt;reg[k]&gt; {
+	    return reg[k](p);
+	}```
+	and i want all the beautiful typehinting to be automatic and happy
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) Fd7LP5xS3
+				okay, what we want here is to narrow down the type of the object&#39;s value by the object&#39;s key, and thus safely use the object&#39;s value with an inferred type. &amp; ofc have auto-completions for the correct type when we narrow it down.
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) IFIylgCfZ
+				hehe, i don’t think it’s possible yet. https://github.com/microsoft/TypeScript/issues/47648
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) O95u8utrQ
+				&gt; &lt;...&gt;
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) -74GW3s_X
+				i’m excited about the upcoming PRs, even tho some have been there for a while already.
+	https://github.com/microsoft/TypeScript/pull/26349
+	https://github.com/microsoft/TypeScript/issues/26242
+	and fwiw, i tried playing w/ it [1] before looking for `typescript infer object value by key` &amp; finding [2] - might be interesting. there’s typeof &amp; keyof that are often used for similar stuff that is possible.
+	[1] https://www.typescriptlang.org/play?#code/FAYw9gdgzgLgBAJwKYHM4F44G87DnAQwC44AKABxNgQEsIUBK[…]Ko9Oc4N73DAguijF9bI-fov2GZ8JmmADUwOPMTkzMCcyA-Mrlgu4gA
+	[2] https://stackoverflow.com/questions/54598322/how-to-make-typescript-infer-the-keys-of-an-object-but-define-type-of-its-value#comment961[…]0_54598743
 		</div>
 	</li>
 </ul>

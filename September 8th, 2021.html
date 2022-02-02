@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T11:21:50.642Z</span>
+				<span>2022-02-02T11:52:22.935Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1631070399210);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643800910642);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643802742935);
 
 			</script>
 		</small>
@@ -272,44 +272,59 @@
 				</li>
 				<li>
 					<div style="max-width: 65ch;">
-							(hidden) aWQJk8iPh #[[typescript]]
+							#[[typescript]]
 					</div>
 					<ul>
 						<li>
 							<div style="max-width: 65ch;">
-									(hidden) VlUkIqxqg
+									everything I want to do is illegal
 							</div>
 							<ul>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) AmRUgLMfK
+											```typescript
+								export type SelfWithKeysRecursively&lt;T&gt; =
+									T extends Record&lt;keyof T, any&gt;
+										? T | T[keyof T] | SelfWithKeysRecursively&lt;T[keyof T]&gt;
+										: never;
+								type DeepObj = {
+									a: {
+										b: {
+											c: {
+												d: 69
+											}
+										}
+									}
+								}
+								// just fine by using a set-size `DeepObj`.
+								function foo&lt;X extends SelfWithKeysRecursively&lt;DeepObj&gt;&gt;(x: X) {}
+								foo&lt;DeepObj&gt;({ a: { b: { c: { d: 69}}}})
+								foo&lt;DeepObj[&quot;a&quot;]&gt;({ b: { c: { d: 69}}})
+								foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;]&gt;({ c: { d: 69}})
+								foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;]&gt;({ d: 69})
+								foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;][&quot;d&quot;]&gt;(69)
+								// error: Type instantiation is excessively deep and possibly infinite.
+								function bar&lt;ArbitraryDeepObj, X extends SelfWithKeysRecursively&lt;ArbitraryDeepObj&gt;&gt;(x: X) {}
+								bar&lt;DeepObj, DeepObj&gt;({ a: { b: { c: { d: 69}}}})
+								bar&lt;DeepObj, DeepObj[&quot;a&quot;]&gt;({ b: { c: { d: 69}}})
+								bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;]&gt;({ c: { d: 69}})
+								bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;]&gt;({ d: 69})
+								bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;][&quot;d&quot;]&gt;(69)```
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) 2L2DDdOkh
+											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FVXzh9lYLmy.png?alt=media&amp;token=3d34e6be-510c-49e6-9377-870d6fd83705)
 									</div>
 								</li>
 								<li>
 									<div style="max-width: 65ch;">
-											(hidden) qlOZQYs02
+											https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBDAnmYcDKwA2AzA6gSxgAsBpYRAZwCVgBjAVygvwDctEAeAFQD44BeALAAoAJBc4oGMAB2AEwpwataHI4BrchGxwuAGjgBDGYh4jRogPy64AH10BtTYm26AunfRY8hUuWp0jMxsmJxcTlo6XG5mYqIAXHAywGxQANwiIkgocAAiwMBgAPIARgBWAnAA3uaGiTVxJfXmFrTNcRZyiQBsAJwtogC+LcNio6MiAPSTcGX0FPDY+MlwJYhw88sA5kZwFMAwALTMAF6oAAb5haVl5wB0Itj0MrQw+BAycNgQEBwAGpIQNJ5IoMDgCMQyJRlEFWOwOFdiuUeDwABQgRJ-ACU1Qmwm+v0RNzRVSM9VW5La1TgXTgfUGDMGWMePwRBSRZQcACJDFyYqjSU1qVTSbT6QzmfjWUTytzeW5uSU+SS4CKaT1ehKWYT2Tc5XzFQaubRlQL1XTNZKCWzrrKeUalQrjUa5Ka+pKpjNgFAoNBElxkKhlgtjG9DG8PnB8IpQLRgBRguwaeyjPI4JAE-gSqEozIljJCMAHvjnq93p8SoYoBwAIJQEqEKBVxAysoGAFSWQKLzg3xQgIMJhw0K1+uN5utlHozE4qp4yvV1sGSdmurUoWktVizWMyULm0c5e6u3ylUb1Xk7e7kT7pd5Y+c+1Ox0qrcarXCW8Po+2x-yw1Oia-Kiu+e5VgeNw-hy+rPkaQHcq6-LuiIQA
 									</div>
 								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) 2YjdDFjKm
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) sux_5rQ46
-									</div>
-								</li>
-								<li>
-									<div style="max-width: 65ch;">
-											(hidden) r3elLTfHE
-									</div>
-								</li>
+								<li></li>
+								<li></li>
+								<li></li>
 							</ul>
 						</li>
 					</ul>

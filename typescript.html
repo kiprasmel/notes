@@ -146,7 +146,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">4</td>
+							<td style="text-align: right; ">5</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +161,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							1129
+							1130
 							</td>
 							<td>
 							(both)
@@ -184,7 +184,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T11:21:50.154Z</span>
+				<span>2022-02-02T11:52:22.329Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +192,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638215125103);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643800910154);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643802742329);
 
 			</script>
 		</small>
@@ -210,6 +210,13 @@
 							#[[public]]
 					</div>
 				</li>
+				<li>
+					<div style="max-width: 65ch;">
+							#[[roam]]-traverse-graph-settings
+					</div>
+				</li>
+				<li></li>
+				<li></li>
 				<li></li>
 			</ul>
 		</main>
@@ -293,7 +300,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) ILZeBuZIH #[[typescript]]
+				#[[typescript]] typescript
 			</div>
 			<!--
 			</span>
@@ -301,42 +308,42 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) F28wb5_W1
+				contextual typing:
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) Ewhyfop3s
+						https://stackoverflow.com/a/64653179/9285308
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) jcE0d6Zx7
+						alias:
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) zIB8IZhW9
+								&quot;infer backwards&quot;
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) N0xeAqjxv
+								&quot;inferring backwards&quot;
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) NXJRVQUsn
+								outside
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) Hh8CCtP7e
+								right to left
 						</div>
 					</li>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) aUDKmv_Bm
+								opposite/reverse to control flow
 						</div>
 					</li>
 				</ul>
@@ -345,34 +352,34 @@
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} (hidden) 8epKTj8FX #[[(hidden) D1lY0CG5e]]
+				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] holy shit u can generate type-safe `useFetch` react hooks from the express router !!!
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) Ew3nnR3s9
+						ofc others would work too, but express is just the one I&#39;m using
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) WrIlW6p1q
+						assuming ofc you have typed out the routes, which u should
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) tVcJm9oE1
+						which makes me realize graphql is not special in this regard; it&#39;s only advantaged in this case is that it has a single spec that everyone / every impl follows, and that makes it easier to create code generators that work for everyone, instead of here I could only do express-specific. hm maybe http-specific so all libraries could benefit :o
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) VUgqBeaZv
+						.
 				</div>
 			</li>
 		</ul>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) mWWXX4s_I
+				.
 		</div>
 	</li>
 </ul>
@@ -401,7 +408,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) aWQJk8iPh #[[typescript]]
+				#[[typescript]]
 			</div>
 			<!--
 			</span>
@@ -409,39 +416,54 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) VlUkIqxqg
+				everything I want to do is illegal
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) AmRUgLMfK
+						```typescript
+			export type SelfWithKeysRecursively&lt;T&gt; =
+				T extends Record&lt;keyof T, any&gt;
+					? T | T[keyof T] | SelfWithKeysRecursively&lt;T[keyof T]&gt;
+					: never;
+			type DeepObj = {
+				a: {
+					b: {
+						c: {
+							d: 69
+						}
+					}
+				}
+			}
+			// just fine by using a set-size `DeepObj`.
+			function foo&lt;X extends SelfWithKeysRecursively&lt;DeepObj&gt;&gt;(x: X) {}
+			foo&lt;DeepObj&gt;({ a: { b: { c: { d: 69}}}})
+			foo&lt;DeepObj[&quot;a&quot;]&gt;({ b: { c: { d: 69}}})
+			foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;]&gt;({ c: { d: 69}})
+			foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;]&gt;({ d: 69})
+			foo&lt;DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;][&quot;d&quot;]&gt;(69)
+			// error: Type instantiation is excessively deep and possibly infinite.
+			function bar&lt;ArbitraryDeepObj, X extends SelfWithKeysRecursively&lt;ArbitraryDeepObj&gt;&gt;(x: X) {}
+			bar&lt;DeepObj, DeepObj&gt;({ a: { b: { c: { d: 69}}}})
+			bar&lt;DeepObj, DeepObj[&quot;a&quot;]&gt;({ b: { c: { d: 69}}})
+			bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;]&gt;({ c: { d: 69}})
+			bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;]&gt;({ d: 69})
+			bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;][&quot;d&quot;]&gt;(69)```
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) 2L2DDdOkh
+						![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FVXzh9lYLmy.png?alt=media&amp;token=3d34e6be-510c-49e6-9377-870d6fd83705)
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) qlOZQYs02
+						https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBDAnmYcDKwA2AzA6gSxgAsBpYRAZwCVgBjAVygvwDctEAeAFQD44BeALAAoAJBc4oGMAB2AEwpwataHI4BrchGxwuAGjgBDGYh4jRogPy64AH10BtTYm26AunfRY8hUuWp0jMxsmJxcTlo6XG5mYqIAXHAywGxQANwiIkgocAAiwMBgAPIARgBWAnAA3uaGiTVxJfXmFrTNcRZyiQBsAJwtogC+LcNio6MiAPSTcGX0FPDY+MlwJYhw88sA5kZwFMAwALTMAF6oAAb5haVl5wB0Itj0MrQw+BAycNgQEBwAGpIQNJ5IoMDgCMQyJRlEFWOwOFdiuUeDwABQgRJ-ACU1Qmwm+v0RNzRVSM9VW5La1TgXTgfUGDMGWMePwRBSRZQcACJDFyYqjSU1qVTSbT6QzmfjWUTytzeW5uSU+SS4CKaT1ehKWYT2Tc5XzFQaubRlQL1XTNZKCWzrrKeUalQrjUa5Ka+pKpjNgFAoNBElxkKhlgtjG9DG8PnB8IpQLRgBRguwaeyjPI4JAE-gSqEozIljJCMAHvjnq93p8SoYoBwAIJQEqEKBVxAysoGAFSWQKLzg3xQgIMJhw0K1+uN5utlHozE4qp4yvV1sGSdmurUoWktVizWMyULm0c5e6u3ylUb1Xk7e7kT7pd5Y+c+1Ox0qrcarXCW8Po+2x-yw1Oia-Kiu+e5VgeNw-hy+rPkaQHcq6-LuiIQA
 				</div>
 			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) 2YjdDFjKm
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) sux_5rQ46
-				</div>
-			</li>
-			<li>
-				<div style="max-width: 65ch;">
-						(hidden) r3elLTfHE
-				</div>
-			</li>
+			<li></li>
+			<li></li>
+			<li></li>
 		</ul>
 	</li>
 </ul>
@@ -470,7 +492,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) 6V3zEI02y #[[typescript]] #[[(hidden) tZLzu9sBI]]
+				{{[[DONE]]}} help w/ #[[(hidden) tZLzu9sBI]] issues w/ #[[typescript]]
 			</div>
 			<!--
 			</span>
@@ -478,77 +500,61 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) 5I4W141Hx
+				https://pipedrive.slack.com/archives/C01PSJQ80UW/p1631519260006700
 		</div>
 	</li>
+	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) FXhwZs5vy
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) u8Ysr1dan #[[(hidden) tZLzu9sBI]]
+				fuck #[[(hidden) tZLzu9sBI]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) GB_Jec9z1
+						https://twitter.com/Rich_Harris/status/1441068317930819589
 				</div>
 				<ul>
 					<li>
 						<div style="max-width: 65ch;">
-								(hidden) W0m8k8xXd
+								further proves the point
 						</div>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
+	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) zq_5ZtCRe
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) R94Ot-a_P #[[js]] #[[(hidden) jOMmlCP4S]] #[[(hidden) Z6Wd9qbMT]] #[[(hidden) d_KJUbXie]] #[[(hidden) hzfBb4ct_]]
+				very useful - #[[(hidden) Z6Wd9qbMT]] (c++ etc) into #[[(hidden) d_KJUbXie]] / #[[js]]!! #[[(hidden) jOMmlCP4S]] for #[[(hidden) hzfBb4ct_]]
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) k9-Pa-xfc
+						&quot;A simple guide to load C/C++ code into Node.js JavaScript Applications&quot;
 				</div>
 			</li>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) XCtNR51__
+						https://medium.com/jspoint/a-simple-guide-to-load-c-c-code-into-node-js-javascript-applications-3fcccf54fd32
 				</div>
 			</li>
 		</ul>
 	</li>
+	<li></li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) _pYZ4nCF5
-		</div>
-	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) E8-lbH7mO #[[(hidden) bWZPrHq8o]]
+				#[[(hidden) bWZPrHq8o]] fix 😎 😈
 		</div>
 		<ul>
 			<li>
 				<div style="max-width: 65ch;">
-						(hidden) LAz2sxVv4
+						https://github.com/kiprasmel/using-fs-xattr-with-ts
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
-		<div style="max-width: 65ch;">
-				(hidden) Y2eLNqVT8
-		</div>
-	</li>
+	<li></li>
 </ul>
 		</li>
 	</ul>
@@ -575,7 +581,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) EFEByRKoS [[(hidden) YBB858w4z]] #[[typescript]]
+				{{[[DONE]]}} help [[(hidden) YBB858w4z]] w/ fedocs cli: #[[typescript]], 
 			</div>
 			<!--
 			</span>
@@ -608,7 +614,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) HAVlnyhr- #[[typescript]]
+				examples of advanced #[[typescript]] usage
 			</div>
 			<!--
 			</span>
@@ -1142,7 +1148,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} (hidden) Vd4wR8YSZ #[[(hidden) _sW66DmMa]] #[[typescript]] [[(hidden) Slf8qswwn]] #[[re]] #[[(hidden) dtTUwyuO_]] [[(hidden) PWFtoHdAm]]
+				{{[[TODO]]}} #[[(hidden) dtTUwyuO_]] / #[[(hidden) _sW66DmMa]] the #[[typescript]] [[(hidden) Slf8qswwn]] template from [[(hidden) PWFtoHdAm]]
 			</div>
 			<!--
 			</span>
@@ -1150,7 +1156,7 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) vQ0Q-_cpy
+				https://github.com/orta/TypeScript-TSServer-Plugin-Template
 		</div>
 	</li>
 </ul>
@@ -1179,7 +1185,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				(hidden) ugC7qgmVO [[typescript]] [[(hidden) URRQcDCig]] [[(hidden) stBI9LNFL]]
+				hmmm. [[(hidden) URRQcDCig]] is using [[typescript]] extensively as well (kinda knew it already from e.g. [[(hidden) stBI9LNFL]])
 			</div>
 			<!--
 			</span>
@@ -1187,7 +1193,7 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) _cjtgP10D #[[(hidden) aQw_Q_pev]] [[(hidden) IiSuMRl4c]]
+				i then wonder how the #[[(hidden) aQw_Q_pev]] w/ [[(hidden) IiSuMRl4c]] is still going thru -- do they not see the issues / the optimal solution being different?
 		</div>
 	</li>
 </ul>
@@ -1216,7 +1222,7 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[DONE]]}} (hidden) qohyTLRTZ [[typescript]] [[(hidden) pEmar0tqN]]
+				{{[[DONE]]}} help [[(hidden) pEmar0tqN]] w/ [[typescript]]
 			</div>
 			<!--
 			</span>
@@ -1224,27 +1230,47 @@
 <ul>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) j3HyhqcKh
+				&gt; 
+	The basic idea is, i have an object like:
+	```javascript
+	const reg = {
+	  a: (p: string) =&gt; false,
+	  b: (p: number) =&gt; &#39;hello&#39;
+	};```
+	and im looking to make a function that can do like
+	```javascript
+	function run(
+	  k: keyof reg,
+	  p: Parameters&lt;reg[k]&gt;
+	): ReturnType&lt;reg[k]&gt; {
+	    return reg[k](p);
+	}```
+	and i want all the beautiful typehinting to be automatic and happy
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) Fd7LP5xS3
+				okay, what we want here is to narrow down the type of the object&#39;s value by the object&#39;s key, and thus safely use the object&#39;s value with an inferred type. &amp; ofc have auto-completions for the correct type when we narrow it down.
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) IFIylgCfZ
+				hehe, i don’t think it’s possible yet. https://github.com/microsoft/TypeScript/issues/47648
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) O95u8utrQ
+				&gt; &lt;...&gt;
 		</div>
 	</li>
 	<li>
 		<div style="max-width: 65ch;">
-				(hidden) -74GW3s_X
+				i’m excited about the upcoming PRs, even tho some have been there for a while already.
+	https://github.com/microsoft/TypeScript/pull/26349
+	https://github.com/microsoft/TypeScript/issues/26242
+	and fwiw, i tried playing w/ it [1] before looking for `typescript infer object value by key` &amp; finding [2] - might be interesting. there’s typeof &amp; keyof that are often used for similar stuff that is possible.
+	[1] https://www.typescriptlang.org/play?#code/FAYw9gdgzgLgBAJwKYHM4F44G87DnAQwC44AKABxNgQEsIUBK[…]Ko9Oc4N73DAguijF9bI-fov2GZ8JmmADUwOPMTkzMCcyA-Mrlgu4gA
+	[2] https://stackoverflow.com/questions/54598322/how-to-make-typescript-infer-the-keys-of-an-object-but-define-type-of-its-value#comment961[…]0_54598743
 		</div>
 	</li>
 </ul>
