@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.378Z</span>
+				<span>2022-02-02T14:33:53.721Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,27 +245,41 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640310262692);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801378);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433721);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="tDpIS03PO">
+					<a href="#tDpIS03PO" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="NL-HbBoou">
+					<a href="#NL-HbBoou" class="block-ref"></a>
+				
+				</li>
+				<li id="3SsXLPkNC">
+					<a href="#3SsXLPkNC" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[oldest-first]]
 					</div>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="bYYVEHmfD">
+					<a href="#bYYVEHmfD" class="block-ref"></a>
+				
+				</li>
+				<li id="pY16svWcA">
+					<a href="#pY16svWcA" class="block-ref"></a>
+				
+				</li>
+				<li id="QkDgCf1RS">
+					<a href="#QkDgCf1RS" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -284,7 +351,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="SPhW-EjhQ">
+			<a href="#SPhW-EjhQ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -301,17 +370,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="4cOv3Wdcz">
+		<a href="#4cOv3Wdcz" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 4cOv3Wdcz #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 		</div>
 		<ul>
-			<li>
+			<li id="vT6VtdSiK">
+				<a href="#vT6VtdSiK" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) vT6VtdSiK #[[js]] [[(hidden) DNhqQDSLh]]
 				</div>
 			</li>
-			<li>
+			<li id="muicK_p5i">
+				<a href="#muicK_p5i" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) muicK_p5i
 				</div>
@@ -320,7 +392,9 @@
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="nAm64ejpw">
+			<a href="#nAm64ejpw" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -337,17 +411,21 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="xkB3ZpIDd">
+		<a href="#xkB3ZpIDd" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				yarn - love v1, hate that they went into v2 when v2 should&#39;ve been a completely different project
 		</div>
 		<ul>
-			<li>
+			<li id="U3Fjo9Ro9">
+				<a href="#U3Fjo9Ro9" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						also yarn v1 --ignore-scripts you cannot provide an opposite boolean flag to _not_ ignore scripts, when your config&#39;s default is the opposite. ffs
 				</div>
 			</li>
-			<li></li>
+			<li id="c6fbICPy_">
+				<a href="#c6fbICPy_" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
 </ul>
@@ -365,7 +443,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_2nQzGSrS">
+			<a href="#_2nQzGSrS" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -398,7 +478,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="M5cFNIQaM">
+			<a href="#M5cFNIQaM" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -415,30 +497,38 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="SZ9bq2m05">
+		<a href="#SZ9bq2m05" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://github.com/eslint/rfcs/pull/32
 		</div>
 		<ul>
-			<li>
+			<li id="_UkXX_rlj">
+				<a href="#_UkXX_rlj" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/eslint/rfcs/pull/28
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="Qw4M_4mRB">
+		<a href="#Qw4M_4mRB" class="block-ref"></a>
+	
+	</li>
+	<li id="fVPW14P7_">
+		<a href="#fVPW14P7_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) fVPW14P7_ #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 		</div>
 		<ul>
-			<li>
+			<li id="rGnhD7cUA">
+				<a href="#rGnhD7cUA" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) rGnhD7cUA [[(hidden) DNhqQDSLh]]
 				</div>
 			</li>
-			<li>
+			<li id="Ju8IdrC7o">
+				<a href="#Ju8IdrC7o" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) Ju8IdrC7o
 				</div>
@@ -460,7 +550,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="vZZcfM683">
+			<a href="#vZZcfM683" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -477,42 +569,50 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="yqDzZgoTq">
+		<a href="#yqDzZgoTq" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&quot;interactive&quot; CLIs with stupid prompts.
 		</div>
 		<ul>
-			<li>
+			<li id="8bjPpfIUS">
+				<a href="#8bjPpfIUS" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						examples (too many already)
 				</div>
 				<ul>
-					<li>
+					<li id="9_9NoAVXc">
+						<a href="#9_9NoAVXc" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://github.com/terkelg/prompts
 						</div>
 					</li>
-					<li>
+					<li id="H0WOjrRHd">
+						<a href="#H0WOjrRHd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://github.com/SBoudrias/Inquirer.js
 						</div>
 					</li>
-					<li>
+					<li id="FpRzH6yl1">
+						<a href="#FpRzH6yl1" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://github.com/enquirer/enquirer
 						</div>
 					</li>
-					<li>
+					<li id="U-OYmiB02">
+						<a href="#U-OYmiB02" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								they even had something in go -_-
 						</div>
 						<ul>
-							<li>
+							<li id="htHgMGrHh">
+								<a href="#htHgMGrHh" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										#[[(hidden) S-ygYfi0j]]
 								</div>
 								<ul>
-									<li>
+									<li id="Z4x43FxuH">
+										<a href="#Z4x43FxuH" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												whatever [[(hidden) cVs0Gqvj9]] was using. also, imagine writing the project in go and not ts, lmao. not the first questionable choice, folks. (cough cough, auto updates ?? for a C-L-I ???)
 										</div>
@@ -523,60 +623,71 @@
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="s6915UrcV">
+				<a href="#s6915UrcV" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						they throw away the best parts of the command line
 				</div>
 				<ul>
-					<li>
+					<li id="-LSnTiYoz">
+						<a href="#-LSnTiYoz" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								text-based, restoring progress of what you ran previously extremely easy, extendable/automate-able/pipe-able, etc,
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="xoNvQRD8b">
+				<a href="#xoNvQRD8b" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						they take in the worst parts of a UI
 				</div>
 				<ul>
-					<li>
+					<li id="mQwmVspda">
+						<a href="#mQwmVspda" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								and turn it into a TUI
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="YgzZZNLSC">
+				<a href="#YgzZZNLSC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						imagine not having using something like `pacman`, and `git` enough (e.g. add --patch) that you don&#39;t have good ideas for
 				</div>
 				<ul>
-					<li>
+					<li id="bUy9l3G5L">
+						<a href="#bUy9l3G5L" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								1. __not__ having to have a prompt in the first place, and having commands/sub-commands and, or just, arguments (either boolean - exists or not, or whatever option)
 						</div>
 					</li>
-					<li>
+					<li id="6CTsQOzEF">
+						<a href="#6CTsQOzEF" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								2. if a prompt must, __not__ having to navigate it with shitty little arrow keys, and instead providing good defaults (pacman&#39;s `question? [Y/n] `), or even selecting from multiple by using intuitive names for the operations you&#39;ll do (git add --patch&#39;s `(1/n) Stage this hunk [y,n,q,a,d,e,?]? ` - most of these out of the bat don&#39;t need much explaining do they? they&#39;re intuitive).
 						</div>
 						<ul>
-							<li>
+							<li id="6ehWHkbuc">
+								<a href="#6ehWHkbuc" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										though, the 2nd one has nuance. it works well for git because the `add` operation is extremely common to do (so as is using git itself). if your tool is not on the same level, it&#39;ll likely be harder to achieve this intuitiveness without having to do something like `do foo? (Y)es, (n)o, (a)lways, neve(r), (s)kip, (j)ump` etc., and if the amount of things to select from (esp. if there&#39;s a selection, especially if a one w/ dynamic (~ arbitrary) amount of items to select from), then __maybe__ the arrows __might__ be better fit, but i haven&#39;t seen such a scenario yet, - rather, people over-use the arrow selections because it&#39;s the easy option to go with. fuck [[mediocrity]].
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="eUdoqkV4P">
+						<a href="#eUdoqkV4P" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								3. avoiding both in the first place, if possible, w/ good defaults (__not__ &quot;too&quot; good that they are no longer intuitive though)
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="MD289r-9C">
+				<a href="#MD289r-9C" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
 </ul>
@@ -594,7 +705,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="PHrB6KBJJ">
+			<a href="#PHrB6KBJJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

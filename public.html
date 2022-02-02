@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.144Z</span>
+				<span>2022-02-02T14:33:53.532Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,19 +245,23 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1629813711218);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801144);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433532);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="3EumxJfyZ">
+					<a href="#3EumxJfyZ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
+				<li id="5ixypAIyc">
+					<a href="#5ixypAIyc" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -276,7 +333,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="1PX-HyIF7">
+			<a href="#1PX-HyIF7" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -296,7 +355,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="zo5d79BmW">
+			<a href="#zo5d79BmW" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -329,7 +390,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FBHI6vbz-">
+			<a href="#FBHI6vbz-" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -362,7 +425,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CleOnjNeN">
+			<a href="#CleOnjNeN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -395,7 +460,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="WSPO6nxZS">
+			<a href="#WSPO6nxZS" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -428,7 +495,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="1I4s6Hue8">
+			<a href="#1I4s6Hue8" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -461,7 +530,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="GFi5sGe-x">
+			<a href="#GFi5sGe-x" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -494,7 +565,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Qac3URCxa">
+			<a href="#Qac3URCxa" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -511,17 +584,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="wzim7VC-Z">
+		<a href="#wzim7VC-Z" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				d
 		</div>
 		<ul>
-			<li>
+			<li id="clHHyZQmN">
+				<a href="#clHHyZQmN" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						e
 				</div>
 				<ul>
-					<li>
+					<li id="vMdDN9Lxl">
+						<a href="#vMdDN9Lxl" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								f
 						</div>
@@ -545,7 +621,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="s4UiZX5SE">
+			<a href="#s4UiZX5SE" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -565,7 +643,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="QDoJTxmuC">
+			<a href="#QDoJTxmuC" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -598,7 +678,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_-D6p6kAI">
+			<a href="#_-D6p6kAI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -631,7 +713,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="bH63kY0C_">
+			<a href="#bH63kY0C_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -651,7 +735,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="Qqf8KwehJ">
+			<a href="#Qqf8KwehJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -684,7 +770,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="jIlV9cgBb">
+			<a href="#jIlV9cgBb" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -717,7 +805,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CvcgwW6og">
+			<a href="#CvcgwW6og" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -750,7 +840,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="3WwqQCSGe">
+			<a href="#3WwqQCSGe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -783,7 +875,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ZrT6WkPIQ">
+			<a href="#ZrT6WkPIQ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -816,7 +910,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="3EumxJfyZ">
+			<a href="#3EumxJfyZ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -849,7 +945,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="YAJvpB_cK">
+			<a href="#YAJvpB_cK" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -882,7 +980,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="-r4764tUn">
+			<a href="#-r4764tUn" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -915,7 +1015,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="wv1VNLkqv">
+			<a href="#wv1VNLkqv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -932,45 +1034,58 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="41LMhX1RF">
+		<a href="#41LMhX1RF" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&quot;how to restore dislikes on youtube&quot;
 		</div>
 		<ul>
-			<li>
+			<li id="rXDvsYIdl">
+				<a href="#rXDvsYIdl" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://youtu.be/lz8-fdVtox8
 				</div>
 			</li>
-			<li>
+			<li id="eYkfGtrgN">
+				<a href="#eYkfGtrgN" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://returnyoutubedislike.com
 				</div>
 			</li>
-			<li>
+			<li id="g_clpy1y3">
+				<a href="#g_clpy1y3" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/Anarios/return-youtube-dislike
 				</div>
 			</li>
-			<li>
+			<li id="hCk9cXiZX">
+				<a href="#hCk9cXiZX" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						LMAO
 				</div>
 				<ul>
-					<li>
+					<li id="Mi3CHxNdZ">
+						<a href="#Mi3CHxNdZ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://youtu.be/lz8-fdVtox8?t=6m31s
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="yLWhT6W9v">
+				<a href="#yLWhT6W9v" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="8TeXxUum_">
+		<a href="#8TeXxUum_" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="DHirGIdkC">
+			<a href="#DHirGIdkC" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -987,7 +1102,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="K2cZt_K1_">
+		<a href="#K2cZt_K1_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} complexity is hard man, we need (integration) tests big time
 		</div>
@@ -1007,7 +1123,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="V6XiqTROX">
+			<a href="#V6XiqTROX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1040,7 +1158,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="vHguf7gkA">
+			<a href="#vHguf7gkA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1073,7 +1193,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="cp9jKYd19">
+			<a href="#cp9jKYd19" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1106,7 +1228,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ZK9vVRfEy">
+			<a href="#ZK9vVRfEy" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1126,7 +1250,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="NMNIxwafT">
+			<a href="#NMNIxwafT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1159,7 +1285,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="N7utDSJ5V">
+			<a href="#N7utDSJ5V" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1192,7 +1320,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="5PnX8vdhN">
+			<a href="#5PnX8vdhN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1225,7 +1355,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="IxU3kSEh_">
+			<a href="#IxU3kSEh_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1258,7 +1390,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XAif0ZgEI">
+			<a href="#XAif0ZgEI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1291,7 +1425,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="jE9_QHa7c">
+			<a href="#jE9_QHa7c" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1324,7 +1460,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="GeidxGJXW">
+			<a href="#GeidxGJXW" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1357,7 +1495,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="mUyvy6rzD">
+			<a href="#mUyvy6rzD" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1390,7 +1530,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FSJt5hpIU">
+			<a href="#FSJt5hpIU" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1423,7 +1565,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="fzwHirdu5">
+			<a href="#fzwHirdu5" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1456,7 +1600,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="OEgDcf64m">
+			<a href="#OEgDcf64m" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1489,7 +1635,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="WEhhux5Ey">
+			<a href="#WEhhux5Ey" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1522,7 +1670,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ocpaRxUjO">
+			<a href="#ocpaRxUjO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1555,7 +1705,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4lP7eFEiE">
+			<a href="#4lP7eFEiE" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1588,7 +1740,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="tDpIS03PO">
+			<a href="#tDpIS03PO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1621,7 +1775,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="pApZU75fI">
+			<a href="#pApZU75fI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1654,7 +1810,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="9Y2R8J-zn">
+			<a href="#9Y2R8J-zn" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1687,7 +1845,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Jj9N3RuXD">
+			<a href="#Jj9N3RuXD" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1720,7 +1880,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="qelMFRu0H">
+			<a href="#qelMFRu0H" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1753,7 +1915,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="um2bTlxOA">
+			<a href="#um2bTlxOA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1786,7 +1950,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="HXC0EP8ra">
+			<a href="#HXC0EP8ra" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1819,7 +1985,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="lSfAm0iX7">
+			<a href="#lSfAm0iX7" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1852,7 +2020,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="hkzV04--Y">
+			<a href="#hkzV04--Y" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1885,7 +2055,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Zd_uyOPc6">
+			<a href="#Zd_uyOPc6" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1918,7 +2090,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="p8AekrKcJ">
+			<a href="#p8AekrKcJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1935,191 +2109,239 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="PS5I5P6k3">
+		<a href="#PS5I5P6k3" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://roamresearch.com/#/app/developer-documentation/page/49715b-M2
 		</div>
 		<ul>
-			<li>
+			<li id="LJ9GlZDiB">
+				<a href="#LJ9GlZDiB" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						roam/js
 				</div>
 				<ul>
-					<li>
+					<li id="4MiZr130R">
+						<a href="#4MiZr130R" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://roamresearch.com/#/app/developer-documentation/page/QE0bxjUwk
 						</div>
 					</li>
-					<li>
+					<li id="KtV8uou7c">
+						<a href="#KtV8uou7c" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								examples
 						</div>
 						<ul>
-							<li>
+							<li id="2FU7VMIfA">
+								<a href="#2FU7VMIfA" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://roamresearch.com/#/app/developer-documentation/page/0zhdQjUXs
 								</div>
 								<ul>
-									<li>
+									<li id="UmdVVdDjf">
+										<a href="#UmdVVdDjf" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/aidam38/roamsr/blob/master/src/main.js
 										</div>
 										<ul>
-											<li>
+											<li id="29awgNznA">
+												<a href="#29awgNznA" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														https://github.com/aidam38/roamsr/blob/b99fae9243d1e00db4571b5eafb8791d85592d5f/src/core/state.js#L17
 												</div>
 											</li>
-											<li>
+											<li id="Y1tPtzfcV">
+												<a href="#Y1tPtzfcV" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														https://github.com/aidam38/roamsr/blob/b99fae9243d1e00db4571b5eafb8791d85592d5f/src/ui/styles.js#L69
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="-zUJFdcNi">
+										<a href="#-zUJFdcNi" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="v2xVNDU8Q">
+								<a href="#v2xVNDU8Q" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="vsSF8dHjt">
+						<a href="#vsSF8dHjt" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								[[(hidden) n212LBQqE]]
 						</div>
 						<ul>
-							<li>
+							<li id="CGsNsCxrr">
+								<a href="#CGsNsCxrr" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://roamresearch.com/#/app/developer-documentation/page/tIaOPdXCj
 								</div>
 							</li>
-							<li>
+							<li id="Fv_Xa1hKY">
+								<a href="#Fv_Xa1hKY" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										roamAlphaAPI resources
 								</div>
 								<ul>
-									<li>
+									<li id="GmT4m3ZRP">
+										<a href="#GmT4m3ZRP" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://roamresearch.com/#/app/developer-documentation/page/K_unTEjJx
 										</div>
 										<ul>
-											<li>
+											<li id="78LUc5Is_">
+												<a href="#78LUc5Is_" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(!) https://www.zsolt.blog/2021/01/Roam-Data-Structure-Query.html
 												</div>
 												<ul>
-													<li>
+													<li id="SSsadHHo8">
+														<a href="#SSsadHHo8" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																insanely good.
 														</div>
 													</li>
-													<li>
+													<li id="0t7Ylul3g">
+														<a href="#0t7Ylul3g" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																{{[[TODO]]}} need to go through all material linked there
 														</div>
 													</li>
-													<li></li>
-													<li></li>
-													<li>
+													<li id="cQ7pOIvz4">
+														<a href="#cQ7pOIvz4" class="block-ref"></a>
+													</li>
+													<li id="VD5tGBE8e">
+														<a href="#VD5tGBE8e" class="block-ref"></a>
+													</li>
+													<li id="IpUk8hID5">
+														<a href="#IpUk8hID5" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																further - &quot;learn [[(hidden) 8iobLNJvy]]&#39;s [[(hidden) xH-Ph8S9m]] today&quot;:
 														</div>
 														<ul>
-															<li>
+															<li id="Q2nwYyujE">
+																<a href="#Q2nwYyujE" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		http://www.learndatalogtoday.org/
 																</div>
 															</li>
-															<li>
+															<li id="ZDhrw3o2G">
+																<a href="#ZDhrw3o2G" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		also &quot;datomic datalog&quot; in 7min
 																</div>
 																<ul>
-																	<li>
+																	<li id="QVXS_wA5_">
+																		<a href="#QVXS_wA5_" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				https://www.youtube.com/watch?v=bAilFQdaiHk&amp;feature=emb_title
 																		</div>
 																	</li>
 																</ul>
 															</li>
-															<li></li>
+															<li id="czQ-r5mmF">
+																<a href="#czQ-r5mmF" class="block-ref"></a>
+															</li>
 														</ul>
 													</li>
-													<li>
+													<li id="3eNAa7LCa">
+														<a href="#3eNAa7LCa" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																further
 														</div>
 														<ul>
-															<li>
+															<li id="RzJ2tjDeq">
+																<a href="#RzJ2tjDeq" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		https://roamresearch.com/#/app/Zsolt-Blog/page/WUn5PuTDV
 																</div>
 																<ul>
-																	<li>
+																	<li id="war8fDEvy">
+																		<a href="#war8fDEvy" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				further
 																		</div>
 																		<ul>
-																			<li>
+																			<li id="_XelBzEt7">
+																				<a href="#_XelBzEt7" class="block-ref"></a>
 																				<div style="max-width: 65ch;">
 																						https://twitter.com/Roamfu/status/1363681695057121281
 																				</div>
 																				<ul>
-																					<li>
+																					<li id="Voc51EWUg">
+																						<a href="#Voc51EWUg" class="block-ref"></a>
 																						<div style="max-width: 65ch;">
 																								further
 																						</div>
 																						<ul>
-																							<li>
+																							<li id="yNYijSpx7">
+																								<a href="#yNYijSpx7" class="block-ref"></a>
 																								<div style="max-width: 65ch;">
 																										https://twitter.com/VladyslavSitalo/status/1362261990547197954
 																								</div>
 																							</li>
-																							<li>
+																							<li id="vtmOWCPT7">
+																								<a href="#vtmOWCPT7" class="block-ref"></a>
 																								<div style="max-width: 65ch;">
 																										https://twitter.com/VladyslavSitalo/status/1415296623693942791
 																								</div>
 																								<ul>
-																									<li>
+																									<li id="38WoYlrHk">
+																										<a href="#38WoYlrHk" class="block-ref"></a>
 																										<div style="max-width: 65ch;">
 																												https://github.com/mathieudutour/gatsby-digital-garden/
 																										</div>
 																										<ul>
-																											<li>
+																											<li id="crag_e60m">
+																												<a href="#crag_e60m" class="block-ref"></a>
 																												<div style="max-width: 65ch;">
 																														#[[observation]] people have been doing [[export-html-pages]]-like stuff for a while already!
 																												</div>
 																												<ul>
-																													<li>
+																													<li id="7tc78fxdr">
+																														<a href="#7tc78fxdr" class="block-ref"></a>
 																														<div style="max-width: 65ch;">
 																																[[(hidden) zawAAHB3b]]
 																														</div>
 																														<ul>
-																															<li>
+																															<li id="fIqlgqDfM">
+																																<a href="#fIqlgqDfM" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		https://github.com/mathieudutour/gatsby-digital-garden/issues/31#[[(hidden) iNHZvOUtb]]suecomment-752807330
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="4aoiQ5NEA">
+																																		<a href="#4aoiQ5NEA" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				https://github.com/roam-garden/roam-export/tree/757a777aac27777021f3ebab3c073893d7884951
 																																		</div>
 																																		<ul>
-																																			<li></li>
+																																			<li id="1qGcQfVzR">
+																																				<a href="#1qGcQfVzR" class="block-ref"></a>
+																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li></li>
-																																	<li>
+																																	<li id="4BlmLeVsF">
+																																		<a href="#4BlmLeVsF" class="block-ref"></a>
+																																	</li>
+																																	<li id="odbDlI4do">
+																																		<a href="#odbDlI4do" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				https://github.com/nikvdp/roam2agora
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="TukfNT7TK">
+																																				<a href="#TukfNT7TK" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						{{[[TODO]]}} checkout [[(hidden) jZNl6HGob]]
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="SVUrElj3t">
+																																						<a href="#SVUrElj3t" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								https://anagora.org/index
 																																						</div>
@@ -2128,29 +2350,38 @@
 																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li></li>
-																																	<li>
+																																	<li id="Lxo-qzFOV">
+																																		<a href="#Lxo-qzFOV" class="block-ref"></a>
+																																	</li>
+																																	<li id="KThKzsiqM">
+																																		<a href="#KThKzsiqM" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				[[(hidden) X3vwrXyD7]]
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="QqQ8groiI">
+																																				<a href="#QqQ8groiI" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						https://github.com/dvargas92495/generate-roam-site-action
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="YG-4tevRA">
+																																						<a href="#YG-4tevRA" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								#[[observation]] oh snap, they&#39;re doing everything __directly in [[roam]]__, and then using [[lambda functions]] ([[(hidden) g2-_urXV9]]/[[(hidden) _Ekrn0YvL]] or whatever)
 																																						</div>
 																																					</li>
-																																					<li></li>
-																																					<li>
+																																					<li id="Wa2GnTbmF">
+																																						<a href="#Wa2GnTbmF" class="block-ref"></a>
+																																					</li>
+																																					<li id="7RU7w-RDY">
+																																						<a href="#7RU7w-RDY" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								further https://github.com/dvargas92495/generate-roam-site/blob/main/src/index.ts
 																																						</div>
 																																					</li>
-																																					<li>
+																																					<li id="h5wf-hTgz">
+																																						<a href="#h5wf-hTgz" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								further https://github.com/dvargas92495/roamjs-components
 																																						</div>
@@ -2163,36 +2394,46 @@
 																															</li>
 																														</ul>
 																													</li>
-																													<li></li>
-																													<li>
+																													<li id="bcokz4I17">
+																														<a href="#bcokz4I17" class="block-ref"></a>
+																													</li>
+																													<li id="fqgAssZ4u">
+																														<a href="#fqgAssZ4u" class="block-ref"></a>
 																														<div style="max-width: 65ch;">
 																																[[(hidden) zJw7j5jxr]] holy shit, so much thoughts coming from this
 																														</div>
 																														<ul>
-																															<li>
+																															<li id="TWdrxQMYD">
+																																<a href="#TWdrxQMYD" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		(hidden) b7GCT2svs:: &quot;The Killers - Mr. Brightside (Lyrics)&quot; (&quot;it was just a kiss&quot;)
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="jbrfFiXMg">
+																																		<a href="#jbrfFiXMg" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				https://youtu.be/UFKf08us2AI
 																																		</div>
 																																	</li>
 																																</ul>
 																															</li>
-																															<li></li>
-																															<li>
+																															<li id="AJ4Njnv1R">
+																																<a href="#AJ4Njnv1R" class="block-ref"></a>
+																															</li>
+																															<li id="rO7T5Nmw-">
+																																<a href="#rO7T5Nmw-" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		[[roam-traverse-graph]] [[export-html-pages]]
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="7GrrWYE3g">
+																																		<a href="#7GrrWYE3g" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				thinking about how you can e.g. do in [[roam]]:
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="ABpWbLBws">
+																																				<a href="#ABpWbLBws" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						```javascript
 																																			- further:
@@ -2200,7 +2441,8 @@
 																																			  - link```
 																																				</div>
 																																			</li>
-																																			<li>
+																																			<li id="B7qDyjBb7">
+																																				<a href="#B7qDyjBb7" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						vs ```javascript
 																																			- further: link
@@ -2209,12 +2451,14 @@
 																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li>
+																																	<li id="XnGCaQG0b">
+																																		<a href="#XnGCaQG0b" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				and how you could do that with linked references, if you were doing it:
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="JwsZs-wmP">
+																																				<a href="#JwsZs-wmP" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						```javascript
 																																			- [[further]]:
@@ -2222,7 +2466,8 @@
 																																			  - link```
 																																				</div>
 																																			</li>
-																																			<li>
+																																			<li id="dED_9b-eS">
+																																				<a href="#dED_9b-eS" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						vs ```javascript
 																																			- [[further]]: link
@@ -2231,96 +2476,121 @@
 																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li></li>
-																																	<li>
+																																	<li id="BOuNnRRpW">
+																																		<a href="#BOuNnRRpW" class="block-ref"></a>
+																																	</li>
+																																	<li id="aHTDOwvIW">
+																																		<a href="#aHTDOwvIW" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				{{[[TODO]]}} would [[roam attributes]] work better for this?
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="EfE5J1OtG">
+																																				<a href="#EfE5J1OtG" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						i.e., you&#39;d do the mentioning twice probably, like in the second part of either examples
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="XBrjeqkaH">
+																																						<a href="#XBrjeqkaH" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								thought is that necessary? i think it&#39;s irrelevant actually
 																																						</div>
 																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li>
+																																			<li id="8S9_rMKfW">
+																																				<a href="#8S9_rMKfW" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						initial thought - no, because the `::` is in the end, and you&#39;d have to manually write out the page&#39;s title instead of being able to search
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="cZ56KXLqx">
+																																						<a href="#cZ56KXLqx" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								but wait, i never really use attributes, and that&#39;s not right! you can do `::` and roam throws you in the beginning, and you can search just fine!
 																																						</div>
 																																					</li>
-																																					<li>
+																																					<li id="g9hz6_CHf">
+																																						<a href="#g9hz6_CHf" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								okay so then that&#39;s no longer a problem
 																																						</div>
 																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li>
+																																			<li id="C5sy9NUNV">
+																																				<a href="#C5sy9NUNV" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						next up - is this useful 
 																																				</div>
 																																			</li>
-																																			<li>
+																																			<li id="ZzBz3yToT">
+																																				<a href="#ZzBz3yToT" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						re:: ((EfE5J1OtG))
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="7AR76Ps-j">
+																																						<a href="#7AR76Ps-j" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								why i thought it&#39;d be useful is that you can only have one attribute per block. thus it&#39;d force you to have more specific (verbose?) page titles instead of combining multiple ones:
 																																						</div>
 																																						<ul>
-																																							<li>
+																																							<li id="yB5qUTukF">
+																																								<a href="#yB5qUTukF" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										e.g. instead of [[roam-traverse-graph]] [[export-html-pages]], i could have a page titled &quot;export-html-pages-plugin-of-roam-traverse-graph&quot; or smthn, i don&#39;t yet know what&#39;d be the optimal naming convention, but we could try to figure it out.
 																																								</div>
 																																								<ul>
-																																									<li>
+																																									<li id="jF9vCK2rV">
+																																										<a href="#jF9vCK2rV" class="block-ref"></a>
 																																										<div style="max-width: 65ch;">
 																																												i&#39;ve even seen some people on [[roam]]&#39;s [[(hidden) VZrbM9KJQ]] talk about some conventions
 																																										</div>
 																																									</li>
 																																								</ul>
 																																							</li>
-																																							<li>
+																																							<li id="F2DJmBUGw">
+																																								<a href="#F2DJmBUGw" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										but the main question here is -- is this overall a good thing?
 																																								</div>
 																																								<ul>
-																																									<li></li>
+																																									<li id="jN6g50Dnp">
+																																										<a href="#jN6g50Dnp" class="block-ref"></a>
+																																									</li>
 																																								</ul>
 																																							</li>
-																																							<li></li>
+																																							<li id="upxQpUJNG">
+																																								<a href="#upxQpUJNG" class="block-ref"></a>
+																																							</li>
 																																						</ul>
 																																					</li>
-																																					<li></li>
+																																					<li id="L5wVRfhEu">
+																																						<a href="#L5wVRfhEu" class="block-ref"></a>
+																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li></li>
+																																			<li id="DHDMMtgZ3">
+																																				<a href="#DHDMMtgZ3" class="block-ref"></a>
+																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li>
+																																	<li id="0ZilTih9S">
+																																		<a href="#0ZilTih9S" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				{{[[TODO]]}} #[[observation]] am i using attributes wrong?
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="OsPkcEwrS">
+																																				<a href="#OsPkcEwrS" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						{{[[TODO]]}} more complex attribute handling in [[roam-traverse-graph]]
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="sdREwzqAx">
+																																						<a href="#sdREwzqAx" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								```javascript
 																																					{{[[TODO]]}} ~~observation::~~ #observation am i using attributes wrong?```
@@ -2328,172 +2598,218 @@
 																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li>
+																																			<li id="8nFtDNZ4p">
+																																				<a href="#8nFtDNZ4p" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						or maybe like this? XD
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="8sISRgdFC">
+																																						<a href="#8sISRgdFC" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								observation:: {{[[TODO]]}} am i using attributes wrong? 
 																																						</div>
 																																						<ul>
-																																							<li>
+																																							<li id="f66JDYxSH">
+																																								<a href="#f66JDYxSH" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										{{[[TODO]]}} would need some extra integration help w/ the [[TODO]] toggle from [[roam]]
 																																								</div>
 																																							</li>
 																																						</ul>
 																																					</li>
-																																					<li></li>
+																																					<li id="M-Ly-0Y_T">
+																																						<a href="#M-Ly-0Y_T" class="block-ref"></a>
+																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li></li>
-																																			<li>
+																																			<li id="PPT-V-f9P">
+																																				<a href="#PPT-V-f9P" class="block-ref"></a>
+																																			</li>
+																																			<li id="P-BT6K2cV">
+																																				<a href="#P-BT6K2cV" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						{{[[TODO]]}} figure out what [[roam attributes]] are all about / what their purpose is
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="F0GBS4D5f">
+																																						<a href="#F0GBS4D5f" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								[again](((vssQKBfFO))), the learning material of datalog could help
 																																						</div>
 																																					</li>
-																																					<li>
+																																					<li id="K6M0kquK_">
+																																						<a href="#K6M0kquK_" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								{{[[TODO]]}} thought also interesting what the [[roam]] people intended with them
 																																						</div>
 																																						<ul>
-																																							<li>
+																																							<li id="QpMZPrWfu">
+																																								<a href="#QpMZPrWfu" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										cc:: [[(hidden) 1h9jVJvM-]]
 																																								</div>
 																																							</li>
 																																						</ul>
 																																					</li>
-																																					<li></li>
+																																					<li id="Y5oyRTFbV">
+																																						<a href="#Y5oyRTFbV" class="block-ref"></a>
+																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li></li>
-																																			<li></li>
+																																			<li id="3bJbdugbq">
+																																				<a href="#3bJbdugbq" class="block-ref"></a>
+																																			</li>
+																																			<li id="rdLGZe7NL">
+																																				<a href="#rdLGZe7NL" class="block-ref"></a>
+																																			</li>
 																																		</ul>
 																																	</li>
 																																</ul>
 																															</li>
-																															<li></li>
-																															<li>
+																															<li id="8mrEtBKnv">
+																																<a href="#8mrEtBKnv" class="block-ref"></a>
+																															</li>
+																															<li id="lR5f-t0lo">
+																																<a href="#lR5f-t0lo" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] if [[roam]] could provide a hooks/events api that you could listen from,
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="hEOxL6vyZ">
+																																		<a href="#hEOxL6vyZ" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				then the stuff that people are doing directly on roam, and we do in our runner locally / on github actions with [[roam-traverse-graph]] -- we could do all that in a remote environment as well, __but with much faster time intervals__ - they wouldn&#39;t even be intervals anymore, rather - reactions to events [1] happening live, as the user acts.
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="3gfgNCCN0">
+																																				<a href="#3gfgNCCN0" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						[1] in [[(hidden) xH-Ph8S9m]], it&#39;s [[(hidden) Vr3N0zG5Q]] isn&#39;t it?
 																																				</div>
 																																			</li>
-																																			<li>
+																																			<li id="B1z8fVxW7">
+																																				<a href="#B1z8fVxW7" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						(hidden) AV7J4zqkD:: ((YG-4tevRA))
 																																				</div>
 																																			</li>
-																																			<li>
+																																			<li id="RpqCi8rWX">
+																																				<a href="#RpqCi8rWX" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						this would likely require [[(hidden) BislYexyN]]s - detecting if changes have side effects that impact not only the edited block, but the whole page, or even the whole graph / parts of it
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="KsXnLZPbe">
+																																						<a href="#KsXnLZPbe" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								(hidden) AV7J4zqkD:: linking to a page - both pages need updating now
 																																						</div>
 																																						<ul>
-																																							<li>
+																																							<li id="qKtkqybYC">
+																																								<a href="#qKtkqybYC" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										and if it&#39;s a meta page / has powers, then extra works to potentially any pages in the graph.
 																																								</div>
 																																							</li>
-																																							<li>
+																																							<li id="3TIQyco0R">
+																																								<a href="#3TIQyco0R" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										i.e. annoying stuff!
 																																								</div>
 																																							</li>
 																																						</ul>
 																																					</li>
-																																					<li></li>
-																																					<li>
+																																					<li id="5fqjBbUlY">
+																																						<a href="#5fqjBbUlY" class="block-ref"></a>
+																																					</li>
+																																					<li id="ZCA28ZG0p">
+																																						<a href="#ZCA28ZG0p" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								idk, maybe if we manage to keep the stuff fast, like it is now [1], then going thru the whole graph shouldn&#39;t be as bad?
 																																						</div>
 																																						<ul>
-																																							<li>
+																																							<li id="d2_7g2yqz">
+																																								<a href="#d2_7g2yqz" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										e.g. we could have a queue of incoming events, and we&#39;d only do 1 at a time, and if a new one comes in too fast, we&#39;d wait for the currently one to complete, and in the meantime if more come in, we&#39;d discard all the new ones except the newest, and then could go again.
 																																								</div>
 																																							</li>
-																																							<li>
+																																							<li id="Mc94RYTft">
+																																								<a href="#Mc94RYTft" class="block-ref"></a>
 																																								<div style="max-width: 65ch;">
 																																										[1] it takes ~5 seconds? to go from a `notes-private/graph.json` into a `notes-public/*.html`
 																																								</div>
 																																								<ul>
-																																									<li>
+																																									<li id="LdRu4y7iv">
+																																										<a href="#LdRu4y7iv" class="block-ref"></a>
 																																										<div style="max-width: 65ch;">
 																																												and probably ~20 seconds when i introduce the stuff from the [[(hidden) nicjeov_l]] branch which is currently WIP.
 																																										</div>
 																																										<ul>
-																																											<li>
+																																											<li id="pSH6fdK79">
+																																												<a href="#pSH6fdK79" class="block-ref"></a>
 																																												<div style="max-width: 65ch;">
 																																														((yxHMW9jlb))
 																																												</div>
 																																											</li>
-																																											<li>
+																																											<li id="9vb3e72eL">
+																																												<a href="#9vb3e72eL" class="block-ref"></a>
 																																												<div style="max-width: 65ch;">
 																																														ofc there&#39;s a lot of [[(hidden) BislYexyN]]s to be done, it&#39;s currently fairly naive.
 																																											and, they seem more doable / easier than the side effect detection:
 																																												</div>
 																																												<ul>
-																																													<li>
+																																													<li id="HBqjQaL7g">
+																																														<a href="#HBqjQaL7g" class="block-ref"></a>
 																																														<div style="max-width: 65ch;">
 																																																((RpqCi8rWX))
 																																														</div>
 																																													</li>
-																																													<li></li>
+																																													<li id="FBKvdaCu8">
+																																														<a href="#FBKvdaCu8" class="block-ref"></a>
+																																													</li>
 																																												</ul>
 																																											</li>
-																																											<li></li>
+																																											<li id="cfCDozyZc">
+																																												<a href="#cfCDozyZc" class="block-ref"></a>
+																																											</li>
 																																										</ul>
 																																									</li>
-																																									<li>
+																																									<li id="WFrBdRfJE">
+																																										<a href="#WFrBdRfJE" class="block-ref"></a>
 																																										<div style="max-width: 65ch;">
 																																												both assume 1. my size of the graph (1K pages, 8K words)
 																																										</div>
 																																										<ul>
-																																											<li>
+																																											<li id="Bmn5QBKAB">
+																																												<a href="#Bmn5QBKAB" class="block-ref"></a>
 																																												<div style="max-width: 65ch;">
 																																														((FI6sCM5cI))
 																																												</div>
 																																												<ul>
-																																													<li>
+																																													<li id="LvTjnjOsU">
+																																														<a href="#LvTjnjOsU" class="block-ref"></a>
 																																														<div style="max-width: 65ch;">
 																																																((xUKym_BXn))
 																																														</div>
 																																														<ul>
-																																															<li>
+																																															<li id="gGdzOAbyp">
+																																																<a href="#gGdzOAbyp" class="block-ref"></a>
 																																																<div style="max-width: 65ch;">
 																																																		((gf1mkreMz))
 																																																</div>
 																																															</li>
 																																														</ul>
 																																													</li>
-																																													<li>
+																																													<li id="RCs_uw34T">
+																																														<a href="#RCs_uw34T" class="block-ref"></a>
 																																														<div style="max-width: 65ch;">
 																																																((spuKqLoxE))
 																																														</div>
 																																														<ul>
-																																															<li>
+																																															<li id="sg-1h67zm">
+																																																<a href="#sg-1h67zm" class="block-ref"></a>
 																																																<div style="max-width: 65ch;">
 																																																		((m1Fk_dVUP))
 																																																</div>
@@ -2502,151 +2818,222 @@
 																																													</li>
 																																												</ul>
 																																											</li>
-																																											<li></li>
+																																											<li id="aWQonUJ5_">
+																																												<a href="#aWQonUJ5_" class="block-ref"></a>
+																																											</li>
 																																										</ul>
 																																									</li>
 																																								</ul>
 																																							</li>
-																																							<li></li>
+																																							<li id="sgy9gcJAy">
+																																								<a href="#sgy9gcJAy" class="block-ref"></a>
+																																							</li>
 																																						</ul>
 																																					</li>
-																																					<li></li>
+																																					<li id="vioobdLe7">
+																																						<a href="#vioobdLe7" class="block-ref"></a>
+																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li></li>
+																																			<li id="eB8265ktR">
+																																				<a href="#eB8265ktR" class="block-ref"></a>
+																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li></li>
+																																	<li id="ULiPqjOdD">
+																																		<a href="#ULiPqjOdD" class="block-ref"></a>
+																																	</li>
 																																</ul>
 																															</li>
-																															<li></li>
-																															<li>
+																															<li id="Jvi6ubCsS">
+																																<a href="#Jvi6ubCsS" class="block-ref"></a>
+																															</li>
+																															<li id="nZIM8tHXF">
+																																<a href="#nZIM8tHXF" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		{{[[TODO]]}} datalog query builder w/ live preview, directly in [[roam]]?
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="vssQKBfFO">
+																																		<a href="#vssQKBfFO" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				maybe first gotta go thru the learning material above, lol
 																																		</div>
 																																	</li>
 																																</ul>
 																															</li>
-																															<li></li>
-																															<li>
+																															<li id="-auu-XL_y">
+																																<a href="#-auu-XL_y" class="block-ref"></a>
+																															</li>
+																															<li id="6YWcST5He">
+																																<a href="#6YWcST5He" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		since this is getting so wide, i wonder how the generated html pages via [[export-html-pages]] will look like - i&#39;d actually prefer if there was no wrapping and you could just scroll horizontally. will see soon once the export goes live
 																																</div>
 																															</li>
-																															<li></li>
-																															<li>
+																															<li id="iJpekf45A">
+																																<a href="#iJpekf45A" class="block-ref"></a>
+																															</li>
+																															<li id="gjLM7lkqI">
+																																<a href="#gjLM7lkqI" class="block-ref"></a>
 																																<div style="max-width: 65ch;">
 																																		observation:: putting everything inside daily notes, vs referencing today&#39;s date in a specific page / block
 																																</div>
 																																<ul>
-																																	<li>
+																																	<li id="TynUPktN9">
+																																		<a href="#TynUPktN9" class="block-ref"></a>
 																																		<div style="max-width: 65ch;">
 																																				if the page is public, but your daily notes aren&#39;t, then the stuff will also be public
 																																		</div>
 																																		<ul>
-																																			<li>
+																																			<li id="kvaqSvdsP">
+																																				<a href="#kvaqSvdsP" class="block-ref"></a>
 																																				<div style="max-width: 65ch;">
 																																						but wait this is irrelevant because if using linked a linked reference which makes the stuff public, then it&#39;s the same effect, it juts ends up in the linked references of a page instead of directly inside it. [[duh]]!
 																																				</div>
 																																				<ul>
-																																					<li>
+																																					<li id="hHgR4XREj">
+																																						<a href="#hHgR4XREj" class="block-ref"></a>
 																																						<div style="max-width: 65ch;">
 																																								{{[[TODO]]}} wait but i&#39;m still confused myself now on how does the public vs public recursive logic work in [[roam-traverse-graph]] lol - is making a page &quot;public&quot; makes it public recursive as well?
 																																						</div>
 																																					</li>
-																																					<li></li>
+																																					<li id="2bOzY2FRe">
+																																						<a href="#2bOzY2FRe" class="block-ref"></a>
+																																					</li>
 																																				</ul>
 																																			</li>
-																																			<li></li>
+																																			<li id="cXPbVgKuH">
+																																				<a href="#cXPbVgKuH" class="block-ref"></a>
+																																			</li>
 																																		</ul>
 																																	</li>
-																																	<li></li>
+																																	<li id="ZP1cS3YP5">
+																																		<a href="#ZP1cS3YP5" class="block-ref"></a>
+																																	</li>
 																																</ul>
 																															</li>
-																															<li></li>
+																															<li id="DsBjqUtMP">
+																																<a href="#DsBjqUtMP" class="block-ref"></a>
+																															</li>
 																														</ul>
 																													</li>
-																													<li></li>
+																													<li id="1A38DAGXR">
+																														<a href="#1A38DAGXR" class="block-ref"></a>
+																													</li>
 																												</ul>
 																											</li>
-																											<li></li>
+																											<li id="zD9y0_Mq3">
+																												<a href="#zD9y0_Mq3" class="block-ref"></a>
+																											</li>
 																										</ul>
 																									</li>
-																									<li></li>
+																									<li id="yhh_76pny">
+																										<a href="#yhh_76pny" class="block-ref"></a>
+																									</li>
 																								</ul>
 																							</li>
-																							<li></li>
+																							<li id="nXjFWL7Hm">
+																								<a href="#nXjFWL7Hm" class="block-ref"></a>
+																							</li>
 																						</ul>
 																					</li>
-																					<li></li>
+																					<li id="IFHPHhA4M">
+																						<a href="#IFHPHhA4M" class="block-ref"></a>
+																					</li>
 																				</ul>
 																			</li>
-																			<li></li>
+																			<li id="DicH4bmPF">
+																				<a href="#DicH4bmPF" class="block-ref"></a>
+																			</li>
 																		</ul>
 																	</li>
-																	<li></li>
+																	<li id="anGOQy3Li">
+																		<a href="#anGOQy3Li" class="block-ref"></a>
+																	</li>
 																</ul>
 															</li>
-															<li></li>
+															<li id="ESvikedhv">
+																<a href="#ESvikedhv" class="block-ref"></a>
+															</li>
 														</ul>
 													</li>
-													<li></li>
-													<li>
+													<li id="KPDav-9Qp">
+														<a href="#KPDav-9Qp" class="block-ref"></a>
+													</li>
+													<li id="FI6sCM5cI">
+														<a href="#FI6sCM5cI" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																e.g. even inline queries!!
 														</div>
 														<ul>
-															<li>
+															<li id="xUKym_BXn">
+																<a href="#xUKym_BXn" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		:q [:find(count ?t):where[_ :node/title ?t]]
 																</div>
 																<ul>
-																	<li>
+																	<li id="gf1mkreMz">
+																		<a href="#gf1mkreMz" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				pages
 																		</div>
 																	</li>
 																</ul>
 															</li>
-															<li>
+															<li id="spuKqLoxE">
+																<a href="#spuKqLoxE" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		:q [:find(count ?t):where[_ :block/string ?t]]
 																</div>
 																<ul>
-																	<li>
+																	<li id="m1Fk_dVUP">
+																		<a href="#m1Fk_dVUP" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				blocks
 																		</div>
 																	</li>
 																</ul>
 															</li>
-															<li></li>
+															<li id="CyU44s3Ms">
+																<a href="#CyU44s3Ms" class="block-ref"></a>
+															</li>
 														</ul>
 													</li>
-													<li></li>
+													<li id="GmcrQU_pq">
+														<a href="#GmcrQU_pq" class="block-ref"></a>
+													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="ueC_W-xQT">
+												<a href="#ueC_W-xQT" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="W6lsov1Hu">
+										<a href="#W6lsov1Hu" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="hsKHvAwkn">
+								<a href="#hsKHvAwkn" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="3kKoxC-gb">
+						<a href="#3kKoxC-gb" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="DLF--81lC">
+				<a href="#DLF--81lC" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="TBObpSGf5">
+		<a href="#TBObpSGf5" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -2662,7 +3049,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="mjQSDY4Qg">
+			<a href="#mjQSDY4Qg" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2695,7 +3084,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="KuYTTfWIS">
+			<a href="#KuYTTfWIS" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2728,7 +3119,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CIHVykc9p">
+			<a href="#CIHVykc9p" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2761,7 +3154,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="BnchNYd9o">
+			<a href="#BnchNYd9o" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2794,7 +3189,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="vlzdX-0Ip">
+			<a href="#vlzdX-0Ip" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2827,7 +3224,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="flTRfLk3p">
+			<a href="#flTRfLk3p" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2860,7 +3259,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="djxeHKUPd">
+			<a href="#djxeHKUPd" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2893,7 +3294,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FSsffYFEe">
+			<a href="#FSsffYFEe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2926,7 +3329,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="7OE5jRhQR">
+			<a href="#7OE5jRhQR" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2959,7 +3364,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="lrMFOs-_a">
+			<a href="#lrMFOs-_a" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2992,7 +3399,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="rezq3rUsC">
+			<a href="#rezq3rUsC" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3025,7 +3434,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="58FtntMWW">
+			<a href="#58FtntMWW" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3058,7 +3469,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="fH6MJP14C">
+			<a href="#fH6MJP14C" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3091,7 +3504,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="xlPR58_9T">
+			<a href="#xlPR58_9T" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3124,7 +3539,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="cxXlamoK3">
+			<a href="#cxXlamoK3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3157,7 +3574,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="URzVy5Qps">
+			<a href="#URzVy5Qps" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3190,7 +3609,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Gj_EF7525">
+			<a href="#Gj_EF7525" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3223,7 +3644,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="jgUzeRAbO">
+			<a href="#jgUzeRAbO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3256,7 +3679,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="cPZAVAnAr">
+			<a href="#cPZAVAnAr" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3289,7 +3714,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="wz_Db9_0N">
+			<a href="#wz_Db9_0N" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3322,7 +3749,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Sx3VkiwCo">
+			<a href="#Sx3VkiwCo" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3355,7 +3784,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="pM99YJ--L">
+			<a href="#pM99YJ--L" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3388,7 +3819,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_ysqL8CIj">
+			<a href="#_ysqL8CIj" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3421,7 +3854,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4XClvgDmX">
+			<a href="#4XClvgDmX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3454,7 +3889,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XJqOqqLyQ">
+			<a href="#XJqOqqLyQ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3487,7 +3924,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="TkKpa4kr1">
+			<a href="#TkKpa4kr1" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3520,7 +3959,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="fVVpcpnDD">
+			<a href="#fVVpcpnDD" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3553,7 +3994,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MwGM-ZnXJ">
+			<a href="#MwGM-ZnXJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3586,7 +4029,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="5Y6csq8Of">
+			<a href="#5Y6csq8Of" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3619,7 +4064,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="7APtya3EO">
+			<a href="#7APtya3EO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3652,7 +4099,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="TsKwUlJ6m">
+			<a href="#TsKwUlJ6m" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3685,7 +4134,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4C-amPU4z">
+			<a href="#4C-amPU4z" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3718,7 +4169,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4bGYpYgJ8">
+			<a href="#4bGYpYgJ8" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3751,7 +4204,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="QfOJ3o2tf">
+			<a href="#QfOJ3o2tf" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3784,7 +4239,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="WvpvDLq_I">
+			<a href="#WvpvDLq_I" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3817,7 +4274,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XpzBvotsc">
+			<a href="#XpzBvotsc" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3850,7 +4309,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="QO_-eMgE3">
+			<a href="#QO_-eMgE3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3883,7 +4344,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Oxl_X0Rpi">
+			<a href="#Oxl_X0Rpi" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3916,7 +4379,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MFolIJi3x">
+			<a href="#MFolIJi3x" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3949,7 +4414,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="juGVRHxa1">
+			<a href="#juGVRHxa1" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -3982,7 +4449,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="IcCFb0zKA">
+			<a href="#IcCFb0zKA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4015,7 +4484,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="tbkodMVNF">
+			<a href="#tbkodMVNF" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4048,7 +4519,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="s1BQvAeky">
+			<a href="#s1BQvAeky" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4081,7 +4554,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="JTF23Nanm">
+			<a href="#JTF23Nanm" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4098,121 +4573,149 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="2sjZhKMGl">
+		<a href="#2sjZhKMGl" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://www.youtube.com/watch?v=ig5E8CcdM9g
 		</div>
 		<ul>
-			<li>
+			<li id="yJL5oZ9Jk">
+				<a href="#yJL5oZ9Jk" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						[[(hidden) ThXonBLoY]] it&#39;s super easy to view a file at a specific point in history:
 				</div>
 				<ul>
-					<li>
+					<li id="zb0MYhaE-">
+						<a href="#zb0MYhaE-" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					git show &lt;commit-ish&gt;:&lt;filepath&gt;```
 						</div>
 					</li>
-					<li>
+					<li id="UOX3sw29i">
+						<a href="#UOX3sw29i" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								created [[(hidden) KrWTreAdT]] for ease of use when viewing with an editor
 						</div>
 						<ul>
-							<li>
+							<li id="PQfZeHCLd">
+								<a href="#PQfZeHCLd" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://github.com/kiprasmel/git-at
 								</div>
 								<ul>
-									<li>
+									<li id="NofgOC_VG">
+										<a href="#NofgOC_VG" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) NofgOC_VG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]] [[(hidden) 01-24-2022]]
 										</div>
 										<ul>
-											<li>
+											<li id="raFY4coVt">
+												<a href="#raFY4coVt" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(hidden) raFY4coVt [[(hidden) VZrbM9KJQ]] [[(hidden) KrWTreAdT]]
 												</div>
 											</li>
-											<li>
+											<li id="vkkA0zo9F">
+												<a href="#vkkA0zo9F" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														{{[[TODO]]}} (hidden) vkkA0zo9F 
 												</div>
 											</li>
-											<li>
+											<li id="V9LdoyQWH">
+												<a href="#V9LdoyQWH" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														{{[[TODO]]}} (hidden) V9LdoyQWH [[(hidden) qVXECWWQg]] [[(hidden) nhSATn9kQ]]
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="OH9DzJS_5">
+										<a href="#OH9DzJS_5" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="h-koW2NJD">
+								<a href="#h-koW2NJD" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="c3JmNO-qY">
+						<a href="#c3JmNO-qY" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="xMuCIKYh-">
+				<a href="#xMuCIKYh-" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} [[(hidden) Wk9BwS_1L]] explore the ways of viewing a file at a specific perspective when doing a [[(hidden) HZPtBpAtc]] -- seems related to [[(hidden) qgPiaGLCO]]
 				</div>
 				<ul>
-					<li>
+					<li id="FQBNo-3my">
+						<a href="#FQBNo-3my" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://youtu.be/ig5E8CcdM9g?t=50m2s
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="Ve4x_rx6K">
+				<a href="#Ve4x_rx6K" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="AeywWta8_">
+		<a href="#AeywWta8_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[(hidden) EPYV31rY-]]
 		</div>
 		<ul>
-			<li>
+			<li id="Wzq_vqsla">
+				<a href="#Wzq_vqsla" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://twitter.com/matthewmccull
 				</div>
 			</li>
-			<li>
+			<li id="LHyvz4E3P">
+				<a href="#LHyvz4E3P" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://matthewjmccullough.com/talks/
 				</div>
 			</li>
-			<li>
+			<li id="sSt4EfhIp">
+				<a href="#sSt4EfhIp" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://speakerdeck.com/matthewmccullough/agile-ish-life-at-github?slide=119
 				</div>
 				<ul>
-					<li>
+					<li id="lgqqB2NHZ">
+						<a href="#lgqqB2NHZ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFqRQ-0oiol.png?alt=media&amp;token=d1147a63-56eb-4007-bcd5-df495bd54584)
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Zq_bqip-g">
+				<a href="#Zq_bqip-g" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} #[[(hidden) _sW66DmMa]] [[&quot;thinking in systems -- a primer&quot;]] from [[(hidden) LsTCTbI3m]] [[(hidden) 6ZFjU8adC]]
 				</div>
 				<ul>
-					<li>
+					<li id="rfmJpSM9A">
+						<a href="#rfmJpSM9A" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://wtf.tw/ref/meadows.pdf
 						</div>
 						<ul>
-							<li>
+							<li id="jR4bfXbfX">
+								<a href="#jR4bfXbfX" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										{{[[(hidden) DQjdQcHOY]]: https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FoCiYU7oo-f.pdf?alt=media&amp;token=3be029bd-abb7-45a2-a633-9b4cf03df868}}
 								</div>
 								<ul>
-									<li>
+									<li id="RKdO6H8i5">
+										<a href="#RKdO6H8i5" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												&gt; If a factory is torn down but the rationality which produced it is
 									left standing, then that rationality will simply produce another
@@ -4222,47 +4725,66 @@
 									—Robert Pirsig, Zen and the Art of Motorcycle Maintenance
 										</div>
 										<ul>
-											<li>
+											<li id="cFitzb7xC">
+												<a href="#cFitzb7xC" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														oh yes. this should be good.
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="Wfdg3h3Ci">
+										<a href="#Wfdg3h3Ci" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="GgmT08utH">
+								<a href="#GgmT08utH" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="0ZzMLznqv">
+						<a href="#0ZzMLznqv" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="H1W3t4hOg">
+				<a href="#H1W3t4hOg" class="block-ref"></a>
+			</li>
+			<li id="MUeiSz1z8">
+				<a href="#MUeiSz1z8" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} #[[(hidden) _sW66DmMa]] https://apenwarr.ca/log/20201227
 				</div>
 				<ul>
-					<li>
+					<li id="G576QGXUa">
+						<a href="#G576QGXUa" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) G576QGXUa #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 						</div>
 						<ul>
-							<li>
+							<li id="R_6mhE9-l">
+								<a href="#R_6mhE9-l" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) R_6mhE9-l
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="hsLoM6qSw">
+						<a href="#hsLoM6qSw" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="78matuRF6">
+				<a href="#78matuRF6" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="07OWRqtxd">
+		<a href="#07OWRqtxd" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -4278,7 +4800,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="oRPVo4vAs">
+			<a href="#oRPVo4vAs" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4311,7 +4835,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="IAiBFgcrr">
+			<a href="#IAiBFgcrr" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4344,7 +4870,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="UpiZLzG5a">
+			<a href="#UpiZLzG5a" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4377,7 +4905,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="qmKpHzII6">
+			<a href="#qmKpHzII6" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4410,7 +4940,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="EYadPtAHo">
+			<a href="#EYadPtAHo" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4443,7 +4975,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="xcwjLKbXT">
+			<a href="#xcwjLKbXT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4476,7 +5010,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="GeJR8LzbC">
+			<a href="#GeJR8LzbC" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4509,7 +5045,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CabonKzGv">
+			<a href="#CabonKzGv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4542,7 +5080,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="lgsuYyTtl">
+			<a href="#lgsuYyTtl" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4575,7 +5115,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Hi_8g60XC">
+			<a href="#Hi_8g60XC" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4608,7 +5150,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="O2uRane8g">
+			<a href="#O2uRane8g" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4641,7 +5185,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ubVcDDx0p">
+			<a href="#ubVcDDx0p" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4674,7 +5220,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ETa8cy47G">
+			<a href="#ETa8cy47G" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -4707,7 +5255,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="NL2Q0lLu8">
+			<a href="#NL2Q0lLu8" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.370Z</span>
+				<span>2022-02-02T14:33:53.704Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,32 +245,47 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638215125103);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801370);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433704);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="x41Ny4G7C">
+					<a href="#x41Ny4G7C" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							typescript. previously #[[(hidden) N-UfQHu88]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="1p5K5PZVD">
+					<a href="#1p5K5PZVD" class="block-ref"></a>
+				
+				</li>
+				<li id="YAJvpB_cK">
+					<a href="#YAJvpB_cK" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li>
+				<li id="OU3YOTfan">
+					<a href="#OU3YOTfan" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[roam]]-traverse-graph-settings
 					</div>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="c0loAwtyL">
+					<a href="#c0loAwtyL" class="block-ref"></a>
+				
+				</li>
+				<li id="V6-5GYJRc">
+					<a href="#V6-5GYJRc" class="block-ref"></a>
+				
+				</li>
+				<li id="i0Fk264gM">
+					<a href="#i0Fk264gM" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -289,7 +357,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ILZeBuZIH">
+			<a href="#ILZeBuZIH" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -306,42 +376,50 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="F28wb5_W1">
+		<a href="#F28wb5_W1" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				contextual typing:
 		</div>
 		<ul>
-			<li>
+			<li id="Ewhyfop3s">
+				<a href="#Ewhyfop3s" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://stackoverflow.com/a/64653179/9285308
 				</div>
 			</li>
-			<li>
+			<li id="jcE0d6Zx7">
+				<a href="#jcE0d6Zx7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						alias:
 				</div>
 				<ul>
-					<li>
+					<li id="zIB8IZhW9">
+						<a href="#zIB8IZhW9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								&quot;infer backwards&quot;
 						</div>
 					</li>
-					<li>
+					<li id="N0xeAqjxv">
+						<a href="#N0xeAqjxv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								&quot;inferring backwards&quot;
 						</div>
 					</li>
-					<li>
+					<li id="NXJRVQUsn">
+						<a href="#NXJRVQUsn" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								outside
 						</div>
 					</li>
-					<li>
+					<li id="Hh8CCtP7e">
+						<a href="#Hh8CCtP7e" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								right to left
 						</div>
 					</li>
-					<li>
+					<li id="aUDKmv_Bm">
+						<a href="#aUDKmv_Bm" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								opposite/reverse to control flow
 						</div>
@@ -350,34 +428,40 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="8epKTj8FX">
+		<a href="#8epKTj8FX" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] holy shit u can generate type-safe `useFetch` react hooks from the express router !!!
 		</div>
 		<ul>
-			<li>
+			<li id="Ew3nnR3s9">
+				<a href="#Ew3nnR3s9" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						ofc others would work too, but express is just the one I&#39;m using
 				</div>
 			</li>
-			<li>
+			<li id="WrIlW6p1q">
+				<a href="#WrIlW6p1q" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						assuming ofc you have typed out the routes, which u should
 				</div>
 			</li>
-			<li>
+			<li id="tVcJm9oE1">
+				<a href="#tVcJm9oE1" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						which makes me realize graphql is not special in this regard; it&#39;s only advantaged in this case is that it has a single spec that everyone / every impl follows, and that makes it easier to create code generators that work for everyone, instead of here I could only do express-specific. hm maybe http-specific so all libraries could benefit :o
 				</div>
 			</li>
-			<li>
+			<li id="VUgqBeaZv">
+				<a href="#VUgqBeaZv" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="mWWXX4s_I">
+		<a href="#mWWXX4s_I" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				.
 		</div>
@@ -397,7 +481,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="aWQJk8iPh">
+			<a href="#aWQJk8iPh" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -414,12 +500,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="VlUkIqxqg">
+		<a href="#VlUkIqxqg" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				everything I want to do is illegal
 		</div>
 		<ul>
-			<li>
+			<li id="AmRUgLMfK">
+				<a href="#AmRUgLMfK" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 			export type SelfWithKeysRecursively&lt;T&gt; =
@@ -451,19 +539,27 @@
 			bar&lt;DeepObj, DeepObj[&quot;a&quot;][&quot;b&quot;][&quot;c&quot;][&quot;d&quot;]&gt;(69)```
 				</div>
 			</li>
-			<li>
+			<li id="2L2DDdOkh">
+				<a href="#2L2DDdOkh" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FVXzh9lYLmy.png?alt=media&amp;token=3d34e6be-510c-49e6-9377-870d6fd83705)
 				</div>
 			</li>
-			<li>
+			<li id="qlOZQYs02">
+				<a href="#qlOZQYs02" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBDAnmYcDKwA2AzA6gSxgAsBpYRAZwCVgBjAVygvwDctEAeAFQD44BeALAAoAJBc4oGMAB2AEwpwataHI4BrchGxwuAGjgBDGYh4jRogPy64AH10BtTYm26AunfRY8hUuWp0jMxsmJxcTlo6XG5mYqIAXHAywGxQANwiIkgocAAiwMBgAPIARgBWAnAA3uaGiTVxJfXmFrTNcRZyiQBsAJwtogC+LcNio6MiAPSTcGX0FPDY+MlwJYhw88sA5kZwFMAwALTMAF6oAAb5haVl5wB0Itj0MrQw+BAycNgQEBwAGpIQNJ5IoMDgCMQyJRlEFWOwOFdiuUeDwABQgRJ-ACU1Qmwm+v0RNzRVSM9VW5La1TgXTgfUGDMGWMePwRBSRZQcACJDFyYqjSU1qVTSbT6QzmfjWUTytzeW5uSU+SS4CKaT1ehKWYT2Tc5XzFQaubRlQL1XTNZKCWzrrKeUalQrjUa5Ka+pKpjNgFAoNBElxkKhlgtjG9DG8PnB8IpQLRgBRguwaeyjPI4JAE-gSqEozIljJCMAHvjnq93p8SoYoBwAIJQEqEKBVxAysoGAFSWQKLzg3xQgIMJhw0K1+uN5utlHozE4qp4yvV1sGSdmurUoWktVizWMyULm0c5e6u3ylUb1Xk7e7kT7pd5Y+c+1Ox0qrcarXCW8Po+2x-yw1Oia-Kiu+e5VgeNw-hy+rPkaQHcq6-LuiIQA
 				</div>
 			</li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li id="2YjdDFjKm">
+				<a href="#2YjdDFjKm" class="block-ref"></a>
+			</li>
+			<li id="sux_5rQ46">
+				<a href="#sux_5rQ46" class="block-ref"></a>
+			</li>
+			<li id="r3elLTfHE">
+				<a href="#r3elLTfHE" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
 </ul>
@@ -481,7 +577,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="6V3zEI02y">
+			<a href="#6V3zEI02y" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -498,23 +596,30 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="5I4W141Hx">
+		<a href="#5I4W141Hx" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://pipedrive.slack.com/archives/C01PSJQ80UW/p1631519260006700
 		</div>
 	</li>
-	<li></li>
-	<li>
+	<li id="FXhwZs5vy">
+		<a href="#FXhwZs5vy" class="block-ref"></a>
+	
+	</li>
+	<li id="u8Ysr1dan">
+		<a href="#u8Ysr1dan" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				fuck #[[(hidden) tZLzu9sBI]]
 		</div>
 		<ul>
-			<li>
+			<li id="GB_Jec9z1">
+				<a href="#GB_Jec9z1" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://twitter.com/Rich_Harris/status/1441068317930819589
 				</div>
 				<ul>
-					<li>
+					<li id="W0m8k8xXd">
+						<a href="#W0m8k8xXd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								further proves the point
 						</div>
@@ -523,38 +628,52 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="zq_5ZtCRe">
+		<a href="#zq_5ZtCRe" class="block-ref"></a>
+	
+	</li>
+	<li id="R94Ot-a_P">
+		<a href="#R94Ot-a_P" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				very useful - #[[(hidden) Z6Wd9qbMT]] (c++ etc) into #[[(hidden) d_KJUbXie]] / #[[js]]!! #[[(hidden) jOMmlCP4S]] for #[[(hidden) hzfBb4ct_]]
 		</div>
 		<ul>
-			<li>
+			<li id="k9-Pa-xfc">
+				<a href="#k9-Pa-xfc" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						&quot;A simple guide to load C/C++ code into Node.js JavaScript Applications&quot;
 				</div>
 			</li>
-			<li>
+			<li id="XCtNR51__">
+				<a href="#XCtNR51__" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://medium.com/jspoint/a-simple-guide-to-load-c-c-code-into-node-js-javascript-applications-3fcccf54fd32
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="_pYZ4nCF5">
+		<a href="#_pYZ4nCF5" class="block-ref"></a>
+	
+	</li>
+	<li id="E8-lbH7mO">
+		<a href="#E8-lbH7mO" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				#[[(hidden) bWZPrHq8o]] fix 😎 😈
 		</div>
 		<ul>
-			<li>
+			<li id="LAz2sxVv4">
+				<a href="#LAz2sxVv4" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/kiprasmel/using-fs-xattr-with-ts
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Y2eLNqVT8">
+		<a href="#Y2eLNqVT8" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -570,7 +689,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="EFEByRKoS">
+			<a href="#EFEByRKoS" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -603,7 +724,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="HAVlnyhr-">
+			<a href="#HAVlnyhr-" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -636,7 +759,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MzCTXtBZ-">
+			<a href="#MzCTXtBZ-" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -656,7 +781,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="sJVGs8lxM">
+			<a href="#sJVGs8lxM" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -673,7 +800,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="-2YYC8EJu">
+		<a href="#-2YYC8EJu" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```typescript
 	function A&lt;T&gt;(xs: T[]) {}
@@ -684,22 +812,26 @@
 	```
 		</div>
 	</li>
-	<li>
+	<li id="MzCTXtBZ-">
+		<a href="#MzCTXtBZ-" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				currently just wasted a lot of time on #[[typescript]] w/ this (as always), so will continue on w/o it atm, because more important features (need to) exist
 		</div>
 	</li>
-	<li>
+	<li id="dkhstQ3UH">
+		<a href="#dkhstQ3UH" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[(hidden) fbJkjZ7H5]]
 		</div>
 		<ul>
-			<li>
+			<li id="tkcciafwM">
+				<a href="#tkcciafwM" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						#[[(hidden) DY6wPnICE]] conditional optional parameter
 				</div>
 				<ul>
-					<li>
+					<li id="oqdgDpzYq">
+						<a href="#oqdgDpzYq" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```javascript
 					const f = (
@@ -707,39 +839,48 @@
 					) =&gt; {};```
 						</div>
 						<ul>
-							<li>
+							<li id="vkav3j59U">
+								<a href="#vkav3j59U" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										omg the classic array spread, just like in objects to remove a value!!! genius!! did NOT think about it myself lol
 								</div>
 							</li>
-							<li>
+							<li id="FN0AEarGW">
+								<a href="#FN0AEarGW" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://stackoverflow.com/a/52318137/9285308
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="SRWqOSkBh">
+						<a href="#SRWqOSkBh" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="nAm64ejpw">
+		<a href="#nAm64ejpw" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[software i hate (public)]]
 		</div>
 		<ul>
-			<li>
+			<li id="xkB3ZpIDd">
+				<a href="#xkB3ZpIDd" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						yarn - love v1, hate that they went into v2 when v2 should&#39;ve been a completely different project
 				</div>
 				<ul>
-					<li>
+					<li id="U3Fjo9Ro9">
+						<a href="#U3Fjo9Ro9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								also yarn v1 --ignore-scripts you cannot provide an opposite boolean flag to _not_ ignore scripts, when your config&#39;s default is the opposite. ffs
 						</div>
 					</li>
-					<li></li>
+					<li id="c6fbICPy_">
+						<a href="#c6fbICPy_" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
 		</ul>
@@ -759,7 +900,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="8UkTgJBzo">
+			<a href="#8UkTgJBzo" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -792,7 +935,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MiVHJOmCq">
+			<a href="#MiVHJOmCq" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -809,34 +954,42 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="xOpE8CVoo">
+		<a href="#xOpE8CVoo" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&gt; An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
 		</div>
 	</li>
-	<li>
+	<li id="wFcgbSIBv">
+		<a href="#wFcgbSIBv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&gt; A computed property name in an interface must refer to an expression whose type is a literal type or a &#39;unique symbol&#39; type.ts(1169)
 		</div>
 	</li>
-	<li>
+	<li id="ZUVadzH33">
+		<a href="#ZUVadzH33" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				in both cases, you need to:
 		</div>
 		<ul>
-			<li>
+			<li id="9wf3wVor4">
+				<a href="#9wf3wVor4" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1. convert from `interface` to `type`
 				</div>
 			</li>
-			<li>
+			<li id="KP68uETzk">
+				<a href="#KP68uETzk" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						2. convert from `[key: foo]: bar` to `[key in foo]: bar`
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Bi0zc0iH1">
+		<a href="#Bi0zc0iH1" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -852,7 +1005,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_80h0d_8x">
+			<a href="#_80h0d_8x" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -885,7 +1040,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="tAR_0vpez">
+			<a href="#tAR_0vpez" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -905,7 +1062,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="RVKReEAQJ">
+			<a href="#RVKReEAQJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -922,7 +1081,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="XdHjvnxSm">
+		<a href="#XdHjvnxSm" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```typescript
 	export type Checker&lt;T&gt; = {
@@ -932,17 +1092,20 @@
 	```
 		</div>
 	</li>
-	<li>
+	<li id="z0y33klAl">
+		<a href="#z0y33klAl" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				this is big -- if you created regular function overloads, you couldn&#39;t even specify the type `T`, because you&#39;d have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
 		</div>
 	</li>
-	<li>
+	<li id="7JYqy8MQB">
+		<a href="#7JYqy8MQB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				the regular function overloads:
 		</div>
 		<ul>
-			<li>
+			<li id="nvDkLeDlp">
+				<a href="#nvDkLeDlp" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 			export declare function CheckerAutomatic&lt;T = unknown&gt;(
@@ -958,18 +1121,24 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="NLFMZsdcc">
+		<a href="#NLFMZsdcc" class="block-ref"></a>
+	
+	</li>
+	<li id="1k6aSoJm4">
+		<a href="#1k6aSoJm4" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i remembered this might be a thing because i did function overloads for the [[codemods]] transform&#39;s (replace-jsx-attribute) configs&#39; `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn&#39;t realize it up until now 🤯
 		</div>
 		<ul>
-			<li>
+			<li id="k8BO81Kfq">
+				<a href="#k8BO81Kfq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
 				</div>
 				<ul>
-					<li>
+					<li id="jB-O0ghRv">
+						<a href="#jB-O0ghRv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```typescript
 					export type FromToValueMap = {
@@ -994,7 +1163,10 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="L-YE1ki8v">
+		<a href="#L-YE1ki8v" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1010,7 +1182,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="HCROm5-WP">
+			<a href="#HCROm5-WP" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1027,7 +1201,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="_FAl5L1YQ">
+		<a href="#_FAl5L1YQ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				`allowedCommandAliasesFromGitRebase`
 		</div>
@@ -1047,7 +1222,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="18mNTso74">
+			<a href="#18mNTso74" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1064,31 +1241,38 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="cJYx9mQ3x">
+		<a href="#cJYx9mQ3x" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				from a good vid from a while ago:
 		</div>
 		<ul>
-			<li>
+			<li id="Nl8WUFG4V">
+				<a href="#Nl8WUFG4V" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://youtu.be/nNse0r0aRT8
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="8OkY45Jo5">
+		<a href="#8OkY45Jo5" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				now from one of the guys who were in:
 		</div>
 		<ul>
-			<li>
+			<li id="zIKR_HBSC">
+				<a href="#zIKR_HBSC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/millsp/ts-toolbelt
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="NYuhy5hCi">
+		<a href="#NYuhy5hCi" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1104,7 +1288,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MT4DVkTUs">
+			<a href="#MT4DVkTUs" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1137,7 +1323,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Vd4wR8YSZ">
+			<a href="#Vd4wR8YSZ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1154,7 +1342,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="vQ0Q-_cpy">
+		<a href="#vQ0Q-_cpy" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://github.com/orta/TypeScript-TSServer-Plugin-Template
 		</div>
@@ -1174,7 +1363,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ugC7qgmVO">
+			<a href="#ugC7qgmVO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1191,7 +1382,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="_cjtgP10D">
+		<a href="#_cjtgP10D" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i then wonder how the #[[(hidden) aQw_Q_pev]] w/ [[(hidden) IiSuMRl4c]] is still going thru -- do they not see the issues / the optimal solution being different?
 		</div>
@@ -1211,7 +1403,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="qohyTLRTZ">
+			<a href="#qohyTLRTZ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1228,7 +1422,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="j3HyhqcKh">
+		<a href="#j3HyhqcKh" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&gt; 
 	The basic idea is, i have an object like:
@@ -1248,22 +1443,26 @@
 	and i want all the beautiful typehinting to be automatic and happy
 		</div>
 	</li>
-	<li>
+	<li id="Fd7LP5xS3">
+		<a href="#Fd7LP5xS3" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				okay, what we want here is to narrow down the type of the object&#39;s value by the object&#39;s key, and thus safely use the object&#39;s value with an inferred type. &amp; ofc have auto-completions for the correct type when we narrow it down.
 		</div>
 	</li>
-	<li>
+	<li id="IFIylgCfZ">
+		<a href="#IFIylgCfZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				hehe, i don’t think it’s possible yet. https://github.com/microsoft/TypeScript/issues/47648
 		</div>
 	</li>
-	<li>
+	<li id="O95u8utrQ">
+		<a href="#O95u8utrQ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&gt; &lt;...&gt;
 		</div>
 	</li>
-	<li>
+	<li id="-74GW3s_X">
+		<a href="#-74GW3s_X" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i’m excited about the upcoming PRs, even tho some have been there for a while already.
 	https://github.com/microsoft/TypeScript/pull/26349

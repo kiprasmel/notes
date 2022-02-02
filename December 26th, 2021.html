@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.835Z</span>
+				<span>2022-02-02T14:33:54.201Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,97 +245,113 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640469601123);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801835);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434201);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="IUMNbEYMW">
+					<a href="#IUMNbEYMW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) IUMNbEYMW [[(hidden) zOoaeoNVF]]
 					</div>
 					<ul>
-						<li>
+						<li id="kCmR2LVcA">
+							<a href="#kCmR2LVcA" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) kCmR2LVcA
 							</div>
 							<ul>
-								<li>
+								<li id="wQhgaB23n">
+									<a href="#wQhgaB23n" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											see also [[git-stacked-rebase]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="ZSSlbioBO">
+							<a href="#ZSSlbioBO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) ZSSlbioBO
 							</div>
 							<ul>
-								<li>
+								<li id="nzpXw0F_v">
+									<a href="#nzpXw0F_v" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											see also [[roam-traverse-graph]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="4Ejb-Essb">
+							<a href="#4Ejb-Essb" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 4Ejb-Essb
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="CZgSEiRoM">
+					<a href="#CZgSEiRoM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) CZgSEiRoM
 					</div>
 				</li>
-				<li>
+				<li id="-y_vD_zn-">
+					<a href="#-y_vD_zn-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) -y_vD_zn-
 					</div>
 				</li>
-				<li>
+				<li id="diNy0j9_0">
+					<a href="#diNy0j9_0" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) diNy0j9_0
 					</div>
 				</li>
-				<li>
+				<li id="fmf-k7sL9">
+					<a href="#fmf-k7sL9" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="5eEKDvvHd">
+							<a href="#5eEKDvvHd" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} `latest-commit-sha`
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="kMnQG_i2p">
+					<a href="#kMnQG_i2p" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) kMnQG_i2p
 					</div>
 				</li>
-				<li>
+				<li id="IWo5oNhem">
+					<a href="#IWo5oNhem" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) IWo5oNhem
 					</div>
 				</li>
-				<li>
+				<li id="AvR6dD594">
+					<a href="#AvR6dD594" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) AvR6dD594
 					</div>
 				</li>
-				<li>
+				<li id="fBWyo3sJj">
+					<a href="#fBWyo3sJj" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) fBWyo3sJj
 					</div>
 				</li>
-				<li>
+				<li id="Rg9Lkp0Us">
+					<a href="#Rg9Lkp0Us" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Rg9Lkp0Us
 					</div>
@@ -358,7 +427,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="0LfSRPxwE">
+			<a href="#0LfSRPxwE" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -375,93 +446,111 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="U92wFFS0J">
+		<a href="#U92wFFS0J" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[roam-traverse-graph]] [[export-html-pages]]
 		</div>
 		<ul>
-			<li>
+			<li id="l6GMExXHJ">
+				<a href="#l6GMExXHJ" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} if a page is marked as private, then it should count as &quot;privateRecursive&quot; i.e. should act as if &quot;private&quot; tag was mentioned directly &amp; makes others private
 				</div>
 				<ul>
-					<li>
+					<li id="LR8EAJSvh">
+						<a href="#LR8EAJSvh" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} exception with &quot;private-only&quot;?
 						</div>
 						<ul>
-							<li>
+							<li id="4qQZhhnTj">
+								<a href="#4qQZhhnTj" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										nah doesn&#39;t even make sense, since it&#39;s private by default. tho idk, maybe does if u want 1 block private &amp; then continue w/ public ones, but idk idk unlikely - once u go into private u stay in private, and having to mark it as &quot;public&quot; explicitly is a good thing imo
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="lQ2GYMAnT">
+						<a href="#lQ2GYMAnT" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								i.e. public non-recursive by default, private yes-recursive by default
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="q-b51NQ3W">
+				<a href="#q-b51NQ3W" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="FelsV9XCV">
+		<a href="#FelsV9XCV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) FelsV9XCV
 		</div>
 	</li>
-	<li>
+	<li id="e9TepA9aX">
+		<a href="#e9TepA9aX" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) e9TepA9aX [[(hidden) 12-27-2021]]
 		</div>
 		<ul>
-			<li>
+			<li id="7qFfkHhab">
+				<a href="#7qFfkHhab" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) 7qFfkHhab #[[(hidden) oWn8Mvs8V]] #[[(hidden) 8LIMerx2O]]
 				</div>
 			</li>
-			<li>
+			<li id="x-4WehRss">
+				<a href="#x-4WehRss" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) x-4WehRss 
 				</div>
 				<ul>
-					<li>
+					<li id="FB78gXkXu">
+						<a href="#FB78gXkXu" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) FB78gXkXu
 						</div>
 					</li>
-					<li>
+					<li id="HI5NC2b4N">
+						<a href="#HI5NC2b4N" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) HI5NC2b4N
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="y-xCh6JYL">
+				<a href="#y-xCh6JYL" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) y-xCh6JYL 
 				</div>
 			</li>
-			<li>
+			<li id="CXM_dyxTP">
+				<a href="#CXM_dyxTP" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) CXM_dyxTP 
 				</div>
 			</li>
-			<li>
+			<li id="gh_qa18S2">
+				<a href="#gh_qa18S2" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) gh_qa18S2
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="7Bbua9oYa">
+		<a href="#7Bbua9oYa" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 7Bbua9oYa
 		</div>
 	</li>
-	<li>
+	<li id="jvNA7FnAv">
+		<a href="#jvNA7FnAv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) jvNA7FnAv
 		</div>

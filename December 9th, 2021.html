@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.872Z</span>
+				<span>2022-02-02T14:33:54.249Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,24 +245,27 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639000800319);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801872);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434249);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="qhAB97YBM">
+					<a href="#qhAB97YBM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="q8PVJ8urE">
+							<a href="#q8PVJ8urE" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									lol. git-stacked-branches?
 							</div>
 							<ul>
-								<li>
+								<li id="WJK7wMCL5">
+									<a href="#WJK7wMCL5" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											since e.g. i&#39;d like to have a command to e.g. exec `make test` / `yarn test` on each branch&#39;s end (you&#39;d to that in the git-rebase-todo w/ `x make test`), now it sound like we&#39;re not really doing rebases-only.
 								well, the core concept does not change, and i will not change the name because it makes sense already.
@@ -217,319 +273,391 @@
 								stacked branch - staked diff. cool.
 									</div>
 								</li>
-								<li></li>
+								<li id="SRInNghTO">
+									<a href="#SRInNghTO" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="kE5PXoECj">
+							<a href="#kE5PXoECj" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									hmm. `git-stacked-diffs` (not `git-stacked-branches` because long to type + alias `sb` would suck as well as opposed to `sd`)
 							</div>
 							<ul>
-								<li>
+								<li id="3l52fL6rH">
+									<a href="#3l52fL6rH" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											we might want to create some utils that would seem like stacked-diffs would become a concept, and the naming would be better that way.
 									</div>
 								</li>
-								<li>
+								<li id="E9R-nDbH8">
+									<a href="#E9R-nDbH8" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											but, i think we can stay w/ stacked-rebase, because it very much makes sense, and later if we decide to, we can have another cli, `git-stacked-diffs`, that has `rebase` or `r` as a command, that just aliases `git-stacked-rebase`, and then has other commands as well
 									</div>
 								</li>
-								<li>
+								<li id="MpuurYuEj">
+									<a href="#MpuurYuEj" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} create repo &amp; npm package
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li id="wRcfa77Ew">
+							<a href="#wRcfa77Ew" class="block-ref"></a>
+						</li>
+						<li id="0qZDvdNU1">
+							<a href="#0qZDvdNU1" class="block-ref"></a>
+						</li>
+						<li id="VHg4BxkT4">
+							<a href="#VHg4BxkT4" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="8oT6WGKR_">
+					<a href="#8oT6WGKR_" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 8oT6WGKR_
 					</div>
 				</li>
-				<li>
+				<li id="cEO58fQ_3">
+					<a href="#cEO58fQ_3" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cEO58fQ_3
 					</div>
 				</li>
-				<li>
+				<li id="Mp4D93l5t">
+					<a href="#Mp4D93l5t" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Mp4D93l5t
 					</div>
 				</li>
-				<li>
+				<li id="YWRcHWG2s">
+					<a href="#YWRcHWG2s" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) YWRcHWG2s #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="kR8gHE0Mc">
+							<a href="#kR8gHE0Mc" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="18mNTso74">
+									<a href="#18mNTso74" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[[typescript]]
 									</div>
 									<ul>
-										<li>
+										<li id="cJYx9mQ3x">
+											<a href="#cJYx9mQ3x" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													from a good vid from a while ago:
 											</div>
 											<ul>
-												<li>
+												<li id="Nl8WUFG4V">
+													<a href="#Nl8WUFG4V" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://youtu.be/nNse0r0aRT8
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="8OkY45Jo5">
+											<a href="#8OkY45Jo5" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													now from one of the guys who were in:
 											</div>
 											<ul>
-												<li>
+												<li id="zIKR_HBSC">
+													<a href="#zIKR_HBSC" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://github.com/millsp/ts-toolbelt
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="NYuhy5hCi">
+											<a href="#NYuhy5hCi" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="YXXs0XxP6">
+									<a href="#YXXs0XxP6" class="block-ref"></a>
+								</li>
+								<li id="3uSvOdUBp">
+									<a href="#3uSvOdUBp" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} yolo option?
 									</div>
 									<ul>
-										<li>
+										<li id="KGJg3ClGq">
+											<a href="#KGJg3ClGq" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													wondering if should re-use the same configs but have different code, or should be built-in into the same transform
 											</div>
 											<ul>
-												<li>
+												<li id="i_MIkRgaE">
+													<a href="#i_MIkRgaE" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															probably built into the same transform since if we&#39;ll be doing changes, then it&#39;s likely to miss to update both the normal and yolo options variants
 													</div>
 												</li>
-												<li></li>
+												<li id="OmV27_29a">
+													<a href="#OmV27_29a" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="MI1Xxj8id">
+											<a href="#MI1Xxj8id" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="hGmhp6IBL">
+									<a href="#hGmhp6IBL" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="qReXU7pCh">
+							<a href="#qReXU7pCh" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) qReXU7pCh [[(hidden) TanDfXxEE]]
 							</div>
 							<ul>
-								<li>
+								<li id="_8Dv19iaR">
+									<a href="#_8Dv19iaR" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) _8Dv19iaR [[(hidden) Eodgxk4z7]]
 									</div>
 									<ul>
-										<li>
+										<li id="Xd9o_ZqcG">
+											<a href="#Xd9o_ZqcG" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) Xd9o_ZqcG
 											</div>
 										</li>
-										<li>
+										<li id="YwC48bhxa">
+											<a href="#YwC48bhxa" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) YwC48bhxa
 											</div>
 										</li>
-										<li>
+										<li id="vU0mV4MR2">
+											<a href="#vU0mV4MR2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) vU0mV4MR2 [[(hidden) Eodgxk4z7]] #[[(hidden) TfUAAKWSK]]
 											</div>
 										</li>
-										<li>
+										<li id="WQXz2s89A">
+											<a href="#WQXz2s89A" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) WQXz2s89A
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="xdIVvBZm_">
+									<a href="#xdIVvBZm_" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) xdIVvBZm_
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="LihvqJcOM">
+							<a href="#LihvqJcOM" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) LihvqJcOM [[(hidden) j918V1ZOD]]
 							</div>
 							<ul>
-								<li>
+								<li id="90Dl4gCu9">
+									<a href="#90Dl4gCu9" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 90Dl4gCu9 [[(hidden) HDBYCTTgi]] [[(hidden) b4bi_1bQo]]
 									</div>
 									<ul>
-										<li>
+										<li id="kcI7RiK01">
+											<a href="#kcI7RiK01" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) kcI7RiK01
 											</div>
 										</li>
-										<li>
+										<li id="3JMRNUMQd">
+											<a href="#3JMRNUMQd" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) 3JMRNUMQd
 											</div>
 										</li>
-										<li>
+										<li id="zv1TQRCBn">
+											<a href="#zv1TQRCBn" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) zv1TQRCBn
 											</div>
 										</li>
-										<li>
+										<li id="JVZ7KFLtL">
+											<a href="#JVZ7KFLtL" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) JVZ7KFLtL
 											</div>
 										</li>
-										<li>
+										<li id="OP_erbrBm">
+											<a href="#OP_erbrBm" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) OP_erbrBm
 											</div>
 										</li>
-										<li>
+										<li id="wtAehlJWe">
+											<a href="#wtAehlJWe" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) wtAehlJWe [[(hidden) hhyoq3RLy]]
 											</div>
 										</li>
-										<li>
+										<li id="7ZqKfcNcz">
+											<a href="#7ZqKfcNcz" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) 7ZqKfcNcz
 											</div>
 										</li>
-										<li>
+										<li id="wEsBUeIq2">
+											<a href="#wEsBUeIq2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) wEsBUeIq2
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="PFRfIgTK5">
+									<a href="#PFRfIgTK5" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) PFRfIgTK5
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="ioOp8Isc1">
+							<a href="#ioOp8Isc1" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) ioOp8Isc1
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="51nKzD29O">
+					<a href="#51nKzD29O" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 51nKzD29O
 					</div>
 				</li>
-				<li>
+				<li id="LROjdNsKw">
+					<a href="#LROjdNsKw" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) LROjdNsKw [[(hidden) Py4a4fa73]]
 					</div>
 					<ul>
-						<li>
+						<li id="lqjkkaMvZ">
+							<a href="#lqjkkaMvZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) lqjkkaMvZ [[(hidden) METZIccJ9]]
 							</div>
 							<ul>
-								<li>
+								<li id="qpQliadW4">
+									<a href="#qpQliadW4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) qpQliadW4 [[(hidden) yZmfb-jOu]]
 									</div>
 									<ul>
-										<li>
+										<li id="VTbIpLp03">
+											<a href="#VTbIpLp03" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) VTbIpLp03 [[(hidden) AC0OoWBf2]]
 											</div>
 										</li>
-										<li>
+										<li id="vPbmG8vrf">
+											<a href="#vPbmG8vrf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) vPbmG8vrf
 											</div>
 											<ul>
-												<li>
+												<li id="kOBH7oMtv">
+													<a href="#kOBH7oMtv" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} (hidden) kOBH7oMtv 
 													</div>
 													<ul>
-														<li>
+														<li id="srTf7kXlm">
+															<a href="#srTf7kXlm" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	(hidden) srTf7kXlm
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="nPVwxY0Ru">
+													<a href="#nPVwxY0Ru" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} (hidden) nPVwxY0Ru 
 													</div>
 												</li>
-												<li>
+												<li id="UFJFHL1dS">
+													<a href="#UFJFHL1dS" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) UFJFHL1dS
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="YsQ8OF9_O">
+											<a href="#YsQ8OF9_O" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) YsQ8OF9_O
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="0CGXz1Gwx">
+									<a href="#0CGXz1Gwx" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 0CGXz1Gwx
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="ZWgjxPl_F">
+							<a href="#ZWgjxPl_F" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) ZWgjxPl_F
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="f9mrRM8aX">
+					<a href="#f9mrRM8aX" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) f9mrRM8aX
 					</div>
 				</li>
-				<li>
+				<li id="g4j2pcQuK">
+					<a href="#g4j2pcQuK" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) g4j2pcQuK
 					</div>
 				</li>
-				<li>
+				<li id="a4qoeVlz5">
+					<a href="#a4qoeVlz5" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) a4qoeVlz5
 					</div>
 				</li>
-				<li>
+				<li id="fQ5wxPz9W">
+					<a href="#fQ5wxPz9W" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) fQ5wxPz9W
 					</div>
 				</li>
-				<li>
+				<li id="C3g_SRnmv">
+					<a href="#C3g_SRnmv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) C3g_SRnmv
 					</div>

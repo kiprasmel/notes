@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.002Z</span>
+				<span>2022-02-02T14:33:54.512Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,56 +245,65 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1631594028722);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802002);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434512);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="s4P2h_Zsw">
+					<a href="#s4P2h_Zsw" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) s4P2h_Zsw #[[(hidden) SqBonHqmb]]
 					</div>
 					<ul>
-						<li>
+						<li id="MfJ2j-xHT">
+							<a href="#MfJ2j-xHT" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) MfJ2j-xHT #[[(hidden) DNhqQDSLh]]
 							</div>
 							<ul>
-								<li>
+								<li id="tGHnb-Ddu">
+									<a href="#tGHnb-Ddu" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) tGHnb-Ddu 
 									</div>
 								</li>
-								<li>
+								<li id="a4__AIX__">
+									<a href="#a4__AIX__" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) a4__AIX__ 
 									</div>
 								</li>
-								<li>
+								<li id="C7usktq3i">
+									<a href="#C7usktq3i" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) C7usktq3i 
 									</div>
 								</li>
-								<li>
+								<li id="IZDVtr1Bk">
+									<a href="#IZDVtr1Bk" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) IZDVtr1Bk 
 									</div>
 								</li>
-								<li>
+								<li id="R2J-ZBr57">
+									<a href="#R2J-ZBr57" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) R2J-ZBr57
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="_1NJ-NDoR">
+							<a href="#_1NJ-NDoR" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) _1NJ-NDoR #[[(hidden) S-ygYfi0j]] [[(hidden) S-ygYfi0j]]
 							</div>
 							<ul>
-								<li>
+								<li id="dEh7Fb7Vt">
+									<a href="#dEh7Fb7Vt" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) dEh7Fb7Vt 
 									</div>
@@ -250,12 +312,14 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="yDW3jscSs">
+					<a href="#yDW3jscSs" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) yDW3jscSs
 					</div>
 				</li>
-				<li>
+				<li id="yQZGDz1Tz">
+					<a href="#yQZGDz1Tz" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) yQZGDz1Tz
 					</div>

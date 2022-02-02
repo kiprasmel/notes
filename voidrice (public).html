@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.866Z</span>
+				<span>2022-02-02T14:33:55.193Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,27 +245,41 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633800115646);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802866);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435193);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="CleOnjNeN">
+					<a href="#CleOnjNeN" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li>
+				<li id="Ov0xOYeQQ">
+					<a href="#Ov0xOYeQQ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							http://github.com/lukeSmithxyz/voidrice
 					</div>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="5s_oKl5Kh">
+					<a href="#5s_oKl5Kh" class="block-ref"></a>
+				
+				</li>
+				<li id="0A2Qo0-Mj">
+					<a href="#0A2Qo0-Mj" class="block-ref"></a>
+				
+				</li>
+				<li id="RvPYNp6K7">
+					<a href="#RvPYNp6K7" class="block-ref"></a>
+				
+				</li>
+				<li id="00xh4DxyP">
+					<a href="#00xh4DxyP" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -284,7 +351,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ICLSpG8tm">
+			<a href="#ICLSpG8tm" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -301,57 +370,68 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Hu_tuWO5d">
+		<a href="#Hu_tuWO5d" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				but then it&#39;d be harder for the end user of it to modify it (e.g. the util currently lives in `~/.local/bin/`, and if it was a package / program that you&#39;d install, it&#39;d live in e.g. `/usr/local/bin/`, meaning that if u were to modify it, your changes would get overriden - you&#39;d have to contribute directly to the original package by e.g. opening PRs on github, but you don&#39;t control if they get merged or not, so now you&#39;d have to fork the repository which contains this program, and then modify it and potentially maintain the fork, plus you&#39;d have the burdain of publishing the package yourself w/ a different name)
 		</div>
 		<ul>
-			<li>
+			<li id="G5zfo90eS">
+				<a href="#G5zfo90eS" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						unless, ofc, the program would be completely extensible, meaning it would provide APIs to extend the behavior without modifying the program itself (O in [[(hidden) Nq8r6-ap2]] - open-closed)
 				</div>
 				<ul>
-					<li>
+					<li id="iDcg1UJPE">
+						<a href="#iDcg1UJPE" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
 						</div>
 					</li>
-					<li>
+					<li id="dr2XZ4cO4">
+						<a href="#dr2XZ4cO4" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								but then, the program becomes much more complex, with all the stuff that comes from that! and remember, what we tried turning into packages were actually small utilities/scripts - they didn&#39;t have any of the problems - the problems come from wanting to abstract those small utilities into packages
 						</div>
 						<ul>
-							<li>
+							<li id="OrVLXNH9h">
+								<a href="#OrVLXNH9h" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										the convenience of consumption, at the loss of  simplicity of modification
 								</div>
 								<ul>
-									<li>
+									<li id="wWDdr4H1T">
+										<a href="#wWDdr4H1T" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												what can be learnt from this is that maybe one should never create an #[[(hidden) vzIV5rsdR]] (both 1) a utility function on some &quot;reusable logic&quot; and 2) a library/framework instead of a template) on top of some logic __without__ first using it enough to realize the common use cases to identify the things that can and __should__ be abstracted, and only then start abstracting. 
 										</div>
 										<ul>
-											<li>
+											<li id="DJA_ULdBj">
+												<a href="#DJA_ULdBj" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														because in some cases nothing should be abstracted - then the choice is having a template instead of a library, or copy-pasted / #[[(hidden) imNiDHw0b]] (as opposed to #[[(hidden) AYIfX5dlb]]) code
 												</div>
 											</li>
-											<li>
+											<li id="qCxgd284G">
+												<a href="#qCxgd284G" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														and sometimes very little things need to be abstracted - then we can create &amp; extract more sophisticated &amp; extendable programs but keep everything else as a template.
 												</div>
 												<ul>
-													<li>
+													<li id="rbwFENXdS">
+														<a href="#rbwFENXdS" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																((G5zfo90eS))
 														</div>
 														<ul>
-															<li>
+															<li id="LfEvbHD0P">
+																<a href="#LfEvbHD0P" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		yet again [[(hidden) dIAalVB6p]]&#39;s philosophy checks out - abstract the most important bits, and let the community grow &amp; develop everything else. eventually, if things mature enough, we come back to:
 																</div>
 																<ul>
-																	<li>
+																	<li id="TaFWEdo7k">
+																		<a href="#TaFWEdo7k" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				((qCxgd284G))
 																		</div>
@@ -372,60 +452,74 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="9AM5TEfnR">
+		<a href="#9AM5TEfnR" class="block-ref"></a>
+	
+	</li>
+	<li id="zoZg6viKS">
+		<a href="#zoZg6viKS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				so in essence, what it comes down to is:
 		</div>
 		<ul>
-			<li>
+			<li id="5iPYg8GDv">
+				<a href="#5iPYg8GDv" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1. __at first__ - don&#39;t abstract anything - use the existing primitive tools (e.g. the programming language itself)
 				</div>
 			</li>
-			<li>
+			<li id="lOVL8i9_0">
+				<a href="#lOVL8i9_0" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						2. then, find: what you end up repeating a lot, or what mistakes you failing at, or similar
 				</div>
 			</li>
-			<li>
+			<li id="adYXtnL15">
+				<a href="#adYXtnL15" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						3. then, think about the absolute minimal solution that would solve your problem (singular)
 				</div>
 				<ul>
-					<li>
+					<li id="zOUM06Faz">
+						<a href="#zOUM06Faz" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								3.1 don&#39;t try solving multiple problems at once -- [[(hidden) FO-XsQXEy]] - one small independent thing at once
 						</div>
 					</li>
-					<li>
+					<li id="IM_39XaIX">
+						<a href="#IM_39XaIX" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								3.2 if you __do__ feel like solving multiple problems -- you might be operating at the wrong level of [[(hidden) SU8hr25lN]]:
 						</div>
 						<ul>
-							<li>
+							<li id="ixybq1AKS">
+								<a href="#ixybq1AKS" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										the hierarchy of your abstractions also matters, and it&#39;s hard to balance (this might be the essence of what this is all about, but I&#39;m not sure yet):
 								</div>
 								<ul>
-									<li>
+									<li id="B_Q-tAjEI">
+										<a href="#B_Q-tAjEI" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												on one end, you can create hacks on top of your existing solutions (i.e. close(r) to your leaf nodes of the abstraction hierarchy), but that usually doesn&#39;t go a long way, and/or cripples everything else.
 										</div>
 									</li>
-									<li>
+									<li id="gEK7jfKGe">
+										<a href="#gEK7jfKGe" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												on the complete opposite end, you maybe could create APIs in the very beginning of your abstraction hierarchy (e.g. on the OS level), but that might be extremely hard to 1) do, and 2) do __right__.
 										</div>
 										<ul>
-											<li>
+											<li id="YihbsexlG">
+												<a href="#YihbsexlG" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														see also [[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="Uk9fgbehY">
+										<a href="#Uk9fgbehY" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												maybe see also: tree balancing (computer science), tho dunno if any useful (yet).
 										</div>
@@ -434,47 +528,61 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="Z2BG0K9SC">
+						<a href="#Z2BG0K9SC" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								3.3 make sure 5. still applies to other existing abstractions.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="bGLYn9Z-O">
+				<a href="#bGLYn9Z-O" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						4. if everything makes sense, you are confident your solution sits at the right level of abstraction hierarchy - implement it
 				</div>
 			</li>
-			<li>
+			<li id="Ed4f7nBD5">
+				<a href="#Ed4f7nBD5" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						5. as time goes on - re-evaluate if the solution still makes sense and still sits at the right level of [[(hidden) SU8hr25lN]]
 				</div>
 				<ul>
-					<li>
+					<li id="REfdREVhB">
+						<a href="#REfdREVhB" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								5.1 especially when creating new abstractions
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="yqQUrstBX">
+				<a href="#yqQUrstBX" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						6. repeat from 1.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="mkbEw4EMw">
+		<a href="#mkbEw4EMw" class="block-ref"></a>
+	
+	</li>
+	<li id="iTEqVWXAq">
+		<a href="#iTEqVWXAq" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[Luke Smith (linux &amp; life)]] yet again [[(hidden) XnbxpC_RY]] (especially for the specific use case / need that #[[voidrice (public)]]] provides)
 		</div>
 	</li>
-	<li></li>
+	<li id="TQzRNu_xi">
+		<a href="#TQzRNu_xi" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="iTEqVWXAq">
+			<a href="#iTEqVWXAq" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -494,7 +602,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="iTEqVWXAq">
+			<a href="#iTEqVWXAq" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

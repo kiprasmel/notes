@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.605Z</span>
+				<span>2022-02-02T14:33:54.992Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,24 +245,27 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1630886265991);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802605);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434992);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="hfIv_C4p-">
+					<a href="#hfIv_C4p-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hfIv_C4p- #[[(hidden) LAzTGMm3l]]
 					</div>
 				</li>
-				<li>
+				<li id="zfhDanvPM">
+					<a href="#zfhDanvPM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) zfhDanvPM
 					</div>
 				</li>
-				<li>
+				<li id="h8H_jz2AO">
+					<a href="#h8H_jz2AO" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) h8H_jz2AO
 					</div>
@@ -285,7 +341,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="sa7h8buwI">
+			<a href="#sa7h8buwI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -302,17 +360,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="AgTqo8The">
+		<a href="#AgTqo8The" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) AgTqo8The
 		</div>
 		<ul>
-			<li>
+			<li id="ewyWEefjr">
+				<a href="#ewyWEefjr" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) ewyWEefjr
 				</div>
 				<ul>
-					<li>
+					<li id="tJtlxBkPg">
+						<a href="#tJtlxBkPg" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) tJtlxBkPg
 						</div>
@@ -336,7 +397,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="LZ8LSsEQe">
+			<a href="#LZ8LSsEQe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -353,7 +416,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="O9_inPVHN">
+		<a href="#O9_inPVHN" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} (hidden) O9_inPVHN 
 		</div>
@@ -373,7 +437,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="x_uUBEXsX">
+			<a href="#x_uUBEXsX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -406,7 +472,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ZKfGW9saN">
+			<a href="#ZKfGW9saN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -439,7 +507,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="cyHh4EVmF">
+			<a href="#cyHh4EVmF" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -472,7 +542,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_PtdYKnj7">
+			<a href="#_PtdYKnj7" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -489,214 +561,252 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="R9AtzpJvE">
+		<a href="#R9AtzpJvE" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) R9AtzpJvE
 		</div>
 	</li>
-	<li>
+	<li id="LJXD6cM6k">
+		<a href="#LJXD6cM6k" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) LJXD6cM6k [[(hidden) pHco5hQZn]]
 		</div>
 	</li>
-	<li>
+	<li id="yTVS3RIZm">
+		<a href="#yTVS3RIZm" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) yTVS3RIZm
 		</div>
 	</li>
-	<li>
+	<li id="OX6dsYfvM">
+		<a href="#OX6dsYfvM" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) OX6dsYfvM
 		</div>
 		<ul>
-			<li>
+			<li id="nYfiRYVB6">
+				<a href="#nYfiRYVB6" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) nYfiRYVB6
 				</div>
 				<ul>
-					<li>
+					<li id="rjyU7nTZ9">
+						<a href="#rjyU7nTZ9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) rjyU7nTZ9
 						</div>
 					</li>
-					<li>
+					<li id="akK4gms9r">
+						<a href="#akK4gms9r" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) akK4gms9r
 						</div>
 					</li>
-					<li>
+					<li id="-RQAcSxfd">
+						<a href="#-RQAcSxfd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) -RQAcSxfd
 						</div>
 					</li>
-					<li>
+					<li id="9FEv2vVWZ">
+						<a href="#9FEv2vVWZ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) 9FEv2vVWZ
 						</div>
 					</li>
-					<li>
+					<li id="U5PCGMB3-">
+						<a href="#U5PCGMB3-" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) U5PCGMB3-
 						</div>
 					</li>
-					<li>
+					<li id="oxW4NxjFo">
+						<a href="#oxW4NxjFo" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) oxW4NxjFo
 						</div>
 					</li>
-					<li>
+					<li id="lIPTYflA4">
+						<a href="#lIPTYflA4" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) lIPTYflA4
 						</div>
 					</li>
-					<li>
+					<li id="79WFlzNai">
+						<a href="#79WFlzNai" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) 79WFlzNai
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="WSC3s2Jz5">
+				<a href="#WSC3s2Jz5" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) WSC3s2Jz5
 				</div>
 				<ul>
-					<li>
+					<li id="Q0-Z19LbS">
+						<a href="#Q0-Z19LbS" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) Q0-Z19LbS
 						</div>
 					</li>
-					<li>
+					<li id="d6pXSqcX7">
+						<a href="#d6pXSqcX7" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) d6pXSqcX7
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="hMrXTS_1x">
+				<a href="#hMrXTS_1x" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) hMrXTS_1x
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="oEKangnPz">
+		<a href="#oEKangnPz" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) oEKangnPz
 		</div>
 		<ul>
-			<li>
+			<li id="BVXVFTK_o">
+				<a href="#BVXVFTK_o" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) BVXVFTK_o #[[(hidden) D1lY0CG5e]] #[[(hidden) lgJAATgMD]]
 				</div>
 				<ul>
-					<li>
+					<li id="p8D3q-CEb">
+						<a href="#p8D3q-CEb" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) p8D3q-CEb #[[(hidden) 0RTYzSSRE]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="uIC744vhm">
+				<a href="#uIC744vhm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) uIC744vhm #[[(hidden) 7Lmq9BfsH]]
 				</div>
 				<ul>
-					<li>
+					<li id="vU7Yeun5d">
+						<a href="#vU7Yeun5d" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) vU7Yeun5d 
 						</div>
 					</li>
-					<li>
+					<li id="pnMQuYJEK">
+						<a href="#pnMQuYJEK" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) pnMQuYJEK 
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="LUyAd9gjw">
+				<a href="#LUyAd9gjw" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) LUyAd9gjw
 				</div>
 				<ul>
-					<li>
+					<li id="wa-IIoR9A">
+						<a href="#wa-IIoR9A" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) wa-IIoR9A #[[(hidden) 0RTYzSSRE]]
 						</div>
 						<ul>
-							<li>
+							<li id="Ih41VLJEu">
+								<a href="#Ih41VLJEu" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) Ih41VLJEu
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="Zv880F-pr">
+						<a href="#Zv880F-pr" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) Zv880F-pr
 						</div>
 					</li>
-					<li>
+					<li id="K0faYof3Z">
+						<a href="#K0faYof3Z" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) K0faYof3Z
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="yIb_SOQFp">
+				<a href="#yIb_SOQFp" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) yIb_SOQFp
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="4hfot3l33">
+		<a href="#4hfot3l33" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 4hfot3l33
 		</div>
 		<ul>
-			<li>
+			<li id="ji8gCOegc">
+				<a href="#ji8gCOegc" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) ji8gCOegc
 				</div>
 				<ul>
-					<li>
+					<li id="NZeMVKJhU">
+						<a href="#NZeMVKJhU" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[DONE]]}} #[[(hidden) Y4mLW46Gx]] [[codemods]] - look hella interesting (jscodeshift from fb etc)!
 						</div>
 					</li>
-					<li>
+					<li id="bHghltMOE">
+						<a href="#bHghltMOE" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) bHghltMOE
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="u-cXwjw6O">
+				<a href="#u-cXwjw6O" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) u-cXwjw6O
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="um1eQwmY8">
+		<a href="#um1eQwmY8" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) um1eQwmY8 [[(hidden) X7oZG5qJs]]
 		</div>
 		<ul>
-			<li>
+			<li id="JRf1bgPTU">
+				<a href="#JRf1bgPTU" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) JRf1bgPTU
 				</div>
 			</li>
-			<li>
+			<li id="47RIZH-oM">
+				<a href="#47RIZH-oM" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 47RIZH-oM
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="L7dLurLjH">
+		<a href="#L7dLurLjH" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) L7dLurLjH
 		</div>
@@ -716,7 +826,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="-kBMjwtBj">
+			<a href="#-kBMjwtBj" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -733,7 +845,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="oyE0Hpfg-">
+		<a href="#oyE0Hpfg-" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) oyE0Hpfg- 
 		</div>
@@ -753,7 +866,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="seinIcrmM">
+			<a href="#seinIcrmM" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -770,12 +885,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="nlFkrD6xY">
+		<a href="#nlFkrD6xY" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) nlFkrD6xY
 		</div>
 	</li>
-	<li>
+	<li id="gH7LeBsaU">
+		<a href="#gH7LeBsaU" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) gH7LeBsaU
 		</div>
@@ -795,7 +912,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="AbfsCi1l3">
+			<a href="#AbfsCi1l3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -828,7 +947,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="cKMKRY5zq">
+			<a href="#cKMKRY5zq" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -861,7 +982,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="EFEByRKoS">
+			<a href="#EFEByRKoS" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -894,7 +1017,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="51z-UJ0EH">
+			<a href="#51z-UJ0EH" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -927,7 +1052,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Oxije79Hw">
+			<a href="#Oxije79Hw" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -960,7 +1087,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="-K3_AUWiI">
+			<a href="#-K3_AUWiI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -977,58 +1106,73 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="thEnChHqt">
+		<a href="#thEnChHqt" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[git-rebase]]
 		</div>
 		<ul>
-			<li>
+			<li id="051-BUlcV">
+				<a href="#051-BUlcV" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1. check which branch you&#39;re on:
 				</div>
 				<ul>
-					<li>
+					<li id="6QaRGBA9C">
+						<a href="#6QaRGBA9C" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					git branch
 					```
 						</div>
 					</li>
-					<li>
+					<li id="0P-wQQPQO">
+						<a href="#0P-wQQPQO" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								1.1 make sure this is actually the one you want to rebase.
 						</div>
 					</li>
-					<li>
+					<li id="PBP6PdUmS">
+						<a href="#PBP6PdUmS" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								1.2 am i the only one working on this branch?
 						</div>
 						<ul>
-							<li>
+							<li id="U2jhTCV3j">
+								<a href="#U2jhTCV3j" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										no = abort (unless you __and__ the other person(s) working the branch are advanced git users and you&#39;ve explicitly agreed that rebasing in shared branches is ok).
 								</div>
 								<ul>
-									<li>
+									<li id="wpQlLhJr8">
+										<a href="#wpQlLhJr8" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="ovZy5xykC">
+								<a href="#ovZy5xykC" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="ss_g43j0o">
+						<a href="#ss_g43j0o" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="iHb8NN8iI">
+				<a href="#iHb8NN8iI" class="block-ref"></a>
+			</li>
+			<li id="tX45tw769">
+				<a href="#tX45tw769" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						2. this shouldn&#39;t be necessary, but just in case, let&#39;s pull the latest changes of your own branch:
 				</div>
 				<ul>
-					<li>
+					<li id="mxRMZIcsM">
+						<a href="#mxRMZIcsM" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					# while inside the same (your own) branch:
@@ -1036,21 +1180,28 @@
 					```
 						</div>
 					</li>
-					<li>
+					<li id="_BT7uH2ly">
+						<a href="#_BT7uH2ly" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								if you see something unexpected, there&#39;s probably changes from someone else, thus you answer &quot;no&quot; to [1.2](((PBP6PdUmS))), thus abort (unless ofc you know what you&#39;re doing).
 						</div>
 					</li>
-					<li></li>
+					<li id="LM5b5S5Ag">
+						<a href="#LM5b5S5Ag" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="snFnJvoLm">
+				<a href="#snFnJvoLm" class="block-ref"></a>
+			</li>
+			<li id="tWJM_uJM0">
+				<a href="#tWJM_uJM0" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						3. since we want to rebase on top of the latest changes of master, we need to update our local git repo first:
 				</div>
 				<ul>
-					<li>
+					<li id="69DKxyOY7">
+						<a href="#69DKxyOY7" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					git fetch --all
@@ -1059,150 +1210,190 @@
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="TgmlVv_MW">
+				<a href="#TgmlVv_MW" class="block-ref"></a>
+			</li>
+			<li id="nXiqa090z">
+				<a href="#nXiqa090z" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						4. if all goes well, we can start the procedure
 				</div>
 				<ul>
-					<li>
+					<li id="-JL0YZU-m">
+						<a href="#-JL0YZU-m" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					git rebase origin/master -i
 					```
 						</div>
 					</li>
-					<li>
+					<li id="ajFuKj01F">
+						<a href="#ajFuKj01F" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								`-i`, or `--interactive`, will bring up the list of commits of your branch. you can view it to confirm everything&#39;s alright, and if not, you can squash/fixup/drop, even re-order the commits. basically, become a surgeon for a bit.
 						</div>
 						<ul>
-							<li>
+							<li id="R_LAmEK8a">
+								<a href="#R_LAmEK8a" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										if you didn&#39;t specify the interactive option, or if you did and everything&#39;s alright and you saved the file &amp; closed it, proceed further.
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="XNGi2AeFm">
+						<a href="#XNGi2AeFm" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="2TZjxhpkZ">
+				<a href="#2TZjxhpkZ" class="block-ref"></a>
+			</li>
+			<li id="3gu4MaZQ2">
+				<a href="#3gu4MaZQ2" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						5. ideally, there are no conflicts, the rebase completes successfully and you can move on to the [next step](((q8jggl2cV))).
 				</div>
 				<ul>
-					<li>
+					<li id="8AW_F6UbZ">
+						<a href="#8AW_F6UbZ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								but if often does not.
 						</div>
 					</li>
-					<li>
+					<li id="_p1Q29gbG">
+						<a href="#_p1Q29gbG" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								you can always use `git status` to see what&#39;s going on
 						</div>
 					</li>
-					<li>
+					<li id="aYs5OUQbu">
+						<a href="#aYs5OUQbu" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								in case you encounter conflicts:
 						</div>
 						<ul>
-							<li>
+							<li id="NeCtFZfeo">
+								<a href="#NeCtFZfeo" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										you need to manually resolve them, and then mark them as fixed with `git add &lt;filename&gt;`
 								</div>
 							</li>
-							<li>
+							<li id="5VtR4aoZP">
+								<a href="#5VtR4aoZP" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										if you forgot which changes are yours, you can always find the commit by doing `git log &lt;branch-name-you-are-rebasing&gt;`, finding the commit, and then doing `git show &lt;commit&gt;`.
 								</div>
 							</li>
-							<li>
+							<li id="yViSp_VQQ">
+								<a href="#yViSp_VQQ" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										when all conflicts are fixed and added, you can continue the rebase with `git rebase --continue`
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="9p0D-5adW">
+						<a href="#9p0D-5adW" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								there are some edge cases as well
 						</div>
 						<ul>
-							<li>
+							<li id="SLObWnz89">
+								<a href="#SLObWnz89" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										e.g. if you resolved conflicts and your commit ends up being empty, you&#39;ll need to manually commit it with `git commit --allow-empty` and then `git rebase --continue` again
 								</div>
 							</li>
-							<li>
+							<li id="_iQBo0l0Y">
+								<a href="#_iQBo0l0Y" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										in general, git will tell you about it - you just gotta be careful and read thoroughly. ofc, also search for info / ask for help when needed.
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="WsokRessQ">
+						<a href="#WsokRessQ" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="8bqhSpcaq">
+				<a href="#8bqhSpcaq" class="block-ref"></a>
+			</li>
+			<li id="q8jggl2cV">
+				<a href="#q8jggl2cV" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						6. git should print &quot;successfully finished rebase&quot; or something similar.
 				</div>
 				<ul>
-					<li>
+					<li id="7xi6wQcZk">
+						<a href="#7xi6wQcZk" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								if you check `git status`, it&#39;ll show that you have more commits ahead and less commits behind. makes sense, since you previously had only your commits that you started from an older commit of the master branch, but you now have all of that, plus the new commits from the master branch that you were missing.
 						</div>
 						<ul>
-							<li>
+							<li id="CfRpJ3Ge1">
+								<a href="#CfRpJ3Ge1" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										see more:
 								</div>
 								<ul>
-									<li>
+									<li id="q1KFesjQl">
+										<a href="#q1KFesjQl" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="pfZuBdL_4">
+								<a href="#pfZuBdL_4" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										this means you overwrote history.
 								</div>
 								<ul>
-									<li>
+									<li id="9KfLndn9i">
+										<a href="#9KfLndn9i" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												i.e., when you change a commit (`git commit --amend` or `git rebase` or similar), you modify the commit, and it gets assigned a new SHA.
 										</div>
 									</li>
-									<li>
+									<li id="LMefwFS4e">
+										<a href="#LMefwFS4e" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												this is why the [1.2 check](((PBP6PdUmS))) is important -- since you&#39;re overriding history, if other people are also using the same branch, it can get messy.
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="rMvfNC93F">
+								<a href="#rMvfNC93F" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="PqMXXnuMf">
+						<a href="#PqMXXnuMf" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="VHODkbHAD">
+				<a href="#VHODkbHAD" class="block-ref"></a>
+			</li>
+			<li id="tr5kzZHj9">
+				<a href="#tr5kzZHj9" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						7. you&#39;ll now need to push the new history of commits to the repo (currently it&#39;s only local).
 				</div>
 				<ul>
-					<li>
+					<li id="PJ9dgSbAd">
+						<a href="#PJ9dgSbAd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								since we overwrote history, a regular `git push` won&#39;t do (you can try). you&#39;ll need to force it with `-f` or `--force`:
 						</div>
 					</li>
-					<li>
+					<li id="Gffsql0UG">
+						<a href="#Gffsql0UG" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					git push -f
@@ -1211,36 +1402,46 @@
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="b-mkiwAWe">
+				<a href="#b-mkiwAWe" class="block-ref"></a>
+			</li>
+			<li id="SWZKVxPcg">
+				<a href="#SWZKVxPcg" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						8. done. check the repo &amp; verify everything looks good.
 				</div>
 			</li>
-			<li></li>
-			<li>
+			<li id="TFrsVA04c">
+				<a href="#TFrsVA04c" class="block-ref"></a>
+			</li>
+			<li id="Qluj-1OFm">
+				<a href="#Qluj-1OFm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						9. something went wrong? yay, learning time!
 				</div>
 				<ul>
-					<li>
+					<li id="mI8WrxjXs">
+						<a href="#mI8WrxjXs" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								`git reflog` is your friend:
 						</div>
 						<ul>
-							<li>
+							<li id="dMfKoE3CI">
+								<a href="#dMfKoE3CI" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://git-scm.com/docs/git-reflog
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="33qt8isNW">
+						<a href="#33qt8isNW" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								glhf. if you&#39;re a newbie w/ this stuff, consider copying the `.git/` folder outside the repo `../` in case you need to start from scratch.
 						</div>
 						<ul>
-							<li>
+							<li id="1b1bwyKcE">
+								<a href="#1b1bwyKcE" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										```shell
 							cp .git/ ../```
@@ -1248,72 +1449,89 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="csRyvtLSm">
+						<a href="#csRyvtLSm" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								talking w/ an experienced colleague / friend also helps.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="QFu0TEbzM">
+				<a href="#QFu0TEbzM" class="block-ref"></a>
+			</li>
+			<li id="vk3b7y1Yz">
+				<a href="#vk3b7y1Yz" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						10. good to remember:
 				</div>
 				<ul>
-					<li>
+					<li id="uYAkYLUW7">
+						<a href="#uYAkYLUW7" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								rebase goes commit-by-commit (1 by 1)
 						</div>
 					</li>
-					<li>
+					<li id="wcheLRHfF">
+						<a href="#wcheLRHfF" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								it&#39;s easy to mess things up.
 						</div>
 						<ul>
-							<li>
+							<li id="H7u_p5o1y">
+								<a href="#H7u_p5o1y" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										if anything goes wrong, you can always do `git rebase --abort` and start over
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="NkzgZDyZw">
+						<a href="#NkzgZDyZw" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								it&#39;s always better to do simple changes in multiple rebases, than multiple complex changes in a single rebase.
 						</div>
 						<ul>
-							<li>
+							<li id="ND1JPyH13">
+								<a href="#ND1JPyH13" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										e.g., first you can get your changes up to date to the latest origin&#39;s master branch, and then in the 2nd rebase you can squash some commits into one parent commit, then squash some more commits into a different parent commit in a 3rd rebase, etc etc.
 								</div>
 							</li>
-							<li>
+							<li id="Pjt28iW8E">
+								<a href="#Pjt28iW8E" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										this often times helps avoid complex situations, and also helps avoid loss of partial progress - e.g. if you&#39;re rebasing and you&#39;ve completed say 15 commits out of 20, but then you&#39;re on the 16th one and you f something up pretty bad, you&#39;d have to abort. but with the abort you&#39;ll lose all of the progress and you&#39;ll have to re-do the same stuff for the 15 commits again.
 								</div>
 								<ul>
-									<li>
+									<li id="_jeJJylNJ">
+										<a href="#_jeJJylNJ" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												instead, if you were to separate things out, you&#39;d lose less progress
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="KSEqOv5aD">
+								<a href="#KSEqOv5aD" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										so yeah, multiple simple rebases are better than a fewer more complicated ones.
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="2jJUpcMso">
+						<a href="#2jJUpcMso" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="WkODm4U5C">
+				<a href="#WkODm4U5C" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="gZN2wBsaj">
+		<a href="#gZN2wBsaj" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) gZN2wBsaj
 		</div>
@@ -1333,7 +1551,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CjBhZ0-Z_">
+			<a href="#CjBhZ0-Z_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1350,19 +1570,22 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="cj1_the3h">
+		<a href="#cj1_the3h" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) cj1_the3h
 		</div>
 		<ul>
-			<li>
+			<li id="jLtH2pCdG">
+				<a href="#jLtH2pCdG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) jLtH2pCdG
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="xOWnSrX3R">
+		<a href="#xOWnSrX3R" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) xOWnSrX3R
 		</div>
@@ -1382,7 +1605,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="LNa9P0yrH">
+			<a href="#LNa9P0yrH" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1415,7 +1640,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="0a9gZk-jN">
+			<a href="#0a9gZk-jN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1432,7 +1659,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="FN7AQamzG">
+		<a href="#FN7AQamzG" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} #[[observation]] the `reword` seems like you can edit the message inline in the interactive prompt, as it did for me. maybe in [[git-stacked-rebase]] we can add this sugar to make it work like that? 
 		</div>

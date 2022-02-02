@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.373Z</span>
+				<span>2022-02-02T14:33:53.709Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,31 +245,43 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638210108235);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801373);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433709);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="-r4764tUn">
+					<a href="#-r4764tUn" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="BwFJeYCKy">
+					<a href="#BwFJeYCKy" class="block-ref"></a>
+				
+				</li>
+				<li id="_ocM9B4s4">
+					<a href="#_ocM9B4s4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph-settings]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="Ib0aBiB7s">
+					<a href="#Ib0aBiB7s" class="block-ref"></a>
+				
+				</li>
+				<li id="doxIiYyzm">
+					<a href="#doxIiYyzm" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[oldest-first]]
 					</div>
 				</li>
-				<li></li>
+				<li id="6PUWO5FIB">
+					<a href="#6PUWO5FIB" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -288,7 +353,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="thEnChHqt">
+			<a href="#thEnChHqt" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -305,53 +372,68 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="051-BUlcV">
+		<a href="#051-BUlcV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				1. check which branch you&#39;re on:
 		</div>
 		<ul>
-			<li>
+			<li id="6QaRGBA9C">
+				<a href="#6QaRGBA9C" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			git branch
 			```
 				</div>
 			</li>
-			<li>
+			<li id="0P-wQQPQO">
+				<a href="#0P-wQQPQO" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1.1 make sure this is actually the one you want to rebase.
 				</div>
 			</li>
-			<li>
+			<li id="PBP6PdUmS">
+				<a href="#PBP6PdUmS" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1.2 am i the only one working on this branch?
 				</div>
 				<ul>
-					<li>
+					<li id="U2jhTCV3j">
+						<a href="#U2jhTCV3j" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								no = abort (unless you __and__ the other person(s) working the branch are advanced git users and you&#39;ve explicitly agreed that rebasing in shared branches is ok).
 						</div>
 						<ul>
-							<li>
+							<li id="wpQlLhJr8">
+								<a href="#wpQlLhJr8" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="ovZy5xykC">
+						<a href="#ovZy5xykC" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="ss_g43j0o">
+				<a href="#ss_g43j0o" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="iHb8NN8iI">
+		<a href="#iHb8NN8iI" class="block-ref"></a>
+	
+	</li>
+	<li id="tX45tw769">
+		<a href="#tX45tw769" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				2. this shouldn&#39;t be necessary, but just in case, let&#39;s pull the latest changes of your own branch:
 		</div>
 		<ul>
-			<li>
+			<li id="mxRMZIcsM">
+				<a href="#mxRMZIcsM" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			# while inside the same (your own) branch:
@@ -359,21 +441,29 @@
 			```
 				</div>
 			</li>
-			<li>
+			<li id="_BT7uH2ly">
+				<a href="#_BT7uH2ly" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						if you see something unexpected, there&#39;s probably changes from someone else, thus you answer &quot;no&quot; to [1.2](((PBP6PdUmS))), thus abort (unless ofc you know what you&#39;re doing).
 				</div>
 			</li>
-			<li></li>
+			<li id="LM5b5S5Ag">
+				<a href="#LM5b5S5Ag" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="snFnJvoLm">
+		<a href="#snFnJvoLm" class="block-ref"></a>
+	
+	</li>
+	<li id="tWJM_uJM0">
+		<a href="#tWJM_uJM0" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				3. since we want to rebase on top of the latest changes of master, we need to update our local git repo first:
 		</div>
 		<ul>
-			<li>
+			<li id="69DKxyOY7">
+				<a href="#69DKxyOY7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			git fetch --all
@@ -382,150 +472,194 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="TgmlVv_MW">
+		<a href="#TgmlVv_MW" class="block-ref"></a>
+	
+	</li>
+	<li id="nXiqa090z">
+		<a href="#nXiqa090z" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				4. if all goes well, we can start the procedure
 		</div>
 		<ul>
-			<li>
+			<li id="-JL0YZU-m">
+				<a href="#-JL0YZU-m" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			git rebase origin/master -i
 			```
 				</div>
 			</li>
-			<li>
+			<li id="ajFuKj01F">
+				<a href="#ajFuKj01F" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						`-i`, or `--interactive`, will bring up the list of commits of your branch. you can view it to confirm everything&#39;s alright, and if not, you can squash/fixup/drop, even re-order the commits. basically, become a surgeon for a bit.
 				</div>
 				<ul>
-					<li>
+					<li id="R_LAmEK8a">
+						<a href="#R_LAmEK8a" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								if you didn&#39;t specify the interactive option, or if you did and everything&#39;s alright and you saved the file &amp; closed it, proceed further.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="XNGi2AeFm">
+				<a href="#XNGi2AeFm" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="2TZjxhpkZ">
+		<a href="#2TZjxhpkZ" class="block-ref"></a>
+	
+	</li>
+	<li id="3gu4MaZQ2">
+		<a href="#3gu4MaZQ2" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				5. ideally, there are no conflicts, the rebase completes successfully and you can move on to the [next step](((q8jggl2cV))).
 		</div>
 		<ul>
-			<li>
+			<li id="8AW_F6UbZ">
+				<a href="#8AW_F6UbZ" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						but if often does not.
 				</div>
 			</li>
-			<li>
+			<li id="_p1Q29gbG">
+				<a href="#_p1Q29gbG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						you can always use `git status` to see what&#39;s going on
 				</div>
 			</li>
-			<li>
+			<li id="aYs5OUQbu">
+				<a href="#aYs5OUQbu" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						in case you encounter conflicts:
 				</div>
 				<ul>
-					<li>
+					<li id="NeCtFZfeo">
+						<a href="#NeCtFZfeo" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								you need to manually resolve them, and then mark them as fixed with `git add &lt;filename&gt;`
 						</div>
 					</li>
-					<li>
+					<li id="5VtR4aoZP">
+						<a href="#5VtR4aoZP" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								if you forgot which changes are yours, you can always find the commit by doing `git log &lt;branch-name-you-are-rebasing&gt;`, finding the commit, and then doing `git show &lt;commit&gt;`.
 						</div>
 					</li>
-					<li>
+					<li id="yViSp_VQQ">
+						<a href="#yViSp_VQQ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								when all conflicts are fixed and added, you can continue the rebase with `git rebase --continue`
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="9p0D-5adW">
+				<a href="#9p0D-5adW" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						there are some edge cases as well
 				</div>
 				<ul>
-					<li>
+					<li id="SLObWnz89">
+						<a href="#SLObWnz89" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								e.g. if you resolved conflicts and your commit ends up being empty, you&#39;ll need to manually commit it with `git commit --allow-empty` and then `git rebase --continue` again
 						</div>
 					</li>
-					<li>
+					<li id="_iQBo0l0Y">
+						<a href="#_iQBo0l0Y" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								in general, git will tell you about it - you just gotta be careful and read thoroughly. ofc, also search for info / ask for help when needed.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="WsokRessQ">
+				<a href="#WsokRessQ" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="8bqhSpcaq">
+		<a href="#8bqhSpcaq" class="block-ref"></a>
+	
+	</li>
+	<li id="q8jggl2cV">
+		<a href="#q8jggl2cV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				6. git should print &quot;successfully finished rebase&quot; or something similar.
 		</div>
 		<ul>
-			<li>
+			<li id="7xi6wQcZk">
+				<a href="#7xi6wQcZk" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						if you check `git status`, it&#39;ll show that you have more commits ahead and less commits behind. makes sense, since you previously had only your commits that you started from an older commit of the master branch, but you now have all of that, plus the new commits from the master branch that you were missing.
 				</div>
 				<ul>
-					<li>
+					<li id="CfRpJ3Ge1">
+						<a href="#CfRpJ3Ge1" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								see more:
 						</div>
 						<ul>
-							<li>
+							<li id="q1KFesjQl">
+								<a href="#q1KFesjQl" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="pfZuBdL_4">
+						<a href="#pfZuBdL_4" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								this means you overwrote history.
 						</div>
 						<ul>
-							<li>
+							<li id="9KfLndn9i">
+								<a href="#9KfLndn9i" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										i.e., when you change a commit (`git commit --amend` or `git rebase` or similar), you modify the commit, and it gets assigned a new SHA.
 								</div>
 							</li>
-							<li>
+							<li id="LMefwFS4e">
+								<a href="#LMefwFS4e" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										this is why the [1.2 check](((PBP6PdUmS))) is important -- since you&#39;re overriding history, if other people are also using the same branch, it can get messy.
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="rMvfNC93F">
+						<a href="#rMvfNC93F" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="PqMXXnuMf">
+				<a href="#PqMXXnuMf" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="VHODkbHAD">
+		<a href="#VHODkbHAD" class="block-ref"></a>
+	
+	</li>
+	<li id="tr5kzZHj9">
+		<a href="#tr5kzZHj9" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				7. you&#39;ll now need to push the new history of commits to the repo (currently it&#39;s only local).
 		</div>
 		<ul>
-			<li>
+			<li id="PJ9dgSbAd">
+				<a href="#PJ9dgSbAd" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						since we overwrote history, a regular `git push` won&#39;t do (you can try). you&#39;ll need to force it with `-f` or `--force`:
 				</div>
 			</li>
-			<li>
+			<li id="Gffsql0UG">
+				<a href="#Gffsql0UG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			git push -f
@@ -534,36 +668,48 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="b-mkiwAWe">
+		<a href="#b-mkiwAWe" class="block-ref"></a>
+	
+	</li>
+	<li id="SWZKVxPcg">
+		<a href="#SWZKVxPcg" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				8. done. check the repo &amp; verify everything looks good.
 		</div>
 	</li>
-	<li></li>
-	<li>
+	<li id="TFrsVA04c">
+		<a href="#TFrsVA04c" class="block-ref"></a>
+	
+	</li>
+	<li id="Qluj-1OFm">
+		<a href="#Qluj-1OFm" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				9. something went wrong? yay, learning time!
 		</div>
 		<ul>
-			<li>
+			<li id="mI8WrxjXs">
+				<a href="#mI8WrxjXs" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						`git reflog` is your friend:
 				</div>
 				<ul>
-					<li>
+					<li id="dMfKoE3CI">
+						<a href="#dMfKoE3CI" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://git-scm.com/docs/git-reflog
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="33qt8isNW">
+				<a href="#33qt8isNW" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						glhf. if you&#39;re a newbie w/ this stuff, consider copying the `.git/` folder outside the repo `../` in case you need to start from scratch.
 				</div>
 				<ul>
-					<li>
+					<li id="1b1bwyKcE">
+						<a href="#1b1bwyKcE" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```shell
 					cp .git/ ../```
@@ -571,69 +717,87 @@
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="csRyvtLSm">
+				<a href="#csRyvtLSm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						talking w/ an experienced colleague / friend also helps.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="QFu0TEbzM">
+		<a href="#QFu0TEbzM" class="block-ref"></a>
+	
+	</li>
+	<li id="vk3b7y1Yz">
+		<a href="#vk3b7y1Yz" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				10. good to remember:
 		</div>
 		<ul>
-			<li>
+			<li id="uYAkYLUW7">
+				<a href="#uYAkYLUW7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						rebase goes commit-by-commit (1 by 1)
 				</div>
 			</li>
-			<li>
+			<li id="wcheLRHfF">
+				<a href="#wcheLRHfF" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						it&#39;s easy to mess things up.
 				</div>
 				<ul>
-					<li>
+					<li id="H7u_p5o1y">
+						<a href="#H7u_p5o1y" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								if anything goes wrong, you can always do `git rebase --abort` and start over
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="NkzgZDyZw">
+				<a href="#NkzgZDyZw" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						it&#39;s always better to do simple changes in multiple rebases, than multiple complex changes in a single rebase.
 				</div>
 				<ul>
-					<li>
+					<li id="ND1JPyH13">
+						<a href="#ND1JPyH13" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								e.g., first you can get your changes up to date to the latest origin&#39;s master branch, and then in the 2nd rebase you can squash some commits into one parent commit, then squash some more commits into a different parent commit in a 3rd rebase, etc etc.
 						</div>
 					</li>
-					<li>
+					<li id="Pjt28iW8E">
+						<a href="#Pjt28iW8E" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								this often times helps avoid complex situations, and also helps avoid loss of partial progress - e.g. if you&#39;re rebasing and you&#39;ve completed say 15 commits out of 20, but then you&#39;re on the 16th one and you f something up pretty bad, you&#39;d have to abort. but with the abort you&#39;ll lose all of the progress and you&#39;ll have to re-do the same stuff for the 15 commits again.
 						</div>
 						<ul>
-							<li>
+							<li id="_jeJJylNJ">
+								<a href="#_jeJJylNJ" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										instead, if you were to separate things out, you&#39;d lose less progress
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="KSEqOv5aD">
+						<a href="#KSEqOv5aD" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								so yeah, multiple simple rebases are better than a fewer more complicated ones.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="2jJUpcMso">
+				<a href="#2jJUpcMso" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="WkODm4U5C">
+		<a href="#WkODm4U5C" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -649,7 +813,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="zathuUHFu">
+			<a href="#zathuUHFu" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -682,7 +848,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="jijJVSSI2">
+			<a href="#jijJVSSI2" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -699,7 +867,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="tKdCjGTa_">
+		<a href="#tKdCjGTa_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				see also `man git-rebase`, esp. &quot;INTERACTIVE MODE&quot;
 		</div>
@@ -719,7 +888,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="GpT9-n253">
+			<a href="#GpT9-n253" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -736,214 +907,265 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="y1vnICg63">
+		<a href="#y1vnICg63" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				...because trying to create git-rebase-todo from git-stacked-rebase&#39;s git-rebase-todo, but there&#39;s more than that file to make it work -- there&#39;s also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that&#39;s why i&#39;m here) (needed when `git rebase --abort`).
 		</div>
 		<ul>
-			<li>
+			<li id="u6sZjwP1M">
+				<a href="#u6sZjwP1M" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						abort?
 				</div>
 				<ul>
-					<li>
+					<li id="Ib9dKn5XB">
+						<a href="#Ib9dKn5XB" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								sequencer_rollback?
 						</div>
 					</li>
-					<li>
+					<li id="2NOvD-fiy">
+						<a href="#2NOvD-fiy" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								sequencer_pick_revisions?
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="w9s4x3jVC">
+				<a href="#w9s4x3jVC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						&quot;HEAD?
 				</div>
 				<ul>
-					<li>
+					<li id="TwPWUpvlY">
+						<a href="#TwPWUpvlY" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								do_recursive_merge?
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="hOqTnNKx3">
+				<a href="#hOqTnNKx3" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						&quot;could not read&quot;?
 				</div>
 				<ul>
-					<li>
+					<li id="_Zehn01k3">
+						<a href="#_Zehn01k3" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								run_command.c | exec-cmd.c | cache.c # sane_execvp?
 						</div>
 					</li>
-					<li>
+					<li id="Aneaj-DXF">
+						<a href="#Aneaj-DXF" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								update_squash_messages?
 						</div>
 						<ul>
-							<li>
+							<li id="5SYschHTB">
+								<a href="#5SYschHTB" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L94) of `sequencer.c`    💥 
 								</div>
 								<ul>
-									<li>
+									<li id="AGOmbMD-X">
+										<a href="#AGOmbMD-X" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												there we have explanations for the various messages!
 										</div>
 									</li>
-									<li>
+									<li id="Q8XcuFMhT">
+										<a href="#Q8XcuFMhT" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L53-L170
 										</div>
 									</li>
-									<li></li>
+									<li id="aOdaKkJWL">
+										<a href="#aOdaKkJWL" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="n4UkxvU4T">
+								<a href="#n4UkxvU4T" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="E3ZKS3ZGx">
+						<a href="#E3ZKS3ZGx" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="OYy1ZDWXH">
+				<a href="#OYy1ZDWXH" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="dmQwARu5Z">
+		<a href="#dmQwARu5Z" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} we might as well write our variables in snake_case, will be clearer thb
 		</div>
 	</li>
-	<li>
+	<li id="VALuFLgcH">
+		<a href="#VALuFLgcH" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				#[[observation]] sequencer.c is huge, used in 12 commands (rather, can be used to __sequence__ any command of the available 12).
 		</div>
 		<ul>
-			<li>
+			<li id="FrPKhJqK8">
+				<a href="#FrPKhJqK8" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						well actually, a few less - some builtin, some not, some tests.
 				</div>
 				<ul>
-					<li>
+					<li id="Mu0OBXQQr">
+						<a href="#Mu0OBXQQr" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								vscode&#39;s LSP working good
 						</div>
 					</li>
-					<li>
+					<li id="cYihCnCN0">
+						<a href="#cYihCnCN0" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								regular (live @ repo root): branch.c, log-tree.c, rebase-interactive.c, sequencer.c itself, wt-status.c (?)
 						</div>
 					</li>
-					<li>
+					<li id="309gqBX09">
+						<a href="#309gqBX09" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								builtin: am.c (?), commit.c, merge.c, pull.c, rebase.c, revert.c
 						</div>
 					</li>
-					<li>
+					<li id="d9haJVuFa">
+						<a href="#d9haJVuFa" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								t/helper: test-fast-rebase.c
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="z3Ptmkkmp">
+				<a href="#z3Ptmkkmp" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="KGfTxZpGL">
+		<a href="#KGfTxZpGL" class="block-ref"></a>
+	
+	</li>
+	<li id="i_XWJ_-4B">
+		<a href="#i_XWJ_-4B" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				re: ((5SYschHTB))
 		</div>
 		<ul>
-			<li>
+			<li id="AKSpPbuX7">
+				<a href="#AKSpPbuX7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} gotta handle comments
 				</div>
 			</li>
-			<li>
+			<li id="3p9bBZoyg">
+				<a href="#3p9bBZoyg" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						okay, looks like the filename is incorrect - it prints `&quot;warning: could not read &#39;.git/rebase-merge/head&#39;: No such file or directory&quot;`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it&#39;s set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
 				</div>
 				<ul>
-					<li>
+					<li id="5jzuoHnjm">
+						<a href="#5jzuoHnjm" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								did that. now we checkout into the first commit, and all files are added, what the heck?:D
 						</div>
 					</li>
-					<li>
+					<li id="TOtyALgqS">
+						<a href="#TOtyALgqS" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								maybe let&#39;s write into that `.git/rebase-merge/head` file even tho we can&#39;t see it?
 						</div>
 						<ul>
-							<li>
+							<li id="9FuUVRm4G">
+								<a href="#9FuUVRm4G" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch&#39;s commit :D
 								</div>
 							</li>
-							<li>
+							<li id="tNqjEF-f6">
+								<a href="#tNqjEF-f6" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										i previously set `head-name` to the latest branch&#39;s commit sha, instead of the initial branch&#39;s one
 								</div>
 							</li>
-							<li>
+							<li id="Lk_3KlG5k">
+								<a href="#Lk_3KlG5k" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										`interactive` file missing from me
 								</div>
 								<ul>
-									<li>
+									<li id="7ZsaUXEpT">
+										<a href="#7ZsaUXEpT" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												also `no-reschedule-failed-exec`
 										</div>
 									</li>
-									<li>
+									<li id="lRvHZ4ofC">
+										<a href="#lRvHZ4ofC" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												also `orig-head` (`head-name` should be the ref (`refs/heads/branch-name`), and `orig-head` - the commit of the latest branch (before rebase))
 										</div>
 									</li>
-									<li>
+									<li id="noBs1sXXy">
+										<a href="#noBs1sXXy" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												SHEEESH! `rebase --edit-todo` shows up &amp; works!!!
 										</div>
 										<ul>
-											<li>
+											<li id="LMdTV3iZl">
+												<a href="#LMdTV3iZl" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														 `commit --amend` also shows up, but editing it edits something wrong &amp; my statusbar shows both rebase &amp; ahead/behind commit counts, so something definitely wrong lmao
 												</div>
 											</li>
-											<li>
+											<li id="ENWBC8eGT">
+												<a href="#ENWBC8eGT" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														do i need the `index` file as well? git-rebase-todo.backup? 
 												</div>
 												<ul>
-													<li>
+													<li id="lfKxhxBlt">
+														<a href="#lfKxhxBlt" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																git-rebase-todo.backup doesn&#39;t seem to help
 														</div>
 													</li>
-													<li>
+													<li id="VJLAmadCq">
+														<a href="#VJLAmadCq" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																index nope, identical gets generated
 														</div>
 													</li>
-													<li>
+													<li id="fE9dKo4c5">
+														<a href="#fE9dKo4c5" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																.todo -&gt; .backup
 														</div>
 													</li>
-													<li>
+													<li id="OQRlmjhwI">
+														<a href="#OQRlmjhwI" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																head-name: head commit sha -&gt; latest branch name
 														</div>
 														<ul>
-															<li>
+															<li id="j9O9F2F73">
+																<a href="#j9O9F2F73" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		snap, i set it to initial branch&#39;s name lol
 																</div>
 																<ul>
-																	<li>
+																	<li id="4-dnNQoyy">
+																		<a href="#4-dnNQoyy" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				ok now we at least get put into the right branch if i abort. status bar still shows -20 commits and i gotta git pull
 																		</div>
@@ -952,22 +1174,26 @@
 															</li>
 														</ul>
 													</li>
-													<li>
+													<li id="xIo2EZhFJ">
+														<a href="#xIo2EZhFJ" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																ok so in regular case, status bar shows 1/21 commits, ours doesn&#39;t. `index`?
 														</div>
 														<ul>
-															<li>
+															<li id="sLI1Ih84B">
+																<a href="#sLI1Ih84B" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		HEAD, ORIG_HEAD?
 																</div>
 																<ul>
-																	<li>
+																	<li id="3qB3bYFnl">
+																		<a href="#3qB3bYFnl" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				`head` &amp; `orig-head`
 																		</div>
 																		<ul>
-																			<li>
+																			<li id="7yOru8fJY">
+																				<a href="#7yOru8fJY" class="block-ref"></a>
 																				<div style="max-width: 65ch;">
 																						SUCCESSFULLY REBASED !!!
 																				</div>
@@ -978,22 +1204,26 @@
 															</li>
 														</ul>
 													</li>
-													<li>
+													<li id="FDY_ZbNKk">
+														<a href="#FDY_ZbNKk" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																`done`, `msgnum`, `end`
 														</div>
 														<ul>
-															<li>
+															<li id="g5qMTP7Dt">
+																<a href="#g5qMTP7Dt" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		PROMPT WORKS!!!
 																</div>
 															</li>
-															<li>
+															<li id="YjfRapq6A">
+																<a href="#YjfRapq6A" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), &amp; THE REBASE WORKED !!!!!!
 																</div>
 																<ul>
-																	<li>
+																	<li id="xfszGLUkf">
+																		<a href="#xfszGLUkf" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&amp;token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
 																		</div>
@@ -1002,93 +1232,117 @@
 															</li>
 														</ul>
 													</li>
-													<li></li>
+													<li id="21NdBDt1B">
+														<a href="#21NdBDt1B" class="block-ref"></a>
+													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="p7tyUno90">
+												<a href="#p7tyUno90" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="fSZHTfqxV">
+										<a href="#fSZHTfqxV" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="P9kKTKzPb">
+								<a href="#P9kKTKzPb" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="Kvy8s9QLx">
+						<a href="#Kvy8s9QLx" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="_Cr2Za68h">
+				<a href="#_Cr2Za68h" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						okay, it&#39;s gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
 				</div>
 				<ul>
-					<li>
+					<li id="lphK1YiIb">
+						<a href="#lphK1YiIb" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} before rebasing, validate all commits in the partial branches are the same as in the latest branch.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="wCejqKkMw">
+				<a href="#wCejqKkMw" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} as i though, we might need to use the `git rebase -i` initially to get all the stuff in the right places
 				</div>
 				<ul>
-					<li>
+					<li id="dtw1D_Sj8">
+						<a href="#dtw1D_Sj8" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								e.g. atm, if i want to continue the rebase, i need to pass in some signature and it&#39;s not there,
 						</div>
 					</li>
-					<li>
+					<li id="S2S5m3WIu">
+						<a href="#S2S5m3WIu" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								also the `gpg_sign_opt` needs handling
 						</div>
 					</li>
-					<li>
+					<li id="y0KWmH_Tp">
+						<a href="#y0KWmH_Tp" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								etc
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="khPvMSZYW">
+				<a href="#khPvMSZYW" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} fuck, why is the rebase stuff so meh? will i have to handle every single operation myself?... why is there no `rebase.continue()`?...
 				</div>
 				<ul>
-					<li>
+					<li id="joSpDvYBf">
+						<a href="#joSpDvYBf" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								thinking about using the [[(hidden) U5k5oJ6YK]] api. but, the error i was getting - it&#39;s not even mentioned anywhere in the nodegit repo, not a single word, which means that it&#39;s only in libgit2 (the C source) itself, so ain&#39;t gonna help
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="QmgHJ2IbD">
+				<a href="#QmgHJ2IbD" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						rebase.c
 				</div>
 				<ul>
-					<li>
+					<li id="ircNEZGf0">
+						<a href="#ircNEZGf0" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								git_commit_free
 						</div>
 						<ul>
-							<li>
+							<li id="z2i_H5YJ5">
+								<a href="#z2i_H5YJ5" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										common.h
 								</div>
 								<ul>
-									<li>
+									<li id="rEbKd14zJ">
+										<a href="#rEbKd14zJ" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												&quot;wrapper around git_object_free&quot;
 										</div>
 									</li>
-									<li>
+									<li id="xBKwdrILs">
+										<a href="#xBKwdrILs" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												&quot;see git_object_lookup_prefix&quot;
 										</div>
 										<ul>
-											<li>
+											<li id="jZhkxlEEm">
+												<a href="#jZhkxlEEm" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														object.h
 												</div>
@@ -1099,102 +1353,133 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="4UO2NGPd-">
+						<a href="#4UO2NGPd-" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								yeah the libgit2 stuff is outdated sadly, at least for rebase... the `cmt.%` stuff - git itself does not have it...
 						</div>
 						<ul>
-							<li>
+							<li id="UqFRufnQJ">
+								<a href="#UqFRufnQJ" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										git hooks?
 								</div>
 								<ul>
-									<li>
+									<li id="_KjV0Ke19">
+										<a href="#_KjV0Ke19" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 										</div>
 									</li>
-									<li>
+									<li id="kpOeKzvh3">
+										<a href="#kpOeKzvh3" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												i remember when i was ((GpT9-n253)) recently -- there were some mentions of hooks. will see
 										</div>
 										<ul>
-											<li>
+											<li id="9rPkSvEG-">
+												<a href="#9rPkSvEG-" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														ah yes, in the sequencer: ((5SYschHTB))
 												</div>
 												<ul>
-													<li>
+													<li id="ggeCNgEgE">
+														<a href="#ggeCNgEgE" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																`post-rewrite`
 														</div>
 														<ul>
-															<li>
+															<li id="zTkitmECe">
+																<a href="#zTkitmECe" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		yep. works.
 																</div>
 															</li>
-															<li>
+															<li id="IbBW5lqNq">
+																<a href="#IbBW5lqNq" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		eh, it gets called multiple times. i might as well stick to my &quot;insert additional `break` at the very end` &amp; handle it myself there
 																</div>
 																<ul>
-																	<li>
+																	<li id="QZeb89_e1">
+																		<a href="#QZeb89_e1" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				tho, it&#39;d still have to spawn some sort of process to be able to do that...
 																		</div>
 																	</li>
-																	<li>
+																	<li id="d65I9ng4U">
+																		<a href="#d65I9ng4U" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				{{[[TODO]]}} what if instead i just wrote the `rewriten-list` into our own `stacked-rebase` dir &amp; after it&#39;s done, the user&#39;d have to manually call `apply`, just like we intended in the first place?
 																		</div>
 																		<ul>
-																			<li>
+																			<li id="b3HyBgDLJ">
+																				<a href="#b3HyBgDLJ" class="block-ref"></a>
 																				<div style="max-width: 65ch;">
 																						{{[[DONE]]}} yes
 																				</div>
 																			</li>
-																			<li>
+																			<li id="_TbI1cUaI">
+																				<a href="#_TbI1cUaI" class="block-ref"></a>
 																				<div style="max-width: 65ch;">
 																						oh, i don&#39;t even need last `break` re: ((IbBW5lqNq))
 																				</div>
 																			</li>
 																		</ul>
 																	</li>
-																	<li></li>
+																	<li id="egM3hyUcq">
+																		<a href="#egM3hyUcq" class="block-ref"></a>
+																	</li>
 																</ul>
 															</li>
-															<li></li>
+															<li id="e7lpinaPH">
+																<a href="#e7lpinaPH" class="block-ref"></a>
+															</li>
 														</ul>
 													</li>
-													<li>
+													<li id="FUimnl1K7">
+														<a href="#FUimnl1K7" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																`prepare-commit-msg`
 														</div>
 													</li>
-													<li>
+													<li id="u-qHkxQYG">
+														<a href="#u-qHkxQYG" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																`post-commit`
 														</div>
 													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="FIc0g2tP-">
+												<a href="#FIc0g2tP-" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="HXTAeF6Jn">
+										<a href="#HXTAeF6Jn" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="rUUUdLLNY">
+								<a href="#rUUUdLLNY" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="gyYP7m9Cg">
+						<a href="#gyYP7m9Cg" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="_L2zwe4OY">
+				<a href="#_L2zwe4OY" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="GbHFpL1-e">
+		<a href="#GbHFpL1-e" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1210,7 +1495,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="BJ53V0ZPD">
+			<a href="#BJ53V0ZPD" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1227,7 +1514,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="uX8qL4xgW">
+		<a href="#uX8qL4xgW" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				wanted this for a while, but now becoming more clearer, esp. since [[git-stacked-rebase]] is getting more mature
 		</div>
@@ -1247,7 +1535,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ajmWyUIzb">
+			<a href="#ajmWyUIzb" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1264,43 +1554,57 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="iR99m6lt4">
+		<a href="#iR99m6lt4" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[the problem with git flow]]
 		</div>
 		<ul>
-			<li>
+			<li id="57kdCmHBc">
+				<a href="#57kdCmHBc" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} additional issue - i think the project owner rebased the milestone branch on top of master, &amp; now it&#39;s a mess for topic branches to rebase on top of milestone -- a mess that shouldn&#39;t happen but is very easy to fall into. exactly the opposite of [[(hidden) zQCB4v1xc]]
 				</div>
 			</li>
-			<li></li>
+			<li id="McffVsRcJ">
+				<a href="#McffVsRcJ" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="NQM-b-PJ9">
+		<a href="#NQM-b-PJ9" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} msg [[(hidden) tv1zOVzED]] to ask if rebased milestone on top of master to confirm
 		</div>
 		<ul>
-			<li>
+			<li id="DcVQU5gQt">
+				<a href="#DcVQU5gQt" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						[[February 1st, 2022]]
 				</div>
 				<ul>
-					<li>
+					<li id="PO16LDoJh">
+						<a href="#PO16LDoJh" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} get resp
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="36kBap6YT">
+				<a href="#36kBap6YT" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="zZR-cXEVO">
+		<a href="#zZR-cXEVO" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="0a9gZk-jN">
+			<a href="#0a9gZk-jN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1317,7 +1621,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="FN7AQamzG">
+		<a href="#FN7AQamzG" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} #[[observation]] the `reword` seems like you can edit the message inline in the interactive prompt, as it did for me. maybe in [[git-stacked-rebase]] we can add this sugar to make it work like that? 
 		</div>

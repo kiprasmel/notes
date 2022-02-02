@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.923Z</span>
+				<span>2022-02-02T14:33:54.380Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,251 +245,302 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635804003472);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801923);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434380);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="tKUgvtL47">
+					<a href="#tKUgvtL47" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="5pGNKyyVp">
+							<a href="#5pGNKyyVp" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} renamed from old name!
 							</div>
 							<ul>
-								<li>
+								<li id="cA8Gab0QW">
+									<a href="#cA8Gab0QW" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											previously &quot;roam public page export (still WIP!) (public)&quot;
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="j_m5EtBNL">
+							<a href="#j_m5EtBNL" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} make work inside github actions/workflow Pog 🚀🚀🚀
 							</div>
 							<ul>
-								<li>
+								<li id="PdV11d7ve">
+									<a href="#PdV11d7ve" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											it&#39;s such a mess lmao, but it works
 									</div>
 								</li>
-								<li>
+								<li id="5s4LwM6j0">
+									<a href="#5s4LwM6j0" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/sarpik/notes/runs/4073802384
 									</div>
 								</li>
-								<li>
+								<li id="AteqW8KcD">
+									<a href="#AteqW8KcD" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											damn, realized that if i mess something up and push it (like the hiding logic or anything that it depends on), people could get their private stuff exposed / unhidden. damn, sucks.
 									</div>
 									<ul>
-										<li>
+										<li id="xN5K1fw8j">
+											<a href="#xN5K1fw8j" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} create steps to automatically nuke the existing graph lol
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="6xKlCK0HF">
+											<a href="#6xKlCK0HF" class="block-ref"></a>
+										</li>
+										<li id="GXStuwHFk">
+											<a href="#GXStuwHFk" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} gotta make sure to make everyone specify a specific commit
 											</div>
 											<ul>
-												<li>
+												<li id="o9AoGdk9B">
+													<a href="#o9AoGdk9B" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} better yet - to fork the repo and only update it sometimes while verifying that correct tests pass w/o any bs
 												updating should be just fine since the github ui has a nice button &quot;fetch upstream&quot; that does it all automatically for you, assuming no conflicts.
 													</div>
 												</li>
-												<li>
+												<li id="5OufDvzCT">
+													<a href="#5OufDvzCT" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} gotta do this myself lmao
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="A-eEsKZ9Z">
+											<a href="#A-eEsKZ9Z" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="PBZYAkYUX">
+									<a href="#PBZYAkYUX" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="eCL9TX24R">
+							<a href="#eCL9TX24R" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} have special cases to __not__ have any magic if it&#39;s inside a code block!
 							</div>
 						</li>
-						<li>
+						<li id="hpCNk7M3b">
+							<a href="#hpCNk7M3b" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} implements settings thru roam itself 👀[[roam-traverse-graph-settings]]
 							</div>
 						</li>
-						<li>
+						<li id="Sa8XeQIH4">
+							<a href="#Sa8XeQIH4" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} top-level privateTag - should it do anything extra e.g. hiding itself as a reference (tho helps a{{[[TODO]]}} top-level privateTag - should it do anything extra e.g. hiding itself as a reference (tho helps against noobs only) or  even more? (like it never existed)
 							</div>
 						</li>
-						<li></li>
-						<li>
+						<li id="XelBz8CJ2">
+							<a href="#XelBz8CJ2" class="block-ref"></a>
+						</li>
+						<li id="MZOd-aJ7O">
+							<a href="#MZOd-aJ7O" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} if intercom window exists, it blocks the workflow lol - gotta check if it exists everytime and close it xd
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="GBJCJ3gs6">
+					<a href="#GBJCJ3gs6" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) GBJCJ3gs6
 					</div>
 				</li>
-				<li>
+				<li id="OJvtSqR-U">
+					<a href="#OJvtSqR-U" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) OJvtSqR-U #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="TyPQ74oae">
+							<a href="#TyPQ74oae" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} (hidden) TyPQ74oae [[(hidden) 2UTf9X3my]]
 							</div>
 							<ul>
-								<li>
+								<li id="FuaZlmEpl">
+									<a href="#FuaZlmEpl" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) FuaZlmEpl 
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="KMS12uLT5">
+							<a href="#KMS12uLT5" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) KMS12uLT5 [[(hidden) XZnbKczj1]]
 							</div>
 							<ul>
-								<li>
+								<li id="DE1fBYu-R">
+									<a href="#DE1fBYu-R" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) DE1fBYu-R 
 									</div>
 									<ul>
-										<li>
+										<li id="7eHMv5xsQ">
+											<a href="#7eHMv5xsQ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) 7eHMv5xsQ
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="2FVSxxPbx">
+									<a href="#2FVSxxPbx" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} got allowed to have public fork of [[codemods]] inside pipedrive org!!! 🚀
 									</div>
 									<ul>
-										<li>
+										<li id="ckq_aBLtD">
+											<a href="#ckq_aBLtD" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													cc: ((6rp7d97Jg))
 											</div>
 										</li>
-										<li>
+										<li id="RSYpESeU9">
+											<a href="#RSYpESeU9" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} still, gotta make sure it&#39;s easier for everyone and that we move forward w/ the policy
 											</div>
 										</li>
-										<li>
+										<li id="Cm9Un8e0u">
+											<a href="#Cm9Un8e0u" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} give update tmr [[November 3rd, 2021]]
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="up2FwYF94">
+									<a href="#up2FwYF94" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) up2FwYF94
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="zM9AONSAc">
+							<a href="#zM9AONSAc" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="O07PqaHad">
+									<a href="#O07PqaHad" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} upstream update to the template - `applyTransforms` and motions should be used by default
 									</div>
 								</li>
-								<li>
+								<li id="pztm3iAul">
+									<a href="#pztm3iAul" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} `--sequential` for the main cli
 									</div>
 									<ul>
-										<li>
+										<li id="QOeXiSi0J">
+											<a href="#QOeXiSi0J" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													transforms woud have to export the array of motions they use inside the `applyTransforms` util
 											</div>
 										</li>
-										<li>
+										<li id="bDfWshKb0">
+											<a href="#bDfWshKb0" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													this would allow applying motions one-by-one, and doing anything we want in between, e.g. creating commits, so that it&#39;s very clear to review each motion individually.
 											</div>
 										</li>
-										<li>
+										<li id="IXfcnlniE">
+											<a href="#IXfcnlniE" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													would be needed eventually: ((O07PqaHad))
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="dTb8ywJVw">
+									<a href="#dTb8ywJVw" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} inform that they are single-file based, and NOT aware of the whole program
 									</div>
 									<ul>
-										<li>
+										<li id="qKFVJdroL">
+											<a href="#qKFVJdroL" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(unless we force it, but likely veeeery out of scope)
 											</div>
 										</li>
-										<li>
+										<li id="0I3-U9sQK">
+											<a href="#0I3-U9sQK" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													thus wraps w/ `styled(Button)&#39;&#39;` will only work if that wrap is inside the same file...
 											</div>
 											<ul>
-												<li>
+												<li id="Nyt0mbYFH">
+													<a href="#Nyt0mbYFH" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															ofc, we could go thru the whole input, and collect what elements are wrapped and what are they exported as
 													</div>
 													<ul>
-														<li>
+														<li id="nYUIlypFS">
+															<a href="#nYUIlypFS" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	but then there&#39;s different syntax for exporting, importing and even re-exporting, especially when ts gets involved, etc. - there&#39;s __a lot__ of bs to deal with. again feels out of scope.
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="om1idOv0n">
+													<a href="#om1idOv0n" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															thus, here, best i can do is probably:
 													</div>
 													<ul>
-														<li>
+														<li id="VAgHaFfPp">
+															<a href="#VAgHaFfPp" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	1. from the `@pipedrive/convention-ui-react` imports, detect what elements wrap them (e.g. styled, dunno about using it as an element inside other jsx elements since many ways possible),
 															</div>
 														</li>
-														<li>
+														<li id="WVy7rXoDO">
+															<a href="#WVy7rXoDO" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	2. make sure they are exported, and
 															</div>
 														</li>
-														<li>
+														<li id="ACpD6T9gk">
+															<a href="#ACpD6T9gk" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	3. add inline comments near their definitions so that the user verifies themselves.
 															</div>
 															<ul>
-																<li>
+																<li id="WN6VZAT24">
+																	<a href="#WN6VZAT24" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			3.1 and ofc the user is expected to verify this recursively - everywhere they use their own wrapper.
 																	</div>
@@ -447,34 +551,41 @@
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="946LZWn9y">
+											<a href="#946LZWn9y" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="PU1oiCLRW">
+					<a href="#PU1oiCLRW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) PU1oiCLRW
 					</div>
 				</li>
-				<li>
+				<li id="2jaoLUlqv">
+					<a href="#2jaoLUlqv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 2jaoLUlqv
 					</div>
 				</li>
-				<li>
+				<li id="UN6a3ifxl">
+					<a href="#UN6a3ifxl" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) UN6a3ifxl
 					</div>
 				</li>
-				<li>
+				<li id="hsPpUcTaX">
+					<a href="#hsPpUcTaX" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hsPpUcTaX
 					</div>
 				</li>
-				<li>
+				<li id="ZRJlubr18">
+					<a href="#ZRJlubr18" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ZRJlubr18
 					</div>
@@ -550,7 +661,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="tvAKYwNNH">
+			<a href="#tvAKYwNNH" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.939Z</span>
+				<span>2022-02-02T14:33:55.230Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638519150596);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802939);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435230);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="BdrigitZa">
+			<a href="#BdrigitZa" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,12 +343,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="vV_bCIy-Q">
+		<a href="#vV_bCIy-Q" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) vV_bCIy-Q
 		</div>
 	</li>
-	<li>
+	<li id="NP1Nv5muv">
+		<a href="#NP1Nv5muv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) NP1Nv5muv 
 		</div>
@@ -313,7 +370,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="7RESi5O79">
+			<a href="#7RESi5O79" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -330,7 +389,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="5qy3PSwQN">
+		<a href="#5qy3PSwQN" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				what is a non-goal is protecting against editing one of the partial branches (one of the stacked diffs) - you should not do that, period, and, well, if someone does - too bad!
 	ofc you can get it figured out, but you should not be editing it manually.
@@ -339,7 +399,9 @@
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="croiF4Kb9">
+			<a href="#croiF4Kb9" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -356,27 +418,32 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="eDr--IgLQ">
+		<a href="#eDr--IgLQ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				perhaps, to specify which branches depend on which.
 		</div>
 		<ul>
-			<li>
+			<li id="bl43FUX2Q">
+				<a href="#bl43FUX2Q" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						though, seems unnecessary, we&#39;d only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
 				</div>
 			</li>
-			<li>
+			<li id="MC-Ts228n">
+				<a href="#MC-Ts228n" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						but, this would still be useful for safety, to make sure we don&#39;t accidentally include what we don&#39;t want
 				</div>
 				<ul>
-					<li>
+					<li id="piUldvvBe">
+						<a href="#piUldvvBe" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
 						</div>
 					</li>
-					<li>
+					<li id="RWjbCb1Sg">
+						<a href="#RWjbCb1Sg" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								fact is, the whole point if wrapping git rebase is that it&#39;s likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` &amp; `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we&#39;re doing a multi-rebase, or if we should default back to the normal git-rebase.
 						</div>

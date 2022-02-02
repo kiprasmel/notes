@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.476Z</span>
+				<span>2022-02-02T14:33:53.863Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,50 +245,76 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633265131445);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801476);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433863);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="4C-amPU4z">
+					<a href="#4C-amPU4z" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="T_kYNFf5u">
+					<a href="#T_kYNFf5u" class="block-ref"></a>
+				
+				</li>
+				<li id="tDcfQSkzh">
+					<a href="#tDcfQSkzh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							sibling:: [[commits]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="xfO3VeBA5">
+					<a href="#xfO3VeBA5" class="block-ref"></a>
+				
+				</li>
+				<li id="eMk7H7neB">
+					<a href="#eMk7H7neB" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[January 9th, 2022]]
 					</div>
 					<ul>
-						<li>
+						<li id="KJ9jQo4Kl">
+							<a href="#KJ9jQo4Kl" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									th(hidden) _sW66DmMa::
 							</div>
 							<ul>
-								<li>
+								<li id="FjhQPR3eD">
+									<a href="#FjhQPR3eD" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											how many times have you re-thought a &quot;thing&quot; and had new, often even contradictory, realizations, aka updated your [[priors]], and came to new [[conclusion]]s.
 									</div>
 								</li>
-								<li></li>
+								<li id="hzusu4F7j">
+									<a href="#hzusu4F7j" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li></li>
+						<li id="i8IjWXgiH">
+							<a href="#i8IjWXgiH" class="block-ref"></a>
+						</li>
+						<li id="ygm18FA5t">
+							<a href="#ygm18FA5t" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="PWXYuePbd">
+					<a href="#PWXYuePbd" class="block-ref"></a>
+				
+				</li>
+				<li id="88thzkkt4">
+					<a href="#88thzkkt4" class="block-ref"></a>
+				
+				</li>
+				<li id="hcS9vA6dn">
+					<a href="#hcS9vA6dn" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -307,7 +386,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="oQB2ztZfa">
+			<a href="#oQB2ztZfa" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -327,7 +408,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="c1iFl7QYA">
+			<a href="#c1iFl7QYA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -344,19 +427,23 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="oQB2ztZfa">
+		<a href="#oQB2ztZfa" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[round-trips]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] [[(hidden) jNm112irj]]
 		</div>
 	</li>
-	<li>
+	<li id="qqDJOBxau">
+		<a href="#qqDJOBxau" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) qqDJOBxau
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="2AoDt3yA1">
+			<a href="#2AoDt3yA1" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -373,36 +460,42 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="GM1GeDOnV">
+		<a href="#GM1GeDOnV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) GM1GeDOnV [[monads]] #[[(hidden) 3XVIQovjW]]
 		</div>
 		<ul>
-			<li>
+			<li id="c1iFl7QYA">
+				<a href="#c1iFl7QYA" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) c1iFl7QYA #[[round-trips]] #[[(hidden) VgKGPjQIk]] #[[(hidden) JuVIIlNVu]]
 				</div>
 				<ul>
-					<li>
+					<li id="oQB2ztZfa">
+						<a href="#oQB2ztZfa" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) oQB2ztZfa #[[(hidden) 43srP2xlN]] #[[round-trips]] #[[(hidden) JuVIIlNVu]] #[[(hidden) vzIV5rsdR]] [[(hidden) jNm112irj]]
 						</div>
 					</li>
-					<li>
+					<li id="qqDJOBxau">
+						<a href="#qqDJOBxau" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) qqDJOBxau
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="DGMT-Aiys">
+				<a href="#DGMT-Aiys" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) DGMT-Aiys
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="kdqcXnOHu">
+		<a href="#kdqcXnOHu" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) kdqcXnOHu
 		</div>
@@ -422,7 +515,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="UA2sqw4m3">
+			<a href="#UA2sqw4m3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -442,7 +537,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="Gr393iDnN">
+			<a href="#Gr393iDnN" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -459,17 +556,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="DJ_ImRV6I">
+		<a href="#DJ_ImRV6I" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				okay now we have created our own monad or similar, that works like a Promise. sadly, now i&#39;d need to have a `.map` or similar like `.then`, so that in case it does fail, we don&#39;t run the &quot;expect to succeed&quot; part.
 		</div>
 	</li>
-	<li>
+	<li id="rVF6IKydB">
+		<a href="#rVF6IKydB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				we now have a situation like this:
 		</div>
 		<ul>
-			<li>
+			<li id="JGzMIfEVW">
+				<a href="#JGzMIfEVW" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 				const goodCommands: Exitable&lt;GoodCommand[]&gt; = parseTodoOfStackedRebase({
@@ -482,70 +582,84 @@
 			```
 				</div>
 			</li>
-			<li>
+			<li id="OdYCEVXsR">
+				<a href="#OdYCEVXsR" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						but, &quot;goodCommands&quot; is wrapped inside a monad `Exitable`. it&#39;s not easy to re-cast the type, it kinda sucks checking for it; it&#39;s not even clear what we&#39;re returning.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="LaLmwdMhD">
+		<a href="#LaLmwdMhD" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				instead, imagine this:
 		</div>
 		<ul>
-			<li>
+			<li id="cq9S3kb0v">
+				<a href="#cq9S3kb0v" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 			```
 				</div>
 			</li>
-			<li></li>
+			<li id="05LlWgtqq">
+				<a href="#05LlWgtqq" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="MT4DVkTUs">
+		<a href="#MT4DVkTUs" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				fuck, this doesn&#39;t play well w/ [[typescript]].
 		</div>
 	</li>
-	<li>
+	<li id="O2z_nee0q">
+		<a href="#O2z_nee0q" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} is this also what [[(hidden) pokav_dad]] is about? 👀
 		</div>
 	</li>
-	<li>
+	<li id="98l1OoLJp">
+		<a href="#98l1OoLJp" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				oh okay more [[observation]]s:
 		</div>
 		<ul>
-			<li>
+			<li id="9Cf6xTKbR">
+				<a href="#9Cf6xTKbR" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						1. sad that ts cannot infer that if type is `[A | null] | [null | B]`, if you verify one side is null, then other should not be, but doesn&#39;t infer automatically yet...
 				</div>
 			</li>
-			<li>
+			<li id="gQBWisVGq">
+				<a href="#gQBWisVGq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						2. could use a type assertion fn that could verify this. sadly more syntax.
 				</div>
 			</li>
-			<li>
+			<li id="UA2sqw4m3">
+				<a href="#UA2sqw4m3" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						2.1 but, i also now see where the `Some(x)` comes from in [[(hidden) KMBIAt8MO]]. damn, these people have  went thru many [[round-trips]] haven&#39;t they?:D
 				</div>
 			</li>
-			<li>
+			<li id="NIHXGSxuE">
+				<a href="#NIHXGSxuE" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="uRZEJGlxl">
+		<a href="#uRZEJGlxl" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i guess this is the best we can do for now?
 		</div>
 		<ul>
-			<li>
+			<li id="T0RCfcxa-">
+				<a href="#T0RCfcxa-" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 			const [exit, goodCommands] = parseTodoOfStackedRebase(pathToStackedRebaseTodoFile);
@@ -555,31 +669,44 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="PwuGQThG8">
+		<a href="#PwuGQThG8" class="block-ref"></a>
+	
+	</li>
+	<li id="-eLJyjsGM">
+		<a href="#-eLJyjsGM" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				...more discoveries... and they all suck...
 		</div>
 	</li>
-	<li>
+	<li id="lTEiDTByb">
+		<a href="#lTEiDTByb" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				oooh, maybe?
 		</div>
 	</li>
-	<li></li>
-	<li>
+	<li id="wwXKHOx-q">
+		<a href="#wwXKHOx-q" class="block-ref"></a>
+	
+	</li>
+	<li id="ksp2rRKh6">
+		<a href="#ksp2rRKh6" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[roam-traverse-graph]] [[export-html-pages]]
 		</div>
 		<ul>
-			<li>
+			<li id="e38ZAuL3Q">
+				<a href="#e38ZAuL3Q" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] have a folder w/ literally all blocks as filenames, and inside them have js/html to redirect to the actual page that contains the block lmao
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Fp8BRNltJ">
+		<a href="#Fp8BRNltJ" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -595,7 +722,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="2NLR25Zbq">
+			<a href="#2NLR25Zbq" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -628,7 +757,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="x-pUIEw1T">
+			<a href="#x-pUIEw1T" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

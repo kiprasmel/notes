@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.013Z</span>
+				<span>2022-02-02T14:33:54.524Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,54 +245,63 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1630809005016);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802013);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434524);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="ILZeBuZIH">
+					<a href="#ILZeBuZIH" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[typescript]] typescript
 					</div>
 					<ul>
-						<li>
+						<li id="F28wb5_W1">
+							<a href="#F28wb5_W1" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									contextual typing:
 							</div>
 							<ul>
-								<li>
+								<li id="Ewhyfop3s">
+									<a href="#Ewhyfop3s" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://stackoverflow.com/a/64653179/9285308
 									</div>
 								</li>
-								<li>
+								<li id="jcE0d6Zx7">
+									<a href="#jcE0d6Zx7" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											alias:
 									</div>
 									<ul>
-										<li>
+										<li id="zIB8IZhW9">
+											<a href="#zIB8IZhW9" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&quot;infer backwards&quot;
 											</div>
 										</li>
-										<li>
+										<li id="N0xeAqjxv">
+											<a href="#N0xeAqjxv" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&quot;inferring backwards&quot;
 											</div>
 										</li>
-										<li>
+										<li id="NXJRVQUsn">
+											<a href="#NXJRVQUsn" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													outside
 											</div>
 										</li>
-										<li>
+										<li id="Hh8CCtP7e">
+											<a href="#Hh8CCtP7e" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													right to left
 											</div>
 										</li>
-										<li>
+										<li id="aUDKmv_Bm">
+											<a href="#aUDKmv_Bm" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													opposite/reverse to control flow
 											</div>
@@ -248,111 +310,132 @@
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="8epKTj8FX">
+							<a href="#8epKTj8FX" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] holy shit u can generate type-safe `useFetch` react hooks from the express router !!!
 							</div>
 							<ul>
-								<li>
+								<li id="Ew3nnR3s9">
+									<a href="#Ew3nnR3s9" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											ofc others would work too, but express is just the one I&#39;m using
 									</div>
 								</li>
-								<li>
+								<li id="WrIlW6p1q">
+									<a href="#WrIlW6p1q" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											assuming ofc you have typed out the routes, which u should
 									</div>
 								</li>
-								<li>
+								<li id="tVcJm9oE1">
+									<a href="#tVcJm9oE1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											which makes me realize graphql is not special in this regard; it&#39;s only advantaged in this case is that it has a single spec that everyone / every impl follows, and that makes it easier to create code generators that work for everyone, instead of here I could only do express-specific. hm maybe http-specific so all libraries could benefit :o
 									</div>
 								</li>
-								<li>
+								<li id="VUgqBeaZv">
+									<a href="#VUgqBeaZv" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											.
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="mWWXX4s_I">
+							<a href="#mWWXX4s_I" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									.
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="RMuctLy6Z">
+					<a href="#RMuctLy6Z" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) RMuctLy6Z
 					</div>
 				</li>
-				<li>
+				<li id="V2X1zDu7O">
+					<a href="#V2X1zDu7O" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) V2X1zDu7O #[[observation]]
 					</div>
 					<ul>
-						<li>
+						<li id="IvuP20HZZ">
+							<a href="#IvuP20HZZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) IvuP20HZZ
 							</div>
 							<ul>
-								<li>
+								<li id="CH4s0N0iK">
+									<a href="#CH4s0N0iK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) CH4s0N0iK
 									</div>
 								</li>
-								<li>
+								<li id="EDZ0vWj6t">
+									<a href="#EDZ0vWj6t" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) EDZ0vWj6t
 									</div>
 								</li>
-								<li>
+								<li id="q0UF1n6_j">
+									<a href="#q0UF1n6_j" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) q0UF1n6_j
 									</div>
 								</li>
-								<li>
+								<li id="ueT7HNYgF">
+									<a href="#ueT7HNYgF" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) ueT7HNYgF #[[(hidden) NOzSC9A5r]]
 									</div>
 								</li>
-								<li>
+								<li id="IZYKt1QMv">
+									<a href="#IZYKt1QMv" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) IZYKt1QMv
 									</div>
 									<ul>
-										<li>
+										<li id="jVO2Z7HOV">
+											<a href="#jVO2Z7HOV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) jVO2Z7HOV
 											</div>
 										</li>
-										<li>
+										<li id="LT92YhCTI">
+											<a href="#LT92YhCTI" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) LT92YhCTI
 											</div>
 										</li>
-										<li>
+										<li id="drg97NcpB">
+											<a href="#drg97NcpB" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) drg97NcpB
 											</div>
 										</li>
-										<li>
+										<li id="ghOjhtnv1">
+											<a href="#ghOjhtnv1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) ghOjhtnv1
 											</div>
 										</li>
-										<li>
+										<li id="PS32_Muc_">
+											<a href="#PS32_Muc_" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) PS32_Muc_
 											</div>
 										</li>
-										<li>
+										<li id="kq-5lmoJb">
+											<a href="#kq-5lmoJb" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) kq-5lmoJb #[[(hidden) NOzSC9A5r]] #[[(hidden) HReGlGrI_]]
 											</div>
 										</li>
-										<li>
+										<li id="efxEYeAPp">
+											<a href="#efxEYeAPp" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) efxEYeAPp
 											</div>
@@ -363,7 +446,8 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="Bto9ENY0x">
+					<a href="#Bto9ENY0x" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Bto9ENY0x
 					</div>

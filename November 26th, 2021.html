@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.903Z</span>
+				<span>2022-02-02T14:33:54.315Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,34 +245,39 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637877609819);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801903);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434315);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="7UhvragTZ">
+					<a href="#7UhvragTZ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7UhvragTZ [[codemods]] #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 					</div>
 					<ul>
-						<li>
+						<li id="WMixbCxJy">
+							<a href="#WMixbCxJy" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) WMixbCxJy
 							</div>
 						</li>
-						<li>
+						<li id="-aHGSADvT">
+							<a href="#-aHGSADvT" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) -aHGSADvT
 							</div>
 						</li>
-						<li>
+						<li id="ykqNbHcCU">
+							<a href="#ykqNbHcCU" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) ykqNbHcCU
 							</div>
 							<ul>
-								<li>
+								<li id="zap26KqaP">
+									<a href="#zap26KqaP" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) zap26KqaP
 									</div>
@@ -228,144 +286,173 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="jCu5i4crf">
+					<a href="#jCu5i4crf" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) jCu5i4crf
 					</div>
 				</li>
-				<li>
+				<li id="8g_BK5Gnb">
+					<a href="#8g_BK5Gnb" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 8g_BK5Gnb
 					</div>
 				</li>
-				<li>
+				<li id="k0sj4DnVx">
+					<a href="#k0sj4DnVx" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) k0sj4DnVx
 					</div>
 				</li>
-				<li>
+				<li id="VoLWN8LXT">
+					<a href="#VoLWN8LXT" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="GkRYZQoLr">
+							<a href="#GkRYZQoLr" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} lol, remove metadata from `Page`s too, not only `Block`s xd
 							</div>
 						</li>
-						<li>
+						<li id="otUzEyKAU">
+							<a href="#otUzEyKAU" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} make `pageMeta` disappear &amp; make `page.metadata` a thing
 							</div>
 						</li>
-						<li>
+						<li id="uO2MUepCY">
+							<a href="#uO2MUepCY" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} all the currying of `block`, esp in `traverseBlockRecursively` -- seems unnecessary, i think it&#39;d be better to go the `withMetadata` way where we just specify it as the 1st (or nth, whichever makes sense) arg
 							</div>
 						</li>
-						<li>
+						<li id="HLcOv-GmL">
+							<a href="#HLcOv-GmL" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} `traverseBlockRecursively` separation when `parentBlock`
 							</div>
 						</li>
-						<li>
+						<li id="s3IzZNOWe">
+							<a href="#s3IzZNOWe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} infer what metadata gets added directly from `withMetadata`, w/o specifying in `traverseBlockRecursively`
 							</div>
 						</li>
-						<li>
+						<li id="OfcnyOTIE">
+							<a href="#OfcnyOTIE" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} when in headless/CI/separate config, take screenshots at intervals and print links to stdout / save to folder / both
 							</div>
 						</li>
-						<li>
+						<li id="4Xu2r_FMb">
+							<a href="#4Xu2r_FMb" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} in gh workflow, get rid of the secrets.json &amp; just use env variables because not good writing to disc.
 							</div>
 						</li>
-						<li></li>
+						<li id="5D6i1-EAu">
+							<a href="#5D6i1-EAu" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="FFjv7JvT4">
+					<a href="#FFjv7JvT4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) FFjv7JvT4
 					</div>
 				</li>
-				<li>
+				<li id="V5ZRkhXsL">
+					<a href="#V5ZRkhXsL" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) V5ZRkhXsL
 					</div>
 				</li>
-				<li>
+				<li id="QvstA8BcW">
+					<a href="#QvstA8BcW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) QvstA8BcW
 					</div>
 				</li>
-				<li>
+				<li id="PXdLFk6Iv">
+					<a href="#PXdLFk6Iv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) PXdLFk6Iv
 					</div>
 					<ul>
-						<li>
+						<li id="jiGXTWU55">
+							<a href="#jiGXTWU55" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) jiGXTWU55
 							</div>
 							<ul>
-								<li>
+								<li id="j1LnRoujb">
+									<a href="#j1LnRoujb" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) j1LnRoujb
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="8Wu4y54H8">
+							<a href="#8Wu4y54H8" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 8Wu4y54H8
 							</div>
 						</li>
-						<li>
+						<li id="xfMhaajKe">
+							<a href="#xfMhaajKe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) xfMhaajKe
 							</div>
 						</li>
-						<li>
+						<li id="jHBN4KVS1">
+							<a href="#jHBN4KVS1" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) jHBN4KVS1 #[[(hidden) iWxiYgda3]]
 							</div>
 						</li>
-						<li>
+						<li id="jJ9K6d5KM">
+							<a href="#jJ9K6d5KM" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) jJ9K6d5KM
 							</div>
 						</li>
-						<li>
+						<li id="T2gTanNPR">
+							<a href="#T2gTanNPR" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) T2gTanNPR
 							</div>
 						</li>
-						<li>
+						<li id="xsgvVqiKZ">
+							<a href="#xsgvVqiKZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) xsgvVqiKZ
 							</div>
 						</li>
-						<li>
+						<li id="y6qI_QVQq">
+							<a href="#y6qI_QVQq" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) y6qI_QVQq
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="dthRyIFK7">
+					<a href="#dthRyIFK7" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) dthRyIFK7
 					</div>
 				</li>
-				<li>
+				<li id="DMvKGx5Ks">
+					<a href="#DMvKGx5Ks" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) DMvKGx5Ks
 					</div>
 				</li>
-				<li>
+				<li id="Ka0jW0nJl">
+					<a href="#Ka0jW0nJl" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Ka0jW0nJl
 					</div>

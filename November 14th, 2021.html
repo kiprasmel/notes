@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.912Z</span>
+				<span>2022-02-02T14:33:54.345Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,69 +245,82 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1636840801644);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801912);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434345);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="xQZGWI61f">
+					<a href="#xQZGWI61f" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) xQZGWI61f #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="pNzGU7Mva">
+							<a href="#pNzGU7Mva" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]] take-aways when running the codemods on `detail-view-components` repo
 							</div>
 							<ul>
-								<li>
+								<li id="Uqg8_qDqk">
+									<a href="#Uqg8_qDqk" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} add info that before running codemods, it&#39;d be good to install cui5 to get typescript warnings/errors when reviewing the modded code
 									</div>
 								</li>
-								<li>
+								<li id="eUJOaMbG_">
+									<a href="#eUJOaMbG_" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} handle `import * as X from &quot;./Y&quot;`
 									</div>
 									<ul>
-										<li>
+										<li id="Lk9rJ5TXk">
+											<a href="#Lk9rJ5TXk" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} same w/ exports (when handling wrapped and/or re-exported)
 											</div>
 										</li>
-										<li>
+										<li id="IJ2295NkF">
+											<a href="#IJ2295NkF" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} handle the `X.Button` fuck
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="7Umq7a__b">
+									<a href="#7Umq7a__b" class="block-ref"></a>
+								</li>
+								<li id="Nej_B8rNg">
+									<a href="#Nej_B8rNg" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} `WARNING unexpected property for X. got: Y. expected: Z` - add mappings of what we were going to migrate to as well (expected a -&gt; to change to b, expected c -&gt; to change to d, etc)
 									</div>
 									<ul>
-										<li>
+										<li id="7ztY56NYf">
+											<a href="#7ztY56NYf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} also add a link to the migration guide
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="oIdJbNL0v">
+									<a href="#oIdJbNL0v" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} fix spacing - ppl often use tabs, but jscodeshift replaces w/ spaces at least when ran in detail-view-components
 									</div>
 									<ul>
-										<li>
+										<li id="MKJGW0WFe">
+											<a href="#MKJGW0WFe" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													tho maybe it&#39;s nice since you see which component was modified, and can just run the linter. idk.
 											</div>
 											<ul>
-												<li>
+												<li id="ZQRFB5pn9">
+													<a href="#ZQRFB5pn9" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} if not taken care of, then tell to run the linter after running.
 													</div>
@@ -263,150 +329,180 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="H34xwvUsi">
+									<a href="#H34xwvUsi" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} the `unhandled import` error are a little extra - so many of them, nobody would care (i didn&#39;t either lol)
 									</div>
 								</li>
-								<li>
+								<li id="NjZWasxzr">
+									<a href="#NjZWasxzr" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} rename-jsx-component -- rename the import as well :D
 									</div>
 								</li>
-								<li>
+								<li id="Nm8s1xUeN">
+									<a href="#Nm8s1xUeN" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} [[roam-traverse-graph]] make `codemods` tag ~~public-only~~ `public` to share this easily
 									</div>
 									<ul>
-										<li>
+										<li id="L_t3e2M2J">
+											<a href="#L_t3e2M2J" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} read config from [[roam-traverse-graph-settings]]
 											</div>
 										</li>
-										<li>
+										<li id="6_py8v1jA">
+											<a href="#6_py8v1jA" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} separate out `public` &amp; `public-global` tags
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="nxgkc4_HZ">
+									<a href="#nxgkc4_HZ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} handle existing git changes - exit early in `run.js` if any exist, unless an env variable is provided
 									</div>
 									<ul>
-										<li>
+										<li id="iQFmsS0TM">
+											<a href="#iQFmsS0TM" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} document available env variables for the codemods
 											</div>
 											<ul>
-												<li>
+												<li id="SvRw-IzoJ">
+													<a href="#SvRw-IzoJ" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															tho, some are cui specific, and some are within the reusable-transforms so idk how &amp; where specifically yet i should explain.
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="PJOOSLv75">
+											<a href="#PJOOSLv75" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="IE17Av1_u">
+									<a href="#IE17Av1_u" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="T_iKu1giP">
+							<a href="#T_iKu1giP" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) T_iKu1giP
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="7u1XiHrOu">
+					<a href="#7u1XiHrOu" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7u1XiHrOu
 					</div>
 				</li>
-				<li>
+				<li id="TnckX6E9g">
+					<a href="#TnckX6E9g" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) TnckX6E9g
 					</div>
 					<ul>
-						<li>
+						<li id="fXaLj6geU">
+							<a href="#fXaLj6geU" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) fXaLj6geU
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="yaCx6jW3P">
+					<a href="#yaCx6jW3P" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) yaCx6jW3P
 					</div>
 				</li>
-				<li>
+				<li id="oII8FrmHS">
+					<a href="#oII8FrmHS" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) oII8FrmHS
 					</div>
 					<ul>
-						<li>
+						<li id="JZPTOjEYJ">
+							<a href="#JZPTOjEYJ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) JZPTOjEYJ
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="zKKGTmWFC">
+					<a href="#zKKGTmWFC" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) zKKGTmWFC
 					</div>
 				</li>
-				<li>
+				<li id="WkCnX_pYb">
+					<a href="#WkCnX_pYb" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) WkCnX_pYb
 					</div>
 				</li>
-				<li>
+				<li id="_93Q7XFpM">
+					<a href="#_93Q7XFpM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) _93Q7XFpM
 					</div>
 				</li>
-				<li>
+				<li id="YnDVbb1g2">
+					<a href="#YnDVbb1g2" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) YnDVbb1g2
 					</div>
 				</li>
-				<li>
+				<li id="pk3So-CGc">
+					<a href="#pk3So-CGc" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) pk3So-CGc #[[(hidden) d_O3pQoL_]] #[[(hidden) CRkSyfYP0]]
 					</div>
 					<ul>
-						<li>
+						<li id="cVA8VPoNM">
+							<a href="#cVA8VPoNM" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) cVA8VPoNM
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="I0xgLlSGN">
+					<a href="#I0xgLlSGN" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) I0xgLlSGN
 					</div>
 				</li>
-				<li>
+				<li id="JjQdWRFKE">
+					<a href="#JjQdWRFKE" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) JjQdWRFKE
 					</div>
 				</li>
-				<li>
+				<li id="NwnLtd0O6">
+					<a href="#NwnLtd0O6" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) NwnLtd0O6
 					</div>
 				</li>
-				<li>
+				<li id="OFGJAws0o">
+					<a href="#OFGJAws0o" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) OFGJAws0o
 					</div>
 				</li>
-				<li>
+				<li id="Fa-6_KEYF">
+					<a href="#Fa-6_KEYF" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Fa-6_KEYF
 					</div>

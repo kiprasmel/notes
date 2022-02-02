@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.761Z</span>
+				<span>2022-02-02T14:33:55.134Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,14 +245,15 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633561565359);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802761);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435134);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="GRxYaAdaB">
+					<a href="#GRxYaAdaB" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) GRxYaAdaB
 					</div>
@@ -275,7 +329,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="usxP2gqgD">
+			<a href="#usxP2gqgD" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -308,7 +364,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_tHDHE7Wa">
+			<a href="#_tHDHE7Wa" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -325,12 +383,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="fY9_KCzHs">
+		<a href="#fY9_KCzHs" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i did indeed do the stacked diffs manually w/ the first few PRs initially - it was a nightmare to get everything updated, rebased on each other -- you end up wasting a lot of time.
 		</div>
 	</li>
-	<li>
+	<li id="GhXhMq59I">
+		<a href="#GhXhMq59I" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) GhXhMq59I #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 		</div>
@@ -350,7 +410,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XfwnEpcev">
+			<a href="#XfwnEpcev" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -387,46 +449,56 @@ it&#39;s all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="2mF-JULeA">
+		<a href="#2mF-JULeA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 2mF-JULeA #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 		</div>
 		<ul>
-			<li>
+			<li id="BfPJvNsrx">
+				<a href="#BfPJvNsrx" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) BfPJvNsrx [[(hidden) DTTuZxhoc]] [[(hidden) M1UTLp3AY]]
 				</div>
 				<ul>
-					<li>
+					<li id="3pB5XzgfH">
+						<a href="#3pB5XzgfH" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) 3pB5XzgfH
 						</div>
 					</li>
-					<li>
+					<li id="hL8svrdmT">
+						<a href="#hL8svrdmT" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) hL8svrdmT [[(hidden) eBB7dPivO]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Ovq0BggUq">
+				<a href="#Ovq0BggUq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) Ovq0BggUq
 				</div>
 			</li>
-			<li>
+			<li id="zK1n_TgGe">
+				<a href="#zK1n_TgGe" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) zK1n_TgGe
 				</div>
 			</li>
-			<li>
+			<li id="E7qNUIATH">
+				<a href="#E7qNUIATH" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) E7qNUIATH
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="WesaLET2-">
+		<a href="#WesaLET2-" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -442,7 +514,9 @@ it&#39;s all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="DnD2DGmOU">
+			<a href="#DnD2DGmOU" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -462,7 +536,9 @@ it&#39;s all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 
 </ul>
 		</li>
-		<li>
+		<li id="cBwXCJnZl">
+			<a href="#cBwXCJnZl" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -479,101 +555,130 @@ it&#39;s all related (though 1 way, not both - $$\implies$$, not $$\iff$$)
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="E6CpZhlRC">
+		<a href="#E6CpZhlRC" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				searching &quot;mercurial stacked diffs&quot;
 		</div>
 		<ul>
-			<li>
+			<li id="Fd3VO2Y-e">
+				<a href="#Fd3VO2Y-e" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://news.ycombinator.com/item?id=18137995
 				</div>
 				<ul>
-					<li>
+					<li id="GieReKtOJ">
+						<a href="#GieReKtOJ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[DONE]]}} #[[(hidden) _sW66DmMa]] [[(hidden) URRQcDCig]]&#39;s [[(hidden) QNhvoR74k]]
 						</div>
 						<ul>
-							<li>
+							<li id="sjw_4-E6B">
+								<a href="#sjw_4-E6B" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext
 								</div>
 								<ul>
-									<li>
+									<li id="GrESUgbxK">
+										<a href="#GrESUgbxK" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												very interesting stuff!
 										</div>
 										<ul>
-											<li>
+											<li id="qmOHjAVpO">
+												<a href="#qmOHjAVpO" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														so the whole thing is hosted and you pretty much don&#39;t use it locally. cool, but kinda meh!
 												</div>
 											</li>
-											<li>
+											<li id="EhH3_mUor">
+												<a href="#EhH3_mUor" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														they have e.g. custom extensions for editors to be able to access &amp; edit -- at least they didn&#39;t start creating their own editors &amp; stuff - very surprising, but in a good way
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="rsZzDPXgU">
+										<a href="#rsZzDPXgU" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												i prefer monorepos myself. ofc, haven&#39;t worked anywhere near close to such scale, but would be amazing if [[(hidden) Wk9BwS_1L]] had more of a first-hand support, incl. an eco-system around it... [[(hidden) 42siTzw1w]]
 										</div>
 									</li>
-									<li>
+									<li id="42JPk15DI">
+										<a href="#42JPk15DI" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://pipedrive.slack.com/archives/C7R3EPWER/p1568022631016000
 										</div>
 										<ul>
-											<li>
+											<li id="yPQgj1ShM">
+												<a href="#yPQgj1ShM" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														https://github.com/microsoft/TypeScript/issues/33272
 												</div>
 												<ul>
-													<li>
+													<li id="D8S_bYZuo">
+														<a href="#D8S_bYZuo" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																(hidden) D8S_bYZuo #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 														</div>
 														<ul>
-															<li>
+															<li id="ugC7qgmVO">
+																<a href="#ugC7qgmVO" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		hmmm. [[(hidden) URRQcDCig]] is using [[typescript]] extensively as well (kinda knew it already from e.g. [[(hidden) stBI9LNFL]])
 																</div>
 																<ul>
-																	<li>
+																	<li id="_cjtgP10D">
+																		<a href="#_cjtgP10D" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				i then wonder how the #[[(hidden) aQw_Q_pev]] w/ [[(hidden) IiSuMRl4c]] is still going thru -- do they not see the issues / the optimal solution being different?
 																		</div>
 																	</li>
 																</ul>
 															</li>
-															<li>
+															<li id="_XaekBjng">
+																<a href="#_XaekBjng" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		(hidden) _XaekBjng
 																</div>
 															</li>
 														</ul>
 													</li>
-													<li></li>
+													<li id="LpsIQ99GK">
+														<a href="#LpsIQ99GK" class="block-ref"></a>
+													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="9vPZv0clL">
+												<a href="#9vPZv0clL" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="xs1ZyPlYm">
+										<a href="#xs1ZyPlYm" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="JU8dguLh9">
+								<a href="#JU8dguLh9" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="Hz02v26EZ">
+						<a href="#Hz02v26EZ" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="EpqrOfJ82">
+				<a href="#EpqrOfJ82" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Hs-jhSK-s">
+		<a href="#Hs-jhSK-s" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.994Z</span>
+				<span>2022-02-02T14:33:55.261Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,21 +245,31 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641571835076);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802994);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435261);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="EYadPtAHo">
+					<a href="#EYadPtAHo" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="PqfV9ArFR">
+					<a href="#PqfV9ArFR" class="block-ref"></a>
+				
+				</li>
+				<li id="LEmG3Fue0">
+					<a href="#LEmG3Fue0" class="block-ref"></a>
+				
+				</li>
+				<li id="Ke5S4h041">
+					<a href="#Ke5S4h041" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -278,7 +341,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CWuUPp6Ei">
+			<a href="#CWuUPp6Ei" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -295,36 +360,49 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="FwL5G8NMk">
+		<a href="#FwL5G8NMk" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				at least in this case, it was easier to initialize `y` outside with `let`... sadge.
 		</div>
 		<ul>
-			<li>
+			<li id="yMRd32sun">
+				<a href="#yMRd32sun" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						[[(hidden) i5_OTBMix]], so much of inter-change-ability in such cases is whether a) you need to array operations inside while inside .map of a higher dimension array, or b) you need a flat array.
 				</div>
 				<ul>
-					<li>
+					<li id="RGhBaZTa0">
+						<a href="#RGhBaZTa0" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								in a), the signature of the return might be different, and you can no longer transduce (e.g. cannot `Promise.all([{notPromise: &quot;yeet&quot;, promises: []}])` instead of `Promise.all(promises)`)
 						</div>
 						<ul>
-							<li>
+							<li id="qJFwMN1UO">
+								<a href="#qJFwMN1UO" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										[[(hidden) -tqsGNIyl]] all the way. [[js]] __could__ be good for this, but, *caugh caugh*, [[(hidden) DNhqQDSLh]]
 								</div>
 							</li>
-							<li></li>
+							<li id="5OM5XgUXo">
+								<a href="#5OM5XgUXo" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="-OOVCvIgR">
+						<a href="#-OOVCvIgR" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="r687EUs-g">
+				<a href="#r687EUs-g" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Zk_EsrvVC">
+		<a href="#Zk_EsrvVC" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -340,7 +418,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="SMhqbeMY-">
+			<a href="#SMhqbeMY-" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.756Z</span>
+				<span>2022-02-02T14:33:55.129Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1632928176920);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802756);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435129);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CVOgg-UPa">
+			<a href="#CVOgg-UPa" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,53 +343,62 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="rqr8tvyHv">
+		<a href="#rqr8tvyHv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) rqr8tvyHv #[[github]] #[[(hidden) XUFFA_M8X]] #[[(hidden) Wk9BwS_1L]]
 		</div>
 	</li>
-	<li>
+	<li id="xUXwNMoXd">
+		<a href="#xUXwNMoXd" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) xUXwNMoXd
 		</div>
 		<ul>
-			<li>
+			<li id="ik9xiwd_q">
+				<a href="#ik9xiwd_q" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) ik9xiwd_q
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="tUhNSCzFJ">
+		<a href="#tUhNSCzFJ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) tUhNSCzFJ #[[(hidden) kDYS_8dpX]]
 		</div>
 	</li>
-	<li>
+	<li id="ddYQHVRzi">
+		<a href="#ddYQHVRzi" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) ddYQHVRzi #[[(hidden) mDKOrfBPn]] #[[(hidden) cUwZJe3au]]
 		</div>
 		<ul>
-			<li>
+			<li id="vlYoDurbf">
+				<a href="#vlYoDurbf" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) vlYoDurbf
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="ImhJajeZa">
+		<a href="#ImhJajeZa" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) ImhJajeZa #[[(hidden) XUFFA_M8X]]
 		</div>
 		<ul>
-			<li>
+			<li id="sbNy4zmTm">
+				<a href="#sbNy4zmTm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) sbNy4zmTm #[[(hidden) D1lY0CG5e]] [[(hidden) XUFFA_M8X]]
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="SoI5pgxiw">
+		<a href="#SoI5pgxiw" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) SoI5pgxiw #[[(hidden) XUFFA_M8X]]
 		</div>
@@ -354,7 +418,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="zo5d79BmW">
+			<a href="#zo5d79BmW" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -387,7 +453,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="aJ77eyHP3">
+			<a href="#aJ77eyHP3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -404,78 +472,92 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="zXFlvXXuZ">
+		<a href="#zXFlvXXuZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) zXFlvXXuZ
 		</div>
 	</li>
-	<li>
+	<li id="hjF_7qxYS">
+		<a href="#hjF_7qxYS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) hjF_7qxYS
 		</div>
 		<ul>
-			<li>
+			<li id="W9KI5AXyk">
+				<a href="#W9KI5AXyk" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) W9KI5AXyk
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="GfH0d-tos">
+		<a href="#GfH0d-tos" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) GfH0d-tos
 		</div>
 	</li>
-	<li>
+	<li id="J1-WFvLl4">
+		<a href="#J1-WFvLl4" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) J1-WFvLl4
 		</div>
 		<ul>
-			<li>
+			<li id="9_EqMkOFj">
+				<a href="#9_EqMkOFj" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 9_EqMkOFj #[[roam]]
 				</div>
 			</li>
-			<li>
+			<li id="WHKP_AhLm">
+				<a href="#WHKP_AhLm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) WHKP_AhLm
 				</div>
 			</li>
-			<li>
+			<li id="rsVtvQ3oJ">
+				<a href="#rsVtvQ3oJ" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) rsVtvQ3oJ
 				</div>
 			</li>
-			<li>
+			<li id="g6UJPbXiK">
+				<a href="#g6UJPbXiK" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) g6UJPbXiK
 				</div>
 			</li>
-			<li>
+			<li id="Ok-bYiQUx">
+				<a href="#Ok-bYiQUx" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) Ok-bYiQUx
 				</div>
 			</li>
-			<li>
+			<li id="zWfvfX1G0">
+				<a href="#zWfvfX1G0" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) zWfvfX1G0
 				</div>
 				<ul>
-					<li>
+					<li id="thAiISCty">
+						<a href="#thAiISCty" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) thAiISCty #[[(hidden) UcYyhhtKw]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="XnrjdUYXH">
+				<a href="#XnrjdUYXH" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) XnrjdUYXH
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="cLQMAKMAy">
+		<a href="#cLQMAKMAy" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) cLQMAKMAy
 		</div>
@@ -495,7 +577,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="RVKReEAQJ">
+			<a href="#RVKReEAQJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -512,7 +596,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="XdHjvnxSm">
+		<a href="#XdHjvnxSm" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```typescript
 	export type Checker&lt;T&gt; = {
@@ -522,17 +607,20 @@
 	```
 		</div>
 	</li>
-	<li>
+	<li id="z0y33klAl">
+		<a href="#z0y33klAl" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				this is big -- if you created regular function overloads, you couldn&#39;t even specify the type `T`, because you&#39;d have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
 		</div>
 	</li>
-	<li>
+	<li id="7JYqy8MQB">
+		<a href="#7JYqy8MQB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				the regular function overloads:
 		</div>
 		<ul>
-			<li>
+			<li id="nvDkLeDlp">
+				<a href="#nvDkLeDlp" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```typescript
 			export declare function CheckerAutomatic&lt;T = unknown&gt;(
@@ -548,18 +636,24 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="NLFMZsdcc">
+		<a href="#NLFMZsdcc" class="block-ref"></a>
+	
+	</li>
+	<li id="1k6aSoJm4">
+		<a href="#1k6aSoJm4" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i remembered this might be a thing because i did function overloads for the [[codemods]] transform&#39;s (replace-jsx-attribute) configs&#39; `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn&#39;t realize it up until now 🤯
 		</div>
 		<ul>
-			<li>
+			<li id="k8BO81Kfq">
+				<a href="#k8BO81Kfq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
 				</div>
 				<ul>
-					<li>
+					<li id="jB-O0ghRv">
+						<a href="#jB-O0ghRv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```typescript
 					export type FromToValueMap = {
@@ -584,7 +678,10 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="L-YE1ki8v">
+		<a href="#L-YE1ki8v" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -600,7 +697,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="sQOO09ODy">
+			<a href="#sQOO09ODy" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

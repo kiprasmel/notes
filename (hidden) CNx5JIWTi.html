@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:23.146Z</span>
+				<span>2022-02-02T14:33:55.332Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,29 +245,33 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1636762651962);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811803146);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435332);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="f4Cq9Qh9f">
+					<a href="#f4Cq9Qh9f" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) f4Cq9Qh9f
 					</div>
 				</li>
-				<li>
+				<li id="RLHxZlefu">
+					<a href="#RLHxZlefu" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) RLHxZlefu
 					</div>
 				</li>
-				<li>
+				<li id="Iro_3h9el">
+					<a href="#Iro_3h9el" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Iro_3h9el
 					</div>
 				</li>
-				<li>
+				<li id="ySWuOO1lb">
+					<a href="#ySWuOO1lb" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ySWuOO1lb
 					</div>
@@ -290,7 +347,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Q05RT5oO9">
+			<a href="#Q05RT5oO9" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -307,24 +366,30 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="dIJAF5I-o">
+		<a href="#dIJAF5I-o" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://pipedrive.slack.com/archives/C02HVJZDBT2/p1636729516167000?thread_ts=1636656582.154100&amp;cid=C02HVJZDBT2
 		</div>
 		<ul>
-			<li>
+			<li id="1GZ5zq2GC">
+				<a href="#1GZ5zq2GC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/pipedrive/convention-ui-react/tree/release-v5.0.0/src/documentation
 				</div>
 			</li>
-			<li>
+			<li id="ptt_zbsQn">
+				<a href="#ptt_zbsQn" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/pipedrive/convention-ui-react/blob/release-v5.0.0/src/documentation/migration/Migration.stories.mdx
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Td9Bewpc_">
+		<a href="#Td9Bewpc_" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -340,7 +405,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="swECyIOxg">
+			<a href="#swECyIOxg" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -357,24 +424,30 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="cJEZyOv2S">
+		<a href="#cJEZyOv2S" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				why would you try (&amp; fail, ofc!) to re-implement &amp; javascript-ify the most fundamental of all - the path?
 		</div>
 		<ul>
-			<li>
+			<li id="Lq3PDhfU7">
+				<a href="#Lq3PDhfU7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						eg relative redirects when developing? smh
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="2NURe3ShE">
+		<a href="#2NURe3ShE" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				is it really that hard to make regular links work, instead of using buttons? the navbar is a joke
 		</div>
 	</li>
-	<li></li>
+	<li id="GxXsJYRkT">
+		<a href="#GxXsJYRkT" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

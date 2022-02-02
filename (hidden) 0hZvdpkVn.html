@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:23.478Z</span>
+				<span>2022-02-02T14:33:55.672Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,14 +245,15 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639153914763);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811803478);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435672);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="LC-vkVWoa">
+					<a href="#LC-vkVWoa" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) LC-vkVWoa
 					</div>
@@ -275,7 +329,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="X6SUo3kI8">
+			<a href="#X6SUo3kI8" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -292,123 +348,162 @@
 			</span>
 			-->
 <ul>
-	<li></li>
-	<li>
+	<li id="xjwoPXU_J">
+		<a href="#xjwoPXU_J" class="block-ref"></a>
+	
+	</li>
+	<li id="jld1_fMk0">
+		<a href="#jld1_fMk0" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				maybe &quot;how codemods work - from first principles&quot;, or &quot;how codemods &amp; jscodeshift work - from the very basics&quot;
 		</div>
 	</li>
-	<li></li>
-	<li>
+	<li id="SihSP9IRG">
+		<a href="#SihSP9IRG" class="block-ref"></a>
+	
+	</li>
+	<li id="Y_UM9M_Qh">
+		<a href="#Y_UM9M_Qh" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} maybe reach out to our production team / [[(hidden) _RMDwHiKR]] &amp; ask for a good mic? not necessary, but would be good
 		</div>
 		<ul>
-			<li>
+			<li id="EF30BdXEn">
+				<a href="#EF30BdXEn" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} idk who&#39;s @ production team so just reach out to [[(hidden) _RMDwHiKR]]
 				</div>
 			</li>
-			<li>
+			<li id="cnILjqBMY">
+				<a href="#cnILjqBMY" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} get response
 				</div>
 			</li>
-			<li>
+			<li id="l0Vy6pcPA">
+				<a href="#l0Vy6pcPA" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} also borrow/buy an additional adapter for the macbook (tho i could use my linux setup just as well for this)
 				</div>
 			</li>
-			<li></li>
+			<li id="MWoME1cy8">
+				<a href="#MWoME1cy8" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="AFAUgQlWk">
+		<a href="#AFAUgQlWk" class="block-ref"></a>
+	
+	</li>
+	<li id="2A7d3NVCO">
+		<a href="#2A7d3NVCO" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} explain how a compiler (or interpreter) sees your program
 		</div>
 		<ul>
-			<li>
+			<li id="Zi_T3pG1w">
+				<a href="#Zi_T3pG1w" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						high level summary of the below:
 				</div>
 				<ul>
-					<li>
+					<li id="5V_pbs4GZ">
+						<a href="#5V_pbs4GZ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								begin @ ast explorer
 						</div>
 					</li>
-					<li>
+					<li id="wtn2EuF7i">
+						<a href="#wtn2EuF7i" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								explain what we&#39;ll do today
 						</div>
 						<ul>
-							<li>
+							<li id="7KsEu1fPi">
+								<a href="#7KsEu1fPi" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										we&#39;ll try to understand how codemods work
 								</div>
 							</li>
-							<li>
+							<li id="JGxhExdWF">
+								<a href="#JGxhExdWF" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										we&#39;ll write our own codemod
 								</div>
 							</li>
-							<li>
+							<li id="z9htJMG6H">
+								<a href="#z9htJMG6H" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										we&#39;ll learn how to use jscodeshift a bit
 								</div>
 							</li>
-							<li>
+							<li id="sJK5AtmmG">
+								<a href="#sJK5AtmmG" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										we&#39;ll see some real-world examples of codemods
 								</div>
 							</li>
-							<li>
+							<li id="NNV198Wgg">
+								<a href="#NNV198Wgg" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										we&#39;ll explore extra resources
 								</div>
 								<ul>
-									<li>
+									<li id="rtAApSUhv">
+										<a href="#rtAApSUhv" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://notes.kipras.org/codemods.html
 										</div>
 									</li>
-									<li></li>
-									<li>
+									<li id="aHQPf0_rK">
+										<a href="#aHQPf0_rK" class="block-ref"></a>
+									</li>
+									<li id="w9i3xnfz1">
+										<a href="#w9i3xnfz1" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/facebook/jscodeshift
 										</div>
 									</li>
-									<li>
+									<li id="CIw-5Hw3j">
+										<a href="#CIw-5Hw3j" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/reactjs/react-codemod
 										</div>
 									</li>
-									<li>
+									<li id="H2_7qS4Es">
+										<a href="#H2_7qS4Es" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/mui-org/material-ui/tree/master/packages/mui-codemod
 										</div>
 									</li>
-									<li>
+									<li id="S_CSf-LmH">
+										<a href="#S_CSf-LmH" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/CodeshiftCommunity/CodeshiftCommunity
 										</div>
 										<ul>
-											<li>
+											<li id="aAZuBrJSS">
+												<a href="#aAZuBrJSS" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														https://www.codeshiftcommunity.com/
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li></li>
-									<li>
+									<li id="TCqAHcqWA">
+										<a href="#TCqAHcqWA" class="block-ref"></a>
+									</li>
+									<li id="pqMN0Js5b">
+										<a href="#pqMN0Js5b" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												https://github.com/dsherret/ts-morph
 										</div>
 									</li>
-									<li></li>
-									<li>
+									<li id="MmG70MHWb">
+										<a href="#MmG70MHWb" class="block-ref"></a>
+									</li>
+									<li id="ztFhBcYMZ">
+										<a href="#ztFhBcYMZ" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												.
 										</div>
@@ -417,185 +512,230 @@
 							</li>
 						</ul>
 					</li>
-					<li></li>
-					<li>
+					<li id="OxHzdBIrS">
+						<a href="#OxHzdBIrS" class="block-ref"></a>
+					</li>
+					<li id="Wbg90uxFi">
+						<a href="#Wbg90uxFi" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								a codemod is just code that modifies other code
 						</div>
 					</li>
-					<li>
+					<li id="NsIHhuxHL">
+						<a href="#NsIHhuxHL" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								&quot;but what __is__ code?&quot;
 						</div>
 						<ul>
-							<li>
+							<li id="cp_zqaY6Z">
+								<a href="#cp_zqaY6Z" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										it&#39;s just text!
 								</div>
 							</li>
-							<li>
+							<li id="heIZ8DgIH">
+								<a href="#heIZ8DgIH" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										explore ast explorer
 								</div>
 								<ul>
-									<li>
+									<li id="3fr3XwtVM">
+										<a href="#3fr3XwtVM" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												select parser to flow
 										</div>
 									</li>
-									<li>
+									<li id="XL4vST2QK">
+										<a href="#XL4vST2QK" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												write some code
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="QuR1ot7OD">
+								<a href="#QuR1ot7OD" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										why should i care? because we&#39;ll want to modify it!
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="6nhcOyW1m">
+						<a href="#6nhcOyW1m" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								doing it hardcore raw (eg regex), vs using existing libraries (eg jscodeshift from ex-fb guy)
 						</div>
 					</li>
-					<li>
+					<li id="U_kHzwHNo">
+						<a href="#U_kHzwHNo" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								ast explorer
 						</div>
 						<ul>
-							<li>
+							<li id="FmTAy-ulQ">
+								<a href="#FmTAy-ulQ" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										come back to the same fn we wrote
 								</div>
 							</li>
-							<li>
+							<li id="VcAAYtjPg">
+								<a href="#VcAAYtjPg" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										modify the greeting
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="daqNhwTkr">
+						<a href="#daqNhwTkr" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								explain that this is what codemods are fundamentally about
 						</div>
 					</li>
-					<li>
+					<li id="_pCPz6dPb">
+						<a href="#_pCPz6dPb" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								ast explorer
 						</div>
 						<ul>
-							<li>
+							<li id="sZAxiOC8s">
+								<a href="#sZAxiOC8s" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										another, similar fn
 								</div>
 							</li>
-							<li>
+							<li id="iCkuOON1b">
+								<a href="#iCkuOON1b" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										showcase filtering (basic)
 								</div>
 							</li>
-							<li>
+							<li id="uoRPqDy3Z">
+								<a href="#uoRPqDy3Z" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										showcase filtering (built-in)
 								</div>
 							</li>
-							<li></li>
-							<li>
+							<li id="VdJOHvj9k">
+								<a href="#VdJOHvj9k" class="block-ref"></a>
+							</li>
+							<li id="o-Bo-EAQr">
+								<a href="#o-Bo-EAQr" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										showcase parent finding `.closest()`
 								</div>
 							</li>
-							<li>
+							<li id="SSZ3Hcm51">
+								<a href="#SSZ3Hcm51" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										showcase `.check()`ing
 								</div>
 							</li>
-							<li></li>
+							<li id="gQzP6jR03">
+								<a href="#gQzP6jR03" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="aa10xA0j3">
+						<a href="#aa10xA0j3" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								again, double down that this is how starting to add tiny bits of extra complexity might look like, but the fundamentals stay the same.
 						</div>
 					</li>
-					<li>
+					<li id="kJP6_IVvL">
+						<a href="#kJP6_IVvL" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								show external resources
 						</div>
 					</li>
-					<li>
+					<li id="ykkfa-lt2">
+						<a href="#ykkfa-lt2" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								explore some of our own codemods, show patterns
 						</div>
 					</li>
-					<li>
+					<li id="pWlsuyy68">
+						<a href="#pWlsuyy68" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								do overview that it&#39;s often not only code, but people, organizational problems as well
 						</div>
 					</li>
-					<li>
+					<li id="UGfnXk0Cb">
+						<a href="#UGfnXk0Cb" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								fin
 						</div>
 					</li>
-					<li></li>
+					<li id="gg5N1dI2d">
+						<a href="#gg5N1dI2d" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="pmTfH_rc7">
+				<a href="#pmTfH_rc7" class="block-ref"></a>
+			</li>
+			<li id="lVmSNBjHG">
+				<a href="#lVmSNBjHG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						show an example of writing some basic code in [[(hidden) eBB7dPivO]] and how the AST starts looking like
 				</div>
 			</li>
-			<li>
+			<li id="J8iT7i_zy">
+				<a href="#J8iT7i_zy" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						there are a few things at play - the parser, and then the &quot;writer&quot; which takes the parsed input, and produces the new output
 				</div>
 			</li>
-			<li>
+			<li id="mS6Fwq-Gv">
+				<a href="#mS6Fwq-Gv" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						...now we want to somehow modify this code. so between the parsing and the writing (when we have the parsed code in the AST form, but we haven&#39;t written it to a file yet), we want to somehow modify the AST so that when we write in to the file, it will contain our modifications
 				</div>
 			</li>
-			<li>
+			<li id="6_8jNhNw5">
+				<a href="#6_8jNhNw5" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						so you need to modify the AST.
 				</div>
 			</li>
-			<li>
+			<li id="6szYxy2La">
+				<a href="#6szYxy2La" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						you __could__ write your own library to walk thru the AST, detect what kind of tokens (types of code) there are, but people have implemented this a long time ago - here comes jscodeshift.
 				</div>
 			</li>
-			<li>
+			<li id="dX5nBgljr">
+				<a href="#dX5nBgljr" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						it&#39;s a tool that allows you to easily find ~~tokens~~ nodes, to find nodes somehow related to them (searching in general), and then to check the node&#39;s properties, and then to modify either the node&#39;s properties, or the node itself (i.e. remove it, replace it w/ a different node, move it up or down or somewhere else around), and even create new nodes.
 				</div>
 				<ul>
-					<li>
+					<li id="Ei4JTBy3P">
+						<a href="#Ei4JTBy3P" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} do a better explanation of what a token is, both conceptually and w/ an example
 						</div>
 					</li>
-					<li>
+					<li id="Uh97wFGlR">
+						<a href="#Uh97wFGlR" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} same w/ a node
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="z0ROsCqD-">
+				<a href="#z0ROsCqD-" class="block-ref"></a>
+			</li>
+			<li id="E9y48y8GJ">
+				<a href="#E9y48y8GJ" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						show an example of the transformer (write something simple yourself first)
 				</div>
 				<ul>
-					<li>
+					<li id="4md2TyJgY">
+						<a href="#4md2TyJgY" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```javascript
 					export const parser = &#39;flow&#39;
@@ -608,29 +748,34 @@
 					```
 						</div>
 						<ul>
-							<li>
+							<li id="UJ09u754g">
+								<a href="#UJ09u754g" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										be careful to __not__ over-simplify.
 								</div>
 								<ul>
-									<li>
+									<li id="IXOAoDhFx">
+										<a href="#IXOAoDhFx" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												maybe if we&#39;re fast, we can cover even the basics, but not be too boring for more experienced folks.
 										</div>
 									</li>
-									<li>
+									<li id="rGw0wwF4q">
+										<a href="#rGw0wwF4q" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												also, gotta practice so that i don&#39;t ever get confused or dont know the solution immediately so that others dont have to waste time w/ me debugging
 										</div>
 									</li>
-									<li>
+									<li id="yFORutvH4">
+										<a href="#yFORutvH4" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												{{[[TODO]]}} heh, maybe we can use actually component names? though meh, would involve more context, having simple js function w/o anything more to think about seems better
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="sY0qKAej1">
+								<a href="#sY0qKAej1" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										```javascript
 							export const parser = &#39;flow&#39;
@@ -653,117 +798,152 @@
 							```
 								</div>
 								<ul>
-									<li>
+									<li id="XAp_95CBh">
+										<a href="#XAp_95CBh" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												explain why we use .find instead of filtering in the forEach - because you can chain multiple .find&#39;s and it&#39;s just easier + more efficient + becomes clearer for what you&#39;re looking for from the very beginning
 										</div>
 									</li>
-									<li></li>
+									<li id="AarnHz-rB">
+										<a href="#AarnHz-rB" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="Ajp2aoQye">
+								<a href="#Ajp2aoQye" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="ojM0trtln">
+				<a href="#ojM0trtln" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						after that, explain that a &quot;codemod&quot; is just a collection of transforms that we combine and run one after another.
 				</div>
 				<ul>
-					<li>
+					<li id="1G6_EH5WF">
+						<a href="#1G6_EH5WF" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								everything else is just more complexity, more advanced scenarios. but fundamentally, this is what a codemod is.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="F0O1QzxnU">
+				<a href="#F0O1QzxnU" class="block-ref"></a>
+			</li>
+			<li id="u10A1y-Xa">
+				<a href="#u10A1y-Xa" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						consider - should we write a jsx transformer as well?
 				</div>
 				<ul>
-					<li>
+					<li id="1yQgeP9XT">
+						<a href="#1yQgeP9XT" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								probably yes, and just mention that one can skip to the next part of the video if they aren&#39;t interested
 						</div>
 					</li>
-					<li></li>
+					<li id="xeQdz72k3">
+						<a href="#xeQdz72k3" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="B6cV3Ss-H">
+				<a href="#B6cV3Ss-H" class="block-ref"></a>
+			</li>
+			<li id="6P5yq1Bie">
+				<a href="#6P5yq1Bie" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						[[hindsight bias (in retrospect, it looks simpler than it actually was)]]
 				</div>
 				<ul>
-					<li>
+					<li id="qz5wD5hs3">
+						<a href="#qz5wD5hs3" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								also mention that there are nuances, and to not expect everything to necessarily go smooth the first time - leave time for uncertainty:D
 						</div>
 						<ul>
-							<li>
+							<li id="NeYzhqMBp">
+								<a href="#NeYzhqMBp" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										e.g. wrapping in JSXExpressionContainer
 								</div>
 							</li>
-							<li>
+							<li id="EbflIE_Ey">
+								<a href="#EbflIE_Ey" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										other challenges outside of the actual writing of the codemod - getting the &quot;from/to&quot; mappings if you&#39;re not familiar w/ the library, or e.g. if a designer decided them and has e.g. a spreadsheet that you&#39;ll need to parse, etc -- it&#39;s not all just writing of code, it involves other problems as well:D
 								</div>
 							</li>
-							<li>
+							<li id="jn5VWzSOo">
+								<a href="#jn5VWzSOo" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										then ofc the infra needed to run the codemods.
 								</div>
 								<ul>
-									<li>
+									<li id="06-pIUVPa">
+										<a href="#06-pIUVPa" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												could mention [[(hidden) C5ze2tqB8]] ofc, and that&#39;s where we started, but atm we&#39;ve diverged so much from them, that we have somewhat different namings &amp; structure &amp; style as well
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="Un7TtSw5G">
+								<a href="#Un7TtSw5G" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="WrCq5CZwG">
+						<a href="#WrCq5CZwG" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) WrCq5CZwG #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 						</div>
 						<ul>
-							<li>
+							<li id="RjxKGQQrP">
+								<a href="#RjxKGQQrP" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) RjxKGQQrP
 								</div>
 							</li>
-							<li>
+							<li id="sxwZl0gqY">
+								<a href="#sxwZl0gqY" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) sxwZl0gqY
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="6qsGfAk51">
+						<a href="#6qsGfAk51" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="JOTYNa78k">
+				<a href="#JOTYNa78k" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						also mention that a transform should do 1 thing and do it well, and for separate things you should have separate transforms, and combine them in the codemod.
 				</div>
 				<ul>
-					<li>
+					<li id="sYpKTky9t">
+						<a href="#sYpKTky9t" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								but also mention that if the specific thing you&#39;re doing is the same, and the only thing that differs is the data (e.g. the component&#39;s name, or the attribute&#39;s name, or the attributes value / from-to mapping), then you can abstract it and just take in a &quot;config&quot; that has these - thus now you 
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="0MXxfPiM7">
+				<a href="#0MXxfPiM7" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="QzTpo18bA">
+		<a href="#QzTpo18bA" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

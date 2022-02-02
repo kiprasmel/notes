@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.865Z</span>
+				<span>2022-02-02T14:33:54.233Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,102 +245,123 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639386627041);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801865);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434233);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="XFUmCv5wj">
+					<a href="#XFUmCv5wj" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) XFUmCv5wj #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="rDM-m1w_j">
+							<a href="#rDM-m1w_j" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} (hidden) rDM-m1w_j #[[(hidden) _0nH3NhcW]]
 							</div>
 						</li>
-						<li>
+						<li id="XfeqiElqv">
+							<a href="#XfeqiElqv" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) XfeqiElqv [[(hidden) 12-14-2021]]
 							</div>
 							<ul>
-								<li>
+								<li id="C5SR76bKS">
+									<a href="#C5SR76bKS" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} (hidden) C5SR76bKS [[(hidden) _RMDwHiKR]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="55SWPtwRe">
+							<a href="#55SWPtwRe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 55SWPtwRe [[(hidden) JSLHJk6eR]]
 							</div>
 						</li>
-						<li>
+						<li id="n3eWHaMhv">
+							<a href="#n3eWHaMhv" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) n3eWHaMhv
 							</div>
 						</li>
-						<li>
+						<li id="PEj4MBZMf">
+							<a href="#PEj4MBZMf" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="W13r9D7HA">
+									<a href="#W13r9D7HA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											for css in js stuff, we&#39;ll likely be able to just replace the values (`MemberExpression`) w/o any filtering whatsoever - it&#39;d become so much simpler.
 									</div>
 									<ul>
-										<li>
+										<li id="C6JtNH5_a">
+											<a href="#C6JtNH5_a" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													even the imports stuff becomes easy - instead of figuring out from where what came in, we literally don&#39;t care for the replacement part, and only re-group them into the new usage (so the 2 parts - replacing old tokens w/ new ones, and re-grouping of imports, become like 2 independent parts, which is good because it&#39;s simpler &amp; easier to do).
 											</div>
 										</li>
-										<li>
+										<li id="JJdGvANIu">
+											<a href="#JJdGvANIu" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} confirm w/ [[(hidden) v8hKA88Fi]]
 											</div>
 										</li>
-										<li>
+										<li id="95Cgp2EDz">
+											<a href="#95Cgp2EDz" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} get the `tokenMapping` @ `cui5map` done by [[(hidden) v8hKA88Fi]]
 											</div>
 											<ul>
-												<li>
+												<li id="coQ9jdY2W">
+													<a href="#coQ9jdY2W" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} get &quot;TBD&quot;s done
 													</div>
 												</li>
-												<li>
+												<li id="XxVwQsYOy">
+													<a href="#XxVwQsYOy" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} convert .js into .json file
 													</div>
 												</li>
-												<li>
+												<li id="PBENYTPQw">
+													<a href="#PBENYTPQw" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} mention that if splitting manually - likely not necessary
 													</div>
 													<ul>
-														<li>
+														<li id="0_VWxJ9ys">
+															<a href="#0_VWxJ9ys" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	https://github.com/pipedrive/CodeshiftCommunity/pull/17/files#r767420344
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="TWryVK_vp">
+													<a href="#TWryVK_vp" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="W3qa3kFxG">
+											<a href="#W3qa3kFxG" class="block-ref"></a>
+										</li>
+										<li id="kS8X4qVRl">
+											<a href="#kS8X4qVRl" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} implement token replacement &amp; see if works, even w/ broken cui5map
 											</div>
 											<ul>
-												<li>
+												<li id="_aaw947u_">
+													<a href="#_aaw947u_" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} same w/ re-grouping
 													</div>
@@ -296,89 +370,108 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="CXPTUDm8K">
+									<a href="#CXPTUDm8K" class="block-ref"></a>
+								</li>
+								<li id="TJTxxqlqV">
+									<a href="#TJTxxqlqV" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} figure out how fast &amp; badly we need to ship lol [[(hidden) pHco5hQZn]]
 									</div>
 									<ul>
-										<li>
+										<li id="Mf6dEz66t">
+											<a href="#Mf6dEz66t" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} mention in standup that i __really__ need to focus on this &amp; that one should bother me only if really necessary.
 											</div>
 										</li>
-										<li>
+										<li id="d9I5PNRRl">
+											<a href="#d9I5PNRRl" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													🤷
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="iYqCTflnX">
+									<a href="#iYqCTflnX" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="r__YyzYMg">
+							<a href="#r__YyzYMg" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) r__YyzYMg
 							</div>
 						</li>
-						<li>
+						<li id="8p4cT1cem">
+							<a href="#8p4cT1cem" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 8p4cT1cem [[(hidden) AcIullrqV]]
 							</div>
 							<ul>
-								<li>
+								<li id="V_sTbcBOu">
+									<a href="#V_sTbcBOu" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) V_sTbcBOu [[(hidden) DHN2yDqmF]]
 									</div>
 									<ul>
-										<li>
+										<li id="i0qyr4jpW">
+											<a href="#i0qyr4jpW" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) i0qyr4jpW
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="mN_8EUsP7">
+									<a href="#mN_8EUsP7" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) mN_8EUsP7
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="gLkh-bJ0L">
+							<a href="#gLkh-bJ0L" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) gLkh-bJ0L
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="a9ke3F9zc">
+					<a href="#a9ke3F9zc" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) a9ke3F9zc
 					</div>
 				</li>
-				<li>
+				<li id="BLG_5ge9f">
+					<a href="#BLG_5ge9f" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) BLG_5ge9f
 					</div>
 				</li>
-				<li>
+				<li id="5h9qsXaqL">
+					<a href="#5h9qsXaqL" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 5h9qsXaqL
 					</div>
 				</li>
-				<li>
+				<li id="vAtoSJTte">
+					<a href="#vAtoSJTte" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) vAtoSJTte
 					</div>
 				</li>
-				<li>
+				<li id="WUs00om_k">
+					<a href="#WUs00om_k" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) WUs00om_k
 					</div>
 				</li>
-				<li>
+				<li id="g9FcKg7Uq">
+					<a href="#g9FcKg7Uq" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) g9FcKg7Uq
 					</div>

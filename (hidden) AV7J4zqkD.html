@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.638Z</span>
+				<span>2022-02-02T14:33:55.031Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641319315544);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802638);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435031);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="IZp2z75TP">
+			<a href="#IZp2z75TP" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,7 +343,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="iZJs9Rvkw">
+		<a href="#iZJs9Rvkw" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				roam attributes::
 		</div>
@@ -308,7 +364,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="KsXnLZPbe">
+			<a href="#KsXnLZPbe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -325,19 +383,23 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="qKtkqybYC">
+		<a href="#qKtkqybYC" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				and if it&#39;s a meta page / has powers, then extra works to potentially any pages in the graph.
 		</div>
 	</li>
-	<li>
+	<li id="3TIQyco0R">
+		<a href="#3TIQyco0R" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i.e. annoying stuff!
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="B1z8fVxW7">
+			<a href="#B1z8fVxW7" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -370,7 +432,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="hBwnzaNvY">
+			<a href="#hBwnzaNvY" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -387,19 +451,22 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="B0QSLmaka">
+		<a href="#B0QSLmaka" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) B0QSLmaka
 		</div>
 		<ul>
-			<li>
+			<li id="1XwWpbjea">
+				<a href="#1XwWpbjea" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) 1XwWpbjea 
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="jzxA9ACtb">
+		<a href="#jzxA9ACtb" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) jzxA9ACtb
 		</div>
@@ -419,7 +486,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="I5-Luhww_">
+			<a href="#I5-Luhww_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -436,32 +505,37 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="xANOXKdMa">
+		<a href="#xANOXKdMa" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				yes ```javascript
 	&lt;Button color=&quot;green&quot; /&gt;```
 		</div>
 	</li>
-	<li>
+	<li id="1OAaHCQJX">
+		<a href="#1OAaHCQJX" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				yes ```javascript
 	&lt;Button color={&quot;green&quot;} /&gt;```
 		</div>
 	</li>
-	<li>
+	<li id="wgf58nNuG">
+		<a href="#wgf58nNuG" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				no ```javascript
 	&lt;Button color={condition ? &quot;green&quot; : &quot;red&quot;} /&gt;```
 		</div>
 		<ul>
-			<li>
+			<li id="aouOMCe5i">
+				<a href="#aouOMCe5i" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						hmm. the closest one where we __maaaaaybe__ could. but the question is -- should we? [[you were so busy thinking if you could, you forgot to consider if you should]]
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="nfBk1aTyv">
+		<a href="#nfBk1aTyv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				no ```javascript
 	const variable = &quot;green&quot;
@@ -470,7 +544,9 @@
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="jnPkJ30pA">
+			<a href="#jnPkJ30pA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -503,7 +579,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Gp_-jNW3E">
+			<a href="#Gp_-jNW3E" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -520,7 +598,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="xit52b3jn">
+		<a href="#xit52b3jn" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```javascript
 	Error: TODO: goodCommandOld not found
@@ -530,12 +609,14 @@
 	    at gitStackedRebase (/Users/kiprasmelnikovas/projects/git-stacked-rebase/git-stacked-rebase.ts:200:26)```
 		</div>
 	</li>
-	<li>
+	<li id="WqDLcXJ4S">
+		<a href="#WqDLcXJ4S" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				and then, after `rm -rf .git/stacked-rebase`:
 		</div>
 		<ul>
-			<li>
+			<li id="bPX17pfdj">
+				<a href="#bPX17pfdj" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```javascript
 			Error: ENOENT: no such file or directory, open &#39;/Users/kiprasmelnikovas/forkprojects/CodeshiftCommunity/.git/stacked-rebase/rewritten-list.applied&#39;
@@ -552,28 +633,38 @@
 			}```
 				</div>
 			</li>
-			<li>
+			<li id="JYJ_gbRuy">
+				<a href="#JYJ_gbRuy" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						no auto apply i think, even if local history was not modified __in this run__ (after re-running to re-generate the git-rebase-todo), it __was__ modified in a previous run, and  __was not__ successfully updated
 				</div>
 				<ul>
-					<li>
+					<li id="B_iB2xGIa">
+						<a href="#B_iB2xGIa" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} we should be checking if the `git-rebase-todo` is out of sync with the actual commits, and if so -- `needsToApply` should act
 						</div>
 					</li>
-					<li>
+					<li id="iuuYe4Ili">
+						<a href="#iuuYe4Ili" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} also need to re-think the renaming of them (none, none with needs-to-apply, .applied, removed), because comes up in other places as well
 						</div>
 					</li>
-					<li></li>
+					<li id="KRcWBn0Rn">
+						<a href="#KRcWBn0Rn" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="yRjBpcUmf">
+				<a href="#yRjBpcUmf" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="s_0fH5f6-">
+		<a href="#s_0fH5f6-" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -589,7 +680,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="2e7NZCi8A">
+			<a href="#2e7NZCi8A" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -622,7 +715,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FD-HbTOBp">
+			<a href="#FD-HbTOBp" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -655,7 +750,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Qbg0QMnkE">
+			<a href="#Qbg0QMnkE" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -688,7 +785,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="aELizWGa3">
+			<a href="#aELizWGa3" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -721,7 +820,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="8mqo-QnZ8">
+			<a href="#8mqo-QnZ8" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -754,7 +855,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Peg6mDakx">
+			<a href="#Peg6mDakx" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -771,7 +874,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="GiaB7FwIq">
+		<a href="#GiaB7FwIq" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) GiaB7FwIq
 		</div>

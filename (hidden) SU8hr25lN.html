@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.893Z</span>
+				<span>2022-02-02T14:33:55.210Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640176173382);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802893);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435210);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Ed4f7nBD5">
+			<a href="#Ed4f7nBD5" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,14 +343,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="REfdREVhB">
+		<a href="#REfdREVhB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				5.1 especially when creating new abstractions
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="IM_39XaIX">
+			<a href="#IM_39XaIX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -312,29 +370,34 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="ixybq1AKS">
+		<a href="#ixybq1AKS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				the hierarchy of your abstractions also matters, and it&#39;s hard to balance (this might be the essence of what this is all about, but I&#39;m not sure yet):
 		</div>
 		<ul>
-			<li>
+			<li id="B_Q-tAjEI">
+				<a href="#B_Q-tAjEI" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						on one end, you can create hacks on top of your existing solutions (i.e. close(r) to your leaf nodes of the abstraction hierarchy), but that usually doesn&#39;t go a long way, and/or cripples everything else.
 				</div>
 			</li>
-			<li>
+			<li id="gEK7jfKGe">
+				<a href="#gEK7jfKGe" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						on the complete opposite end, you maybe could create APIs in the very beginning of your abstraction hierarchy (e.g. on the OS level), but that might be extremely hard to 1) do, and 2) do __right__.
 				</div>
 				<ul>
-					<li>
+					<li id="YihbsexlG">
+						<a href="#YihbsexlG" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								see also [[(hidden) e-ZEmn_qq]] [[(hidden) pEVsXyK9F]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Uk9fgbehY">
+				<a href="#Uk9fgbehY" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						maybe see also: tree balancing (computer science), tho dunno if any useful (yet).
 				</div>
@@ -356,7 +419,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="lNPIawEyA">
+			<a href="#lNPIawEyA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -373,12 +438,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="GzI_sCFIC">
+		<a href="#GzI_sCFIC" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				was thinking re: [[(hidden) 1uqumtobW]] - using similar utilities like [[codemods]] (or, rather, working with the #[[(hidden) -g8qO2BEP]]), to have a &quot;magic wand&quot; in your editor, which allows you to extract some local variables of a function (however deep in the call stack) into that function&#39;s arguments, or into a function that&#39;s higher (before) in the call stack (abstraction). what&#39;s hard is the [[(hidden) Vtxi7b35b]] - 
 		</div>
 		<ul>
-			<li>
+			<li id="B1qXhe9qr">
+				<a href="#B1qXhe9qr" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						from the [[(hidden) qF79KNVBl]].each (?) @ [[(hidden) S-ygYfi0j]], you can start extracting however many variables you want. it&#39;s not even &quot;statements vs data&quot; (you&#39;re &quot;supposed&quot; to extract only the data, &amp; of course not all of it) - even statements can be extracted.
 			here comes the #[[observation]] -- technically, you can extract literally everything. and, well, say we have a function to describe the whole world (at some point of time, probably?) - if we figure out the function itself, than by abstracting 
@@ -387,11 +454,16 @@
 			i think yes. 
 				</div>
 			</li>
-			<li></li>
-			<li></li>
+			<li id="MNZOzsAUZ">
+				<a href="#MNZOzsAUZ" class="block-ref"></a>
+			</li>
+			<li id="aq4eirPuz">
+				<a href="#aq4eirPuz" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="aUPKW-8vZ">
+		<a href="#aUPKW-8vZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) aUPKW-8vZ
 		</div>

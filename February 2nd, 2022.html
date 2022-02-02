@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -146,7 +199,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">231</td>
+							<td style="text-align: right; ">250</td>
 							<td>(self)</td>
 						</tr>
 
@@ -161,7 +214,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							231
+							250
 							</td>
 							<td>
 							(both)
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.705Z</span>
+				<span>2022-02-02T14:33:54.074Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,41 +245,47 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1643752801790);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801705);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434074);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="z8KNc45yK">
+					<a href="#z8KNc45yK" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) z8KNc45yK #[[(hidden) _sW66DmMa]] #[[re]]
 					</div>
 					<ul>
-						<li>
+						<li id="rwRFlXHd5">
+							<a href="#rwRFlXHd5" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) rwRFlXHd5
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="1MJTJCSEP">
+					<a href="#1MJTJCSEP" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1MJTJCSEP
 					</div>
 				</li>
-				<li>
+				<li id="yJg_sqRWr">
+					<a href="#yJg_sqRWr" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) yJg_sqRWr #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="qohyTLRTZ">
+							<a href="#qohyTLRTZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} help [[(hidden) pEmar0tqN]] w/ [[typescript]]
 							</div>
 							<ul>
-								<li>
+								<li id="j3HyhqcKh">
+									<a href="#j3HyhqcKh" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											&gt; 
 								The basic idea is, i have an object like:
@@ -246,22 +305,26 @@
 								and i want all the beautiful typehinting to be automatic and happy
 									</div>
 								</li>
-								<li>
+								<li id="Fd7LP5xS3">
+									<a href="#Fd7LP5xS3" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											okay, what we want here is to narrow down the type of the object&#39;s value by the object&#39;s key, and thus safely use the object&#39;s value with an inferred type. &amp; ofc have auto-completions for the correct type when we narrow it down.
 									</div>
 								</li>
-								<li>
+								<li id="IFIylgCfZ">
+									<a href="#IFIylgCfZ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											hehe, i don’t think it’s possible yet. https://github.com/microsoft/TypeScript/issues/47648
 									</div>
 								</li>
-								<li>
+								<li id="O95u8utrQ">
+									<a href="#O95u8utrQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											&gt; &lt;...&gt;
 									</div>
 								</li>
-								<li>
+								<li id="-74GW3s_X">
+									<a href="#-74GW3s_X" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											i’m excited about the upcoming PRs, even tho some have been there for a while already.
 								https://github.com/microsoft/TypeScript/pull/26349
@@ -273,73 +336,126 @@
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="j6wXcemdf">
+							<a href="#j6wXcemdf" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) j6wXcemdf
 							</div>
 						</li>
-						<li>
+						<li id="WTaCfJOyI">
+							<a href="#WTaCfJOyI" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) WTaCfJOyI
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="6aAyHf04X">
+					<a href="#6aAyHf04X" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6aAyHf04X
 					</div>
 				</li>
-				<li>
+				<li id="wIrttn37h">
+					<a href="#wIrttn37h" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) wIrttn37h [[macos]] [[(hidden) XFVwH7GXS]]
 					</div>
 				</li>
-				<li>
+				<li id="muy-2r-in">
+					<a href="#muy-2r-in" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) muy-2r-in
 					</div>
 				</li>
-				<li>
+				<li id="kVl0yLWDH">
+					<a href="#kVl0yLWDH" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) kVl0yLWDH [[export-html-pages]]
 					</div>
 					<ul>
-						<li>
+						<li id="3t2iCnmw5">
+							<a href="#3t2iCnmw5" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} (hidden) 3t2iCnmw5 
 							</div>
 							<ul>
-								<li>
+								<li id="FQ0tjVqOT">
+									<a href="#FQ0tjVqOT" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} (hidden) FQ0tjVqOT 
 									</div>
 								</li>
-								<li>
+								<li id="3Sed5u4gY">
+									<a href="#3Sed5u4gY" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} (hidden) 3Sed5u4gY 
 									</div>
+									<ul>
+										<li id="tts6froAr">
+											<a href="#tts6froAr" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													{{[[DONE]]}} (hidden) tts6froAr 
+											</div>
+											<ul>
+												<li id="2xqrjm0DR">
+													<a href="#2xqrjm0DR" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															(hidden) 2xqrjm0DR
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li id="IAaF3wiWH">
+											<a href="#IAaF3wiWH" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													(hidden) IAaF3wiWH
+											</div>
+										</li>
+									</ul>
 								</li>
-								<li>
+								<li id="VZq1R4KMd">
+									<a href="#VZq1R4KMd" class="block-ref"></a>
 									<div style="max-width: 65ch;">
-											{{[[TODO]]}} (hidden) tts6froAr 
+											(hidden) VZq1R4KMd
 									</div>
 								</li>
 							</ul>
 						</li>
+						<li id="aDA8LWvR6">
+							<a href="#aDA8LWvR6" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									(hidden) aDA8LWvR6
+							</div>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="stU6Z4YN-">
+					<a href="#stU6Z4YN-" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) stU6Z4YN-
+					</div>
+				</li>
+				<li id="xjEELrUzu">
+					<a href="#xjEELrUzu" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) xjEELrUzu
+					</div>
+				</li>
+				<li id="Q_5sXTW2E">
+					<a href="#Q_5sXTW2E" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Q_5sXTW2E
 					</div>
 				</li>
-				<li>
+				<li id="xMtN64sik">
+					<a href="#xMtN64sik" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) xMtN64sik
 					</div>
 				</li>
-				<li>
+				<li id="hu0-QwPhA">
+					<a href="#hu0-QwPhA" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hu0-QwPhA
 					</div>

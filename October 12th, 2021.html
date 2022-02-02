@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.954Z</span>
+				<span>2022-02-02T14:33:54.458Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,34 +245,39 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633986008135);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801954);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434458);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="pRBzUvQMe">
+					<a href="#pRBzUvQMe" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) pRBzUvQMe #[[(hidden) ZNwd_mhd-]]
 					</div>
 				</li>
-				<li>
+				<li id="Htf6CyL2y">
+					<a href="#Htf6CyL2y" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Htf6CyL2y
 					</div>
 				</li>
-				<li>
+				<li id="iEgRW8rH1">
+					<a href="#iEgRW8rH1" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) iEgRW8rH1
 					</div>
 				</li>
-				<li>
+				<li id="BiAENYmJd">
+					<a href="#BiAENYmJd" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) BiAENYmJd
 					</div>
 				</li>
-				<li>
+				<li id="2OEng8aUs">
+					<a href="#2OEng8aUs" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 2OEng8aUs
 					</div>

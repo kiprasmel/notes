@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.883Z</span>
+				<span>2022-02-02T14:33:54.272Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,24 +245,27 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638570772806);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801883);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434272);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="JeF32kACp">
+					<a href="#JeF32kACp" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[(hidden) Wk9BwS_1L]] #[[(hidden) jOMmlCP4S]] [[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="uNkZuvsm3">
+							<a href="#uNkZuvsm3" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									wrap git-rebase
 							</div>
 							<ul>
-								<li>
+								<li id="iVqvppLxY">
+									<a href="#iVqvppLxY" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											```shell
 								git config --global alias.rebaseraw = rebase
@@ -219,37 +275,44 @@
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="97QzVM0f2">
+							<a href="#97QzVM0f2" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									when invoked (through multi-rebase or even regular rebase):
 							</div>
 							<ul>
-								<li>
+								<li id="croiF4Kb9">
+									<a href="#croiF4Kb9" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											idk if we should have a config like in [[(hidden) zmiEcf1EP]]. 
 									</div>
 									<ul>
-										<li>
+										<li id="eDr--IgLQ">
+											<a href="#eDr--IgLQ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													perhaps, to specify which branches depend on which.
 											</div>
 											<ul>
-												<li>
+												<li id="bl43FUX2Q">
+													<a href="#bl43FUX2Q" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															though, seems unnecessary, we&#39;d only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
 													</div>
 												</li>
-												<li>
+												<li id="MC-Ts228n">
+													<a href="#MC-Ts228n" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															but, this would still be useful for safety, to make sure we don&#39;t accidentally include what we don&#39;t want
 													</div>
 													<ul>
-														<li>
+														<li id="piUldvvBe">
+															<a href="#piUldvvBe" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
 															</div>
 														</li>
-														<li>
+														<li id="RWjbCb1Sg">
+															<a href="#RWjbCb1Sg" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	fact is, the whole point if wrapping git rebase is that it&#39;s likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` &amp; `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we&#39;re doing a multi-rebase, or if we should default back to the normal git-rebase.
 															</div>
@@ -260,78 +323,92 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="MQ9ZYYgkN">
+									<a href="#MQ9ZYYgkN" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} would take some safety measures?
 									</div>
 									<ul>
-										<li>
+										<li id="lazcn_aww">
+											<a href="#lazcn_aww" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} e.g. checking if any of the branches are not pushed to remote
 											</div>
 										</li>
-										<li>
+										<li id="BvV5EtQmz">
+											<a href="#BvV5EtQmz" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} e. g. chceking if previously a git-multi-rebase ran and wasn&#39;t applied/finished and temp branches are still there
 											</div>
 										</li>
-										<li>
+										<li id="WZ3eqHLXX">
+											<a href="#WZ3eqHLXX" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} etc. figure out what needs to be done
 											</div>
 										</li>
-										<li>
+										<li id="QqsWaH1XE">
+											<a href="#QqsWaH1XE" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													((EaypictfH))
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="OST-d_vH8">
+									<a href="#OST-d_vH8" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											would launch `git-rebase -i`
 									</div>
 									<ul>
-										<li>
+										<li id="QvE2oTJ3B">
+											<a href="#QvE2oTJ3B" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													would edit the REBASE_EDIT_TODO or whatever file
 											</div>
 											<ul>
-												<li>
+												<li id="vcr1iziBh">
+													<a href="#vcr1iziBh" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															for all sub-branches, would add `branch-end &lt;branch-name&gt;` command after commit that the branch is pointing at
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="GZ4jdTWec">
+											<a href="#GZ4jdTWec" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													would then allow the user to edit the REBASE_EDIT_TODO, just like it&#39;d be normally done with git rebase -i
 											</div>
 											<ul>
-												<li>
+												<li id="HOOhjHCyF">
+													<a href="#HOOhjHCyF" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															the user can now:
 													</div>
 													<ul>
-														<li>
+														<li id="v8512eNAt">
+															<a href="#v8512eNAt" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	do the regular git rebase stuff,
 															</div>
 														</li>
-														<li>
+														<li id="cPqNnUMNv">
+															<a href="#cPqNnUMNv" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	plus they can move the `branch-end`s around
 															</div>
 															<ul>
-																<li>
+																<li id="EaypictfH">
+																	<a href="#EaypictfH" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			{{[[TODO]]}} safety measure - if user moves around 2 `branch-end`s (i.e. swaps their order), ask for explicit confirmation
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li>
+														<li id="MnGkWpt9r">
+															<a href="#MnGkWpt9r" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	they can create new branches w/ `new-branch-end`
 															</div>
@@ -340,278 +417,348 @@
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="UmAolGmVc">
+											<a href="#UmAolGmVc" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													probably would&#39;ve inserted `break` in the very beginning, so that we can read the file ourselves once the user finishes editing
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="U2Rr8Q9xX">
+									<a href="#U2Rr8Q9xX" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="3fyskNDMO">
+							<a href="#3fyskNDMO" class="block-ref"></a>
+						</li>
+						<li id="Wr2YB_-9p">
+							<a href="#Wr2YB_-9p" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									interesting, but not quite
 							</div>
 							<ul>
-								<li>
+								<li id="dvvsPus8N">
+									<a href="#dvvsPus8N" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/Shopify/git-chain
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="XyHdBS_dj">
+							<a href="#XyHdBS_dj" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									nah, but interesting they have `git_python` pkg - when i was thinking about my own version of multi-rebase, i too though this would be useful, for javascript.
 							</div>
 							<ul>
-								<li>
+								<li id="pEVylgnZd">
+									<a href="#pEVylgnZd" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} check if js has such lib
 									</div>
 								</li>
-								<li>
+								<li id="ulGTylWo4">
+									<a href="#ulGTylWo4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/wsteelman/git-utilities
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="bQHpPPDoZ">
+							<a href="#bQHpPPDoZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									oh shit
 							</div>
 							<ul>
-								<li>
+								<li id="fkkKNXWIf">
+									<a href="#fkkKNXWIf" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											reading the title of this:
 									</div>
 									<ul>
-										<li>
+										<li id="6NKynJwKe">
+											<a href="#6NKynJwKe" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://0xc0d1.com/blog/git-stack/
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="rSUSUrgow">
+									<a href="#rSUSUrgow" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											dude! what i want is stacked diffs!!
 									</div>
 								</li>
-								<li>
+								<li id="LbWZXoT8k">
+									<a href="#LbWZXoT8k" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											maybe i should rename multi-rebase to stacked-rebase?
 									</div>
 									<ul>
-										<li>
+										<li id="u4-7ktfNd">
+											<a href="#u4-7ktfNd" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													for initial searchability if you&#39;re in a situation similar to mine, it might be harder to find,
 											</div>
 										</li>
-										<li>
+										<li id="V5Ntey46h">
+											<a href="#V5Ntey46h" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													but, if you&#39;ve heard about stacked diffs, maybe you&#39;ll find it even easier.
 											</div>
 										</li>
-										<li>
+										<li id="kqonK3Vwf">
+											<a href="#kqonK3Vwf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													and, the name makes it clear very fast of what&#39;s actually going on
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="UnlUxkqgW">
+									<a href="#UnlUxkqgW" class="block-ref"></a>
+								</li>
+								<li id="dAGA1DW1R">
+									<a href="#dAGA1DW1R" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											the tool itself, gh-stack, seems pretty cool, but it&#39;s github-specific, and has many things that suck about it. i want mine to be git-specific (lol), with potentially adaptors for creating new PRs, editing PR titles etc., but that&#39;s less relevant if we figure out the core functionality.
 									</div>
 								</li>
-								<li>
+								<li id="FGDlHuO_4">
+									<a href="#FGDlHuO_4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} i also realized that `new-branch-end` (or `branch-end-new`, if `ben` is good for shortname) is a little subtle -- if you&#39;re inserting a new branch (or branches) __between 2 existing ones__ (always the case here) in the same rebase, if you e.g. have normal ordering of 1., 2., 3., etc., now you&#39;d have to add another level, e.g. if inserting between 2. and 3., it now becomes: 1., 2.1, 2.2, 3. perhaps we don&#39;t need to modify the existing 2. into 2.1, or actually, perhaps it should be 1., 2., 3.1, 3.2, because we&#39;re taking &amp; splitting commits from 3., not from 2. (since a number marks the __end__, __not__ the beginning.). again, how do we retain e.g. github comments here? not worth to focus on right now, but good to keep in mind.
 									</div>
 									<ul>
-										<li>
+										<li id="yjsKQzv4P">
+											<a href="#yjsKQzv4P" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													obv you cannot rotate the branches on github either, because then the comments get lost / become completely irrelevant, because it&#39;s the wrong branch!
 											</div>
 											<ul>
-												<li>
+												<li id="AYxlbpR0Q">
+													<a href="#AYxlbpR0Q" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															oh but this might still apply if you&#39;re creating new branches...
 												hmm, perhaps we should __not__ focus on the branch-end-new, and only on branch-end now.
 													</div>
 												</li>
-												<li></li>
+												<li id="is47NH-a9">
+													<a href="#is47NH-a9" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="ATd5SkHjq">
+											<a href="#ATd5SkHjq" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="kOU9uyFr1">
+									<a href="#kOU9uyFr1" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="kVh4RBONV">
+							<a href="#kVh4RBONV" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									&quot;git stacked rebase&quot;
 							</div>
 							<ul>
-								<li>
+								<li id="gjGfX3x-c">
+									<a href="#gjGfX3x-c" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://news.ycombinator.com/item?id=27305521
 									</div>
 									<ul>
-										<li>
+										<li id="Jo9KHLQr2">
+											<a href="#Jo9KHLQr2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													doesn&#39;t look like it
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="ULpfTyD7R">
+									<a href="#ULpfTyD7R" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/epage/git-stack
 									</div>
 									<ul>
-										<li>
+										<li id="KcDuITfy2">
+											<a href="#KcDuITfy2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													hmmm, maybe, but still not what i want (u still need to jump around branches, &amp; i just want to chill /comfy/ in my latest branch)
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="BmXJmqNHK">
+									<a href="#BmXJmqNHK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/ezyang/ghstack
 									</div>
 									<ul>
-										<li>
+										<li id="gR8-4mYe3">
+											<a href="#gR8-4mYe3" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													lel, submits each commit as a PR. nope.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="KY3vh7Rb9">
+									<a href="#KY3vh7Rb9" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="JfobgDip5">
+							<a href="#JfobgDip5" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="7tAbF0M4H">
+					<a href="#7tAbF0M4H" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7tAbF0M4H
 					</div>
 				</li>
-				<li>
+				<li id="e3dn6yVvA">
+					<a href="#e3dn6yVvA" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="BYLg3MUi8">
+							<a href="#BYLg3MUi8" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} the `run.sh` script in notes-private:
 							</div>
 							<ul>
-								<li>
+								<li id="BCF4fR_kK">
+									<a href="#BCF4fR_kK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											we could have a template repo that included the `run.sh` script, which would have the current logic, but the `get_secrets` would be extracted into a separate script, `get_secrets.sh`, and it&#39;d take $1 as which secret getter to use, and people could contribute different secret getters.
 									</div>
 								</li>
-								<li>
+								<li id="95WIVwLvt">
+									<a href="#95WIVwLvt" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											this would make it reusable; people could contribute different getters (e.g. i use keepass-xc-cli, someone might use gpg, etc etc)
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="i3zYttuLx">
+							<a href="#i3zYttuLx" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[export-html-pages]]
 							</div>
 							<ul>
-								<li>
+								<li id="O4Jtzekha">
+									<a href="#O4Jtzekha" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} get rid of custom domain.
 									</div>
 									<ul>
-										<li>
+										<li id="_ZgjbrcTs">
+											<a href="#_ZgjbrcTs" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} add docs on: 1. how to add the custom domain, 2. why you shouldn&#39;t. [[bus factor (tbd)]]
 											</div>
 										</li>
-										<li>
+										<li id="JEMM6ZZGN">
+											<a href="#JEMM6ZZGN" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} add redirects from `notes.kipras.org/*` -&gt; `kiprasmel.github.io/notes/*`
 											</div>
 											<ul>
-												<li>
+												<li id="AelvMdDO5">
+													<a href="#AelvMdDO5" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															[[roam-traverse-graph]]
 													</div>
 													<ul>
-														<li>
+														<li id="U74ix2YI8">
+															<a href="#U74ix2YI8" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} oh just realised we need to handle math (wanted to convert from `-&gt;` to `$$\implies$$`). there was a lib that roam was using - we could use it to inline at compile time (if possible?)
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="WtkBiess9">
+													<a href="#WtkBiess9" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="to9VG3Ujh">
+											<a href="#to9VG3Ujh" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="OoHj5nDsB">
+									<a href="#OoHj5nDsB" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="V28Q30TEU">
+							<a href="#V28Q30TEU" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} `runfull.sh` - `git pull` inside `PUBLIC_NOTES_REPO` - if i&#39;m doing a few runs one after another, &amp; they&#39;re close in time, i might want to not get my commits spammed (whom will show up on the contribution graph as well, which i don&#39;t want), thus `git rebase -i` &amp; `drop` helps, but since `git pull`, it gets undone. otherwise, if i force push, git pull won&#39;t do anything ofc, but then temporarily the deployment &amp; thus the whole graph is in an outdated state.
 							</div>
 							<ul>
-								<li>
+								<li id="Q7wd0ZlIA">
+									<a href="#Q7wd0ZlIA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} i think the manual intervals are clearly identifiable - 1. i prefix the commit with `deploy (manual): ` instead of `deploy: `, 2. they differ more in time (e.g. commits of 1 session&#39;s multiple runs are close to each other, and to find the last one, you gotta go 1 by 1 from the latest one, and keep averaging the time deltas, and compare the current commit with the one before it).
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="F6yxZhJxB">
+							<a href="#F6yxZhJxB" class="block-ref"></a>
+						</li>
+						<li id="-j2uWGEaW">
+							<a href="#-j2uWGEaW" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} [[export-html-pages]] fix urls (thus html filenames) - replace spaces with dashes `-`, keep only asciinumeric (latin letters &amp; numbers) chars + `-_` (ez regex)
 							</div>
 						</li>
-						<li></li>
+						<li id="lJ--OHgCj">
+							<a href="#lJ--OHgCj" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="28i1d5H8Q">
+					<a href="#28i1d5H8Q" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 28i1d5H8Q
 					</div>
 				</li>
-				<li>
+				<li id="woXGYP3Nv">
+					<a href="#woXGYP3Nv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) woXGYP3Nv #[[(hidden) jOMmlCP4S]] [[(hidden) utmc1e87F]]
 					</div>
 					<ul>
-						<li>
+						<li id="odpwcaxs7">
+							<a href="#odpwcaxs7" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) odpwcaxs7
 							</div>
 							<ul>
-								<li>
+								<li id="Vka1d8zqs">
+									<a href="#Vka1d8zqs" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) Vka1d8zqs [[(hidden) MvgWIN74D]]
 									</div>
 									<ul>
-										<li>
+										<li id="Rbt_IbYmB">
+											<a href="#Rbt_IbYmB" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) Rbt_IbYmB
 											</div>
@@ -622,148 +769,179 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="SjomeQ9Hh">
+					<a href="#SjomeQ9Hh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) SjomeQ9Hh
 					</div>
 				</li>
-				<li>
+				<li id="rPAf3rJd_">
+					<a href="#rPAf3rJd_" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) rPAf3rJd_ [[(hidden) orJkABRrl]] #[[(hidden) 0EJ4yRKtM]] [[(hidden) DY6wPnICE]] [[codemods]] #[[(hidden) 7c2C8PgIV]] [[roam-traverse-graph]] #[[(hidden) 2b6Krhy2c]] [[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="XGKibrhmr">
+							<a href="#XGKibrhmr" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) XGKibrhmr #[[(hidden) S-ygYfi0j]]
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="6JHJa3Pgn">
+					<a href="#6JHJa3Pgn" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6JHJa3Pgn
 					</div>
 				</li>
-				<li>
+				<li id="cA38illCD">
+					<a href="#cA38illCD" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cA38illCD [[macos]]
 					</div>
 					<ul>
-						<li>
+						<li id="YLL34JwwA">
+							<a href="#YLL34JwwA" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) YLL34JwwA
 							</div>
 							<ul>
-								<li>
+								<li id="0MW1VGNbM">
+									<a href="#0MW1VGNbM" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 0MW1VGNbM
 									</div>
 								</li>
-								<li>
+								<li id="eKD1ByQ5H">
+									<a href="#eKD1ByQ5H" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) eKD1ByQ5H
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="QQBCFi5Np">
+							<a href="#QQBCFi5Np" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) QQBCFi5Np #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 							</div>
 							<ul>
-								<li>
+								<li id="6YBivOi4h">
+									<a href="#6YBivOi4h" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 6YBivOi4h
 									</div>
 									<ul>
-										<li>
+										<li id="h6JoQe06i">
+											<a href="#h6JoQe06i" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) h6JoQe06i
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="t2HR4PwlY">
+									<a href="#t2HR4PwlY" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) t2HR4PwlY
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="3Tlzwyxjz">
+							<a href="#3Tlzwyxjz" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 3Tlzwyxjz
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="4Rfynnv5R">
+					<a href="#4Rfynnv5R" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 4Rfynnv5R
 					</div>
 				</li>
-				<li>
+				<li id="6eGAjbXoP">
+					<a href="#6eGAjbXoP" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[(hidden) Wk9BwS_1L]] [[git-stacked-rebase]] #[[(hidden) DY6wPnICE]]
 					</div>
 					<ul>
-						<li>
+						<li id="Mdw740_ZI">
+							<a href="#Mdw740_ZI" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									WHAT git has `libgit2` (in C (ofc)) &amp; SUPPORTS BINDINGS IN OTHER LANGS &amp; THERE&#39;S A TON, JS INCLUDED 🤯🤯🤯
 							</div>
 							<ul>
-								<li>
+								<li id="RvZgCn5cM">
+									<a href="#RvZgCn5cM" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://libgit2.org/
 									</div>
 									<ul>
-										<li>
+										<li id="4LPNu3ZfL">
+											<a href="#4LPNu3ZfL" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://github.com/nodegit/nodegit
 											</div>
 											<ul>
-												<li>
+												<li id="O6BBPQ8go">
+													<a href="#O6BBPQ8go" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://www.nodegit.org/
 													</div>
 												</li>
-												<li>
+												<li id="Yj8Oa1QDL">
+													<a href="#Yj8Oa1QDL" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://www.nodegit.org/api/
 													</div>
 													<ul>
-														<li>
+														<li id="QjscErwPA">
+															<a href="#QjscErwPA" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	🤯🤯🤯 
 															</div>
 														</li>
-														<li>
+														<li id="UC13cWT9f">
+															<a href="#UC13cWT9f" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	it&#39;s so well done wtf
 															</div>
 														</li>
-														<li>
+														<li id="vUbneU_rR">
+															<a href="#vUbneU_rR" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	combined w/ the original one, it&#39;s amazing
 															</div>
 															<ul>
-																<li>
+																<li id="I4glekwFb">
+																	<a href="#I4glekwFb" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			https://libgit2.org/libgit2/#HEAD
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="f_83btXsa">
+															<a href="#f_83btXsa" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="RNOjhtFt5">
+													<a href="#RNOjhtFt5" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="aZT2RsP8w">
+											<a href="#aZT2RsP8w" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="SGamAgDQM">
+									<a href="#SGamAgDQM" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											dude why is this not common knowledge? i&#39;ve never seen anyone use this. this should be made very clear somewhere like git-scm or git&#39;s own source (in their Documentation/contrib or similar guide)
 									</div>
@@ -772,27 +950,32 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="lsnCccj6L">
+					<a href="#lsnCccj6L" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) lsnCccj6L
 					</div>
 				</li>
-				<li>
+				<li id="M6-6Q3oe0">
+					<a href="#M6-6Q3oe0" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="Dy1a8ge_O">
+							<a href="#Dy1a8ge_O" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} to handle multiple branchEnds on the same commit, we could ask the user interactively (similar to `git add --patch`)
 							</div>
 							<ul>
-								<li>
+								<li id="7RESi5O79">
+									<a href="#7RESi5O79" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} i think we&#39;ll need to save this info, similarly to how you have to do it manually w/ [[(hidden) zmiEcf1EP]] - to make sure that if someone else wants to edit (which almost never should be the case, unless ofc it&#39;s you yourself, just on a different device), then they&#39;d have this protection already
 									</div>
 									<ul>
-										<li>
+										<li id="5qy3PSwQN">
+											<a href="#5qy3PSwQN" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													what is a non-goal is protecting against editing one of the partial branches (one of the stacked diffs) - you should not do that, period, and, well, if someone does - too bad!
 										ofc you can get it figured out, but you should not be editing it manually.
@@ -801,118 +984,148 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="Q7akYEM3D">
+									<a href="#Q7akYEM3D" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="NdEAvs59g">
+							<a href="#NdEAvs59g" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									.
 							</div>
 						</li>
-						<li>
+						<li id="oWjzkW9_L">
+							<a href="#oWjzkW9_L" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} even tho it&#39;s not always necessary, it&#39;d provide great protection to have the `.git-stacked-rebase` tracked inside the latest branch
 							</div>
 							<ul>
-								<li>
+								<li id="WUiVhfkKy">
+									<a href="#WUiVhfkKy" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											e.g. if someone were to add a new branch (even you yourself, in a different device), and forgot about it - we&#39;re kinda messed up, as opposed to being able to fully recover.
 									</div>
 								</li>
-								<li></li>
-								<li>
+								<li id="_zKmkniuz">
+									<a href="#_zKmkniuz" class="block-ref"></a>
+								</li>
+								<li id="OxSAcN_sT">
+									<a href="#OxSAcN_sT" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} maybe instead of re-creating branches, we could, starting from the first one (excluding the initial one), `git reset --hard` it to the previous branch (before taking safety measures ofc ofc), and then run cherry-picks from the latest branch?
 									</div>
 									<ul>
-										<li>
+										<li id="xANCqPN-v">
+											<a href="#xANCqPN-v" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													seems like something closer to actual git rebase haha (i don&#39;t actually know but i assume and i think i&#39;ve heard something similar)
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="ug0Elp3Pn">
+											<a href="#ug0Elp3Pn" class="block-ref"></a>
+										</li>
+										<li id="_g5HF_ZIZ">
+											<a href="#_g5HF_ZIZ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													wait, lol, why am i misunderstanding it again myself? we&#39;re not doing anything in partial branches, we&#39;re doing everything in the latest branch, including the normal git rebase, after which we&#39;ll have an option to apply the changes into partial branches
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="S8pmodjH7">
+									<a href="#S8pmodjH7" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="pKWhJIV9m">
+							<a href="#pKWhJIV9m" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									the naming &quot;boundaries&quot; &amp; &quot;what&#39;s in-between them&quot; is very good. i think i&#39;ll still keep the `branch-end` to make it clear, but when explaining how it works, it becomes very easy to understand when you say that the now gray lines with the branch names are boundaries, and what you can do is move commits between boundaries, in addition to doing regular git-rebase operations like squashing/fixing / re-ordering etc.
 							</div>
 							<ul>
-								<li>
+								<li id="fhPzoSpyz">
+									<a href="#fhPzoSpyz" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											aha! this is why i myself was confused and even added the `options.addNewlineAfterBranchEnd` option - it&#39;s a completely wrong way to think about it! &amp; when you internalize the &quot;boundaries&quot;, you&#39;re all set.
 									</div>
 								</li>
-								<li>
+								<li id="2OXEoGh5T">
+									<a href="#2OXEoGh5T" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="pRAWdp-Ws">
+							<a href="#pRAWdp-Ws" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} re: multiple branches on 1 commit - since choosing 1 would impact what later ones are available, it&#39;d be best to have a tree (top-down or bottom-up) w the choices available &amp; somehow navigate-able &amp; choose-able.
 							</div>
 						</li>
-						<li></li>
+						<li id="qfftxlI8M">
+							<a href="#qfftxlI8M" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="rIUIIRVH3">
+					<a href="#rIUIIRVH3" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) rIUIIRVH3
 					</div>
 				</li>
-				<li>
+				<li id="4qSgHE9oH">
+					<a href="#4qSgHE9oH" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 4qSgHE9oH
 					</div>
 				</li>
-				<li>
+				<li id="5iGX9sutH">
+					<a href="#5iGX9sutH" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 5iGX9sutH
 					</div>
 				</li>
-				<li>
+				<li id="jijJVSSI2">
+					<a href="#jijJVSSI2" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="tKdCjGTa_">
+							<a href="#tKdCjGTa_" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									see also `man git-rebase`, esp. &quot;INTERACTIVE MODE&quot;
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="oIBylnjtY">
+					<a href="#oIBylnjtY" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) oIBylnjtY
 					</div>
 				</li>
-				<li>
+				<li id="1FASoSawd">
+					<a href="#1FASoSawd" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1FASoSawd
 					</div>
 				</li>
-				<li>
+				<li id="kONN6eQ5F">
+					<a href="#kONN6eQ5F" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) kONN6eQ5F
 					</div>
 				</li>
-				<li>
+				<li id="iyg5mm0Bx">
+					<a href="#iyg5mm0Bx" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) iyg5mm0Bx
 					</div>
 				</li>
-				<li>
+				<li id="e7zjR6win">
+					<a href="#e7zjR6win" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) e7zjR6win
 					</div>

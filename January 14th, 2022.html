@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.751Z</span>
+				<span>2022-02-02T14:33:54.113Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,329 +245,413 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1642089038088);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801751);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434113);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="XdR7BA68t">
+					<a href="#XdR7BA68t" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[DONE]]}} (hidden) XdR7BA68t 
 					</div>
 				</li>
-				<li>
+				<li id="Wm4A6zU9k">
+					<a href="#Wm4A6zU9k" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Wm4A6zU9k
 					</div>
 				</li>
-				<li>
+				<li id="Yi3TofoWM">
+					<a href="#Yi3TofoWM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]] [[codemods]]
 					</div>
 					<ul>
-						<li>
+						<li id="rhXwqPB_X">
+							<a href="#rhXwqPB_X" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} #[[(hidden) vuiz_eLip]] &quot;building a parser from scratch&quot;
 							</div>
 							<ul>
-								<li>
+								<li id="Nvz38AdlQ">
+									<a href="#Nvz38AdlQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://www.youtube.com/watch?v=nexKgX2d7wU&amp;list=PLGNbPb3dQJ_5FTPfFIg28UxuMpu7k0eT4&amp;index=3
 									</div>
 								</li>
-								<li></li>
-								<li>
+								<li id="niM-xhlCH">
+									<a href="#niM-xhlCH" class="block-ref"></a>
+								</li>
+								<li id="M_YCEU1nj">
+									<a href="#M_YCEU1nj" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} #[[(hidden) vuiz_eLip]] &quot;automata theory - building a regexp machine&quot;
 									</div>
 									<ul>
-										<li>
+										<li id="EcpLEoSka">
+											<a href="#EcpLEoSka" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://www.youtube.com/watch?v=J6ru2HuyNhQ&amp;list=PLGNbPb3dQJ_4YjExEWguwgd1iWUjWvybc
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="F2eFeNlRB">
+									<a href="#F2eFeNlRB" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="OEBOXGWHK">
+							<a href="#OEBOXGWHK" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="HKjAL5k15">
+					<a href="#HKjAL5k15" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) HKjAL5k15
 					</div>
 				</li>
-				<li>
+				<li id="ljit0-blU">
+					<a href="#ljit0-blU" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ljit0-blU [[(hidden) 01-16-2022]]
 					</div>
 					<ul>
-						<li>
+						<li id="_ihpVb_C8">
+							<a href="#_ihpVb_C8" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) _ihpVb_C8 [[(hidden) _O7PfYT2P]]
 							</div>
 							<ul>
-								<li>
+								<li id="CviMAdgan">
+									<a href="#CviMAdgan" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) CviMAdgan
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="yKL9iaUoU">
+							<a href="#yKL9iaUoU" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) yKL9iaUoU
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="zjz2uEg82">
+					<a href="#zjz2uEg82" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) zjz2uEg82
 					</div>
 				</li>
-				<li>
+				<li id="mjkKxLcPa">
+					<a href="#mjkKxLcPa" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="b9msbQIH4">
+							<a href="#b9msbQIH4" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} `forceCmd` - default to `--force` still (probably?), but also allow stuff like `--force-with-lease`
 							</div>
 							<ul>
-								<li>
+								<li id="3Q5Dh0-Zz">
+									<a href="#3Q5Dh0-Zz" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://git-scm.com/docs/git-push#Documentation/git-push.txt---no-force-with-lease
 									</div>
 								</li>
-								<li></li>
+								<li id="eL1NREVjJ">
+									<a href="#eL1NREVjJ" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="Qb_235VH5">
+					<a href="#Qb_235VH5" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Qb_235VH5
 					</div>
 				</li>
-				<li>
+				<li id="Thi67zwAG">
+					<a href="#Thi67zwAG" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="EYyZYO5vO">
+							<a href="#EYyZYO5vO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} sort out bugs in `feat/parse-text-to-ast` &amp; make it work
 							</div>
 							<ul>
-								<li>
+								<li id="fjtjO6AQ_">
+									<a href="#fjtjO6AQ_" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											oh shit, a lot of stuff got solved by using this
 									</div>
 								</li>
-								<li>
+								<li id="i2VswS9LL">
+									<a href="#i2VswS9LL" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											still more bugs to resolve / things to fix
 									</div>
 									<ul>
-										<li>
+										<li id="5oHA_bb-0">
+											<a href="#5oHA_bb-0" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} publicGlobalTags still have to be put into a linkedReference instead of just text
 											</div>
 											<ul>
-												<li>
+												<li id="CC1jGIT9x">
+													<a href="#CC1jGIT9x" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} will need stronger refactor:
 													</div>
 													<ul>
-														<li>
+														<li id="mDN-IelcK">
+															<a href="#mDN-IelcK" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} first with `pageMeta` -&gt; `page` &amp; `page.metadata`,
 															</div>
 														</li>
-														<li>
+														<li id="6bcJ9EWNA">
+															<a href="#6bcJ9EWNA" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} then using `stackTree` when making `toFullyPublicPage` vs non-fully-public
 															</div>
 														</li>
-														<li>
+														<li id="FkNOW9dzE">
+															<a href="#FkNOW9dzE" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	((_n0TOK7SO))
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="tmscKtWaT">
+													<a href="#tmscKtWaT" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="a3ftcUwen">
+											<a href="#a3ftcUwen" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} tags (`#`) are still a bitch - cut out sometimes, hard to figure out if ended or not, etc - gotta work it out
 											</div>
 										</li>
-										<li>
+										<li id="JbbRU5iKv">
+											<a href="#JbbRU5iKv" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} etc
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="bgK6oOLNS">
+									<a href="#bgK6oOLNS" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="_n0TOK7SO">
+							<a href="#_n0TOK7SO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} will also need to make `stackTree` handle public vs private stuff, i.e. it should be usable easily / out of the box, w/o having to pay attention to the public/private stuff.
 							</div>
 							<ul>
-								<li>
+								<li id="WWtI6Ktjy">
+									<a href="#WWtI6Ktjy" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											need this esp. for generating good html (as currently only doing a normal string)
 									</div>
 								</li>
-								<li>
+								<li id="9sWJ2W_C0">
+									<a href="#9sWJ2W_C0" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} `stackTreeSafe`?
 									</div>
 									<ul>
-										<li>
+										<li id="J1odur_pX">
+											<a href="#J1odur_pX" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													but i don&#39;t think it&#39;s enough actually
 											</div>
 										</li>
-										<li>
+										<li id="MdzqUtN9e">
+											<a href="#MdzqUtN9e" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													though not sure. perhaps best would be to handle both private &amp; public cases in a single scenario
 											</div>
 										</li>
-										<li>
+										<li id="USpmFyAcs">
+											<a href="#USpmFyAcs" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													or maybe better - have more context available to you, like the block &amp; it&#39;s metadata? i suppose it&#39;s already available in our current setup, i.e. inside the `hideBlockStringIfNotPublic`
 											</div>
 											<ul>
-												<li>
+												<li id="9vUZktZET">
+													<a href="#9vUZktZET" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} stuff shouldn&#39;t be there btw
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="cBI11ZtML">
+											<a href="#cBI11ZtML" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} gotta remember though that even though it&#39;s not linear &amp; it can be recursive, the stuff we&#39;re handling here is a string of a single block.
 											</div>
 										</li>
-										<li>
+										<li id="ZCL-FX-xU">
+											<a href="#ZCL-FX-xU" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} [[(hidden) ThXonBLoY]] the `linkedRef` no longer has useful stuff like the block&#39;s ref &amp; block&#39;s uid. need this stuff
 											</div>
 											<ul>
-												<li>
+												<li id="3gP2Dpr1Q">
+													<a href="#3gP2Dpr1Q" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															it&#39;s true `linkedRef` doesn&#39;t have it anymore. but do i actually need it?
 													</div>
 													<ul>
-														<li>
+														<li id="NI_pX77iX">
+															<a href="#NI_pX77iX" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	lol no. i again forgot: ((cBI11ZtML))
 															</div>
 															<ul>
-																<li>
+																<li id="VC09mIw8D">
+																	<a href="#VC09mIw8D" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			in this case it was the `hiddenLinkedRefPrefix`
 																	</div>
 																	<ul>
-																		<li>
+																		<li id="DwVGEygZq">
+																			<a href="#DwVGEygZq" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					~~renamed to hiddenBlockPrefix~~
 																			</div>
 																		</li>
-																		<li>
+																		<li id="HW3M2fPvk">
+																			<a href="#HW3M2fPvk" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					{{[[TODO]]}} wait. we need the uid of the page of a linked reference
 																			</div>
 																			<ul>
-																				<li>
+																				<li id="nRqhJ8ZGI">
+																					<a href="#nRqhJ8ZGI" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							oh but wait we already extract it from the linked ref by going thru all pages, and those pages even have their prefix already done. so the [last initial thought](((ZCL-FX-xU))) is correct, but we still don&#39;t need the stuff (unless gonna refactor?).
 																					</div>
 																				</li>
-																				<li></li>
+																				<li id="JWRW16_1x">
+																					<a href="#JWRW16_1x" class="block-ref"></a>
+																				</li>
 																			</ul>
 																		</li>
-																		<li></li>
+																		<li id="oM7l8jqKM">
+																			<a href="#oM7l8jqKM" class="block-ref"></a>
+																		</li>
 																	</ul>
 																</li>
-																<li></li>
+																<li id="_WhMMsgOW">
+																	<a href="#_WhMMsgOW" class="block-ref"></a>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="ktAME4nZP">
+															<a href="#ktAME4nZP" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="ENNihI4F8">
+													<a href="#ENNihI4F8" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="vUtmAMnIS">
+											<a href="#vUtmAMnIS" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="cJeTn5FBp">
+									<a href="#cJeTn5FBp" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="PRaiZEOtU">
+							<a href="#PRaiZEOtU" class="block-ref"></a>
+						</li>
+						<li id="9V6ZAbs9k">
+							<a href="#9V6ZAbs9k" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (!) un-pause the [[github actions]] workflow - after stuff like ((LGHGl9_23)) gets done
 							</div>
 							<ul>
-								<li>
+								<li id="LGHGl9_23">
+									<a href="#LGHGl9_23" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[1]
 									</div>
 									<ul>
-										<li>
+										<li id="ZqBqrcCkb">
+											<a href="#ZqBqrcCkb" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													((5oHA_bb-0))
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="c5hFCfxZg">
+									<a href="#c5hFCfxZg" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="VHdSsvpOV">
+							<a href="#VHdSsvpOV" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="VBWSnbUN3">
+					<a href="#VBWSnbUN3" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) VBWSnbUN3
 					</div>
 				</li>
-				<li>
+				<li id="wn3au93Fq">
+					<a href="#wn3au93Fq" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) wn3au93Fq
 					</div>
 				</li>
-				<li>
+				<li id="UX-YrNh5w">
+					<a href="#UX-YrNh5w" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) UX-YrNh5w
 					</div>
 				</li>
-				<li>
+				<li id="jj63oHX-N">
+					<a href="#jj63oHX-N" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) jj63oHX-N
 					</div>
 				</li>
-				<li>
+				<li id="YkcOIQcmZ">
+					<a href="#YkcOIQcmZ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) YkcOIQcmZ
 					</div>
 				</li>
-				<li>
+				<li id="1qdNzt590">
+					<a href="#1qdNzt590" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1qdNzt590
 					</div>
@@ -590,7 +727,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="MDmWA1Tde">
+			<a href="#MDmWA1Tde" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

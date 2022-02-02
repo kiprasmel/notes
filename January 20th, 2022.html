@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.745Z</span>
+				<span>2022-02-02T14:33:54.105Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,127 +245,150 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1642629606344);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801745);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434105);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="GEOqukxDt">
+					<a href="#GEOqukxDt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) GEOqukxDt #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="DDP91---9">
+							<a href="#DDP91---9" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) DDP91---9 [[(hidden) v0H4bT6Yu]] #[[(hidden) vuiz_eLip]]
 							</div>
 							<ul>
-								<li>
+								<li id="Rh05-EsKK">
+									<a href="#Rh05-EsKK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) Rh05-EsKK
 									</div>
 								</li>
-								<li>
+								<li id="W65M2cnG0">
+									<a href="#W65M2cnG0" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) W65M2cnG0
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="A9T7AFUBS">
+							<a href="#A9T7AFUBS" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="zKJ72Ftpi">
+									<a href="#zKJ72Ftpi" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} handle scss syntax in postcss codemods
 									</div>
 									<ul>
-										<li>
+										<li id="OKWTPFUvK">
+											<a href="#OKWTPFUvK" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													turns out currently were only handling .css syntax, because ofc haven&#39;t tested on proper codebases yet
 											</div>
 										</li>
-										<li>
+										<li id="EY9EXP44n">
+											<a href="#EY9EXP44n" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} verify works on postcss too
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="ROK6W3eFj">
+									<a href="#ROK6W3eFj" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} work on an implementation of a custom codemod runner for codeshift community that we can merge upstream
 									</div>
 									<ul>
-										<li>
+										<li id="szgI47pkw">
+											<a href="#szgI47pkw" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} MVP works!!!
 											</div>
 										</li>
-										<li>
+										<li id="BP4w4kIWW">
+											<a href="#BP4w4kIWW" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} also made aliasing work in shorthands.json
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="3R2vJG22F">
+									<a href="#3R2vJG22F" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="D7ERHjptu">
+							<a href="#D7ERHjptu" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) D7ERHjptu
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="rVlDgZz9C">
+					<a href="#rVlDgZz9C" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) rVlDgZz9C
 					</div>
 				</li>
-				<li>
+				<li id="d0ZIbzRHh">
+					<a href="#d0ZIbzRHh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) d0ZIbzRHh
 					</div>
 				</li>
-				<li>
+				<li id="DVtdJ_vZU">
+					<a href="#DVtdJ_vZU" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) DVtdJ_vZU #[[(hidden) YOQoA_-41]] [[(hidden) 1yDofNZjv]]
 					</div>
 					<ul>
-						<li>
+						<li id="uycy1vgdl">
+							<a href="#uycy1vgdl" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) uycy1vgdl [[(hidden) CHui0gQgq]]
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="BhHPImy_D">
+					<a href="#BhHPImy_D" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) BhHPImy_D
 					</div>
 				</li>
-				<li>
+				<li id="xQWS3QR9p">
+					<a href="#xQWS3QR9p" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) xQWS3QR9p [[(hidden) 01-21-2022]]
 					</div>
 				</li>
-				<li>
+				<li id="sXmoCgng-">
+					<a href="#sXmoCgng-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) sXmoCgng-
 					</div>
 				</li>
-				<li>
+				<li id="BYcRx5Ke5">
+					<a href="#BYcRx5Ke5" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) BYcRx5Ke5
 					</div>
 				</li>
-				<li>
+				<li id="DFovufFkJ">
+					<a href="#DFovufFkJ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) DFovufFkJ
 					</div>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.837Z</span>
+				<span>2022-02-02T14:33:54.204Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,89 +245,107 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640296803488);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801837);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434204);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="AltQtLRVT">
+					<a href="#AltQtLRVT" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) AltQtLRVT
 					</div>
 				</li>
-				<li>
+				<li id="76XSoMwHC">
+					<a href="#76XSoMwHC" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="ZHcaaJqqP">
+							<a href="#ZHcaaJqqP" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} fix the sorting of daily notes lol
 							</div>
 						</li>
-						<li>
+						<li id="KbUKThIna">
+							<a href="#KbUKThIna" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} is text inside linked references not hidden somehow for some reason?
 							</div>
 							<ul>
-								<li>
+								<li id="TpYgqo0ni">
+									<a href="#TpYgqo0ni" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											((xR27Mb6Cy))
 									</div>
 									<ul>
-										<li>
+										<li id="QZFqrjygG">
+											<a href="#QZFqrjygG" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													ah nvm it&#39;s under [[codemods]] (public recursive tag, as soon they&#39;ll be)
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="xTMayf0KV">
+									<a href="#xTMayf0KV" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="FALkUvn4u">
+							<a href="#FALkUvn4u" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="hGFr1So6r">
+					<a href="#hGFr1So6r" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hGFr1So6r
 					</div>
 				</li>
-				<li>
+				<li id="uYcw-nBA2">
+					<a href="#uYcw-nBA2" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) uYcw-nBA2 [[(hidden) rmxV-oJpT]] [[(hidden) lpReJcIfP]]
 					</div>
 					<ul>
-						<li>
+						<li id="Z5Pb8sHzY">
+							<a href="#Z5Pb8sHzY" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) Z5Pb8sHzY
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="I_MI069kd">
+					<a href="#I_MI069kd" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) I_MI069kd
 					</div>
 				</li>
-				<li>
+				<li id="xFesvdZu4">
+					<a href="#xFesvdZu4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) xFesvdZu4
 					</div>
 				</li>
-				<li>
+				<li id="3NKeQHul-">
+					<a href="#3NKeQHul-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 3NKeQHul-
 					</div>
 				</li>
-				<li>
+				<li id="3YhuJ_IR8">
+					<a href="#3YhuJ_IR8" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 3YhuJ_IR8
 					</div>
 				</li>
-				<li>
+				<li id="FpZ2H1zEB">
+					<a href="#FpZ2H1zEB" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) FpZ2H1zEB
 					</div>
@@ -350,7 +421,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FkoX4VkN0">
+			<a href="#FkoX4VkN0" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -367,7 +440,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="rIaV_QbsY">
+		<a href="#rIaV_QbsY" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) rIaV_QbsY #[[(hidden) oWn8Mvs8V]] #[[(hidden) 8LIMerx2O]]
 		</div>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.747Z</span>
+				<span>2022-02-02T14:33:54.108Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,238 +245,293 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1642372240622);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801747);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434108);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="6PpBTr0-t">
+					<a href="#6PpBTr0-t" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6PpBTr0-t #[[(hidden) _sW66DmMa]] #[[re]]
 					</div>
 					<ul>
-						<li>
+						<li id="T4v5dqnlr">
+							<a href="#T4v5dqnlr" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) T4v5dqnlr
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="IjXpYThjh">
+					<a href="#IjXpYThjh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) IjXpYThjh
 					</div>
 				</li>
-				<li>
+				<li id="hBJSY0fOI">
+					<a href="#hBJSY0fOI" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hBJSY0fOI
 					</div>
 				</li>
-				<li>
+				<li id="yKNWpLDTG">
+					<a href="#yKNWpLDTG" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) yKNWpLDTG
 					</div>
 				</li>
-				<li>
+				<li id="ifCJTtnDk">
+					<a href="#ifCJTtnDk" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ifCJTtnDk #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="YctcnfVlP">
+							<a href="#YctcnfVlP" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) YctcnfVlP [[(hidden) V8WtQHk_B]]
 							</div>
 						</li>
-						<li>
+						<li id="LFyHH0leO">
+							<a href="#LFyHH0leO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) LFyHH0leO
 							</div>
 						</li>
-						<li>
+						<li id="ZVCbu3E4v">
+							<a href="#ZVCbu3E4v" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="Jhb7_mFc-">
+									<a href="#Jhb7_mFc-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} css stuff
 									</div>
 								</li>
-								<li>
+								<li id="xio2E989S">
+									<a href="#xio2E989S" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} talk to upstream re: supporting different runners ([[(hidden) DTTuZxhoc]] / [[(hidden) HwSsfeahD]] etc.), or at least specifying before/after commands
 									</div>
 									<ul>
-										<li>
+										<li id="amPC_0RlV">
+											<a href="#amPC_0RlV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													cc:: [[(hidden) 9ipeOcvbC]]
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="jq68NSbtG">
+									<a href="#jq68NSbtG" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} allow comment when needing a manual value in `add-missing-jsx-attribute`
 									</div>
 								</li>
-								<li>
+								<li id="GaP_VcZ9r">
+									<a href="#GaP_VcZ9r" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} updating info
 									</div>
 								</li>
-								<li>
+								<li id="tzbfP3S2-">
+									<a href="#tzbfP3S2-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} quick info for what to do next (linter etc)
 									</div>
 								</li>
-								<li></li>
+								<li id="ii2Npaeyl">
+									<a href="#ii2Npaeyl" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="DvrQw6XbS">
+							<a href="#DvrQw6XbS" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) DvrQw6XbS
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="vd4soRWyT">
+					<a href="#vd4soRWyT" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) vd4soRWyT
 					</div>
 				</li>
-				<li>
+				<li id="MsOSd8lLo">
+					<a href="#MsOSd8lLo" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="reZmRm8Fi">
+							<a href="#reZmRm8Fi" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} can take inspiration from e.g. [[(hidden) TVhpQMM3V]]:
 							</div>
 							<ul>
-								<li>
+								<li id="17L4oaRjd">
+									<a href="#17L4oaRjd" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/newren/git-filter-repo
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="L8YZfDdNz">
+							<a href="#L8YZfDdNz" class="block-ref"></a>
+						</li>
+						<li id="qNA_f5ShX">
+							<a href="#qNA_f5ShX" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									on the [[(hidden) hLbnDaAwS]] stuff - lol, i think we&#39;ve come full circle now - i now realize that in our ([[js]]) environment, using `throw` + `catch` for errors, and `return` + `.then`/`await` for success, is all that&#39;s needed!
 							</div>
 							<ul>
-								<li>
+								<li id="dC-0rKklo">
+									<a href="#dC-0rKklo" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											but the learnings have been so interesting!
 									</div>
 								</li>
-								<li>
+								<li id="ZCL8qKHX7">
+									<a href="#ZCL8qKHX7" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											i still gotta explore more.
 									</div>
 									<ul>
-										<li>
+										<li id="nJwXaVKM8">
+											<a href="#nJwXaVKM8" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} i think there&#39;s something yet to be found about [[(hidden) L1DmY6J2n]] - could it be that we could avoid coloring them with `async`, by utilizing `throw` somehow?
 											</div>
 											<ul>
-												<li>
+												<li id="k_jThkFb_">
+													<a href="#k_jThkFb_" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															promises still seem to be the foundation regardless. and for good reason. [[monads]] &amp; [[(hidden) aPRQxrSDE]].
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="ECAVVljxC">
+											<a href="#ECAVVljxC" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="b4YsLqOAN">
+									<a href="#b4YsLqOAN" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="yG_k92LyR">
+							<a href="#yG_k92LyR" class="block-ref"></a>
+						</li>
+						<li id="cw2_EU4xR">
+							<a href="#cw2_EU4xR" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} the initialBranch travelling together and eventually ending up the same as latestBranch
 							</div>
 							<ul>
-								<li>
+								<li id="B6U5SmI_x">
+									<a href="#B6U5SmI_x" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											oh boy, something&#39;s def. wrong
 									</div>
 								</li>
-								<li>
+								<li id="izlf0O6I1">
+									<a href="#izlf0O6I1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} i think we need to switch to using [[(hidden) Wk9BwS_1L]]&#39;s native `rebase`
 									</div>
 									<ul>
-										<li>
+										<li id="NiF0h2DUJ">
+											<a href="#NiF0h2DUJ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} would prolly fix this
 											</div>
 										</li>
-										<li>
+										<li id="pT9Tq4gyA">
+											<a href="#pT9Tq4gyA" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} won&#39;t need to create the initial `git-rebase-todo`, only parse it (already doing it)
 											</div>
 											<ul>
-												<li>
+												<li id="wUyimafu-">
+													<a href="#wUyimafu-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} tho will need to enhance w/ branches? or already doing too?
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="9cI838cpA">
+											<a href="#9cI838cpA" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} can allow users provide further args to native rebase after `--`
 											</div>
 										</li>
-										<li>
+										<li id="5IBQzIHlh">
+											<a href="#5IBQzIHlh" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} only problem is that it at least __seems__ hacky -- users could have their own scripts set up, and invoking these would be far from ideal
 											</div>
 											<ul>
-												<li>
+												<li id="eXNk4F_J-">
+													<a href="#eXNk4F_J-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} do more research
 													</div>
 												</li>
-												<li>
+												<li id="m9mpH5iRp">
+													<a href="#m9mpH5iRp" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} if needed, and not already existing, contribute a flag upstream to allow for this sort of generation of the todo, w/o invoking anything
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="9NzISdwNy">
+											<a href="#9NzISdwNy" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="3Tdqa__AD">
+									<a href="#3Tdqa__AD" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="r9rElBgjN">
+							<a href="#r9rElBgjN" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="7jZzvAn9l">
+					<a href="#7jZzvAn9l" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7jZzvAn9l
 					</div>
 				</li>
-				<li>
+				<li id="XLSsxgT1t">
+					<a href="#XLSsxgT1t" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) XLSsxgT1t
 					</div>
 				</li>
-				<li>
+				<li id="57OS6vFJ1">
+					<a href="#57OS6vFJ1" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 57OS6vFJ1
 					</div>
 				</li>
-				<li>
+				<li id="FW_05ytKD">
+					<a href="#FW_05ytKD" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) FW_05ytKD
 					</div>
@@ -499,7 +607,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="zD4nAelY2">
+			<a href="#zD4nAelY2" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -516,17 +626,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="jiBuLGkUn">
+		<a href="#jiBuLGkUn" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) jiBuLGkUn 
 		</div>
 	</li>
-	<li>
+	<li id="RefIY_AQR">
+		<a href="#RefIY_AQR" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) RefIY_AQR 
 		</div>
 	</li>
-	<li>
+	<li id="WKaHYMB8k">
+		<a href="#WKaHYMB8k" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) WKaHYMB8k
 		</div>

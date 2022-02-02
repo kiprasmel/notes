@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.497Z</span>
+				<span>2022-02-02T14:33:54.910Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,29 +245,33 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1631841285067);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802497);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434910);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="GeidxGJXW">
+					<a href="#GeidxGJXW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} #[[public]]-linked-references
 					</div>
 				</li>
-				<li>
+				<li id="OZncWsFbm">
+					<a href="#OZncWsFbm" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) OZncWsFbm
 					</div>
 				</li>
-				<li>
+				<li id="2b_WVG688">
+					<a href="#2b_WVG688" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 2b_WVG688
 					</div>
 				</li>
-				<li>
+				<li id="h3N5Y2_BD">
+					<a href="#h3N5Y2_BD" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) h3N5Y2_BD
 					</div>
@@ -290,7 +347,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="VNFzHPz6X">
+			<a href="#VNFzHPz6X" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -307,49 +366,58 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Y8MP4wiG2">
+		<a href="#Y8MP4wiG2" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) Y8MP4wiG2
 		</div>
 		<ul>
-			<li>
+			<li id="wVuCtQ1w6">
+				<a href="#wVuCtQ1w6" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) wVuCtQ1w6
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="26NI5jFpu">
+		<a href="#26NI5jFpu" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 26NI5jFpu
 		</div>
 	</li>
-	<li>
+	<li id="9_w2CDE0K">
+		<a href="#9_w2CDE0K" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 9_w2CDE0K
 		</div>
 		<ul>
-			<li>
+			<li id="avlgMx4xG">
+				<a href="#avlgMx4xG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) avlgMx4xG
 				</div>
 			</li>
-			<li>
+			<li id="xYkoNQz4d">
+				<a href="#xYkoNQz4d" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) xYkoNQz4d
 				</div>
 				<ul>
-					<li>
+					<li id="N-TwCtrKt">
+						<a href="#N-TwCtrKt" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) N-TwCtrKt
 						</div>
 						<ul>
-							<li>
+							<li id="35Z-tPdYJ">
+								<a href="#35Z-tPdYJ" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) 35Z-tPdYJ
 								</div>
 							</li>
-							<li>
+							<li id="TMXZkL2dB">
+								<a href="#TMXZkL2dB" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) TMXZkL2dB
 								</div>
@@ -360,76 +428,90 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="jDXfk6Ei3">
+		<a href="#jDXfk6Ei3" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) jDXfk6Ei3
 		</div>
 	</li>
-	<li>
+	<li id="UVIMFeJ73">
+		<a href="#UVIMFeJ73" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) UVIMFeJ73
 		</div>
 		<ul>
-			<li>
+			<li id="rMn8hdqJ2">
+				<a href="#rMn8hdqJ2" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) rMn8hdqJ2
 				</div>
 			</li>
-			<li>
+			<li id="wg80ZiRq7">
+				<a href="#wg80ZiRq7" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) wg80ZiRq7
 				</div>
 			</li>
-			<li>
+			<li id="SPofoyR1p">
+				<a href="#SPofoyR1p" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) SPofoyR1p
 				</div>
 			</li>
-			<li>
+			<li id="6oMjC8l0n">
+				<a href="#6oMjC8l0n" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 6oMjC8l0n
 				</div>
 				<ul>
-					<li>
+					<li id="AcGSxmddy">
+						<a href="#AcGSxmddy" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) AcGSxmddy
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="jZbCb9287">
+				<a href="#jZbCb9287" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) jZbCb9287
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="2Poq0EUGZ">
+		<a href="#2Poq0EUGZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 2Poq0EUGZ
 		</div>
 	</li>
-	<li>
+	<li id="skszphWPT">
+		<a href="#skszphWPT" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) skszphWPT
 		</div>
 		<ul>
-			<li>
+			<li id="j8iYt_vZb">
+				<a href="#j8iYt_vZb" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) j8iYt_vZb
 				</div>
 			</li>
-			<li>
+			<li id="GpYK87h3f">
+				<a href="#GpYK87h3f" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) GpYK87h3f
 				</div>
 				<ul>
-					<li>
+					<li id="0sOlluu71">
+						<a href="#0sOlluu71" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) 0sOlluu71 
 						</div>
 					</li>
-					<li>
+					<li id="9E1iek3u3">
+						<a href="#9E1iek3u3" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) 9E1iek3u3 
 						</div>
@@ -438,7 +520,8 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="kM1GEl36m">
+		<a href="#kM1GEl36m" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) kM1GEl36m
 		</div>
@@ -458,7 +541,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XgX8wglSE">
+			<a href="#XgX8wglSE" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -475,92 +560,110 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="bHFi0KwAE">
+		<a href="#bHFi0KwAE" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) bHFi0KwAE
 		</div>
 	</li>
-	<li>
+	<li id="v6eodsY01">
+		<a href="#v6eodsY01" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) v6eodsY01
 		</div>
 	</li>
-	<li>
+	<li id="euLnM-f2h">
+		<a href="#euLnM-f2h" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) euLnM-f2h
 		</div>
 	</li>
-	<li>
+	<li id="vyafeEfUi">
+		<a href="#vyafeEfUi" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) vyafeEfUi
 		</div>
 	</li>
-	<li>
+	<li id="MxMRUSLbs">
+		<a href="#MxMRUSLbs" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) MxMRUSLbs [[(hidden) r543q3lU1]]
 		</div>
 	</li>
-	<li>
+	<li id="Rxiz8jFVc">
+		<a href="#Rxiz8jFVc" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) Rxiz8jFVc
 		</div>
 	</li>
-	<li>
+	<li id="SFPH_rhBo">
+		<a href="#SFPH_rhBo" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) SFPH_rhBo
 		</div>
 	</li>
-	<li>
+	<li id="tmnohgWxL">
+		<a href="#tmnohgWxL" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) tmnohgWxL
 		</div>
 	</li>
-	<li>
+	<li id="-i3aYwrP2">
+		<a href="#-i3aYwrP2" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) -i3aYwrP2
 		</div>
 	</li>
-	<li>
+	<li id="3Ps--itVw">
+		<a href="#3Ps--itVw" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 3Ps--itVw
 		</div>
 	</li>
-	<li>
+	<li id="rLh0TksbJ">
+		<a href="#rLh0TksbJ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) rLh0TksbJ
 		</div>
 	</li>
-	<li>
+	<li id="4mlNUQqQy">
+		<a href="#4mlNUQqQy" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 4mlNUQqQy
 		</div>
 	</li>
-	<li>
+	<li id="K9gR_4HY8">
+		<a href="#K9gR_4HY8" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) K9gR_4HY8
 		</div>
 	</li>
-	<li>
+	<li id="_xZZcZfJ1">
+		<a href="#_xZZcZfJ1" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) _xZZcZfJ1
 		</div>
 	</li>
-	<li>
+	<li id="FeHBhn9aN">
+		<a href="#FeHBhn9aN" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) FeHBhn9aN
 		</div>
 	</li>
-	<li>
+	<li id="0du2u1Gwq">
+		<a href="#0du2u1Gwq" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 0du2u1Gwq
 		</div>
 	</li>
-	<li>
+	<li id="Znh1CLd6w">
+		<a href="#Znh1CLd6w" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) Znh1CLd6w
 		</div>
 	</li>
-	<li>
+	<li id="17D30OHE5">
+		<a href="#17D30OHE5" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 17D30OHE5
 		</div>
@@ -580,7 +683,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="rqr8tvyHv">
+			<a href="#rqr8tvyHv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -613,7 +718,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FrTxK99yg">
+			<a href="#FrTxK99yg" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -646,7 +753,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="bZaFLmSGu">
+			<a href="#bZaFLmSGu" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -663,27 +772,32 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="LMb2mWnpT">
+		<a href="#LMb2mWnpT" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) LMb2mWnpT 
 		</div>
 	</li>
-	<li>
+	<li id="eMAcdDVD0">
+		<a href="#eMAcdDVD0" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) eMAcdDVD0 
 		</div>
 	</li>
-	<li>
+	<li id="TnSglWM37">
+		<a href="#TnSglWM37" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) TnSglWM37 
 		</div>
 		<ul>
-			<li>
+			<li id="mba8fNChm">
+				<a href="#mba8fNChm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) mba8fNChm [[(hidden) uLKQ9xI2v]] #[[(hidden) uZbvl95xS]] #[[(hidden) n26Vss_Pq]]
 				</div>
 				<ul>
-					<li>
+					<li id="N7Koh1mZ5">
+						<a href="#N7Koh1mZ5" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) N7Koh1mZ5 [[(hidden) nZCofn2Uo]]
 						</div>
@@ -692,24 +806,28 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="RKQ-h8lRn">
+		<a href="#RKQ-h8lRn" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} (hidden) RKQ-h8lRn 
 		</div>
 		<ul>
-			<li>
+			<li id="zz4gAS6js">
+				<a href="#zz4gAS6js" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) zz4gAS6js
 				</div>
 				<ul>
-					<li>
+					<li id="zmtaMbVQd">
+						<a href="#zmtaMbVQd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) zmtaMbVQd
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="rnzcJSejH">
+				<a href="#rnzcJSejH" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) rnzcJSejH
 				</div>
@@ -731,7 +849,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="FNyR-Jpic">
+			<a href="#FNyR-Jpic" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -748,7 +868,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="_0OJTGPYv">
+		<a href="#_0OJTGPYv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) _0OJTGPYv
 		</div>
@@ -768,7 +889,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="mJWpxkhWF">
+			<a href="#mJWpxkhWF" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -801,7 +924,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4YVKGxoMZ">
+			<a href="#4YVKGxoMZ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -834,7 +959,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CwbM8wYbl">
+			<a href="#CwbM8wYbl" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -851,7 +978,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="WFVoHYkAP">
+		<a href="#WFVoHYkAP" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) WFVoHYkAP [[(hidden) xPcsL87hm]]
 		</div>
@@ -871,7 +999,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Dmzxs88Tf">
+			<a href="#Dmzxs88Tf" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -904,7 +1034,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="-ofgbcBOo">
+			<a href="#-ofgbcBOo" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -921,59 +1053,70 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Rd009_MU1">
+		<a href="#Rd009_MU1" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 		</div>
 	</li>
-	<li>
+	<li id="yy7VV55Yr">
+		<a href="#yy7VV55Yr" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```shell
 	sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev```
 		</div>
 	</li>
-	<li>
+	<li id="wcK-A71mc">
+		<a href="#wcK-A71mc" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://askubuntu.com/a/923317
 		</div>
 	</li>
-	<li>
+	<li id="hCICkS1qA">
+		<a href="#hCICkS1qA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```shell
 	apt install firefox```
 		</div>
 	</li>
-	<li>
+	<li id="vNuGVC2ym">
+		<a href="#vNuGVC2ym" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} still failing...
 		</div>
 	</li>
-	<li>
+	<li id="wZtw84_Xb">
+		<a href="#wZtw84_Xb" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				if manually copying graph:
 		</div>
 		<ul>
-			<li>
+			<li id="6-9O8blWu">
+				<a href="#6-9O8blWu" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						can proceed
 				</div>
 			</li>
-			<li>
+			<li id="scRGa45js">
+				<a href="#scRGa45js" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 				</div>
 				<ul>
-					<li>
+					<li id="claNC8Tsv">
+						<a href="#claNC8Tsv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								install nvm
 						</div>
 					</li>
-					<li>
+					<li id="Ggf65nHKm">
+						<a href="#Ggf65nHKm" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								then
 						</div>
 						<ul>
-							<li>
+							<li id="6mzbT7VfE">
+								<a href="#6mzbT7VfE" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										```javascript
 							nvm install 12
@@ -990,7 +1133,10 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="FnXuJvbrQ">
+		<a href="#FnXuJvbrQ" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1006,7 +1152,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="PWqVpXMqz">
+			<a href="#PWqVpXMqz" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1039,7 +1187,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="6eGAjbXoP">
+			<a href="#6eGAjbXoP" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1056,63 +1206,79 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Mdw740_ZI">
+		<a href="#Mdw740_ZI" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				WHAT git has `libgit2` (in C (ofc)) &amp; SUPPORTS BINDINGS IN OTHER LANGS &amp; THERE&#39;S A TON, JS INCLUDED 🤯🤯🤯
 		</div>
 		<ul>
-			<li>
+			<li id="RvZgCn5cM">
+				<a href="#RvZgCn5cM" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://libgit2.org/
 				</div>
 				<ul>
-					<li>
+					<li id="4LPNu3ZfL">
+						<a href="#4LPNu3ZfL" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://github.com/nodegit/nodegit
 						</div>
 						<ul>
-							<li>
+							<li id="O6BBPQ8go">
+								<a href="#O6BBPQ8go" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://www.nodegit.org/
 								</div>
 							</li>
-							<li>
+							<li id="Yj8Oa1QDL">
+								<a href="#Yj8Oa1QDL" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										https://www.nodegit.org/api/
 								</div>
 								<ul>
-									<li>
+									<li id="QjscErwPA">
+										<a href="#QjscErwPA" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												🤯🤯🤯 
 										</div>
 									</li>
-									<li>
+									<li id="UC13cWT9f">
+										<a href="#UC13cWT9f" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												it&#39;s so well done wtf
 										</div>
 									</li>
-									<li>
+									<li id="vUbneU_rR">
+										<a href="#vUbneU_rR" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												combined w/ the original one, it&#39;s amazing
 										</div>
 										<ul>
-											<li>
+											<li id="I4glekwFb">
+												<a href="#I4glekwFb" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														https://libgit2.org/libgit2/#HEAD
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="f_83btXsa">
+										<a href="#f_83btXsa" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="RNOjhtFt5">
+								<a href="#RNOjhtFt5" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="aZT2RsP8w">
+						<a href="#aZT2RsP8w" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="SGamAgDQM">
+				<a href="#SGamAgDQM" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						dude why is this not common knowledge? i&#39;ve never seen anyone use this. this should be made very clear somewhere like git-scm or git&#39;s own source (in their Documentation/contrib or similar guide)
 				</div>
@@ -1121,7 +1287,9 @@
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="JeF32kACp">
+			<a href="#JeF32kACp" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1138,12 +1306,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="uNkZuvsm3">
+		<a href="#uNkZuvsm3" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				wrap git-rebase
 		</div>
 		<ul>
-			<li>
+			<li id="iVqvppLxY">
+				<a href="#iVqvppLxY" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```shell
 			git config --global alias.rebaseraw = rebase
@@ -1153,37 +1323,44 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="97QzVM0f2">
+		<a href="#97QzVM0f2" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				when invoked (through multi-rebase or even regular rebase):
 		</div>
 		<ul>
-			<li>
+			<li id="croiF4Kb9">
+				<a href="#croiF4Kb9" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						idk if we should have a config like in [[(hidden) zmiEcf1EP]]. 
 				</div>
 				<ul>
-					<li>
+					<li id="eDr--IgLQ">
+						<a href="#eDr--IgLQ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								perhaps, to specify which branches depend on which.
 						</div>
 						<ul>
-							<li>
+							<li id="bl43FUX2Q">
+								<a href="#bl43FUX2Q" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										though, seems unnecessary, we&#39;d only really need the ref to the oldest commit that you depend on, and then everything in between would be picked up, simply from `git log`.
 								</div>
 							</li>
-							<li>
+							<li id="MC-Ts228n">
+								<a href="#MC-Ts228n" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										but, this would still be useful for safety, to make sure we don&#39;t accidentally include what we don&#39;t want
 								</div>
 								<ul>
-									<li>
+									<li id="piUldvvBe">
+										<a href="#piUldvvBe" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												tho, the rebase edit todo would still show the stuff, so still seems less necessary, maybe even worse if we exclude something. idk yet
 										</div>
 									</li>
-									<li>
+									<li id="RWjbCb1Sg">
+										<a href="#RWjbCb1Sg" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												fact is, the whole point if wrapping git rebase is that it&#39;s likely one would forget they want a multi-rebase, because the whole goal of it is to make it __feel__ like normal git-rebase, w/ `branch-end` &amp; `new-branch-end` or similar commands added. so, having an explicit config one sets up once per the latest branch, would allow to identify if we&#39;re doing a multi-rebase, or if we should default back to the normal git-rebase.
 										</div>
@@ -1194,78 +1371,92 @@
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="MQ9ZYYgkN">
+				<a href="#MQ9ZYYgkN" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} would take some safety measures?
 				</div>
 				<ul>
-					<li>
+					<li id="lazcn_aww">
+						<a href="#lazcn_aww" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} e.g. checking if any of the branches are not pushed to remote
 						</div>
 					</li>
-					<li>
+					<li id="BvV5EtQmz">
+						<a href="#BvV5EtQmz" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} e. g. chceking if previously a git-multi-rebase ran and wasn&#39;t applied/finished and temp branches are still there
 						</div>
 					</li>
-					<li>
+					<li id="WZ3eqHLXX">
+						<a href="#WZ3eqHLXX" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} etc. figure out what needs to be done
 						</div>
 					</li>
-					<li>
+					<li id="QqsWaH1XE">
+						<a href="#QqsWaH1XE" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								((EaypictfH))
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="OST-d_vH8">
+				<a href="#OST-d_vH8" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						would launch `git-rebase -i`
 				</div>
 				<ul>
-					<li>
+					<li id="QvE2oTJ3B">
+						<a href="#QvE2oTJ3B" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								would edit the REBASE_EDIT_TODO or whatever file
 						</div>
 						<ul>
-							<li>
+							<li id="vcr1iziBh">
+								<a href="#vcr1iziBh" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										for all sub-branches, would add `branch-end &lt;branch-name&gt;` command after commit that the branch is pointing at
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="GZ4jdTWec">
+						<a href="#GZ4jdTWec" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								would then allow the user to edit the REBASE_EDIT_TODO, just like it&#39;d be normally done with git rebase -i
 						</div>
 						<ul>
-							<li>
+							<li id="HOOhjHCyF">
+								<a href="#HOOhjHCyF" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										the user can now:
 								</div>
 								<ul>
-									<li>
+									<li id="v8512eNAt">
+										<a href="#v8512eNAt" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												do the regular git rebase stuff,
 										</div>
 									</li>
-									<li>
+									<li id="cPqNnUMNv">
+										<a href="#cPqNnUMNv" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												plus they can move the `branch-end`s around
 										</div>
 										<ul>
-											<li>
+											<li id="EaypictfH">
+												<a href="#EaypictfH" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														{{[[TODO]]}} safety measure - if user moves around 2 `branch-end`s (i.e. swaps their order), ask for explicit confirmation
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="MnGkWpt9r">
+										<a href="#MnGkWpt9r" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												they can create new branches w/ `new-branch-end`
 										</div>
@@ -1274,166 +1465,209 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="UmAolGmVc">
+						<a href="#UmAolGmVc" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								probably would&#39;ve inserted `break` in the very beginning, so that we can read the file ourselves once the user finishes editing
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="U2Rr8Q9xX">
+				<a href="#U2Rr8Q9xX" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="3fyskNDMO">
+		<a href="#3fyskNDMO" class="block-ref"></a>
+	
+	</li>
+	<li id="Wr2YB_-9p">
+		<a href="#Wr2YB_-9p" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				interesting, but not quite
 		</div>
 		<ul>
-			<li>
+			<li id="dvvsPus8N">
+				<a href="#dvvsPus8N" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/Shopify/git-chain
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="XyHdBS_dj">
+		<a href="#XyHdBS_dj" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				nah, but interesting they have `git_python` pkg - when i was thinking about my own version of multi-rebase, i too though this would be useful, for javascript.
 		</div>
 		<ul>
-			<li>
+			<li id="pEVylgnZd">
+				<a href="#pEVylgnZd" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} check if js has such lib
 				</div>
 			</li>
-			<li>
+			<li id="ulGTylWo4">
+				<a href="#ulGTylWo4" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/wsteelman/git-utilities
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="bQHpPPDoZ">
+		<a href="#bQHpPPDoZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				oh shit
 		</div>
 		<ul>
-			<li>
+			<li id="fkkKNXWIf">
+				<a href="#fkkKNXWIf" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						reading the title of this:
 				</div>
 				<ul>
-					<li>
+					<li id="6NKynJwKe">
+						<a href="#6NKynJwKe" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://0xc0d1.com/blog/git-stack/
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="rSUSUrgow">
+				<a href="#rSUSUrgow" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						dude! what i want is stacked diffs!!
 				</div>
 			</li>
-			<li>
+			<li id="LbWZXoT8k">
+				<a href="#LbWZXoT8k" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						maybe i should rename multi-rebase to stacked-rebase?
 				</div>
 				<ul>
-					<li>
+					<li id="u4-7ktfNd">
+						<a href="#u4-7ktfNd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								for initial searchability if you&#39;re in a situation similar to mine, it might be harder to find,
 						</div>
 					</li>
-					<li>
+					<li id="V5Ntey46h">
+						<a href="#V5Ntey46h" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								but, if you&#39;ve heard about stacked diffs, maybe you&#39;ll find it even easier.
 						</div>
 					</li>
-					<li>
+					<li id="kqonK3Vwf">
+						<a href="#kqonK3Vwf" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								and, the name makes it clear very fast of what&#39;s actually going on
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li>
+			<li id="UnlUxkqgW">
+				<a href="#UnlUxkqgW" class="block-ref"></a>
+			</li>
+			<li id="dAGA1DW1R">
+				<a href="#dAGA1DW1R" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						the tool itself, gh-stack, seems pretty cool, but it&#39;s github-specific, and has many things that suck about it. i want mine to be git-specific (lol), with potentially adaptors for creating new PRs, editing PR titles etc., but that&#39;s less relevant if we figure out the core functionality.
 				</div>
 			</li>
-			<li>
+			<li id="FGDlHuO_4">
+				<a href="#FGDlHuO_4" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} i also realized that `new-branch-end` (or `branch-end-new`, if `ben` is good for shortname) is a little subtle -- if you&#39;re inserting a new branch (or branches) __between 2 existing ones__ (always the case here) in the same rebase, if you e.g. have normal ordering of 1., 2., 3., etc., now you&#39;d have to add another level, e.g. if inserting between 2. and 3., it now becomes: 1., 2.1, 2.2, 3. perhaps we don&#39;t need to modify the existing 2. into 2.1, or actually, perhaps it should be 1., 2., 3.1, 3.2, because we&#39;re taking &amp; splitting commits from 3., not from 2. (since a number marks the __end__, __not__ the beginning.). again, how do we retain e.g. github comments here? not worth to focus on right now, but good to keep in mind.
 				</div>
 				<ul>
-					<li>
+					<li id="yjsKQzv4P">
+						<a href="#yjsKQzv4P" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								obv you cannot rotate the branches on github either, because then the comments get lost / become completely irrelevant, because it&#39;s the wrong branch!
 						</div>
 						<ul>
-							<li>
+							<li id="AYxlbpR0Q">
+								<a href="#AYxlbpR0Q" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										oh but this might still apply if you&#39;re creating new branches...
 							hmm, perhaps we should __not__ focus on the branch-end-new, and only on branch-end now.
 								</div>
 							</li>
-							<li></li>
+							<li id="is47NH-a9">
+								<a href="#is47NH-a9" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="ATd5SkHjq">
+						<a href="#ATd5SkHjq" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="kOU9uyFr1">
+				<a href="#kOU9uyFr1" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="kVh4RBONV">
+		<a href="#kVh4RBONV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&quot;git stacked rebase&quot;
 		</div>
 		<ul>
-			<li>
+			<li id="gjGfX3x-c">
+				<a href="#gjGfX3x-c" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://news.ycombinator.com/item?id=27305521
 				</div>
 				<ul>
-					<li>
+					<li id="Jo9KHLQr2">
+						<a href="#Jo9KHLQr2" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								doesn&#39;t look like it
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="ULpfTyD7R">
+				<a href="#ULpfTyD7R" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/epage/git-stack
 				</div>
 				<ul>
-					<li>
+					<li id="KcDuITfy2">
+						<a href="#KcDuITfy2" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								hmmm, maybe, but still not what i want (u still need to jump around branches, &amp; i just want to chill /comfy/ in my latest branch)
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="BmXJmqNHK">
+				<a href="#BmXJmqNHK" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/ezyang/ghstack
 				</div>
 				<ul>
-					<li>
+					<li id="gR8-4mYe3">
+						<a href="#gR8-4mYe3" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								lel, submits each commit as a PR. nope.
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="KY3vh7Rb9">
+				<a href="#KY3vh7Rb9" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="JfobgDip5">
+		<a href="#JfobgDip5" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1449,7 +1683,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="C8fTkbGQM">
+			<a href="#C8fTkbGQM" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1466,111 +1702,140 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="i43eZWKPK">
+		<a href="#i43eZWKPK" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) i43eZWKPK 
 		</div>
 		<ul>
-			<li>
+			<li id="JyrQ4MCgi">
+				<a href="#JyrQ4MCgi" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) JyrQ4MCgi 
 				</div>
 				<ul>
-					<li>
+					<li id="wDgTZv0Vt">
+						<a href="#wDgTZv0Vt" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) wDgTZv0Vt 
 						</div>
 						<ul>
-							<li>
+							<li id="xU83AFJix">
+								<a href="#xU83AFJix" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										{{[[TODO]]}} (hidden) xU83AFJix 
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="UJLh7w6Bd">
+						<a href="#UJLh7w6Bd" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) UJLh7w6Bd
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="TOGRfoyhH">
+				<a href="#TOGRfoyhH" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						related: [[git-stacked-rebase]]
 				</div>
 				<ul>
-					<li>
+					<li id="DfTK6ptkY">
+						<a href="#DfTK6ptkY" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} automatic &quot;refactor&quot; command - `git blame HEAD` for each line to find what commit needs to be fixed up into, commit, prepare git-rebase-todo w/ the `fixup` commands ready
 						</div>
 						<ul>
-							<li>
+							<li id="uk8P377bl">
+								<a href="#uk8P377bl" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										maybe not everything is `fixup` tho so might want to be able to review the changes comfortably b4 creating the fixups
 								</div>
 							</li>
-							<li></li>
+							<li id="C3YQ531B4">
+								<a href="#C3YQ531B4" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="VfDNHDjrv">
+						<a href="#VfDNHDjrv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} we could very well, after `apply`, have `check`, which would go from 1st branch to last, and could have a sub-command of `check` that would show the diff in the branch - same as we have the alias `sod`
 						</div>
 						<ul>
-							<li>
+							<li id="ZFQbyqGJ8">
+								<a href="#ZFQbyqGJ8" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										{{[[TODO]]}} on the alias - would be good to have it, but also a separate alias that would show only that branch&#39;s diff, __without__ the changes included from previous branches
 								</div>
 							</li>
-							<li>
+							<li id="9hbAACZTB">
+								<a href="#9hbAACZTB" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										{{[[TODO]]}} `next` and `prev` to switch between branches / diffs
 								</div>
 								<ul>
-									<li>
+									<li id="xkJNyfMgi">
+										<a href="#xkJNyfMgi" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												yep seems to make sense.
 										</div>
 									</li>
-									<li>
+									<li id="_2KE23Nr0">
+										<a href="#_2KE23Nr0" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												{{[[TODO]]}} could even have the `current` stacked rebase ref, so that you don&#39;t even need to specify the branch you&#39;re on &amp; the branch you&#39;re rebasing on top of, and could do just `git stacked-rebase prev` &amp; `git stacked-rebase next` w/o any shenaningans
 										</div>
 										<ul>
-											<li>
+											<li id="aOQXrtNLh">
+												<a href="#aOQXrtNLh" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														re: ((3l52fL6rH))
 												</div>
 												<ul>
-													<li>
+													<li id="d1opRCoyx">
+														<a href="#d1opRCoyx" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																at this point, it indeed does look like `stacked-diffs` is becoming an actual concept
 														</div>
 													</li>
-													<li></li>
+													<li id="_rHOKio6h">
+														<a href="#_rHOKio6h" class="block-ref"></a>
+													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="90lwIVpwC">
+												<a href="#90lwIVpwC" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li></li>
+									<li id="X8p-xm9Cs">
+										<a href="#X8p-xm9Cs" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="7DezbEE89">
+								<a href="#7DezbEE89" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="0a2Iw_kQT">
+						<a href="#0a2Iw_kQT" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="KQB9XVZnD">
+				<a href="#KQB9XVZnD" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) KQB9XVZnD
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="EJDcO_8d_">
+		<a href="#EJDcO_8d_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) EJDcO_8d_
 		</div>
@@ -1590,7 +1855,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CWKS9veEV">
+			<a href="#CWKS9veEV" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1610,7 +1877,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="X0y15uUAv">
+			<a href="#X0y15uUAv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1643,7 +1912,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="izlf0O6I1">
+			<a href="#izlf0O6I1" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1660,46 +1931,56 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="NiF0h2DUJ">
+		<a href="#NiF0h2DUJ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} would prolly fix this
 		</div>
 	</li>
-	<li>
+	<li id="pT9Tq4gyA">
+		<a href="#pT9Tq4gyA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} won&#39;t need to create the initial `git-rebase-todo`, only parse it (already doing it)
 		</div>
 		<ul>
-			<li>
+			<li id="wUyimafu-">
+				<a href="#wUyimafu-" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} tho will need to enhance w/ branches? or already doing too?
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="9cI838cpA">
+		<a href="#9cI838cpA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} can allow users provide further args to native rebase after `--`
 		</div>
 	</li>
-	<li>
+	<li id="5IBQzIHlh">
+		<a href="#5IBQzIHlh" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} only problem is that it at least __seems__ hacky -- users could have their own scripts set up, and invoking these would be far from ideal
 		</div>
 		<ul>
-			<li>
+			<li id="eXNk4F_J-">
+				<a href="#eXNk4F_J-" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} do more research
 				</div>
 			</li>
-			<li>
+			<li id="m9mpH5iRp">
+				<a href="#m9mpH5iRp" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} if needed, and not already existing, contribute a flag upstream to allow for this sort of generation of the todo, w/o invoking anything
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="9NzISdwNy">
+		<a href="#9NzISdwNy" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1715,7 +1996,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="NQMkMFtyO">
+			<a href="#NQMkMFtyO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1748,7 +2031,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Kro3NRDgH">
+			<a href="#Kro3NRDgH" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1781,7 +2066,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="73p-dfp2U">
+			<a href="#73p-dfp2U" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1814,7 +2101,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="xMuCIKYh-">
+			<a href="#xMuCIKYh-" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1831,7 +2120,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="FQBNo-3my">
+		<a href="#FQBNo-3my" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://youtu.be/ig5E8CcdM9g?t=50m2s
 		</div>
@@ -1851,7 +2141,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="1wB698HcA">
+			<a href="#1wB698HcA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1868,14 +2160,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="i5GDy5Ycl">
+		<a href="#i5GDy5Ycl" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				currently if default set to `true` in global git config, this doesn&#39;t disable it, but should
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="rsZzDPXgU">
+			<a href="#rsZzDPXgU" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1908,7 +2203,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="aPcR6W1zb">
+			<a href="#aPcR6W1zb" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1925,12 +2222,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="rC6ouPb3O">
+		<a href="#rC6ouPb3O" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) rC6ouPb3O [[(hidden) 0E1qv_nQd]] [[(hidden) Wk9BwS_1L]]
 		</div>
 		<ul>
-			<li>
+			<li id="4WZY-Dy_e">
+				<a href="#4WZY-Dy_e" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 4WZY-Dy_e
 				</div>
@@ -1939,7 +2238,9 @@
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="rC6ouPb3O">
+			<a href="#rC6ouPb3O" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1956,14 +2257,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="4WZY-Dy_e">
+		<a href="#4WZY-Dy_e" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 4WZY-Dy_e
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="guZl5dvjF">
+			<a href="#guZl5dvjF" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1980,27 +2284,32 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Gx3bSknRp">
+		<a href="#Gx3bSknRp" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) Gx3bSknRp
 		</div>
 		<ul>
-			<li>
+			<li id="7-ty4Gx9O">
+				<a href="#7-ty4Gx9O" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) 7-ty4Gx9O #[[(hidden) _sW66DmMa]] #[[re]]
 				</div>
 				<ul>
-					<li>
+					<li id="aPcR6W1zb">
+						<a href="#aPcR6W1zb" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) aPcR6W1zb [[(hidden) Wk9BwS_1L]] [[(hidden) y2O8Yavfw]]
 						</div>
 						<ul>
-							<li>
+							<li id="rC6ouPb3O">
+								<a href="#rC6ouPb3O" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) rC6ouPb3O [[(hidden) 0E1qv_nQd]] [[(hidden) Wk9BwS_1L]]
 								</div>
 								<ul>
-									<li>
+									<li id="4WZY-Dy_e">
+										<a href="#4WZY-Dy_e" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) 4WZY-Dy_e
 										</div>
@@ -2009,108 +2318,126 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="B5c-EzAH1">
+						<a href="#B5c-EzAH1" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) B5c-EzAH1
 						</div>
 					</li>
-					<li>
+					<li id="lz3DY9IB0">
+						<a href="#lz3DY9IB0" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) lz3DY9IB0
 						</div>
 						<ul>
-							<li>
+							<li id="HDdOj0hP9">
+								<a href="#HDdOj0hP9" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) HDdOj0hP9
 								</div>
 								<ul>
-									<li>
+									<li id="mfNHev2oa">
+										<a href="#mfNHev2oa" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) mfNHev2oa
 										</div>
 									</li>
-									<li>
+									<li id="jBIGqSMyy">
+										<a href="#jBIGqSMyy" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) jBIGqSMyy
 										</div>
 										<ul>
-											<li>
+											<li id="Npb1td-ft">
+												<a href="#Npb1td-ft" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(hidden) Npb1td-ft
 												</div>
 												<ul>
-													<li>
+													<li id="Dv62J5ivJ">
+														<a href="#Dv62J5ivJ" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																(hidden) Dv62J5ivJ
 														</div>
 													</li>
-													<li>
+													<li id="ZrojBQj2K">
+														<a href="#ZrojBQj2K" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																(hidden) ZrojBQj2K
 														</div>
 														<ul>
-															<li>
+															<li id="PniNwKMsL">
+																<a href="#PniNwKMsL" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		{{[[TODO]]}} (hidden) PniNwKMsL #[[(hidden) _sW66DmMa]] #[[re]]
 																</div>
 																<ul>
-																	<li>
+																	<li id="Yu1gibiF1">
+																		<a href="#Yu1gibiF1" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				(hidden) Yu1gibiF1
 																		</div>
 																	</li>
 																</ul>
 															</li>
-															<li>
+															<li id="1KKoD1-K2">
+																<a href="#1KKoD1-K2" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		(hidden) 1KKoD1-K2
 																</div>
 															</li>
 														</ul>
 													</li>
-													<li>
+													<li id="2aPyXKXGW">
+														<a href="#2aPyXKXGW" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																(hidden) 2aPyXKXGW
 														</div>
 													</li>
 												</ul>
 											</li>
-											<li>
+											<li id="UW9lgpLWx">
+												<a href="#UW9lgpLWx" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(hidden) UW9lgpLWx
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="tdLSNIZC6">
+										<a href="#tdLSNIZC6" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) tdLSNIZC6
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="drAYGc7SN">
+								<a href="#drAYGc7SN" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) drAYGc7SN
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="by8CQXIp-">
+						<a href="#by8CQXIp-" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) by8CQXIp-
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Up3xoM73s">
+				<a href="#Up3xoM73s" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) Up3xoM73s
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="7d__21WYS">
+		<a href="#7d__21WYS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 7d__21WYS
 		</div>
@@ -2130,7 +2457,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XDt59X6IQ">
+			<a href="#XDt59X6IQ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2150,7 +2479,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="FMHQTUjID">
+			<a href="#FMHQTUjID" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -2167,58 +2498,68 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="DElze_cjW">
+		<a href="#DElze_cjW" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) DElze_cjW
 		</div>
 		<ul>
-			<li>
+			<li id="vUawLVbtx">
+				<a href="#vUawLVbtx" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} (hidden) vUawLVbtx 
 				</div>
 				<ul>
-					<li>
+					<li id="0BBXPLEBf">
+						<a href="#0BBXPLEBf" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) 0BBXPLEBf
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Kkq9cciRs">
+				<a href="#Kkq9cciRs" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} (hidden) Kkq9cciRs 
 				</div>
 			</li>
-			<li>
+			<li id="RrefNKK9E">
+				<a href="#RrefNKK9E" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) RrefNKK9E
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="-KR8nVlS9">
+		<a href="#-KR8nVlS9" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} (hidden) -KR8nVlS9 
 		</div>
 		<ul>
-			<li>
+			<li id="ozthO0vNE">
+				<a href="#ozthO0vNE" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) ozthO0vNE
 				</div>
 			</li>
-			<li>
+			<li id="UiF1r2Qyc">
+				<a href="#UiF1r2Qyc" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[DONE]]}} (hidden) UiF1r2Qyc 
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="34n8tioeO">
+		<a href="#34n8tioeO" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 34n8tioeO
 		</div>
 	</li>
-	<li>
+	<li id="xNgiBmkB-">
+		<a href="#xNgiBmkB-" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) xNgiBmkB- #[[observation]] [[(hidden) SvYgU6pKM]] [[(hidden) JTPZSLyfN]]
 		</div>

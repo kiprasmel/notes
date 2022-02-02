@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.920Z</span>
+				<span>2022-02-02T14:33:54.373Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,97 +245,117 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635890739134);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801920);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434373);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="9d2nFLUR-">
+					<a href="#9d2nFLUR-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 9d2nFLUR- #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="i1dsdU5hB">
+							<a href="#i1dsdU5hB" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) i1dsdU5hB #[[(hidden) SZp9S9TdD]] #[[(hidden) OAIvqirws]]
 							</div>
 						</li>
-						<li>
+						<li id="tKuPEqWsP">
+							<a href="#tKuPEqWsP" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="BZaBmq2zO">
+									<a href="#BZaBmq2zO" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} migrate postcss variable names
 									</div>
 									<ul>
-										<li>
+										<li id="AqgN7ObTH">
+											<a href="#AqgN7ObTH" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													most likely should just use regex
 											</div>
 										</li>
-										<li>
+										<li id="tFd-xA7pV">
+											<a href="#tFd-xA7pV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													since jscodeshift no go for css?
 											</div>
 											<ul>
-												<li>
+												<li id="H6OB8lHB-">
+													<a href="#H6OB8lHB-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															&quot;jscodeshift css&quot;
 													</div>
 												</li>
-												<li>
+												<li id="5yUmMIe6-">
+													<a href="#5yUmMIe6-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://github.com/facebook/jscodeshift/issues/124
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="Iwiz2RZaD">
+											<a href="#Iwiz2RZaD" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="drZAaAMjg">
+									<a href="#drZAaAMjg" class="block-ref"></a>
+								</li>
+								<li id="VslabXC2B">
+									<a href="#VslabXC2B" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											some good examples:
 									</div>
 									<ul>
-										<li>
+										<li id="LtZW5EStR">
+											<a href="#LtZW5EStR" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-codemods
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="z-Ap5kzhY">
+									<a href="#z-Ap5kzhY" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											@babel/parser (prev Babylon) also legit
 									</div>
 								</li>
-								<li>
+								<li id="qrZi9REYV">
+									<a href="#qrZi9REYV" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] re: [[(hidden) wJyVZW0Tm]]
 									</div>
 									<ul>
-										<li>
+										<li id="qoXClQLyJ">
+											<a href="#qoXClQLyJ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://danburzo.ro/javascript-codemods/
 											</div>
 										</li>
-										<li>
+										<li id="1XnGE3EK-">
+											<a href="#1XnGE3EK-" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we could have a pre-processing transform that would collect all imports, exports and wraps around our components, and then use that output inside the transforms that rely on that information!
 											</div>
 										</li>
-										<li>
+										<li id="mleEiUx0x">
+											<a href="#mleEiUx0x" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} need to specify transform dependencies inside transform
 											</div>
 											<ul>
-												<li>
+												<li id="5gXJSZ74g">
+													<a href="#5gXJSZ74g" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```javascript
 												export const dependencies = [transformA, transformB]```
@@ -290,56 +363,66 @@
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="BxYsK5_Ll">
+											<a href="#BxYsK5_Ll" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} need [[(hidden) vkt9VljJ3]] for transforms, and to run each sub-level sequentually in the codeshift-cli.
 											</div>
 											<ul>
-												<li>
+												<li id="XFa9SijXf">
+													<a href="#XFa9SijXf" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															would _not_ be needed if ... will be needed.
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="yI0BFlIg2">
+											<a href="#yI0BFlIg2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													each transform would get an additional arg - `outputsFromDependencies`, and would use `outputsFromDependencies[transformFnThatGeneratedThatOutput]` to access the specific outputs
 											</div>
 											<ul>
-												<li>
+												<li id="k8rlW0h49">
+													<a href="#k8rlW0h49" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} and each transform would return not only the modified source, but also the outputs.
 													</div>
 												</li>
-												<li>
+												<li id="h7qukkdab">
+													<a href="#h7qukkdab" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															idea taken exactly from [[roam-traverse-graph]] :D
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="cYT0EUKF-">
+											<a href="#cYT0EUKF-" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} update template to `export const myTransform: Transform = () =&gt; ...`
 											</div>
 											<ul>
-												<li>
+												<li id="Y9CnKNdRk">
+													<a href="#Y9CnKNdRk" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} add `export const dependencies: TransformDependencies`
 													</div>
 												</li>
-												<li>
+												<li id="4yFG7KZeI">
+													<a href="#4yFG7KZeI" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} validate w/ validator
 													</div>
 													<ul>
-														<li>
+														<li id="BhxyLrgKD">
+															<a href="#BhxyLrgKD" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/f79407a95d823d01e0b9b3928397f47c7f81c556/packages/validator/src/index.ts
 															</div>
 														</li>
-														<li>
+														<li id="Q-EJyNKJi">
+															<a href="#Q-EJyNKJi" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	https://github.com/CodeshiftCommunity/CodeshiftCommunity/blob/506fa08c8cda2782d3153cada23530eec965b727/packages/cli/src/validate.ts
 															</div>
@@ -348,69 +431,82 @@
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="Qe91AoS2y">
+											<a href="#Qe91AoS2y" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													sidenote / #[[observation]] - #[[(hidden) DY6wPnICE]] there&#39;s so much #[[(hidden) l6bezRkPb]]tential!
 											</div>
 											<ul>
-												<li>
+												<li id="jZqNG3dcZ">
+													<a href="#jZqNG3dcZ" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) jZqNG3dcZ
 													</div>
 												</li>
-												<li>
+												<li id="p4cFDB07K">
+													<a href="#p4cFDB07K" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} (hidden) p4cFDB07K [[(hidden) v8hKA88Fi]] #[[(hidden) bqn786OaX]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="lNVysHsmr">
+											<a href="#lNVysHsmr" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													likely will need to use recast or whatever lower level lib &amp; read file contents w/ fs to be able to traverse full graph.
 											</div>
 											<ul>
-												<li>
+												<li id="ElE-nexl6">
+													<a href="#ElE-nexl6" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															i. e. find all files that import e. g. a button from cui
 													</div>
 												</li>
-												<li>
+												<li id="MqvrY8g43">
+													<a href="#MqvrY8g43" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															then, for each file, find what wraps it - other elements, styled, etc
 													</div>
 												</li>
-												<li>
+												<li id="X2HoNPS7T">
+													<a href="#X2HoNPS7T" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															check if the wrapper are exported
 													</div>
 													<ul>
-														<li>
+														<li id="KfSCW6w29">
+															<a href="#KfSCW6w29" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	no: add but only applicable inside that file
 															</div>
 														</li>
-														<li>
+														<li id="5gKprNRX4">
+															<a href="#5gKprNRX4" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	yes:
 															</div>
 															<ul>
-																<li>
+																<li id="vMI4FM2cW">
+																	<a href="#vMI4FM2cW" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			will need to create a normalized (like yarn lockfile instead of npm&#39;s) map of what absolute path imports what absolute paths
 																	</div>
 																</li>
-																<li>
+																<li id="1SlH8PUFt">
+																	<a href="#1SlH8PUFt" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			from that map, find where the wrap is imported from
 																	</div>
 																	<ul>
-																		<li>
+																		<li id="shPYVHYoP">
+																			<a href="#shPYVHYoP" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					note - maybe better to have a transform that just for each file it goes thrue, it adds to the normalized array that file, all imports and all exports.
 																			</div>
 																			<ul>
-																				<li>
+																				<li id="zB4rRE1ke">
+																					<a href="#zB4rRE1ke" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							this way walking and filtering would be simpler
 																					</div>
@@ -427,17 +523,20 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="nY441MAuV">
+									<a href="#nY441MAuV" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											before all that, prolly best to:
 									</div>
 									<ul>
-										<li>
+										<li id="pmoLfJFz8">
+											<a href="#pmoLfJFz8" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													1. styled wrap
 											</div>
 										</li>
-										<li>
+										<li id="KjWbK2fU_">
+											<a href="#KjWbK2fU_" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													postcss codemod to unblock others like Marti to do css stuff
 											</div>
@@ -446,78 +545,92 @@
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="KaMGF7EAc">
+							<a href="#KaMGF7EAc" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) KaMGF7EAc
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="cKEFS8nDL">
+					<a href="#cKEFS8nDL" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cKEFS8nDL
 					</div>
 				</li>
-				<li>
+				<li id="nsZ0euXXx">
+					<a href="#nsZ0euXXx" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) nsZ0euXXx [[(hidden) PIW-AQy7Y]]
 					</div>
 					<ul>
-						<li>
+						<li id="-mtke0lcW">
+							<a href="#-mtke0lcW" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) -mtke0lcW
 							</div>
 						</li>
-						<li>
+						<li id="wWX7andih">
+							<a href="#wWX7andih" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									this weekend so dunno if will make it haha, see [[codemods]]
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="qAdQ7nAcu">
+					<a href="#qAdQ7nAcu" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) qAdQ7nAcu
 					</div>
 				</li>
-				<li>
+				<li id="EQfVpC-wt">
+					<a href="#EQfVpC-wt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) EQfVpC-wt [[(hidden) Op6l-1Dxf]]
 					</div>
 					<ul>
-						<li>
+						<li id="U0kSvytU6">
+							<a href="#U0kSvytU6" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) U0kSvytU6
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="B1UO_0R47">
+					<a href="#B1UO_0R47" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) B1UO_0R47
 					</div>
 				</li>
-				<li>
+				<li id="LBx3vMdcO">
+					<a href="#LBx3vMdcO" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) LBx3vMdcO #[[(hidden) V4QngGPgI]]
 					</div>
 				</li>
-				<li>
+				<li id="H1NR-xICZ">
+					<a href="#H1NR-xICZ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) H1NR-xICZ
 					</div>
 				</li>
-				<li>
+				<li id="bi81zmxwV">
+					<a href="#bi81zmxwV" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) bi81zmxwV
 					</div>
 				</li>
-				<li>
+				<li id="dP5caAdJ2">
+					<a href="#dP5caAdJ2" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) dP5caAdJ2
 					</div>
 				</li>
-				<li>
+				<li id="NBzB4nUYD">
+					<a href="#NBzB4nUYD" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) NBzB4nUYD
 					</div>
@@ -593,7 +706,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Cm9Un8e0u">
+			<a href="#Cm9Un8e0u" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

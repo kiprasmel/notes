@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.754Z</span>
+				<span>2022-02-02T14:33:54.117Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,147 +245,179 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641559022621);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801754);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434117);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="Hzh_fx2Ro">
+					<a href="#Hzh_fx2Ro" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="d7zfKIAdp">
+							<a href="#d7zfKIAdp" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} account for `drop` commands
 							</div>
 							<ul>
-								<li>
+								<li id="HDLhJ7Jcp">
+									<a href="#HDLhJ7Jcp" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											current work-around - move commits into the end of the latest branch, and then drop them with a regular rebase (or n=2 reset --hard @~n)
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="o6zqECM25">
+							<a href="#o6zqECM25" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} something went wrong when re-naming a folder, which ofc later commits got impacted by it - investigate
 							</div>
 							<ul>
-								<li>
+								<li id="V9bGwZ0YD">
+									<a href="#V9bGwZ0YD" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											--apply is not being done if no local history hasn&#39;t been modified, even though it might&#39;ve been modified previously. thus the `git-rebase-todo.applied` is not there (just `git-rebase-todo`).
 									</div>
 									<ul>
-										<li>
+										<li id="qqLW9C7D9">
+											<a href="#qqLW9C7D9" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} already discussed about this previously. need to implement proper fixes.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="pkF8k2uLQ">
+									<a href="#pkF8k2uLQ" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="JkJ5h6U9h">
+							<a href="#JkJ5h6U9h" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} `rewritten-list` doesn&#39;t exist if doing regular rebase e.g. `git rebase @~4` - in the post-something script, check if the file exists first
 							</div>
 						</li>
-						<li></li>
+						<li id="ahPOwmgEm">
+							<a href="#ahPOwmgEm" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="tXPsQicQQ">
+					<a href="#tXPsQicQQ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) tXPsQicQQ
 					</div>
 				</li>
-				<li>
+				<li id="7bEvNFyIs">
+					<a href="#7bEvNFyIs" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7bEvNFyIs [[export-html-pages]]
 					</div>
 					<ul>
-						<li>
+						<li id="QY0GmCzHA">
+							<a href="#QY0GmCzHA" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) QY0GmCzHA [[(hidden) BfzxvGFk0]]
 							</div>
 						</li>
-						<li>
+						<li id="HvzrRI3v6">
+							<a href="#HvzrRI3v6" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) HvzrRI3v6
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="jYcOAZAAb">
+					<a href="#jYcOAZAAb" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) jYcOAZAAb
 					</div>
 				</li>
-				<li>
+				<li id="NFG8ogYhx">
+					<a href="#NFG8ogYhx" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[(hidden) S-ygYfi0j]] [[codemods]]
 					</div>
 					<ul>
-						<li>
+						<li id="Lm9TBqV6g">
+							<a href="#Lm9TBqV6g" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} voice notes - prep for demo well-structured demo
 							</div>
 							<ul>
-								<li>
+								<li id="yoUxFkLiq">
+									<a href="#yoUxFkLiq" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} confirm time w/ [[(hidden) tv1zOVzED]]
 									</div>
 									<ul>
-										<li>
+										<li id="FQHG8obid">
+											<a href="#FQHG8obid" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													14:00 TLN
 											</div>
 										</li>
-										<li>
+										<li id="0T-goekpJ">
+											<a href="#0T-goekpJ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} add into doc so that it&#39;s announced
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="BYvzumgor">
+									<a href="#BYvzumgor" class="block-ref"></a>
+								</li>
+								<li id="flAW5vEpC">
+									<a href="#flAW5vEpC" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} open demo in vscode
 									</div>
 									<ul>
-										<li>
+										<li id="-MFLANzoZ">
+											<a href="#-MFLANzoZ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													pre-write the run cmd (with `x`)
 											</div>
 										</li>
-										<li>
+										<li id="GnGIpfjhR">
+											<a href="#GnGIpfjhR" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													or just know we&#39;ll run all at once?
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="rA_VkVlb1">
+									<a href="#rA_VkVlb1" class="block-ref"></a>
+								</li>
+								<li id="f6f1Xkurd">
+									<a href="#f6f1Xkurd" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} links
 									</div>
 									<ul>
-										<li>
+										<li id="ihQ5Qd7Y8">
+											<a href="#ihQ5Qd7Y8" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} pre-open
 											</div>
 										</li>
-										<li>
+										<li id="qkuOqNS7k">
+											<a href="#qkuOqNS7k" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} post to slack
 											</div>
 										</li>
-										<li>
+										<li id="ZppgeYnKL">
+											<a href="#ZppgeYnKL" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													sharing the links i&#39;ll use in the codemods demo in advance:
 										[1] codemods repo - https://github.com/pipedrive/CodeshiftCommunity/tree/fork/community
@@ -342,456 +427,571 @@
 										[4] migration-help channel - #[[migration-help-cui4-to-cui5]]
 											</div>
 										</li>
-										<li>
+										<li id="ce-joTcPM">
+											<a href="#ce-joTcPM" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} more?
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="E4IcHEoOz">
+									<a href="#E4IcHEoOz" class="block-ref"></a>
+								</li>
+								<li id="AboO6KwOc">
+									<a href="#AboO6KwOc" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											record
 									</div>
 								</li>
-								<li>
+								<li id="uecY8XM1Z">
+									<a href="#uecY8XM1Z" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											mute pls
 									</div>
 								</li>
-								<li>
+								<li id="UtAh8c06u">
+									<a href="#UtAh8c06u" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											overview
 									</div>
 								</li>
-								<li>
+								<li id="495f75W3P">
+									<a href="#495f75W3P" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											what is a codemod
 									</div>
 								</li>
-								<li>
+								<li id="KBUPRHS3O">
+									<a href="#KBUPRHS3O" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											what is it good for
 									</div>
 								</li>
-								<li>
+								<li id="tZnuMj2XN">
+									<a href="#tZnuMj2XN" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											what they are not
 									</div>
 								</li>
-								<li>
+								<li id="yVtGdSD5w">
+									<a href="#yVtGdSD5w" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} small demos to show what&#39;s going on
 									</div>
 									<ul>
-										<li>
+										<li id="_os6zyaHj">
+											<a href="#_os6zyaHj" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													do not repeat what&#39;s already in the readme
 											</div>
 										</li>
-										<li>
+										<li id="rpxSLZBz1">
+											<a href="#rpxSLZBz1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													showcase different comment levels - info vs warning etc
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="rI7lW3ILK">
+									<a href="#rI7lW3ILK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											take questions
 									</div>
 								</li>
-								<li>
+								<li id="yHD60F65_">
+									<a href="#yHD60F65_" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											proper demo
 									</div>
 									<ul>
-										<li>
+										<li id="jhJAc1DJe">
+											<a href="#jhJAc1DJe" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													show codemods repo install process
 											</div>
 										</li>
-										<li>
+										<li id="l11ykQbFV">
+											<a href="#l11ykQbFV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} have preselected migration repo (library to have cui as standalone)
 											</div>
 											<ul>
-												<li>
+												<li id="i-wcB-Zpl">
+													<a href="#i-wcB-Zpl" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															`billing-fe/frontend`
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="MppZaX1Tz">
+											<a href="#MppZaX1Tz" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(?) install cui5 to see errors
 											</div>
 											<ul>
-												<li>
+												<li id="E3NsesCh0">
+													<a href="#E3NsesCh0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															mention that [[(hidden) tv1zOVzED]] will elaborate [later](((3-PZ2JF-D))) re: externals
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="akaVqFv1J">
+											<a href="#akaVqFv1J" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													run codemods
 											</div>
 										</li>
-										<li>
+										<li id="GvY1HjtBT">
+											<a href="#GvY1HjtBT" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} have already-ran repo ready to avoid waiting
 											</div>
 										</li>
-										<li>
+										<li id="iCreJVdYk">
+											<a href="#iCreJVdYk" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													git diff -u -b
 											</div>
 										</li>
-										<li>
+										<li id="5FKDIIv9j">
+											<a href="#5FKDIIv9j" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													mention that you&#39;ll want to run your linter afterwards
 											</div>
 										</li>
-										<li>
+										<li id="3-PZ2JF-D">
+											<a href="#3-PZ2JF-D" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													give over to [[(hidden) tv1zOVzED]] to explain what else needs to be done when you&#39;re migrating
 											</div>
 										</li>
-										<li></li>
+										<li id="vkvo4f4zU">
+											<a href="#vkvo4f4zU" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="Iji739fqQ">
+									<a href="#Iji739fqQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											take questions
 									</div>
 								</li>
-								<li>
+								<li id="igdZx1p32">
+									<a href="#igdZx1p32" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											ask to try them out &amp; give feedback
 									</div>
 									<ul>
-										<li>
+										<li id="W44Wde9EK">
+											<a href="#W44Wde9EK" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													show migration-help channel
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="hcxRcjXE9">
+									<a href="#hcxRcjXE9" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											~~a few more small things~~ future plans
 									</div>
 									<ul>
-										<li>
+										<li id="MTzQC9jlx">
+											<a href="#MTzQC9jlx" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													fork vs separate repo &amp; inner source
 											</div>
 										</li>
-										<li>
+										<li id="zDJ48-6QE">
+											<a href="#zDJ48-6QE" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													fe docs
 											</div>
 										</li>
-										<li>
+										<li id="fM1D6_BGy">
+											<a href="#fM1D6_BGy" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													knowledge sharing &amp; help on writing your own codemods for your libraries
 											</div>
 										</li>
-										<li>
+										<li id="gTL31e0VX">
+											<a href="#gTL31e0VX" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													eliminating some of the limitations
 											</div>
 										</li>
-										<li></li>
+										<li id="jvEkiSSvl">
+											<a href="#jvEkiSSvl" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="ib7TUxQIv">
+									<a href="#ib7TUxQIv" class="block-ref"></a>
+								</li>
+								<li id="Ty_dCgL4d">
+									<a href="#Ty_dCgL4d" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											from chat w/ [[(hidden) pHco5hQZn]]
 									</div>
 									<ul>
-										<li>
+										<li id="UxG0ULF7u">
+											<a href="#UxG0ULF7u" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													mention fork vs separate repo
 											</div>
 											<ul>
-												<li>
+												<li id="ngegmyDYa">
+													<a href="#ngegmyDYa" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															invite to write your own codemods there, encourage doing them (inform when it makes sense to write codemods) &amp; to reach out because we&#39;re welcome to share our konwledge
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="RoKa26tyD">
+											<a href="#RoKa26tyD" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we&#39;ll have fe docs
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="x-OIrX2ru">
+											<a href="#x-OIrX2ru" class="block-ref"></a>
+										</li>
+										<li id="Ooqyi-mnA">
+											<a href="#Ooqyi-mnA" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													do not do intro to internal stuff (baby steps - currently step one)
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="uAXnUA5eY">
+											<a href="#uAXnUA5eY" class="block-ref"></a>
+										</li>
+										<li id="ws8297A40">
+											<a href="#ws8297A40" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													its all marketing
 											</div>
 											<ul>
-												<li>
+												<li id="_UwgrNmJb">
+													<a href="#_UwgrNmJb" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															standing out, just like which oss lib to use
 													</div>
 												</li>
-												<li>
+												<li id="3IWyddlG0">
+													<a href="#3IWyddlG0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															mention what capabilities we&#39;ll have in the future
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="fZCiKtwl5">
+											<a href="#fZCiKtwl5" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="kuvqkkt_o">
+									<a href="#kuvqkkt_o" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="GIjF-qeUv">
+							<a href="#GIjF-qeUv" class="block-ref"></a>
+						</li>
+						<li id="pDGyzvfZ7">
+							<a href="#pDGyzvfZ7" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									transform to update the import name to specify the number
 							</div>
 							<ul>
-								<li>
+								<li id="sQI0K-_mi">
+									<a href="#sQI0K-_mi" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} how do i tell ppl to upgrade?
 									</div>
 									<ul>
-										<li>
+										<li id="Q8-eDqw0J">
+											<a href="#Q8-eDqw0J" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													for services (non-libraries), update the external in the webpack config
 											</div>
 										</li>
-										<li>
+										<li id="lYlsOFeDt">
+											<a href="#lYlsOFeDt" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													for libraries, you&#39;ll likely need to update to the 
 											</div>
 										</li>
-										<li>
+										<li id="uw72yHxT1">
+											<a href="#uw72yHxT1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													[[(hidden) tv1zOVzED]] will take care of this part
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="uztpwMYex">
+									<a href="#uztpwMYex" class="block-ref"></a>
+								</li>
+								<li id="yZsOZwI0l">
+									<a href="#yZsOZwI0l" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											not now
 									</div>
 									<ul>
-										<li>
+										<li id="DZ0ahil3n">
+											<a href="#DZ0ahil3n" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} if [[(hidden) tv1zOVzED]] confirms we need the versioned import, then write a simple, separate codemod to rename them
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="dOvtNkWTQ">
+									<a href="#dOvtNkWTQ" class="block-ref"></a>
+								</li>
+								<li id="hothQlme6">
+									<a href="#hothQlme6" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											quick info card service?
 									</div>
 									<ul>
-										<li>
+										<li id="ZXmhKXVuk">
+											<a href="#ZXmhKXVuk" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													hmm. yes, sure. but changes are pretty random if you go thru them.
 											</div>
 										</li>
-										<li>
+										<li id="LlA_rF_vS">
+											<a href="#LlA_rF_vS" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													i think instead we should start with the individual demo&#39;s
 											</div>
 											<ul>
-												<li>
+												<li id="Pdh03SpZ1">
+													<a href="#Pdh03SpZ1" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															to showcase the different capabilities, edge cases if e.g. a value is missing (warning), limitations, etc.
 													</div>
 												</li>
-												<li>
+												<li id="e5aJrFMAG">
+													<a href="#e5aJrFMAG" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															and only then do the full demo, and then [[(hidden) tv1zOVzED]] can jump in
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="hHqmuP8s-">
+											<a href="#hHqmuP8s-" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="UDZWEE7zz">
+									<a href="#UDZWEE7zz" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="0wg_YY9jM">
+							<a href="#0wg_YY9jM" class="block-ref"></a>
+						</li>
+						<li id="kLESIx1CN">
+							<a href="#kLESIx1CN" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									thinking now about quickly implementing the graph-aware stuff lmao
 							</div>
 							<ul>
-								<li>
+								<li id="F45WH7Dg1">
+									<a href="#F45WH7Dg1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} not that, but extract each transform into a separate codemod that you can run, and give it a name in [[(hidden) yfSgFo2gF]], and showcase that you can run individually
 									</div>
 									<ul>
-										<li>
+										<li id="sbn8qKyvg">
+											<a href="#sbn8qKyvg" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													while still ofc keeping the group of codemods available as just `cui5`
 											</div>
 										</li>
-										<li>
+										<li id="VBM-6WDkB">
+											<a href="#VBM-6WDkB" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(!) this is good because if we ship `alpha` (experimental) codemods, then we can put them as `cui5-alpha-` - people will now know that you can run them separately
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="zy5RKUl_p">
+									<a href="#zy5RKUl_p" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											okay now i wrote this out (how i&#39;d have to implement it) and there&#39;s no way i can do it before the demo, so let&#39;s not do anything with it before we do the demo, just like it should&#39;ve been.
 									</div>
 									<ul>
-										<li>
+										<li id="nUlbC6upd">
+											<a href="#nUlbC6upd" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													good decision. would&#39;ve been a big mistake lmao
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="2DLCuS6Xh">
+									<a href="#2DLCuS6Xh" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="71SpHgtfh">
+							<a href="#71SpHgtfh" class="block-ref"></a>
+						</li>
+						<li id="KJl9YmFYZ">
+							<a href="#KJl9YmFYZ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									observation:: when you&#39;re preparing for a [[demo]], stuff becomes very clear quite fast lol
 							</div>
 						</li>
-						<li>
+						<li id="Bxk7zUmQw">
+							<a href="#Bxk7zUmQw" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} ((5ssdrAtcf)) 1/2
 							</div>
 							<ul>
-								<li>
+								<li id="6ldnVZRU-">
+									<a href="#6ldnVZRU-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} fix commits
 									</div>
 								</li>
-								<li>
+								<li id="J1qEKKw5G">
+									<a href="#J1qEKKw5G" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} move `wip-transforms` into `transforms`
 									</div>
 								</li>
-								<li>
+								<li id="Egrb4zFdv">
+									<a href="#Egrb4zFdv" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} move `src/5.0.0/_boilerplate` into `src/boilerplate`
 									</div>
 								</li>
-								<li>
+								<li id="pyC47-csK">
+									<a href="#pyC47-csK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} add Meta to readme
 									</div>
 								</li>
-								<li>
+								<li id="bhX0sJtIA">
+									<a href="#bhX0sJtIA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											not now
 									</div>
 									<ul>
-										<li>
+										<li id="Cl4zI_Pwy">
+											<a href="#Cl4zI_Pwy" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} merge 2/2
 											</div>
 											<ul>
-												<li>
+												<li id="nwRLym6bQ">
+													<a href="#nwRLym6bQ" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} clean up postcss transform (dir, layout, names etc)
 													</div>
 												</li>
-												<li>
+												<li id="-9qyiYD4h">
+													<a href="#-9qyiYD4h" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} try out on actual .postcss/.scss before (at least for [[(hidden) tv1zOVzED]]&#39;s PR)
 													</div>
 												</li>
-												<li>
+												<li id="wfcCDguTS">
+													<a href="#wfcCDguTS" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} extend [[(hidden) tv1zOVzED]]&#39;s css codemod to remove the no longer needed css imports
 													</div>
 													<ul>
-														<li>
+														<li id="FD-HbTOBp">
+															<a href="#FD-HbTOBp" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	(hidden) AV7J4zqkD:: https://github.com/pipedrive/archive/blob/995f90e0bf2d86aa1b7c3a2b2d02df5cfad71d37/fe-onboarding-presentation/src/css/main.postcss#L1-L2
 															</div>
 														</li>
-														<li></li>
+														<li id="EV3VBSSot">
+															<a href="#EV3VBSSot" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="wx_76hqU6">
+													<a href="#wx_76hqU6" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="o-xuMGT1T">
+									<a href="#o-xuMGT1T" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="BpaiDpNTG">
+							<a href="#BpaiDpNTG" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} investigate reported issue by [[(hidden) 04oQOtp3e]]
 							</div>
 							<ul>
-								<li>
+								<li id="quWbKyl1J">
+									<a href="#quWbKyl1J" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://pipedrive.slack.com/archives/C02LK8Y583D/p1641914908004100?thread_ts=1641893745.002800&amp;cid=C02LK8Y583D
 									</div>
 								</li>
-								<li>
+								<li id="ts8RgfzyZ">
+									<a href="#ts8RgfzyZ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/pipedrive/docbase-ui
 									</div>
 									<ul>
-										<li>
+										<li id="PFxM7FXZp">
+											<a href="#PFxM7FXZp" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													`client/`
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="NdT1jlgVy">
+									<a href="#NdT1jlgVy" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											mitigated for the time being - can run codemods again, but now with the `tsx` parser
 									</div>
 									<ul>
-										<li>
+										<li id="hdLz4vyzi">
+											<a href="#hdLz4vyzi" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													documented: https://github.com/pipedrive/CodeshiftCommunity/blob/d88722f1377745310ead0fb48e03f958110903eb/community/@pipedrive__convention-ui-react/README.md#L137
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="PeakZTrFQ">
+									<a href="#PeakZTrFQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} will later need to investigate parsers #[[(hidden) XEbAy1sYy]]
 									</div>
 									<ul>
-										<li>
+										<li id="4xp9tFw3d">
+											<a href="#4xp9tFw3d" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://pipedrive.atlassian.net/browse/FUN-2074
 											</div>
 											<ul>
-												<li>
+												<li id="7wjWciruH">
+													<a href="#7wjWciruH" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															had a report of an error [1], which came down to the flow parser [2].
 												looks like ideally we’d use the tsx parser, which jscodeshift just abstracts over the babylon (@babel/parser) with some predefined options. [3]
@@ -805,117 +1005,154 @@
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="ncFTfkn5q">
+											<a href="#ncFTfkn5q" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="oW110_TGw">
+									<a href="#oW110_TGw" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="qgbeb1EGe">
+							<a href="#qgbeb1EGe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} another issue after updating (merging upstream) (i think) - if there&#39;s an error e.g. typescript fails to compile, the codemod run fails silently, w/o reporting the error #[[(hidden) YU9N4LSCL]]
 							</div>
 							<ul>
-								<li>
+								<li id="KBfh6w0Mu">
+									<a href="#KBfh6w0Mu" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											wait wtf why does it not work again
 									</div>
 									<ul>
-										<li>
+										<li id="BMI2anCg4">
+											<a href="#BMI2anCg4" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													roflmao the commit that added the call to run postcss codemods in run.js - was in the latest branch, which was the not-yet-merged one. #[[(hidden) Ux6tvluwa]]
 											</div>
 											<ul>
-												<li>
+												<li id="Wgkj10g9n">
+													<a href="#Wgkj10g9n" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															wait wtf, that&#39;s for .postcss/.scss files. no need for css in js. misery continues
 													</div>
 													<ul>
-														<li>
+														<li id="-wRe_l4rO">
+															<a href="#-wRe_l4rO" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[DONE]]}} OH MY GOD IT&#39;S THE EMPTY-ARRAY OF CONFIGS FOR THE TRANSFORM #[[(hidden) Ux6tvluwa]] #[[(hidden) Ux6tvluwa]] #[[(hidden) Ux6tvluwa]]
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="jDnR7wd9p">
+													<a href="#jDnR7wd9p" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="kJbbjsj0h">
+											<a href="#kJbbjsj0h" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="offNiRf7J">
+									<a href="#offNiRf7J" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="1j7WdygoP">
+							<a href="#1j7WdygoP" class="block-ref"></a>
+						</li>
+						<li id="ztfeHyS7N">
+							<a href="#ztfeHyS7N" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									((Ty_dCgL4d))
 							</div>
 							<ul>
-								<li>
+								<li id="zuTHmzsrg">
+									<a href="#zuTHmzsrg" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											on development - focus on maintenance / extracting into separate repo, instead of shipping new features
 									</div>
 									<ul>
-										<li>
+										<li id="ZuRj39B4R">
+											<a href="#ZuRj39B4R" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													also especially focus on getting the PRs merged into upstream, because they&#39;ll be blockers later
 											</div>
 										</li>
-										<li>
+										<li id="TnQBACpm0">
+											<a href="#TnQBACpm0" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} setup [[(hidden) 9y6zKCUgH]], when we have our own repo
 											</div>
 										</li>
-										<li></li>
+										<li id="Ky-ekGhxI">
+											<a href="#Ky-ekGhxI" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="ExsFnreoj">
+									<a href="#ExsFnreoj" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) ExsFnreoj #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 									</div>
 									<ul>
-										<li>
+										<li id="kWZf6mnoE">
+											<a href="#kWZf6mnoE" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) kWZf6mnoE [[(hidden) pHco5hQZn]] [[(hidden) s1p7372Kx]] [[(hidden) qtEMrD1aX]] [[(hidden) 01-27-2022]]
 											</div>
 										</li>
-										<li>
+										<li id="eP-fS7XTX">
+											<a href="#eP-fS7XTX" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} (hidden) eP-fS7XTX [[(hidden) lMFcxU-Op]]
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="9wUPi0J4D">
+									<a href="#9wUPi0J4D" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li></li>
+						<li id="WWhsdrU7Y">
+							<a href="#WWhsdrU7Y" class="block-ref"></a>
+						</li>
+						<li id="vPy_F3h_F">
+							<a href="#vPy_F3h_F" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="6nOn_JFm4">
+					<a href="#6nOn_JFm4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6nOn_JFm4
 					</div>
 				</li>
-				<li>
+				<li id="ZfV8LHIHn">
+					<a href="#ZfV8LHIHn" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ZfV8LHIHn
 					</div>
 				</li>
-				<li>
+				<li id="KYtMJsUrm">
+					<a href="#KYtMJsUrm" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) KYtMJsUrm
 					</div>
 				</li>
-				<li>
+				<li id="acUSBFzcM">
+					<a href="#acUSBFzcM" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) acUSBFzcM
 					</div>
 				</li>
-				<li>
+				<li id="1Sf5N_VUP">
+					<a href="#1Sf5N_VUP" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1Sf5N_VUP
 					</div>
@@ -991,7 +1228,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="0NyRuor69">
+			<a href="#0NyRuor69" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1008,7 +1247,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="2KrYF6W86">
+		<a href="#2KrYF6W86" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 2KrYF6W86 [[(hidden) _RMDwHiKR]]
 		</div>

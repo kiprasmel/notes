@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.917Z</span>
+				<span>2022-02-02T14:33:55.222Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1642960047233);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802917);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435222);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="U3wK_fivB">
+			<a href="#U3wK_fivB" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -304,7 +359,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="jR4bfXbfX">
+			<a href="#jR4bfXbfX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -321,7 +378,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="RKdO6H8i5">
+		<a href="#RKdO6H8i5" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				&gt; If a factory is torn down but the rationality which produced it is
 	left standing, then that rationality will simply produce another
@@ -331,14 +389,18 @@
 	—Robert Pirsig, Zen and the Art of Motorcycle Maintenance
 		</div>
 		<ul>
-			<li>
+			<li id="cFitzb7xC">
+				<a href="#cFitzb7xC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						oh yes. this should be good.
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="Wfdg3h3Ci">
+		<a href="#Wfdg3h3Ci" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -354,7 +416,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="k-EGLs5r2">
+			<a href="#k-EGLs5r2" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

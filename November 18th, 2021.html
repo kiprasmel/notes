@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.908Z</span>
+				<span>2022-02-02T14:33:54.335Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,44 +245,51 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637194563184);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801908);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434335);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="9l2U2lU58">
+					<a href="#9l2U2lU58" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 9l2U2lU58
 					</div>
 				</li>
-				<li>
+				<li id="IB2VXU20s">
+					<a href="#IB2VXU20s" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) IB2VXU20s #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="WRuDvUlgx">
+							<a href="#WRuDvUlgx" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) WRuDvUlgx #[[(hidden) okke3m7KB]]
 							</div>
 							<ul>
-								<li>
+								<li id="8r9BmP0yA">
+									<a href="#8r9BmP0yA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 8r9BmP0yA [[(hidden) pHco5hQZn]] [[(hidden) 2KsPGcAVg]]
 									</div>
 									<ul>
-										<li>
+										<li id="aQzO3rZjL">
+											<a href="#aQzO3rZjL" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} (hidden) aQzO3rZjL 
 											</div>
 										</li>
-										<li>
+										<li id="2tbPOOK2N">
+											<a href="#2tbPOOK2N" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} (hidden) 2tbPOOK2N 
 											</div>
 											<ul>
-												<li>
+												<li id="J2J59hyCO">
+													<a href="#J2J59hyCO" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) J2J59hyCO
 													</div>
@@ -238,162 +298,194 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="1UPfSUdql">
+									<a href="#1UPfSUdql" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) 1UPfSUdql
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="EnVcSTtpw">
+							<a href="#EnVcSTtpw" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="AhUhbET85">
+									<a href="#AhUhbET85" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} after finishing the jsx attribute codemod, try the styling/css stuff, and the graph stuff later
 									</div>
 								</li>
-								<li>
+								<li id="QSe-NWnxK">
+									<a href="#QSe-NWnxK" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} when jsx attribute codemod feels ready, extract into separate PRs to make easier to review (duh)
 									</div>
 									<ul>
-										<li>
+										<li id="_tHDHE7Wa">
+											<a href="#_tHDHE7Wa" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													guys, i know this, no need to be ([redacted](((gr2ab9LLR)))) about it. we don&#39;t have [[(hidden) mgTvVDjW-]], a la [[(hidden) Qb76iqf_n]], and for iteration speed i am forced into this workflow. would love to split it up as i go if we had the tooling, but we don&#39;t.
 											</div>
 											<ul>
-												<li>
+												<li id="fY9_KCzHs">
+													<a href="#fY9_KCzHs" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															i did indeed do the stacked diffs manually w/ the first few PRs initially - it was a nightmare to get everything updated, rebased on each other -- you end up wasting a lot of time.
 													</div>
 												</li>
-												<li>
+												<li id="GhXhMq59I">
+													<a href="#GhXhMq59I" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) GhXhMq59I #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="w2OedBGIj">
+											<a href="#w2OedBGIj" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													also, if you&#39;re seeing a problem, please tell immediately instead of waiting out till some #[[(hidden) nUptwn4Jc]] or whatever. humans need a very fast feedback loop to improve efficiently (at least me). if you don&#39;t tell me fast, it becomes your problem, and if you later blame me because you didn&#39;t bring it up - you&#39;re kinda being ([redacted](((gr2ab9LLR)))):D
 											</div>
 										</li>
-										<li>
+										<li id="J0W9Dg-zs">
+											<a href="#J0W9Dg-zs" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													bottom line - i cannot read your mind. [[(hidden) LldgRLaH-]] ftw.
 											</div>
 											<ul>
-												<li>
+												<li id="Z5dPkMJih">
+													<a href="#Z5dPkMJih" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} maybe would be useful to have a #[[(hidden) 2b6Krhy2c]]ogress or something that i could create a query for, for the outsiders to see what&#39;s the status right now. idk though, likely to get outdated fast; maybe worth a shot..
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="NaEKfbtWQ">
+											<a href="#NaEKfbtWQ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													hmm, maybe we&#39;re just miss-understanding of how we like to do work.
 											</div>
 											<ul>
-												<li>
+												<li id="zFMPlrfMg">
+													<a href="#zFMPlrfMg" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															for me, what i&#39;m doing is actively iterating. like a startup instead of big corp. ofc it&#39;s all over the place, but it&#39;s fast &amp; efficient - that&#39;s the whole point. later, i&#39;ll do the cleanup, and you should expect it eventually, but not until i actually do it and tell you so.
 													</div>
 													<ul>
-														<li>
+														<li id="aEJNZ9Jd5">
+															<a href="#aEJNZ9Jd5" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	furthermore, it is indeed good to have check-ins, especially if someone in a position like mine got stuck &amp; would be over-engineering etc., that bad feeling when you&#39;re kinda overwhelmed but somehow don&#39;t want to ask for help. yes, this sucks and we should have counter measures to help against this, but it doesn&#39;t feel like what we&#39;re doing right now has intentions to help with this - it just doesn&#39;t.
 															</div>
 														</li>
-														<li>
+														<li id="gPqQC_kTO">
+															<a href="#gPqQC_kTO" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	thus, let me do my shit bros! it ain&#39;t the first time, ain&#39;t the first project i&#39;m pulling this sorta thing on. and if criticising, try to think deeper and have intentions to help. also do that in the right time - don&#39;t wait, do it asap.
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="liRwn4u6x">
+													<a href="#liRwn4u6x" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="FKC2aJu2O">
+											<a href="#FKC2aJu2O" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="Dmzxs88Tf">
+							<a href="#Dmzxs88Tf" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) Dmzxs88Tf #[[(hidden) jOMmlCP4S]] #[[(hidden) Wk9BwS_1L]]
 							</div>
 						</li>
-						<li>
+						<li id="v5jJLyXI8">
+							<a href="#v5jJLyXI8" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									here, could re-use the same utils for parsing imports, analyzing whole graph etc. thus, we could create a lib [[codemods]]-utils or smthn. re: lots of code in the PR? problem solved. 
 							</div>
 						</li>
-						<li>
+						<li id="Ymeg9BEcT">
+							<a href="#Ymeg9BEcT" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) Ymeg9BEcT
 							</div>
 						</li>
-						<li>
+						<li id="zqDDCSmeF">
+							<a href="#zqDDCSmeF" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] for codemods - would like to launch a mini-mission to focus on them. seems appropriate
 							</div>
 						</li>
-						<li>
+						<li id="-HbxOY5Rf">
+							<a href="#-HbxOY5Rf" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} (hidden) -HbxOY5Rf 
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="eNv0gZ03l">
+					<a href="#eNv0gZ03l" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) eNv0gZ03l
 					</div>
 				</li>
-				<li>
+				<li id="DW8bBfKI5">
+					<a href="#DW8bBfKI5" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) DW8bBfKI5
 					</div>
 				</li>
-				<li>
+				<li id="Dwh_TqJ0T">
+					<a href="#Dwh_TqJ0T" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Dwh_TqJ0T
 					</div>
 				</li>
-				<li>
+				<li id="8AFRH9Q4T">
+					<a href="#8AFRH9Q4T" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 8AFRH9Q4T #[[(hidden) KkaOnBs0U]] #[[(hidden) bX1DHEwK7]]
 					</div>
 					<ul>
-						<li>
+						<li id="sSa9LTsvm">
+							<a href="#sSa9LTsvm" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) sSa9LTsvm
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="bRSBZ7DKu">
+					<a href="#bRSBZ7DKu" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) bRSBZ7DKu
 					</div>
 				</li>
-				<li>
+				<li id="dqvij8o-f">
+					<a href="#dqvij8o-f" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) dqvij8o-f
 					</div>
 				</li>
-				<li>
+				<li id="9kbZZWr-1">
+					<a href="#9kbZZWr-1" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 9kbZZWr-1
 					</div>
 				</li>
-				<li>
+				<li id="n-eibc4B8">
+					<a href="#n-eibc4B8" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) n-eibc4B8
 					</div>
@@ -469,7 +561,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="m11jGf4uA">
+			<a href="#m11jGf4uA" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -486,7 +580,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="MTKG7rvkN">
+		<a href="#MTKG7rvkN" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) MTKG7rvkN
 		</div>

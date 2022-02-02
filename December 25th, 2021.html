@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.836Z</span>
+				<span>2022-02-02T14:33:54.203Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,112 +245,132 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640383202365);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801836);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434203);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="1h8kNEv4C">
+					<a href="#1h8kNEv4C" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1h8kNEv4C [[(hidden) IX1JV8fxQ]] [[(hidden) 6qUp6vpya]]
 					</div>
 					<ul>
-						<li>
+						<li id="THGEqzcGD">
+							<a href="#THGEqzcGD" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) THGEqzcGD
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="oYNToSJ1y">
+					<a href="#oYNToSJ1y" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) oYNToSJ1y
 					</div>
 				</li>
-				<li>
+				<li id="PD6p2uauS">
+					<a href="#PD6p2uauS" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]] [[export-html-pages]]
 					</div>
 					<ul>
-						<li>
+						<li id="lMjmKw5-6">
+							<a href="#lMjmKw5-6" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} sort &quot;terms&quot; (public references but not public recursive ones -- tagged via public tags) __after__ public recursive ones (i.e. order should have lower prio)
 							</div>
 						</li>
-						<li>
+						<li id="jI525tCCg">
+							<a href="#jI525tCCg" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} replace spaces in URL with dashes to make the URLs easily copy-paste&#39;able, clickable, if shared, etc.
 							</div>
 							<ul>
-								<li>
+								<li id="8AgNiQDZU">
+									<a href="#8AgNiQDZU" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} uh oh, would require replacing not in the URLs but in filenames because of how gh pages work
 									</div>
 									<ul>
-										<li>
+										<li id="2Wd3rpPzH">
+											<a href="#2Wd3rpPzH" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} buuut, in index.html file, we can keep it raw so that when searching in the landing page, it looks normal. same with the page title (h1) when we generate the page.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="kJGYprYiO">
+									<a href="#kJGYprYiO" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} also, implementing a `#[[(hidden) gmEjXMPhW]]` tag to set a custom url (well, slug), by us internally setting a custom filename, would also help.
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="gYVHVtXQU">
+							<a href="#gYVHVtXQU" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="cOuTcBdt4">
+					<a href="#cOuTcBdt4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cOuTcBdt4
 					</div>
 				</li>
-				<li>
+				<li id="yxPpkrdL_">
+					<a href="#yxPpkrdL_" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) yxPpkrdL_ 
 					</div>
 					<ul>
-						<li>
+						<li id="QFrO5Qu2w">
+							<a href="#QFrO5Qu2w" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) QFrO5Qu2w [[i just re-discovered conway's law (public)]]
 							</div>
 							<ul>
-								<li>
+								<li id="kNtGQM1Uy">
+									<a href="#kNtGQM1Uy" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) kNtGQM1Uy
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="nxoyIGL_o">
+							<a href="#nxoyIGL_o" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) nxoyIGL_o
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="LTED7PQyq">
+					<a href="#LTED7PQyq" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) LTED7PQyq
 					</div>
 				</li>
-				<li>
+				<li id="y4k0PG18K">
+					<a href="#y4k0PG18K" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) y4k0PG18K
 					</div>
 				</li>
-				<li>
+				<li id="JHmObYHxI">
+					<a href="#JHmObYHxI" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) JHmObYHxI
 					</div>
 				</li>
-				<li>
+				<li id="1lAfY7fpt">
+					<a href="#1lAfY7fpt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 1lAfY7fpt
 					</div>

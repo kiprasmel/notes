@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.902Z</span>
+				<span>2022-02-02T14:33:54.312Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,78 +245,91 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637999107020);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801902);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434312);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="fiZw5tVld">
+					<a href="#fiZw5tVld" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="DGlhJHMTT">
+							<a href="#DGlhJHMTT" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} split [[roam-traverse-graph-settings]] into per-plugin basis
 							</div>
 						</li>
-						<li>
+						<li id="kjFviiJHr">
+							<a href="#kjFviiJHr" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} add `parentBlock` to `Block`&#39;s `metadata`
 							</div>
 							<ul>
-								<li>
+								<li id="cqoCESG76">
+									<a href="#cqoCESG76" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} verify good
 									</div>
 								</li>
-								<li>
+								<li id="0o77b_rcR">
+									<a href="#0o77b_rcR" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} commit
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="6MdhaF1hr">
+							<a href="#6MdhaF1hr" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} create tag(s) for &quot;auto-expand linked mentions&quot;
 							</div>
 							<ul>
-								<li>
+								<li id="r3Vncmmkw">
+									<a href="#r3Vncmmkw" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											some tags are like [[roam-traverse-graph]] itself - almost nothing inside the page itself, and everything underneath it in linked mentions.
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="mzxqIwwi7">
+							<a href="#mzxqIwwi7" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} lol, nasty bug, w/ security problems (good that now we have never used it so we&#39;re fine but we need to avoid this)
 							</div>
 							<ul>
-								<li>
+								<li id="_vgUCJrU0">
+									<a href="#_vgUCJrU0" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} move `Page`.title &amp; `Block`.string into metadata as `originalTitle` &amp; `originalString`
 									</div>
 								</li>
-								<li>
+								<li id="ReXaG305D">
+									<a href="#ReXaG305D" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} never use the unprocessed ones in sub-plugins
 									</div>
 									<ul>
-										<li>
+										<li id="xI0yYDMCT">
+											<a href="#xI0yYDMCT" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} consider removing in general
 											</div>
 										</li>
-										<li>
+										<li id="3EMp704ct">
+											<a href="#3EMp704ct" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} force explicit so that ts catches it
 											</div>
 											<ul>
-												<li>
+												<li id="0kZvKxKqF">
+													<a href="#0kZvKxKqF" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} or force to have the hiding plugin as very first or second one, after adding the metadata one.
 													</div>
@@ -272,221 +338,274 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="PuyaQPZVM">
+									<a href="#PuyaQPZVM" class="block-ref"></a>
+								</li>
+								<li id="5qPcgP-9m">
+									<a href="#5qPcgP-9m" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} wait but how does it happen? because we should be updating &amp; accessing the same reference?
 									</div>
 									<ul>
-										<li>
+										<li id="ijpqsxhBq">
+											<a href="#ijpqsxhBq" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													aha, found it -- inside `findIfPagesHavePublicLinkedReferencesAndLinkThemAsMentions`, the `block.string` is NOT hidden yet, but we take it. not good, use the `blockRef` instead.
 											</div>
 											<ul>
-												<li>
+												<li id="FwD98nX3V">
+													<a href="#FwD98nX3V" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} previous suggested solutions still need to be implemented.
 													</div>
 												</li>
-												<li>
+												<li id="MI8ltrGsR">
+													<a href="#MI8ltrGsR" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} also remove the page&#39;s title, just like we did w/ the block&#39;s string
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="8nxQ0biG4">
+											<a href="#8nxQ0biG4" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} oh, also, `withMetadata` spreads &amp; changes the references of the block... not good! fix it.
 											</div>
 											<ul>
-												<li>
+												<li id="zaRYFQFOi">
+													<a href="#zaRYFQFOi" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} fixed. need tests though, to verify we don&#39;t screw it up because it&#39;s very easy to do lol
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="IYMc2isTX">
+											<a href="#IYMc2isTX" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="rzmf0Wmps">
+									<a href="#rzmf0Wmps" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="5A5FBU5fd">
+							<a href="#5A5FBU5fd" class="block-ref"></a>
+						</li>
+						<li id="s3-CpK5Qm">
+							<a href="#s3-CpK5Qm" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									#[[observation]] why block &amp; page separate - searching w/ `[[]]` vs `(())` &amp; everything follows from there (linkedReferences vs linkedBlockReferences, etc etc etc)
 							</div>
 						</li>
-						<li></li>
-						<li>
+						<li id="vvcUd9iZr">
+							<a href="#vvcUd9iZr" class="block-ref"></a>
+						</li>
+						<li id="-8iKLD0HY">
+							<a href="#-8iKLD0HY" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[DONE]]}} created [[export-html-pages]] workflow! works!!!
 							</div>
 							<ul>
-								<li>
+								<li id="3bCPco2CZ">
+									<a href="#3bCPco2CZ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											lol, i now understand the basis on how [[(hidden) CRbzoMPud]] works.
 									</div>
 									<ul>
-										<li>
+										<li id="40HsvC3rO">
+											<a href="#40HsvC3rO" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													`#if`s or whatever &amp; other logic in templates - u can make it whatever u want if you were creating a similar framework xd
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="DmQxOH9rn">
+									<a href="#DmQxOH9rn" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="drwZxfAV8">
+							<a href="#drwZxfAV8" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[export-html-pages]]
 							</div>
 							<ul>
-								<li>
+								<li id="hAl7ZR59h">
+									<a href="#hAl7ZR59h" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} exit on error
 									</div>
 								</li>
-								<li>
+								<li id="ZwmDx9A0p">
+									<a href="#ZwmDx9A0p" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} remove the live updates since they&#39;re misleading - we&#39;d need to refresh to verify the page hasn&#39;t been re-uploaded
 									</div>
 								</li>
-								<li></li>
+								<li id="mcEDwgvUX">
+									<a href="#mcEDwgvUX" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="PGOtVqbGF">
+							<a href="#PGOtVqbGF" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} clean up the writing of json files (graphraw.json, .to-be-updated.json etc) - atm confusing, multiple different dirs, html generator doesn&#39;t even write, etc
 							</div>
 						</li>
-						<li>
+						<li id="7gUVi6yfd">
+							<a href="#7gUVi6yfd" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} cronjob to remove repo in gh runner? ideally no, and remove inside workflow itself.
 							</div>
 						</li>
-						<li>
+						<li id="hudkucfsj">
+							<a href="#hudkucfsj" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} fix #[[(hidden) I08LwGTFJ]] - when using the `#[[]]` tag, only parses it as `#` and not fully, and only eats the first letter, and keeps everything else uh oh 
 							</div>
 							<ul>
-								<li>
+								<li id="WmGckROaH">
+									<a href="#WmGckROaH" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											e.g. in https://kiprasmel.github.io/notes/codemods.html
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="8VDGYKcY7">
+							<a href="#8VDGYKcY7" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} check if multiple workflows can be combined into 1 (gh actions)
 							</div>
 						</li>
-						<li></li>
+						<li id="kSCAs8AKL">
+							<a href="#kSCAs8AKL" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="eGkH46xFO">
+					<a href="#eGkH46xFO" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) eGkH46xFO
 					</div>
 				</li>
-				<li>
+				<li id="5RzpSaGs3">
+					<a href="#5RzpSaGs3" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 5RzpSaGs3
 					</div>
 				</li>
-				<li>
+				<li id="r_EKV8RPz">
+					<a href="#r_EKV8RPz" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) r_EKV8RPz
 					</div>
 				</li>
-				<li>
+				<li id="iWtAeTE5w">
+					<a href="#iWtAeTE5w" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) iWtAeTE5w #[[(hidden) _sW66DmMa]] #[[re]]
 					</div>
 					<ul>
-						<li>
+						<li id="zzkF5dOMO">
+							<a href="#zzkF5dOMO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) zzkF5dOMO
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="kfCqOfd6L">
+					<a href="#kfCqOfd6L" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) kfCqOfd6L
 					</div>
 				</li>
-				<li>
+				<li id="r83EwWDe1">
+					<a href="#r83EwWDe1" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) r83EwWDe1 #[[(hidden) vuiz_eLip]]
 					</div>
 					<ul>
-						<li>
+						<li id="p5mS6h34s">
+							<a href="#p5mS6h34s" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) p5mS6h34s
 							</div>
 						</li>
-						<li>
+						<li id="ag5TFh-5N">
+							<a href="#ag5TFh-5N" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) ag5TFh-5N
 							</div>
 						</li>
-						<li>
+						<li id="OIQhVAHr6">
+							<a href="#OIQhVAHr6" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) OIQhVAHr6
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="slqulm0KI">
+					<a href="#slqulm0KI" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) slqulm0KI
 					</div>
 				</li>
-				<li>
+				<li id="VK_60NM6J">
+					<a href="#VK_60NM6J" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) VK_60NM6J
 					</div>
 				</li>
-				<li>
+				<li id="D0f1V5Ud-">
+					<a href="#D0f1V5Ud-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) D0f1V5Ud- #[[(hidden) Py4a4fa73]]
 					</div>
 					<ul>
-						<li>
+						<li id="g_Oq-9sc6">
+							<a href="#g_Oq-9sc6" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) g_Oq-9sc6
 							</div>
 						</li>
-						<li>
+						<li id="lkz73oeqA">
+							<a href="#lkz73oeqA" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) lkz73oeqA
 							</div>
 							<ul>
-								<li>
+								<li id="p6FxP2vLC">
+									<a href="#p6FxP2vLC" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) p6FxP2vLC [[(hidden) 11-28-2021]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="lVVVZ8OFe">
+							<a href="#lVVVZ8OFe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) lVVVZ8OFe
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="Rji5tCO1A">
+					<a href="#Rji5tCO1A" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Rji5tCO1A
 					</div>
 				</li>
-				<li>
+				<li id="oaVbLm8zf">
+					<a href="#oaVbLm8zf" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) oaVbLm8zf
 					</div>

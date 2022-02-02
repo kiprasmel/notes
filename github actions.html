@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.483Z</span>
+				<span>2022-02-02T14:33:53.875Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,25 +245,33 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638304696357);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801483);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433875);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="cp9jKYd19">
+					<a href="#cp9jKYd19" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="ZYeOlyFTr">
+					<a href="#ZYeOlyFTr" class="block-ref"></a>
+				
+				</li>
+				<li id="PWqVpXMqz">
+					<a href="#PWqVpXMqz" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[github]]
 					</div>
 				</li>
-				<li></li>
+				<li id="yuelAsBnF">
+					<a href="#yuelAsBnF" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -282,7 +343,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4YVKGxoMZ">
+			<a href="#4YVKGxoMZ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -315,7 +378,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="-ofgbcBOo">
+			<a href="#-ofgbcBOo" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -332,59 +397,70 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Rd009_MU1">
+		<a href="#Rd009_MU1" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 		</div>
 	</li>
-	<li>
+	<li id="yy7VV55Yr">
+		<a href="#yy7VV55Yr" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```shell
 	sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev```
 		</div>
 	</li>
-	<li>
+	<li id="wcK-A71mc">
+		<a href="#wcK-A71mc" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://askubuntu.com/a/923317
 		</div>
 	</li>
-	<li>
+	<li id="hCICkS1qA">
+		<a href="#hCICkS1qA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				```shell
 	apt install firefox```
 		</div>
 	</li>
-	<li>
+	<li id="vNuGVC2ym">
+		<a href="#vNuGVC2ym" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} still failing...
 		</div>
 	</li>
-	<li>
+	<li id="wZtw84_Xb">
+		<a href="#wZtw84_Xb" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				if manually copying graph:
 		</div>
 		<ul>
-			<li>
+			<li id="6-9O8blWu">
+				<a href="#6-9O8blWu" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						can proceed
 				</div>
 			</li>
-			<li>
+			<li id="scRGa45js">
+				<a href="#scRGa45js" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 				</div>
 				<ul>
-					<li>
+					<li id="claNC8Tsv">
+						<a href="#claNC8Tsv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								install nvm
 						</div>
 					</li>
-					<li>
+					<li id="Ggf65nHKm">
+						<a href="#Ggf65nHKm" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								then
 						</div>
 						<ul>
-							<li>
+							<li id="6mzbT7VfE">
+								<a href="#6mzbT7VfE" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										```javascript
 							nvm install 12
@@ -401,7 +477,10 @@
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="FnXuJvbrQ">
+		<a href="#FnXuJvbrQ" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -417,7 +496,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="R2aGdtun_">
+			<a href="#R2aGdtun_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -434,12 +515,14 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="6l8N34qIk">
+		<a href="#6l8N34qIk" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				YET AGAIN
 		</div>
 	</li>
-	<li>
+	<li id="_2nQzGSrS">
+		<a href="#_2nQzGSrS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				cc [[software i hate (public)]] (though not everything about this one, unlike the others)
 		</div>
@@ -459,7 +542,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="AKOzqqEdc">
+			<a href="#AKOzqqEdc" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -492,7 +577,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="apShaNTFG">
+			<a href="#apShaNTFG" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -509,35 +596,45 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="cj-Qirn85">
+		<a href="#cj-Qirn85" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i think the defaults matter. and so i should definitely put it in the default setup, because that&#39;s what everyone&#39;s gonna do.
 		</div>
 	</li>
-	<li>
+	<li id="N5Dqksf2P">
+		<a href="#N5Dqksf2P" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				the easiest thing to do, for starters, is to fork the repository and use the fork, instead of the main repo, as the source of the plugin(s)
 		</div>
 		<ul>
-			<li>
+			<li id="RA5_RH3CB">
+				<a href="#RA5_RH3CB" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						updating is very easy. `fetch upstream` button available in [[github]] right next to the latest commit&#39;s info
 				</div>
 			</li>
-			<li>
+			<li id="jxFwwGWhu">
+				<a href="#jxFwwGWhu" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} the repo could have security tests that should pass before each plugin run, so that in case we push to master and accidently get something messed up and a person also fetches the update at that time - they would immediately see the problem, instead of getting pwn&#39;d.
 				</div>
 			</li>
-			<li>
+			<li id="BR0dj_mDR">
+				<a href="#BR0dj_mDR" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] `git-rebase -i` right inside [[github]]&#39;s PR UI lmao
 				</div>
 			</li>
-			<li></li>
+			<li id="S0bcGS1ML">
+				<a href="#S0bcGS1ML" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="wx_dVJpDA">
+		<a href="#wx_dVJpDA" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -553,7 +650,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="9V6ZAbs9k">
+			<a href="#9V6ZAbs9k" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -570,19 +669,24 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="LGHGl9_23">
+		<a href="#LGHGl9_23" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[1]
 		</div>
 		<ul>
-			<li>
+			<li id="ZqBqrcCkb">
+				<a href="#ZqBqrcCkb" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						((5oHA_bb-0))
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="c5hFCfxZg">
+		<a href="#c5hFCfxZg" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -598,7 +702,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="AajPJtq3e">
+			<a href="#AajPJtq3e" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

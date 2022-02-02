@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.441Z</span>
+				<span>2022-02-02T14:33:53.814Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,14 +245,15 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635797165034);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801441);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812433814);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="e4t9H0Qfg">
+					<a href="#e4t9H0Qfg" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							```javascript
 				module.exports = () =&gt; {
@@ -245,13 +299,18 @@
 				```
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="sKLZwICqC">
+					<a href="#sKLZwICqC" class="block-ref"></a>
+				
+				</li>
+				<li id="1gug6wQ2Y">
+					<a href="#1gug6wQ2Y" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} 
 					</div>
 					<ul>
-						<li>
+						<li id="fgNzynFlL">
+							<a href="#fgNzynFlL" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									```javascript
 						module.exports = () =&gt; {
@@ -288,50 +347,78 @@
 						</li>
 					</ul>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li>
+				<li id="1380fMa3o">
+					<a href="#1380fMa3o" class="block-ref"></a>
+				
+				</li>
+				<li id="wtrMZ5E8q">
+					<a href="#wtrMZ5E8q" class="block-ref"></a>
+				
+				</li>
+				<li id="XfQXaqXM9">
+					<a href="#XfQXaqXM9" class="block-ref"></a>
+				
+				</li>
+				<li id="Qqf8KwehJ">
+					<a href="#Qqf8KwehJ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="OrAa_YRS-">
+					<a href="#OrAa_YRS-" class="block-ref"></a>
+				
+				</li>
+				<li id="1ccfGgr5R">
+					<a href="#1ccfGgr5R" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							cc:
 					</div>
 					<ul>
-						<li>
+						<li id="9clAzeJO1">
+							<a href="#9clAzeJO1" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(should have no effect for [[roam-traverse-graph]])
 							</div>
 						</li>
-						<li>
+						<li id="bH63kY0C_">
+							<a href="#bH63kY0C_" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[public]]
 							</div>
 						</li>
-						<li>
+						<li id="atyJ2wkYS">
+							<a href="#atyJ2wkYS" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									todo: private!
 							</div>
 						</li>
-						<li>
+						<li id="tWGAfdpMe">
+							<a href="#tWGAfdpMe" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[(hidden) l6bezRkPb]]
 							</div>
 						</li>
-						<li>
+						<li id="-RZQnUjDW">
+							<a href="#-RZQnUjDW" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[(hidden) hMBgHmSNk]]
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="ayrg2zbgg">
+					<a href="#ayrg2zbgg" class="block-ref"></a>
+				
+				</li>
+				<li id="3Et8qz-jO">
+					<a href="#3Et8qz-jO" class="block-ref"></a>
+				
+				</li>
+				<li id="Jrm0KuKnE">
+					<a href="#Jrm0KuKnE" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -403,7 +490,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="hpCNk7M3b">
+			<a href="#hpCNk7M3b" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -436,7 +525,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="d5Oy41JMT">
+			<a href="#d5Oy41JMT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -469,7 +560,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="L_t3e2M2J">
+			<a href="#L_t3e2M2J" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -502,7 +595,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="gM5w4Bh7x">
+			<a href="#gM5w4Bh7x" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -535,7 +630,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="DGlhJHMTT">
+			<a href="#DGlhJHMTT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -568,7 +665,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="_ocM9B4s4">
+			<a href="#_ocM9B4s4" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -601,7 +700,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CuZ3lUX-K">
+			<a href="#CuZ3lUX-K" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -621,7 +722,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="wsWazxvtz">
+			<a href="#wsWazxvtz" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -638,37 +741,47 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="DHirGIdkC">
+		<a href="#DHirGIdkC" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				similar to how I __thought__ I used the `#[[public]]` (global) tag lol
 		</div>
 		<ul>
-			<li>
+			<li id="K2cZt_K1_">
+				<a href="#K2cZt_K1_" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} complexity is hard man, we need (integration) tests big time
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="oD13UAAYB">
+		<a href="#oD13UAAYB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				better because inside the #[[(hidden) tm2-dKJbJ]] page, you see what pages will make your stuff public
 		</div>
 		<ul>
-			<li>
+			<li id="CuZ3lUX-K">
+				<a href="#CuZ3lUX-K" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						more benefit for the page itself because it sees itself mentioned in the #[[(hidden) tm2-dKJbJ]], instead of manually checking the [[roam-traverse-graph-settings]] page.
 				</div>
 			</li>
-			<li>
+			<li id="TczdJ85St">
+				<a href="#TczdJ85St" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						tho idk, not sure yet, maybe we need a better name than #[[(hidden) tm2-dKJbJ]], to make it clear. if it is very understandable, then sure
 				</div>
 			</li>
-			<li></li>
+			<li id="_nFIeV01w">
+				<a href="#_nFIeV01w" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="OIRwVAwqw">
+		<a href="#OIRwVAwqw" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -684,7 +797,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="mf7d37aG4">
+			<a href="#mf7d37aG4" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -717,7 +832,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="iVMvWJg7l">
+			<a href="#iVMvWJg7l" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -750,7 +867,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ZK9vVRfEy">
+			<a href="#ZK9vVRfEy" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -783,7 +902,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ax1WUFkie">
+			<a href="#ax1WUFkie" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -800,7 +921,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="gG0_9HcL3">
+		<a href="#gG0_9HcL3" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} make configurable
 		</div>
@@ -820,7 +942,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="4XxOWgbMU">
+			<a href="#4XxOWgbMU" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -837,7 +961,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="0ge6yOuss">
+		<a href="#0ge6yOuss" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} make configurable
 		</div>
@@ -857,7 +982,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="w9gVDi40y">
+			<a href="#w9gVDi40y" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -890,7 +1017,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="JH6ZYKTbt">
+			<a href="#JH6ZYKTbt" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -923,7 +1052,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="zaXVT6MB9">
+			<a href="#zaXVT6MB9" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -940,22 +1071,29 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="073c3CK6X">
+		<a href="#073c3CK6X" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				ofc, maybe [[roam]] in the future could provide APIs that would help work around this (e.g. user gets best xp w/ 2nd option; tools can use API to quickly find all pages that have the tag mentioned) 
 		</div>
 		<ul>
-			<li>
+			<li id="5-hPRu_Qq">
+				<a href="#5-hPRu_Qq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} wait but now that i say it this way, isn&#39;t it __exactly__ what `roamAlphaAPI.query` is like? 🤯
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="XFANWYRoA">
+		<a href="#XFANWYRoA" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="rL84VgAnU">
+			<a href="#rL84VgAnU" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -972,32 +1110,38 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="wUmLMPz0a">
+		<a href="#wUmLMPz0a" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[roam-traverse-graph]] [[export-html-pages]]
 		</div>
 		<ul>
-			<li>
+			<li id="e4EmoJ3tk">
+				<a href="#e4EmoJ3tk" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} new #[[(hidden) jOMmlCP4S]] - public recursive tag, but only if the page that is made public recursive, is mentioned in root level of a page (1st lvl child block) &amp; has nothing else inside it (just like i often do in daily notes when referencing other pages &amp; &quot;writing into them&quot; via linked references).
 				</div>
 				<ul>
-					<li>
+					<li id="ZDOBMJ5M6">
+						<a href="#ZDOBMJ5M6" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								though, hmm, sometimes we still want it even if it&#39;s not on the root lvl of the page. e.g. just like right here.
 						</div>
 						<ul>
-							<li>
+							<li id="c5xPvcHam">
+								<a href="#c5xPvcHam" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										then, maybe it&#39;s fine if it can be on any level, as long as it&#39;s the only one mentioned there
 								</div>
 								<ul>
-									<li>
+									<li id="JcOkz61Bx">
+										<a href="#JcOkz61Bx" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												though, in this case, still wouldn&#39;t apply. perhaps if both (all) linked references mentioned there are public, and no private ones (or private-making ones?), only then could give an exception.
 										</div>
 										<ul>
-											<li>
+											<li id="HW3tg57Ww">
+												<a href="#HW3tg57Ww" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														though, also gotta think if it&#39;s worth &quot;complicating&quot; so much the logic that it&#39;s no longer worth 
 												</div>
@@ -1010,76 +1154,106 @@
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="0avUMZElV">
+				<a href="#0avUMZElV" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} oh snap, inspired straight from the [previous one](((HW3tg57Ww))) - having a `roam/js` or whatever &quot;extension&quot; to add the simplest of indicators if something will be public -- would be great!
 				</div>
 				<ul>
-					<li>
+					<li id="AjuQ5RoAo">
+						<a href="#AjuQ5RoAo" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} maybe on hover, could even explain why
 						</div>
 					</li>
-					<li>
+					<li id="zaXVT6MB9">
+						<a href="#zaXVT6MB9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} but, for this to work smoothly, we kinda would need to double down on the &quot;having most things in [[roam-traverse-graph-settings]]&quot; that we want configured, instead of configuring things there such as &quot;tag-that-makes-other-pages-public-recursive&quot;, whom would in turn be used in pages directly - this would mean it&#39;s easier for the [[roam]] user to use (probably? + info via linked references), but harder for tools to parse, because instead of parsing just the 1 single settings page, you have to parse it, and then parse all the related pages as well.
 						</div>
 						<ul>
-							<li>
+							<li id="073c3CK6X">
+								<a href="#073c3CK6X" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										ofc, maybe [[roam]] in the future could provide APIs that would help work around this (e.g. user gets best xp w/ 2nd option; tools can use API to quickly find all pages that have the tag mentioned) 
 								</div>
 								<ul>
-									<li>
+									<li id="5-hPRu_Qq">
+										<a href="#5-hPRu_Qq" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												{{[[TODO]]}} wait but now that i say it this way, isn&#39;t it __exactly__ what `roamAlphaAPI.query` is like? 🤯
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="XFANWYRoA">
+								<a href="#XFANWYRoA" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="HzfAFwPhe">
+						<a href="#HzfAFwPhe" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="Pt26HptpR">
+				<a href="#Pt26HptpR" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} another one re: the total global word count as a number in the landing page
 				</div>
 				<ul>
-					<li>
+					<li id="FeBDrXr8b">
+						<a href="#FeBDrXr8b" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								we could have it be a button (well, a tag with href) that navigates to a page that has a graph (chart) of (top secret what it shows)
 						</div>
 						<ul>
-							<li>
+							<li id="zNLCkqCnx">
+								<a href="#zNLCkqCnx" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										{{[[TODO]]}} oo even more ideas - something like [[(hidden) btHMgS_i0]] has w/ &quot;cool&quot; statistics (normies represent, am i right?)
 								</div>
 								<ul>
-									<li>
+									<li id="6xU6z2uxr">
+										<a href="#6xU6z2uxr" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] [[roam]] lmao just noticed - let me scroll to the very bottom of the page, even though there&#39;s no content there (i.e. like vim) - would be useful when i have some block opened &amp; editing &amp; want to scroll the current text higher into the view w/o creating a bunch of empty blocks below it.
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="IVEBMufUq">
+								<a href="#IVEBMufUq" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="FbGRDta4x">
+						<a href="#FbGRDta4x" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li id="4W4rtbIzl">
+				<a href="#4W4rtbIzl" class="block-ref"></a>
+			</li>
+			<li id="uqKshz_g8">
+				<a href="#uqKshz_g8" class="block-ref"></a>
+			</li>
+			<li id="mkAq6fC9N">
+				<a href="#mkAq6fC9N" class="block-ref"></a>
+			</li>
+			<li id="bLoZ2zPEJ">
+				<a href="#bLoZ2zPEJ" class="block-ref"></a>
+			</li>
+			<li id="Id5Hc7s6R">
+				<a href="#Id5Hc7s6R" class="block-ref"></a>
+			</li>
+			<li id="P8a6paBqv">
+				<a href="#P8a6paBqv" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="etq9XMnlS">
+		<a href="#etq9XMnlS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) etq9XMnlS
 		</div>
@@ -1099,7 +1273,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="i7UI2Ym2a">
+			<a href="#i7UI2Ym2a" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1132,7 +1308,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="r03GIlezI">
+			<a href="#r03GIlezI" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1149,12 +1327,16 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="wiW41Si-y">
+		<a href="#wiW41Si-y" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				observation:: hmm, a reason why you wouldn&#39;t want to have meta-tags (e.g. tags that make other tags have [[magic]])
 		</div>
 	</li>
-	<li></li>
+	<li id="FIyNWjChF">
+		<a href="#FIyNWjChF" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -1170,7 +1352,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="OU3YOTfan">
+			<a href="#OU3YOTfan" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:23.405Z</span>
+				<span>2022-02-02T14:33:55.589Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1640291955317);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811803405);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435589);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="co04CZ7Rg">
+			<a href="#co04CZ7Rg" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,84 +343,100 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="yreBPknBs">
+		<a href="#yreBPknBs" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) yreBPknBs
 		</div>
 	</li>
-	<li>
+	<li id="_GI4xffwn">
+		<a href="#_GI4xffwn" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) _GI4xffwn [[(hidden) JJEYAPdym]]
 		</div>
 	</li>
-	<li>
+	<li id="e-N6FAaKm">
+		<a href="#e-N6FAaKm" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) e-N6FAaKm
 		</div>
 	</li>
-	<li>
+	<li id="eGHXmgvKb">
+		<a href="#eGHXmgvKb" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) eGHXmgvKb [[(hidden) EPYV31rY-]]
 		</div>
 		<ul>
-			<li>
+			<li id="4fpChflgb">
+				<a href="#4fpChflgb" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 4fpChflgb [[(hidden) 3y7aOR6Ar]] [[(hidden) pPmx61yhs]]
 				</div>
 			</li>
-			<li>
+			<li id="WXXvGCSWJ">
+				<a href="#WXXvGCSWJ" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) WXXvGCSWJ #[[(hidden) D1lY0CG5e]] [[roam]]
 				</div>
 				<ul>
-					<li>
+					<li id="PVKcPNQo-">
+						<a href="#PVKcPNQo-" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[DONE]]}} (hidden) PVKcPNQo- 
 						</div>
 					</li>
-					<li>
+					<li id="lP3MDS6zp">
+						<a href="#lP3MDS6zp" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[DONE]]}} (hidden) lP3MDS6zp 
 						</div>
 						<ul>
-							<li>
+							<li id="pQE2C0JXH">
+								<a href="#pQE2C0JXH" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) pQE2C0JXH
 								</div>
 								<ul>
-									<li>
+									<li id="3GkE-4nOo">
+										<a href="#3GkE-4nOo" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) 3GkE-4nOo
 										</div>
 									</li>
-									<li>
+									<li id="6jkNuo4e9">
+										<a href="#6jkNuo4e9" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) 6jkNuo4e9
 										</div>
 									</li>
-									<li>
+									<li id="LUt-FJPep">
+										<a href="#LUt-FJPep" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												{{[[TODO]]}} #[[observation]] from previous - okay so i was thinking about wanting such a thing recently &amp; now it came out, &amp; the guy was working on it for 4-6 months. nice!
 									makes me realize that the ideas of (what i think of as #[[roam]]-traverse-graph ) aren&#39;t being considered by me only - i shouldn&#39;t hold it in private for too long, gotta make it public!
 									ofc [[balance between launching fast &amp; launching a well-enough product that your users actually stay &amp; don&#39;t get bad expectations / set it off forever]] still applies, but gotta try.
 										</div>
 										<ul>
-											<li>
+											<li id="njCh6DwDL">
+												<a href="#njCh6DwDL" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														{{[[DONE]]}} visit slack, see wassup
 												</div>
 												<ul>
-													<li>
+													<li id="hyAlU6ctA">
+														<a href="#hyAlU6ctA" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																re: &gt; mobile experience of [[roam]] is meh
 														</div>
 														<ul>
-															<li>
+															<li id="IKdH-kNVw">
+																<a href="#IKdH-kNVw" class="block-ref"></a>
 																<div style="max-width: 65ch;">
 																		https://roamresearch.slack.com/archives/CNC4881EU/p1640315470419600?thread_ts=1640166267.412200&amp;cid=CNC4881EU
 																</div>
 																<ul>
-																	<li>
+																	<li id="YoEd37Zmg">
+																		<a href="#YoEd37Zmg" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				idk, using roam on mobile has always been just fine.
 																	first you open roam on chrome/similar &amp; save the SPA to the desktop as an app shortcut (at least on android)
@@ -373,56 +444,67 @@
 																	and then instead of the default simplified version of roam for mobile, you click some button like &quot;full app&quot; or smthn similar, and then it has shortcuts to do common things:
 																		</div>
 																	</li>
-																	<li>
+																	<li id="S0u18A7D9">
+																		<a href="#S0u18A7D9" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FIbapxHTgZL.jpg?alt=media&amp;token=1809744a-9b17-4732-b355-4bfb79c397ab)
 																		</div>
 																		<ul>
-																			<li>
+																			<li id="llkoD2dEl">
+																				<a href="#llkoD2dEl" class="block-ref"></a>
 																				<div style="max-width: 65ch;">
 																						(hidden) llkoD2dEl [[(hidden) 0E1qv_nQd]] #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 																				</div>
 																				<ul>
-																					<li>
+																					<li id="B0Zz9KRXM">
+																						<a href="#B0Zz9KRXM" class="block-ref"></a>
 																						<div style="max-width: 65ch;">
 																								(hidden) B0Zz9KRXM #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 																						</div>
 																						<ul>
-																							<li>
+																							<li id="zPoB-tHos">
+																								<a href="#zPoB-tHos" class="block-ref"></a>
 																								<div style="max-width: 65ch;">
 																										(hidden) zPoB-tHos
 																								</div>
 																							</li>
-																							<li>
+																							<li id="BRXQa5Bu8">
+																								<a href="#BRXQa5Bu8" class="block-ref"></a>
 																								<div style="max-width: 65ch;">
 																										{{[[TODO]]}} (hidden) BRXQa5Bu8 [[(hidden) kskXzQXuC]]
 																								</div>
 																								<ul>
-																									<li>
+																									<li id="ZX3KSHqcO">
+																										<a href="#ZX3KSHqcO" class="block-ref"></a>
 																										<div style="max-width: 65ch;">
 																												(hidden) ZX3KSHqcO #[[(hidden) NSZ9dnINw]]
 																										</div>
 																									</li>
 																								</ul>
 																							</li>
-																							<li>
+																							<li id="E_Kd2UMl6">
+																								<a href="#E_Kd2UMl6" class="block-ref"></a>
 																								<div style="max-width: 65ch;">
 																										(hidden) E_Kd2UMl6
 																								</div>
 																							</li>
 																						</ul>
 																					</li>
-																					<li>
+																					<li id="Hr8bHB-gp">
+																						<a href="#Hr8bHB-gp" class="block-ref"></a>
 																						<div style="max-width: 65ch;">
 																								(hidden) Hr8bHB-gp
 																						</div>
 																					</li>
 																				</ul>
 																			</li>
-																			<li></li>
+																			<li id="ShIYms6aF">
+																				<a href="#ShIYms6aF" class="block-ref"></a>
+																			</li>
 																		</ul>
 																	</li>
-																	<li>
+																	<li id="vIjFsj3fK">
+																		<a href="#vIjFsj3fK" class="block-ref"></a>
 																		<div style="max-width: 65ch;">
 																				maybe my phone isn&#39;t small either (poco f3, highly recommend) - that surely helps as well.
 																	but even w/ a smaller one, with this setup, should be better.
@@ -430,119 +512,143 @@
 																	</li>
 																</ul>
 															</li>
-															<li></li>
+															<li id="MZMDc-KFa">
+																<a href="#MZMDc-KFa" class="block-ref"></a>
+															</li>
 														</ul>
 													</li>
-													<li></li>
+													<li id="pmlfAdDB5">
+														<a href="#pmlfAdDB5" class="block-ref"></a>
+													</li>
 												</ul>
 											</li>
-											<li></li>
+											<li id="ShCCJmSTb">
+												<a href="#ShCCJmSTb" class="block-ref"></a>
+											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="s3AsGsvtX">
+										<a href="#s3AsGsvtX" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) s3AsGsvtX
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="122c0Pxs7">
+								<a href="#122c0Pxs7" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) 122c0Pxs7
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="qBD2uTEwu">
+						<a href="#qBD2uTEwu" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) qBD2uTEwu
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="LOXFPq1ic">
+				<a href="#LOXFPq1ic" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) LOXFPq1ic
 				</div>
 			</li>
-			<li>
+			<li id="UXblvTnBt">
+				<a href="#UXblvTnBt" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						{{[[TODO]]}} (hidden) UXblvTnBt [[(hidden) X7oZG5qJs]] #[[(hidden) jOMmlCP4S]]
 				</div>
 			</li>
-			<li>
+			<li id="sb80H_Eqt">
+				<a href="#sb80H_Eqt" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) sb80H_Eqt
 				</div>
 			</li>
-			<li>
+			<li id="pslsGkDVc">
+				<a href="#pslsGkDVc" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) pslsGkDVc
 				</div>
 				<ul>
-					<li>
+					<li id="j2q8tYt7H">
+						<a href="#j2q8tYt7H" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} (hidden) j2q8tYt7H 
 						</div>
 						<ul>
-							<li>
+							<li id="albCPYgY6">
+								<a href="#albCPYgY6" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) albCPYgY6 #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 								</div>
 								<ul>
-									<li>
+									<li id="kvuk3qdUv">
+										<a href="#kvuk3qdUv" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) kvuk3qdUv
 										</div>
 										<ul>
-											<li>
+											<li id="FkoX4VkN0">
+												<a href="#FkoX4VkN0" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(hidden) FkoX4VkN0 [[(hidden) 12-24-2021]]
 												</div>
 												<ul>
-													<li>
+													<li id="rIaV_QbsY">
+														<a href="#rIaV_QbsY" class="block-ref"></a>
 														<div style="max-width: 65ch;">
 																{{[[TODO]]}} (hidden) rIaV_QbsY #[[(hidden) oWn8Mvs8V]] #[[(hidden) 8LIMerx2O]]
 														</div>
 													</li>
 												</ul>
 											</li>
-											<li>
+											<li id="SeAs5u3-E">
+												<a href="#SeAs5u3-E" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														(hidden) SeAs5u3-E
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="1kvkE_Nir">
+										<a href="#1kvkE_Nir" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) 1kvkE_Nir
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li>
+							<li id="PLJNZYu6A">
+								<a href="#PLJNZYu6A" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) PLJNZYu6A
 								</div>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="LZGhEOfcL">
+						<a href="#LZGhEOfcL" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) LZGhEOfcL
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="NbGdCoMzy">
+				<a href="#NbGdCoMzy" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) NbGdCoMzy
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="QWD1c3hap">
+		<a href="#QWD1c3hap" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) QWD1c3hap
 		</div>

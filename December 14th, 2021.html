@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.864Z</span>
+				<span>2022-02-02T14:33:54.231Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,69 +245,82 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1639401557305);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801864);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434231);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="J7fueVcNt">
+					<a href="#J7fueVcNt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) J7fueVcNt #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="LZ2JXIzVa">
+							<a href="#LZ2JXIzVa" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) LZ2JXIzVa [[(hidden) AEThLPcJI]] [[(hidden) lR0TlK5tu]]
 							</div>
 							<ul>
-								<li>
+								<li id="v1I1ECMIc">
+									<a href="#v1I1ECMIc" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) v1I1ECMIc
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="f1EtJgGW-">
+							<a href="#f1EtJgGW-" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) f1EtJgGW-
 							</div>
 						</li>
-						<li>
+						<li id="x3zteECyM">
+							<a href="#x3zteECyM" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="Zy7t3jwnF">
+									<a href="#Zy7t3jwnF" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											re: ((V_sTbcBOu))
 									</div>
 									<ul>
-										<li>
+										<li id="rikpn2hu1">
+											<a href="#rikpn2hu1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} the filter was `&quot;Epic Link&quot; = FUN-1963 OR parentEpic = FUN-1963 AND issuetype != Sub-Task` (see `issuetype`) (could also be just equal to Task).
 											</div>
 										</li>
-										<li>
+										<li id="CbHyxjBjU">
+											<a href="#CbHyxjBjU" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													that&#39;s literally all that needed to be done.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="R135z3hTq">
+									<a href="#R135z3hTq" class="block-ref"></a>
+								</li>
+								<li id="VdTZDYl86">
+									<a href="#VdTZDYl86" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} ((C5SR76bKS))
 									</div>
 									<ul>
-										<li>
+										<li id="MZqzGA8pU">
+											<a href="#MZqzGA8pU" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													[[December 23rd, 2021]]
 											</div>
 											<ul>
-												<li>
+												<li id="xR27Mb6Cy">
+													<a href="#xR27Mb6Cy" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} bring the mic back
 													</div>
@@ -263,175 +329,221 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="r5te_i97-">
+									<a href="#r5te_i97-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											regroup-imports:
 									</div>
 									<ul>
-										<li>
+										<li id="BgSTMnvXX">
+											<a href="#BgSTMnvXX" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} detect if the new import statement already exists
 											</div>
 											<ul>
-												<li>
+												<li id="HbV1k8OK8">
+													<a href="#HbV1k8OK8" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} if yes, use it
 													</div>
 													<ul>
-														<li>
+														<li id="ucRWE3J6V">
+															<a href="#ucRWE3J6V" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[DONE]]}} get rid of duplicate specifiers
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="oia3heZ0N">
+													<a href="#oia3heZ0N" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} if no, place import statement in place of the very first existing statement that we remove
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="xkJN4CUA8">
+											<a href="#xkJN4CUA8" class="block-ref"></a>
+										</li>
+										<li id="gRqWEF_dh">
+											<a href="#gRqWEF_dh" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													[[December 15th, 2021]]
 											</div>
 											<ul>
-												<li>
+												<li id="j-RN6ORqM">
+													<a href="#j-RN6ORqM" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} use local names of imports
 													</div>
 													<ul>
-														<li>
+														<li id="pxthWu938">
+															<a href="#pxthWu938" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	will need to get rid of the `shorthand: true` if they were modified (for requires, &amp; identical for imports)
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="b9fPbIVK0">
+													<a href="#b9fPbIVK0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} figure out if non-quoted key accessors need to get quoted (would introduce extra complexity so hopefully no)
 													</div>
 												</li>
-												<li></li>
+												<li id="DVDdyl4h4">
+													<a href="#DVDdyl4h4" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="TOgz2onRo">
+											<a href="#TOgz2onRo" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="_Z-FjLqlE">
+									<a href="#_Z-FjLqlE" class="block-ref"></a>
+								</li>
+								<li id="POXS4rdcX">
+									<a href="#POXS4rdcX" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											review w/ [[(hidden) tv1zOVzED]]
 									</div>
 									<ul>
-										<li>
+										<li id="DxquEPn0z">
+											<a href="#DxquEPn0z" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													[[(hidden) tv1zOVzED]]
 											</div>
 											<ul>
-												<li>
+												<li id="PpNQVXo-y">
+													<a href="#PpNQVXo-y" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} add availability info, regroup
 													</div>
 												</li>
-												<li>
+												<li id="m1zpnJkZ8">
+													<a href="#m1zpnJkZ8" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} call tmr
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="rNa7Q5gK3">
+											<a href="#rNa7Q5gK3" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													into [[(hidden) tv1zOVzED]] PR
 											</div>
 											<ul>
-												<li>
+												<li id="3MUbJy-Og">
+													<a href="#3MUbJy-Og" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} add lines of code of how to run the codemod
 													</div>
 												</li>
-												<li>
+												<li id="UXYpDp50-">
+													<a href="#UXYpDp50-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} provide 2 more examples for the codemods
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="fuzaE6mqN">
+											<a href="#fuzaE6mqN" class="block-ref"></a>
+										</li>
+										<li id="CSnjivM-Y">
+											<a href="#CSnjivM-Y" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} running transforms separately
 											</div>
 											<ul>
-												<li>
+												<li id="hvYyKCS1q">
+													<a href="#hvYyKCS1q" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} task: https://pipedrive.atlassian.net/browse/FUN-2022
 													</div>
 													<ul>
-														<li>
+														<li id="gE1Aeee6K">
+															<a href="#gE1Aeee6K" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[DONE]]}} and then add info on how to run each: ((rNa7Q5gK3))
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="jqIxUHtiH">
+													<a href="#jqIxUHtiH" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="JWsAk0tRi">
+											<a href="#JWsAk0tRi" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} for inlineTest&#39;s of 5th PR, figure out if we can do file-by-file tests.
 											</div>
 											<ul>
-												<li>
+												<li id="8q1wVwLXP">
+													<a href="#8q1wVwLXP" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															looks meh, at least for now.
 													</div>
 												</li>
-												<li>
+												<li id="JsLWqF30Y">
+													<a href="#JsLWqF30Y" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															https://pipedrive.atlassian.net/browse/FUN-2023
 													</div>
 												</li>
-												<li>
+												<li id="EEqVWToJd">
+													<a href="#EEqVWToJd" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} msg [[(hidden) tv1zOVzED]]
 													</div>
 													<ul>
-														<li>
+														<li id="cnRGFcee-">
+															<a href="#cnRGFcee-" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} get approval
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="Glw11TkXc">
+													<a href="#Glw11TkXc" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="M2dN2IBQ1">
+											<a href="#M2dN2IBQ1" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="V6OyMW0cZ">
+									<a href="#V6OyMW0cZ" class="block-ref"></a>
+								</li>
+								<li id="nzrPPhamR">
+									<a href="#nzrPPhamR" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} play w/ the swimlanes / tracks to not show sub-tasks for my track, but also exclude them from the standard track
 									</div>
 									<ul>
-										<li>
+										<li id="hPMrdNWzB">
+											<a href="#hPMrdNWzB" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} get admin
 											</div>
 										</li>
-										<li>
+										<li id="Ic75x45RK">
+											<a href="#Ic75x45RK" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} backup
 											</div>
 											<ul>
-												<li>
+												<li id="jxf4i41F6">
+													<a href="#jxf4i41F6" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```javascript
 												CUI5 Codemods	&quot;Epic Link&quot; = FUN-1963 OR parentEpic = FUN-1963	CUI5 Codemods		
@@ -439,47 +551,57 @@
 												FE Docs	&quot;Epic Link&quot; = FUN-1405 OR &quot;Parent Link&quot; = FUN-1701 OR &quot;Parent Link&quot; = FUN-1740 OR &quot;Parent Link&quot; = FUN-1775	FE Docs mini mission	```
 													</div>
 												</li>
-												<li></li>
+												<li id="_mWiJWD4a">
+													<a href="#_mWiJWD4a" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="Ac9wT-4WF">
+											<a href="#Ac9wT-4WF" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} into
 											</div>
 											<ul>
-												<li>
+												<li id="vqESk18Gn">
+													<a href="#vqESk18Gn" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															from `&quot;Epic Link&quot; = FUN-1963 OR parentEpic = FUN-1963`
 													</div>
 												</li>
-												<li>
+												<li id="qlmeEHwMT">
+													<a href="#qlmeEHwMT" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															removed `OR parentEpic = FUN-1963`
 													</div>
 												</li>
-												<li>
+												<li id="kpkLTzoPV">
+													<a href="#kpkLTzoPV" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															to `&quot;Epic Link&quot; = FUN-1963`
 													</div>
 												</li>
-												<li>
+												<li id="H-eLFjMRF">
+													<a href="#H-eLFjMRF" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															and then created a new swimlane/track to catch the sub-tasks :ez:
 													</div>
 													<ul>
-														<li>
+														<li id="_DbobwKLd">
+															<a href="#_DbobwKLd" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	`xXx do not look 🙈🙈 xXx ` `parentEpic = FUN-1963 AND issuetype = Sub-Task`
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="vVutN4RPb">
+													<a href="#vVutN4RPb" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															final
 													</div>
 													<ul>
-														<li>
+														<li id="iIOK8t3tN">
+															<a href="#iIOK8t3tN" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	```javascript
 														xXx do not look 🙈🙈 xXx
@@ -495,73 +617,96 @@
 														Standard```
 															</div>
 														</li>
-														<li></li>
+														<li id="yPqicg9p4">
+															<a href="#yPqicg9p4" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="SzDoYUTUX">
+													<a href="#SzDoYUTUX" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="vaTNQVT_2">
+											<a href="#vaTNQVT_2" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li></li>
-								<li></li>
+								<li id="9F3s_qZG4">
+									<a href="#9F3s_qZG4" class="block-ref"></a>
+								</li>
+								<li id="NNDLjuLpC">
+									<a href="#NNDLjuLpC" class="block-ref"></a>
+								</li>
+								<li id="sxQEfm7Ag">
+									<a href="#sxQEfm7Ag" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="-3EW9fJLG">
+							<a href="#-3EW9fJLG" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) -3EW9fJLG
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="_g2qydMAv">
+					<a href="#_g2qydMAv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) _g2qydMAv
 					</div>
 				</li>
-				<li>
+				<li id="Hv15j_jsw">
+					<a href="#Hv15j_jsw" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) Hv15j_jsw #[[(hidden) _sW66DmMa]] #[[re]]
 					</div>
 				</li>
-				<li>
+				<li id="6KelVydSW">
+					<a href="#6KelVydSW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6KelVydSW
 					</div>
 				</li>
-				<li>
+				<li id="HPJwWqGnl">
+					<a href="#HPJwWqGnl" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) HPJwWqGnl
 					</div>
 				</li>
-				<li>
+				<li id="5SreBU7Ms">
+					<a href="#5SreBU7Ms" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 5SreBU7Ms
 					</div>
 				</li>
-				<li>
+				<li id="Rb_P75bxT">
+					<a href="#Rb_P75bxT" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Rb_P75bxT
 					</div>
 				</li>
-				<li>
+				<li id="cF-cDhgWy">
+					<a href="#cF-cDhgWy" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cF-cDhgWy
 					</div>
 				</li>
-				<li>
+				<li id="0FMYEb4iE">
+					<a href="#0FMYEb4iE" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 0FMYEb4iE
 					</div>
 				</li>
-				<li>
+				<li id="3K-Zse6yh">
+					<a href="#3K-Zse6yh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 3K-Zse6yh
 					</div>
 				</li>
-				<li>
+				<li id="Xi9P2F8L7">
+					<a href="#Xi9P2F8L7" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Xi9P2F8L7
 					</div>
@@ -637,7 +782,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="XfeqiElqv">
+			<a href="#XfeqiElqv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -654,7 +801,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="C5SR76bKS">
+		<a href="#C5SR76bKS" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[DONE]]}} (hidden) C5SR76bKS [[(hidden) _RMDwHiKR]]
 		</div>

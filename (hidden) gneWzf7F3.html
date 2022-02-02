@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.961Z</span>
+				<span>2022-02-02T14:33:55.237Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637161492350);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802961);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435237);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="nUvnb296q">
+			<a href="#nUvnb296q" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -288,14 +343,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="8juA_RhD_">
+		<a href="#8juA_RhD_" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 8juA_RhD_
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="sC2tE89Fs">
+			<a href="#sC2tE89Fs" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -312,22 +370,26 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="PNsxGrk6P">
+		<a href="#PNsxGrk6P" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) PNsxGrk6P
 		</div>
 	</li>
-	<li>
+	<li id="4rAlqgjdj">
+		<a href="#4rAlqgjdj" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) 4rAlqgjdj
 		</div>
 	</li>
-	<li>
+	<li id="CFnJlIoyB">
+		<a href="#CFnJlIoyB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) CFnJlIoyB
 		</div>
 	</li>
-	<li>
+	<li id="_nzjSVKm9">
+		<a href="#_nzjSVKm9" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) _nzjSVKm9
 		</div>
@@ -347,7 +409,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="PxSq8k_aK">
+			<a href="#PxSq8k_aK" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -364,17 +428,20 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="9cqPmANab">
+		<a href="#9cqPmANab" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				oh idea - just use `joinWith(&quot;\n&quot;)([ &quot;line1&quot;, &quot;line2&quot;, ])` to make it way clearer!
 		</div>
 	</li>
-	<li>
+	<li id="A-qoCO7wC">
+		<a href="#A-qoCO7wC" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				also, now it looks like a taggedTemplateLiteral call, i.e. we could do
 		</div>
 		<ul>
-			<li>
+			<li id="bRtyjGdjs">
+				<a href="#bRtyjGdjs" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						```javascript
 			joinWith(&quot;\n&quot;)`
@@ -385,17 +452,20 @@
 			```
 				</div>
 			</li>
-			<li>
+			<li id="3nAZfu_zx">
+				<a href="#3nAZfu_zx" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						oh but wait, we again have to use the `${}` calls. nope
 				</div>
 			</li>
-			<li>
+			<li id="WNsvqY5tq">
+				<a href="#WNsvqY5tq" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
 				</div>
 				<ul>
-					<li>
+					<li id="Ys_kn360b">
+						<a href="#Ys_kn360b" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								```javascript
 					joinWith(&quot;\n&quot;)([
@@ -412,22 +482,29 @@
 					```
 						</div>
 					</li>
-					<li>
+					<li id="ntOneYZ-K">
+						<a href="#ntOneYZ-K" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} yep. let&#39;s do it.
 						</div>
 					</li>
-					<li>
+					<li id="q94Mmlee9">
+						<a href="#q94Mmlee9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								{{[[TODO]]}} refactor [[codemods]]
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="LmADx7qC1">
+				<a href="#LmADx7qC1" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="zmjW9Jn6v">
+		<a href="#zmjW9Jn6v" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

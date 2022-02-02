@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:23.140Z</span>
+				<span>2022-02-02T14:33:55.331Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641319845162);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811803140);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435331);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="9vb3e72eL">
+			<a href="#9vb3e72eL" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -290,15 +345,21 @@ and, they seem more doable / easier than the side effect detection:
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="HBqjQaL7g">
+		<a href="#HBqjQaL7g" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				((RpqCi8rWX))
 		</div>
 	</li>
-	<li></li>
+	<li id="FBKvdaCu8">
+		<a href="#FBKvdaCu8" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="RpqCi8rWX">
+			<a href="#RpqCi8rWX" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -315,94 +376,117 @@ and, they seem more doable / easier than the side effect detection:
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="KsXnLZPbe">
+		<a href="#KsXnLZPbe" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) AV7J4zqkD:: linking to a page - both pages need updating now
 		</div>
 		<ul>
-			<li>
+			<li id="qKtkqybYC">
+				<a href="#qKtkqybYC" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						and if it&#39;s a meta page / has powers, then extra works to potentially any pages in the graph.
 				</div>
 			</li>
-			<li>
+			<li id="3TIQyco0R">
+				<a href="#3TIQyco0R" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						i.e. annoying stuff!
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="5fqjBbUlY">
+		<a href="#5fqjBbUlY" class="block-ref"></a>
+	
+	</li>
+	<li id="ZCA28ZG0p">
+		<a href="#ZCA28ZG0p" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				idk, maybe if we manage to keep the stuff fast, like it is now [1], then going thru the whole graph shouldn&#39;t be as bad?
 		</div>
 		<ul>
-			<li>
+			<li id="d2_7g2yqz">
+				<a href="#d2_7g2yqz" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						e.g. we could have a queue of incoming events, and we&#39;d only do 1 at a time, and if a new one comes in too fast, we&#39;d wait for the currently one to complete, and in the meantime if more come in, we&#39;d discard all the new ones except the newest, and then could go again.
 				</div>
 			</li>
-			<li>
+			<li id="Mc94RYTft">
+				<a href="#Mc94RYTft" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						[1] it takes ~5 seconds? to go from a `notes-private/graph.json` into a `notes-public/*.html`
 				</div>
 				<ul>
-					<li>
+					<li id="LdRu4y7iv">
+						<a href="#LdRu4y7iv" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								and probably ~20 seconds when i introduce the stuff from the [[(hidden) nicjeov_l]] branch which is currently WIP.
 						</div>
 						<ul>
-							<li>
+							<li id="pSH6fdK79">
+								<a href="#pSH6fdK79" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										((yxHMW9jlb))
 								</div>
 							</li>
-							<li>
+							<li id="9vb3e72eL">
+								<a href="#9vb3e72eL" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										ofc there&#39;s a lot of [[(hidden) BislYexyN]]s to be done, it&#39;s currently fairly naive.
 							and, they seem more doable / easier than the side effect detection:
 								</div>
 								<ul>
-									<li>
+									<li id="HBqjQaL7g">
+										<a href="#HBqjQaL7g" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												((RpqCi8rWX))
 										</div>
 									</li>
-									<li></li>
+									<li id="FBKvdaCu8">
+										<a href="#FBKvdaCu8" class="block-ref"></a>
+									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="cfCDozyZc">
+								<a href="#cfCDozyZc" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li>
+					<li id="WFrBdRfJE">
+						<a href="#WFrBdRfJE" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								both assume 1. my size of the graph (1K pages, 8K words)
 						</div>
 						<ul>
-							<li>
+							<li id="Bmn5QBKAB">
+								<a href="#Bmn5QBKAB" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										((FI6sCM5cI))
 								</div>
 								<ul>
-									<li>
+									<li id="LvTjnjOsU">
+										<a href="#LvTjnjOsU" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												((xUKym_BXn))
 										</div>
 										<ul>
-											<li>
+											<li id="gGdzOAbyp">
+												<a href="#gGdzOAbyp" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														((gf1mkreMz))
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="RCs_uw34T">
+										<a href="#RCs_uw34T" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												((spuKqLoxE))
 										</div>
 										<ul>
-											<li>
+											<li id="sg-1h67zm">
+												<a href="#sg-1h67zm" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														((m1Fk_dVUP))
 												</div>
@@ -411,15 +495,22 @@ and, they seem more doable / easier than the side effect detection:
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="aWQonUJ5_">
+								<a href="#aWQonUJ5_" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="sgy9gcJAy">
+				<a href="#sgy9gcJAy" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="vioobdLe7">
+		<a href="#vioobdLe7" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

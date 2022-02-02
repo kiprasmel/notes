@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.803Z</span>
+				<span>2022-02-02T14:33:55.158Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,19 +245,21 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1637514012866);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802803);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435158);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="knmTe7u2U">
+					<a href="#knmTe7u2U" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) knmTe7u2U [[(hidden) 76s5Scxaf]]
 					</div>
 				</li>
-				<li>
+				<li id="gUMsYgqXW">
+					<a href="#gUMsYgqXW" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) gUMsYgqXW
 					</div>
@@ -280,7 +335,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="YusEuGmgR">
+			<a href="#YusEuGmgR" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -297,7 +354,8 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Q39qWEUFB">
+		<a href="#Q39qWEUFB" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} (hidden) Q39qWEUFB #[[(hidden) SZp9S9TdD]] [[(hidden) JcqOWMyQe]] #[[(hidden) OAIvqirws]]
 		</div>
@@ -317,7 +375,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="T1rv9gf87">
+			<a href="#T1rv9gf87" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -356,7 +416,9 @@ in general i think i exceeded expectations by a lot here (will provide examples 
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="I7huNqf-Y">
+			<a href="#I7huNqf-Y" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -373,22 +435,26 @@ in general i think i exceeded expectations by a lot here (will provide examples 
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="JZn2PnhT7">
+		<a href="#JZn2PnhT7" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) JZn2PnhT7
 		</div>
 	</li>
-	<li>
+	<li id="XJHtbPj3w">
+		<a href="#XJHtbPj3w" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) XJHtbPj3w
 		</div>
 	</li>
-	<li>
+	<li id="kMYWJx7Dg">
+		<a href="#kMYWJx7Dg" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) kMYWJx7Dg [[(hidden) nfWK0wUg0]]
 		</div>
 		<ul>
-			<li>
+			<li id="8-nfXIY2Z">
+				<a href="#8-nfXIY2Z" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 8-nfXIY2Z
 				</div>
@@ -410,7 +476,9 @@ in general i think i exceeded expectations by a lot here (will provide examples 
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="N0fmMYoWJ">
+			<a href="#N0fmMYoWJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -427,7 +495,8 @@ in general i think i exceeded expectations by a lot here (will provide examples 
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="M9GG9p2ba">
+		<a href="#M9GG9p2ba" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) M9GG9p2ba
 		</div>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.895Z</span>
+				<span>2022-02-02T14:33:54.296Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,131 +245,157 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638150749946);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801895);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434296);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="Q5sFO_xwQ">
+					<a href="#Q5sFO_xwQ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Q5sFO_xwQ #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="tsI1CrXaD">
+							<a href="#tsI1CrXaD" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="W3U0APp0U">
+									<a href="#W3U0APp0U" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											sync
 									</div>
 									<ul>
-										<li>
+										<li id="6-2RKodyG">
+											<a href="#6-2RKodyG" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} cui5map when?
 											</div>
 											<ul>
-												<li>
+												<li id="au278YXeL">
+													<a href="#au278YXeL" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} soon, ping again [[(hidden) v8hKA88Fi]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="0IvtxZXeY">
+											<a href="#0IvtxZXeY" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} i could split into multiple PRs tbh
 											</div>
 											<ul>
-												<li>
+												<li id="E_eiaTYx0">
+													<a href="#E_eiaTYx0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} yes do
 													</div>
 												</li>
-												<li>
+												<li id="Sos5JQs0r">
+													<a href="#Sos5JQs0r" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} and review tomorrow w/ [[(hidden) tv1zOVzED]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="O8aC4X1jZ">
+											<a href="#O8aC4X1jZ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} where do i cont&#39;d? LP? mini mission?
 											</div>
 											<ul>
-												<li>
+												<li id="9n9_Z7hKr">
+													<a href="#9n9_Z7hKr" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															LP
 													</div>
 												</li>
-												<li>
+												<li id="yNy1NmDbs">
+													<a href="#yNy1NmDbs" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} inform LP lead
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="x5H2E0DeX">
+											<a href="#x5H2E0DeX" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="k5Oa0TdtL">
+									<a href="#k5Oa0TdtL" class="block-ref"></a>
+								</li>
+								<li id="CjRyOV3or">
+									<a href="#CjRyOV3or" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											extraction re: ((0IvtxZXeY))
 									</div>
 									<ul>
-										<li>
+										<li id="DBQ7iOUNH">
+											<a href="#DBQ7iOUNH" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} remove index.js imports &amp; re-exports
 											</div>
 											<ul>
-												<li>
+												<li id="P9JV1V52E">
+													<a href="#P9JV1V52E" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} extract into separete commit re-exports
 													</div>
 												</li>
-												<li>
+												<li id="qKJ7rsuWs">
+													<a href="#qKJ7rsuWs" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} drop &amp; verify works
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="k4UgpqyVc">
+											<a href="#k4UgpqyVc" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} make codemods work on every ~~commit~~ PR
 											</div>
 											<ul>
-												<li>
+												<li id="lkauWxmob">
+													<a href="#lkauWxmob" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} move the `codemod.ts` commit before the 1st transform, split into needed &amp; move all others into separate commit
 													</div>
 												</li>
-												<li>
+												<li id="H1q707zdZ">
+													<a href="#H1q707zdZ" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} probably amend into the transform commit -&gt; yes
 													</div>
 												</li>
-												<li>
+												<li id="x-3FoaW_j">
+													<a href="#x-3FoaW_j" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} move the separate commit up until the 2nd transform
 													</div>
 												</li>
-												<li>
+												<li id="n7KTDZSgD">
+													<a href="#n7KTDZSgD" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} repeat
 													</div>
 												</li>
-												<li>
+												<li id="uuUQxQFoL">
+													<a href="#uuUQxQFoL" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} when done, test each ~~commit~~ PR
 													</div>
 													<ul>
-														<li>
+														<li id="5BIWnkf1A">
+															<a href="#5BIWnkf1A" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} review together w/ [[(hidden) tv1zOVzED]] &amp;/ someone else
 															</div>
@@ -325,18 +404,23 @@
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="3FYfkOo7L">
+											<a href="#3FYfkOo7L" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} extract first few &amp; last few commits into `misc` PR
 											</div>
 										</li>
-										<li>
+										<li id="c03b_AIcZ">
+											<a href="#c03b_AIcZ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} extract each transform into separate PR
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="ODof_ZQCm">
+											<a href="#ODof_ZQCm" class="block-ref"></a>
+										</li>
+										<li id="GYrUt8JW3">
+											<a href="#GYrUt8JW3" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[DONE]]}} ulala
 										- https://github.com/pipedrive/CodeshiftCommunity/pull/11
@@ -350,153 +434,195 @@
 										:glhf: :ez:
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="QwC0CrAUV">
+											<a href="#QwC0CrAUV" class="block-ref"></a>
+										</li>
+										<li id="9LZWCI0x9">
+											<a href="#9LZWCI0x9" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} rebase properly, so that we can merge into upstream
 											</div>
 											<ul>
-												<li>
+												<li id="ZxjA6QvBO">
+													<a href="#ZxjA6QvBO" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} actually submit &amp; merge into upstream #[[(hidden) k27EB-_6T]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="97b1n0_4W">
+											<a href="#97b1n0_4W" class="block-ref"></a>
+										</li>
+										<li id="dyq1ExlMf">
+											<a href="#dyq1ExlMf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} upload vid
 											</div>
 											<ul>
-												<li>
+												<li id="-PC8oPg7Z">
+													<a href="#-PC8oPg7Z" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} hide slack from ~1h 9m 30s just in case, idk
 													</div>
 													<ul>
-														<li>
+														<li id="K9quF9QRj">
+															<a href="#K9quF9QRj" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} also 9:10~
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="rzs06kyjd">
+													<a href="#rzs06kyjd" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} make public
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="3aF6uL_hD">
+											<a href="#3aF6uL_hD" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li></li>
-								<li></li>
+								<li id="8GJnlVlfy">
+									<a href="#8GJnlVlfy" class="block-ref"></a>
+								</li>
+								<li id="BzQ70_Bnn">
+									<a href="#BzQ70_Bnn" class="block-ref"></a>
+								</li>
+								<li id="9pNLCEybn">
+									<a href="#9pNLCEybn" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="DtyJjJ4Dc">
+							<a href="#DtyJjJ4Dc" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) DtyJjJ4Dc [[(hidden) v8hKA88Fi]]
 							</div>
 							<ul>
-								<li>
+								<li id="s4IMch3oA">
+									<a href="#s4IMch3oA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) s4IMch3oA
 									</div>
 								</li>
-								<li>
+								<li id="NJ0IRqPi-">
+									<a href="#NJ0IRqPi-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) NJ0IRqPi-
 									</div>
 								</li>
-								<li>
+								<li id="Mwd13Zob1">
+									<a href="#Mwd13Zob1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											also i mentioned the exported codemods page via [[roam-traverse-graph]] -- whole point is that there&#39;s more transparency of what i&#39;m doing, and i wanted it to be available earlier but only managed to create the mvp of the [[export-html-pages]] plugin this weekend. will be useful for later missions though.
 									</div>
 									<ul>
-										<li>
+										<li id="pmgRF6j6D">
+											<a href="#pmgRF6j6D" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													also showed the power of #[[roam]] . He first asked if I&#39;ve used #[[(hidden) 7pX0uAw-4]], and ofc i have, so i told that, but quickly mentioned of why it&#39;s annoying (grouping, labeling manually etc), and highlighted how easy it is to do things in roam hehe. i think he&#39;ll easily join:D
 											</div>
 										</li>
-										<li>
+										<li id="M0cQOp3Lh">
+											<a href="#M0cQOp3Lh" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													also saw him using the git plush alias for pushing - pretty sure that&#39;s the one i showed recently, mine being git pp -  for pushing w/ automatically setting the upstream tracking (needed when pushing a branch for the first time), ah, awesome to see
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="A563ziasr">
+									<a href="#A563ziasr" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) A563ziasr
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="KXICI0qTQ">
+							<a href="#KXICI0qTQ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) KXICI0qTQ
 							</div>
 						</li>
-						<li>
+						<li id="-K3_AUWiI">
+							<a href="#-K3_AUWiI" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) -K3_AUWiI [[(hidden) YBB858w4z]]
 							</div>
 							<ul>
-								<li>
+								<li id="thEnChHqt">
+									<a href="#thEnChHqt" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[[git-rebase]]
 									</div>
 									<ul>
-										<li>
+										<li id="051-BUlcV">
+											<a href="#051-BUlcV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													1. check which branch you&#39;re on:
 											</div>
 											<ul>
-												<li>
+												<li id="6QaRGBA9C">
+													<a href="#6QaRGBA9C" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```shell
 												git branch
 												```
 													</div>
 												</li>
-												<li>
+												<li id="0P-wQQPQO">
+													<a href="#0P-wQQPQO" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															1.1 make sure this is actually the one you want to rebase.
 													</div>
 												</li>
-												<li>
+												<li id="PBP6PdUmS">
+													<a href="#PBP6PdUmS" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															1.2 am i the only one working on this branch?
 													</div>
 													<ul>
-														<li>
+														<li id="U2jhTCV3j">
+															<a href="#U2jhTCV3j" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	no = abort (unless you __and__ the other person(s) working the branch are advanced git users and you&#39;ve explicitly agreed that rebasing in shared branches is ok).
 															</div>
 															<ul>
-																<li>
+																<li id="wpQlLhJr8">
+																	<a href="#wpQlLhJr8" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="ovZy5xykC">
+															<a href="#ovZy5xykC" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="ss_g43j0o">
+													<a href="#ss_g43j0o" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="iHb8NN8iI">
+											<a href="#iHb8NN8iI" class="block-ref"></a>
+										</li>
+										<li id="tX45tw769">
+											<a href="#tX45tw769" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													2. this shouldn&#39;t be necessary, but just in case, let&#39;s pull the latest changes of your own branch:
 											</div>
 											<ul>
-												<li>
+												<li id="mxRMZIcsM">
+													<a href="#mxRMZIcsM" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```shell
 												# while inside the same (your own) branch:
@@ -504,21 +630,28 @@
 												```
 													</div>
 												</li>
-												<li>
+												<li id="_BT7uH2ly">
+													<a href="#_BT7uH2ly" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															if you see something unexpected, there&#39;s probably changes from someone else, thus you answer &quot;no&quot; to [1.2](((PBP6PdUmS))), thus abort (unless ofc you know what you&#39;re doing).
 													</div>
 												</li>
-												<li></li>
+												<li id="LM5b5S5Ag">
+													<a href="#LM5b5S5Ag" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="snFnJvoLm">
+											<a href="#snFnJvoLm" class="block-ref"></a>
+										</li>
+										<li id="tWJM_uJM0">
+											<a href="#tWJM_uJM0" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													3. since we want to rebase on top of the latest changes of master, we need to update our local git repo first:
 											</div>
 											<ul>
-												<li>
+												<li id="69DKxyOY7">
+													<a href="#69DKxyOY7" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```shell
 												git fetch --all
@@ -527,150 +660,190 @@
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="TgmlVv_MW">
+											<a href="#TgmlVv_MW" class="block-ref"></a>
+										</li>
+										<li id="nXiqa090z">
+											<a href="#nXiqa090z" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													4. if all goes well, we can start the procedure
 											</div>
 											<ul>
-												<li>
+												<li id="-JL0YZU-m">
+													<a href="#-JL0YZU-m" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```shell
 												git rebase origin/master -i
 												```
 													</div>
 												</li>
-												<li>
+												<li id="ajFuKj01F">
+													<a href="#ajFuKj01F" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															`-i`, or `--interactive`, will bring up the list of commits of your branch. you can view it to confirm everything&#39;s alright, and if not, you can squash/fixup/drop, even re-order the commits. basically, become a surgeon for a bit.
 													</div>
 													<ul>
-														<li>
+														<li id="R_LAmEK8a">
+															<a href="#R_LAmEK8a" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	if you didn&#39;t specify the interactive option, or if you did and everything&#39;s alright and you saved the file &amp; closed it, proceed further.
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="XNGi2AeFm">
+													<a href="#XNGi2AeFm" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="2TZjxhpkZ">
+											<a href="#2TZjxhpkZ" class="block-ref"></a>
+										</li>
+										<li id="3gu4MaZQ2">
+											<a href="#3gu4MaZQ2" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													5. ideally, there are no conflicts, the rebase completes successfully and you can move on to the [next step](((q8jggl2cV))).
 											</div>
 											<ul>
-												<li>
+												<li id="8AW_F6UbZ">
+													<a href="#8AW_F6UbZ" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															but if often does not.
 													</div>
 												</li>
-												<li>
+												<li id="_p1Q29gbG">
+													<a href="#_p1Q29gbG" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															you can always use `git status` to see what&#39;s going on
 													</div>
 												</li>
-												<li>
+												<li id="aYs5OUQbu">
+													<a href="#aYs5OUQbu" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															in case you encounter conflicts:
 													</div>
 													<ul>
-														<li>
+														<li id="NeCtFZfeo">
+															<a href="#NeCtFZfeo" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	you need to manually resolve them, and then mark them as fixed with `git add &lt;filename&gt;`
 															</div>
 														</li>
-														<li>
+														<li id="5VtR4aoZP">
+															<a href="#5VtR4aoZP" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	if you forgot which changes are yours, you can always find the commit by doing `git log &lt;branch-name-you-are-rebasing&gt;`, finding the commit, and then doing `git show &lt;commit&gt;`.
 															</div>
 														</li>
-														<li>
+														<li id="yViSp_VQQ">
+															<a href="#yViSp_VQQ" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	when all conflicts are fixed and added, you can continue the rebase with `git rebase --continue`
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="9p0D-5adW">
+													<a href="#9p0D-5adW" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															there are some edge cases as well
 													</div>
 													<ul>
-														<li>
+														<li id="SLObWnz89">
+															<a href="#SLObWnz89" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	e.g. if you resolved conflicts and your commit ends up being empty, you&#39;ll need to manually commit it with `git commit --allow-empty` and then `git rebase --continue` again
 															</div>
 														</li>
-														<li>
+														<li id="_iQBo0l0Y">
+															<a href="#_iQBo0l0Y" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	in general, git will tell you about it - you just gotta be careful and read thoroughly. ofc, also search for info / ask for help when needed.
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="WsokRessQ">
+													<a href="#WsokRessQ" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="8bqhSpcaq">
+											<a href="#8bqhSpcaq" class="block-ref"></a>
+										</li>
+										<li id="q8jggl2cV">
+											<a href="#q8jggl2cV" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													6. git should print &quot;successfully finished rebase&quot; or something similar.
 											</div>
 											<ul>
-												<li>
+												<li id="7xi6wQcZk">
+													<a href="#7xi6wQcZk" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															if you check `git status`, it&#39;ll show that you have more commits ahead and less commits behind. makes sense, since you previously had only your commits that you started from an older commit of the master branch, but you now have all of that, plus the new commits from the master branch that you were missing.
 													</div>
 													<ul>
-														<li>
+														<li id="CfRpJ3Ge1">
+															<a href="#CfRpJ3Ge1" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	see more:
 															</div>
 															<ul>
-																<li>
+																<li id="q1KFesjQl">
+																	<a href="#q1KFesjQl" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li>
+														<li id="pfZuBdL_4">
+															<a href="#pfZuBdL_4" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	this means you overwrote history.
 															</div>
 															<ul>
-																<li>
+																<li id="9KfLndn9i">
+																	<a href="#9KfLndn9i" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			i.e., when you change a commit (`git commit --amend` or `git rebase` or similar), you modify the commit, and it gets assigned a new SHA.
 																	</div>
 																</li>
-																<li>
+																<li id="LMefwFS4e">
+																	<a href="#LMefwFS4e" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			this is why the [1.2 check](((PBP6PdUmS))) is important -- since you&#39;re overriding history, if other people are also using the same branch, it can get messy.
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="rMvfNC93F">
+															<a href="#rMvfNC93F" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="PqMXXnuMf">
+													<a href="#PqMXXnuMf" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="VHODkbHAD">
+											<a href="#VHODkbHAD" class="block-ref"></a>
+										</li>
+										<li id="tr5kzZHj9">
+											<a href="#tr5kzZHj9" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													7. you&#39;ll now need to push the new history of commits to the repo (currently it&#39;s only local).
 											</div>
 											<ul>
-												<li>
+												<li id="PJ9dgSbAd">
+													<a href="#PJ9dgSbAd" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															since we overwrote history, a regular `git push` won&#39;t do (you can try). you&#39;ll need to force it with `-f` or `--force`:
 													</div>
 												</li>
-												<li>
+												<li id="Gffsql0UG">
+													<a href="#Gffsql0UG" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```shell
 												git push -f
@@ -679,36 +852,46 @@
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="b-mkiwAWe">
+											<a href="#b-mkiwAWe" class="block-ref"></a>
+										</li>
+										<li id="SWZKVxPcg">
+											<a href="#SWZKVxPcg" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													8. done. check the repo &amp; verify everything looks good.
 											</div>
 										</li>
-										<li></li>
-										<li>
+										<li id="TFrsVA04c">
+											<a href="#TFrsVA04c" class="block-ref"></a>
+										</li>
+										<li id="Qluj-1OFm">
+											<a href="#Qluj-1OFm" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													9. something went wrong? yay, learning time!
 											</div>
 											<ul>
-												<li>
+												<li id="mI8WrxjXs">
+													<a href="#mI8WrxjXs" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															`git reflog` is your friend:
 													</div>
 													<ul>
-														<li>
+														<li id="dMfKoE3CI">
+															<a href="#dMfKoE3CI" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	https://git-scm.com/docs/git-reflog
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="33qt8isNW">
+													<a href="#33qt8isNW" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															glhf. if you&#39;re a newbie w/ this stuff, consider copying the `.git/` folder outside the repo `../` in case you need to start from scratch.
 													</div>
 													<ul>
-														<li>
+														<li id="1b1bwyKcE">
+															<a href="#1b1bwyKcE" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	```shell
 														cp .git/ ../```
@@ -716,187 +899,225 @@
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="csRyvtLSm">
+													<a href="#csRyvtLSm" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															talking w/ an experienced colleague / friend also helps.
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
-										<li>
+										<li id="QFu0TEbzM">
+											<a href="#QFu0TEbzM" class="block-ref"></a>
+										</li>
+										<li id="vk3b7y1Yz">
+											<a href="#vk3b7y1Yz" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													10. good to remember:
 											</div>
 											<ul>
-												<li>
+												<li id="uYAkYLUW7">
+													<a href="#uYAkYLUW7" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															rebase goes commit-by-commit (1 by 1)
 													</div>
 												</li>
-												<li>
+												<li id="wcheLRHfF">
+													<a href="#wcheLRHfF" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															it&#39;s easy to mess things up.
 													</div>
 													<ul>
-														<li>
+														<li id="H7u_p5o1y">
+															<a href="#H7u_p5o1y" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	if anything goes wrong, you can always do `git rebase --abort` and start over
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="NkzgZDyZw">
+													<a href="#NkzgZDyZw" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															it&#39;s always better to do simple changes in multiple rebases, than multiple complex changes in a single rebase.
 													</div>
 													<ul>
-														<li>
+														<li id="ND1JPyH13">
+															<a href="#ND1JPyH13" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	e.g., first you can get your changes up to date to the latest origin&#39;s master branch, and then in the 2nd rebase you can squash some commits into one parent commit, then squash some more commits into a different parent commit in a 3rd rebase, etc etc.
 															</div>
 														</li>
-														<li>
+														<li id="Pjt28iW8E">
+															<a href="#Pjt28iW8E" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	this often times helps avoid complex situations, and also helps avoid loss of partial progress - e.g. if you&#39;re rebasing and you&#39;ve completed say 15 commits out of 20, but then you&#39;re on the 16th one and you f something up pretty bad, you&#39;d have to abort. but with the abort you&#39;ll lose all of the progress and you&#39;ll have to re-do the same stuff for the 15 commits again.
 															</div>
 															<ul>
-																<li>
+																<li id="_jeJJylNJ">
+																	<a href="#_jeJJylNJ" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			instead, if you were to separate things out, you&#39;d lose less progress
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li>
+														<li id="KSEqOv5aD">
+															<a href="#KSEqOv5aD" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	so yeah, multiple simple rebases are better than a fewer more complicated ones.
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="2jJUpcMso">
+													<a href="#2jJUpcMso" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="WkODm4U5C">
+											<a href="#WkODm4U5C" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="gZN2wBsaj">
+									<a href="#gZN2wBsaj" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) gZN2wBsaj
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="2YkKejhmI">
+							<a href="#2YkKejhmI" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 2YkKejhmI
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="pTO2pCW2N">
+					<a href="#pTO2pCW2N" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) pTO2pCW2N
 					</div>
 				</li>
-				<li>
+				<li id="D0ZOFnYTX">
+					<a href="#D0ZOFnYTX" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) D0ZOFnYTX
 					</div>
 				</li>
-				<li>
+				<li id="w2f1TU6nl">
+					<a href="#w2f1TU6nl" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) w2f1TU6nl
 					</div>
 				</li>
-				<li>
+				<li id="vK_5VKYXm">
+					<a href="#vK_5VKYXm" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="vamfP3vl5">
+							<a href="#vamfP3vl5" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} have an option for linked references - by default, public-first or private-first
 							</div>
 							<ul>
-								<li>
+								<li id="iMIL8wlVd">
+									<a href="#iMIL8wlVd" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											i.e. public unless marked as private, or vice-versa
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="DCv1ykoJh">
+							<a href="#DCv1ykoJh" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} the &quot;checked, re-generated &amp; exported&quot; - &quot;checked&quot; is not correct, because i run the checker every 1h now, but if there are 0 changes in the whole graph, it doesn&#39;t commit anything, thus the info that we __checked__ is wrong - it shouldn&#39;t include the word &quot;checked&quot;
 							</div>
 							<ul>
-								<li>
+								<li id="R_NXVfpQ3">
+									<a href="#R_NXVfpQ3" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											~~and maybe we can think of how to have this info~~ meh, it becomes stateful - exactly what we don&#39;t want/
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="-ofgbcBOo">
+							<a href="#-ofgbcBOo" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									#[[github]] actions runner setup
 							</div>
 							<ul>
-								<li>
+								<li id="Rd009_MU1">
+									<a href="#Rd009_MU1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 									</div>
 								</li>
-								<li>
+								<li id="yy7VV55Yr">
+									<a href="#yy7VV55Yr" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											```shell
 								sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev```
 									</div>
 								</li>
-								<li>
+								<li id="wcK-A71mc">
+									<a href="#wcK-A71mc" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://askubuntu.com/a/923317
 									</div>
 								</li>
-								<li>
+								<li id="hCICkS1qA">
+									<a href="#hCICkS1qA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											```shell
 								apt install firefox```
 									</div>
 								</li>
-								<li>
+								<li id="vNuGVC2ym">
+									<a href="#vNuGVC2ym" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} still failing...
 									</div>
 								</li>
-								<li>
+								<li id="wZtw84_Xb">
+									<a href="#wZtw84_Xb" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											if manually copying graph:
 									</div>
 									<ul>
-										<li>
+										<li id="6-9O8blWu">
+											<a href="#6-9O8blWu" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													can proceed
 											</div>
 										</li>
-										<li>
+										<li id="scRGa45js">
+											<a href="#scRGa45js" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 											</div>
 											<ul>
-												<li>
+												<li id="claNC8Tsv">
+													<a href="#claNC8Tsv" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															install nvm
 													</div>
 												</li>
-												<li>
+												<li id="Ggf65nHKm">
+													<a href="#Ggf65nHKm" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															then
 													</div>
 													<ul>
-														<li>
+														<li id="6mzbT7VfE">
+															<a href="#6mzbT7VfE" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	```javascript
 														nvm install 12
@@ -913,47 +1134,61 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="FnXuJvbrQ">
+									<a href="#FnXuJvbrQ" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="1LUeebITE">
+							<a href="#1LUeebITE" class="block-ref"></a>
+						</li>
+						<li id="EHdFS8cEf">
+							<a href="#EHdFS8cEf" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] for dynamic stuff - we can just upload the generated graph (w/o metadata) &amp; add it to the same notes repo, and fetch from it if e.g. we need the sidebar!
 							</div>
 						</li>
-						<li></li>
-						<li>
+						<li id="Dqs-LAlgo">
+							<a href="#Dqs-LAlgo" class="block-ref"></a>
+						</li>
+						<li id="jzsMikJGS">
+							<a href="#jzsMikJGS" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									#[[observation]] oh snap, just realised that even tho `Block`s &amp; `Page`s are separated, they kinda should be one. a block has a __root__ parent, i.e. the page, but maybe the page shouldn&#39;t be separated as a different structure, and should be the same as Block, but with the `isRoot` flag set to true instead of false?
 							</div>
 							<ul>
-								<li>
+								<li id="EQSYMbj7p">
+									<a href="#EQSYMbj7p" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} link
 									</div>
 								</li>
-								<li>
+								<li id="gF7d3-MU4">
+									<a href="#gF7d3-MU4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											because when you think about it, all `Block`s can be pages as well. if you have a nested path, i.e. 3rd level block, and you click on a 2nd level block, it opens it up just like a page.
 									</div>
 								</li>
-								<li>
+								<li id="d6VypQkGf">
+									<a href="#d6VypQkGf" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											and the difference is that there&#39;s only 1 top-level bulletpoint, and all others are inside it. a page should implicitly have that one as well - currently it&#39;s there, but implicitly, and is not visible.
 									</div>
 								</li>
-								<li>
+								<li id="giAhV4WPR">
+									<a href="#giAhV4WPR" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											all those explicit 1st/top-level bulletpoints are inside yet another bulletpoint - the whole graph.
 									</div>
 								</li>
-								<li>
+								<li id="Wl0Uc7ALW">
+									<a href="#Wl0Uc7ALW" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											and, well, makes me realise that you could display the graph of not only the pages, but also all the bulletpoints inside the pages, i.e. a graph in a graph, and since blocks can reference pages &amp; other blocks as well, it&#39;d become very clear on which parts are referencing which
 									</div>
 									<ul>
-										<li>
+										<li id="8ID73QP38">
+											<a href="#8ID73QP38" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													now that you think of it,
 											</div>
@@ -962,225 +1197,293 @@
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="ph1GMtHPs">
+							<a href="#ph1GMtHPs" class="block-ref"></a>
+						</li>
+						<li id="5mIASyG3B">
+							<a href="#5mIASyG3B" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									another #[[(hidden) jOMmlCP4S]] - different display behavior of linked mentions, depending on whether a hashtag `#` or double square brackets `[[]]` were create that linked reference
 							</div>
 							<ul>
-								<li>
+								<li id="M1is_pOoV">
+									<a href="#M1is_pOoV" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											thinking about the auto-expand part.
 									</div>
 									<ul>
-										<li>
+										<li id="JGmeht-wf">
+											<a href="#JGmeht-wf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													since some pages are in-and-of-itself independent (though rarely if you start understanding roam deeply enough and just use daily notes for literally everything), then
 											</div>
 										</li>
-										<li>
+										<li id="qn8Yjz4c1">
+											<a href="#qn8Yjz4c1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													well lets take the other scenario. often you just use linked references in the daily notes to &quot;write inside the page&quot;, but it shows up as a linked reference (linked mention). if e.g. you used `[[]]` you could have a convention that the linked mention should be fully expanded, because it&#39;s part of the whole page, and if you used the `#` or `#[[]]`, then it&#39;d only show the `Block` that has the hashtag. (&amp; ofc you can allow expanding it, but that&#39;s not the point).
 											</div>
 										</li>
-										<li>
+										<li id="785A3KYji">
+											<a href="#785A3KYji" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													because currently in roam, nothing is auto-expanded, and in [[roam-traverse-graph]] [[export-html-pages]], everything is. this seems like the best alternative.
 											</div>
 										</li>
-										<li>
+										<li id="8PymBNc4c">
+											<a href="#8PymBNc4c" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													e.g. pages like [[TODO]] / [[DONE]] would benefit from __not__ being auto-expanded, while pages like [[roam-traverse-graph]], [[codemods]], etc., would benefit from having their linked mentions expanded.
 											</div>
 											<ul>
-												<li>
+												<li id="ew4oyPvUV">
+													<a href="#ew4oyPvUV" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															so maybe the choice for which marking means which behavior can be changed, or we can have exceptions, or maybe #[[roam]] can make it configurable what alias you insert, but anyhow, that&#39;s less relevant / can think of it in the future.
 													</div>
 													<ul>
-														<li>
+														<li id="lIpfB5Dkq">
+															<a href="#lIpfB5Dkq" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	or maybe you could have a config of linked references that would make the page&#39;s linked mentions auto-expanded, e.g. `#auto-expand-mentions`, and the opposite if an opposite default is chosen
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="B214g2Urw">
+													<a href="#B214g2Urw" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															the point is that this seems useful
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="v_TmpSqLy">
+											<a href="#v_TmpSqLy" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="vHVduBqRK">
+									<a href="#vHVduBqRK" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="UjAm2vRY_">
+							<a href="#UjAm2vRY_" class="block-ref"></a>
+						</li>
+						<li id="MwuFSu3b5">
+							<a href="#MwuFSu3b5" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									&amp; yet another #[[(hidden) jOMmlCP4S]] - have a 3-column view - small left column w/ all pages, big 2nd column in middle to view the actual content of the page, &amp; the 3rd column right sidebar, identical to the roam&#39;s one.
 							</div>
 							<ul>
-								<li>
+								<li id="EeKEgKQcM">
+									<a href="#EeKEgKQcM" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											what i&#39;d like to do, however, is to make a single-click on a linked reference to open inside the right sidebar, always (as if in roam you&#39;d be holding shift), and if you click again, only then it&#39;d open up in the main (middle) column.
 									</div>
 									<ul>
-										<li>
+										<li id="nhBKfshj3">
+											<a href="#nhBKfshj3" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we could have some fun animations as well - e.g. either from left or middle columns, a single click would jump the linked reference into the right column, and if anytime we click again, it&#39;d jump left to the middle column and open up there
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="ar3wmjbA1">
+									<a href="#ar3wmjbA1" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="Y3q5orrWA">
+							<a href="#Y3q5orrWA" class="block-ref"></a>
+						</li>
+						<li id="iewA6XsOX">
+							<a href="#iewA6XsOX" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									the `all pages` button sucks because it&#39;s not a link (`&lt;a&gt;&lt;/a&gt;`) and e.g shift-f doesn&#39;t open it in a new tab.
 							</div>
 							<ul>
-								<li>
+								<li id="vo1234WBv">
+									<a href="#vo1234WBv" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} i just realised we can do the same to it that we do to the favicon -- have it as a proper link `&lt;a&gt;&lt;/a&gt;`, and have an immediate script that will update the `href` to the correct url.
 									</div>
 									<ul>
-										<li>
+										<li id="enUsuVxn1">
+											<a href="#enUsuVxn1" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} lol, need a html sanitiser, even though i am the one who&#39;s editing this:D
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="rxehozHM1">
+									<a href="#rxehozHM1" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="ftUxAzyg0">
+							<a href="#ftUxAzyg0" class="block-ref"></a>
+						</li>
+						<li id="zRN1N4qX7">
+							<a href="#zRN1N4qX7" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									&amp; yet another #[[(hidden) jOMmlCP4S]] - since pages are read-only (i.e. no editing), we can have cool shortcuts that normally you&#39;d have to use w/ modifiers in #[[roam]] - e.g. that first came to mind was opening the sidebars (right or left) - using `h` or `l` to go left &amp; right (could use multiple times, just like in i3 / vim splits or tmux panes or smthn similar - it wraps), then ofc `j` &amp; `k` when in left sidebar to select some page, maybe same in right sidebar, idk what in the middle
 							</div>
 							<ul>
-								<li>
+								<li id="wtdQsP3Z-">
+									<a href="#wtdQsP3Z-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											WAIT, #[[(hidden) DY6wPnICE]], this is like normal mode (vim) in roam. we could use this same stuff in middle as well to go thru blocks, (j / k to jump down/up), e/w &amp; b to go forward/backward a word, some variant of them to jump till the next linked reference. 🤯
 									</div>
 									<ul>
-										<li>
+										<li id="F7E88EZ-F">
+											<a href="#F7E88EZ-F" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} #[[(hidden) D1lY0CG5e]] to the #[[roam]] team
 											</div>
 											<ul>
-												<li>
+												<li id="9AyxJGlMz">
+													<a href="#9AyxJGlMz" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} misc: just submitted a different #[[(hidden) D1lY0CG5e]] - to allow control/ctrl+enter (or whatever binding) to create a new block in the same level, even if the current one is empty
 													</div>
 													<ul>
-														<li>
+														<li id="_eArkKpXt">
+															<a href="#_eArkKpXt" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	{{[[TODO]]}} get response
 															</div>
 														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="O0Hq4Zx6b">
+													<a href="#O0Hq4Zx6b" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="8R1ivEu1z">
+											<a href="#8R1ivEu1z" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="jr1shfZiB">
+									<a href="#jr1shfZiB" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="asVNpuHgG">
+							<a href="#asVNpuHgG" class="block-ref"></a>
+						</li>
+						<li id="EMk4d3cKw">
+							<a href="#EMk4d3cKw" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} have html `id` attribute on each block to be able to link to it quickly
 							</div>
 							<ul>
-								<li>
+								<li id="xcIkoUW1q">
+									<a href="#xcIkoUW1q" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} &amp; ofc have a `#` button or smth similar to quickly copy a link
 									</div>
 								</li>
-								<li>
+								<li id="8xnWRKaTZ">
+									<a href="#8xnWRKaTZ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} single-click - copy (w/ indication), 2nd click - add to url (thus automatically scrolls to it)
 									</div>
 									<ul>
-										<li>
+										<li id="YyHpayjmT">
+											<a href="#YyHpayjmT" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} add (yellow) highlight when first scroll - same as in [[(hidden) RWyP0mLVh]]&#39;s common availability -&gt; nth lesson
 											</div>
 											<ul>
-												<li>
+												<li id="orAnzJ7tV">
+													<a href="#orAnzJ7tV" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															e.g. https://ts.kipras.org/Adomaitis%20Vilius/2#lesson-2-7 (must be in mobile view atm xd)
 													</div>
 												</li>
-												<li>
+												<li id="9LBBHNrtO">
+													<a href="#9LBBHNrtO" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(idea from stackoverflow, ofc)
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="TOQWx94aZ">
+											<a href="#TOQWx94aZ" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="4duXxFmel">
+									<a href="#4duXxFmel" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="a_gc8WofC">
+							<a href="#a_gc8WofC" class="block-ref"></a>
+						</li>
+						<li id="wsWazxvtz">
+							<a href="#wsWazxvtz" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} instead of having the `publicTags` in [[roam-traverse-graph-settings]], we probably should have a conventional tag like #[[(hidden) tm2-dKJbJ]] which one could use to mark pages as `publicTag`s.
 							</div>
 							<ul>
-								<li>
+								<li id="DHirGIdkC">
+									<a href="#DHirGIdkC" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											similar to how I __thought__ I used the `#[[public]]` (global) tag lol
 									</div>
 									<ul>
-										<li>
+										<li id="K2cZt_K1_">
+											<a href="#K2cZt_K1_" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} complexity is hard man, we need (integration) tests big time
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="oD13UAAYB">
+									<a href="#oD13UAAYB" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											better because inside the #[[(hidden) tm2-dKJbJ]] page, you see what pages will make your stuff public
 									</div>
 									<ul>
-										<li>
+										<li id="CuZ3lUX-K">
+											<a href="#CuZ3lUX-K" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													more benefit for the page itself because it sees itself mentioned in the #[[(hidden) tm2-dKJbJ]], instead of manually checking the [[roam-traverse-graph-settings]] page.
 											</div>
 										</li>
-										<li>
+										<li id="TczdJ85St">
+											<a href="#TczdJ85St" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													tho idk, not sure yet, maybe we need a better name than #[[(hidden) tm2-dKJbJ]], to make it clear. if it is very understandable, then sure
 											</div>
 										</li>
-										<li></li>
+										<li id="_nFIeV01w">
+											<a href="#_nFIeV01w" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="OIRwVAwqw">
+									<a href="#OIRwVAwqw" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="RVKReEAQJ">
+							<a href="#RVKReEAQJ" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									WHAT #[[(hidden) 2Z08SU3np]] #[[(hidden) DY6wPnICE]] [[typescript]] is amazing -- you can declare function overloads simply by having an object type!!!
 							</div>
 							<ul>
-								<li>
+								<li id="XdHjvnxSm">
+									<a href="#XdHjvnxSm" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											```typescript
 								export type Checker&lt;T&gt; = {
@@ -1190,17 +1493,20 @@
 								```
 									</div>
 								</li>
-								<li>
+								<li id="z0y33klAl">
+									<a href="#z0y33klAl" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											this is big -- if you created regular function overloads, you couldn&#39;t even specify the type `T`, because you&#39;d have to cast the value into a type, and then the type `T` would be inlined!!! (i.e., would end up __after__ the quotes, not before, i.e. would infer from argument, instead of allowing the user to specify explicitly!!!)
 									</div>
 								</li>
-								<li>
+								<li id="7JYqy8MQB">
+									<a href="#7JYqy8MQB" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											the regular function overloads:
 									</div>
 									<ul>
-										<li>
+										<li id="nvDkLeDlp">
+											<a href="#nvDkLeDlp" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													```typescript
 										export declare function CheckerAutomatic&lt;T = unknown&gt;(
@@ -1216,18 +1522,23 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="NLFMZsdcc">
+									<a href="#NLFMZsdcc" class="block-ref"></a>
+								</li>
+								<li id="1k6aSoJm4">
+									<a href="#1k6aSoJm4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											i remembered this might be a thing because i did function overloads for the [[codemods]] transform&#39;s (replace-jsx-attribute) configs&#39; `FromToValueMap` and remember the highlight from the editor (well, ts-server) being similar to an object but i didn&#39;t realize it up until now 🤯
 									</div>
 									<ul>
-										<li>
+										<li id="k8BO81Kfq">
+											<a href="#k8BO81Kfq" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#L115-L116
 											</div>
 											<ul>
-												<li>
+												<li id="jB-O0ghRv">
+													<a href="#jB-O0ghRv" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```typescript
 												export type FromToValueMap = {
@@ -1252,231 +1563,290 @@
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="L-YE1ki8v">
+									<a href="#L-YE1ki8v" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="SS5gHOP5l">
+							<a href="#SS5gHOP5l" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									update:
 							</div>
 							<ul>
-								<li>
+								<li id="G_SBNq0Zp">
+									<a href="#G_SBNq0Zp" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											uh oh but now you cannot provide a function that will match this, ffs...
 									</div>
 								</li>
-								<li>
+								<li id="yGWVTHUAe">
+									<a href="#yGWVTHUAe" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											I guess I&#39;ll just go w/ the type union of the function instead, &amp; will do manual type assertions in the utility fn...
 									</div>
 								</li>
-								<li>
+								<li id="r5EB8E0Bm">
+									<a href="#r5EB8E0Bm" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											wth, can&#39;t do that either - if using a single argument, typescript gives implicit any error, tho if both args, then all good ? wut
 									</div>
 								</li>
-								<li>
+								<li id="eOXjlWPCy">
+									<a href="#eOXjlWPCy" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											update:
 									</div>
 									<ul>
-										<li>
+										<li id="-THaN4RZH">
+											<a href="#-THaN4RZH" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													ah the issue is that one fn returns boolean, other number. bruh
 											</div>
 										</li>
-										<li>
+										<li id="6WiFAnDbU">
+											<a href="#6WiFAnDbU" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													final update:
 											</div>
 											<ul>
-												<li>
+												<li id="7M2RIzMDp">
+													<a href="#7M2RIzMDp" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															went w/ the initial solution - advanced function overload, and in typescript for both functions allowed to return either a number or a boolean, and implemented runtime typeof checks to throw errors if incorrect type returned.
 													</div>
 												</li>
-												<li>
+												<li id="tAR_0vpez">
+													<a href="#tAR_0vpez" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															ideally #[[typescript]] fixes this &amp; we can use the original solution w/o having to have runtime assertions.
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="KbixBUcsz">
+											<a href="#KbixBUcsz" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="pz4On5uD7">
+									<a href="#pz4On5uD7" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="c8YESEhiS">
+							<a href="#c8YESEhiS" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} #[[observation]] in #[[roam]], i have 3 pages w/o a &quot;create-time&quot; - all from 2020 (~~they&#39;re the only pages i had from 2020 so perhaps they didn&#39;t it back then but not sure~~ wait nvm they are not the only ones lol)
 							</div>
 							<ul>
-								<li>
+								<li id="nmIiP4lLk">
+									<a href="#nmIiP4lLk" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[[October 2nd, 2020]]
 									</div>
 								</li>
-								<li>
+								<li id="TvieKlq-t">
+									<a href="#TvieKlq-t" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[[October 22nd, 2020]]
 									</div>
 								</li>
-								<li>
+								<li id="P7R2SjTsI">
+									<a href="#P7R2SjTsI" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[[October 23rd, 2020]]
 									</div>
 								</li>
-								<li>
+								<li id="i7PREceiQ">
+									<a href="#i7PREceiQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											also missing the `:create/user` property
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="N8xK1D2Mb">
+							<a href="#N8xK1D2Mb" class="block-ref"></a>
+						</li>
+						<li id="Jzdz2GUpE">
+							<a href="#Jzdz2GUpE" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} &quot;checked&quot; dynamic
 							</div>
 						</li>
-						<li>
+						<li id="Mrx6-B-Nb">
+							<a href="#Mrx6-B-Nb" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} &quot;re-generated &amp; exported&quot; - when html pages get generated, check if anything significant changed (anything except the re-generated &amp; exported stuff) (or even use the graph file &amp; check via page.edit-time + linked mentions&#39; edit time &amp; see if any updates exist), and if none exist - discard changes of that page
 							</div>
 							<ul>
-								<li>
+								<li id="ZzL9aj37H">
+									<a href="#ZzL9aj37H" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} ideally we wouldn&#39;t even re-generate it - probably also possible if we check the new vs old graph
 									</div>
 								</li>
-								<li>
+								<li id="Jnukizl7_">
+									<a href="#Jnukizl7_" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											thus we can know which commits actually touched the file
 									</div>
 									<ul>
-										<li>
+										<li id="d9JyTmf1v">
+											<a href="#d9JyTmf1v" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													thus we can display this w/ js, &amp; see clear history, etc etc - very useful
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="o8sZF37OI">
+									<a href="#o8sZF37OI" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li id="et2N3wAcK">
+							<a href="#et2N3wAcK" class="block-ref"></a>
+						</li>
+						<li id="eqbfK4NY2">
+							<a href="#eqbfK4NY2" class="block-ref"></a>
+						</li>
+						<li id="9M-sLxPxT">
+							<a href="#9M-sLxPxT" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="hW5S23pgG">
+					<a href="#hW5S23pgG" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hW5S23pgG
 					</div>
 				</li>
-				<li>
+				<li id="joP0o_e3f">
+					<a href="#joP0o_e3f" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) joP0o_e3f
 					</div>
 				</li>
-				<li>
+				<li id="vl-Cgcgdx">
+					<a href="#vl-Cgcgdx" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) vl-Cgcgdx
 					</div>
 				</li>
-				<li>
+				<li id="wv1VNLkqv">
+					<a href="#wv1VNLkqv" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 					<ul>
-						<li>
+						<li id="41LMhX1RF">
+							<a href="#41LMhX1RF" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									&quot;how to restore dislikes on youtube&quot;
 							</div>
 							<ul>
-								<li>
+								<li id="rXDvsYIdl">
+									<a href="#rXDvsYIdl" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://youtu.be/lz8-fdVtox8
 									</div>
 								</li>
-								<li>
+								<li id="eYkfGtrgN">
+									<a href="#eYkfGtrgN" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://returnyoutubedislike.com
 									</div>
 								</li>
-								<li>
+								<li id="g_clpy1y3">
+									<a href="#g_clpy1y3" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											https://github.com/Anarios/return-youtube-dislike
 									</div>
 								</li>
-								<li>
+								<li id="hCk9cXiZX">
+									<a href="#hCk9cXiZX" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											LMAO
 									</div>
 									<ul>
-										<li>
+										<li id="Mi3CHxNdZ">
+											<a href="#Mi3CHxNdZ" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://youtu.be/lz8-fdVtox8?t=6m31s
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="yLWhT6W9v">
+									<a href="#yLWhT6W9v" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="8TeXxUum_">
+							<a href="#8TeXxUum_" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="3JdCApMY5">
+					<a href="#3JdCApMY5" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 3JdCApMY5
 					</div>
 				</li>
-				<li>
+				<li id="yOhJvUwcB">
+					<a href="#yOhJvUwcB" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[TODO]]}} (hidden) yOhJvUwcB #[[(hidden) jOMmlCP4S]] [[(hidden) dEoS03QiW]]
 					</div>
 				</li>
-				<li>
+				<li id="Fqsx_7cis">
+					<a href="#Fqsx_7cis" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Fqsx_7cis
 					</div>
 				</li>
-				<li>
+				<li id="suUxLBpC4">
+					<a href="#suUxLBpC4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) suUxLBpC4
 					</div>
 				</li>
-				<li>
+				<li id="o5paw2XWl">
+					<a href="#o5paw2XWl" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) o5paw2XWl
 					</div>
 				</li>
-				<li>
+				<li id="seQarNuom">
+					<a href="#seQarNuom" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) seQarNuom #[[(hidden) 0EJ4yRKtM]]
 					</div>
 					<ul>
-						<li>
+						<li id="YmZyEyea0">
+							<a href="#YmZyEyea0" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) YmZyEyea0
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="y2C7r0TtR">
+					<a href="#y2C7r0TtR" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) y2C7r0TtR
 					</div>
 				</li>
-				<li>
+				<li id="95-7isE3G">
+					<a href="#95-7isE3G" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 95-7isE3G
 					</div>
 				</li>
-				<li>
+				<li id="LP8onBtPG">
+					<a href="#LP8onBtPG" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) LP8onBtPG
 					</div>
@@ -1552,7 +1922,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="CjBhZ0-Z_">
+			<a href="#CjBhZ0-Z_" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -1569,19 +1941,22 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="cj1_the3h">
+		<a href="#cj1_the3h" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) cj1_the3h
 		</div>
 		<ul>
-			<li>
+			<li id="jLtH2pCdG">
+				<a href="#jLtH2pCdG" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) jLtH2pCdG
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="xOWnSrX3R">
+		<a href="#xOWnSrX3R" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) xOWnSrX3R
 		</div>

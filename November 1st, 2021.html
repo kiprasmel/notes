@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.925Z</span>
+				<span>2022-02-02T14:33:54.386Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,156 +245,185 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635720404045);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801925);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434386);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="eGnMcWdAI">
+					<a href="#eGnMcWdAI" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) eGnMcWdAI #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="8t80LCWP2">
+							<a href="#8t80LCWP2" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) 8t80LCWP2 [[open-source]]
 							</div>
 						</li>
-						<li>
+						<li id="3WTB8xRBz">
+							<a href="#3WTB8xRBz" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 3WTB8xRBz
 							</div>
 						</li>
-						<li>
+						<li id="cqqgNLPVu">
+							<a href="#cqqgNLPVu" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) cqqgNLPVu
 							</div>
 						</li>
-						<li>
+						<li id="E8zTAxdfw">
+							<a href="#E8zTAxdfw" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) E8zTAxdfw
 							</div>
 						</li>
-						<li>
+						<li id="OC2m6l5Ce">
+							<a href="#OC2m6l5Ce" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) OC2m6l5Ce
 							</div>
 							<ul>
-								<li>
+								<li id="NrH3UIB8-">
+									<a href="#NrH3UIB8-" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) NrH3UIB8- 
 									</div>
 								</li>
-								<li>
+								<li id="QFgj-T-Nw">
+									<a href="#QFgj-T-Nw" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} (hidden) QFgj-T-Nw #[[(hidden) aQw_Q_pev]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="pV0BHFaYD">
+							<a href="#pV0BHFaYD" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) pV0BHFaYD
 							</div>
 						</li>
-						<li>
+						<li id="JZEKiIM1g">
+							<a href="#JZEKiIM1g" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) JZEKiIM1g
 							</div>
 							<ul>
-								<li>
+								<li id="BrvnxF_GT">
+									<a href="#BrvnxF_GT" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} (hidden) BrvnxF_GT #[[(hidden) Nyyl2XbvQ]] [[(hidden) GhkN6x2Z5]]
 									</div>
 								</li>
-								<li>
+								<li id="mQzwsxjLT">
+									<a href="#mQzwsxjLT" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[DONE]]}} (hidden) mQzwsxjLT 
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="6yhrE_usz">
+							<a href="#6yhrE_usz" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 6yhrE_usz
 							</div>
 						</li>
-						<li>
+						<li id="xUo9qIByq">
+							<a href="#xUo9qIByq" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="M15OLE7WP">
+									<a href="#M15OLE7WP" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} `findStyledWrapsOfJSXComponent`
 									</div>
 								</li>
-								<li>
+								<li id="4Q8yhrSW6">
+									<a href="#4Q8yhrSW6" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} first find all usages of the jsx component (e.g. the button itself, then instances of where it&#39;s wrapped with styled)
 									</div>
 									<ul>
-										<li>
+										<li id="xUqNxKdDk">
+											<a href="#xUqNxKdDk" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} and then use them to filter out if something&#39;s a cui button or not.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="is3tODZZH">
+									<a href="#is3tODZZH" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} for everything else that is out of scope - just detect it and add inline comments to make the maintainer resolve it themselves.
 									</div>
 								</li>
-								<li></li>
+								<li id="3SY9xRPOr">
+									<a href="#3SY9xRPOr" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="8vhNenOrp">
+							<a href="#8vhNenOrp" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 8vhNenOrp
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="sZ6aQ23wg">
+					<a href="#sZ6aQ23wg" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) sZ6aQ23wg
 					</div>
 				</li>
-				<li>
+				<li id="xUznZ9iS0">
+					<a href="#xUznZ9iS0" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[(hidden) jOMmlCP4S]] - [[(hidden) N-9snEBPh]] or something - to automatically keep branches up-to-date if they depend on one-another, just like what i&#39;m currently dealing with with the [[codemods]] stuff.
 					</div>
 				</li>
-				<li>
+				<li id="7vrAmwEp9">
+					<a href="#7vrAmwEp9" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 7vrAmwEp9
 					</div>
 				</li>
-				<li>
+				<li id="DbZ1p09nj">
+					<a href="#DbZ1p09nj" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							{{[[DONE]]}} #[[(hidden) S-ygYfi0j]] [[(hidden) wxkwogKAB]] #[[(hidden) hMBgHmSNk]] just an observation - i&#39;ve been busy w/ other stuff, couldn&#39;t focus on the mission, but already from today (Nov 1st, Monday) it&#39;s way better.
 				Needed the mindset, apparently there used to be training for missions but not anymore; [[(hidden) jRjwHl5m6]] is working on it
 					</div>
 					<ul>
-						<li>
+						<li id="wY3RhS6Fq">
+							<a href="#wY3RhS6Fq" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) wY3RhS6Fq [[(hidden) 2UTf9X3my]]
 							</div>
 							<ul>
-								<li>
+								<li id="kQzsP-tCI">
+									<a href="#kQzsP-tCI" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) kQzsP-tCI
 									</div>
 								</li>
-								<li>
+								<li id="R1HPTWtX2">
+									<a href="#R1HPTWtX2" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) R1HPTWtX2 #[[(hidden) okke3m7KB]] #[[(hidden) IuQo2LIQD]]
 									</div>
 									<ul>
-										<li>
+										<li id="nTdVehP9n">
+											<a href="#nTdVehP9n" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) nTdVehP9n
 											</div>
@@ -352,22 +434,26 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="ddiKIbc6r">
+					<a href="#ddiKIbc6r" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) ddiKIbc6r
 					</div>
 				</li>
-				<li>
+				<li id="PI2ywjCis">
+					<a href="#PI2ywjCis" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) PI2ywjCis
 					</div>
 				</li>
-				<li>
+				<li id="Brb3ySMJ8">
+					<a href="#Brb3ySMJ8" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) Brb3ySMJ8
 					</div>
 				</li>
-				<li>
+				<li id="hrANrn6o7">
+					<a href="#hrANrn6o7" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) hrANrn6o7
 					</div>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.777Z</span>
+				<span>2022-02-02T14:33:55.144Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,14 +245,15 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1633268835030);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802777);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435144);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="cNZzjNaxj">
+					<a href="#cNZzjNaxj" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cNZzjNaxj
 					</div>
@@ -275,7 +329,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="Jbt992oXn">
+			<a href="#Jbt992oXn" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -292,22 +348,26 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="b7RBnDhhJ">
+		<a href="#b7RBnDhhJ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) b7RBnDhhJ
 		</div>
 		<ul>
-			<li>
+			<li id="zC4htXKNh">
+				<a href="#zC4htXKNh" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) zC4htXKNh #[[(hidden) jN1h84vEl]]
 				</div>
 				<ul>
-					<li>
+					<li id="ZNg_88I4Z">
+						<a href="#ZNg_88I4Z" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) ZNg_88I4Z
 						</div>
 						<ul>
-							<li>
+							<li id="3YiEXwBmI">
+								<a href="#3YiEXwBmI" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) 3YiEXwBmI #[[(hidden) CRbzoMPud]]
 								</div>
@@ -333,7 +393,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="8_YQgTfqv">
+			<a href="#8_YQgTfqv" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -350,24 +412,28 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Yfpk6Gy0A">
+		<a href="#Yfpk6Gy0A" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[[(hidden) KJzGBbibA]]&#39;s principles very much reflect this !!
 		</div>
 		<ul>
-			<li>
+			<li id="9WqTDCAjn">
+				<a href="#9WqTDCAjn" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						#[[(hidden) ThXonBLoY]] this makes me further realize that the tools organizations create are very much a reflection of how they operate themselves. I think there was a law described about this ?? upd: I just re-discovered [[conway&#39;s law (public)]] lol
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="gu9uGUwpV">
+		<a href="#gu9uGUwpV" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[1]
 		</div>
 		<ul>
-			<li>
+			<li id="Q8tXeEhXm">
+				<a href="#Q8tXeEhXm" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						re: &quot;useless&quot; - nothing is inherently useless, because in the process of learning X, you learn &amp; experience things more or less related, but still outside of X as well, and if X becomes useless, the other stuff prevails
 				</div>
@@ -389,7 +455,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="AGQnFp9Av">
+			<a href="#AGQnFp9Av" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -406,55 +474,64 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="hb-up7w40">
+		<a href="#hb-up7w40" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) hb-up7w40
 		</div>
 		<ul>
-			<li>
+			<li id="DlzIph3it">
+				<a href="#DlzIph3it" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) DlzIph3it
 				</div>
 				<ul>
-					<li>
+					<li id="xJpYEDCp9">
+						<a href="#xJpYEDCp9" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) xJpYEDCp9
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="QkGUniOQP">
+				<a href="#QkGUniOQP" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) QkGUniOQP
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="EfaflBp_d">
+		<a href="#EfaflBp_d" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) EfaflBp_d
 		</div>
 		<ul>
-			<li>
+			<li id="9TsW9SYBu">
+				<a href="#9TsW9SYBu" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) 9TsW9SYBu
 				</div>
 				<ul>
-					<li>
+					<li id="XsCCW3tzJ">
+						<a href="#XsCCW3tzJ" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) XsCCW3tzJ
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="zegv7H0M0">
+				<a href="#zegv7H0M0" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) zegv7H0M0
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="Xrv8GULtZ">
+		<a href="#Xrv8GULtZ" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) Xrv8GULtZ
 		</div>
@@ -474,7 +551,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ugC7qgmVO">
+			<a href="#ugC7qgmVO" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -491,14 +570,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="_cjtgP10D">
+		<a href="#_cjtgP10D" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i then wonder how the #[[(hidden) aQw_Q_pev]] w/ [[(hidden) IiSuMRl4c]] is still going thru -- do they not see the issues / the optimal solution being different?
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="GieReKtOJ">
+			<a href="#GieReKtOJ" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -515,77 +597,97 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="sjw_4-E6B">
+		<a href="#sjw_4-E6B" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext
 		</div>
 		<ul>
-			<li>
+			<li id="GrESUgbxK">
+				<a href="#GrESUgbxK" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						very interesting stuff!
 				</div>
 				<ul>
-					<li>
+					<li id="qmOHjAVpO">
+						<a href="#qmOHjAVpO" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								so the whole thing is hosted and you pretty much don&#39;t use it locally. cool, but kinda meh!
 						</div>
 					</li>
-					<li>
+					<li id="EhH3_mUor">
+						<a href="#EhH3_mUor" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								they have e.g. custom extensions for editors to be able to access &amp; edit -- at least they didn&#39;t start creating their own editors &amp; stuff - very surprising, but in a good way
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
+			<li id="rsZzDPXgU">
+				<a href="#rsZzDPXgU" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						i prefer monorepos myself. ofc, haven&#39;t worked anywhere near close to such scale, but would be amazing if [[(hidden) Wk9BwS_1L]] had more of a first-hand support, incl. an eco-system around it... [[(hidden) 42siTzw1w]]
 				</div>
 			</li>
-			<li>
+			<li id="42JPk15DI">
+				<a href="#42JPk15DI" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://pipedrive.slack.com/archives/C7R3EPWER/p1568022631016000
 				</div>
 				<ul>
-					<li>
+					<li id="yPQgj1ShM">
+						<a href="#yPQgj1ShM" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								https://github.com/microsoft/TypeScript/issues/33272
 						</div>
 						<ul>
-							<li>
+							<li id="D8S_bYZuo">
+								<a href="#D8S_bYZuo" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) D8S_bYZuo #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 								</div>
 								<ul>
-									<li>
+									<li id="ugC7qgmVO">
+										<a href="#ugC7qgmVO" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												hmmm. [[(hidden) URRQcDCig]] is using [[typescript]] extensively as well (kinda knew it already from e.g. [[(hidden) stBI9LNFL]])
 										</div>
 										<ul>
-											<li>
+											<li id="_cjtgP10D">
+												<a href="#_cjtgP10D" class="block-ref"></a>
 												<div style="max-width: 65ch;">
 														i then wonder how the #[[(hidden) aQw_Q_pev]] w/ [[(hidden) IiSuMRl4c]] is still going thru -- do they not see the issues / the optimal solution being different?
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li>
+									<li id="_XaekBjng">
+										<a href="#_XaekBjng" class="block-ref"></a>
 										<div style="max-width: 65ch;">
 												(hidden) _XaekBjng
 										</div>
 									</li>
 								</ul>
 							</li>
-							<li></li>
+							<li id="LpsIQ99GK">
+								<a href="#LpsIQ99GK" class="block-ref"></a>
+							</li>
 						</ul>
 					</li>
-					<li></li>
+					<li id="9vPZv0clL">
+						<a href="#9vPZv0clL" class="block-ref"></a>
+					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="xs1ZyPlYm">
+				<a href="#xs1ZyPlYm" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="JU8dguLh9">
+		<a href="#JU8dguLh9" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

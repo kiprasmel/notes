@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.823Z</span>
+				<span>2022-02-02T14:33:55.169Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1635299385574);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802823);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435169);
 
 			</script>
 		</small>
@@ -271,7 +324,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="ytVEiOkpm">
+			<a href="#ytVEiOkpm" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -304,7 +359,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="qwvTRF_EP">
+			<a href="#qwvTRF_EP" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -324,7 +381,9 @@
 
 </ul>
 		</li>
-		<li>
+		<li id="vFoJZbLPe">
+			<a href="#vFoJZbLPe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -341,29 +400,35 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="Ue7SvRHL8">
+		<a href="#Ue7SvRHL8" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				we&#39;d get to keep the metadata e.g. public vs private page
 		</div>
 	</li>
-	<li>
+	<li id="Ym-e3Oa91">
+		<a href="#Ym-e3Oa91" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				we could manipulate this metadata ourselves!
 		</div>
 	</li>
-	<li>
+	<li id="qwvTRF_EP">
+		<a href="#qwvTRF_EP" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				we could &quot;reset graph&quot; directly from the new #[[(hidden) HIYk9LKno]] - it&#39;d be way faster, instead of having to &quot;reset graph&quot; from an empty graph &amp; then uploading the json
 		</div>
 	</li>
-	<li>
+	<li id="wmDMsX8Vt">
+		<a href="#wmDMsX8Vt" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				yes pls!
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="Y2dRemfcT">
+			<a href="#Y2dRemfcT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -380,87 +445,106 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="-l4gnDHD0">
+		<a href="#-l4gnDHD0" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[1] https://github.com/shaunxcode/jsedn
 		</div>
 	</li>
-	<li>
+	<li id="WxqyVByvA">
+		<a href="#WxqyVByvA" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[2] https://github.com/edn-format/edn/wiki/Implementations
 		</div>
 	</li>
-	<li>
+	<li id="nqnI3FMWw">
+		<a href="#nqnI3FMWw" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				[3] https://github.com/jorinvo/edn-data
 		</div>
 	</li>
-	<li>
+	<li id="a1phz08lP">
+		<a href="#a1phz08lP" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				you can even use it to convert from/to JSON, &amp; it&#39;s first-class as well!
 		</div>
 	</li>
-	<li>
+	<li id="vFoJZbLPe">
+		<a href="#vFoJZbLPe" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it&#39;d be so much better because:
 		</div>
 		<ul>
-			<li>
+			<li id="Ue7SvRHL8">
+				<a href="#Ue7SvRHL8" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						we&#39;d get to keep the metadata e.g. public vs private page
 				</div>
 			</li>
-			<li>
+			<li id="Ym-e3Oa91">
+				<a href="#Ym-e3Oa91" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						we could manipulate this metadata ourselves!
 				</div>
 			</li>
-			<li>
+			<li id="qwvTRF_EP">
+				<a href="#qwvTRF_EP" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						we could &quot;reset graph&quot; directly from the new #[[(hidden) HIYk9LKno]] - it&#39;d be way faster, instead of having to &quot;reset graph&quot; from an empty graph &amp; then uploading the json
 				</div>
 			</li>
-			<li>
+			<li id="wmDMsX8Vt">
+				<a href="#wmDMsX8Vt" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						yes pls!
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="g1Ly0pJW1">
+		<a href="#g1Ly0pJW1" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} if the TS version works, update the wiki of edn
 		</div>
 		<ul>
-			<li>
+			<li id="3Y-keKT3c">
+				<a href="#3Y-keKT3c" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						https://github.com/edn-format/edn/wiki/Implementations
 				</div>
 			</li>
 		</ul>
 	</li>
-	<li></li>
-	<li>
+	<li id="cWujT10aW">
+		<a href="#cWujT10aW" class="block-ref"></a>
+	
+	</li>
+	<li id="VXRhRR3fa">
+		<a href="#VXRhRR3fa" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				i realized this when replying to [[(hidden) LYMrimQBb]]
 		</div>
 		<ul>
-			<li>
+			<li id="Em9Yj1Pbf">
+				<a href="#Em9Yj1Pbf" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						(hidden) Em9Yj1Pbf #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 				</div>
 				<ul>
-					<li>
+					<li id="RRYnx535c">
+						<a href="#RRYnx535c" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								(hidden) RRYnx535c
 						</div>
 						<ul>
-							<li>
+							<li id="wMAQaWARY">
+								<a href="#wMAQaWARY" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										(hidden) wMAQaWARY 
 								</div>
 							</li>
-							<li>
+							<li id="2kuXo2gRg">
+								<a href="#2kuXo2gRg" class="block-ref"></a>
 								<div style="max-width: 65ch;">
 										Me:
 							not sure if that&#39;d help much, and wouldn&#39;t want this to be the right solution regardless tbh.
@@ -493,10 +577,15 @@
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="WDTZqp9IR">
+				<a href="#WDTZqp9IR" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="A3GIXT2P6">
+		<a href="#A3GIXT2P6" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>

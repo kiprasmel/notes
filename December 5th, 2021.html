@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.879Z</span>
+				<span>2022-02-02T14:33:54.263Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,104 +245,124 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638692284948);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801879);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434263);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="G9HHCZsY4">
+					<a href="#G9HHCZsY4" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[roam-traverse-graph]]
 					</div>
 					<ul>
-						<li>
+						<li id="Y2dRemfcT">
+							<a href="#Y2dRemfcT" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									oh snap, re: #[[(hidden) HIYk9LKno]] -- previously i tried jsedn [1], but it immediately broke when i tried parsing my graph. but now, in the wiki of edn [2], i also noticed the &quot;TypeScript&quot; implementation [3]. huh!? and it is instead of 11 years old [1], 1 years old [3], and the API itself looks way better
 							</div>
 							<ul>
-								<li>
+								<li id="-l4gnDHD0">
+									<a href="#-l4gnDHD0" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[1] https://github.com/shaunxcode/jsedn
 									</div>
 								</li>
-								<li>
+								<li id="WxqyVByvA">
+									<a href="#WxqyVByvA" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[2] https://github.com/edn-format/edn/wiki/Implementations
 									</div>
 								</li>
-								<li>
+								<li id="nqnI3FMWw">
+									<a href="#nqnI3FMWw" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											[3] https://github.com/jorinvo/edn-data
 									</div>
 								</li>
-								<li>
+								<li id="a1phz08lP">
+									<a href="#a1phz08lP" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											you can even use it to convert from/to JSON, &amp; it&#39;s first-class as well!
 									</div>
 								</li>
-								<li>
+								<li id="vFoJZbLPe">
+									<a href="#vFoJZbLPe" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} maybe we can work w/ #[[(hidden) HIYk9LKno]] then? it&#39;d be so much better because:
 									</div>
 									<ul>
-										<li>
+										<li id="Ue7SvRHL8">
+											<a href="#Ue7SvRHL8" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we&#39;d get to keep the metadata e.g. public vs private page
 											</div>
 										</li>
-										<li>
+										<li id="Ym-e3Oa91">
+											<a href="#Ym-e3Oa91" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we could manipulate this metadata ourselves!
 											</div>
 										</li>
-										<li>
+										<li id="qwvTRF_EP">
+											<a href="#qwvTRF_EP" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													we could &quot;reset graph&quot; directly from the new #[[(hidden) HIYk9LKno]] - it&#39;d be way faster, instead of having to &quot;reset graph&quot; from an empty graph &amp; then uploading the json
 											</div>
 										</li>
-										<li>
+										<li id="wmDMsX8Vt">
+											<a href="#wmDMsX8Vt" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													yes pls!
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="g1Ly0pJW1">
+									<a href="#g1Ly0pJW1" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} if the TS version works, update the wiki of edn
 									</div>
 									<ul>
-										<li>
+										<li id="3Y-keKT3c">
+											<a href="#3Y-keKT3c" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													https://github.com/edn-format/edn/wiki/Implementations
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="cWujT10aW">
+									<a href="#cWujT10aW" class="block-ref"></a>
+								</li>
+								<li id="VXRhRR3fa">
+									<a href="#VXRhRR3fa" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											i realized this when replying to [[(hidden) LYMrimQBb]]
 									</div>
 									<ul>
-										<li>
+										<li id="Em9Yj1Pbf">
+											<a href="#Em9Yj1Pbf" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) Em9Yj1Pbf #[[(hidden) 7c2C8PgIV]] #[[(hidden) 2b6Krhy2c]]
 											</div>
 											<ul>
-												<li>
+												<li id="RRYnx535c">
+													<a href="#RRYnx535c" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) RRYnx535c
 													</div>
 													<ul>
-														<li>
+														<li id="wMAQaWARY">
+															<a href="#wMAQaWARY" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	(hidden) wMAQaWARY 
 															</div>
 														</li>
-														<li>
+														<li id="2kuXo2gRg">
+															<a href="#2kuXo2gRg" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	Me:
 														not sure if that&#39;d help much, and wouldn&#39;t want this to be the right solution regardless tbh.
@@ -322,28 +395,36 @@
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="WDTZqp9IR">
+											<a href="#WDTZqp9IR" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="A3GIXT2P6">
+									<a href="#A3GIXT2P6" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="PxSq8k_aK">
+							<a href="#PxSq8k_aK" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[(hidden) gneWzf7F3]]
 							</div>
 							<ul>
-								<li>
+								<li id="9cqPmANab">
+									<a href="#9cqPmANab" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											oh idea - just use `joinWith(&quot;\n&quot;)([ &quot;line1&quot;, &quot;line2&quot;, ])` to make it way clearer!
 									</div>
 								</li>
-								<li>
+								<li id="A-qoCO7wC">
+									<a href="#A-qoCO7wC" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											also, now it looks like a taggedTemplateLiteral call, i.e. we could do
 									</div>
 									<ul>
-										<li>
+										<li id="bRtyjGdjs">
+											<a href="#bRtyjGdjs" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													```javascript
 										joinWith(&quot;\n&quot;)`
@@ -354,17 +435,20 @@
 										```
 											</div>
 										</li>
-										<li>
+										<li id="3nAZfu_zx">
+											<a href="#3nAZfu_zx" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													oh but wait, we again have to use the `${}` calls. nope
 											</div>
 										</li>
-										<li>
+										<li id="WNsvqY5tq">
+											<a href="#WNsvqY5tq" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													aight, then we could at least make it optional to pass in an array, and instead take in `...strings: string[]` instead:
 											</div>
 											<ul>
-												<li>
+												<li id="Ys_kn360b">
+													<a href="#Ys_kn360b" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															```javascript
 												joinWith(&quot;\n&quot;)([
@@ -381,320 +465,402 @@
 												```
 													</div>
 												</li>
-												<li>
+												<li id="ntOneYZ-K">
+													<a href="#ntOneYZ-K" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} yep. let&#39;s do it.
 													</div>
 												</li>
-												<li>
+												<li id="q94Mmlee9">
+													<a href="#q94Mmlee9" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} refactor [[codemods]]
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="LmADx7qC1">
+											<a href="#LmADx7qC1" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="zmjW9Jn6v">
+									<a href="#zmjW9Jn6v" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="J7o5zZR7H">
+							<a href="#J7o5zZR7H" class="block-ref"></a>
+						</li>
+						<li id="Uj6S53-7r">
+							<a href="#Uj6S53-7r" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} also `joinAllWith` or `joinWith(&quot;\n&quot;, true)` (meh) to also include joining the 1st element (often needed for e.g. newline from the very start)
 							</div>
 							<ul>
-								<li>
+								<li id="mPIM85CxV">
+									<a href="#mPIM85CxV" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} `includeFirst`, `includeLast`, `includeFirstLast` imports as 2nd arg to `joinWith`?
 									</div>
 									<ul>
-										<li>
+										<li id="NlyphOj5R">
+											<a href="#NlyphOj5R" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} or as second arg to the returned fn by `joinWith` since situational?
 											</div>
 											<ul>
-												<li>
+												<li id="TI5QOnDRf">
+													<a href="#TI5QOnDRf" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															meh. f&#39;s up the overview (adds 1 more line w/ linter)
 													</div>
 												</li>
-												<li>
+												<li id="cXpqjv1in">
+													<a href="#cXpqjv1in" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[DONE]]}} add to 1st call (joinWith)
 													</div>
 												</li>
-												<li>
+												<li id="qqRCE9i-6">
+													<a href="#qqRCE9i-6" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} maybe allow overriding in the 2nd call?
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="ms-_Ej0o8">
+											<a href="#ms-_Ej0o8" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="jFOZ96PaR">
+									<a href="#jFOZ96PaR" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="kb67u02oK">
+							<a href="#kb67u02oK" class="block-ref"></a>
+						</li>
+						<li id="QGQnEyFaO">
+							<a href="#QGQnEyFaO" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} allow passing in not only `string`s, but anything that has a `.toString()`
 							</div>
 							<ul>
-								<li>
+								<li id="rYpLWFy_j">
+									<a href="#rYpLWFy_j" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} for starters: `number`, `symbol`
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li></li>
-						<li>
+						<li id="6IHgvUgXj">
+							<a href="#6IHgvUgXj" class="block-ref"></a>
+						</li>
+						<li id="O1lMUxSZh">
+							<a href="#O1lMUxSZh" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} in general, keeping track of how much left padding we have?
 							</div>
 						</li>
-						<li></li>
+						<li id="6P-b93r4j">
+							<a href="#6P-b93r4j" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="6XEYry6oh">
+					<a href="#6XEYry6oh" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 6XEYry6oh
 					</div>
 				</li>
-				<li>
+				<li id="2ASQVtr3W">
+					<a href="#2ASQVtr3W" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							[[git-stacked-rebase]]
 					</div>
 					<ul>
-						<li>
+						<li id="HCROm5-WP">
+							<a href="#HCROm5-WP" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} create issue @ #[[typescript]] - allow type guards, without generalizing a readonly value, thus turning it from a specific one into a union (current behavior, want to both guard __and__ have the exact type).
 							</div>
 							<ul>
-								<li>
+								<li id="_FAl5L1YQ">
+									<a href="#_FAl5L1YQ" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											`allowedCommandAliasesFromGitRebase`
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="GpT9-n253">
+							<a href="#GpT9-n253" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									reading the [[(hidden) U5k5oJ6YK]] implementation of [[git-rebase]] atm.
 							</div>
 							<ul>
-								<li>
+								<li id="y1vnICg63">
+									<a href="#y1vnICg63" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											...because trying to create git-rebase-todo from git-stacked-rebase&#39;s git-rebase-todo, but there&#39;s more than that file to make it work -- there&#39;s also `head-name`, `onto` (both figured out already), `head` (missing, idk what it should be set to - that&#39;s why i&#39;m here) (needed when `git rebase --abort`).
 									</div>
 									<ul>
-										<li>
+										<li id="u6sZjwP1M">
+											<a href="#u6sZjwP1M" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													abort?
 											</div>
 											<ul>
-												<li>
+												<li id="Ib9dKn5XB">
+													<a href="#Ib9dKn5XB" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															sequencer_rollback?
 													</div>
 												</li>
-												<li>
+												<li id="2NOvD-fiy">
+													<a href="#2NOvD-fiy" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															sequencer_pick_revisions?
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="w9s4x3jVC">
+											<a href="#w9s4x3jVC" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&quot;HEAD?
 											</div>
 											<ul>
-												<li>
+												<li id="TwPWUpvlY">
+													<a href="#TwPWUpvlY" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															do_recursive_merge?
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="hOqTnNKx3">
+											<a href="#hOqTnNKx3" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&quot;could not read&quot;?
 											</div>
 											<ul>
-												<li>
+												<li id="_Zehn01k3">
+													<a href="#_Zehn01k3" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															run_command.c | exec-cmd.c | cache.c # sane_execvp?
 													</div>
 												</li>
-												<li>
+												<li id="Aneaj-DXF">
+													<a href="#Aneaj-DXF" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															update_squash_messages?
 													</div>
 													<ul>
-														<li>
+														<li id="5SYschHTB">
+															<a href="#5SYschHTB" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L94) of `sequencer.c`    💥 
 															</div>
 															<ul>
-																<li>
+																<li id="AGOmbMD-X">
+																	<a href="#AGOmbMD-X" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			there we have explanations for the various messages!
 																	</div>
 																</li>
-																<li>
+																<li id="Q8XcuFMhT">
+																	<a href="#Q8XcuFMhT" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#L53-L170
 																	</div>
 																</li>
-																<li></li>
+																<li id="aOdaKkJWL">
+																	<a href="#aOdaKkJWL" class="block-ref"></a>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="n4UkxvU4T">
+															<a href="#n4UkxvU4T" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="E3ZKS3ZGx">
+													<a href="#E3ZKS3ZGx" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="OYy1ZDWXH">
+											<a href="#OYy1ZDWXH" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="dmQwARu5Z">
+									<a href="#dmQwARu5Z" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} we might as well write our variables in snake_case, will be clearer thb
 									</div>
 								</li>
-								<li>
+								<li id="VALuFLgcH">
+									<a href="#VALuFLgcH" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											#[[observation]] sequencer.c is huge, used in 12 commands (rather, can be used to __sequence__ any command of the available 12).
 									</div>
 									<ul>
-										<li>
+										<li id="FrPKhJqK8">
+											<a href="#FrPKhJqK8" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													well actually, a few less - some builtin, some not, some tests.
 											</div>
 											<ul>
-												<li>
+												<li id="Mu0OBXQQr">
+													<a href="#Mu0OBXQQr" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															vscode&#39;s LSP working good
 													</div>
 												</li>
-												<li>
+												<li id="cYihCnCN0">
+													<a href="#cYihCnCN0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															regular (live @ repo root): branch.c, log-tree.c, rebase-interactive.c, sequencer.c itself, wt-status.c (?)
 													</div>
 												</li>
-												<li>
+												<li id="309gqBX09">
+													<a href="#309gqBX09" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															builtin: am.c (?), commit.c, merge.c, pull.c, rebase.c, revert.c
 													</div>
 												</li>
-												<li>
+												<li id="d9haJVuFa">
+													<a href="#d9haJVuFa" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															t/helper: test-fast-rebase.c
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="z3Ptmkkmp">
+											<a href="#z3Ptmkkmp" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
-								<li>
+								<li id="KGfTxZpGL">
+									<a href="#KGfTxZpGL" class="block-ref"></a>
+								</li>
+								<li id="i_XWJ_-4B">
+									<a href="#i_XWJ_-4B" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											re: ((5SYschHTB))
 									</div>
 									<ul>
-										<li>
+										<li id="AKSpPbuX7">
+											<a href="#AKSpPbuX7" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} gotta handle comments
 											</div>
 										</li>
-										<li>
+										<li id="3p9bBZoyg">
+											<a href="#3p9bBZoyg" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													okay, looks like the filename is incorrect - it prints `&quot;warning: could not read &#39;.git/rebase-merge/head&#39;: No such file or directory&quot;`, but it looks like the actual file (when you do a proper git rebase) that gets modified is `.git/HEAD` - normally it&#39;s set to `ref: refs/heads/extraction-6-create-4th-transform-rename-style-tokens`, and in rebase, it gets set to some SHA (looks like the very first commit of the rebase, ofc).
 											</div>
 											<ul>
-												<li>
+												<li id="5jzuoHnjm">
+													<a href="#5jzuoHnjm" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															did that. now we checkout into the first commit, and all files are added, what the heck?:D
 													</div>
 												</li>
-												<li>
+												<li id="TOtyALgqS">
+													<a href="#TOtyALgqS" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															maybe let&#39;s write into that `.git/rebase-merge/head` file even tho we can&#39;t see it?
 													</div>
 													<ul>
-														<li>
+														<li id="9FuUVRm4G">
+															<a href="#9FuUVRm4G" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	OH SHIT! `git rebase --abort` worked now! though, i got checked out into the initial branch&#39;s commit :D
 															</div>
 														</li>
-														<li>
+														<li id="tNqjEF-f6">
+															<a href="#tNqjEF-f6" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	i previously set `head-name` to the latest branch&#39;s commit sha, instead of the initial branch&#39;s one
 															</div>
 														</li>
-														<li>
+														<li id="Lk_3KlG5k">
+															<a href="#Lk_3KlG5k" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	`interactive` file missing from me
 															</div>
 															<ul>
-																<li>
+																<li id="7ZsaUXEpT">
+																	<a href="#7ZsaUXEpT" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			also `no-reschedule-failed-exec`
 																	</div>
 																</li>
-																<li>
+																<li id="lRvHZ4ofC">
+																	<a href="#lRvHZ4ofC" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			also `orig-head` (`head-name` should be the ref (`refs/heads/branch-name`), and `orig-head` - the commit of the latest branch (before rebase))
 																	</div>
 																</li>
-																<li>
+																<li id="noBs1sXXy">
+																	<a href="#noBs1sXXy" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			SHEEESH! `rebase --edit-todo` shows up &amp; works!!!
 																	</div>
 																	<ul>
-																		<li>
+																		<li id="LMdTV3iZl">
+																			<a href="#LMdTV3iZl" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					 `commit --amend` also shows up, but editing it edits something wrong &amp; my statusbar shows both rebase &amp; ahead/behind commit counts, so something definitely wrong lmao
 																			</div>
 																		</li>
-																		<li>
+																		<li id="ENWBC8eGT">
+																			<a href="#ENWBC8eGT" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					do i need the `index` file as well? git-rebase-todo.backup? 
 																			</div>
 																			<ul>
-																				<li>
+																				<li id="lfKxhxBlt">
+																					<a href="#lfKxhxBlt" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							git-rebase-todo.backup doesn&#39;t seem to help
 																					</div>
 																				</li>
-																				<li>
+																				<li id="VJLAmadCq">
+																					<a href="#VJLAmadCq" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							index nope, identical gets generated
 																					</div>
 																				</li>
-																				<li>
+																				<li id="fE9dKo4c5">
+																					<a href="#fE9dKo4c5" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							.todo -&gt; .backup
 																					</div>
 																				</li>
-																				<li>
+																				<li id="OQRlmjhwI">
+																					<a href="#OQRlmjhwI" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							head-name: head commit sha -&gt; latest branch name
 																					</div>
 																					<ul>
-																						<li>
+																						<li id="j9O9F2F73">
+																							<a href="#j9O9F2F73" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									snap, i set it to initial branch&#39;s name lol
 																							</div>
 																							<ul>
-																								<li>
+																								<li id="4-dnNQoyy">
+																									<a href="#4-dnNQoyy" class="block-ref"></a>
 																									<div style="max-width: 65ch;">
 																											ok now we at least get put into the right branch if i abort. status bar still shows -20 commits and i gotta git pull
 																									</div>
@@ -703,22 +869,26 @@
 																						</li>
 																					</ul>
 																				</li>
-																				<li>
+																				<li id="xIo2EZhFJ">
+																					<a href="#xIo2EZhFJ" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							ok so in regular case, status bar shows 1/21 commits, ours doesn&#39;t. `index`?
 																					</div>
 																					<ul>
-																						<li>
+																						<li id="sLI1Ih84B">
+																							<a href="#sLI1Ih84B" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									HEAD, ORIG_HEAD?
 																							</div>
 																							<ul>
-																								<li>
+																								<li id="3qB3bYFnl">
+																									<a href="#3qB3bYFnl" class="block-ref"></a>
 																									<div style="max-width: 65ch;">
 																											`head` &amp; `orig-head`
 																									</div>
 																									<ul>
-																										<li>
+																										<li id="7yOru8fJY">
+																											<a href="#7yOru8fJY" class="block-ref"></a>
 																											<div style="max-width: 65ch;">
 																													SUCCESSFULLY REBASED !!!
 																											</div>
@@ -729,22 +899,26 @@
 																						</li>
 																					</ul>
 																				</li>
-																				<li>
+																				<li id="FDY_ZbNKk">
+																					<a href="#FDY_ZbNKk" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							`done`, `msgnum`, `end`
 																					</div>
 																					<ul>
-																						<li>
+																						<li id="g5qMTP7Dt">
+																							<a href="#g5qMTP7Dt" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									PROMPT WORKS!!!
 																							</div>
 																						</li>
-																						<li>
+																						<li id="YjfRapq6A">
+																							<a href="#YjfRapq6A" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									OH SHIT i just made a commit with file foo, used git-stacked-rebase to move it up (reorder), &amp; THE REBASE WORKED !!!!!!
 																							</div>
 																							<ul>
-																								<li>
+																								<li id="xfszGLUkf">
+																									<a href="#xfszGLUkf" class="block-ref"></a>
 																									<div style="max-width: 65ch;">
 																											![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FFzGtZX-Ki2.png?alt=media&amp;token=48e8a4e4-ef66-47ca-94c1-f142318ff54b)
 																									</div>
@@ -753,93 +927,117 @@
 																						</li>
 																					</ul>
 																				</li>
-																				<li></li>
+																				<li id="21NdBDt1B">
+																					<a href="#21NdBDt1B" class="block-ref"></a>
+																				</li>
 																			</ul>
 																		</li>
-																		<li></li>
+																		<li id="p7tyUno90">
+																			<a href="#p7tyUno90" class="block-ref"></a>
+																		</li>
 																	</ul>
 																</li>
-																<li></li>
+																<li id="fSZHTfqxV">
+																	<a href="#fSZHTfqxV" class="block-ref"></a>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="P9kKTKzPb">
+															<a href="#P9kKTKzPb" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="Kvy8s9QLx">
+													<a href="#Kvy8s9QLx" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="_Cr2Za68h">
+											<a href="#_Cr2Za68h" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													okay, it&#39;s gonna be tricky. at first we can try monkey-patching, tho the end user will have to be very careful - everywhere, but especially at branch boundaries lmao
 											</div>
 											<ul>
-												<li>
+												<li id="lphK1YiIb">
+													<a href="#lphK1YiIb" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} before rebasing, validate all commits in the partial branches are the same as in the latest branch.
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="wCejqKkMw">
+											<a href="#wCejqKkMw" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} as i though, we might need to use the `git rebase -i` initially to get all the stuff in the right places
 											</div>
 											<ul>
-												<li>
+												<li id="dtw1D_Sj8">
+													<a href="#dtw1D_Sj8" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															e.g. atm, if i want to continue the rebase, i need to pass in some signature and it&#39;s not there,
 													</div>
 												</li>
-												<li>
+												<li id="S2S5m3WIu">
+													<a href="#S2S5m3WIu" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															also the `gpg_sign_opt` needs handling
 													</div>
 												</li>
-												<li>
+												<li id="y0KWmH_Tp">
+													<a href="#y0KWmH_Tp" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															etc
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="khPvMSZYW">
+											<a href="#khPvMSZYW" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													{{[[TODO]]}} fuck, why is the rebase stuff so meh? will i have to handle every single operation myself?... why is there no `rebase.continue()`?...
 											</div>
 											<ul>
-												<li>
+												<li id="joSpDvYBf">
+													<a href="#joSpDvYBf" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															thinking about using the [[(hidden) U5k5oJ6YK]] api. but, the error i was getting - it&#39;s not even mentioned anywhere in the nodegit repo, not a single word, which means that it&#39;s only in libgit2 (the C source) itself, so ain&#39;t gonna help
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li>
+										<li id="QmgHJ2IbD">
+											<a href="#QmgHJ2IbD" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													rebase.c
 											</div>
 											<ul>
-												<li>
+												<li id="ircNEZGf0">
+													<a href="#ircNEZGf0" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															git_commit_free
 													</div>
 													<ul>
-														<li>
+														<li id="z2i_H5YJ5">
+															<a href="#z2i_H5YJ5" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	common.h
 															</div>
 															<ul>
-																<li>
+																<li id="rEbKd14zJ">
+																	<a href="#rEbKd14zJ" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			&quot;wrapper around git_object_free&quot;
 																	</div>
 																</li>
-																<li>
+																<li id="xBKwdrILs">
+																	<a href="#xBKwdrILs" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			&quot;see git_object_lookup_prefix&quot;
 																	</div>
 																	<ul>
-																		<li>
+																		<li id="jZhkxlEEm">
+																			<a href="#jZhkxlEEm" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					object.h
 																			</div>
@@ -850,133 +1048,171 @@
 														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="4UO2NGPd-">
+													<a href="#4UO2NGPd-" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															yeah the libgit2 stuff is outdated sadly, at least for rebase... the `cmt.%` stuff - git itself does not have it...
 													</div>
 													<ul>
-														<li>
+														<li id="UqFRufnQJ">
+															<a href="#UqFRufnQJ" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	git hooks?
 															</div>
 															<ul>
-																<li>
+																<li id="_KjV0Ke19">
+																	<a href="#_KjV0Ke19" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 																	</div>
 																</li>
-																<li>
+																<li id="kpOeKzvh3">
+																	<a href="#kpOeKzvh3" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			i remember when i was ((GpT9-n253)) recently -- there were some mentions of hooks. will see
 																	</div>
 																	<ul>
-																		<li>
+																		<li id="9rPkSvEG-">
+																			<a href="#9rPkSvEG-" class="block-ref"></a>
 																			<div style="max-width: 65ch;">
 																					ah yes, in the sequencer: ((5SYschHTB))
 																			</div>
 																			<ul>
-																				<li>
+																				<li id="ggeCNgEgE">
+																					<a href="#ggeCNgEgE" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							`post-rewrite`
 																					</div>
 																					<ul>
-																						<li>
+																						<li id="zTkitmECe">
+																							<a href="#zTkitmECe" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									yep. works.
 																							</div>
 																						</li>
-																						<li>
+																						<li id="IbBW5lqNq">
+																							<a href="#IbBW5lqNq" class="block-ref"></a>
 																							<div style="max-width: 65ch;">
 																									eh, it gets called multiple times. i might as well stick to my &quot;insert additional `break` at the very end` &amp; handle it myself there
 																							</div>
 																							<ul>
-																								<li>
+																								<li id="QZeb89_e1">
+																									<a href="#QZeb89_e1" class="block-ref"></a>
 																									<div style="max-width: 65ch;">
 																											tho, it&#39;d still have to spawn some sort of process to be able to do that...
 																									</div>
 																								</li>
-																								<li>
+																								<li id="d65I9ng4U">
+																									<a href="#d65I9ng4U" class="block-ref"></a>
 																									<div style="max-width: 65ch;">
 																											{{[[TODO]]}} what if instead i just wrote the `rewriten-list` into our own `stacked-rebase` dir &amp; after it&#39;s done, the user&#39;d have to manually call `apply`, just like we intended in the first place?
 																									</div>
 																									<ul>
-																										<li>
+																										<li id="b3HyBgDLJ">
+																											<a href="#b3HyBgDLJ" class="block-ref"></a>
 																											<div style="max-width: 65ch;">
 																													{{[[DONE]]}} yes
 																											</div>
 																										</li>
-																										<li>
+																										<li id="_TbI1cUaI">
+																											<a href="#_TbI1cUaI" class="block-ref"></a>
 																											<div style="max-width: 65ch;">
 																													oh, i don&#39;t even need last `break` re: ((IbBW5lqNq))
 																											</div>
 																										</li>
 																									</ul>
 																								</li>
-																								<li></li>
+																								<li id="egM3hyUcq">
+																									<a href="#egM3hyUcq" class="block-ref"></a>
+																								</li>
 																							</ul>
 																						</li>
-																						<li></li>
+																						<li id="e7lpinaPH">
+																							<a href="#e7lpinaPH" class="block-ref"></a>
+																						</li>
 																					</ul>
 																				</li>
-																				<li>
+																				<li id="FUimnl1K7">
+																					<a href="#FUimnl1K7" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							`prepare-commit-msg`
 																					</div>
 																				</li>
-																				<li>
+																				<li id="u-qHkxQYG">
+																					<a href="#u-qHkxQYG" class="block-ref"></a>
 																					<div style="max-width: 65ch;">
 																							`post-commit`
 																					</div>
 																				</li>
 																			</ul>
 																		</li>
-																		<li></li>
+																		<li id="FIc0g2tP-">
+																			<a href="#FIc0g2tP-" class="block-ref"></a>
+																		</li>
 																	</ul>
 																</li>
-																<li></li>
+																<li id="HXTAeF6Jn">
+																	<a href="#HXTAeF6Jn" class="block-ref"></a>
+																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="rUUUdLLNY">
+															<a href="#rUUUdLLNY" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="gyYP7m9Cg">
+													<a href="#gyYP7m9Cg" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="_L2zwe4OY">
+											<a href="#_L2zwe4OY" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="GbHFpL1-e">
+									<a href="#GbHFpL1-e" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="Kj5fnEv5n">
+							<a href="#Kj5fnEv5n" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="rYKCFT1Eg">
+					<a href="#rYKCFT1Eg" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) rYKCFT1Eg
 					</div>
 				</li>
-				<li>
+				<li id="d2uneIEPS">
+					<a href="#d2uneIEPS" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) d2uneIEPS
 					</div>
 				</li>
-				<li>
+				<li id="JxnfOkjVn">
+					<a href="#JxnfOkjVn" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) JxnfOkjVn
 					</div>
 				</li>
-				<li>
+				<li id="09xXLednk">
+					<a href="#09xXLednk" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 09xXLednk
 					</div>
 				</li>
-				<li>
+				<li id="9w9kQ-Vgu">
+					<a href="#9w9kQ-Vgu" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 9w9kQ-Vgu
 					</div>
 				</li>
-				<li>
+				<li id="46mFyd3Vy">
+					<a href="#46mFyd3Vy" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 46mFyd3Vy
 					</div>

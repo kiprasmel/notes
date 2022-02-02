@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:21.915Z</span>
+				<span>2022-02-02T14:33:54.356Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,85 +245,99 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1636408805126);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811801915);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812434356);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="5BFoxqrj7">
+					<a href="#5BFoxqrj7" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) 5BFoxqrj7
 					</div>
 				</li>
-				<li>
+				<li id="miqWdHLUt">
+					<a href="#miqWdHLUt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) miqWdHLUt #[[(hidden) uZbvl95xS]] [[(hidden) HxAeJ-voj]] [[(hidden) 8jP-ANomg]]
 					</div>
 					<ul>
-						<li>
+						<li id="954gLUE8p">
+							<a href="#954gLUE8p" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) 954gLUE8p 
 							</div>
 						</li>
-						<li>
+						<li id="pqzCPgAaV">
+							<a href="#pqzCPgAaV" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) pqzCPgAaV [[(hidden) WYRT0H_b7]] [[(hidden) 7_XMPGrqS]] [[(hidden) VW-0QxG5I]]
 							</div>
 							<ul>
-								<li>
+								<li id="cI7dMFxxC">
+									<a href="#cI7dMFxxC" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) cI7dMFxxC #[[(hidden) S-ygYfi0j]] #[[(hidden) pCdH3SJhT]]
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="jsb-I1U_R">
+							<a href="#jsb-I1U_R" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) jsb-I1U_R
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="WhpaZfUJ-">
+					<a href="#WhpaZfUJ-" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) WhpaZfUJ-
 					</div>
 				</li>
-				<li>
+				<li id="A1xc0Blya">
+					<a href="#A1xc0Blya" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) A1xc0Blya #[[(hidden) S-ygYfi0j]]
 					</div>
 					<ul>
-						<li>
+						<li id="9_RaD8Xeg">
+							<a href="#9_RaD8Xeg" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) 9_RaD8Xeg [[(hidden) Eodgxk4z7]]
 							</div>
 							<ul>
-								<li>
+								<li id="a3_G7Pa9p">
+									<a href="#a3_G7Pa9p" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) a3_G7Pa9p
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="VgY-bOVRj">
+							<a href="#VgY-bOVRj" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) VgY-bOVRj [[(hidden) 8KLq7ISI8]]
 							</div>
 							<ul>
-								<li>
+								<li id="ayaMb1OAo">
+									<a href="#ayaMb1OAo" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) ayaMb1OAo
 									</div>
 									<ul>
-										<li>
+										<li id="TwpdOpYxW">
+											<a href="#TwpdOpYxW" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													(hidden) TwpdOpYxW
 											</div>
 											<ul>
-												<li>
+												<li id="Wkw5_Y3jR">
+													<a href="#Wkw5_Y3jR" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															(hidden) Wkw5_Y3jR
 													</div>
@@ -279,101 +346,122 @@
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="TKaC96r48">
+									<a href="#TKaC96r48" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											#[[(hidden) jOMmlCP4S]] once [[codemods]] are done, and if they turn out well - could write my own blog post &amp; post it @ pipedrive as well. damn
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="zyk4L2kGW">
+							<a href="#zyk4L2kGW" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									[[codemods]]
 							</div>
 							<ul>
-								<li>
+								<li id="MiVHJOmCq">
+									<a href="#MiVHJOmCq" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											{{[[TODO]]}} document #[[typescript]] typescript error:
 									</div>
 									<ul>
-										<li>
+										<li id="xOpE8CVoo">
+											<a href="#xOpE8CVoo" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&gt; An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead.ts(1337)
 											</div>
 										</li>
-										<li>
+										<li id="wFcgbSIBv">
+											<a href="#wFcgbSIBv" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													&gt; A computed property name in an interface must refer to an expression whose type is a literal type or a &#39;unique symbol&#39; type.ts(1169)
 											</div>
 										</li>
-										<li>
+										<li id="ZUVadzH33">
+											<a href="#ZUVadzH33" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													in both cases, you need to:
 											</div>
 											<ul>
-												<li>
+												<li id="9wf3wVor4">
+													<a href="#9wf3wVor4" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															1. convert from `interface` to `type`
 													</div>
 												</li>
-												<li>
+												<li id="KP68uETzk">
+													<a href="#KP68uETzk" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															2. convert from `[key: foo]: bar` to `[key in foo]: bar`
 													</div>
 												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="Bi0zc0iH1">
+											<a href="#Bi0zc0iH1" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="an5vnRflw">
+									<a href="#an5vnRflw" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="jXLDx3m2f">
+							<a href="#jXLDx3m2f" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									{{[[TODO]]}} (hidden) jXLDx3m2f #[[(hidden) _sW66DmMa]] #[[re]]
 							</div>
 							<ul>
-								<li>
+								<li id="SMPJ9bXg4">
+									<a href="#SMPJ9bXg4" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											(hidden) SMPJ9bXg4
 									</div>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li id="R_onEmo3Z">
+							<a href="#R_onEmo3Z" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									(hidden) R_onEmo3Z
 							</div>
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li id="MO33gdogg">
+					<a href="#MO33gdogg" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) MO33gdogg
 					</div>
 				</li>
-				<li>
+				<li id="FVHpx150m">
+					<a href="#FVHpx150m" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) FVHpx150m
 					</div>
 				</li>
-				<li>
+				<li id="cK0q5ZsRU">
+					<a href="#cK0q5ZsRU" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) cK0q5ZsRU
 					</div>
 				</li>
-				<li>
+				<li id="bTikUQbzJ">
+					<a href="#bTikUQbzJ" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) bTikUQbzJ
 					</div>
 				</li>
-				<li>
+				<li id="FgxQLqGF6">
+					<a href="#FgxQLqGF6" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) FgxQLqGF6
 					</div>
 				</li>
-				<li>
+				<li id="_c8cfpxV6">
+					<a href="#_c8cfpxV6" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							(hidden) _c8cfpxV6
 					</div>

@@ -47,6 +47,59 @@
 				color: blue;
 				*/
 			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
 		</style>
 
 		<script type="text/javascript">
@@ -184,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-02T14:23:22.795Z</span>
+				<span>2022-02-02T14:33:55.155Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -192,101 +245,140 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1641741408512);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643811802795);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643812435155);
 
 			</script>
 		</small>
 
 		<main>
 			<ul>
-				<li>
+				<li id="Oxl_X0Rpi">
+					<a href="#Oxl_X0Rpi" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							#[[public]]
 					</div>
 				</li>
-				<li></li>
-				<li>
+				<li id="Q6mLFRE6h">
+					<a href="#Q6mLFRE6h" class="block-ref"></a>
+				
+				</li>
+				<li id="_vICWkX3x">
+					<a href="#_vICWkX3x" class="block-ref"></a>
 					<div style="max-width: 65ch;">
 							testing. maybe #[[(hidden) g2IT-5G5b]] would work as well
 					</div>
 					<ul>
-						<li>
+						<li id="Za77u1jBd">
+							<a href="#Za77u1jBd" class="block-ref"></a>
 							<div style="max-width: 65ch;">
 									#[[(hidden) jOMmlCP4S]] comes from:
 							</div>
 							<ul>
-								<li>
+								<li id="B9MIyy85C">
+									<a href="#B9MIyy85C" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											the #[[(hidden) 2b6Krhy2c]]oblem is that if you write new paragraphs, but related to the previous one, you tend to indent them, and the indentation continues so much, when it really shouldn&#39;t. the #[[(hidden) jOMmlCP4S]] i had for [[(hidden) -NklLsZCV]] when doing [[export-html-pages]] is that when you have a block that has children, but only 1, you can safely undo the indentation, as long as 1. the first (top-to-bottom) child that is not the only 1 child, is not being un-indented, and 2. to separate it out from the other children which are not related as much because you didn&#39;t originally indent them, you&#39;d have to indent the 1 child.
 									</div>
 									<ul>
-										<li>
+										<li id="9GeC5zJ59">
+											<a href="#9GeC5zJ59" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													and this (specifically, (2)) is when i realized that something like a [[thread]] or [[(hidden) g2IT-5G5b]] would work well.
 											</div>
 										</li>
 									</ul>
 								</li>
-								<li>
+								<li id="QKMwDL3k6">
+									<a href="#QKMwDL3k6" class="block-ref"></a>
 									<div style="max-width: 65ch;">
 											the other problem is that if you do a block reference, and it&#39;s the non-normalized way, you can easily find the related blocks by just looking at the referenced block&#39;s children.
 								but when it&#39;s normalized, then that&#39;s no longer the case, and especially with [[roam]], you have to do extra work to see the stuff.
 									</div>
 									<ul>
-										<li>
+										<li id="dbeKXi_tT">
+											<a href="#dbeKXi_tT" class="block-ref"></a>
 											<div style="max-width: 65ch;">
 													but, now what i realize is that you can reference the [[thread]], and as long as you&#39;re giving a good description for the thread (when you start it, at the same block), it might even be a better way to both find things, and to have a more precise count of how many times you&#39;ve referenced the thread, instead of it&#39;s specific children
 											</div>
 											<ul>
-												<li>
+												<li id="_V8HqGYKv">
+													<a href="#_V8HqGYKv" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} oh wait you&#39;re kinda losing precision if you&#39;re referencing the thread instead of one of it&#39;s children
 													</div>
 													<ul>
-														<li>
+														<li id="S3fwVLUPe">
+															<a href="#S3fwVLUPe" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	what would be the preferred way, is to reference the exact thing that you want to reference, and then enhance the blocks with the [[thread]] tag / attribute to show the total count of references of it&#39;s children - win win, because both precision and total count
 															</div>
 															<ul>
-																<li>
+																<li id="A8QUvl275">
+																	<a href="#A8QUvl275" class="block-ref"></a>
 																	<div style="max-width: 65ch;">
 																			re:: enhance -- could create a [[roam/js]] extension for it
 																	</div>
 																</li>
 															</ul>
 														</li>
-														<li></li>
+														<li id="N9MXxzMXj">
+															<a href="#N9MXxzMXj" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li>
+												<li id="ZeRlqbI2Q">
+													<a href="#ZeRlqbI2Q" class="block-ref"></a>
 													<div style="max-width: 65ch;">
 															{{[[TODO]]}} scope, global variables, and normalization turning everything into the same level, making it more complex because you have to keep track of all of the previous things, instead of knowing what the current point relates to
 													</div>
 													<ul>
-														<li>
+														<li id="hY2Uq_M-2">
+															<a href="#hY2Uq_M-2" class="block-ref"></a>
 															<div style="max-width: 65ch;">
 																	fuck this whole notion of what&#39;s better &amp; worse is complicated. you can see it right here, on the meta level.
 															</div>
 														</li>
-														<li></li>
+														<li id="qQ0IDee8S">
+															<a href="#qQ0IDee8S" class="block-ref"></a>
+														</li>
 													</ul>
 												</li>
-												<li></li>
+												<li id="GMkcoIbJ8">
+													<a href="#GMkcoIbJ8" class="block-ref"></a>
+												</li>
 											</ul>
 										</li>
-										<li></li>
+										<li id="Tq6ziozOm">
+											<a href="#Tq6ziozOm" class="block-ref"></a>
+										</li>
 									</ul>
 								</li>
-								<li></li>
+								<li id="OUGNINMvO">
+									<a href="#OUGNINMvO" class="block-ref"></a>
+								</li>
 							</ul>
 						</li>
-						<li></li>
+						<li id="y4p06ClTn">
+							<a href="#y4p06ClTn" class="block-ref"></a>
+						</li>
 					</ul>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li id="Hy6otOY8E">
+					<a href="#Hy6otOY8E" class="block-ref"></a>
+				
+				</li>
+				<li id="_QgSWkoD8">
+					<a href="#_QgSWkoD8" class="block-ref"></a>
+				
+				</li>
+				<li id="hsGnWxTr3">
+					<a href="#hsGnWxTr3" class="block-ref"></a>
+				
+				</li>
+				<li id="xJkvH57Mw">
+					<a href="#xJkvH57Mw" class="block-ref"></a>
+				
+				</li>
 			</ul>
 		</main>
 
@@ -358,7 +450,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="KJ9jQo4Kl">
+			<a href="#KJ9jQo4Kl" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -375,12 +469,16 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="FjhQPR3eD">
+		<a href="#FjhQPR3eD" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				how many times have you re-thought a &quot;thing&quot; and had new, often even contradictory, realizations, aka updated your [[priors]], and came to new [[conclusion]]s.
 		</div>
 	</li>
-	<li></li>
+	<li id="hzusu4F7j">
+		<a href="#hzusu4F7j" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
 	</ul>
@@ -396,7 +494,9 @@
 		-->
 	</h3>
 	<ul>
-				<li>
+				<li id="S3fwVLUPe">
+			<a href="#S3fwVLUPe" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -413,14 +513,17 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="A8QUvl275">
+		<a href="#A8QUvl275" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				re:: enhance -- could create a [[roam/js]] extension for it
 		</div>
 	</li>
 </ul>
 		</li>
-		<li>
+		<li id="dbeKXi_tT">
+			<a href="#dbeKXi_tT" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
@@ -437,43 +540,57 @@
 			</span>
 			-->
 <ul>
-	<li>
+	<li id="_V8HqGYKv">
+		<a href="#_V8HqGYKv" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} oh wait you&#39;re kinda losing precision if you&#39;re referencing the thread instead of one of it&#39;s children
 		</div>
 		<ul>
-			<li>
+			<li id="S3fwVLUPe">
+				<a href="#S3fwVLUPe" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						what would be the preferred way, is to reference the exact thing that you want to reference, and then enhance the blocks with the [[thread]] tag / attribute to show the total count of references of it&#39;s children - win win, because both precision and total count
 				</div>
 				<ul>
-					<li>
+					<li id="A8QUvl275">
+						<a href="#A8QUvl275" class="block-ref"></a>
 						<div style="max-width: 65ch;">
 								re:: enhance -- could create a [[roam/js]] extension for it
 						</div>
 					</li>
 				</ul>
 			</li>
-			<li></li>
+			<li id="N9MXxzMXj">
+				<a href="#N9MXxzMXj" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li>
+	<li id="ZeRlqbI2Q">
+		<a href="#ZeRlqbI2Q" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				{{[[TODO]]}} scope, global variables, and normalization turning everything into the same level, making it more complex because you have to keep track of all of the previous things, instead of knowing what the current point relates to
 		</div>
 		<ul>
-			<li>
+			<li id="hY2Uq_M-2">
+				<a href="#hY2Uq_M-2" class="block-ref"></a>
 				<div style="max-width: 65ch;">
 						fuck this whole notion of what&#39;s better &amp; worse is complicated. you can see it right here, on the meta level.
 				</div>
 			</li>
-			<li></li>
+			<li id="qQ0IDee8S">
+				<a href="#qQ0IDee8S" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
-	<li></li>
+	<li id="GMkcoIbJ8">
+		<a href="#GMkcoIbJ8" class="block-ref"></a>
+	
+	</li>
 </ul>
 		</li>
-		<li>
+		<li id="9GeC5zJ59">
+			<a href="#9GeC5zJ59" class="block-ref"></a>
+
 			<!--
 				TODO <h4> for semantics
 			-->
