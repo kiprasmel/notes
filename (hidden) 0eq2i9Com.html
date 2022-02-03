@@ -237,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-03T15:25:21.162Z</span>
+				<span>2022-02-03T22:35:59.981Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -245,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638707081310);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643901921162);
+				updateAndSetIntervalToUpdateFor("ago-2", 1643927759981);
 
 			</script>
 		</small>
@@ -343,11 +343,11 @@ not sure if that&#39;d help much, and wouldn&#39;t want this to be the right sol
 
 what you could technically do, is re-create your graph, i.e., traverse the json, then have a modifier to remove a block if it contains a DONE linked reference, then reset your graph to an empty state on roam, and then upload the new graph w/ json.
 
-i can do this w/ #[[roam]]-traverse-graph - i&#39;m working on it atm, and i&#39;ll open source in the coming months.
+i can do this w/ #roam-traverse-graph - i&#39;m working on it atm, and i&#39;ll open source in the coming months.
 
 but even if you could do that now, there&#39;re 2 problems:
 
-1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn&#39;t get added to the json document when you export from roam, and #[[roam]]-traverse-graph works with json so no luck there until roam team would expand the json structure
+1. some metadata will be lost - e.g. if you shared a page, it has some metadata in the edn that doesn&#39;t get added to the json document when you export from roam, and #roam-traverse-graph works with json so no luck there until roam team would expand the json structure
 
 2. i&#39;ve been doing a lot of automated reset of the graph &amp; re-uploading of the json. turns out, even if the graph was initially fast (because it wasn&#39;t that big), after some resetting &amp; importing, it gets extremely slow (currently kiprasmel [1] takes &gt;1h to load, if ever). so this is another issue that i&#39;d depend on the roam team to fix.
 and ofc, i never did this w/ my actual graph - what im doing is exporting only public pages into another graph, while leaving my main one untouched. because of pt. 2, i&#39;d really not recommend doing it, ever:D
