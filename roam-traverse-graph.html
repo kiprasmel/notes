@@ -205,7 +205,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							11295
+							12095
 							</td>
 							<td>
 							(linked mentions)
@@ -214,7 +214,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							11396
+							12196
 							</td>
 							<td>
 							(both)
@@ -237,7 +237,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-02-04T12:31:42.433Z</span>
+				<span>2022-02-06T22:14:07.102Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -245,7 +245,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1634942539389);
-				updateAndSetIntervalToUpdateFor("ago-2", 1643977902433);
+				updateAndSetIntervalToUpdateFor("ago-2", 1644185647102);
 
 			</script>
 		</small>
@@ -265,7 +265,7 @@
 				<li id="fYHN3X_Mt">
 					<a href="#fYHN3X_Mt" class="block-ref"></a>
 					<div style="max-width: 65ch;">
-							(hidden) iNHZvOUtb:: traversal of the roam graph, using plugins (simple js functions).
+							is:: traversal of the roam graph, using plugins (simple js functions).
 					</div>
 					<ul>
 						<li id="KsB3XrwO7">
@@ -363,9 +363,9 @@
 
 			<h2>
 				Linked Mentions 
-				(73
+				(78
 				in
-				45
+				47
 				pages)
 
 				<button
@@ -3473,7 +3473,7 @@
 							<li id="h99au54Mv">
 								<a href="#h99au54Mv" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										also gotta think about [[(hidden) bnIYiidX0]] e.g. confusion of the reader if they think the format is always the same when it&#39;s not
+										also gotta think about [[tradeoffs]] e.g. confusion of the reader if they think the format is always the same when it&#39;s not
 								</div>
 							</li>
 							<li id="KGEMR52iz">
@@ -7524,6 +7524,484 @@ for API calls to some endpoints, sure could use a server, or e.g. lambda functio
 	</li>
 	<li id="QYXQgWyJs">
 		<a href="#QYXQgWyJs" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			February 5th, 2022 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="G9lPgWS1_">
+			<a href="#G9lPgWS1_" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[roam-traverse-graph]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="VlWECu9Q_">
+		<a href="#VlWECu9Q_" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} #[[(hidden) jOMmlCP4S]] for [[graph fragmentation]] -- i just realized that in our case, a page is a completely independent unit, i.e. it has everything it needs to fully function. thus, we could fragment the graph per page, and thus it&#39;d be very efficient to avoid downloading the whole graph to get intel / advanced features working
+		</div>
+		<ul>
+			<li id="LzO1ed8g1">
+				<a href="#LzO1ed8g1" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						even for e.g. queries, we can just leave the results and you&#39;re good to go.
+				</div>
+				<ul>
+					<li id="zZkvPLjqX">
+						<a href="#zZkvPLjqX" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								i.e. just keeping the metadata.
+						</div>
+						<ul>
+							<li id="ZdNu5M-jI">
+								<a href="#ZdNu5M-jI" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										{{[[TODO]]}} gotta be careful to __not__ expose private stuff.
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li id="h9_kIv9KV">
+				<a href="#h9_kIv9KV" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						and ofc, quite a bit of duplication of data fetching would arise, if e.g. you&#39;re visiting 2 pages that had a lot in common.
+				</div>
+				<ul>
+					<li id="XffxcZMFR">
+						<a href="#XffxcZMFR" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								but, this is eventually solvable, if we wanna go really advanced.
+						</div>
+						<ul>
+							<li id="6KcEQVc5b">
+								<a href="#6KcEQVc5b" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										e.g. by having a unique id/hash of the page&#39;s content (incl. metadata &amp; that it has -- cannot only use the last updated date) &amp; if 2 pages have the same unique id for duplicate content, you can avoid fetching that content.
+								</div>
+								<ul>
+									<li id="abCbeVklX">
+										<a href="#abCbeVklX" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												but ofc, this is way more advanced &amp; you&#39;d have to fragment by blocks at this point
+										</div>
+									</li>
+									<li id="LRKDCyHD1">
+										<a href="#LRKDCyHD1" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												anyhow, fact still remains -- fragmenting this way is at least a good start &amp; already has benefits
+										</div>
+									</li>
+									<li id="ra-0o2u-K">
+										<a href="#ra-0o2u-K" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												(!) &amp; let&#39;s not forget that by default, none of this would be used / needed, &amp; we&#39;re still sticking to [[static html]].
+										</div>
+										<ul>
+											<li id="UsB6nAU6g">
+												<a href="#UsB6nAU6g" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														we&#39;d only enable this functionality if the reader decides to flip [[the magic toggle]] in any of the pages
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li id="EtjCo1WIh">
+										<a href="#EtjCo1WIh" class="block-ref"></a>
+									</li>
+								</ul>
+							</li>
+							<li id="4yHh6z1OY">
+								<a href="#4yHh6z1OY" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="fR--VZF4V">
+						<a href="#fR--VZF4V" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="-0bUT-cII">
+				<a href="#-0bUT-cII" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="w5MmnkPmB">
+		<a href="#w5MmnkPmB" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+		<li id="u1XbMN0m9">
+			<a href="#u1XbMN0m9" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				in [[roam-traverse-graph]], we consider [[roam attributes]] as linked references as well (same as hastags) (as in, they all have the `linked-reference` type), but have different `kind`s 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			February 6th, 2022 (3)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="djseasEh7">
+			<a href="#djseasEh7" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} when committing in `notes` (public), add info of what version &amp; commit of [[roam-traverse-graph]] was used
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li id="JCZSTkYUb">
+			<a href="#JCZSTkYUb" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[roam-traverse-graph]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="5ysT4AsFt">
+		<a href="#5ysT4AsFt" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} investigate the &quot;public&quot; incident w/ [[(hidden) v8hKA88Fi]]
+		</div>
+		<ul>
+			<li id="djseasEh7">
+				<a href="#djseasEh7" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} when committing in `notes` (public), add info of what version &amp; commit of [[roam-traverse-graph]] was used
+				</div>
+			</li>
+			<li id="CSR0z5aSP">
+				<a href="#CSR0z5aSP" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) CSR0z5aSP #[[(hidden) 7c2C8PgIV]]
+				</div>
+				<ul>
+					<li id="Ipw0qNadM">
+						<a href="#Ipw0qNadM" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								(hidden) Ipw0qNadM
+						</div>
+						<ul>
+							<li id="VR6Y2zsWg">
+								<a href="#VR6Y2zsWg" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										(hidden) VR6Y2zsWg
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li id="RBUKoW6Hw">
+						<a href="#RBUKoW6Hw" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								(hidden) RBUKoW6Hw
+						</div>
+						<ul>
+							<li id="NtVT-kXdq">
+								<a href="#NtVT-kXdq" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										(hidden) NtVT-kXdq
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li id="NhxdZ4XSN">
+				<a href="#NhxdZ4XSN" class="block-ref"></a>
+			</li>
+			<li id="4YK1Iw85Z">
+				<a href="#4YK1Iw85Z" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						had another mess up when taking notes on this.
+				</div>
+				<ul>
+					<li id="oG556ehgU">
+						<a href="#oG556ehgU" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								tried adding the patch into [[roam]]. uploading file (using `git format-patch commit~..commit`) worked just fine, but then for some reason wanted to add the file contents directly as well, w/o realizing it contains the whole flipping graph&#39;s worth of diffs...
+						</div>
+					</li>
+					<li id="e5ijSdRb5">
+						<a href="#e5ijSdRb5" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								so then ofc [[roam]] hangs, or rather - cannot sync local changes to remote. i realize how big the contents actually are and no longer want them here directly, so undo the transaction, but idk if it&#39;s not too late.
+						</div>
+					</li>
+					<li id="JgdHDPGC7">
+						<a href="#JgdHDPGC7" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								so now, since it failed to sync to remote, i want to get rid of the cache so that the changes no longer exist in the first place.
+						</div>
+					</li>
+					<li id="O9I4TY_Ci">
+						<a href="#O9I4TY_Ci" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								[[(hidden) gZLAP46u2]] + [[roam]] saves local cache in 
+						</div>
+						<ul>
+							<li id="T9ix5YrMR">
+								<a href="#T9ix5YrMR" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										```javascript
+							~/.config/roam-nativefier-XXXXXX/Cache/XXXXXXXXXXXXXXX```
+								</div>
+							</li>
+							<li id="0ypdabAht">
+								<a href="#0ypdabAht" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										e.g.
+								</div>
+								<ul>
+									<li id="27iJRel4o">
+										<a href="#27iJRel4o" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												```javascript
+									$ grep -Hr &#39;roam-traverse-graph&#39;
+									grep: Cache/20996c634c56818a_0: binary file matches
+									grep: Cache/9751481f40823829_0: binary file matches
+									grep: grep: input file is also the output
+									grep: IndexedDB/https_roamresearch.com_0.indexeddb.blob/a/00/19: binary file matches
+									grep: IndexedDB/https_roamresearch.com_0.indexeddb.blob/2/00/83: binary file matches
+									grep: IndexedDB/https_roamresearch.com_0.indexeddb.leveldb/000281.log: binary file matches
+									grep: IndexedDB/https_roamresearch.com_0.indexeddb.leveldb/000246.ldb: binary file matches
+									grep: IndexedDB/https_roamresearch.com_0.indexeddb.leveldb/000224.ldb: binary file matches
+									```
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li id="6S_H48E6w">
+								<a href="#6S_H48E6w" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										viewing contents:
+								</div>
+								<ul>
+									<li id="FcSKdIK0c">
+										<a href="#FcSKdIK0c" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												```javascript
+									xxd -b &lt;path&gt; &gt; out1```
+										</div>
+									</li>
+									<li id="-iSjI-q_E">
+										<a href="#-iSjI-q_E" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												+ deleting everything except last column, + `%s/\n//g`
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li id="qjRrraVEC">
+								<a href="#qjRrraVEC" class="block-ref"></a>
+							</li>
+							<li id="CsOo1pXec">
+								<a href="#CsOo1pXec" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										looks like nuking the directory will work -- [[roam]] asks me to login now.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li id="aUjhIFK3S">
+						<a href="#aUjhIFK3S" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								otherwise, had 1 more screw-up -- since i added notes when debugging this (e.g. faulty commits), but the notes didn&#39;t sync either, i tried copy-pasting them into a browser window of [[roam]].
+						</div>
+						<ul>
+							<li id="7R2WmcxkC">
+								<a href="#7R2WmcxkC" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										__but__, content inside code blocks (esp. inline ones, might&#39;ve been some loss on the full ones as well) were empty, so wasn&#39;t happy, thus undid the paste, and tried doing it again, but then somehow roam synced from browser into local nativefier app &amp; removed the notes, so now they were nowhere to be found, __and__ my clipboard got emptied, so i was screwed w/o a way to get the notes back.
+								</div>
+							</li>
+							<li id="5wLSswSvs">
+								<a href="#5wLSswSvs" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										this is why i wanted to try &amp; look for the cache directory initially - to try to recover the notes, but wasn&#39;t successful.
+								</div>
+							</li>
+							<li id="8RR4Ev3JB">
+								<a href="#8RR4Ev3JB" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										but that&#39;s less important since i still have the faulty commits &amp; documented them here now; as long as the big patch that i uploaded doesn&#39;t go thru (thus prolly slowing down my graph quite a bit), everything should be just fine.
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li id="C-qnCBOiy">
+						<a href="#C-qnCBOiy" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="eljBEhbSK">
+				<a href="#eljBEhbSK" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="S4fQgkqkN">
+		<a href="#S4fQgkqkN" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+		<li id="Tq3g9y_hu">
+			<a href="#Tq3g9y_hu" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[roam-traverse-graph]] #[[(hidden) YKJZ2s8fn]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="WceeVJnIS">
+		<a href="#WceeVJnIS" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://roamresearch.slack.com/archives/C02L8A1FRRP/p1644173093338349
+		</div>
+		<ul>
+			<li id="lC9KvPbRH">
+				<a href="#lC9KvPbRH" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						been playing w/ a proper block string -&gt; AST parser. still got bugs &amp; edges to iron out, but it&#39;s getting exciting :smile:
+			before &amp; after:
+				</div>
+				<ul>
+					<li id="GhU-uN9LK">
+						<a href="#GhU-uN9LK" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FElEdRhSwo_.png?alt=media&amp;token=668dee86-2f50-46ba-a62c-e47cd56ead63)
+						</div>
+					</li>
+					<li id="vOw6wSnUO">
+						<a href="#vOw6wSnUO" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2FoBvaI1u3U5.png?alt=media&amp;token=b47fa2e2-a452-463b-945b-ead4ad46a689)
+						</div>
+					</li>
+					<li id="p-MbSLUt2">
+						<a href="#p-MbSLUt2" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="3QIkwOa4O">
+				<a href="#3QIkwOa4O" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} hmm, now that i look at it, it&#39;d be so much nicer if the metadata in the top wasn&#39;t taking up as much space &amp; the actual content started earlier.
+				</div>
+				<ul>
+					<li id="6RS1M64ir">
+						<a href="#6RS1M64ir" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} def doable for the `word count` thingie -- can have all in one line
+						</div>
+					</li>
+					<li id="5ZXjmQRsT">
+						<a href="#5ZXjmQRsT" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} can think about the dates as well.
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="dQxxu2kr6">
+				<a href="#dQxxu2kr6" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} can also add info to parser to recognize block references, italics, bolds, highlights, since all pretty much the same as linked reference `[[(hidden) G97ohL3l8]]`
+				</div>
+			</li>
+			<li id="DeXGaywVY">
+				<a href="#DeXGaywVY" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="3KgBwX3oB">
+		<a href="#3KgBwX3oB" class="block-ref"></a>
 	
 	</li>
 </ul>
