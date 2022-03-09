@@ -203,7 +203,7 @@
 
 					<tbody>
 						<tr>
-							<td style="text-align: right; ">109</td>
+							<td style="text-align: right; ">462</td>
 							<td>(self)</td>
 						</tr>
 
@@ -218,7 +218,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							109
+							462
 							</td>
 							<td>
 							(both)
@@ -241,7 +241,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-03-09T18:31:23.488Z</span>
+				<span>2022-03-09T19:23:51.871Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -249,7 +249,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1646776800389);
-				updateAndSetIntervalToUpdateFor("ago-2", 1646850683488);
+				updateAndSetIntervalToUpdateFor("ago-2", 1646853831871);
 
 			</script>
 		</small>
@@ -428,6 +428,18 @@
 						</li>
 					</ul>
 				</li>
+				<li id="IkcvZo-TM">
+					<a href="#IkcvZo-TM" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) IkcvZo-TM
+					</div>
+				</li>
+				<li id="h-fQOpdOR">
+					<a href="#h-fQOpdOR" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) h-fQOpdOR
+					</div>
+				</li>
 				<li id="LFKMGm80y">
 					<a href="#LFKMGm80y" class="block-ref"></a>
 					<div style="max-width: 65ch;">
@@ -437,7 +449,115 @@
 				<li id="ZG-KtyWxD">
 					<a href="#ZG-KtyWxD" class="block-ref"></a>
 					<div style="max-width: 65ch;">
-							(hidden) ZG-KtyWxD
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li id="02gHhY0VK">
+							<a href="#02gHhY0VK" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} the [post-rewrite hook](((tZEqsgDAB))) + the new `reducePath` where we go from `{ &quot;a&quot;: &quot;b&quot;, &quot;b&quot;: &quot;c&quot;, &quot;c&quot;: &quot;d&quot; }` into `{ &quot;a&quot;: &quot;d&quot; }` seems to make a lot of sense!
+							</div>
+							<ul>
+								<li id="K2HejTwsP">
+									<a href="#K2HejTwsP" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} interesting new thing i noticed while playing w/ the test/.tmp repo experimenting with this -- if you break, and then create additional commits, and if the commit you break on is where a partial branch points, we gotta handle extra logic to remap the branch to a new proper location
+									</div>
+									<ul>
+										<li id="BA0jm8Brl">
+											<a href="#BA0jm8Brl" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													there could be 2 scenarios (where commits get rewritten and thus the `post-rewrite` hook gets called, thus we append to our own rewritten-list):
+											</div>
+											<ul>
+												<li id="0AGfJCjMM">
+													<a href="#0AGfJCjMM" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															a) you&#39;re doing it w/ git-stacked-rebase. 
+													</div>
+													<ul>
+														<li id="rpZb0UfcZ">
+															<a href="#rpZb0UfcZ" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	here, you could be intentional about where you&#39;d want the commits to end up -- you could place the `break` after a commit, but before the `branch-end`, or you could place the `break` after the commit and `branch-end`.
+															</div>
+															<ul>
+																<li id="gEApLOVpk">
+																	<a href="#gEApLOVpk" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			but i don&#39;t know if this intentional separation would be obvious.
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li id="C6ubeyifq">
+													<a href="#C6ubeyifq" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															b) you&#39;re doing it with regular git-rebase.
+													</div>
+													<ul>
+														<li id="qh5mOJSoJ">
+															<a href="#qh5mOJSoJ" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	here, you don&#39;t have the `branch-end`s, so you don&#39;t even have the explicit option.
+															</div>
+															<ul>
+																<li id="k5674fiYT">
+																	<a href="#k5674fiYT" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			so the default would make sense that if you break after a commit where a branch points to, git throws you there, and you&#39;re still in that branch, thus the new commits should end up inside that branch, i.e. the partial branch / boundary should be moved to the latest commit you added, or rather, for easier implementation (because we don&#39;t know if you create commits / how many, etc) -- the branch boundary would end up before the next commit that existed after the one you breaked on! i.e. A-&gt;B-&gt;C-&gt;D-&gt;E, partial branch points at C, you break at C, create new commits C1, C2, C3. the next commit of C was D, so now you move the partial branch to the latest commit before D, i.e. C3.
+																	</div>
+																	<ul>
+																		<li id="bXXmnhKQo">
+																			<a href="#bXXmnhKQo" class="block-ref"></a>
+																			<div style="max-width: 65ch;">
+																					not sure if this improved strategy could backfire / are there any cases where it&#39;d break. need to think more about it. regardless, if the user was always using git-stacked-rebase&#39;s `--continue`, we could handle it, but we can never rely on this.
+																			</div>
+																		</li>
+																	</ul>
+																</li>
+																<li id="4qf79ntnp">
+																	<a href="#4qf79ntnp" class="block-ref"></a>
+																</li>
+															</ul>
+														</li>
+														<li id="6hGLYyzxK">
+															<a href="#6hGLYyzxK" class="block-ref"></a>
+														</li>
+													</ul>
+												</li>
+												<li id="rqDWvH3Kz">
+													<a href="#rqDWvH3Kz" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="twXdR9qT1">
+											<a href="#twXdR9qT1" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="dCMWyyYn7">
+									<a href="#dCMWyyYn7" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="FcZIf656q">
+							<a href="#FcZIf656q" class="block-ref"></a>
+						</li>
+					</ul>
+				</li>
+				<li id="qBn_NT_57">
+					<a href="#qBn_NT_57" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) qBn_NT_57
+					</div>
+				</li>
+				<li id="hZvjbA4JS">
+					<a href="#hZvjbA4JS" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) hZvjbA4JS
 					</div>
 				</li>
 				<li id="o8aHl_7hz">
