@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>(hidden) WBl6TSRcS | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			(hidden) WBl6TSRcS
+		</h1>
+
+		<small>
+			<div>
+
+				<table>
+					<caption style="text-align: left; ">
+						word count:
+					</caption>
+
+					<tbody>
+						<tr>
+							<td style="text-align: right; ">0</td>
+							<td>(self)</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							322
+							</td>
+							<td>
+							(linked mentions)
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: right; ">
+							322
+							</td>
+							<td>
+							(both)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				last edit (excluding linked mentions) on: <!-- TODO linked mentions too -->
+				<br/>
+				<span>2022-03-28T22:50:34.184Z</span>
+				--
+				<span id="ago-1"></span>
+
+			</div>
+
+			<div style="margin-top: 0.5rem; ">
+				re-generated & exported on:
+				<br/>
+				<span>2022-03-29T07:28:23.827Z</span>
+				--
+				<span id="ago-2"></span>
+
+			</div>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-1", 1648507834184);
+				updateAndSetIntervalToUpdateFor("ago-2", 1648538903827);
+
+			</script>
+		</small>
+
+		<main>
+			<ul>
+
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.WBl6TSRcS";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(15
+				in
+				11
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			May 26th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="i-zMoUQiM">
+			<a href="#i-zMoUQiM" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) i-zMoUQiM #[[(hidden) 0RTYzSSRE]] #[[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			September 23rd, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="-bpnm-VBA">
+			<a href="#-bpnm-VBA" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) -bpnm-VBA #[[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 29th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="k8BO81Kfq">
+			<a href="#k8BO81Kfq" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/pipedrive/CodeshiftCommunity/blob/d8046f419a5a4e653a4b8c17606c589777b884fc/packages/reusable-transforms/src/replace-jsx-attribute/replace-jsx-attribute.config.ts#[[(hidden) WBl6TSRcS]]115-L116
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="jB-O0ghRv">
+		<a href="#jB-O0ghRv" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				```typescript
+	export type FromToValueMap = {
+	    [key in ValidJsxPropertyValueAsKey]?:
+	        | ValidJsxPropertyValueAsValue
+	        | FromToValueMapModifierFn
+	        /**
+	         * otherwise, provide an array of new values.
+	         *
+	         * if array contains exactly 1 element:
+	         *   will replace the value automatically;
+	         *
+	         * else, if array contains &gt;1 element:
+	         *   will replace the value with the 1st one from the array, and
+	         *   will add a comment, prefixed with &quot;TODO CODEMOD MANUAL INTERVENTION&quot;, to make the user verify themselves.
+	         */
+	        | ArrayWithAtLeastOneElement&lt;ValidJsxPropertyValueAsValue&gt;;
+	};```
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 5th, 2021 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="5SYschHTB">
+			<a href="#5SYschHTB" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				`rebase_path_squash_msg()` in [L94](https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#[[(hidden) WBl6TSRcS]]94) of `sequencer.c`    💥 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="AGOmbMD-X">
+		<a href="#AGOmbMD-X" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				there we have explanations for the various messages!
+		</div>
+	</li>
+	<li id="Q8XcuFMhT">
+		<a href="#Q8XcuFMhT" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#[[(hidden) WBl6TSRcS]]53-L170
+		</div>
+	</li>
+	<li id="aOdaKkJWL">
+		<a href="#aOdaKkJWL" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+		<li id="Q8XcuFMhT">
+			<a href="#Q8XcuFMhT" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/git/git/blob/abe6bb3905392d5eb6b01fa6e54d7e784e0522aa/sequencer.c#[[(hidden) WBl6TSRcS]]53-L170
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			December 17th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="U7gfrMFbm">
+			<a href="#U7gfrMFbm" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/pipedrive/CodeshiftCommunity/blob/e8cc027e4b0b02d7b650f3fe0d3e8329a8321331/community/%40pipedrive__convention-ui-react/src/5.0.0/wip-transforms/rename-style-tokens/rename-style-tokens.spec.ts#[[(hidden) WBl6TSRcS]]17
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="0eJeC-ncC">
+		<a href="#0eJeC-ncC" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} update to proper branch once merged
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 4th, 2022 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="29awgNznA">
+			<a href="#29awgNznA" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/aidam38/roamsr/blob/b99fae9243d1e00db4571b5eafb8791d85592d5f/src/core/state.js#[[(hidden) WBl6TSRcS]]17
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li id="Y1tPtzfcV">
+			<a href="#Y1tPtzfcV" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/aidam38/roamsr/blob/b99fae9243d1e00db4571b5eafb8791d85592d5f/src/ui/styles.js#[[(hidden) WBl6TSRcS]]69
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 6th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="kTAXqLYGa">
+			<a href="#kTAXqLYGa" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				https://github.com/codeshiftcommunity/codeshiftcommunity/blob/main/packages/cli/bin/codeshift-cli.js#[[(hidden) WBl6TSRcS]]16-L22
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="GbhAK4kDg">
+		<a href="#GbhAK4kDg" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				[[roam-traverse-graph]] [[export-html-pages]]
+		</div>
+		<ul>
+			<li id="YspAhr6KI">
+				<a href="#YspAhr6KI" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} inlining [[github]] permalinks, much like people do in [[medium]] with [[github]]&#39;s gists?
+				</div>
+			</li>
+			<li id="RkKLVMpAH">
+				<a href="#RkKLVMpAH" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} another #[[(hidden) jOMmlCP4S]] from the [[re]] attribute above - in the html, consider having previews of pages on hover.
+				</div>
+				<ul>
+					<li id="kc6_v9Qqg">
+						<a href="#kc6_v9Qqg" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								must be done right though - i think [[wikipedia]] has a not bad UX for it
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="6riFAHwfx">
+				<a href="#6riFAHwfx" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} yet another #[[(hidden) jOMmlCP4S]] - directory-like history when exploring / going into pages? similar to the [[macos]] 
+				</div>
+			</li>
+			<li id="38pnHHOby">
+				<a href="#38pnHHOby" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="LZys0IjA6">
+		<a href="#LZys0IjA6" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			January 11th, 2022 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="hdLz4vyzi">
+			<a href="#hdLz4vyzi" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				documented: https://github.com/pipedrive/CodeshiftCommunity/blob/d88722f1377745310ead0fb48e03f958110903eb/community/@pipedrive__convention-ui-react/README.md#[[(hidden) WBl6TSRcS]]137
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+		<li id="FD-HbTOBp">
+			<a href="#FD-HbTOBp" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) AV7J4zqkD:: https://github.com/pipedrive/archive/blob/995f90e0bf2d86aa1b7c3a2b2d02df5cfad71d37/fe-onboarding-presentation/src/css/main.postcss#[[(hidden) WBl6TSRcS]]1-L2
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			March 2nd, 2022 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="CXgY7hzE0">
+			<a href="#CXgY7hzE0" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) CXgY7hzE0 #[[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="sc-3BlETG">
+		<a href="#sc-3BlETG" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) sc-3BlETG
+		</div>
+		<ul>
+			<li id="VP02nSiXZ">
+				<a href="#VP02nSiXZ" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} (hidden) VP02nSiXZ 
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="ioR1PW7n_">
+		<a href="#ioR1PW7n_" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) ioR1PW7n_
+		</div>
+	</li>
+</ul>
+		</li>
+		<li id="Qo4d8JyoI">
+			<a href="#Qo4d8JyoI" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) Qo4d8JyoI #[[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			March 22nd, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="EJgP9b8fN">
+			<a href="#EJgP9b8fN" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) EJgP9b8fN #[[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			March 28th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="Eb-250Gix">
+			<a href="#Eb-250Gix" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) Eb-250Gix [[(hidden) U0PKz8mFN]] [[(hidden) tYWs3ih5V]] [[(hidden) WBl6TSRcS]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="j7QGD29Vf">
+		<a href="#j7QGD29Vf" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) j7QGD29Vf
+		</div>
+		<ul>
+			<li id="_1UjGRt-c">
+				<a href="#_1UjGRt-c" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) _1UjGRt-c [[(hidden) Br7t81Wq7]] [[(hidden) GX5oNa4Ds]] [[(hidden) U0PKz8mFN]] [[(hidden) b7ooAI-Uf]]
+				</div>
+				<ul>
+					<li id="VHUfMR3k3">
+						<a href="#VHUfMR3k3" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								(hidden) VHUfMR3k3
+						</div>
+					</li>
+					<li id="QcqDFU-GT">
+						<a href="#QcqDFU-GT" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								(hidden) QcqDFU-GT
+						</div>
+						<ul>
+							<li id="sZSes8aCx">
+								<a href="#sZSes8aCx" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										(hidden) sZSes8aCx
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li id="cup70erfE">
+				<a href="#cup70erfE" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) cup70erfE
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="-xadFqQhE">
+		<a href="#-xadFqQhE" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) -xadFqQhE
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/(hidden) WBl6TSRcS.html">source</a>.
+
+				<!--
+					TODO ENABLE when we update the pages lazily,
+					i.e. the history isn't spammed by irrelevant updates every 1h.
+				-->
+				<!--
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/(hidden) WBl6TSRcS.html">history</a>.
+				-->
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>
