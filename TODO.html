@@ -209,7 +209,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							78219
+							78452
 							</td>
 							<td>
 							(linked mentions)
@@ -218,7 +218,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							78219
+							78452
 							</td>
 							<td>
 							(both)
@@ -241,7 +241,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-03-30T21:27:52.759Z</span>
+				<span>2022-03-31T05:28:55.588Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -249,7 +249,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1622056114027);
-				updateAndSetIntervalToUpdateFor("ago-2", 1648675672759);
+				updateAndSetIntervalToUpdateFor("ago-2", 1648704535588);
 
 			</script>
 		</small>
@@ -302,7 +302,7 @@
 
 			<h2>
 				Linked Mentions 
-				(2133
+				(2136
 				in
 				259
 				pages)
@@ -82123,14 +82123,14 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 		<!--
 		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
 		-->
-			March 30th, 2022 (17)
+			March 30th, 2022 (20)
 		<!--
 		</span>
 		-->
 	</h3>
 	<ul>
-				<li id="2hFmi77cO">
-			<a href="#2hFmi77cO" class="block-ref"></a>
+				<li id="K_s9hvGB9">
+			<a href="#K_s9hvGB9" class="block-ref"></a>
 
 			<!--
 				TODO <h4> for semantics
@@ -82142,7 +82142,7 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} lol, disallow rebase if have unstaged changes
+				{{[[TODO]]}} need to cleanup the output, but for now it&#39;s good
 			</div>
 			<!--
 			</span>
@@ -82151,8 +82151,8 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 
 </ul>
 		</li>
-		<li id="UFYnQGPzL">
-			<a href="#UFYnQGPzL" class="block-ref"></a>
+		<li id="GX1Z_XTA_">
+			<a href="#GX1Z_XTA_" class="block-ref"></a>
 
 			<!--
 				TODO <h4> for semantics
@@ -82164,7 +82164,7 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} fix &quot;CursorMoved[I]&quot; when creating a newline at the end of file
+				{{[[TODO]]}} might need to start encoding metadata in branches / commits, if we want to allow other people recover from someone else changing the latest branch (disaster in most cases; should only be used by yourself if you&#39;re switching laptops, otherwise very bad idea, we&#39;d cover only very simple cases, but regardless)
 			</div>
 			<!--
 			</span>
@@ -82173,8 +82173,8 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 
 </ul>
 		</li>
-		<li id="PKCSbl82R">
-			<a href="#PKCSbl82R" class="block-ref"></a>
+		<li id="I2UnKmQGF">
+			<a href="#I2UnKmQGF" class="block-ref"></a>
 
 			<!--
 				TODO <h4> for semantics
@@ -82186,24 +82186,138 @@ ofc [[balance between launching fast &amp; launching a well-enough product that 
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				{{[[TODO]]}} implement the &quot;creating new latest branch by adding `branch-end-new` at the very end, and moving the `branch-end-latest` somewhere earlier before it&quot;
+				{{[[TODO]]}} parallel `--push` (thus w/o needing to checkout branches prolly)
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-	<li id="HMX9eZcM1">
-		<a href="#HMX9eZcM1" class="block-ref"></a>
+
+</ul>
+		</li>
+		<li id="-xmmLW8jF">
+			<a href="#-xmmLW8jF" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} oh no. `--autosquash` only works if we use native git rebase to generate the initial todo. that&#39;s fine. (also some improvements were needed to pass in the correct command when re-generating our own git-rebase-todo file when adding the branch commands, but was easy enough).
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="Z9u7iyjJH">
+		<a href="#Z9u7iyjJH" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[DONE]]}} maybe `branch-end` would be enough? tho way more ambiguous for us, likely not, at least for now
+				{{[[TODO]]}} what&#39;s not fine is that you&#39;re likely to have the latest commit to be autosquash-able, and in that case, because we don&#39;t handle the `--autosquash` ourselves, your latest branch also goes back into wherever you &quot;fixed&quot;-up into... rip newer commits
+		</div>
+		<ul>
+			<li id="W3uoGjQEg">
+				<a href="#W3uoGjQEg" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						oh no will we need to re-implement literally everything from git&#39;s native rebase? i really don&#39;t want to lmao
+				</div>
+				<ul>
+					<li id="nEP7M6Mlt">
+						<a href="#nEP7M6Mlt" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								how many things do i not know about btw?
+						</div>
+					</li>
+					<li id="k-o0l3LSY">
+						<a href="#k-o0l3LSY" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								you know how fragile would it be btw?
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="maaP9qOi-">
+				<a href="#maaP9qOi-" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="-sMavHg96">
+		<a href="#-sMavHg96" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} forcibly disabled with `--no-autosquash` for now. i think we&#39;ll be able to fix this (added comment how), but currently not highest prio
 		</div>
 	</li>
-	<li id="UFYnQGPzL">
-		<a href="#UFYnQGPzL" class="block-ref"></a>
+</ul>
+		</li>
+		<li id="Z9u7iyjJH">
+			<a href="#Z9u7iyjJH" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} what&#39;s not fine is that you&#39;re likely to have the latest commit to be autosquash-able, and in that case, because we don&#39;t handle the `--autosquash` ourselves, your latest branch also goes back into wherever you &quot;fixed&quot;-up into... rip newer commits
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="W3uoGjQEg">
+		<a href="#W3uoGjQEg" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} fix &quot;CursorMoved[I]&quot; when creating a newline at the end of file
+				oh no will we need to re-implement literally everything from git&#39;s native rebase? i really don&#39;t want to lmao
 		</div>
+		<ul>
+			<li id="nEP7M6Mlt">
+				<a href="#nEP7M6Mlt" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						how many things do i not know about btw?
+				</div>
+			</li>
+			<li id="k-o0l3LSY">
+				<a href="#k-o0l3LSY" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						you know how fragile would it be btw?
+				</div>
+			</li>
+		</ul>
 	</li>
+	<li id="maaP9qOi-">
+		<a href="#maaP9qOi-" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+		<li id="RZ6O1trtJ">
+			<a href="#RZ6O1trtJ" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} reduce the excessive logging in the native rebase implementation
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
 </ul>
 		</li>
 		<li id="B7CUPf-tf">

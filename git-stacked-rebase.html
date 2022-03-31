@@ -209,7 +209,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							13318
+							13727
 							</td>
 							<td>
 							(linked mentions)
@@ -218,7 +218,7 @@
 
 						<tr>
 							<td style="text-align: right; ">
-							13327
+							13736
 							</td>
 							<td>
 							(both)
@@ -241,7 +241,7 @@
 			<div style="margin-top: 0.5rem; ">
 				re-generated & exported on:
 				<br/>
-				<span>2022-03-30T21:27:52.422Z</span>
+				<span>2022-03-31T05:28:55.250Z</span>
 				--
 				<span id="ago-2"></span>
 
@@ -249,7 +249,7 @@
 
 			<script type="text/javascript">
 				updateAndSetIntervalToUpdateFor("ago-1", 1638574241825);
-				updateAndSetIntervalToUpdateFor("ago-2", 1648675672422);
+				updateAndSetIntervalToUpdateFor("ago-2", 1648704535250);
 
 			</script>
 		</small>
@@ -8485,7 +8485,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 	<li id="PKCSbl82R">
 		<a href="#PKCSbl82R" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} implement the &quot;creating new latest branch by adding `branch-end-new` at the very end, and moving the `branch-end-latest` somewhere earlier before it&quot;
+				{{[[DONE]]}} implement the &quot;creating new latest branch by adding `branch-end-new` at the very end, and moving the `branch-end-latest` somewhere earlier before it&quot;
 		</div>
 		<ul>
 			<li id="HMX9eZcM1">
@@ -8497,23 +8497,188 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 			<li id="UFYnQGPzL">
 				<a href="#UFYnQGPzL" class="block-ref"></a>
 				<div style="max-width: 65ch;">
-						{{[[TODO]]}} fix &quot;CursorMoved[I]&quot; when creating a newline at the end of file
+						{{[[DONE]]}} fix &quot;CursorMoved[I]&quot; when creating a newline at the end of file
 				</div>
+				<ul>
+					<li id="P4qbjZBlM">
+						<a href="#P4qbjZBlM" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								turns out was just neovim &amp; not having installed the npm package globally fault (partly because of nvm)
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="bqzAdCtBz">
+				<a href="#bqzAdCtBz" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} fix the &quot;multiple branches on the same commit&quot;
+				</div>
+				<ul>
+					<li id="DzgBDyprH">
+						<a href="#DzgBDyprH" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} this could fix the duplicate remote branch showing up, if you have new commits in latest branch but haven&#39;t pushed yet
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="GX1Z_XTA_">
+				<a href="#GX1Z_XTA_" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} might need to start encoding metadata in branches / commits, if we want to allow other people recover from someone else changing the latest branch (disaster in most cases; should only be used by yourself if you&#39;re switching laptops, otherwise very bad idea, we&#39;d cover only very simple cases, but regardless)
+				</div>
+			</li>
+			<li id="X7K98U1ZF">
+				<a href="#X7K98U1ZF" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="uODuYAudo">
+		<a href="#uODuYAudo" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} adaptive branch boundary parser behavior for `--exec`
+		</div>
+	</li>
+	<li id="2hFmi77cO">
+		<a href="#2hFmi77cO" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} lol, disallow rebase if have unstaged changes
+		</div>
+		<ul>
+			<li id="LcOV-nQRY">
+				<a href="#LcOV-nQRY" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						oh, actually cannot remove the `2&gt;&amp;1` piping of stderr, because we intentionally error out of the editor to get the git-rebase-todo file generated, but to avoid actually proceeding.
+				</div>
+				<ul>
+					<li id="DDP_C85e6">
+						<a href="#DDP_C85e6" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								and i don&#39;t want to use the `break` hack here, because the rebase is not actually in progress yet - we only want to parse the commit boundaries.
+						</div>
+						<ul>
+							<li id="MS88kjjIO">
+								<a href="#MS88kjjIO" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										this util can be used anywhere so further args against keeping in progress instead of cleaning up.
+								</div>
+								<ul>
+									<li id="n3yOOBODP">
+										<a href="#n3yOOBODP" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												{{[[DONE]]}} need explicit handling ourselves to disallow w/ unstaged changes
+										</div>
+										<ul>
+											<li id="_BIfRku1B">
+												<a href="#_BIfRku1B" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														{{[[DONE]]}} oooor, could write into a file in the script - right before exiting - to confirm success. and then, when we catch the error, we can check if successful or not, and then control both the stderr &amp; the behavior
+												</div>
+												<ul>
+													<li id="K_s9hvGB9">
+														<a href="#K_s9hvGB9" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																{{[[TODO]]}} need to cleanup the output, but for now it&#39;s good
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li id="EHzioyYR4">
+												<a href="#EHzioyYR4" class="block-ref"></a>
+											</li>
+										</ul>
+									</li>
+									<li id="9-zrieYKd">
+										<a href="#9-zrieYKd" class="block-ref"></a>
+									</li>
+								</ul>
+							</li>
+							<li id="5qAhvcHy6">
+								<a href="#5qAhvcHy6" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="-GwKt2-er">
+						<a href="#-GwKt2-er" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="NLEB3v18c">
+				<a href="#NLEB3v18c" class="block-ref"></a>
 			</li>
 		</ul>
 	</li>
 	<li id="RZ6O1trtJ">
 		<a href="#RZ6O1trtJ" class="block-ref"></a>
-	
-	</li>
-	<li id="2hFmi77cO">
-		<a href="#2hFmi77cO" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} lol, disallow rebase if have unstaged changes
+				{{[[TODO]]}} reduce the excessive logging in the native rebase implementation
 		</div>
 	</li>
-	<li id="7bBp9Pnb1">
-		<a href="#7bBp9Pnb1" class="block-ref"></a>
+	<li id="j3g8Fv5eT">
+		<a href="#j3g8Fv5eT" class="block-ref"></a>
+	
+	</li>
+	<li id="-xmmLW8jF">
+		<a href="#-xmmLW8jF" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} oh no. `--autosquash` only works if we use native git rebase to generate the initial todo. that&#39;s fine. (also some improvements were needed to pass in the correct command when re-generating our own git-rebase-todo file when adding the branch commands, but was easy enough).
+		</div>
+		<ul>
+			<li id="Z9u7iyjJH">
+				<a href="#Z9u7iyjJH" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[TODO]]}} what&#39;s not fine is that you&#39;re likely to have the latest commit to be autosquash-able, and in that case, because we don&#39;t handle the `--autosquash` ourselves, your latest branch also goes back into wherever you &quot;fixed&quot;-up into... rip newer commits
+				</div>
+				<ul>
+					<li id="W3uoGjQEg">
+						<a href="#W3uoGjQEg" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								oh no will we need to re-implement literally everything from git&#39;s native rebase? i really don&#39;t want to lmao
+						</div>
+						<ul>
+							<li id="nEP7M6Mlt">
+								<a href="#nEP7M6Mlt" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										how many things do i not know about btw?
+								</div>
+							</li>
+							<li id="k-o0l3LSY">
+								<a href="#k-o0l3LSY" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										you know how fragile would it be btw?
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li id="maaP9qOi-">
+						<a href="#maaP9qOi-" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="-sMavHg96">
+				<a href="#-sMavHg96" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} forcibly disabled with `--no-autosquash` for now. i think we&#39;ll be able to fix this (added comment how), but currently not highest prio
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="N4HN1_6PB">
+		<a href="#N4HN1_6PB" class="block-ref"></a>
+	
+	</li>
+	<li id="I2UnKmQGF">
+		<a href="#I2UnKmQGF" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} parallel `--push` (thus w/o needing to checkout branches prolly)
+		</div>
+	</li>
+	<li id="pOrTcCvnl">
+		<a href="#pOrTcCvnl" class="block-ref"></a>
+	
+	</li>
+	<li id="zX3JQkwg_">
+		<a href="#zX3JQkwg_" class="block-ref"></a>
 	
 	</li>
 </ul>
