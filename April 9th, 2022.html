@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>April 9th, 2022 | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			April 9th, 2022
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>985</span>
+							+ <span>0</span>
+							= <span>985</span>
+						</td>
+					</tr>
+					<tr title="2022-04-10T23:38:10.758Z (only self: 2022-04-08T21:00:02.067Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1649633890758); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li id="GPYVcx7Ib">
+					<a href="#GPYVcx7Ib" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							i saw this tweet from [[(hidden) 4ahyMkecn]] on it being easy to refactor a codebase that&#39;s 100% in [[typescript]]
+					</div>
+					<ul>
+						<li id="abnEC_eIT">
+							<a href="#abnEC_eIT" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									https://twitter.com/AdamRackis/status/1512628657260482563?t=nGojuMgfrU9LIADtM44A9w&amp;s=19
+							</div>
+						</li>
+						<li id="Uf4hHSLCn">
+							<a href="#Uf4hHSLCn" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									and then this got me thinking:
+							</div>
+							<ul>
+								<li id="ZeIE62G92">
+									<a href="#ZeIE62G92" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											https://twitter.com/even_uniquer/status/1512653280505118722?t=6YdqJN-nwnviRXO20x0IqQ&amp;s=19
+									</div>
+									<ul>
+										<li id="zzHnNyk9e">
+											<a href="#zzHnNyk9e" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													&gt; JavaScript peeps rejoice over the smallest things developers in languages like C#[[(hidden) G97ohL3l8]] take for granted and don&#[[(hidden) G97ohL3l8]]39;t even mention as a thing.
+											</div>
+											<ul>
+												<li id="u8YsqDcxs">
+													<a href="#u8YsqDcxs" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} (hidden) u8YsqDcxs #[[(hidden) 7c2C8PgIV]] #[[(hidden) -VnoIOF8r]]
+													</div>
+													<ul>
+														<li id="d98yuEzHP">
+															<a href="#d98yuEzHP" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	(hidden) d98yuEzHP [[(hidden) bKgs_zIPQ]]
+															</div>
+														</li>
+														<li id="FcmjQ13A8">
+															<a href="#FcmjQ13A8" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	(hidden) FcmjQ13A8
+															</div>
+														</li>
+														<li id="3GsaDcQxP">
+															<a href="#3GsaDcQxP" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	(hidden) 3GsaDcQxP
+															</div>
+															<ul>
+																<li id="2Ibz00bUP">
+																	<a href="#2Ibz00bUP" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			(hidden) 2Ibz00bUP
+																	</div>
+																</li>
+																<li id="WOgdZTOaF">
+																	<a href="#WOgdZTOaF" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			(hidden) WOgdZTOaF
+																	</div>
+																</li>
+																<li id="QKnFTV5eD">
+																	<a href="#QKnFTV5eD" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			(hidden) QKnFTV5eD [[(hidden) lf_Nd8Mic]]
+																	</div>
+																</li>
+																<li id="dD-b4VImI">
+																	<a href="#dD-b4VImI" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			(hidden) dD-b4VImI [[(hidden) oo0Iuzfm7]] #[[(hidden) S-ygYfi0j]] #react #[[(hidden) aQw_Q_pev]]
+																	</div>
+																</li>
+																<li id="APVEvbhMb">
+																	<a href="#APVEvbhMb" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			(hidden) APVEvbhMb
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li id="tTP6EVJJc">
+															<a href="#tTP6EVJJc" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	(hidden) tTP6EVJJc
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li id="fnQvN9PhD">
+													<a href="#fnQvN9PhD" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="HhAERyL-2">
+											<a href="#HhAERyL-2" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="53F05a67r">
+									<a href="#53F05a67r" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="F1dYnIdeK">
+							<a href="#F1dYnIdeK" class="block-ref"></a>
+						</li>
+					</ul>
+				</li>
+				<li id="6qHviMVCT">
+					<a href="#6qHviMVCT" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) 6qHviMVCT
+					</div>
+				</li>
+				<li id="SPG2vwWS0">
+					<a href="#SPG2vwWS0" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							{{[[TODO]]}} (hidden) SPG2vwWS0 #[[(hidden) _sW66DmMa]]
+					</div>
+					<ul>
+						<li id="6GKUI7SzH">
+							<a href="#6GKUI7SzH" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									(hidden) 6GKUI7SzH
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li id="JmXBiNjLD">
+					<a href="#JmXBiNjLD" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) JmXBiNjLD
+					</div>
+				</li>
+				<li id="h2i_HkfXd">
+					<a href="#h2i_HkfXd" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) h2i_HkfXd
+					</div>
+				</li>
+				<li id="6Y1wgcK7z">
+					<a href="#6Y1wgcK7z" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							[[git]] [[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li id="ktkO-jJNK">
+							<a href="#ktkO-jJNK" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} thinking about all the cool things we can do. thinking about`--refactor`. need a good blame tool
+							</div>
+							<ul>
+								<li id="ewGea8YEu">
+									<a href="#ewGea8YEu" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											searching for &quot;git advanced blame&quot;
+									</div>
+									<ul>
+										<li id="6rD27bRnI">
+											<a href="#6rD27bRnI" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													https://github.com/tipishev/git_workshop
+											</div>
+											<ul>
+												<li id="xVRDa36pl">
+													<a href="#xVRDa36pl" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															nb, already knew a lot of stuff, but some things new
+													</div>
+												</li>
+												<li id="7w9Mhbt5n">
+													<a href="#7w9Mhbt5n" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															https://twitter.com/wycats/status/153970008983216128
+													</div>
+													<ul>
+														<li id="elguKl0yY">
+															<a href="#elguKl0yY" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} #[[(hidden) tbhBnR1J6]] `git blame -L`
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li id="cb11FxJbd">
+													<a href="#cb11FxJbd" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															https://jfire.io/blog/2012/03/07/code-archaeology-with-git/
+													</div>
+													<ul>
+														<li id="kKHVB6Jmz">
+															<a href="#kKHVB6Jmz" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	{{[[TODO]]}} #[[(hidden) tbhBnR1J6]] `git gui blame`
+															</div>
+														</li>
+													</ul>
+												</li>
+												<li id="JyRoQT9Vo">
+													<a href="#JyRoQT9Vo" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="8uOp4u7aD">
+											<a href="#8uOp4u7aD" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="ERrfoRUJD">
+									<a href="#ERrfoRUJD" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="Nl4k0kpqg">
+							<a href="#Nl4k0kpqg" class="block-ref"></a>
+						</li>
+					</ul>
+				</li>
+				<li id="1TE7_EnCV">
+					<a href="#1TE7_EnCV" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) 1TE7_EnCV
+					</div>
+				</li>
+				<li id="gD_01RWNy">
+					<a href="#gD_01RWNy" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) gD_01RWNy
+					</div>
+				</li>
+				<li id="d1qipesGB">
+					<a href="#d1qipesGB" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							[[git-stacked-rebase]]
+					</div>
+					<ul>
+						<li id="cOxwL_xMO">
+							<a href="#cOxwL_xMO" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} just like regular rebase keeps track of the commits yet to do, we need to do the same for `branchSequencer` (branches). e.g.
+							</div>
+							<ul>
+								<li id="5itpYFQOS">
+									<a href="#5itpYFQOS" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											a) user aborts mid-push, or
+									</div>
+								</li>
+								<li id="1BGVeUEvs">
+									<a href="#1BGVeUEvs" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											b) push fails and now user is stuck on a branch
+									</div>
+								</li>
+								<li id="bCnno1Okg">
+									<a href="#bCnno1Okg" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											c) etc
+									</div>
+								</li>
+								<li id="CkmGGdnnP">
+									<a href="#CkmGGdnnP" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											in all cases, we need to be able to `--continue`.
+									</div>
+									<ul>
+										<li id="BB6LTFqC5">
+											<a href="#BB6LTFqC5" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													{{[[TODO]]}} though, gotta think of how to integrate the `--continue` so that it works for branches when needed, but otherwise would forward to regular rebase&#39;s --continue (just like now)
+											</div>
+											<ul>
+												<li id="ycJ4gSc4H">
+													<a href="#ycJ4gSc4H" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															probably doable? if we have the list of &quot;branches&quot; yet to be finished, it means we&#39;re in progress of a branchSequencer, thus continue it&#39;s action onto the next branch; otherwise - regular rebase (operate on commits)
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li id="qnIqu9b-d">
+											<a href="#qnIqu9b-d" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="9flKHn898">
+									<a href="#9flKHn898" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="84yW0LrfX">
+							<a href="#84yW0LrfX" class="block-ref"></a>
+						</li>
+						<li id="qG_HSSXw-">
+							<a href="#qG_HSSXw-" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									[[nvim-git-rebase-todo]]
+							</div>
+							<ul>
+								<li id="C9eOJWYyl">
+									<a href="#C9eOJWYyl" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} being able to have a shortcut to toggle the actual patch output would be good
+									</div>
+								</li>
+								<li id="xF2vyNeOz">
+									<a href="#xF2vyNeOz" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} once hovering the &quot;branch-end&quot;, instead of showing the branch&#39;s commit&#39;s stats, we could instead show the aggregate diff of the whole branch&#39;s commits (diff parent)
+									</div>
+								</li>
+								<li id="AqNKYjGdW">
+									<a href="#AqNKYjGdW" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="COdZfGaOq">
+							<a href="#COdZfGaOq" class="block-ref"></a>
+						</li>
+						<li id="ntcaxeyTi">
+							<a href="#ntcaxeyTi" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} oooh, `drop` doesn&#39;t work, but just removing the commit&#39;s line does. #[[(hidden) iZX-mgdkM]]
+							</div>
+						</li>
+						<li id="NfDqlXenx">
+							<a href="#NfDqlXenx" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} hmm. double `fixup` one right after another doesn&#39;t work, but going 1 by 1 does (2 separate rebases). need to investigate. #[[(hidden) iZX-mgdkM]]
+							</div>
+						</li>
+						<li id="hCrELjY_l">
+							<a href="#hCrELjY_l" class="block-ref"></a>
+						</li>
+						<li id="80Rd_CieB">
+							<a href="#80Rd_CieB" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} &quot;reword sugar&quot; would be nice
+							</div>
+						</li>
+						<li id="4LBfd47QW">
+							<a href="#4LBfd47QW" class="block-ref"></a>
+						</li>
+						<li id="eSicpEdmg">
+							<a href="#eSicpEdmg" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} changing places of 2 branches doesn&#39;t seem to work - they stay in the same location. need to investigate. #[[(hidden) iZX-mgdkM]]
+							</div>
+						</li>
+						<li id="d4J85HR_W">
+							<a href="#d4J85HR_W" class="block-ref"></a>
+						</li>
+						<li id="OGTs7viOd">
+							<a href="#OGTs7viOd" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} when moving commits outside of the `branch-end-initial`, we could have 2 separate use cases:
+							</div>
+							<ul>
+								<li id="L4jpER4Ec">
+									<a href="#L4jpER4Ec" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											1. if you moved a `branch-end` as well as some commits, then we &quot;unstack&quot; this branch - it becomes an independent one -- still based on `branch-end-initial`, but further branches in the stack are no longer based on it.
+									</div>
+									<ul>
+										<li id="fjoFpk5_o">
+											<a href="#fjoFpk5_o" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													will prolly be tricky to pull off, since need 2 rebases - 1. to extract the branch itself, 2. to update the partial branches
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li id="iTm6ZBA8I">
+									<a href="#iTm6ZBA8I" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											2. if you moved some commits, but __without__ a `branch-end` (and thus just deleted it, or kept it with fewer commits), then the commits become part of the `branch-end-initial` branch
+									</div>
+									<ul>
+										<li id="OhuA-0x46">
+											<a href="#OhuA-0x46" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													2 rebases needed again, but at least here it should be easier, because no real extraction happens - we just move the commits earlier, but they&#39;re still part of the stack (rather, the stack is based on the same commits as before), so not as many (none?) conflicts to resolve.
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li id="OU2OsfVGl">
+									<a href="#OU2OsfVGl" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											i think [1] is a pre-requisite, since we need &gt;1 rebase
+									</div>
+									<ul>
+										<li id="lQV7zRn4q">
+											<a href="#lQV7zRn4q" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													[1] ((cOxwL_xMO))
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li id="TLJo1cP5G">
+									<a href="#TLJo1cP5G" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="PhEmfqZgG">
+							<a href="#PhEmfqZgG" class="block-ref"></a>
+						</li>
+						<li id="huhJnNJSx">
+							<a href="#huhJnNJSx" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									{{[[TODO]]}} renaming branches would be nice -- could be another space and the new name of the branch
+							</div>
+							<ul>
+								<li id="4r5KJ2dsi">
+									<a href="#4r5KJ2dsi" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											{{[[TODO]]}} tho, PRs would need to be re-created (because you cannot &quot;rename&quot; a branch in [[github]] e.g. -- you need to delete &amp; create a new one)
+									</div>
+									<ul>
+										<li id="5SM3U0JZt">
+											<a href="#5SM3U0JZt" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													&amp; ofc second-order effect of the next branch pointing to the now-deleted one -- the PR would get closed as well in [[github]]
+											</div>
+											<ul>
+												<li id="mVxqUcLPp">
+													<a href="#mVxqUcLPp" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															thus, would need to do some magic by 1st changing the base branch to the previous branch, then deleting current branch &amp; creating a new one, and then changing the base branch to the new branch. who said linked lists weren&#39;t useful? tho, this is all [[stage 2 of gsr]]
+													</div>
+												</li>
+												<li id="KDCzO16sJ">
+													<a href="#KDCzO16sJ" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="SXW2tavOO">
+											<a href="#SXW2tavOO" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="RjKb9OvAJ">
+									<a href="#RjKb9OvAJ" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="a04E6R0Lf">
+							<a href="#a04E6R0Lf" class="block-ref"></a>
+						</li>
+						<li id="cmhRJt52n">
+							<a href="#cmhRJt52n" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									the issues w/ empty commits &amp; wrong applies
+							</div>
+							<ul>
+								<li id="zsXS_JE2f">
+									<a href="#zsXS_JE2f" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											just noticed the message &quot;Resolved &#39;package.json&#39; using previous resolution.&quot;
+									</div>
+									<ul>
+										<li id="eiiJMx54F">
+											<a href="#eiiJMx54F" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													it was [[git-rerere]]!!!
+											</div>
+											<ul>
+												<li id="stv-rkcmY">
+													<a href="#stv-rkcmY" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															ima disable, dangerous stuff
+													</div>
+												</li>
+												<li id="fc4OxKt2s">
+													<a href="#fc4OxKt2s" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															{{[[TODO]]}} document when creating docs (possibly when talking about [[(hidden) zmiEcf1EP]], since this is when i discovered &amp; enabled it)
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li id="Pyd9C6waI">
+											<a href="#Pyd9C6waI" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="cCtQ74zZ4">
+									<a href="#cCtQ74zZ4" class="block-ref"></a>
+								</li>
+							</ul>
+						</li>
+						<li id="ZsB16erIJ">
+							<a href="#ZsB16erIJ" class="block-ref"></a>
+						</li>
+					</ul>
+				</li>
+				<li id="xXATG3GwB">
+					<a href="#xXATG3GwB" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) xXATG3GwB
+					</div>
+				</li>
+				<li id="mEf0GBCKa">
+					<a href="#mEf0GBCKa" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) mEf0GBCKa
+					</div>
+				</li>
+				<li id="EAkO5fr7k">
+					<a href="#EAkO5fr7k" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) EAkO5fr7k
+					</div>
+				</li>
+				<li id="Dre8RxQJH">
+					<a href="#Dre8RxQJH" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) Dre8RxQJH
+					</div>
+				</li>
+				<li id="Pfhpvv-dG">
+					<a href="#Pfhpvv-dG" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) Pfhpvv-dG
+					</div>
+				</li>
+				<li id="KKYRhYz9j">
+					<a href="#KKYRhYz9j" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) KKYRhYz9j
+					</div>
+				</li>
+				<li id="70srhPl73">
+					<a href="#70srhPl73" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							(hidden) 70srhPl73
+					</div>
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.04-09-2022";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(0
+				in
+				0
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/April 9th, 2022.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/April 9th, 2022.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>
