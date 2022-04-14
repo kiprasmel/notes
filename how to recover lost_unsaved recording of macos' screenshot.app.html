@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>how to recover lost/unsaved recording of macos' screenshot.app | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			how to recover lost/unsaved recording of macos' screenshot.app
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>252</span>
+							+ <span>10</span>
+							= <span>262</span>
+						</td>
+					</tr>
+					<tr title="2022-04-14T14:46:22.953Z (only self: 2022-04-14T14:28:11.465Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1649947582953); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li id="WVXCKbdW7">
+					<a href="#WVXCKbdW7" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							#public
+					</div>
+				</li>
+				<li id="HNKNDrwPs">
+					<a href="#HNKNDrwPs" class="block-ref"></a>
+				
+				</li>
+				<li id="-AX_45KNU">
+					<a href="#-AX_45KNU" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							when you finish a recording, it first shows up on the bottom right as a popup.
+					</div>
+				</li>
+				<li id="gj-pQKkKe">
+					<a href="#gj-pQKkKe" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							a) if you don&#39;t do anything, the file will get placed in your ~/Desktop, or wherever else you configured
+					</div>
+				</li>
+				<li id="ErGRXILLM">
+					<a href="#ErGRXILLM" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							b) but, if you start dragging the popup, and then fail to drag it somewhere (e.g. [[roam]] doesn&#39;t accept files bigger than 500M), then the file does not get saved to your configured location 😱
+					</div>
+				</li>
+				<li id="f2xoG2-_X">
+					<a href="#f2xoG2-_X" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							fear not -- the file is still there, in your system, as long as you don&#39;t reboot before you save it.
+					</div>
+				</li>
+				<li id="6X_MJyl21">
+					<a href="#6X_MJyl21" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							to find the location, you need to do another screen recording, stop it, take the popup and drag it into a web browser as a new tab.
+					</div>
+				</li>
+				<li id="cmuFTHrMo">
+					<a href="#cmuFTHrMo" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							this way, you&#39;ll see some `file:///var/` filepath, e.g. `file:///var/folders/11/dlgqn46x2cvgbgr_s32zxwcm0000gq/T/TemporaryItems/NSIRD_screencaptureui_DMwxEf/Screen Recording 2022-04-14 at 17.21.20.mov`
+					</div>
+				</li>
+				<li id="TWu4skxjg">
+					<a href="#TWu4skxjg" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							now, this is the path to the fake recording you just did. we need to find the path to the actual recording that &quot;got lost&quot;.
+					</div>
+				</li>
+				<li id="gQPPzUYlN">
+					<a href="#gQPPzUYlN" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							you need to take that path, shave off the `file://` (keep the 3rd `/` though), and also removed the last 2 segments - the &quot;Screen Recording&quot; filename, and the &quot;NSIRD_screencaptureui_XYZABC` directory.
+					</div>
+				</li>
+				<li id="pfLXMrlC3">
+					<a href="#pfLXMrlC3" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							should look something like this: `/var/folders/11/dlgqn46x2cvgbgr_s32zxwcm0000gq/T/TemporaryItems/`
+					</div>
+				</li>
+				<li id="7cuuErtEv">
+					<a href="#7cuuErtEv" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							now, open the terminal and type in `open ` and paste in the cleaned up path.
+					</div>
+				</li>
+				<li id="L7D9vsW6_">
+					<a href="#L7D9vsW6_" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							e.g. `open /var/folders/11/dlgqn46x2cvgbgr_s32zxwcm0000gq/T/TemporaryItems/`
+					</div>
+				</li>
+				<li id="AflrD6Y1L">
+					<a href="#AflrD6Y1L" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							now, you have the Finder open with some folders -- just gotta open each one and check if it contains the &quot;lost&quot; recording.
+					</div>
+					<ul>
+						<li id="jZkS0FsN9">
+							<a href="#jZkS0FsN9" class="block-ref"></a>
+							<div style="max-width: 65ch;">
+									![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2Fl8HlHNpb1R.39.40.png?alt=media&amp;token=c7fd2669-5188-4cc2-ac93-89f3fa61cd54)
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li id="N90vN_HVx">
+					<a href="#N90vN_HVx" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							it should! take the recording &amp; copy it to some proper location, e.g. ~/Desktop
+					</div>
+				</li>
+				<li id="nsRdJXy7-">
+					<a href="#nsRdJXy7-" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							done
+					</div>
+				</li>
+				<li id="qs0OoPGm4">
+					<a href="#qs0OoPGm4" class="block-ref"></a>
+				
+				</li>
+				<li id="6CaXgezye">
+					<a href="#6CaXgezye" class="block-ref"></a>
+				
+				</li>
+				<li id="9BIjlctTo">
+					<a href="#9BIjlctTo" class="block-ref"></a>
+				
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.xgMWlhe1p";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			April 14th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="GzWYx5xPH">
+			<a href="#GzWYx5xPH" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) GzWYx5xPH [[how to recover lost/unsaved recording of macos' screenshot.app]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="3Xc57zDp8">
+		<a href="#3Xc57zDp8" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} (hidden) 3Xc57zDp8 #[[(hidden) HfAvII1hR]]
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/how to recover lost/unsaved recording of macos' screenshot.app.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/how to recover lost/unsaved recording of macos' screenshot.app.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>

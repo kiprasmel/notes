@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>a way to explore code in 3D | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			a way to explore code in 3D
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>1</span>
+							+ <span>432</span>
+							= <span>433</span>
+						</td>
+					</tr>
+					<tr title="2022-04-14T14:46:22.965Z (only self: 2022-04-13T20:25:26.080Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1649947582965); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li id="6b50SwiG8">
+					<a href="#6b50SwiG8" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							#public
+					</div>
+				</li>
+				<li id="gDv5HtJsd">
+					<a href="#gDv5HtJsd" class="block-ref"></a>
+				
+				</li>
+				<li id="YydTIIJIV">
+					<a href="#YydTIIJIV" class="block-ref"></a>
+				
+				</li>
+				<li id="GlwLjaaVR">
+					<a href="#GlwLjaaVR" class="block-ref"></a>
+				
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.SyV6Uv0YI";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			April 13th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="KFJGWkQgp">
+			<a href="#KFJGWkQgp" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				pretty big idea from this (and i&#39;ve had a thought or 2 about this quite recently, pretty sure it was related to [[git-stacked-rebase]] &amp; the diff / pull request review thoughts, this just sparked it further) -- what if we had [[a way to explore code in 3D]]?
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="3smTE-Ny_">
+		<a href="#3smTE-Ny_" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				what i imagine is that you&#39;d go thru the file&#39;s history, compute how much it has expanded, and then start from the bottom of the stack / layer / whatever name fits best.
+		</div>
+		<ul>
+			<li id="pp0t_bSmn">
+				<a href="#pp0t_bSmn" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						on the first stack, you&#39;d put the file&#39;s contents of the very first commit.
+				</div>
+			</li>
+			<li id="m-oQi2zMd">
+				<a href="#m-oQi2zMd" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						the contents would probably be quite far away from each other.
+				</div>
+				<ul>
+					<li id="Lf_ylxvoj">
+						<a href="#Lf_ylxvoj" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								this is because in further layers, we&#39;d want to display how the contents changed w/ further commits, and if e.g. some block/paragraph got extended, to visualise it by not the whole file growing, but that part of the content growing, and so the previous layers would have to be already prepared &amp; spread out enough to accomodate for the new changes __for that block/paragraph__, without affecting the position of other blocks/paragraphs.
+						</div>
+						<ul>
+							<li id="V6-N2OXHT">
+								<a href="#V6-N2OXHT" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										this is just to make the diff clearer / exploration more meaningful -- you&#39;re not only able to explore how the whole file changed, but rather - how some small, individual part of the file changed
+								</div>
+								<ul>
+									<li id="o6vB-JwtB">
+										<a href="#o6vB-JwtB" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2Fcl0Th6BIb1.psd?alt=media
+										</div>
+									</li>
+									<li id="nx0O6wh1F">
+										<a href="#nx0O6wh1F" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fkipras-g1%2F7nbv1Lgyin.png?alt=media&amp;token=7b9629e8-cd46-4884-bd96-b5cf4558a889)
+										</div>
+										<ul>
+											<li id="ePPBnY-kV">
+												<a href="#ePPBnY-kV" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														i&#39;m not good w/ drawing, but here you can see change over time. and this is only additions. here, the brightness changed, but ideally what i have in mind is for the depth to change - for it to be like actual layers / stacks / whatever, like taller &amp; shorted buildings / skyscrapers, and you can jump down deeper to explore the depths of where the current latest version came from
+												</div>
+											</li>
+											<li id="RxwV2oWbh">
+												<a href="#RxwV2oWbh" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														the hardest part is probably going thru all the commits &amp; figuring out which parts blocks (lines close by) relate to each other, so that you can split them up further apart in earlier versions -- it&#39;s hard to know where to split.
+												</div>
+												<ul>
+													<li id="3WU6M8eA1">
+														<a href="#3WU6M8eA1" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																probably a single function is a good boundary, but ofc. not everyone writes just pure functions.
+														</div>
+														<ul>
+															<li id="rDPRGk2nd">
+																<a href="#rDPRGk2nd" class="block-ref"></a>
+																<div style="max-width: 65ch;">
+																		tho even if we could perfectly split functions, would it be the most representative way of what things are related to each other?
+																</div>
+																<ul>
+																	<li id="fR2fHHFuB">
+																		<a href="#fR2fHHFuB" class="block-ref"></a>
+																		<div style="max-width: 65ch;">
+																				i think that while trying to develop this, you might discover the best way to write programs, given that the measurement of how good the program is is how easy is it to understand what relates to what, which, if it makes it faster/easier to understand the program itself, would be a very good thing to strive for / to encourage in general.
+																		</div>
+																	</li>
+																	<li id="TLhxxncN9">
+																		<a href="#TLhxxncN9" class="block-ref"></a>
+																	</li>
+																</ul>
+															</li>
+															<li id="5qSEfCDKg">
+																<a href="#5qSEfCDKg" class="block-ref"></a>
+															</li>
+														</ul>
+													</li>
+													<li id="zh8YdMpak">
+														<a href="#zh8YdMpak" class="block-ref"></a>
+													</li>
+												</ul>
+											</li>
+											<li id="NuNmpRpKH">
+												<a href="#NuNmpRpKH" class="block-ref"></a>
+											</li>
+										</ul>
+									</li>
+									<li id="Zq1dZQbcF">
+										<a href="#Zq1dZQbcF" class="block-ref"></a>
+									</li>
+								</ul>
+							</li>
+							<li id="EO9M-n1OE">
+								<a href="#EO9M-n1OE" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="Vew39VP9I">
+						<a href="#Vew39VP9I" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="2vt2Y8HKQ">
+				<a href="#2vt2Y8HKQ" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="f5NjHHlwS">
+		<a href="#f5NjHHlwS" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/a way to explore code in 3D.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/a way to explore code in 3D.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>
