@@ -200,11 +200,11 @@
 						<td>words:</td>
 						<td>
 							<span>9</span>
-							+ <span>17985</span>
-							= <span>17994</span>
+							+ <span>18028</span>
+							= <span>18037</span>
 						</td>
 					</tr>
-					<tr title="2022-05-08T09:29:04.830Z (only self: 2021-12-03T23:30:41.825Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-05-10T22:17:29.777Z (only self: 2021-12-03T23:30:41.825Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1652002144830); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1652221049777); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -7323,7 +7323,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 													<li id="hNj6arDcd">
 														<a href="#hNj6arDcd" class="block-ref"></a>
 														<div style="max-width: 65ch;">
-																(hidden) hNj6arDcd [[(hidden) 37rJr30_V]] [[(hidden) 6ZFjU8adC]]
+																(hidden) hNj6arDcd [[(hidden) 37rJr30_V]] [[high signal]]
 														</div>
 														<ul>
 															<li id="0DLpAOh8w">
@@ -10818,7 +10818,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 	<li id="vJ34t2rDH">
 		<a href="#vJ34t2rDH" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} need to implement an automatic `nightly` branch
+				{{[[DONE]]}} need to implement an automatic `nightly` branch
 		</div>
 		<ul>
 			<li id="v05aX0HCY">
@@ -10839,7 +10839,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 					<li id="T02ynSdLW">
 						<a href="#T02ynSdLW" class="block-ref"></a>
 						<div style="max-width: 65ch;">
-								{{[[TODO]]}} working on allowing any number of `post-rewrite` scripts
+								{{[[DONE]]}} working on allowing any number of `post-rewrite` scripts
 						</div>
 						<ul>
 							<li id="c95ZD578u">
@@ -10848,7 +10848,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 							<li id="A9tc6ya2i">
 								<a href="#A9tc6ya2i" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										{{[[TODO]]}} i see that some dead code needs to be cleaned up
+										{{[[DONE]]}} i see that some dead code needs to be cleaned up
 								</div>
 								<ul>
 									<li id="A7mC5HpB3">
@@ -10940,7 +10940,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 							<li id="l8VYD9-Nr">
 								<a href="#l8VYD9-Nr" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										{{[[TODO]]}} actually, this is becoming an extraction of setting up the `post-rewrite` hook, and thus actually an extraction into [[git-reconcile-rewritten-list]]!
+										{{[[DONE]]}} actually, this is becoming an extraction of setting up the `post-rewrite` hook, and thus actually an extraction into [[git-reconcile-rewritten-list]]!
 								</div>
 								<ul>
 									<li id="5u2FUW9gY">
@@ -11104,10 +11104,43 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 			<li id="sTMeMuRIT">
 				<a href="#sTMeMuRIT" class="block-ref"></a>
 			</li>
+			<li id="tTHjtPcMy">
+				<a href="#tTHjtPcMy" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						current code for keeping `nightly` up-to-date. put in `.git/hooks/post-stacked-rebase`
+				</div>
+				<ul>
+					<li id="zDBdXWom5">
+						<a href="#zDBdXWom5" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								```shell
+					#!/bin/sh
+					DOT_GIT_DIR=&quot;$(git rev-parse --absolute-git-dir)&quot;
+					[ -f &quot;$DOT_GIT_DIR/rebase-merge&quot; ] || [ -f &quot;$DOT_GIT_DIR/rebase-apply&quot; ] &amp;&amp; {
+						exit 0
+					}
+					NIGHTLY_REF=&quot;refs/heads/nightly&quot;
+					PARSED_NIGHTLY=&quot;$(git rev-parse &quot;$NIGHTLY_REF&quot;)&quot;
+					PARSED_HEAD=&quot;$(git rev-parse &quot;HEAD&quot;)&quot;
+					[ &quot;$PARSED_NIGHTLY&quot; = &quot;$PARSED_HEAD&quot; ] &amp;&amp; exit 0
+					git update-ref &quot;$NIGHTLY_REF&quot; &quot;HEAD&quot;
+					# git push origin nightly:nightly --force-with-lease --force-if-includes
+					```
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li id="sOhZQ68Zd">
+				<a href="#sOhZQ68Zd" class="block-ref"></a>
+			</li>
 		</ul>
 	</li>
 	<li id="-aShUV0wP">
 		<a href="#-aShUV0wP" class="block-ref"></a>
+	
+	</li>
+	<li id="4CHVzEvAC">
+		<a href="#4CHVzEvAC" class="block-ref"></a>
 	
 	</li>
 	<li id="PC2iiyJu2">
@@ -11123,7 +11156,7 @@ upd: okay i thought `git-stacked-rebase.gitStackedRebase.ts` so it seemed really
 	<li id="TZSp2IKql">
 		<a href="#TZSp2IKql" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				{{[[TODO]]}} in `execSyncInRepo(`${options.gitCmd} rebase --continue`);`, need to catch errors if it&#39;s because e.g. git merge conflict occured &amp; in these cases - not throw up w/ js errors
+				{{[[TODO]]}} in `execSyncInRepo(\`${options.gitCmd} rebase --continue\`);`, need to catch errors if it&#39;s because e.g. git merge conflict occured &amp; in these cases - not throw up w/ js errors
 		</div>
 	</li>
 	<li id="QYp2F6e1q">
