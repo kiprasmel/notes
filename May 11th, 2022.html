@@ -199,12 +199,12 @@
 					<tr title="self + linked mentions = total">
 						<td>words:</td>
 						<td>
-							<span>367</span>
+							<span>534</span>
 							+ <span>0</span>
-							= <span>367</span>
+							= <span>534</span>
 						</td>
 					</tr>
-					<tr title="2022-05-11T23:31:57.151Z (only self: 2022-05-10T21:28:29.283Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-05-12T07:39:16.208Z (only self: 2022-05-10T21:28:29.283Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1652311917151); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1652341156208); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -595,11 +595,117 @@
 						<li id="EcRXFSltM">
 							<a href="#EcRXFSltM" class="block-ref"></a>
 							<div style="max-width: 65ch;">
-									{{[[TODO]]}} since `--autosquash` is supported by `git-rebase`, but we don&#39;t use git rebase to generate the initial rebase todo (tried a few times, didn&#39;t work out, feels hacky and we don&#39;t want to go there) -- now we gotta implement it ourselves
+									{{[[DONE]]}} since `--autosquash` is supported by `git-rebase`, but we don&#39;t use git rebase to generate the initial rebase todo (tried a few times, didn&#39;t work out, feels hacky and we don&#39;t want to go there) -- now we gotta implement it ourselves
 							</div>
 							<ul>
 								<li id="vTVqVxEQU">
 									<a href="#vTVqVxEQU" class="block-ref"></a>
+									<div style="max-width: 65ch;">
+											#observation when implementing `autosquash`:
+									</div>
+									<ul>
+										<li id="pTsfuK_dr">
+											<a href="#pTsfuK_dr" class="block-ref"></a>
+										</li>
+										<li id="1NxY9UUGw">
+											<a href="#1NxY9UUGw" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													before, latest commit:
+											</div>
+											<ul>
+												<li id="qem_pb4KE">
+													<a href="#qem_pb4KE" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															https://github.com/kiprasmel/git-stacked-rebase/commit/f521cf81a27ab98487e1302499e60b88ed5be377
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li id="4qdtX7dpU">
+											<a href="#4qdtX7dpU" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													after, latest commit:
+											</div>
+											<ul>
+												<li id="6PkAnEKxA">
+													<a href="#6PkAnEKxA" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="smxbna5HD">
+											<a href="#smxbna5HD" class="block-ref"></a>
+										</li>
+										<li id="eCun7kF-9">
+											<a href="#eCun7kF-9" class="block-ref"></a>
+										</li>
+										<li id="YCERKsyuA">
+											<a href="#YCERKsyuA" class="block-ref"></a>
+										</li>
+										<li id="Kup-uKEvB">
+											<a href="#Kup-uKEvB" class="block-ref"></a>
+											<div style="max-width: 65ch;">
+													how do i know that this is correct now?
+											</div>
+											<ul>
+												<li id="uZQDrS3Lg">
+													<a href="#uZQDrS3Lg" class="block-ref"></a>
+													<div style="max-width: 65ch;">
+															easy, it makes sense. the callback function which would generate the `CommitAndBranchBoundary[]` was either our a) our custom implementation to get the commits, or b) an impl using native git rebase.
+													</div>
+													<ul>
+														<li id="jCfbqIsN7">
+															<a href="#jCfbqIsN7" class="block-ref"></a>
+															<div style="max-width: 65ch;">
+																	we stopped using (B) intentionally, for multiple reasons, but one of them being precisely that it handled autosquash itself, and our branches would follow to the new location of the commit, which is not what we want
+															</div>
+															<ul>
+																<li id="9kV5ZXz8B">
+																	<a href="#9kV5ZXz8B" class="block-ref"></a>
+																	<div style="max-width: 65ch;">
+																			and before the correct approach, i put the logic to do auto-squashing inside (A) (the callback) -- at the same level as the native rebase would be. now remember that native rebase was broken -- same happened for our impl - branches still followed.
+																	</div>
+																	<ul>
+																		<li id="BzWo8-IQn">
+																			<a href="#BzWo8-IQn" class="block-ref"></a>
+																			<div style="max-width: 65ch;">
+																					and to fix it, we&#39;re now moving the abstraction higher up so that we can handle it w/ extra logic.
+																			</div>
+																			<ul>
+																				<li id="1P6b4uhYQ">
+																					<a href="#1P6b4uhYQ" class="block-ref"></a>
+																					<div style="max-width: 65ch;">
+																							basically it&#39;s hard to explain but it&#39;s very intuitive if you&#39;ve worked w/ this stuff
+																					</div>
+																				</li>
+																			</ul>
+																		</li>
+																		<li id="HooWCWaWE">
+																			<a href="#HooWCWaWE" class="block-ref"></a>
+																		</li>
+																	</ul>
+																</li>
+																<li id="aS_s6keml">
+																	<a href="#aS_s6keml" class="block-ref"></a>
+																</li>
+															</ul>
+														</li>
+														<li id="sa5fcX3A3">
+															<a href="#sa5fcX3A3" class="block-ref"></a>
+														</li>
+													</ul>
+												</li>
+												<li id="TXdW8Z_v1">
+													<a href="#TXdW8Z_v1" class="block-ref"></a>
+												</li>
+											</ul>
+										</li>
+										<li id="r0DKIX1hB">
+											<a href="#r0DKIX1hB" class="block-ref"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="xZOS6EHBY">
+									<a href="#xZOS6EHBY" class="block-ref"></a>
 								</li>
 								<li id="P2whZQd64">
 									<a href="#P2whZQd64" class="block-ref"></a>
