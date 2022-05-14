@@ -200,11 +200,11 @@
 						<td>words:</td>
 						<td>
 							<span>0</span>
-							+ <span>2967</span>
-							= <span>2967</span>
+							+ <span>3126</span>
+							= <span>3126</span>
 						</td>
 					</tr>
-					<tr title="2022-05-12T14:31:26.974Z (only self: 2022-01-03T15:29:55.845Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-05-14T02:15:41.273Z (only self: 2022-01-03T15:29:55.845Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1652365886974); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1652494541273); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -261,9 +261,9 @@
 
 			<h2>
 				Linked Mentions 
-				(25
+				(26
 				in
-				19
+				20
 				pages)
 
 				<button
@@ -2226,6 +2226,116 @@
 		<div style="max-width: 65ch;">
 				(hidden) E1WygmakY
 		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			May 13th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="t-1KSJbwp">
+			<a href="#t-1KSJbwp" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #public #[[(hidden) YOQoA_-41]] resurrect &quot;[[eslint]] no forgotten await&quot; issue for eslint, to add new rule that would require async functions to be called with await.
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="-gCronzo4">
+		<a href="#-gCronzo4" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://github.com/eslint/eslint/issues/13567
+		</div>
+	</li>
+	<li id="ITmfm9Ovn">
+		<a href="#ITmfm9Ovn" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://github.com/eslint/eslint/issues/9787
+		</div>
+	</li>
+	<li id="SzgiC_enc">
+		<a href="#SzgiC_enc" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				case in point:
+		</div>
+		<ul>
+			<li id="EQydSGAwN">
+				<a href="#EQydSGAwN" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						```javascript
+			const neat = require(&#39;@pipedrive/neat&#39;);
+			const personsPage = require(&#39;../../pages/person-details.page&#39;);
+			describe(&#39;Person details tests&#39;, () =&gt; {
+				beforeEach(async () =&gt; {
+					const person = await neat.api.addPerson({ name: &#39;Person_1&#39; });
+					personsPage.goToPerson(person.id);
+				});
+				it(&#39;should reflect changes in changelog&#39;, async () =&gt; {
+					await personsPage.editName(&#39;New &#39;);
+					const change = await personsPage.getLastChangelogValue();
+					expect(change).toEqual(&#39;New Person_1&#39;);
+				});
+				it(&#39;should delete a person&#39;, async () =&gt; {
+					const isDeleted = await personsPage.deletePerson();
+					expect(isDeleted).toBe(true);
+				});
+			});
+			```
+				</div>
+			</li>
+			<li id="JnY73B8OA">
+				<a href="#JnY73B8OA" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						```javascript
+			From 01f635134eb8a79215dc69f4420e33a7387a5926 Mon Sep 17 00:00:00 2001
+			From: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+			Date: Fri, 13 May 2022 20:24:43 +0300
+			Subject: [PATCH] attempt to fix flaky test by `await`ing page navigation
+			Signed-off-by: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+			---
+			 test/ui-neat/tests/person/person.js | 2 +-
+			 1 file changed, 1 insertion(+), 1 deletion(-)
+			diff --git a/test/ui-neat/tests/person/person.js b/test/ui-neat/tests/person/person.js
+			index 1f71e95420..91a8b2b474 100644
+			--- a/test/ui-neat/tests/person/person.js
+			+++ b/test/ui-neat/tests/person/person.js
+			@@ -5,7 +5,7 @@ describe(&#39;Person details tests&#39;, () =&gt; {
+			 	beforeEach(async () =&gt; {
+			 		const person = await neat.api.addPerson({ name: &#39;Person_1&#39; });
+			-		personsPage.goToPerson(person.id);
+			+		await personsPage.goToPerson(person.id);
+			 	});
+			 	it(&#39;should reflect changes in changelog&#39;, async () =&gt; {
+			-- 
+			2.36.0
+			```
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="qyALpPFVK">
+		<a href="#qyALpPFVK" class="block-ref"></a>
+	
 	</li>
 </ul>
 		</li>
