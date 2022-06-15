@@ -200,11 +200,11 @@
 						<td>words:</td>
 						<td>
 							<span>1</span>
-							+ <span>1532</span>
-							= <span>1533</span>
+							+ <span>2512</span>
+							= <span>2513</span>
 						</td>
 					</tr>
-					<tr title="2022-06-08T22:13:51.533Z (only self: 2021-08-24T14:01:51.218Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-06-15T09:27:49.066Z (only self: 2021-08-24T14:01:51.218Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1654726431533); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1655285269066); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -270,9 +270,9 @@
 
 			<h2>
 				Linked Mentions 
-				(147
+				(149
 				in
-				144
+				146
 				pages)
 
 				<button
@@ -6656,6 +6656,256 @@
 	<ul>
 				<li id="hFZ0Xwkr3">
 			<a href="#hFZ0Xwkr3" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				#public
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			June 9th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="1iYOkOmuz">
+			<a href="#1iYOkOmuz" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[DONE]]}} #public &quot;kanban infinite scroll by each column&quot; w/ `react-query` &amp; `react-intersection-observer`
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="YRLY5d6If">
+		<a href="#YRLY5d6If" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[TODO]]}} debug `inView` bug (`no_activities` different behavior)
+		</div>
+	</li>
+	<li id="HrsarrinM">
+		<a href="#HrsarrinM" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} `triggerOnce` performance
+		</div>
+	</li>
+	<li id="w1-hVOngT">
+		<a href="#w1-hVOngT" class="block-ref"></a>
+	
+	</li>
+	<li id="ysuyWdaPe">
+		<a href="#ysuyWdaPe" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				decided to use `InView` (HOC) instead, + do everything inside the Card item itself -- pass in `isLast` and `fetchMoreData` props
+		</div>
+		<ul>
+			<li id="cxmiVsVO7">
+				<a href="#cxmiVsVO7" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						works because `isLast` changes on next fetch, so the old `InView` gets removed and a new one gets rendered, so no matter how tall your `ElementInView` is, if there&#39;s more data, it&#39;ll keep getting fetched, until there&#39;s enough items so that your `ElementInView` is no longer visible (until you scroll into it again)
+				</div>
+			</li>
+			<li id="4LRF6lRym">
+				<a href="#4LRF6lRym" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						```javascript
+			import styled from &#39;@emotion/styled&#39;;
+			export const ElementInViewParent = styled.div`
+				display: flex;
+				flex-direction: column;
+				position: relative;
+			`;
+			export const ElementInView = styled.div`
+				position: absolute;
+				/**
+				 * instead of &quot;bottom: 100vh&quot;, we do &quot;bottom: 0&quot; and &quot;top: -100vh&quot;,
+				 * so that the &quot;height: auto&quot; will make the element full of height,
+				 * starting from the top position (100vh from the bottom),
+				 * up until the very bottom.
+				 *
+				 * if we didn&#39;t do this (1st option), the height would be 0.
+				 *
+				 */
+				/* bottom: 100vh; */
+				bottom: 0;
+				/* top: -100vh; */
+				top: -1000vh; /**
+				 *
+				 * fetch 10x earlier.
+				 *
+				 * for this to work, you need to make sure that
+				 * even if you fetch very few items (but there are more)
+				 * (i.e. the pagination limit is very small, e.g. 10),
+				 * the &#39;ElementInView&#39; will get re-rendered properly,
+				 *
+				 * so that even if the first 10, 20, or say 50 items
+				 * are not enough to put the &#39;ElementInView&#39; deep enough
+				 * to make the &#39;ElementInView&#39; invisible,
+				 * you will still keep fetching more data
+				 * by re-rendering the element (thus it disappears &amp; re-appears),
+				 * until it is actually hidden.
+				 *
+				 * in our case, we achieve this by rendering the &#39;ElementInView&#39;
+				 * in the &#39;BoardCard&#39; (i.e. individual item) itself,
+				 * _not_ in a &#39;BoardColumn&#39;.
+				 * for this, we pass in the &#39;isLast&#39; prop
+				 * so that only the last item renders the element,
+				 * and ofc the &#39;fetchMoreData&#39; prop too.
+				 *
+				 * overall, this helps achieve optimal performance with intersection observer,
+				 * because with the &#39;react-intersection-observer&#39; lib, we can now set the &#39;triggerOnce&#39;
+				 * prop to &#39;true&#39;, meaning it won&#39;t keep polling
+				 * (internally, it unsubscribes the intersection observer -- this is why
+				 * the re-render is needed).
+				 *
+				 * ---
+				 *
+				 * additional sidenote: &#39;react-intersection-observer&#39; lib was buggy with it&#39;s &#39;useInView&#39; hook
+				 * in multiple occasions:
+				 * 1. when used with &#39;triggerOnce&#39;, it&#39;d slow down, but still would keep triggering;
+				 * 2. if you used their &#39;onChange&#39; instead of using &#39;inView&#39; with a &#39;useEffect&#39;,
+				 *    the onChange would run insanely much, probably every X milliseconds.
+				 *    the &#39;triggerOnce&#39; didn&#39;t have any effect for it either.
+				 *
+				 *    i suspect this is because the &#39;inView&#39; goes thru React&#39;s &#39;setState&#39;,
+				 *    and it could get limited/batched, meanwhile the &#39;onChange&#39; would get
+				 *    called directly, thus spamming a lot.
+				 *
+				 *
+				 * ---
+				 *
+				 * see the PR where we implemented this:
+				 * https://github.com/pipedrive/account-management-ui/pull/108
+				 * (includes video showcasing the 1st above explained case)
+				 *
+				*/
+				width: 100%;
+				height: auto;
+				/**
+				 * INFINITE_SCROLL_DEBUG:
+				 *
+				 */
+				/* background-color: red; */
+			`;
+			```
+				</div>
+			</li>
+			<li id="hPZi2dtzc">
+				<a href="#hPZi2dtzc" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						```javascript
+						{!isLast ? null : (
+							&lt;ElementInViewParent&gt;
+								&lt;InView
+									triggerOnce={true}
+									onChange={(inView) =&gt; {
+										if (inView) {
+											fetchNextPage();
+										}
+									}}
+								&gt;
+									{({ ref }) =&gt; &lt;ElementInView ref={ref} /&gt;}
+								&lt;/InView&gt;
+							&lt;/ElementInViewParent&gt;
+						)}```
+				</div>
+				<ul>
+					<li id="6RIU1ejnv">
+						<a href="#6RIU1ejnv" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								(hidden) 6RIU1ejnv #[[(hidden) 7c2C8PgIV]]
+						</div>
+						<ul>
+							<li id="oLb9oDGVF">
+								<a href="#oLb9oDGVF" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										(hidden) oLb9oDGVF [[(hidden) NQh01O6oN]]
+								</div>
+								<ul>
+									<li id="bwQIFR9oK">
+										<a href="#bwQIFR9oK" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												(hidden) bwQIFR9oK
+										</div>
+									</li>
+									<li id="WNnMFhGF2">
+										<a href="#WNnMFhGF2" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												(hidden) WNnMFhGF2
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li id="B3lTr8ZES">
+								<a href="#B3lTr8ZES" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										(hidden) B3lTr8ZES
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li id="z8StvlbLP">
+						<a href="#z8StvlbLP" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="GLxukC78o">
+				<a href="#GLxukC78o" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="S8CqE2FGD">
+		<a href="#S8CqE2FGD" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			infinite scroll/pagination (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="YbvAAjBq2">
+			<a href="#YbvAAjBq2" class="block-ref"></a>
 
 			<!--
 				TODO <h4> for semantics

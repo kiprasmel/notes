@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>(hidden) ijQyN1019 | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			(hidden) ijQyN1019
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>0</span>
+							+ <span>1002</span>
+							= <span>1002</span>
+						</td>
+					</tr>
+					<tr title="2022-06-15T09:27:53.743Z (only self: 2022-06-09T21:49:33.490Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1655285273743); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.ijQyN1019";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(1
+				in
+				1
+				page)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			June 9th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="5l9j6U4J-">
+			<a href="#5l9j6U4J-" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) 5l9j6U4J- [[(hidden) ijQyN1019]] [[(hidden) Ihl0M8aWF]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="zAusE1ZDV">
+		<a href="#zAusE1ZDV" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				{{[[DONE]]}} (hidden) zAusE1ZDV [[(hidden) AEThLPcJI]]
+		</div>
+	</li>
+	<li id="0soKwq4St">
+		<a href="#0soKwq4St" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) 0soKwq4St
+		</div>
+	</li>
+	<li id="LXLG7YCoe">
+		<a href="#LXLG7YCoe" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) LXLG7YCoe [[infinite scroll/pagination]]
+		</div>
+		<ul>
+			<li id="1iYOkOmuz">
+				<a href="#1iYOkOmuz" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						{{[[DONE]]}} #public &quot;kanban infinite scroll by each column&quot; w/ `react-query` &amp; `react-intersection-observer`
+				</div>
+				<ul>
+					<li id="YRLY5d6If">
+						<a href="#YRLY5d6If" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								{{[[TODO]]}} debug `inView` bug (`no_activities` different behavior)
+						</div>
+					</li>
+					<li id="HrsarrinM">
+						<a href="#HrsarrinM" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								{{[[DONE]]}} `triggerOnce` performance
+						</div>
+					</li>
+					<li id="w1-hVOngT">
+						<a href="#w1-hVOngT" class="block-ref"></a>
+					</li>
+					<li id="ysuyWdaPe">
+						<a href="#ysuyWdaPe" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								decided to use `InView` (HOC) instead, + do everything inside the Card item itself -- pass in `isLast` and `fetchMoreData` props
+						</div>
+						<ul>
+							<li id="cxmiVsVO7">
+								<a href="#cxmiVsVO7" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										works because `isLast` changes on next fetch, so the old `InView` gets removed and a new one gets rendered, so no matter how tall your `ElementInView` is, if there&#39;s more data, it&#39;ll keep getting fetched, until there&#39;s enough items so that your `ElementInView` is no longer visible (until you scroll into it again)
+								</div>
+							</li>
+							<li id="4LRF6lRym">
+								<a href="#4LRF6lRym" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										```javascript
+							import styled from &#39;@emotion/styled&#39;;
+							export const ElementInViewParent = styled.div`
+								display: flex;
+								flex-direction: column;
+								position: relative;
+							`;
+							export const ElementInView = styled.div`
+								position: absolute;
+								/**
+								 * instead of &quot;bottom: 100vh&quot;, we do &quot;bottom: 0&quot; and &quot;top: -100vh&quot;,
+								 * so that the &quot;height: auto&quot; will make the element full of height,
+								 * starting from the top position (100vh from the bottom),
+								 * up until the very bottom.
+								 *
+								 * if we didn&#39;t do this (1st option), the height would be 0.
+								 *
+								 */
+								/* bottom: 100vh; */
+								bottom: 0;
+								/* top: -100vh; */
+								top: -1000vh; /**
+								 *
+								 * fetch 10x earlier.
+								 *
+								 * for this to work, you need to make sure that
+								 * even if you fetch very few items (but there are more)
+								 * (i.e. the pagination limit is very small, e.g. 10),
+								 * the &#39;ElementInView&#39; will get re-rendered properly,
+								 *
+								 * so that even if the first 10, 20, or say 50 items
+								 * are not enough to put the &#39;ElementInView&#39; deep enough
+								 * to make the &#39;ElementInView&#39; invisible,
+								 * you will still keep fetching more data
+								 * by re-rendering the element (thus it disappears &amp; re-appears),
+								 * until it is actually hidden.
+								 *
+								 * in our case, we achieve this by rendering the &#39;ElementInView&#39;
+								 * in the &#39;BoardCard&#39; (i.e. individual item) itself,
+								 * _not_ in a &#39;BoardColumn&#39;.
+								 * for this, we pass in the &#39;isLast&#39; prop
+								 * so that only the last item renders the element,
+								 * and ofc the &#39;fetchMoreData&#39; prop too.
+								 *
+								 * overall, this helps achieve optimal performance with intersection observer,
+								 * because with the &#39;react-intersection-observer&#39; lib, we can now set the &#39;triggerOnce&#39;
+								 * prop to &#39;true&#39;, meaning it won&#39;t keep polling
+								 * (internally, it unsubscribes the intersection observer -- this is why
+								 * the re-render is needed).
+								 *
+								 * ---
+								 *
+								 * additional sidenote: &#39;react-intersection-observer&#39; lib was buggy with it&#39;s &#39;useInView&#39; hook
+								 * in multiple occasions:
+								 * 1. when used with &#39;triggerOnce&#39;, it&#39;d slow down, but still would keep triggering;
+								 * 2. if you used their &#39;onChange&#39; instead of using &#39;inView&#39; with a &#39;useEffect&#39;,
+								 *    the onChange would run insanely much, probably every X milliseconds.
+								 *    the &#39;triggerOnce&#39; didn&#39;t have any effect for it either.
+								 *
+								 *    i suspect this is because the &#39;inView&#39; goes thru React&#39;s &#39;setState&#39;,
+								 *    and it could get limited/batched, meanwhile the &#39;onChange&#39; would get
+								 *    called directly, thus spamming a lot.
+								 *
+								 *
+								 * ---
+								 *
+								 * see the PR where we implemented this:
+								 * https://github.com/pipedrive/account-management-ui/pull/108
+								 * (includes video showcasing the 1st above explained case)
+								 *
+								*/
+								width: 100%;
+								height: auto;
+								/**
+								 * INFINITE_SCROLL_DEBUG:
+								 *
+								 */
+								/* background-color: red; */
+							`;
+							```
+								</div>
+							</li>
+							<li id="hPZi2dtzc">
+								<a href="#hPZi2dtzc" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										```javascript
+										{!isLast ? null : (
+											&lt;ElementInViewParent&gt;
+												&lt;InView
+													triggerOnce={true}
+													onChange={(inView) =&gt; {
+														if (inView) {
+															fetchNextPage();
+														}
+													}}
+												&gt;
+													{({ ref }) =&gt; &lt;ElementInView ref={ref} /&gt;}
+												&lt;/InView&gt;
+											&lt;/ElementInViewParent&gt;
+										)}```
+								</div>
+								<ul>
+									<li id="6RIU1ejnv">
+										<a href="#6RIU1ejnv" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												(hidden) 6RIU1ejnv #[[(hidden) 7c2C8PgIV]]
+										</div>
+										<ul>
+											<li id="oLb9oDGVF">
+												<a href="#oLb9oDGVF" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														(hidden) oLb9oDGVF [[(hidden) NQh01O6oN]]
+												</div>
+												<ul>
+													<li id="bwQIFR9oK">
+														<a href="#bwQIFR9oK" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																(hidden) bwQIFR9oK
+														</div>
+													</li>
+													<li id="WNnMFhGF2">
+														<a href="#WNnMFhGF2" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																(hidden) WNnMFhGF2
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li id="B3lTr8ZES">
+												<a href="#B3lTr8ZES" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														(hidden) B3lTr8ZES
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li id="z8StvlbLP">
+										<a href="#z8StvlbLP" class="block-ref"></a>
+									</li>
+								</ul>
+							</li>
+							<li id="GLxukC78o">
+								<a href="#GLxukC78o" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="S8CqE2FGD">
+						<a href="#S8CqE2FGD" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="kQdwWzQum">
+				<a href="#kQdwWzQum" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) kQdwWzQum
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/(hidden) ijQyN1019.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/(hidden) ijQyN1019.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>
