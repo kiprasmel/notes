@@ -200,11 +200,11 @@
 						<td>words:</td>
 						<td>
 							<span>6</span>
-							+ <span>1742</span>
-							= <span>1748</span>
+							+ <span>1745</span>
+							= <span>1751</span>
 						</td>
 					</tr>
-					<tr title="2022-07-28T22:15:39.153Z (only self: 2021-07-03T13:33:20.130Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-07-28T22:26:23.524Z (only self: 2021-07-03T13:33:20.130Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1659046539153); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1659047183524); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -1929,8 +1929,8 @@
 		-->
 	</h3>
 	<ul>
-				<li id="SdU9DPYFg">
-			<a href="#SdU9DPYFg" class="block-ref"></a>
+				<li id="2lgaf5tyi">
+			<a href="#2lgaf5tyi" class="block-ref"></a>
 
 			<!--
 				TODO <h4> for semantics
@@ -1942,139 +1942,153 @@
 			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
 			-->
 			<div style="max-width: 65ch; ">
-				[[fp]] [[classes (programming concept)]] [[the notion of grouping things]] [[when grouping goes right]] [[react]] [[js]]
+				[[fp]] [[classes (programming concept)]] [[round-trips]] [[the notion of grouping things]] [[when grouping goes right]]
 			</div>
 			<!--
 			</span>
 			-->
 <ul>
-	<li id="sJ1uNx9ZS">
-		<a href="#sJ1uNx9ZS" class="block-ref"></a>
+	<li id="SdU9DPYFg">
+		<a href="#SdU9DPYFg" class="block-ref"></a>
 		<div style="max-width: 65ch;">
-				fwiw, instead of renaming every prop, might as well not destructure
+				[[react]] [[js]]
 		</div>
 		<ul>
-			<li id="wKT5NkXlc">
-				<a href="#wKT5NkXlc" class="block-ref"></a>
+			<li id="sJ1uNx9ZS">
+				<a href="#sJ1uNx9ZS" class="block-ref"></a>
 				<div style="max-width: 65ch;">
-						```javascript
-			 export const FileSection: React.FC&lt;{ orgId: number }&gt; = ({ orgId }) =&gt; {
-			        const { openFileSelector } = useOpenAndUploadOrganizationFile();
-			-       const { data: files, isLoading: isLoadingFiles, isError: isErrorFiles } = useFiles(orgId);
-			+       const files = useFiles(orgId);
-			        return (
-			                &lt;Section&gt;
-			@@ -118,10 +118,10 @@ export const FileSection: React.FC&lt;{ orgId: number }&gt; = ({ orgId }) =&gt; {
-			                                &lt;/Flex&gt;
-			                        &lt;/Heading&gt;
-			                        &lt;AccountFiles
-			-                               isError={isErrorFiles}
-			-                               isLoading={isLoadingFiles}
-			+                               isError={files.isError}
-			+                               isLoading={files.isLoading}
-			                                orgId={orgId}
-			-                               files={files ?? []}
-			+                               files={files.data ?? []}
-			                        /&gt;
-			                &lt;/Section&gt;
-			        );```
+						fwiw, instead of renaming every prop, might as well not destructure
 				</div>
 				<ul>
-					<li id="NkIUdpIDR">
-						<a href="#NkIUdpIDR" class="block-ref"></a>
+					<li id="wKT5NkXlc">
+						<a href="#wKT5NkXlc" class="block-ref"></a>
 						<div style="max-width: 65ch;">
-								(sometimes grouping is good™️) (sponsored by functional-nerds-who-sometimes-use-classes-anyway®️ 😱)
+								```javascript
+					 export const FileSection: React.FC&lt;{ orgId: number }&gt; = ({ orgId }) =&gt; {
+					        const { openFileSelector } = useOpenAndUploadOrganizationFile();
+					-       const { data: files, isLoading: isLoadingFiles, isError: isErrorFiles } = useFiles(orgId);
+					+       const files = useFiles(orgId);
+					        return (
+					                &lt;Section&gt;
+					@@ -118,10 +118,10 @@ export const FileSection: React.FC&lt;{ orgId: number }&gt; = ({ orgId }) =&gt; {
+					                                &lt;/Flex&gt;
+					                        &lt;/Heading&gt;
+					                        &lt;AccountFiles
+					-                               isError={isErrorFiles}
+					-                               isLoading={isLoadingFiles}
+					+                               isError={files.isError}
+					+                               isLoading={files.isLoading}
+					                                orgId={orgId}
+					-                               files={files ?? []}
+					+                               files={files.data ?? []}
+					                        /&gt;
+					                &lt;/Section&gt;
+					        );```
 						</div>
 						<ul>
-							<li id="9idEAuVJz">
-								<a href="#9idEAuVJz" class="block-ref"></a>
-							</li>
-							<li id="1wl0AzZkW">
-								<a href="#1wl0AzZkW" class="block-ref"></a>
+							<li id="NkIUdpIDR">
+								<a href="#NkIUdpIDR" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										initially stopped hating classes when realized this about grouping, and that classes are basically grouping.
+										(sometimes grouping is good™️) (sponsored by functional-nerds-who-sometimes-use-classes-anyway®️ 😱)
 								</div>
 								<ul>
-									<li id="1xLjtheIl">
-										<a href="#1xLjtheIl" class="block-ref"></a>
+									<li id="1wl0AzZkW">
+										<a href="#1wl0AzZkW" class="block-ref"></a>
 										<div style="max-width: 65ch;">
-												```javascript
-									const styles = {
-									  foo: css`
-									 `,
-									  bar: css`
-									 `, 
-									}
-									```
+												initially stopped hating classes when realized the following about grouping, and that classes are basically grouping.
 										</div>
+										<ul>
+											<li id="1xLjtheIl">
+												<a href="#1xLjtheIl" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														```javascript
+											const styles = {
+											  foo: css`
+											 `,
+											  bar: css`
+											 `, 
+											}
+											```
+												</div>
+											</li>
+											<li id="NFad8_Cdm">
+												<a href="#NFad8_Cdm" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														instead of
+												</div>
+											</li>
+											<li id="cNd6G7Dtd">
+												<a href="#cNd6G7Dtd" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														```javascript
+											const fooStyle = css`
+											`;
+											const barStyle = css`
+											`;
+											```
+												</div>
+											</li>
+											<li id="_iETEjMyV">
+												<a href="#_iETEjMyV" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														because reading 
+												</div>
+											</li>
+											<li id="Zk-_mxFZe">
+												<a href="#Zk-_mxFZe" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														```javascript
+											className={styles.foo}
+											```
+												</div>
+											</li>
+											<li id="xsf0UI4Dj">
+												<a href="#xsf0UI4Dj" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														is way clearer than reading
+												</div>
+											</li>
+											<li id="KFlgoQheP">
+												<a href="#KFlgoQheP" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														```javascript
+											className={fooStyle}
+											```
+												</div>
+											</li>
+											<li id="f6d4i2X_S">
+												<a href="#f6d4i2X_S" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														because 1st mixes way less w/ other props - it&#39;s clear immediately that it&#39;s a styling prop, as opposed to the 2nd (esp. if 2nd has a longer name before the ending &quot;Style&quot; suffix)
+												</div>
+											</li>
+											<li id="r97-syjwo">
+												<a href="#r97-syjwo" class="block-ref"></a>
+											</li>
+										</ul>
 									</li>
-									<li id="NFad8_Cdm">
-										<a href="#NFad8_Cdm" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												instead of
-										</div>
-									</li>
-									<li id="cNd6G7Dtd">
-										<a href="#cNd6G7Dtd" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												```javascript
-									const fooStyle = css`
-									`;
-									const barStyle = css`
-									`;
-									```
-										</div>
-									</li>
-									<li id="_iETEjMyV">
-										<a href="#_iETEjMyV" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												because reading 
-										</div>
-									</li>
-									<li id="Zk-_mxFZe">
-										<a href="#Zk-_mxFZe" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												```javascript
-									className={styles.foo}
-									```
-										</div>
-									</li>
-									<li id="xsf0UI4Dj">
-										<a href="#xsf0UI4Dj" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												is way clearer than reading
-										</div>
-									</li>
-									<li id="KFlgoQheP">
-										<a href="#KFlgoQheP" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												```javascript
-									className={fooStyle}
-									```
-										</div>
-									</li>
-									<li id="f6d4i2X_S">
-										<a href="#f6d4i2X_S" class="block-ref"></a>
-										<div style="max-width: 65ch;">
-												1st mixes way less w/ other props - it&#39;s clear immediately that it&#39;s a styling prop, as opposed to the 2nd (esp. if 2nd has a longer name before the ending &quot;Style&quot; suffix)
-										</div>
-									</li>
-									<li id="r97-syjwo">
-										<a href="#r97-syjwo" class="block-ref"></a>
+									<li id="boYr4FvhD">
+										<a href="#boYr4FvhD" class="block-ref"></a>
 									</li>
 								</ul>
 							</li>
-							<li id="boYr4FvhD">
-								<a href="#boYr4FvhD" class="block-ref"></a>
+							<li id="SgPAJB8Lb">
+								<a href="#SgPAJB8Lb" class="block-ref"></a>
 							</li>
 						</ul>
 					</li>
+					<li id="n_AxFs6xa">
+						<a href="#n_AxFs6xa" class="block-ref"></a>
+					</li>
 				</ul>
+			</li>
+			<li id="X2zH8Hs7o">
+				<a href="#X2zH8Hs7o" class="block-ref"></a>
 			</li>
 		</ul>
 	</li>
-	<li id="ESBq8FVuq">
-		<a href="#ESBq8FVuq" class="block-ref"></a>
+	<li id="nGEldb6zt">
+		<a href="#nGEldb6zt" class="block-ref"></a>
 	
 	</li>
 </ul>
