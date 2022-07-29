@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>civilization | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			civilization
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>1</span>
+							+ <span>432</span>
+							= <span>433</span>
+						</td>
+					</tr>
+					<tr title="2022-07-29T03:14:58.674Z (only self: 2022-06-13T01:39:54.832Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1659064498674); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li id="5Be37vYAy">
+					<a href="#5Be37vYAy" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							#public
+					</div>
+				</li>
+				<li id="54bHD54bN">
+					<a href="#54bHD54bN" class="block-ref"></a>
+				
+				</li>
+				<li id="zM-wbEaQN">
+					<a href="#zM-wbEaQN" class="block-ref"></a>
+				
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.YDzl5c99D";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(3
+				in
+				2
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			June 12th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="MmN0ciINQ">
+			<a href="#MmN0ciINQ" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) MmN0ciINQ [[(hidden) 1emn3OovN]] #civilization [[(hidden) 64-U8yoEC]] [[(hidden) bzmI5_N22]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="Drner356K">
+		<a href="#Drner356K" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) Drner356K
+		</div>
+	</li>
+	<li id="xgiSBQUZF">
+		<a href="#xgiSBQUZF" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) xgiSBQUZF
+		</div>
+		<ul>
+			<li id="_onDTZdqw">
+				<a href="#_onDTZdqw" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) _onDTZdqw
+				</div>
+			</li>
+			<li id="uwIdEAE77">
+				<a href="#uwIdEAE77" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) uwIdEAE77
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			July 28th, 2022 (2)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="LKBUsRLB_">
+			<a href="#LKBUsRLB_" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				so that could be a reason why [[civilization]]s collapse - it becomes too difficult to grasp your technology, thus the decline
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="g_s_t3C68">
+		<a href="#g_s_t3C68" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				interesting point from the talk tho - that after hundreds or thousands of years, we are able to reinvent &amp; go further than previously
+		</div>
+		<ul>
+			<li id="apWTwu4mE">
+				<a href="#apWTwu4mE" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						is it that our brain capacity improves (unlikely, too little time),
+				</div>
+			</li>
+			<li id="6np0rTOCh">
+				<a href="#6np0rTOCh" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						or is it other factors/[[(hidden) PTgK8rni6]]s that weren&#39;t breakable back then but are now?
+				</div>
+			</li>
+			<li id="Z6oHir-x_">
+				<a href="#Z6oHir-x_" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						or something else? e.g. luck?
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="42Xtk7moj">
+		<a href="#42Xtk7moj" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+		<li id="6QYFdIi0d">
+			<a href="#6QYFdIi0d" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				{{[[TODO]]}} #watch &quot;preventing the collapse of civilization&quot; by [[Jonathan Blow (public)]] [[high signal]] [[civilization]] [[technology]] 
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="51Nf0Xas6">
+		<a href="#51Nf0Xas6" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://youtu.be/ZSRHeXYDLko
+		</div>
+		<ul>
+			<li id="DlGa7uwRV">
+				<a href="#DlGa7uwRV" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						19ish [[(hidden) 1emn3OovN]]
+				</div>
+			</li>
+			<li id="24RblvkIP">
+				<a href="#24RblvkIP" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						21 [[(hidden) heJsCKvBw]], [[(hidden) 3OrRyssuz]] getting worse, is masked / is riding the benefit wave of [[(hidden) sr-m_VdZk]] improvements
+				</div>
+				<ul>
+					<li id="FObyuJYUG">
+						<a href="#FObyuJYUG" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								to understand the full stack, you have to go very, very deep - down to assembly, to hardware, to physics &amp; electrical engineering
+						</div>
+						<ul>
+							<li id="EbGqQRTOU">
+								<a href="#EbGqQRTOU" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										&amp; since the best way to learn is by building projects, you&#39;d have to build an actual computer, from scratch, in order to understand it well
+								</div>
+								<ul>
+									<li id="-lyo6S2m9">
+										<a href="#-lyo6S2m9" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												it&#39;s insanely hard
+										</div>
+										<ul>
+											<li id="zqH1J-rVE">
+												<a href="#zqH1J-rVE" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														some very smart ppl are doing stuff like this &amp; teaching it too, e. g. [[(hidden) DEiTbB4u7]]
+												</div>
+												<ul>
+													<li id="2Dt2ZWb17">
+														<a href="#2Dt2ZWb17" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																meanwhile, the [[(hidden) 4npmJjA1a]] / keep growing higher and higher, and one needs to specialise more, thus it gets increasingly difficult to understand the whole stack
+														</div>
+														<ul>
+															<li id="lLpMsQxoP">
+																<a href="#lLpMsQxoP" class="block-ref"></a>
+																<div style="max-width: 65ch;">
+																		it grows both higher and lower. lots of improvements in the lower level as well
+																</div>
+																<ul>
+																	<li id="3Duu63A25">
+																		<a href="#3Duu63A25" class="block-ref"></a>
+																		<div style="max-width: 65ch;">
+																				the world of programming is huge
+																		</div>
+																		<ul>
+																			<li id="twRAxYjl0">
+																				<a href="#twRAxYjl0" class="block-ref"></a>
+																				<div style="max-width: 65ch;">
+																						https://twitter.com/mitchellh/status/1521648218160832512?t=MrRlacdLdoY5y6yQT6tGAA&amp;s=19
+																				</div>
+																			</li>
+																			<li id="jcY7qFuh3">
+																				<a href="#jcY7qFuh3" class="block-ref"></a>
+																			</li>
+																			<li id="LKBUsRLB_">
+																				<a href="#LKBUsRLB_" class="block-ref"></a>
+																				<div style="max-width: 65ch;">
+																						so that could be a reason why [[civilization]]s collapse - it becomes too difficult to grasp your technology, thus the decline
+																				</div>
+																				<ul>
+																					<li id="g_s_t3C68">
+																						<a href="#g_s_t3C68" class="block-ref"></a>
+																						<div style="max-width: 65ch;">
+																								interesting point from the talk tho - that after hundreds or thousands of years, we are able to reinvent &amp; go further than previously
+																						</div>
+																						<ul>
+																							<li id="apWTwu4mE">
+																								<a href="#apWTwu4mE" class="block-ref"></a>
+																								<div style="max-width: 65ch;">
+																										is it that our brain capacity improves (unlikely, too little time),
+																								</div>
+																							</li>
+																							<li id="6np0rTOCh">
+																								<a href="#6np0rTOCh" class="block-ref"></a>
+																								<div style="max-width: 65ch;">
+																										or is it other factors/[[(hidden) PTgK8rni6]]s that weren&#39;t breakable back then but are now?
+																								</div>
+																							</li>
+																							<li id="Z6oHir-x_">
+																								<a href="#Z6oHir-x_" class="block-ref"></a>
+																								<div style="max-width: 65ch;">
+																										or something else? e.g. luck?
+																								</div>
+																							</li>
+																						</ul>
+																					</li>
+																					<li id="42Xtk7moj">
+																						<a href="#42Xtk7moj" class="block-ref"></a>
+																					</li>
+																				</ul>
+																			</li>
+																			<li id="svJ6I69J0">
+																				<a href="#svJ6I69J0" class="block-ref"></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="9S_Mll8S8">
+																		<a href="#9S_Mll8S8" class="block-ref"></a>
+																	</li>
+																</ul>
+															</li>
+															<li id="K0ao7ee-j">
+																<a href="#K0ao7ee-j" class="block-ref"></a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li id="2tgyCAXtl">
+						<a href="#2tgyCAXtl" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								22
+						</div>
+						<ul>
+							<li id="NGmu9exxz">
+								<a href="#NGmu9exxz" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										#observation another reason to learn [[(hidden) dQqknfJ8v]] is that engineers et al in [[(hidden) En_5wCz1g]] are exceptionally good. plus most likely [[(hidden) f1aG0Mdsv]]
+								</div>
+							</li>
+							<li id="64LRUD8Oz">
+								<a href="#64LRUD8Oz" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										re: we&#39;re getting used to software not working
+								</div>
+								<ul>
+									<li id="reDwzsHqL">
+										<a href="#reDwzsHqL" class="block-ref"></a>
+										<div style="max-width: 65ch;">
+												well maybe
+										</div>
+										<ul>
+											<li id="zM13ClsSL">
+												<a href="#zM13ClsSL" class="block-ref"></a>
+												<div style="max-width: 65ch;">
+														but expanding on the notes above, it&#39;s not only the complexity of the software stack growing
+												</div>
+												<ul>
+													<li id="-LfYBEvcs">
+														<a href="#-LfYBEvcs" class="block-ref"></a>
+														<div style="max-width: 65ch;">
+																it&#39;s also the requirements for the software!
+														</div>
+														<ul>
+															<li id="jf7b_YQfB">
+																<a href="#jf7b_YQfB" class="block-ref"></a>
+																<div style="max-width: 65ch;">
+																		think of how many dimensions a saas product like an online CRM has to support - it&#39;s insane!
+																</div>
+																<ul>
+																	<li id="dPWkoh_Py">
+																		<a href="#dPWkoh_Py" class="block-ref"></a>
+																		<div style="max-width: 65ch;">
+																				{{[[TODO]]}} list some
+																		</div>
+																	</li>
+																	<li id="K06fpuP-v">
+																		<a href="#K06fpuP-v" class="block-ref"></a>
+																	</li>
+																	<li id="ilDh7Veci">
+																		<a href="#ilDh7Veci" class="block-ref"></a>
+																		<div style="max-width: 65ch;">
+																				thus the growing amount of abstractions - there&#39;s a real need for them and they solve real problems
+																		</div>
+																		<ul>
+																			<li id="XyLyzjbgN">
+																				<a href="#XyLyzjbgN" class="block-ref"></a>
+																				<div style="max-width: 65ch;">
+																						but it doesn&#39;t change the fact that things are getting more and more [[(hidden) D3nygmJHX]] &amp; harder go grasp
+																				</div>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li id="LFhC7Qo5a">
+								<a href="#LFhC7Qo5a" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="ZUpPYtyCU">
+						<a href="#ZUpPYtyCU" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="E_C-LgvHY">
+				<a href="#E_C-LgvHY" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="GeM2zVuEd">
+		<a href="#GeM2zVuEd" class="block-ref"></a>
+	
+	</li>
+	<li id="dQ79loTnS">
+		<a href="#dQ79loTnS" class="block-ref"></a>
+	
+	</li>
+	<li id="bPHcbHrXc">
+		<a href="#bPHcbHrXc" class="block-ref"></a>
+	
+	</li>
+	<li id="9xdL03Wnp">
+		<a href="#9xdL03Wnp" class="block-ref"></a>
+	
+	</li>
+	<li id="ejJKgrCU_">
+		<a href="#ejJKgrCU_" class="block-ref"></a>
+	
+	</li>
+	<li id="MhUk0uEYR">
+		<a href="#MhUk0uEYR" class="block-ref"></a>
+	
+	</li>
+	<li id="wJ_lP6S6q">
+		<a href="#wJ_lP6S6q" class="block-ref"></a>
+	
+	</li>
+	<li id="zZGl63k5z">
+		<a href="#zZGl63k5z" class="block-ref"></a>
+	
+	</li>
+	<li id="Ei90vGVF7">
+		<a href="#Ei90vGVF7" class="block-ref"></a>
+	
+	</li>
+	<li id="lWtuZCg89">
+		<a href="#lWtuZCg89" class="block-ref"></a>
+	
+	</li>
+	<li id="9MNsz9vqm">
+		<a href="#9MNsz9vqm" class="block-ref"></a>
+	
+	</li>
+	<li id="0B38CGFwL">
+		<a href="#0B38CGFwL" class="block-ref"></a>
+	
+	</li>
+	<li id="LnxKFBhpE">
+		<a href="#LnxKFBhpE" class="block-ref"></a>
+	
+	</li>
+	<li id="hhXD8PU52">
+		<a href="#hhXD8PU52" class="block-ref"></a>
+	
+	</li>
+	<li id="4U6CSAN4L">
+		<a href="#4U6CSAN4L" class="block-ref"></a>
+	
+	</li>
+	<li id="ZnEw9SF14">
+		<a href="#ZnEw9SF14" class="block-ref"></a>
+	
+	</li>
+	<li id="uYGbr6RvG">
+		<a href="#uYGbr6RvG" class="block-ref"></a>
+	
+	</li>
+	<li id="_e2OuzuSi">
+		<a href="#_e2OuzuSi" class="block-ref"></a>
+	
+	</li>
+	<li id="Ru1-XUlat">
+		<a href="#Ru1-XUlat" class="block-ref"></a>
+	
+	</li>
+	<li id="ynzwTgzgi">
+		<a href="#ynzwTgzgi" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/civilization.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/civilization.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>

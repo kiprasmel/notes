@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>example | notes | kipras melnikovas</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico">
+		
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('link[type="image/x-icon"]')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/favicon.ico"
+												);
+		</script>
+
+
+		<style>
+			/*
+				first child
+			*/
+			ul li:nth-child(1) {
+				margin-top: 8px;
+
+				/*
+				color: green;
+				*/
+			}
+
+			/*
+				everyone except the first child
+			*/
+			ul li + li {
+				margin-top: 8px;
+
+				/*
+				color: blue;
+				*/
+			}
+
+			/*
+				works almost exactly how it should
+				but the problem is -- the href element should only appear
+				when you hover the __list-style item of the li__,
+				and __not__ the li itself.
+
+				that would also fix the problem that
+				the :hover propagates up into higher li's.
+			*/
+			/*
+			ul > li[id]:hover {
+				list-style: none;
+			}
+			*/
+			/*
+				we used these 2 w/ the previous one,
+				but turns out it's pretty meh,
+				& also the links are not clickable unless you're hovering,
+				which is not ideal, e.g. screen readers, or even vimium
+			*/
+			/*
+			ul > li[id] a {
+				visibility: hidden;
+			}
+
+			ul > li[id]:hover > a {
+				visibility: initial;
+			}
+			*/
+
+			/*
+				simply become an invisible, empty, yet clickable, element,
+				& hide right behind the list-style'ing of the <li>
+			*/
+			a.block-ref {
+				/* ensure moves left */
+				float: left;
+
+				/* moves right around the list-style'ing */
+				margin-left: -21px;
+				margin-top: -1px;
+
+				width: 20px;
+				height: 20px;
+
+				/*
+					become clickable, even if hovering on the li's list-style'ing
+					does not seem to be going in weird places, surprisingly just works
+				*/
+				position: absolute;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			/** note - interval won't work because of this - if enabling again (unlikely), disable this: */
+			var pageLoadTime = new Date();
+
+			function updateAndSetIntervalToUpdateFor(id, initialTimeMs) {
+				var el = document.getElementById(id);
+
+				function update() {
+					/**
+					 * floor & divide & multiple to make the milisecond difference go away,
+					 * so that if multiple functions are called,
+					 * and the page is refreshed fast,
+					 * all values update at the same time.
+					 */
+					var msAgo = pageLoadTime.getTime() - (Math.floor(initialTimeMs / 1000) * 1000);
+					/* var msAgo = new Date().getTime() - initialTimeMs; */
+
+					var secAgo =  msAgo / 1000;
+					var minAgo = secAgo /   60;
+					var hAgo   = minAgo /   60;
+					var dayAgo =   hAgo /   24;
+
+					dayAgo = Math.floor(dayAgo);
+					hAgo   = Math.floor(  hAgo);
+					minAgo = Math.floor(minAgo);
+					secAgo = Math.floor(secAgo);
+					msAgo  = Math.floor( msAgo);
+
+					msAgo  = msAgo  - (secAgo * 1000);
+					secAgo = secAgo - (minAgo *   60);
+					minAgo = minAgo - (  hAgo *   60);
+					hAgo   = hAgo   - (dayAgo *   24);
+					dayAgo = dayAgo                  ;
+
+					console.log({ id, dayAgo, hAgo, minAgo, secAgo, msAgo });
+
+					el.textContent = dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " seconds" + " ago."
+				};
+
+				update();
+				
+				/* disabled because gives false sense of security because if actually re-generated, it won't refresh the page. */
+				/* window.setInterval(update, 1000); */
+			}
+		</script>
+		<!--
+					el.textContent = "(" + dayAgo + " days, " + (hAgo) + " hours, " + (minAgo) + " mins, " + (secAgo) + " secs" + " ago)";
+
+				window.setInterval(update, 1000);
+		-->
+
+	</head>
+
+	<body>
+		<nav>
+			<!--
+				TODO "in graphName"
+			-->
+			<a id="all-notes" href="/notes">
+				all notes
+			</a>
+			
+		<script>
+			/**
+			 * if the website is mounted on a different path than the assumed "/notes",
+			 * this will be needed for some links to work.
+			 * 
+			 * removes n paths (as specified at compile time with "depthUntilRootPage"),
+			 * to make the href work again.
+			 */
+			document
+				.querySelector('a#all-notes')
+				.setAttribute(
+					"href",
+					window.location.href.replace(
+													/(\/[^\/]*$){1}/, "")
+													+
+													"/"
+												);
+		</script>
+
+		</nav>
+
+		<h1>
+			example
+		</h1>
+
+		<small>
+			<table>
+				<tbody>
+					<tr title="self + linked mentions = total">
+						<td>words:</td>
+						<td>
+							<span>2</span>
+							+ <span>957</span>
+							= <span>959</span>
+						</td>
+					</tr>
+					<tr title="2022-07-29T01:53:35.818Z (only self: 2022-07-28T23:13:57.483Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+						<td>last update:</td>
+						<td>
+							<span id="ago-2"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<script type="text/javascript">
+				updateAndSetIntervalToUpdateFor("ago-2", 1659059615818); /** GIT_MEANINGLESS_CHANGE */
+			</script>
+		</small>
+
+		<main>
+			<ul>
+				<li id="73I64vkfa">
+					<a href="#73I64vkfa" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							#public
+					</div>
+				</li>
+				<li id="yDSn838qG">
+					<a href="#yDSn838qG" class="block-ref"></a>
+				
+				</li>
+				<li id="cq-XbrQKX">
+					<a href="#cq-XbrQKX" class="block-ref"></a>
+					<div style="max-width: 65ch;">
+							#[[(hidden) -1WYGHLcw]]
+					</div>
+				</li>
+				<li id="pDcgLlpbN">
+					<a href="#pDcgLlpbN" class="block-ref"></a>
+				
+				</li>
+				<li id="XDAZne5le">
+					<a href="#XDAZne5le" class="block-ref"></a>
+				
+				</li>
+				<li id="Dt4W0C1m6">
+					<a href="#Dt4W0C1m6" class="block-ref"></a>
+				
+				</li>
+			</ul>
+		</main>
+
+		<aside>
+			<script>
+				// var localStorageKeyOfLinkedMentionsOrder = "notes.linked-mentions-order.KOpBThEp5";
+
+				function toggleOrderOfLinkedMentions(btn /*, localStorageKey */) {
+					var oldest = "oldest-first";
+					var newest = "newest-first";
+
+					var linkedMentions = document.getElementById("linked-mentions");
+					var order = "data-order"
+					var currentOrder = linkedMentions.attributes[order].value;
+
+					if (currentOrder === oldest) {
+						var newOrder = newest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column-reverse";
+
+					} else if (currentOrder === newest) {
+						var newOrder = oldest;
+
+						btn.textContent = newOrder;
+						// localStorage.setItem(localStorageKey, newOrder);
+
+						linkedMentions.attributes[order].value = newOrder;
+						linkedMentions.style["flex-direction"] = "column";
+					} else {
+						throw new Error("invalid order found: " + currentOrder);
+					}
+				}
+			</script>
+
+			<h2>
+				Linked Mentions 
+				(3
+				in
+				3
+				pages)
+
+				<button
+					id="order-toggle"
+					onclick="toggleOrderOfLinkedMentions(this)"
+					title="shows current value. click to toggle."
+				>
+					newest-first
+				</button>
+
+			</h2>
+
+			<ol
+				id="linked-mentions"
+				data-order="newest-first"
+				style="display: flex; flex-direction: column-reverse;"
+			>
+				<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			November 4th, 2021 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="5qNrZLG4W">
+			<a href="#5qNrZLG4W" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				more [[example]]s, also highly related to what we want:
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="44_ZHdiKu">
+		<a href="#44_ZHdiKu" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://github.com/codemodsquad/jscodeshift-build-import-list
+		</div>
+		<ul>
+			<li id="O0JLOKybc">
+				<a href="#O0JLOKybc" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						#[[(hidden) DY6wPnICE]] okay there&#39;s a lot of stuff i still don&#39;t know. dunno if i&#39;ll be able to create the graph-aware imports &amp; wrappers thing.
+				</div>
+				<ul>
+					<li id="1ekqWjQsa">
+						<a href="#1ekqWjQsa" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								or maybe could simplify and be not 100% accurate
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			March 20th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="rL6VhuCSJ">
+			<a href="#rL6VhuCSJ" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				(hidden) rL6VhuCSJ example::
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="6lHjVevOp">
+		<a href="#6lHjVevOp" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) 6lHjVevOp
+		</div>
+	</li>
+	<li id="SvEvSDuNt">
+		<a href="#SvEvSDuNt" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) SvEvSDuNt
+		</div>
+	</li>
+	<li id="XO-83lLZk">
+		<a href="#XO-83lLZk" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) XO-83lLZk
+		</div>
+		<ul>
+			<li id="t2dLZnxZj">
+				<a href="#t2dLZnxZj" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) t2dLZnxZj [[(hidden) t61COgNna]]
+				</div>
+			</li>
+			<li id="xSbhxiT5k">
+				<a href="#xSbhxiT5k" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						(hidden) xSbhxiT5k
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li id="D5lTgyPJm">
+		<a href="#D5lTgyPJm" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) D5lTgyPJm
+		</div>
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+<li>
+	<h3>
+		<!--
+		<span style="background-color: hsl(0, 0%, 95%); padding: 4px 16px; ">
+		-->
+			July 28th, 2022 (1)
+		<!--
+		</span>
+		-->
+	</h3>
+	<ul>
+				<li id="11elkAMLP">
+			<a href="#11elkAMLP" class="block-ref"></a>
+
+			<!--
+				TODO <h4> for semantics
+			-->
+
+			<!--
+			TODO add this back, once clickable.
+
+			<span style="background-color: hsl(0, 0%, 95%); padding: 3px 6px; ">
+			-->
+			<div style="max-width: 65ch; ">
+				[[refactor]]ing from multiple useState calls to a single [[(hidden) -bbeywaKL]] [[example]]
+			</div>
+			<!--
+			</span>
+			-->
+<ul>
+	<li id="NuWu8iibP">
+		<a href="#NuWu8iibP" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				https://stately.ai/blog/redux-is-half-of-a-pattern-12
+		</div>
+	</li>
+	<li id="xJwmpyUwl">
+		<a href="#xJwmpyUwl" class="block-ref"></a>
+	
+	</li>
+	<li id="8x_svfKPK">
+		<a href="#8x_svfKPK" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				```patch
+	From 0950207cf20e4fb94ba7ebb97ef278d9adbf7b79 Mon Sep 17 00:00:00 2001
+	From: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+	Date: Fri, 29 Jul 2022 00:42:25 +0300
+	Subject: [PATCH] refactor FileUpload logic - avoid impossible states (&amp; make
+	 code much cleaner)
+	classic.
+	i notice that we have `uploadState` JSX, which has content if
+	`uploadError &amp;&amp;` _and_ `loading &amp;&amp;`, meaning it&#39;s possible to achieve an
+	&quot;impossible state&quot;, when both `uploadError` and `loading` are `true`.
+	one could say that &quot;we ensure that both of these are never true&quot;, but
+	that&#39;s irrelevant, both because 1. it&#39;s possible code will change in the
+	future thus it&#39;s easier to mess this up, 2. we can do better
+	this is where state machines &amp; flow charts (xstate et al) come into
+	play. but for starters, a reducer will do (it&#39;s half the pattern, see
+	[1], but will be enough since here we have a simple use case).
+	[1] https://stately.ai/blog/redux-is-half-of-a-pattern-12
+	Signed-off-by: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+	---
+	 client/api/hooks/use-organization-files.tsx   | 58 ++++++++++++-------
+	 .../elements/account-files/account-files.tsx  | 41 ++++++-------
+	 2 files changed, 56 insertions(+), 43 deletions(-)
+	diff --git a/client/api/hooks/use-organization-files.tsx b/client/api/hooks/use-organization-files.tsx
+	index 5357e21..2a6c34a 100644
+	--- a/client/api/hooks/use-organization-files.tsx
+	+++ b/client/api/hooks/use-organization-files.tsx
+	@@ -1,4 +1,4 @@
+	-import React, { createContext, useContext, useEffect, useState } from &#39;react&#39;;
+	+import React, { createContext, Reducer, useContext, useEffect, useReducer } from &#39;react&#39;;
+	 import { useQuery } from &#39;react-query&#39;;
+	 import { useFilePicker } from &#39;use-file-picker&#39;;
+	@@ -22,12 +22,21 @@ export const deleteFileMutation = async (fileId: number, orgId: number) =&gt; {
+	 	invalidateFiles(orgId);
+	 };
+	+export type FileUploadStatus =
+	+	| { type: &#39;idle&#39; }
+	+	| { type: &#39;loading&#39;; progress: number }
+	+	| { type: &#39;error&#39;; error: string }
+	+	| { type: &#39;success&#39; };
+	+
+	+export type FileUploadReducer = Reducer&lt;FileUploadStatus, FileUploadStatus&gt;;
+	+const fileUploadReducer: FileUploadReducer = (_prevState, action) =&gt; {
+	+	return action;
+	+};
+	+
+	 const FileContext = createContext&lt;{
+	 	openFileSelector: () =&gt; void;
+	-	error: string;
+	-	loading: boolean;
+	-	uploadProgress: number;
+	-	setError: (s: string) =&gt; void;
+	+	uploadStatus: FileUploadStatus;
+	+	clearUploadStatus: () =&gt; void;
+	 } | null&gt;(null);
+	 export const useOpenAndUploadOrganizationFile = () =&gt; {
+	@@ -44,44 +53,51 @@ export const FileProvider: React.FC&lt;{ orgId: number }&gt; = ({ orgId, children }) =
+	 		readAs: &#39;ArrayBuffer&#39;,
+	 		maxFileSize: 50,
+	 	});
+	-	const [loading, setLoading] = useState(false);
+	-	const [uploadProgress, setUploadProgress] = useState(0);
+	-	const [uploadError, setUploadError] = useState(&#39;&#39;);
+	+
+	+	const [uploadStatus, dispatchUploadStatus] = useReducer&lt;FileUploadReducer&gt;(
+	+		fileUploadReducer, //
+	+		{
+	+			type: &#39;idle&#39;,
+	+		},
+	+	);
+	 	useEffect(() =&gt; {
+	 		if (errors[0]?.fileSizeToolarge) {
+	-			setUploadError(&#39;File is too large. Maximum upload file size: 50 MB.&#39;);
+	+			dispatchUploadStatus({
+	+				type: &#39;error&#39;,
+	+				error: &#39;File is too large. Maximum upload file size: 50 MB.&#39;,
+	+			});
+	 		}
+	 	}, [errors]);
+	 	useEffect(() =&gt; {
+	 		const file = filesContent[0];
+	 		if (file) {
+	-			setLoading(true);
+	-			setUploadError(&#39;&#39;);
+	+			dispatchUploadStatus({ type: &#39;loading&#39;, progress: 0 });
+	 			api.file
+	-				.uploadFile({ orgId, file, onUploadProgress: setUploadProgress })
+	+				.uploadFile({
+	+					orgId,
+	+					file,
+	+					onUploadProgress: (progress) =&gt;
+	+						dispatchUploadStatus({ type: &#39;loading&#39;, progress }),
+	+				})
+	 				.then(() =&gt; {
+	+					dispatchUploadStatus({ type: &#39;success&#39; });
+	 					invalidateFiles(orgId);
+	-					setLoading(false);
+	-					setUploadProgress(0);
+	 				})
+	 				.catch(() =&gt; {
+	-					setLoading(false);
+	-					setUploadProgress(0);
+	-					setUploadError(&#39;Something went wrong!&#39;);
+	+					dispatchUploadStatus({ type: &#39;error&#39;, error: &#39;Something went wrong!&#39; });
+	 				});
+	 		}
+	 	}, [filesContent, orgId]);
+	+
+	 	return (
+	 		&lt;FileContext.Provider
+	 			value={{
+	 				openFileSelector,
+	-				loading,
+	-				uploadProgress,
+	-				error: uploadError,
+	-				setError: setUploadError,
+	+				uploadStatus,
+	+				clearUploadStatus: () =&gt; dispatchUploadStatus({ type: &#39;idle&#39; }),
+	 			}}
+	 		&gt;
+	 			{children}
+	diff --git a/client/view/elements/account-files/account-files.tsx b/client/view/elements/account-files/account-files.tsx
+	index 8d3e9e5..e124005 100644
+	--- a/client/view/elements/account-files/account-files.tsx
+	+++ b/client/view/elements/account-files/account-files.tsx
+	@@ -11,6 +11,7 @@ import {
+	 } from &#39;../../../api/hooks/use-organization-files&#39;;
+	 import { File } from &#39;../../../api/types&#39;;
+	 import { fakeTranslator } from &#39;../../../application-state/translator/fake-translator&#39;;
+	+import { assertNever } from &#39;../../../tools/assert-never&#39;;
+	 import { Box } from &#39;../../primitives&#39;;
+	 import { ErrorFallback } from &#39;../../primitives/error-fallback&#39;;
+	 import { ItemWrapperStack } from &#39;../../primitives/item-wrapper&#39;;
+	@@ -28,11 +29,9 @@ interface Props {
+	 export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt; {
+	 	const lastFileUploaded = fakeTranslator.gettextFake(&#39;Last file uploaded&#39;);
+	 	const {
+	-		openFileSelector,
+	-		uploadProgress,
+	-		loading,
+	-		setError,
+	-		error: uploadError,
+	+		openFileSelector, //
+	+		uploadStatus,
+	+		clearUploadStatus,
+	 	} = useOpenAndUploadOrganizationFile();
+	 	const fileHandlers = useMemo(
+	@@ -55,22 +54,20 @@ export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt;
+	 		return &lt;ErrorFallback refetch={() =&gt; invalidateFiles(orgId)} /&gt;;
+	 	}
+	-	const uploadState = (
+	-		&lt;&gt;
+	-			{uploadError &amp;&amp; (
+	-				&lt;Spacing bottom=&quot;m&quot;&gt;
+	-					&lt;Message variant={&#39;negative&#39;} visible onClose={() =&gt; setError(&#39;&#39;)}&gt;
+	-						{uploadError}
+	-					&lt;/Message&gt;
+	-				&lt;/Spacing&gt;
+	-			)}
+	-			{loading &amp;&amp; (
+	-				&lt;Spacing bottom=&quot;m&quot;&gt;
+	-					&lt;Progressbar percent={uploadProgress} variant={&#39;positive&#39;} /&gt;
+	-				&lt;/Spacing&gt;
+	-			)}
+	-		&lt;/&gt;
+	-	);
+	+	const uploadState =
+	+		uploadStatus.type === &#39;error&#39; ? (
+	+			&lt;Spacing bottom=&quot;m&quot;&gt;
+	+				&lt;Message variant={&#39;negative&#39;} visible onClose={clearUploadStatus}&gt;
+	+					{uploadStatus.error}
+	+				&lt;/Message&gt;
+	+			&lt;/Spacing&gt;
+	+		) : uploadStatus.type === &#39;loading&#39; ? (
+	+			&lt;Spacing bottom=&quot;m&quot;&gt;
+	+				&lt;Progressbar percent={uploadStatus.progress} variant={&#39;positive&#39;} /&gt;
+	+			&lt;/Spacing&gt;
+	+		) : uploadStatus.type === &#39;idle&#39; || uploadStatus.type === &#39;success&#39; ? null : (
+	+			assertNever(uploadStatus)
+	+		);
+	 	if (files.length === 0) {
+	 		return (
+	@@ -84,7 +81,7 @@ export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt;
+	 				{
+	 					&lt;Spacing top=&quot;m&quot;&gt;
+	 						&lt;Button
+	-							disabled={loading}
+	+							disabled={uploadStatus.type === &#39;loading&#39;}
+	 							aria-label=&quot;file&quot;
+	 							offset=&quot;left&quot;
+	 							size=&quot;m&quot;
+	-- 
+	2.37.1
+	```
+		</div>
+	</li>
+	<li id="n-_Tfvtni">
+		<a href="#n-_Tfvtni" class="block-ref"></a>
+	
+	</li>
+</ul>
+		</li>
+	</ul>
+</li>
+			</ol>
+		</aside>
+
+		<footer>
+			<!--
+				TODO FIXME - fix the title into proper filename/url in a central place
+				& use it here.
+			-->
+			
+			<center>
+				exported from
+				<a target="_blank" rel="noopener" href="http://roamresearch.com">
+					roam</a>
+				via
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph">
+					roam-traverse-graph</a>'s
+				plugin
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/roam-traverse-graph/tree/master/plugin-export-public-pages">
+					plugin-export-public-pages</a>.
+
+				<!--
+				<span style="display: block; width: 1px; height: 100%;"></span>.
+				-->
+
+				view
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel/notes/tree/master/example.html">source</a>
+
+				&
+				<a target="_blank" rel="noopener" href="https://github.com/kiprasmel/notes/commits/master/example.html">history</a>.
+
+				<!--
+				by
+				<a target="_blank" rel="noopener" href="http://github.com/kiprasmel">
+					kiprasmel</a>,
+				-->
+			</center>
+
+		</footer>
+	</body>
+</html>

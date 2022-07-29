@@ -200,11 +200,11 @@
 						<td>words:</td>
 						<td>
 							<span>3</span>
-							+ <span>994</span>
-							= <span>997</span>
+							+ <span>1608</span>
+							= <span>1611</span>
 						</td>
 					</tr>
-					<tr title="2022-07-28T22:26:24.140Z (only self: 2022-05-23T10:49:10.654Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
+					<tr title="2022-07-29T03:14:58.476Z (only self: 2022-05-23T10:49:10.654Z)"> <!-- GIT_MEANINGLESS_CHANGE -->
 						<td>last update:</td>
 						<td>
 							<span id="ago-2"></span>
@@ -214,7 +214,7 @@
 			</table>
 
 			<script type="text/javascript">
-				updateAndSetIntervalToUpdateFor("ago-2", 1659047184140); /** GIT_MEANINGLESS_CHANGE */
+				updateAndSetIntervalToUpdateFor("ago-2", 1659064498476); /** GIT_MEANINGLESS_CHANGE */
 			</script>
 		</small>
 
@@ -1154,7 +1154,7 @@
 							<li id="dM3p_x2la">
 								<a href="#dM3p_x2la" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										{{[[TODO]]}} #[[(hidden) _sW66DmMa]] &quot;distributed conditional types&quot;
+										{{[[TODO]]}} #read &quot;distributed conditional types&quot;
 								</div>
 								<ul>
 									<li id="iFlaGj8Ch">
@@ -1180,7 +1180,7 @@
 											<li id="e_ZkuJP03">
 												<a href="#e_ZkuJP03" class="block-ref"></a>
 												<div style="max-width: 65ch;">
-														{{[[TODO]]}} #[[(hidden) _sW66DmMa]] &quot;what&#39;s new in typescript&quot;
+														{{[[TODO]]}} #read &quot;what&#39;s new in typescript&quot;
 												</div>
 												<ul>
 													<li id="WfFX138IV">
@@ -1215,7 +1215,7 @@
 							<li id="qardRsv4X">
 								<a href="#qardRsv4X" class="block-ref"></a>
 								<div style="max-width: 65ch;">
-										{{[[TODO]]}} #[[(hidden) _sW66DmMa]] &quot;inference from conditional types&quot;
+										{{[[TODO]]}} #read &quot;inference from conditional types&quot;
 								</div>
 								<ul>
 									<li id="PXvcZ_wMU">
@@ -1341,6 +1341,252 @@
 		<a href="#mIKhBQri0" class="block-ref"></a>
 		<div style="max-width: 65ch;">
 				(hidden) mIKhBQri0
+		</div>
+	</li>
+	<li id="t4lOf3KZU">
+		<a href="#t4lOf3KZU" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				#public
+		</div>
+		<ul>
+			<li id="vhDG_7mdR">
+				<a href="#vhDG_7mdR" class="block-ref"></a>
+				<div style="max-width: 65ch;">
+						[[react]] [[state-machine]] [[xstate]] [[redux]]
+				</div>
+				<ul>
+					<li id="11elkAMLP">
+						<a href="#11elkAMLP" class="block-ref"></a>
+						<div style="max-width: 65ch;">
+								[[refactor]]ing from multiple useState calls to a single [[(hidden) -bbeywaKL]] [[example]]
+						</div>
+						<ul>
+							<li id="NuWu8iibP">
+								<a href="#NuWu8iibP" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										https://stately.ai/blog/redux-is-half-of-a-pattern-12
+								</div>
+							</li>
+							<li id="xJwmpyUwl">
+								<a href="#xJwmpyUwl" class="block-ref"></a>
+							</li>
+							<li id="8x_svfKPK">
+								<a href="#8x_svfKPK" class="block-ref"></a>
+								<div style="max-width: 65ch;">
+										```patch
+							From 0950207cf20e4fb94ba7ebb97ef278d9adbf7b79 Mon Sep 17 00:00:00 2001
+							From: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+							Date: Fri, 29 Jul 2022 00:42:25 +0300
+							Subject: [PATCH] refactor FileUpload logic - avoid impossible states (&amp; make
+							 code much cleaner)
+							classic.
+							i notice that we have `uploadState` JSX, which has content if
+							`uploadError &amp;&amp;` _and_ `loading &amp;&amp;`, meaning it&#39;s possible to achieve an
+							&quot;impossible state&quot;, when both `uploadError` and `loading` are `true`.
+							one could say that &quot;we ensure that both of these are never true&quot;, but
+							that&#39;s irrelevant, both because 1. it&#39;s possible code will change in the
+							future thus it&#39;s easier to mess this up, 2. we can do better
+							this is where state machines &amp; flow charts (xstate et al) come into
+							play. but for starters, a reducer will do (it&#39;s half the pattern, see
+							[1], but will be enough since here we have a simple use case).
+							[1] https://stately.ai/blog/redux-is-half-of-a-pattern-12
+							Signed-off-by: Kipras Melnikovas &lt;kipras@kipras.org&gt;
+							---
+							 client/api/hooks/use-organization-files.tsx   | 58 ++++++++++++-------
+							 .../elements/account-files/account-files.tsx  | 41 ++++++-------
+							 2 files changed, 56 insertions(+), 43 deletions(-)
+							diff --git a/client/api/hooks/use-organization-files.tsx b/client/api/hooks/use-organization-files.tsx
+							index 5357e21..2a6c34a 100644
+							--- a/client/api/hooks/use-organization-files.tsx
+							+++ b/client/api/hooks/use-organization-files.tsx
+							@@ -1,4 +1,4 @@
+							-import React, { createContext, useContext, useEffect, useState } from &#39;react&#39;;
+							+import React, { createContext, Reducer, useContext, useEffect, useReducer } from &#39;react&#39;;
+							 import { useQuery } from &#39;react-query&#39;;
+							 import { useFilePicker } from &#39;use-file-picker&#39;;
+							@@ -22,12 +22,21 @@ export const deleteFileMutation = async (fileId: number, orgId: number) =&gt; {
+							 	invalidateFiles(orgId);
+							 };
+							+export type FileUploadStatus =
+							+	| { type: &#39;idle&#39; }
+							+	| { type: &#39;loading&#39;; progress: number }
+							+	| { type: &#39;error&#39;; error: string }
+							+	| { type: &#39;success&#39; };
+							+
+							+export type FileUploadReducer = Reducer&lt;FileUploadStatus, FileUploadStatus&gt;;
+							+const fileUploadReducer: FileUploadReducer = (_prevState, action) =&gt; {
+							+	return action;
+							+};
+							+
+							 const FileContext = createContext&lt;{
+							 	openFileSelector: () =&gt; void;
+							-	error: string;
+							-	loading: boolean;
+							-	uploadProgress: number;
+							-	setError: (s: string) =&gt; void;
+							+	uploadStatus: FileUploadStatus;
+							+	clearUploadStatus: () =&gt; void;
+							 } | null&gt;(null);
+							 export const useOpenAndUploadOrganizationFile = () =&gt; {
+							@@ -44,44 +53,51 @@ export const FileProvider: React.FC&lt;{ orgId: number }&gt; = ({ orgId, children }) =
+							 		readAs: &#39;ArrayBuffer&#39;,
+							 		maxFileSize: 50,
+							 	});
+							-	const [loading, setLoading] = useState(false);
+							-	const [uploadProgress, setUploadProgress] = useState(0);
+							-	const [uploadError, setUploadError] = useState(&#39;&#39;);
+							+
+							+	const [uploadStatus, dispatchUploadStatus] = useReducer&lt;FileUploadReducer&gt;(
+							+		fileUploadReducer, //
+							+		{
+							+			type: &#39;idle&#39;,
+							+		},
+							+	);
+							 	useEffect(() =&gt; {
+							 		if (errors[0]?.fileSizeToolarge) {
+							-			setUploadError(&#39;File is too large. Maximum upload file size: 50 MB.&#39;);
+							+			dispatchUploadStatus({
+							+				type: &#39;error&#39;,
+							+				error: &#39;File is too large. Maximum upload file size: 50 MB.&#39;,
+							+			});
+							 		}
+							 	}, [errors]);
+							 	useEffect(() =&gt; {
+							 		const file = filesContent[0];
+							 		if (file) {
+							-			setLoading(true);
+							-			setUploadError(&#39;&#39;);
+							+			dispatchUploadStatus({ type: &#39;loading&#39;, progress: 0 });
+							 			api.file
+							-				.uploadFile({ orgId, file, onUploadProgress: setUploadProgress })
+							+				.uploadFile({
+							+					orgId,
+							+					file,
+							+					onUploadProgress: (progress) =&gt;
+							+						dispatchUploadStatus({ type: &#39;loading&#39;, progress }),
+							+				})
+							 				.then(() =&gt; {
+							+					dispatchUploadStatus({ type: &#39;success&#39; });
+							 					invalidateFiles(orgId);
+							-					setLoading(false);
+							-					setUploadProgress(0);
+							 				})
+							 				.catch(() =&gt; {
+							-					setLoading(false);
+							-					setUploadProgress(0);
+							-					setUploadError(&#39;Something went wrong!&#39;);
+							+					dispatchUploadStatus({ type: &#39;error&#39;, error: &#39;Something went wrong!&#39; });
+							 				});
+							 		}
+							 	}, [filesContent, orgId]);
+							+
+							 	return (
+							 		&lt;FileContext.Provider
+							 			value={{
+							 				openFileSelector,
+							-				loading,
+							-				uploadProgress,
+							-				error: uploadError,
+							-				setError: setUploadError,
+							+				uploadStatus,
+							+				clearUploadStatus: () =&gt; dispatchUploadStatus({ type: &#39;idle&#39; }),
+							 			}}
+							 		&gt;
+							 			{children}
+							diff --git a/client/view/elements/account-files/account-files.tsx b/client/view/elements/account-files/account-files.tsx
+							index 8d3e9e5..e124005 100644
+							--- a/client/view/elements/account-files/account-files.tsx
+							+++ b/client/view/elements/account-files/account-files.tsx
+							@@ -11,6 +11,7 @@ import {
+							 } from &#39;../../../api/hooks/use-organization-files&#39;;
+							 import { File } from &#39;../../../api/types&#39;;
+							 import { fakeTranslator } from &#39;../../../application-state/translator/fake-translator&#39;;
+							+import { assertNever } from &#39;../../../tools/assert-never&#39;;
+							 import { Box } from &#39;../../primitives&#39;;
+							 import { ErrorFallback } from &#39;../../primitives/error-fallback&#39;;
+							 import { ItemWrapperStack } from &#39;../../primitives/item-wrapper&#39;;
+							@@ -28,11 +29,9 @@ interface Props {
+							 export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt; {
+							 	const lastFileUploaded = fakeTranslator.gettextFake(&#39;Last file uploaded&#39;);
+							 	const {
+							-		openFileSelector,
+							-		uploadProgress,
+							-		loading,
+							-		setError,
+							-		error: uploadError,
+							+		openFileSelector, //
+							+		uploadStatus,
+							+		clearUploadStatus,
+							 	} = useOpenAndUploadOrganizationFile();
+							 	const fileHandlers = useMemo(
+							@@ -55,22 +54,20 @@ export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt;
+							 		return &lt;ErrorFallback refetch={() =&gt; invalidateFiles(orgId)} /&gt;;
+							 	}
+							-	const uploadState = (
+							-		&lt;&gt;
+							-			{uploadError &amp;&amp; (
+							-				&lt;Spacing bottom=&quot;m&quot;&gt;
+							-					&lt;Message variant={&#39;negative&#39;} visible onClose={() =&gt; setError(&#39;&#39;)}&gt;
+							-						{uploadError}
+							-					&lt;/Message&gt;
+							-				&lt;/Spacing&gt;
+							-			)}
+							-			{loading &amp;&amp; (
+							-				&lt;Spacing bottom=&quot;m&quot;&gt;
+							-					&lt;Progressbar percent={uploadProgress} variant={&#39;positive&#39;} /&gt;
+							-				&lt;/Spacing&gt;
+							-			)}
+							-		&lt;/&gt;
+							-	);
+							+	const uploadState =
+							+		uploadStatus.type === &#39;error&#39; ? (
+							+			&lt;Spacing bottom=&quot;m&quot;&gt;
+							+				&lt;Message variant={&#39;negative&#39;} visible onClose={clearUploadStatus}&gt;
+							+					{uploadStatus.error}
+							+				&lt;/Message&gt;
+							+			&lt;/Spacing&gt;
+							+		) : uploadStatus.type === &#39;loading&#39; ? (
+							+			&lt;Spacing bottom=&quot;m&quot;&gt;
+							+				&lt;Progressbar percent={uploadStatus.progress} variant={&#39;positive&#39;} /&gt;
+							+			&lt;/Spacing&gt;
+							+		) : uploadStatus.type === &#39;idle&#39; || uploadStatus.type === &#39;success&#39; ? null : (
+							+			assertNever(uploadStatus)
+							+		);
+							 	if (files.length === 0) {
+							 		return (
+							@@ -84,7 +81,7 @@ export const AccountFiles: FC&lt;Props&gt; = ({ files, isError, isLoading, orgId }) =&gt;
+							 				{
+							 					&lt;Spacing top=&quot;m&quot;&gt;
+							 						&lt;Button
+							-							disabled={loading}
+							+							disabled={uploadStatus.type === &#39;loading&#39;}
+							 							aria-label=&quot;file&quot;
+							 							offset=&quot;left&quot;
+							 							size=&quot;m&quot;
+							-- 
+							2.37.1
+							```
+								</div>
+							</li>
+							<li id="n-_Tfvtni">
+								<a href="#n-_Tfvtni" class="block-ref"></a>
+							</li>
+						</ul>
+					</li>
+					<li id="GJMncbapa">
+						<a href="#GJMncbapa" class="block-ref"></a>
+					</li>
+				</ul>
+			</li>
+			<li id="aPNqHMTww">
+				<a href="#aPNqHMTww" class="block-ref"></a>
+			</li>
+		</ul>
+	</li>
+	<li id="k90PDwScY">
+		<a href="#k90PDwScY" class="block-ref"></a>
+		<div style="max-width: 65ch;">
+				(hidden) k90PDwScY
 		</div>
 	</li>
 	<li id="SFe2eaxYu">
